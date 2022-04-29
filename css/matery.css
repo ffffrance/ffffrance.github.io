@@ -241,7 +241,7 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    background-image: linear-gradient(to right, #2558FF 0%, #0f9d58 100%);
 }
 
 .text-color {
@@ -594,7 +594,7 @@ header .go-back i {
 }
 
 @-webkit-keyframes rainbow {
-
+/* 
     0%,
     100% {
         background: rgba(156, 39, 176, 0.75);
@@ -636,11 +636,11 @@ header .go-back i {
         background: linear-gradient(45deg, rgba(233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
         background: -moz-linear-gradient(135deg, rgba(233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
         background: -webkit-linear-gradient(135deg, rgba(2233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
-    }
+    } */
 }
 
 @keyframes rainbow {
-
+/* 
     0%,
     100% {
         background: rgba(156, 39, 176, 0.75);
@@ -682,7 +682,7 @@ header .go-back i {
         background: linear-gradient(45deg, rgba(233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
         background: -moz-linear-gradient(135deg, rgba(233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
         background: -webkit-linear-gradient(135deg, rgba(2233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
-    }
+    } */
 }
 
 .index-card {
@@ -2142,4 +2142,16 @@ p.search-result-summary{
     height: 50px;
     padding: 0;
     margin: 0;
+}
+.bg-cover:after {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    content: "";
+    backdrop-filter: blur(0.1vw);
+    background: rgba(0, 0, 0, 0.1);
 }
