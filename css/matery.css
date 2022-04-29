@@ -253,7 +253,7 @@ mark {
 }
 
 .progress-bar {
-    height: 4px;
+    height: 10px;
     position: fixed;
     bottom: 0;
     z-index: 300;
@@ -2154,4 +2154,17 @@ p.search-result-summary{
     content: "";
     backdrop-filter: blur(0.1vw);
     background: rgba(0, 0, 0, 0.1);
+}
+::-webkit-scrollbar-thumb {
+    background-color: #7900FF;
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
+    border-radius: 5em;
+}
+::-webkit-scrollbar-track {
+    background-color: #0F0E0E;
+    border-radius: 5m;
+}
+::-webkit-scrollbar {
+    width: 10;
+    height: 15px;
 }
