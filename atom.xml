@@ -6,7 +6,7 @@
   <link href="http://ffffrance.github.io/atom.xml" rel="self"/>
   
   <link href="http://ffffrance.github.io/"/>
-  <updated>2022-04-29T12:02:05.143Z</updated>
+  <updated>2022-04-29T13:45:09.326Z</updated>
   <id>http://ffffrance.github.io/</id>
   
   <author>
@@ -17,18 +17,46 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>基于Hexo的hexo-theme-matery主题搭建博客并优化</title>
+    <title>Markdown介绍及使用教程</title>
+    <link href="http://ffffrance.github.io/2022/04296929.html"/>
+    <id>http://ffffrance.github.io/2022/04296929.html</id>
+    <published>2022-04-29T13:01:48.000Z</published>
+    <updated>2022-04-29T13:45:09.326Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;举个例子解释&quot;&gt;&lt;a href=&quot;#举个例子解释&quot; class=&quot;headerlink&quot; title=&quot;举个例子解释&quot;&gt;&lt;/a&gt;举个例子解释&lt;/h2&gt;&lt;p&gt; 大部分作家都是用 Word 或 Pages 写作，过去的文档也大都以微软的 .doc, .docx</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="http://ffffrance.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="markdown" scheme="http://ffffrance.github.io/tags/markdown/"/>
+    
+    <category term="typora" scheme="http://ffffrance.github.io/tags/typora/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博客介绍</title>
     <link href="http://ffffrance.github.io/2022/042843699.html"/>
     <id>http://ffffrance.github.io/2022/042843699.html</id>
     <published>2022-04-28T06:25:00.000Z</published>
-    <updated>2022-04-29T12:02:05.143Z</updated>
+    <updated>2022-04-29T13:44:48.162Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;p&gt;临近保研和课程实训，需要大量复习的专业课和学习新技术，就在此记录我的近期学习计划。&lt;/p&gt;
+&lt;h2 id=&quot;计算机科学与技术：&quot;&gt;&lt;a href=&quot;#计算机科学与技术：&quot; class=&quot;headerlink&quot;</summary>
         
       
     

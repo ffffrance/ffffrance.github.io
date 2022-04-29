@@ -4,11 +4,38 @@
   
     
     <entry>
-      <title>基于Hexo的hexo-theme-matery主题搭建博客并优化</title>
+      <title>Markdown介绍及使用教程</title>
+      <link href="/2022/04296929.html"/>
+      <url>/2022/04296929.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="举个例子解释"><a href="#举个例子解释" class="headerlink" title="举个例子解释"></a>举个例子解释</h2><p> 大部分作家都是用 Word 或 Pages 写作，过去的文档也大都以微软的 .doc, .docx 格式或是苹果的 Pages 格式储存。还有人为了保证文稿发给谁都能正常打开，会用 .txt 格式。但是.doc 或 Pages 格式有如下问题：</p><p>1.不一定谁都能打开。用 Windows 的人打不开苹果的 .pages 文件，用旧版 Word 的人不一定能打开你用新版 Word 写的稿子。</p><p>2.对方看到的稿子的样子和你自己看到的可能差别很大。</p><p>3.大部分人电脑上的Office都是盗版的，使用时很容易出问题。</p><p>4.用.txt 写的稿子没有格式，这就给编辑你文章的人带来困扰了。</p><h2 id="这就是-Markdown-登场的时候了"><a href="#这就是-Markdown-登场的时候了" class="headerlink" title="这就是 Markdown 登场的时候了"></a>这就是 Markdown 登场的时候了</h2><p>Markdown 的优点如下： </p><ul><li><p>纯文本，所以兼容性极强，可以用所有文本编辑器打开。<br>兼顾了「什么人都能打开」和「样式」。Markdown 就是纯文本，就是 .txt，所以什么人都能打开。而如上所述，你可以用它来标记文本的样式，而且语法非常简单。<br>由于是纯文本，Markdown 文稿也不会因为未来软件升级而产生不同版本之间的兼容问题，即，不会出现「我这篇稿子是用旧版 Word 写的，你用新版 Word 看可能格式会有点问题」的情况。</p></li><li><p>让你专注于文字而不是排版。</p></li><li><p>格式转换方便，Markdown 的文本你可以轻松转换为 html、电子书等。</p></li><li><p>Markdown 转 HTML 非常方便。HTML 是整个万维网（web）的标记语言，但更重要的是，它也是目前主流电子书格式所用的标记语言。无论是 EPUB, mobi，还是 Kindle 用的专有格式 .azw，都只是把一堆 HTML 文件打包而已。如果你写的是书，用 Markdown 标注格式之后，可以很方便地转为以上格式（当然这个转换工作不需要由你来做）；如果你写的是单篇的文章（例如新闻报道或专栏），未来也不排除结集出书的可能。若采用 Markdown，对于日后的文件转换工作也大有裨益。如何开始用 Markdown？继续用你习惯的写作软件即可。记事本、Word、Pages 都没问题，但请记得存成纯文本格式。就这么简单。</p></li><li><p>Markdown 的标记语法有极好的可读性。</p></li></ul><p>插入链接: </p><ul><li><a href="https://www.jianshu.com/p/7771794c88a1?msclkid=1fb103a8c7b611eca8bd8cd73728089a#%E8%BD%AC%E6%8D%A2%E4%B8%BA-HTML-%E6%96%87%E6%A1%A3">Markdown介绍及使用教程</a></li><li><a href="https://zhuanlan.zhihu.com/p/265077468?msclkid=7f270e55c7bd11ec9e490cd5ce2b3b96">hexo博客如何插入图片</a><br>插入图片：  </li><li><img src="https://th.bing.com/th/id/OIP.AjQfAi88wTpfm3XCNHUYogAAAA?pid=ImgDet&amp;rs=1">  </li><li><img src="/2022/04296929.htm/04296929/1.jpg" class=""></li><li><img src="/2022/04296929.htm/04296929/2.jpeg" class=""></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> markdown </tag>
+            
+            <tag> typora </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>博客介绍</title>
       <link href="/2022/042843699.html"/>
       <url>/2022/042843699.html</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo new "My New Post"</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<p>临近保研和课程实训，需要大量复习的专业课和学习新技术，就在此记录我的近期学习计划。</p><h2 id="计算机科学与技术："><a href="#计算机科学与技术：" class="headerlink" title="计算机科学与技术："></a>计算机科学与技术：</h2><h3 id="1-数据结构"><a href="#1-数据结构" class="headerlink" title="1.数据结构"></a>1.数据结构</h3><h3 id="2-操作系统"><a href="#2-操作系统" class="headerlink" title="2.操作系统"></a>2.操作系统</h3><h3 id="3-计算机网络"><a href="#3-计算机网络" class="headerlink" title="3.计算机网络"></a>3.计算机网络</h3><h3 id="4-计算机组成原理"><a href="#4-计算机组成原理" class="headerlink" title="4.计算机组成原理"></a>4.计算机组成原理</h3><h3 id="5-计算机科学基本理论"><a href="#5-计算机科学基本理论" class="headerlink" title="5.计算机科学基本理论"></a>5.计算机科学基本理论</h3><h3 id="6-数据库系统"><a href="#6-数据库系统" class="headerlink" title="6.数据库系统"></a>6.数据库系统</h3><h2 id="软件工程："><a href="#软件工程：" class="headerlink" title="软件工程："></a>软件工程：</h2><h3 id="1-软件工程理论"><a href="#1-软件工程理论" class="headerlink" title="1.软件工程理论"></a>1.软件工程理论</h3><h3 id="2-软件测试与质量保证"><a href="#2-软件测试与质量保证" class="headerlink" title="2.软件测试与质量保证"></a>2.软件测试与质量保证</h3><h3 id="3-软件需求分析与系统设计"><a href="#3-软件需求分析与系统设计" class="headerlink" title="3.软件需求分析与系统设计"></a>3.软件需求分析与系统设计</h3><h3 id="4-软件项目管理与过程改进"><a href="#4-软件项目管理与过程改进" class="headerlink" title="4.软件项目管理与过程改进"></a>4.软件项目管理与过程改进</h3><h3 id="5-面向对象基本理论"><a href="#5-面向对象基本理论" class="headerlink" title="5.面向对象基本理论"></a>5.面向对象基本理论</h3><h3 id="6-程序设计基本理论"><a href="#6-程序设计基本理论" class="headerlink" title="6.程序设计基本理论"></a>6.程序设计基本理论</h3><h2 id="数学："><a href="#数学：" class="headerlink" title="数学："></a>数学：</h2><h3 id="1-高等数学"><a href="#1-高等数学" class="headerlink" title="1.高等数学"></a>1.高等数学</h3><h3 id="2-离散数学"><a href="#2-离散数学" class="headerlink" title="2.离散数学"></a>2.离散数学</h3><h3 id="3-概率论"><a href="#3-概率论" class="headerlink" title="3.概率论"></a>3.概率论</h3><h3 id="4-线性代数"><a href="#4-线性代数" class="headerlink" title="4.线性代数"></a>4.线性代数</h3><h2 id="技术："><a href="#技术：" class="headerlink" title="技术："></a>技术：</h2><h3 id="1-springboot"><a href="#1-springboot" class="headerlink" title="1.springboot"></a>1.springboot</h3><h3 id="2-vue"><a href="#2-vue" class="headerlink" title="2.vue"></a>2.vue</h3><h3 id="3-springcloud"><a href="#3-springcloud" class="headerlink" title="3.springcloud"></a>3.springcloud</h3><h3 id="4-redis"><a href="#4-redis" class="headerlink" title="4.redis"></a>4.redis</h3><h3 id="5-部署服务器"><a href="#5-部署服务器" class="headerlink" title="5.部署服务器"></a>5.部署服务器</h3><h2 id="（未完待续）"><a href="#（未完待续）" class="headerlink" title="（未完待续）"></a>（未完待续）</h2><ul><li><img src="/2022/042843699.htm/042843699/1.jpg" class=""></li><li><img src="/2022/042843699.htm/042843699/2.jpeg" class=""></li></ul>]]></content>
       
       
       <categories>
