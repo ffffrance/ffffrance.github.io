@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>CTZ</title>
+  <title>FFFfrance&#39;s Blog</title>
   
-  <subtitle>fff</subtitle>
+  <subtitle>FFFfrance的小破站</subtitle>
   <link href="http://ffffrance.github.io/atom.xml" rel="self"/>
   
   <link href="http://ffffrance.github.io/"/>
@@ -10,7 +10,7 @@
   <id>http://ffffrance.github.io/</id>
   
   <author>
-    <name>FFF</name>
+    <name>FFFfrance</name>
     
   </author>
   
