@@ -6,7 +6,7 @@
   <link href="http://ffffrance.github.io/atom.xml" rel="self"/>
   
   <link href="http://ffffrance.github.io/"/>
-  <updated>2022-04-30T02:01:10.696Z</updated>
+  <updated>2022-04-30T11:42:42.551Z</updated>
   <id>http://ffffrance.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计算机网络体系结构</title>
+    <link href="http://ffffrance.github.io/2022/043050802.html"/>
+    <id>http://ffffrance.github.io/2022/043050802.html</id>
+    <published>2022-04-30T07:25:46.000Z</published>
+    <updated>2022-04-30T11:42:42.551Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;计算机网络体系结构&quot;&gt;&lt;a href=&quot;#计算机网络体系结构&quot; class=&quot;headerlink&quot; title=&quot;计算机网络体系结构&quot;&gt;&lt;/a&gt;计算机网络体系结构&lt;/h1&gt;&lt;h2 id=&quot;计算机网络的概念&quot;&gt;&lt;a href=&quot;#计算机网络的概念&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机网络" scheme="http://ffffrance.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="http://ffffrance.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>Markdown介绍及使用教程</title>
