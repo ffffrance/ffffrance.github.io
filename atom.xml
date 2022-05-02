@@ -6,7 +6,7 @@
   <link href="http://ffffrance.github.io/atom.xml" rel="self"/>
   
   <link href="http://ffffrance.github.io/"/>
-  <updated>2022-05-01T12:58:28.002Z</updated>
+  <updated>2022-05-02T13:49:20.498Z</updated>
   <id>http://ffffrance.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>计算机网络数据链路层</title>
+    <link href="http://ffffrance.github.io/2022/050135078.html"/>
+    <id>http://ffffrance.github.io/2022/050135078.html</id>
+    <published>2022-05-01T13:00:56.000Z</published>
+    <updated>2022-05-02T13:49:20.498Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;计算机网络数据链路层&quot;&gt;&lt;a href=&quot;#计算机网络数据链路层&quot; class=&quot;headerlink&quot; title=&quot;计算机网络数据链路层&quot;&gt;&lt;/a&gt;计算机网络数据链路层&lt;/h1&gt;&lt;h2 id=&quot;数据链路层的功能&quot;&gt;&lt;a href=&quot;#数据链路层的功能&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机网络" scheme="http://ffffrance.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="计算机网络" scheme="http://ffffrance.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>计算机网络物理层</title>
     <link href="http://ffffrance.github.io/2022/050114293.html"/>
     <id>http://ffffrance.github.io/2022/050114293.html</id>
     <published>2022-05-01T03:33:27.000Z</published>
-    <updated>2022-05-01T12:58:28.002Z</updated>
+    <updated>2022-05-02T13:50:24.855Z</updated>
     
     
       
@@ -46,7 +71,7 @@
     <link href="http://ffffrance.github.io/2022/043050802.html"/>
     <id>http://ffffrance.github.io/2022/043050802.html</id>
     <published>2022-04-30T07:25:46.000Z</published>
-    <updated>2022-04-30T11:43:48.191Z</updated>
+    <updated>2022-05-02T13:52:01.608Z</updated>
     
     
       
