@@ -41,9 +41,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -390,18 +390,9 @@
                 <h1 id="计算机网络体系结构"><a href="#计算机网络体系结构" class="headerlink" title="计算机网络体系结构"></a>计算机网络体系结构</h1><img src="/2022/043050802/9.jpg" class=""> 
 <h2 id="计算机网络的概念"><a href="#计算机网络的概念" class="headerlink" title="计算机网络的概念"></a>计算机网络的概念</h2><ul>
 <li>计算机网络是一个将分散的，具有独立功能的计算机系统，通过通信设备与线路连接起来，由功能完善的软件实现资源共享和信息传递的系统。<h2 id="计算机网络的组成"><a href="#计算机网络的组成" class="headerlink" title="计算机网络的组成"></a>计算机网络的组成</h2><h3 id="共分三类："><a href="#共分三类：" class="headerlink" title="共分三类："></a>共分三类：</h3></li>
-<li>组成部分：硬件，软件，协议。</li>
-</ul>
-<p>1.硬件：主机（端系统），通信链路（双绞线，光纤），交换设备（路由器，交换机），通信处理机（网卡）<br>2.软件：实现资源共享的软件和方便用户使用的工具软件（邮件收发，聊天程序等）<br>3.协议：计网核心，“交通规则”规定网络传输数据时所遵循的规范  </p>
-<ul>
-<li>工作方式：边缘部分和核心部分</li>
-</ul>
-<p>1.边缘部分：主机，用来通信和资源共享<br>2.核心部分：网络和连接网络的路由器，为边缘提供连通和交换</p>
-<ul>
-<li>功能组成：通信子网和资源子网</li>
-</ul>
-<p>1.通信子网：传输介质，通信设备，网络协议。<br>2.资源子网：资源共享的设备及其软件</p>
-<h2 id="计算机网络的功能"><a href="#计算机网络的功能" class="headerlink" title="计算机网络的功能"></a>计算机网络的功能</h2><ul>
+<li>组成部分：硬件，软件，协议。<br>1.硬件：主机（端系统），通信链路（双绞线，光纤），交换设备（路由器，交换机），通信处理机（网卡）<br>2.软件：实现资源共享的软件和方便用户使用的工具软件（邮件收发，聊天程序等）<br>3.协议：计网核心，“交通规则”规定网络传输数据时所遵循的规范  </li>
+<li>工作方式：边缘部分和核心部分<br>1.边缘部分：主机，用来通信和资源共享<br>2.核心部分：网络和连接网络的路由器，为边缘提供连通和交换</li>
+<li>功能组成：通信子网和资源子网<br>1.通信子网：传输介质，通信设备，网络协议。<br>2.资源子网：资源共享的设备及其软件<h2 id="计算机网络的功能"><a href="#计算机网络的功能" class="headerlink" title="计算机网络的功能"></a>计算机网络的功能</h2></li>
 <li>数据通信</li>
 <li>资源共享</li>
 <li>分布式处理</li>
@@ -411,14 +402,8 @@
 <li>传输技术：<br>广播式网络，点对点网络（区别于是否分组存储转发和路由选择机制）</li>
 <li>拓扑结构：<br>总线形，星形，环形，网状（节点与通信链路的几何关系），也可以互联成为更复杂网络结构</li>
 <li>使用者：<br>公用网，专用网</li>
-<li>交换技术：</li>
-</ul>
-<p>1.电路交换网络：点对点，建立连接，传输数据，断开连接，传统电话网络。优点：数据直接传送，时延小。缺点：线路利用率低，无差错控制。<br>2.报文交换网络：加源地址和目标地址，封装成为报文段传送。也叫存储转发网络，优点：充分利用线路，一对多多对一，差错控制。缺点：资源开销大，缓冲时延，缓冲区难管理。<br>3.分组交换网络：把数据封装成固定长度数据块，块红加上目的地址和源地址等辅助信息成为分组，以存储-转发传输。优点：报文网络优点+缓冲容易管理，包时延小，现在主流网络的选择。</p>
-<ul>
-<li>传输介质：</li>
-</ul>
-<p>1.有线：双绞线网络，同轴电缆网络等。<br>2.无线：蓝牙，微波，无线电等。  </p>
-<h2 id="计算机网络的性能指标"><a href="#计算机网络的性能指标" class="headerlink" title="计算机网络的性能指标"></a>计算机网络的性能指标</h2><ul>
+<li>交换技术：<br>1.电路交换网络：点对点，建立连接，传输数据，断开连接，传统电话网络。优点：数据直接传送，时延小。缺点：线路利用率低，无差错控制。<br>2.报文交换网络：加源地址和目标地址，封装成为报文段传送。也叫存储转发网络，优点：充分利用线路，一对多多对一，差错控制。缺点：资源开销大，缓冲时延，缓冲区难管理。<br>3.分组交换网络：把数据封装成固定长度数据块，块红加上目的地址和源地址等辅助信息成为分组，以存储-转发传输。优点：报文网络优点+缓冲容易管理，包时延小，现在主流网络的选择。</li>
+<li>传输介质：<br>1.有线：双绞线网络，同轴电缆网络等。<br>2.无线：蓝牙，微波，无线电等。  <h2 id="计算机网络的性能指标"><a href="#计算机网络的性能指标" class="headerlink" title="计算机网络的性能指标"></a>计算机网络的性能指标</h2></li>
 <li>带宽：bandwidth，单位Hz，表示网络通信线路传输数据能力，“最高数据传输速率”。</li>
 <li>时延：delay，端到端传送总时间，总时延=发送时延+传播时延+处理时延+排队时延。</li>
 <li>时延带宽积：传播时延x信道带宽。</li>
@@ -434,10 +419,7 @@
 <li>两台主机通信的时候对等层有一条直接信道。<h3 id="计算机网络协议，接口，服务"><a href="#计算机网络协议，接口，服务" class="headerlink" title="计算机网络协议，接口，服务"></a>计算机网络协议，接口，服务</h3></li>
 <li>协议：为网络数据交换建立的规则，标准，约定。控制两个/多个对等实体进行通信的规则的集合，是水平的，不对等实体之间没有协议。包括语法，语义，同步。</li>
 <li>接口：同一个结点内相邻层之间交换信息的连接点，系统内部的规定，n+1层通过访问n层的SAP（服务访问点）来获取服务，每个SAP有自己的地址。</li>
-<li>服务：下层为紧邻的上层提供的功能调用，是垂直的。上下层提供服务的时候有四类原语：请求request，指示indication，响应response，证实confirmation。<br>计算机提供的服务有三种：</li>
-</ul>
-<p>1.面向连接服务和无连接服务：面向连接必须先建立连接分配资源，结束再释放连接和资源，三个阶段，如TCP，无连接服务只需要直接发送数据，把带目的地的包传送在线路上，不可靠的服务，Best-Effort-Delivery，如IP和UDP<br>2.可靠服务和不可靠服务：可靠指的是有纠错，检错，应答机制，保证正确可靠传输数据，而不可靠是尽量正确可靠，尽力而为的服务。<br>3.有应答服务和无应答服务：是否有接受方接收数据之后向发送方发送应答，文件传输服务就是有应答，WWW就是无应答</p>
-<h3 id="ISO-x2F-OSI与TCP-x2F-IP模型"><a href="#ISO-x2F-OSI与TCP-x2F-IP模型" class="headerlink" title="ISO/OSI与TCP/IP模型"></a>ISO/OSI与TCP/IP模型</h3><ul>
+<li>服务：下层为紧邻的上层提供的功能调用，是垂直的。上下层提供服务的时候有四类原语：请求request，指示indication，响应response，证实confirmation。<br>计算机提供的服务有三种：<br>1.面向连接服务和无连接服务：面向连接必须先建立连接分配资源，结束再释放连接和资源，三个阶段，如TCP，无连接服务只需要直接发送数据，把带目的地的包传送在线路上，不可靠的服务，Best-Effort-Delivery，如IP和UDP<br>2.可靠服务和不可靠服务：可靠指的是有纠错，检错，应答机制，保证正确可靠传输数据，而不可靠是尽量正确可靠，尽力而为的服务。<br>3.有应答服务和无应答服务：是否有接受方接收数据之后向发送方发送应答，文件传输服务就是有应答，WWW就是无应答<h3 id="ISO-OSI与TCP-IP模型"><a href="#ISO-OSI与TCP-IP模型" class="headerlink" title="ISO/OSI与TCP/IP模型"></a>ISO/OSI与TCP/IP模型</h3></li>
 <li>OSI模型：七层，从下到上分别为：物理层，数据链路层，网络层，传输层，会话层，表示层，应用层。<br>低三层为通信子网（为了连接网络的通信设备），传输层承上启下，上三层为资源子网（相当于计算机，完成数据处理）。</li>
 <li>TCP/IP模型：四层，从下到上分别为：网络接口层，网际层，传输层，应用层。  </li>
 <li>两者共同点：都采取分层结构。都基于独立协议栈的概念。都可以解决异构网络的互连（不同厂家计算机互联）</li>
@@ -885,7 +867,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">15.7k</span>
+                        class="white-color">25.3k</span>
             
             
             
