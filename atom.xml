@@ -6,7 +6,7 @@
   <link href="http://ffffrance.github.io/atom.xml" rel="self"/>
   
   <link href="http://ffffrance.github.io/"/>
-  <updated>2022-05-20T14:32:47.549Z</updated>
+  <updated>2022-05-22T11:35:04.983Z</updated>
   <id>http://ffffrance.github.io/</id>
   
   <author>
@@ -17,19 +17,71 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>操作系统输入/输出管理</title>
+    <link href="http://ffffrance.github.io/2022/052237860.html"/>
+    <id>http://ffffrance.github.io/2022/052237860.html</id>
+    <published>2022-05-22T10:59:14.000Z</published>
+    <updated>2022-05-22T11:35:04.983Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;输入-输出管理管理&quot;&gt;&lt;a href=&quot;#输入-输出管理管理&quot; class=&quot;headerlink&quot; title=&quot;输入-输出管理管理&quot;&gt;&lt;/a&gt;输入-输出管理管理&lt;/h1&gt;  
+&lt;h2 id=&quot;IO管理概述&quot;&gt;&lt;a href=&quot;#IO管理概述&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="操作系统" scheme="http://ffffrance.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+    <category term="操作系统" scheme="http://ffffrance.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>操作系统文件管理</title>
+    <link href="http://ffffrance.github.io/2022/052139833.html"/>
+    <id>http://ffffrance.github.io/2022/052139833.html</id>
+    <published>2022-05-21T00:38:51.000Z</published>
+    <updated>2022-05-22T10:59:47.097Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;文件管理&quot;&gt;&lt;a href=&quot;#文件管理&quot; class=&quot;headerlink&quot; title=&quot;文件管理&quot;&gt;&lt;/a&gt;文件管理&lt;/h1&gt;&lt;img src=&quot;/2022/0521undefined/1.jpg&quot; class=&quot;&quot;&gt;   
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="操作系统" scheme="http://ffffrance.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+    <category term="操作系统" scheme="http://ffffrance.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>操作系统内存管理</title>
     <link href="http://ffffrance.github.io/2022/05198490.html"/>
     <id>http://ffffrance.github.io/2022/05198490.html</id>
     <published>2022-05-19T06:29:21.000Z</published>
-    <updated>2022-05-20T14:32:47.549Z</updated>
+    <updated>2022-05-20T14:42:57.120Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;内存管理&quot;&gt;&lt;a href=&quot;#内存管理&quot; class=&quot;headerlink&quot; title=&quot;内存管理&quot;&gt;&lt;/a&gt;内存管理&lt;/h1&gt;&lt;img src=&quot;/2022/0519undefined/1.jpg&quot; class=&quot;&quot;&gt;   
-&lt;h2</summary>
+    <summary type="html">&lt;h1 id=&quot;内存管理&quot;&gt;&lt;a href=&quot;#内存管理&quot; class=&quot;headerlink&quot; title=&quot;内存管理&quot;&gt;&lt;/a&gt;内存管理&lt;/h1&gt;&lt;img src=&quot;/2022/05198490/1.jpg&quot; class=&quot;&quot;&gt;   
+&lt;h2 id=&quot;内存管理概念&quot;&gt;&lt;a</summary>
         
       
     
