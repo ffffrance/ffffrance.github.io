@@ -365,14 +365,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    8 分
                 </div>
                 
 
@@ -387,19 +387,315 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <img src="/2022/0523undefined/1.jpg" class="">  
-<img src="/2022/0523undefined/2.jpg" class="">  
-<img src="/2022/0523undefined/3.jpg" class="">  
-<img src="/2022/0523undefined/4.jpg" class="">  
-<img src="/2022/0523undefined/5.jpg" class="">  
-<img src="/2022/0523undefined/6.jpg" class="">  
-<img src="/2022/0523undefined/7.jpg" class="">  
-<img src="/2022/0523undefined/8.jpg" class="">  
-<img src="/2022/0523undefined/9.jpg" class="">  
-<img src="/2022/0523undefined/10.jpg" class="">  
-<img src="/2022/0523undefined/11.jpg" class="">  
-<img src="/2022/0523undefined/12.jpg" class="">  
-<img src="/2022/0523undefined/13.jpg" class="">  
+                <h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ol>
+<li><p>Apache Maven是一个（特别是Java编程）项目管理及自动构建工具，由Apache软件基金会所提供。基于项目对象模型（缩写：POM）概念，Maven利用一个中央信息片断能管理一个项目的构建、报告和文档等步骤。</p>
+</li>
+<li><p>项目管理工具：编译、测试、运行、打包（jar、war）、部署</p>
+</li>
+<li><p>依赖管理</p>
+</li>
+<li><p>下载</p>
+<p>地址：<a target="_blank" rel="noopener" href="https://maven.apache.org/">https://maven.apache.org/</a></p>
+<img src="/2022/052338008/1.jpg" class="">   
+</li>
+<li><p>安装、配置</p>
+<ul>
+<li><p>直接解压即可</p>
+</li>
+<li><p>配置环境变量：</p>
+<ul>
+<li>M2_HOME=&gt;maven解压目录</li>
+<li>修改 path=》添加 %M2_HOME%\bin</li>
+</ul>
+</li>
+<li><p>测试：mvn -v</p>
+</li>
+</ul>
+</li>
+<li><p>maven仓库</p>
+<ul>
+<li>本地仓库：本地的一个文件夹</li>
+<li>中央仓库：世界唯一，由maven社区维护（网站）</li>
+<li>远程仓库：是位于web服务器上的一个私有仓库，由自己公司创建和维护</li>
+<li>镜像仓库：是中央仓库的镜像（副本），目的是加快依赖jar包的下载速度</li>
+</ul>
+</li>
+<li><p>修改maven配置</p>
+<ul>
+<li><p>修改：maven安装目录下的 conf/settings.xml</p>
+<ul>
+<li><p>修改本地仓库位置：</p>
+<pre><code>&lt;localRepository&gt;D:\mavenrepository&lt;/localRepository&gt;
+</code></pre>
+</li>
+<li><p>配置阿里云镜像</p>
+</li>
+</ul>
+<pre><code>&lt;mirrors&gt;
+    &lt;mirror&gt;
+        &lt;id&gt;nexus-aliyun&lt;/id&gt;
+        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+        &lt;name&gt;Nexus aliyun&lt;/name&gt;
+        &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;
+    &lt;/mirror&gt;
+&lt;/mirrors&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>在 Idea 中配置</p>
+<ul>
+<li><p>进入 settings</p>
+<img src="/2022/052338008/2.jpg" class="">   
+</li>
+<li><p>配置maven</p>
+<img src="/2022/052338008/3.jpg" class=""></li>
+</ul>
+</li>
+<li><p>Eclipse配置配置</p>
+<ul>
+<li><p>配置maven位置：</p>
+<img src="/2022/052338008/4.jpg" class="">   
+</li>
+<li><p>配置maven的配置文件：</p>
+<p>首选项=》maven=》User settings =》选择settings.xml文件</p>
+<img src="/2022/052338008/5.jpg" class=""></li>
+</ul>
+</li>
+</ol>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ol>
+<li><p>maven的目录结构</p>
+<p>src：源程序目录</p>
+<p>​	main：源程序</p>
+<p>​		java：程序</p>
+<p>​		resources：资源文件(配置文件)</p>
+<p>​		webapp:web项目（不是web项目没有）</p>
+<p>​	test：测试代码</p>
+<p>target：项目生成的结果</p>
+</li>
+<li><p>创建maven项目</p>
+<ul>
+<li><p>maven project 向导</p>
+</li>
+<li><p>配置三个坐标（定位唯一的jar包）</p>
+<ul>
+<li>groupId：组织或公司的域名</li>
+<li>artifactId：组件名（项目名）</li>
+<li>version：版本号</li>
+</ul>
+</li>
+<li><p>打包方式</p>
+<ul>
+<li>jar（默认打包方式，控制台项目或window项目）</li>
+<li>war（web项目）</li>
+<li>pom（maven的管理项目）</li>
+</ul>
+</li>
+<li><p>配置 pom.xml</p>
+<pre><code>&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;groupId&gt;com.neu&lt;/groupId&gt;
+  &lt;artifactId&gt;test3&lt;/artifactId&gt;
+  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+  &lt;packaging&gt;jar&lt;/packaging&gt;
+  
+  &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;!-- 资源文件拷贝插件 --&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;
+                &lt;version&gt;2.7&lt;/version&gt;
+                &lt;configuration&gt;
+                    &lt;encoding&gt;UTF-8&lt;/encoding&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+            &lt;!-- java编译插件 --&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+                &lt;version&gt;3.2&lt;/version&gt;
+                &lt;configuration&gt;
+                    &lt;source&gt;1.8&lt;/source&gt;
+                    &lt;target&gt;1.8&lt;/target&gt;
+                    &lt;encoding&gt;UTF-8&lt;/encoding&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+            &lt;!-- &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;
+                &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;
+                &lt;version&gt;2.2&lt;/version&gt;
+                &lt;configuration&gt;
+                    &lt;path&gt;/&lt;/path&gt;
+                    端口号
+                    &lt;port&gt;8089&lt;/port&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt; --&gt;
+            &lt;!-- &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;
+                &lt;version&gt;2.1.1&lt;/version&gt;
+                &lt;configuration&gt;
+                    &lt;webResources&gt;
+                        &lt;resource&gt;
+                            &lt;excludes&gt;
+                                &lt;exclude&gt;**/WEB-INF/web.xml&lt;/exclude&gt;
+                            &lt;/excludes&gt;
+                            &lt;directory&gt;src/main/webapp&lt;/directory&gt;
+                        &lt;/resource&gt;
+                    &lt;/webResources&gt;
+                   &lt;failOnMissingWebXml&gt;false&lt;/failOnMissingWebXml&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt; --&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+    &lt;!-- 依赖 --&gt;
+    &lt;dependencies&gt;
+        &lt;!-- 单元测试 --&gt;
+        &lt;!-- https://mvnrepository.com/artifact/junit/junit --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;junit&lt;/groupId&gt;
+            &lt;artifactId&gt;junit&lt;/artifactId&gt;
+            &lt;version&gt;4.12&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api --&gt;
+        &lt;!-- &lt;dependency&gt;
+            &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+            &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
+            &lt;version&gt;3.1.0&lt;/version&gt;
+            &lt;scope&gt;provided&lt;/scope&gt;
+        &lt;/dependency&gt; --&gt;
+        &lt;!-- https://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api --&gt;
+        &lt;!-- &lt;dependency&gt;
+            &lt;groupId&gt;javax.servlet.jsp&lt;/groupId&gt;
+            &lt;artifactId&gt;jsp-api&lt;/artifactId&gt;
+            &lt;version&gt;2.2&lt;/version&gt;
+            &lt;scope&gt;provided&lt;/scope&gt;
+        &lt;/dependency&gt; --&gt;
+    &lt;/dependencies&gt;
+&lt;/project&gt;
+</code></pre>
+</li>
+</ul>
+<ol start="3">
+<li><p>端口号冲突，解决方法</p>
+<ul>
+<li><p>把原来使用该端口的程序关闭</p>
+<ul>
+<li>在eclipse中关闭</li>
+<li>在任务管理器中关闭 java 进程 或 javaw进程</li>
+</ul>
+</li>
+<li><p>修改当前tomcat服务的端口号，改成与之前冲突不一样即可</p>
+<pre><code>&lt;port&gt;8089&lt;/port&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>web项目</p>
+<ul>
+<li><p>打包方式</p>
+<pre><code>&lt;packaging&gt;war&lt;/packaging&gt;
+</code></pre>
+</li>
+<li><p>idea中运行</p>
+<ul>
+<li>maven面板中，选中项目</li>
+<li>在 plugins 中选择 tomcat7 =》tomcat7：run=》右键=》Run Maven Build</li>
+</ul>
+</li>
+<li><p>eclipse中运行</p>
+<p>maven build</p>
+<pre><code>tomcat7:run
+</code></pre>
+</li>
+<li><p>配置 tomcat插件</p>
+<pre><code>&lt;plugin&gt;
+    &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;
+    &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;2.2&lt;/version&gt;
+    &lt;configuration&gt;
+        &lt;path&gt;/&lt;/path&gt;
+        &lt;!-- 端口号 --&gt;
+        &lt;port&gt;8089&lt;/port&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+</code></pre>
+</li>
+</ul>
+<ol start="5">
+<li><p>从maven仓库中搜索并添加jar包</p>
+<ul>
+<li>进入maven中央仓库网站（<a target="_blank" rel="noopener" href="https://mvnrepository.com/%EF%BC%89">https://mvnrepository.com/）</a></li>
+<li>在搜索栏中输入关键字</li>
+<li>在列表中查找需要的版本</li>
+<li>拷贝“maven”中内容到pom.xml的 <dependencies>中</dependencies></li>
+</ul>
+</li>
+<li><p>使用 JSTL</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+    &lt;artifactId&gt;jstl&lt;/artifactId&gt;
+    &lt;version&gt;1.2&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+    &lt;groupId&gt;taglibs&lt;/groupId&gt;
+    &lt;artifactId&gt;standard&lt;/artifactId&gt;
+    &lt;version&gt;1.1.2&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.taglibs&lt;/groupId&gt;
+    &lt;artifactId&gt;taglibs-standard-impl&lt;/artifactId&gt;
+    &lt;version&gt;1.2.5&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>测试：</p>
+<pre><code>&lt;%@ page contentType="text/html;charset=UTF-8" language="java" %&gt;
+&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    你好！
+    &lt;c:forEach begin="1" end="10" var="pageNum"&gt;
+        ${pageNum}
+    &lt;/c:forEach&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><ul>
+<li><p>clean：清除先前构建的artifacts（在maven中，把由项目生成的包都叫作artifact）。 </p>
+</li>
+<li><p>validate：验证工程是否正确，所有需要的资源是否可用。 </p>
+</li>
+<li><p>compile：编译项目的源代码。</p>
+</li>
+<li><p>test：使用合适的单元测试框架来测试已编译的源代码。这些测试不需要已打包和布署。 </p>
+</li>
+<li><p>Package：把已编译的代码打包成可发布的格式，比如jar。</p>
+</li>
+<li><p>integration-test：如有需要，将包处理和发布到一个能够进行集成测试的环境。</p>
+</li>
+<li><p>verify：运行所有检查，验证包是否有效且达到质量标准。</p>
+</li>
+<li><p>install：把包安装在本地的repository中，可以被其他工程作为依赖来使用。</p>
+</li>
+<li><p>deploy：在集成或者发布环境下执行，将最终版本的包拷贝到远程的repository，使得其他的开发者或者工程可以共享。 </p>
+</li>
+<li><p>site：为项目生成文档站点。</p>
+</li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -638,48 +934,46 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/052338008.html">
+                <a href="/2022/052313919.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Maven">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Mybatis">
                         
-                        <span class="card-title">Maven</span>
+                        <span class="card-title">Mybatis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Maven，java项目构建和管理工具。
+                            Mybatis。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-23
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-23
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Maven/" class="post-category">
-                                    Maven
+                            <a href="/categories/Mybatis/" class="post-category">
+                                    Mybatis
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Maven/">
-                        <span class="chip bg-color">Maven</span>
+                    <a href="/tags/Mybatis/">
+                        <span class="chip bg-color">Mybatis</span>
                     </a>
                     
                 </div>
@@ -838,7 +1132,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">61.4k</span>
+                        class="white-color">71.2k</span>
             
             
             

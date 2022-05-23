@@ -6,7 +6,7 @@
   <link href="http://ffffrance.github.io/atom.xml" rel="self"/>
   
   <link href="http://ffffrance.github.io/"/>
-  <updated>2022-05-23T03:36:37.593Z</updated>
+  <updated>2022-05-23T13:54:01.337Z</updated>
   <id>http://ffffrance.github.io/</id>
   
   <author>
@@ -17,20 +17,43 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Mybatis</title>
+    <link href="http://ffffrance.github.io/2022/052313919.html"/>
+    <id>http://ffffrance.github.io/2022/052313919.html</id>
+    <published>2022-05-23T13:49:28.000Z</published>
+    <updated>2022-05-23T13:54:01.337Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;MyBatis&quot;&gt;&lt;a href=&quot;#MyBatis&quot; class=&quot;headerlink&quot; title=&quot;MyBatis&quot;&gt;&lt;/a&gt;MyBatis&lt;/h1&gt;&lt;h2 id=&quot;框架&quot;&gt;&lt;a href=&quot;#框架&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Mybatis" scheme="http://ffffrance.github.io/categories/Mybatis/"/>
+    
+    
+    <category term="Mybatis" scheme="http://ffffrance.github.io/tags/Mybatis/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Maven</title>
     <link href="http://ffffrance.github.io/2022/052338008.html"/>
     <id>http://ffffrance.github.io/2022/052338008.html</id>
     <published>2022-05-23T03:13:18.000Z</published>
-    <updated>2022-05-23T03:36:37.593Z</updated>
+    <updated>2022-05-23T13:50:14.889Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;img src=&quot;/2022/0523undefined/1.jpg&quot; class=&quot;&quot;&gt;  
-&lt;img src=&quot;/2022/0523undefined/2.jpg&quot; class=&quot;&quot;&gt;  
-&lt;img src=&quot;/2022/0523undefined/3.jpg&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;Maven&quot;&gt;&lt;a href=&quot;#Maven&quot; class=&quot;headerlink&quot; title=&quot;Maven&quot;&gt;&lt;/a&gt;Maven&lt;/h1&gt;&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot;</summary>
         
       
     
@@ -48,7 +71,7 @@
     <link href="http://ffffrance.github.io/2022/052237860.html"/>
     <id>http://ffffrance.github.io/2022/052237860.html</id>
     <published>2022-05-22T10:59:14.000Z</published>
-    <updated>2022-05-23T03:14:47.495Z</updated>
+    <updated>2022-05-23T03:37:52.684Z</updated>
     
     
       
