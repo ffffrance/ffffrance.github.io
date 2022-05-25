@@ -6,7 +6,7 @@
   <link href="http://ffffrance.github.io/atom.xml" rel="self"/>
   
   <link href="http://ffffrance.github.io/"/>
-  <updated>2022-05-25T14:04:00.356Z</updated>
+  <updated>2022-05-25T15:16:59.076Z</updated>
   <id>http://ffffrance.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>SpringMVC</title>
+    <link href="http://ffffrance.github.io/2022/05254780.html"/>
+    <id>http://ffffrance.github.io/2022/05254780.html</id>
+    <published>2022-05-25T15:15:34.000Z</published>
+    <updated>2022-05-25T15:16:59.076Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;SpringMVC&quot;&gt;&lt;a href=&quot;#SpringMVC&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="SpringMVC" scheme="http://ffffrance.github.io/categories/SpringMVC/"/>
+    
+    
+    <category term="SpringMVC" scheme="http://ffffrance.github.io/tags/SpringMVC/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Spring</title>
     <link href="http://ffffrance.github.io/2022/052518155.html"/>
     <id>http://ffffrance.github.io/2022/052518155.html</id>
     <published>2022-05-25T14:03:22.000Z</published>
-    <updated>2022-05-25T14:04:00.356Z</updated>
+    <updated>2022-05-25T15:02:07.030Z</updated>
     
     
       
