@@ -6,7 +6,7 @@
   <link href="http://ffffrance.github.io/atom.xml" rel="self"/>
   
   <link href="http://ffffrance.github.io/"/>
-  <updated>2022-05-24T00:08:21.580Z</updated>
+  <updated>2022-05-25T14:04:00.356Z</updated>
   <id>http://ffffrance.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Spring</title>
+    <link href="http://ffffrance.github.io/2022/052518155.html"/>
+    <id>http://ffffrance.github.io/2022/052518155.html</id>
+    <published>2022-05-25T14:03:22.000Z</published>
+    <updated>2022-05-25T14:04:00.356Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Spring&quot;&gt;&lt;a href=&quot;#Spring&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Spring" scheme="http://ffffrance.github.io/categories/Spring/"/>
+    
+    
+    <category term="Spring" scheme="http://ffffrance.github.io/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Lombok</title>
     <link href="http://ffffrance.github.io/2022/052426635.html"/>
     <id>http://ffffrance.github.io/2022/052426635.html</id>
     <published>2022-05-24T00:02:37.000Z</published>
-    <updated>2022-05-24T00:08:21.580Z</updated>
+    <updated>2022-05-24T00:17:34.937Z</updated>
     
     
       

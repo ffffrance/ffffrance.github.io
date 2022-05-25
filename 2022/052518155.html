@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="操作系统计算机系统概述, Springboot,java,HTML,Vue,linux等">
-    <meta name="description" content="操作系统计算机系统概述，包括特征，目标和功能，发展，运行机制，体系结构。">
+    <meta name="keywords" content="Spring, Springboot,java,HTML,Vue,linux等">
+    <meta name="description" content="Spring">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -28,7 +28,7 @@
     </style>
 
 
-    <title>操作系统计算机系统概述 | FFFfrance&#39;s Blog</title>
+    <title>Spring | FFFfrance&#39;s Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/guixinchn/image/blog/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -299,12 +299,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">操作系统计算机系统概述</h1>
+                    <h1 class="description center-align post-title">Spring</h1>
                 </div>
             </div>
         </div>
@@ -326,8 +326,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                                <span class="chip bg-color">操作系统</span>
+                            <a href="/tags/Spring/">
+                                <span class="chip bg-color">Spring</span>
                             </a>
                         
                     </div>
@@ -338,8 +338,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-category">
-                                操作系统
+                            <a href="/categories/Spring/" class="post-category">
+                                Spring
                             </a>
                         
                     </div>
@@ -351,28 +351,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-14
+                    2022-05-25
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-14
+                    2022-05-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.8k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    9 分
                 </div>
                 
 
@@ -387,42 +387,564 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="计算机系统概述"><a href="#计算机系统概述" class="headerlink" title="计算机系统概述"></a>计算机系统概述</h1><img src="/2022/051418462/5.jpg" class="">  
-<h2 id="操作系统基本概念"><a href="#操作系统基本概念" class="headerlink" title="操作系统基本概念"></a>操作系统基本概念</h2><h3 id="操作系统的概念"><a href="#操作系统的概念" class="headerlink" title="操作系统的概念"></a>操作系统的概念</h3><ul>
-<li>软件是计算机系统的灵魂，而软件核心是操作系统。  </li>
-<li>计算机系统从上到下分四个部分：硬件，操作系统，应用程序，用户。</li>
-<li>操作系统管理各种计算机硬件，并且为应用程序提供基础，充当计算机硬件与用户之间的中介。</li>
-<li>硬件比如：CPU，内存，IO设备等提供基本计算资源。应用程序如：字处理程序，编译器，浏览器等规定按照何种方式来使用这些计算资源解决用户的计算问题。操作系统就负责控制和协调各个用户的应用程序对硬件的分配和使用。  </li>
-<li>综上，OS就是控制和管理整个计算机系统硬件与软件资源，合理组织和调度计算机的工作与资源的分配，进而为用户和其他软件提供方便接口与环境的集合，也是计算机系统中最基本的系统软件。  <h3 id="操作系统的特征"><a href="#操作系统的特征" class="headerlink" title="操作系统的特征"></a>操作系统的特征</h3></li>
-<li>OS是一种系统软件，但与其他系统软件和应用软件有很大不同，它有自己的特殊性即基本特征：并发，共享，虚拟，异步。  </li>
-<li>并发Concurrence：<br>两个或多个事件在同一个时间间隔内发生，OS具有处理和调度多个程序同时执行的能力，同时引入进程的目的就是让程序可以并发执行。<br>注意同一时间间隔（并发）和同一时刻（并行）的区别：单个时刻单处理机环境下实际只能有一个程序执行，因此微观上这些程序仍然是分时交替执行的，OS的并发性也是通过分时实现的。   </li>
-<li>共享sharing：<br>即资源共享，系统中资源可以供内存中多个并发执行的进程共同使用，分两种方式：<br>①互斥共享方式：<br>系统中某些资源某段时间内只允许一个进程访问资源。把这种资源成为临界资源/独占资源。计算机系统大多物理设备及某些软件中的栈，变量，表格都是临界资源，只允许一个正在使用的进程。<br>②同时访问方式：<br>宏观上是“同时”，微观上进程可能是交替地对资源进行访问即“分时共享”的，可供多个进程“同时”访问的资源是磁盘设备。<br>（并发和共享是OS最基本特征，相互依赖）</li>
-<li>虚拟virtual：<br>把物理上的实体变成若干逻辑上的对应物，技术成为虚拟技术，OS利用多种虚拟技术实现虚拟处理器，虚拟内存，虚拟外部设备等。<br>虚拟处理器技术通过多道程序设计技术，采用让多道程序并发执行的方法，分时使用一个处理器，一个物理CPU虚拟成为多个逻辑的CPU，成为虚拟处理器。（同理虚拟内存，虚拟外部设备）<br>虚拟技术归纳为时分复用，技术，空分复用技术。  </li>
-<li>异步asynchronism：<br>多道程序允许多个程序并发执行，但资源有限，进程执行并不是一贯到底的，而是走走停停的，以不可预知的速度向前推进，这就是进程的异步性。  <h3 id="操作系统的目标和功能"><a href="#操作系统的目标和功能" class="headerlink" title="操作系统的目标和功能"></a>操作系统的目标和功能</h3></li>
-<li>OS应该具有以下功能：处理机管理，存储器管理，设备管理， 文件管理，且必须向用户提供接口。  </li>
-<li>操作系统作为计算机系统资源的管理者：<br>①处理机管理：<br>处理机分配和运行都以进程为基本单位，也就是对进程的管理：主要包括进程控制，进程同步，进程通信，进程通信，死锁处理，处理机调度等。<br>②存储器管理：<br>给多道程序运行提供环境，方便用户使用及提高内存利用率，包括内存分配和回收，地址映射，内存保护和共享，内存扩充等功能。<br>③文件管理：<br>信息都以文件形式存储，负责管理文件部分为文件系统，包括文件存储空间管理，目录管理，文件读写管理和保护。<br>④设备管理：<br>设备管理主要任务是完成用户的I/O请求，方便用户使用各种设备，提高设备利用率，包括缓冲管理，设备分配，设备处理，虚拟设备等。  </li>
-<li>操作系统作为用户与计算机硬件系统之间的接口：<br>两类接口：<br>①命令接口：用户利用命令组织控制作业的执行。两种控制作业的方式为联机控制方式和脱机控制方式，所以把接口分为联机命令接口和脱机命令接口。<br>联机命令接口：又叫交互式命令接口，适用分时/实时系统的接口。（多次输入命令逐次处理）<br>脱机命令接口：又叫批处理命令接口，适用于批处理系统的接口。（一次输入逐次处理）<br>②程序接口：编程人员使用他们请求操作系统服务。由一组系统调用组成，用户通过程序中使用这些系统调用来请求OS服务，比如GUI。  </li>
-<li>操作系统作为扩充机器：<br>没有任何软件支持计算机成为裸机，为物理基础，而实际应该使用OS把裸机改造成功能更强，使用更方便的机器，因此覆盖了软件的机器称为扩充机器/虚拟机。  <h2 id="操作系统的发展与分类"><a href="#操作系统的发展与分类" class="headerlink" title="操作系统的发展与分类"></a>操作系统的发展与分类</h2><h3 id="手工操作阶段"><a href="#手工操作阶段" class="headerlink" title="手工操作阶段"></a>手工操作阶段</h3></li>
-<li>计算机计算过程需要人工干预，缺点：①用户独占全机，资源利用率低。②CPU等待手工操作，CPU利用率低。  <h3 id="批处理阶段"><a href="#批处理阶段" class="headerlink" title="批处理阶段"></a>批处理阶段</h3></li>
-<li>为了解决人际矛盾及CPU和IO设备矛盾，出现了批处理系统，分为单道批处理系统和多道批处理系统。  </li>
-<li>单道批处理系统：<br>①自动性：作业自动逐行运行，无须人工干预。<br>②顺序性：作业完成顺序就是进入内存顺序，先进入先完成。<br>③单道性：内存中只有一道程序运行，结束才让其他程序进入。<br>④但高速CPU仍然等待低速I/O完成状态。  </li>
-<li>多道批处理系统：<br>允许多个程序同时进入内存，允许他们在CPU交替运行，共享系统资源。一道程序因为I/O请求等待，CPU就可以处理其他程序，使得资源利用率提高。<br>①多道：计算机内存中同时存多道程序。<br>②宏观上并行：同时进入内存的程序都处于运行中，但实际是先后运行。<br>③微观上串行：内存中多道程序轮流占用CPU，交替执行。<br>④优点是资源利用率高，系统吞吐量大，资源保持忙碌状态。<br>⑤缺点是用户响应时间长，没有人机交互。<h3 id="分时操作系统"><a href="#分时操作系统" class="headerlink" title="分时操作系统"></a>分时操作系统</h3>分时技术：把处理器运行时间分为时间片，轮流分配给作业使用，作业只利用自己的时间片完成计算，没有完成的也停止，也支持多道程序，但是包括人机交互的。<br>①同时性：允许多个终端用户同时使用计算机。<br>②交互性：用户通过终端采用人机对话方式控制程序<br>③独立性：多个用户彼此独立操作互不干扰。<br>④及时性：短时间内响应用户请求，一个计算机服务多个终端，所以响应及时。<br>⑤尽管解决了人机交互问题，但短时间反映问题还需要处理，所以出现实时操作系统。  <h3 id="实时操作系统"><a href="#实时操作系统" class="headerlink" title="实时操作系统"></a>实时操作系统</h3></li>
-<li>某个时间限制内完成某些紧急任务而不需要时间片排队，分两种情况：<br>①硬实时系统：某个动作必须绝对在规定时刻发生，则称为硬实时系统。（飞行器控制系统）<br>②软实时系统：能够接收偶尔违反实践规定且不会引起永久性损害。（飞机订票系统）  <h3 id="网络操作系统和分布式计算机系统"><a href="#网络操作系统和分布式计算机系统" class="headerlink" title="网络操作系统和分布式计算机系统"></a>网络操作系统和分布式计算机系统</h3></li>
-<li>网络操作系统是把计算机网络各台计算机有机结合起来，提供一对一，经济有效的使用各台计算机方法，实现各台计算机之间数据的互相传送。网络操作系统最主要的特点是网络中各种资源的共享及各台计算机之间的通信。  </li>
-<li>分布式计算机系统组成并满足下列条件的系统：系统中任意两台计算机通过通信方式交换信息，每台计算机地位平等，资源所有用户共享，任意计算机都可以构成一个子系统，任何工作都可以分布在几台计算机上，由他们并行工作，协同完成。系统称为分布式计算机系统，特点就是分布性和并行性。  <h3 id="个人计算机操作系统"><a href="#个人计算机操作系统" class="headerlink" title="个人计算机操作系统"></a>个人计算机操作系统</h3>目前最广泛的操作系统，如Windows，Linux等<img src="/2022/051418462/1.jpg" class="">   
-<h2 id="操作系统的运行环境"><a href="#操作系统的运行环境" class="headerlink" title="操作系统的运行环境"></a>操作系统的运行环境</h2><h3 id="操作系统的运行机制"><a href="#操作系统的运行机制" class="headerlink" title="操作系统的运行机制"></a>操作系统的运行机制</h3></li>
-<li>计算机系统中，CPU通常执行两种不同性质的程序：一种是OS内核程序，一种是用户自编程序（应用程序）。对于OS来说前者是后者的管理者，因此需要特权指令比如：IO指令，置中断指令等指令。实现上把CPU划分为用户态（只能执行非特权指令）和核心态（可以执行特权指令），应用程序运行在用户态，而OS内核程序运行在核心态。  </li>
-<li>内核是计算机底层软件，是计算机功能延申，不同系统对于内核定义不同，但大多包括4方面内容：<br>①时钟管理：<br>时钟是最关键的设备，第一功能是计时，向用户提供标准系统时间。通过时钟中断的管理实现进程切换（时间片轮转等），因此系统依赖时钟。<br>②中断机制：<br>引入中断目的是提高多道程序运行环境中的CPU的利用率，逐步发展形成多种类型，成为OS各项操作的基础。例如：键鼠信息输入，进程调度，设备驱动等。现代OS就是靠中断驱动的软件。<br>③原语：<br>OS底层一些可以被调用的小程序，各自完成一定操作，特点：①处于OS最底层，最接近硬件的部分。②程序具有原子性。③运行时间短，而且调用频繁。<br>具有这些特点的程序就是原语，定义原语的直接方法就是关闭中断，让所有动作不可分割完成之后再中断，系统中的设备驱动，CPU切换，进程通信等过程就是原语，成为内核组成部分。<br>④系统控制的数据结构和处理：<br>系统中登记状态信息的数据结构很多，如作业控制块，进程控制块PCB，设备控制块，各类链表，消息队列，缓冲区，空闲区登记表，内存分配表等，常见操作有：进程管理，存储器管理，设备管理。<h3 id="中断和异常的概念"><a href="#中断和异常的概念" class="headerlink" title="中断和异常的概念"></a>中断和异常的概念</h3></li>
-<li>中断和异常的定义：<br>中断Interruption，也称外中断，来自CPU执行指令以外的事情发生（IO设备中断表示输入输出完毕发生下一个请求；时钟中断表示固定时间片到期），通常是指与当前指令无关的事件。<br>异常Exception，也称内中断，例外，陷入trap。指源自CPU指令内部的事情引起的事件（算术溢出，地址越界，非法操作等），对异常处理一般要依赖当前程序运行现场，且异常不能被屏蔽，一旦出现必须处理。  <img src="/2022/051418462/2.jpg" class="">   </li>
-<li>中断处理过程：  <img src="/2022/051418462/3.jpg" class="">   
-<h3 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h3></li>
-<li>指用户在程序调用操作系统所提供的一些子功能，系统调用可视为特殊的公共子程序。系统内各种共享资源都有OS掌管，在用户程序中，凡是跟资源有关操作都需要系统调用的方式向OS提出服务请求，请OS代为完成，通常这种指令有很多条，分为几大类：设备管理，文件管理，进程控制，进程通信，内存管理。</li>
-<li>系统调用相关功能涉及系统资源管理，进程管理等操作，需要特权指令，所以系统调用处理需要由操作系统欸和程序负责完成运行在核心态。用户程序可以执行trap命令发起系统调用，请求OS服务，相当于把CPU使用权交给OS内核程序。用户程序不能直接执行对系统影响很大的操作，必须通过系统调用的方式请求OS执行，以便保证系统稳定性和安全性，防止用户程序随意更改/访问重要的系统资源，影响其他进程执行。  </li>
-<li>OS运行环境理解为：用户通过OS上层程序，而这个程序依赖OS底层管理程序提供服务支持，当需要管理程序服务时，系统则通过硬件中断机制进入核心态，运行管理程序，也可能是程序运行出现异常情况，被动需要管理程序服务，通过异常处理来进入核心态，管理程序运行结束时，用户程序需要继续运行，此时通过响应的保存的程序现场退出中断处理程序/异常处理程序，返回断点处继续执行。  <img src="/2022/051418462/4.jpg" class="">  
-<h2 id="操作系统的体系结构"><a href="#操作系统的体系结构" class="headerlink" title="操作系统的体系结构"></a>操作系统的体系结构</h2><h3 id="大内核和微内核"><a href="#大内核和微内核" class="headerlink" title="大内核和微内核"></a>大内核和微内核</h3></li>
-<li>大内核：把OS主要模块作为一个紧密相连的整体运行在核心态，从而为应用提供高性能的系统服务，因为各管理模块之间共享信息，能有效利用相互之间的有效特性，所以性能有优势。</li>
-<li>微内核：随着功能需求不断增多，大内核难以维护，所以出现微内核。它把内核中最基本的功能保留在内核，而那些不需要在核心态执行的功能移到用户态执行，从而减低了内核设计的复杂性，那些移出内核的OS的代码根据分层的原则被划分成若干服务程序，它们执行相互独立，交互则都借助于微内核进行通信。有效分离了内核与服务，服务与服务，接口更清晰，维护代价降低，各部分都可以独立优化和演进，保证了OS可靠性。但问题就是因为频繁在核心态和用户态之间切换，OS执行开销相当大。</li>
+                <h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><p>MVC设计模式：当拿到任何一个需求的时候，都可以从MVC三个方面进行拆分</p>
+<ul>
+<li><p>M：Model，模型，处理数据</p>
+</li>
+<li><p>V：View，视图，接收和显示数据</p>
+</li>
+<li><p>C：Controller，控制器，由谁来接收和显示数据，有谁来处理数据</p>
+</li>
 </ul>
+<p>三层结构：企业级应用的要求</p>
+<ul>
+<li>表示层</li>
+<li>业务逻辑层</li>
+<li>数据访问层</li>
+</ul>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ol>
+<li>spring是一个开源框架，是为了解决企业级应用开发的复杂性而设计的</li>
+<li>spring最根本的使命：全方位的简化java开发</li>
+<li>核心思想：<ul>
+<li>IoC：控制反转，就是把依赖对象创建的控制权交给第三方（Spring容器）来管理</li>
+<li>DI：依赖注入，组件之间的依赖关系，在程序运行期间，由第三方动态注入</li>
+</ul>
+</li>
+</ol>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ol>
+<li><p>添加 spring 依赖</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+    &lt;version&gt;4.3.8.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+</li>
+<li><p>添加spring容器的配置类，并添加组件</p>
+<pre><code>@Configuration
+public class AppConfig {
+    
+    @Bean(name = {"empDao1","empDao2"})
+    public EmpDao empDao() {
+        return new EmpDaoImpl();
+    }
+}
+</code></pre>
+</li>
+<li><p>测试</p>
+<pre><code>public class EmpDaoTest {
+    
+    @Test
+    public void testInsert() {
+        //启动容器
+        ApplicationContext c =
+                new AnnotationConfigApplicationContext(AppConfig.class);
+        //得到组件
+        //EmpDao empDao = c.getBean(EmpDao.class);
+        //通过组件名得到组件,默认是方法名
+        EmpDao empDao = (EmpDao)c.getBean("empDao2");
+        //调用业务方法
+        empDao.insert();
+        //关闭容器
+        ((AnnotationConfigApplicationContext)c).close();
+    }
+
+}
+</code></pre>
+</li>
+<li><p>组件装配</p>
+<pre><code>@Getter
+@Setter
+public class EmpServiceImpl implements EmpService {
+
+    private EmpDao empDao ;
+    @Override
+    public int insert() {
+        
+        return empDao.insert();
+    }
+
+}
+</code></pre>
+<p>属性注入：</p>
+<pre><code>@Configuration
+public class AppConfig {
+    
+    @Bean(name = {"empDao1","empDao2"})
+    public EmpDao empDao() {
+        return new EmpDaoImpl();
+    }
+    
+    @Bean
+    public EmpService empService() {
+        EmpServiceImpl service = new EmpServiceImpl();
+        //依赖注入
+        service.setEmpDao(empDao());
+        
+        return service;
+    }
+}
+</code></pre>
+<p>构造注入：</p>
+<pre><code>@Getter
+@Setter
+public class EmpServiceImpl implements EmpService {
+    public EmpServiceImpl() {
+        
+    }
+    
+    public EmpServiceImpl(EmpDao empDao) {
+        this.empDao = empDao;
+    }
+
+    private EmpDao empDao ;
+    @Override
+    public int insert() {
+        
+        return empDao.insert();
+    }
+
+}
+</code></pre>
+<pre><code>@Bean
+    public EmpService empService() {
+        EmpServiceImpl service = new EmpServiceImpl(empDao());
+                
+        return service;
+    }
+</code></pre>
+<p>依赖注入三种方式：</p>
+<ul>
+<li>属性注入</li>
+<li>构造注入</li>
+<li>接口注入（Spring不支持该方式）</li>
+</ul>
+</li>
+</ol>
+<h2 id="Bean说明"><a href="#Bean说明" class="headerlink" title="Bean说明"></a>Bean说明</h2><ol>
+<li><p>@Scope:作用域（单例：singleton（默认的），原生：prototype）</p>
+<pre><code>@Bean
+@Scope("prototype")
+public EmpService empService() {
+    EmpServiceImpl service = new EmpServiceImpl(empDao());
+
+    return service;
+}
+</code></pre>
+</li>
+<li><p>@Lazy：懒加载（延迟加载，在getBean()的时候再加载），默认值@Lazy（false）</p>
+<p>注意：在@Scope(“prototype”)的时候，一定是懒加载的</p>
+<pre><code>    @Bean
+//	@Scope("prototype")
+    @Lazy(true)
+    public EmpService empService() {
+        EmpServiceImpl service = new EmpServiceImpl(empDao());
+        
+        return service;
+    }
+</code></pre>
+</li>
+<li><p>组件扫描</p>
+<ul>
+<li><p>在配置类上添加组件扫描注解</p>
+<pre><code>@Configuration
+@ComponentScan(basePackages = {"com.neu.dao","com.neu.service"})
+public class AppConfig {}
+</code></pre>
+</li>
+<li><p>在需要成为组件的类上添加@Component注解</p>
+<pre><code>//组件
+@Component
+public class EmpDaoImpl implements EmpDao {}
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>自动装配</p>
+<pre><code>//默认按照类型装配
+@Autowired
+private EmpDao empDao ;
+</code></pre>
+</li>
+<li><p>解决自动装配冲突（使用组件名装配）</p>
+<pre><code>@Autowired
+@Qualifier("empOracleDaoImpl")//注解参数就是组件名，默认为类名首字母小写
+private EmpDao empDao ;
+</code></pre>
+</li>
+<li><p>修改组件的默认名</p>
+<pre><code>@Component(value = "oracleemp")
+public class EmpOracleDaoImpl implements EmpDao {}
+</code></pre>
+</li>
+</ol>
+<h2 id="使用Spring的测试模块"><a href="#使用Spring的测试模块" class="headerlink" title="使用Spring的测试模块"></a>使用Spring的测试模块</h2><ol>
+<li><p>导入依赖</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-test&lt;/artifactId&gt;
+    &lt;version&gt;4.3.8.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+</li>
+<li><p>测试</p>
+<pre><code>//设置配置文件
+@ContextConfiguration(classes = {AppConfig.class})
+//相当于测试框架与Spring的一个接口
+@RunWith(SpringJUnit4ClassRunner.class)
+public class EmpTest {
+    @Autowired
+    private EmpService empService;
+    
+    @Test
+    public void testInsert() {
+        empService.insert();
+    }
+
+}
+</code></pre>
+</li>
+</ol>
+<h2 id="Spring对持久层的支持"><a href="#Spring对持久层的支持" class="headerlink" title="Spring对持久层的支持"></a>Spring对持久层的支持</h2><h3 id="在Spring中使用数据库连接池"><a href="#在Spring中使用数据库连接池" class="headerlink" title="在Spring中使用数据库连接池"></a>在Spring中使用数据库连接池</h3><ol>
+<li><p>导入连接池及数据库驱动</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;mysql&lt;/groupId&gt;
+    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+    &lt;version&gt;8.0.22&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;commons-dbcp&lt;/groupId&gt;
+    &lt;artifactId&gt;commons-dbcp&lt;/artifactId&gt;
+    &lt;version&gt;1.4&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+</li>
+<li><p>定义一个属性文件（db.properties）,在其中配置数据库连接池需要的参数</p>
+<pre><code>jdbc.username=root
+jdbc.password=root
+jdbc.url=jdbc:mysql://localhost:3306/neusoft?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai
+jdbc.driverClassName=com.mysql.cj.jdbc.Driver
+
+jdbc.maxActive=20
+jdbc.maxWait=2000
+jdbc.maxIdle=5
+</code></pre>
+</li>
+<li><p>定义一个配置类，读取数据库连接属性文件</p>
+<pre><code>package com.neu;
+
+import javax.sql.DataSource;
+
+import org.apache.commons.dbcp.BasicDataSource;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+
+@Configuration
+//配置属性源文件
+@PropertySource("classpath:db.properties")
+public class DBConfig {
+
+    @Value("${jdbc.username}")
+    private String username;
+    
+    @Value("${jdbc.password}")
+    private String password;
+    
+    @Value("${jdbc.url}")
+    private String url;
+    
+    @Value("${jdbc.driverClassName}")
+    private String driverClassName;
+    
+    @Value("${jdbc.maxActive}")
+    private int maxActive;
+    
+    @Value("${jdbc.maxWait}")
+    private int maxWait;
+    
+    @Value("${jdbc.maxIdle}")
+    private int maxIdle;
+    
+    @Bean
+    public DataSource dataSource() {
+        BasicDataSource ds = new BasicDataSource();
+        ds.setUsername(username);
+        ds.setPassword(password);
+        ds.setUrl(url);
+        ds.setDriverClassName(driverClassName);
+        
+        ds.setMaxActive(maxActive);
+        ds.setMaxIdle(maxIdle);
+        ds.setMaxWait(maxWait);
+        
+        return ds;
+    }
+}
+</code></pre>
+</li>
+<li><p>测试</p>
+<pre><code>@ContextConfiguration(classes = {AppConfig.class,DBConfig.class})
+//相当于测试框架与Spring的一个接口
+@RunWith(SpringJUnit4ClassRunner.class)
+public class EmpTest {
+    @Autowired
+    private EmpService empService;
+    
+    @Autowired
+    private DataSource dataSource;
+    
+    @Test
+    public void testDataSource() throws SQLException {
+        Connection connection = dataSource.getConnection();
+        System.out.println("连接成功！");
+        connection.close();
+    }
+    
+    @Test
+    public void testInsert() {
+        empService.insert();
+    }
+
+}
+</code></pre>
+<h2 id="Spring与Mybatis集成"><a href="#Spring与Mybatis集成" class="headerlink" title="Spring与Mybatis集成"></a>Spring与Mybatis集成</h2><ol>
+<li><p>导入依赖</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
+    &lt;version&gt;4.3.8.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;
+    &lt;version&gt;1.3.1&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
+    &lt;version&gt;3.5.6&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+</li>
+<li><p>配置SqlSessionFactory</p>
+<pre><code>@Configuration
+@ComponentScan(basePackages = {"com.neu.service","com.neu.mapper"})
+public class MybatisConfig {
+    @Autowired
+    private DataSource dataSource;
+    
+    @Bean
+    public SqlSessionFactory sqlSessionFactory() throws Exception {
+        SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
+        factory.setDataSource(dataSource);
+        
+        return factory.getObject();
+    }
+}
+</code></pre>
+</li>
+<li><p>配置 mapper 扫描</p>
+<pre><code>@Configuration
+public class MybatisMapperScannerConfig {
+
+    @Bean
+    public MapperScannerConfigurer mapperScannerConfigurer() {
+        MapperScannerConfigurer c = new MapperScannerConfigurer();
+        c.setSqlSessionFactoryBeanName("sqlSessionFactory");
+        
+        c.setBasePackage("com.neu.mapper");
+        
+        return c;
+    }
+}
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><ol>
+<li>spring+mybatis实现如下功能（使用单元测试，业务逻辑层+数据访问层）：<ul>
+<li>查询所有员工信息</li>
+<li>添加员工</li>
+<li>删除员工</li>
+<li>分页查询员工（每页显示3条记录，打印第2页数据）</li>
+</ul>
+</li>
+</ol>
+<h2 id="Spring-Mybatis-Servlet"><a href="#Spring-Mybatis-Servlet" class="headerlink" title="Spring+Mybatis+Servlet"></a>Spring+Mybatis+Servlet</h2><ol>
+<li><p>修改打包方式：war</p>
+</li>
+<li><p>导入相关web依赖</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-web&lt;/artifactId&gt;
+    &lt;version&gt;4.3.8.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+</li>
+</ol>
+<h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><ol>
+<li><p>定义：面向切面编程，模块化横切关注点（把相同的代码加到关注的方法上）</p>
+</li>
+<li><p>导入包</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.aspectj&lt;/groupId&gt;
+    &lt;artifactId&gt;aspectjweaver&lt;/artifactId&gt;
+    &lt;version&gt;1.7.3&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+    &lt;groupId&gt;org.aspectj&lt;/groupId&gt;
+    &lt;artifactId&gt;aspectjrt&lt;/artifactId&gt;
+    &lt;version&gt;1.7.3&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+</li>
+<li><p>定义一个类，实现切面的功能（类定义在com.neu.utils包下，要把该包添加到组件的扫描路径中）</p>
+<pre><code>@Configuration
+@EnableAspectJAutoProxy//开启切面自动代理
+@Component
+@Aspect//切面
+public class AOPUtil {
+
+    //切点(切入点):加入相同代码的一组关注点(连接点)
+    @Pointcut("execution (* com.neu.mapper.*.*(..))")
+    public void pointcut() {
+        
+    }
+    
+    //通知
+    @Around("pointcut()")
+    public Object around(ProceedingJoinPoint p) throws Throwable {
+        long startTime = System.nanoTime();
+        //调用代理的方法
+        Object object = p.proceed();
+        
+        long m = System.nanoTime() - startTime;
+        
+        System.out.println(m);
+        
+        return object;
+    }
+    
+}
+</code></pre>
+<ul>
+<li>连接点（joinPoint)：程序执行过程中的特定点</li>
+<li>通知（Advice）：在特定连接点加入的代码</li>
+<li>切入点（pointcut）：加入相同通知的一组连接点</li>
+<li>切面（aspect）：通知与切入点的组合</li>
+</ul>
+</li>
+<li><p>前置通知</p>
+<pre><code>@Before("pointcut()")
+    public void before() {
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String format = f.format(new Date());
+        
+        System.out.println("开始执行方法："+format);
+        
+    }
+</code></pre>
+</li>
+<li><p>返回后通知：执行了return语句后执行的代码</p>
+<pre><code>@AfterReturning("pointcut()")
+    public void afterReturning() {
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String format = f.format(new Date());
+        
+        System.out.println("方法正常结束："+format);
+        
+    }
+</code></pre>
+</li>
+<li><p>异常通知：</p>
+<pre><code>@AfterThrowing("pointcut()")
+    public void afterThrowing() {
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String format = f.format(new Date());
+        
+        System.out.println("抛出异常："+format);
+        
+    }
+</code></pre>
+</li>
+<li><p>最终通知</p>
+<pre><code>@After("pointcut()")
+    public void after() {
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String format = f.format(new Date());
+        
+        System.out.println("方法最终结束时间："+format);
+        
+    }
+</code></pre>
+</li>
+<li><p>环绕通知</p>
+<pre><code>@Around("pointcut()")
+    public Object around(ProceedingJoinPoint p) throws Throwable {
+        long startTime = System.nanoTime();
+        //调用代理的方法
+        Object object = p.proceed();
+        
+        long m = System.nanoTime() - startTime;
+        
+        System.out.println(m);
+        
+        return object;
+    }
+</code></pre>
+</li>
+</ol>
+<h2 id="Spring对事务的支持"><a href="#Spring对事务的支持" class="headerlink" title="Spring对事务的支持"></a>Spring对事务的支持</h2><ol>
+<li><p>添加事务管理器</p>
+<pre><code>@Bean
+public PlatformTransactionManager transactionManager() {
+    return new DataSourceTransactionManager(dataSource());
+}
+</code></pre>
+</li>
+<li><p>启用事务管理器</p>
+<pre><code>@Configuration
+//配置属性源文件
+@PropertySource("classpath:db.properties")
+@EnableTransactionManagement//启用事务管理器
+public class DBConfig {}
+</code></pre>
+</li>
+<li><p>在业务逻辑类上或方法上添加@Transactional</p>
+<p>当添加了事务注解的方法中，抛出异常，则回滚事务，否则，提交事务</p>
+<pre><code>@Transactional
+    public int insert(Dept dept) {
+        deptMapper.insert(dept);
+        return deptMapper.insert(dept);
+    }
+</code></pre>
+</li>
+</ol>
+<h2 id="使用静态资源"><a href="#使用静态资源" class="headerlink" title="使用静态资源"></a>使用静态资源</h2><ol>
+<li><p>在 webapp 目录下，新建一个文件夹：staitc，在其中放入静态资源（css、js）</p>
+<p>例如：/webapp/static/css/style1.css</p>
+</li>
+<li><p>配置资源注册</p>
+<pre><code>@Configuration
+@EnableWebMvc//启用mvc注解驱动
+@ComponentScan(basePackages = "com.neu.controller")
+public class SpringMVCConfig implements WebMvcConfigurer {
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/static/**").addResourceLocations("/static/");//访问的静态资源
+    }
+}
+</code></pre>
+</li>
+<li><p>在 jsp 中引入css</p>
+<pre><code>&lt;link rel="stylesheet" href="${ pageContext.request.contextPath }/static/css/style1.css"&gt;
+</code></pre>
+</li>
+</ol>
 
                 
             </div>
@@ -449,7 +971,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ffffrance.github.io/2022/051418462.html">http://ffffrance.github.io/2022/051418462.html</a>
+                    <a href="http://ffffrance.github.io/2022/052518155.html">http://ffffrance.github.io/2022/052518155.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -487,8 +1009,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                                    <span class="chip bg-color">操作系统</span>
+                                <a href="/tags/Spring/">
+                                    <span class="chip bg-color">Spring</span>
                                 </a>
                             
                         </div>
@@ -662,46 +1184,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/051437005.html">
+                <a href="/2022/052518155.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="操作系统进程管理">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Spring">
                         
-                        <span class="card-title">操作系统进程管理</span>
+                        <span class="card-title">Spring</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            操作系统进程管理，进程，线程，处理机调度，进程同步，死锁。
+                            Spring
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-category">
-                                    操作系统
+                            <a href="/categories/Spring/" class="post-category">
+                                    Spring
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                        <span class="chip bg-color">操作系统</span>
+                    <a href="/tags/Spring/">
+                        <span class="chip bg-color">Spring</span>
                     </a>
                     
                 </div>
@@ -715,31 +1239,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/050732155.html">
+                <a href="/2022/052426635.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="计算机网络应用层">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Lombok">
                         
-                        <span class="card-title">计算机网络应用层</span>
+                        <span class="card-title">Lombok</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            计算机网络应用层，网络应用模型，域名系统DNS，文件传输协议FTP，电子邮件E-mail，万维网WWW。
+                            Lombok
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
-                                    计算机网络
+                            <a href="/categories/Lombok/" class="post-category">
+                                    Lombok
                                 </a>
                             
                             
@@ -749,8 +1273,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
-                        <span class="chip bg-color">计算机网络</span>
+                    <a href="/tags/Lombok/">
+                        <span class="chip bg-color">Lombok</span>
                     </a>
                     
                 </div>
