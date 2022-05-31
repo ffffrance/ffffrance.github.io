@@ -6,7 +6,7 @@
   <link href="http://ffffrance.github.io/atom.xml" rel="self"/>
   
   <link href="http://ffffrance.github.io/"/>
-  <updated>2022-05-26T13:33:41.204Z</updated>
+  <updated>2022-05-31T05:47:12.402Z</updated>
   <id>http://ffffrance.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Thymeleaf</title>
+    <link href="http://ffffrance.github.io/2022/053151905.html"/>
+    <id>http://ffffrance.github.io/2022/053151905.html</id>
+    <published>2022-05-31T05:43:15.000Z</published>
+    <updated>2022-05-31T05:47:12.402Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Thymeleaf&quot;&gt;&lt;a href=&quot;#Thymeleaf&quot; class=&quot;headerlink&quot; title=&quot;Thymeleaf&quot;&gt;&lt;/a&gt;Thymeleaf&lt;/h1&gt;&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Thymeleaf" scheme="http://ffffrance.github.io/categories/Thymeleaf/"/>
+    
+    
+    <category term="Thymeleaf" scheme="http://ffffrance.github.io/tags/Thymeleaf/"/>
+    
+  </entry>
   
   <entry>
     <title>Springboot</title>
@@ -499,34 +524,6 @@
     <category term="markdown" scheme="http://ffffrance.github.io/tags/markdown/"/>
     
     <category term="typora" scheme="http://ffffrance.github.io/tags/typora/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>博客介绍</title>
-    <link href="http://ffffrance.github.io/2022/042843699.html"/>
-    <id>http://ffffrance.github.io/2022/042843699.html</id>
-    <published>2022-04-28T06:25:00.000Z</published>
-    <updated>2022-04-30T02:00:55.120Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;临近保研和课程实训，需要大量复习的专业课和学习新技术，就在此记录我的近期学习计划。&lt;/p&gt;
-&lt;h2 id=&quot;计算机科学与技术：&quot;&gt;&lt;a href=&quot;#计算机科学与技术：&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="工具" scheme="http://ffffrance.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="blog" scheme="http://ffffrance.github.io/tags/blog/"/>
-    
-    <category term="hexo" scheme="http://ffffrance.github.io/tags/hexo/"/>
     
   </entry>
   
