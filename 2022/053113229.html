@@ -351,7 +351,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-02
+                    2022-05-31
                 </div>
                 
 
@@ -400,11 +400,12 @@
 <li>const命令声明一个常量，一旦声明，值不能被改变</li>
 <li>必须在声明的同时赋予初始值</li>
 </ol>
-<h3 id="函数的扩展—rest参数（剩余参数）"><a href="#函数的扩展—rest参数（剩余参数）" class="headerlink" title="函数的扩展—rest参数（剩余参数）"></a>函数的扩展—rest参数（剩余参数）</h3><ol>
+<h3 id="函数的扩展–rest参数（剩余参数）"><a href="#函数的扩展–rest参数（剩余参数）" class="headerlink" title="函数的扩展–rest参数（剩余参数）"></a>函数的扩展–rest参数（剩余参数）</h3><ol>
 <li><p>语法格式：</p>
 <pre><code>function 函数名(命名参数,...剩余参数名){
 }
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>剩余参数：不与任何命名参数相比配的其他参数</p>
 </li>
 <li><p>案例：</p>
@@ -417,7 +418,8 @@
 }
 let sum = 10;
 add(sum,1,2,3,4);
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><p>使用解构赋值可以轻松地使用模板从对象或数组中提取数据</p>
 <p>好处：一次可以定义多个变量，并赋值初始值</p>
@@ -429,15 +431,17 @@ let {name,age} = stu;
 console.log(name,age);
 
 //不同名
-let stu = {name:"tom",age:20};            
+let stu = {name:"tom",age:20};			
 let {name:stuName,age:stuAge} = stu;
 console.log(stuName,stuAge);
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h3 id="数组解构"><a href="#数组解构" class="headerlink" title="数组解构"></a>数组解构</h3><pre><code>var arr = ["tom","marry","scott"];
 var [a,b,c] = arr;
 console.log(a,b,c);
-</code></pre><h2 id="增强版的对象字面量"><a href="#增强版的对象字面量" class="headerlink" title="增强版的对象字面量"></a>增强版的对象字面量</h2><pre><code>var name ="marry";
+</code></pre>
+<h2 id="增强版的对象字面量"><a href="#增强版的对象字面量" class="headerlink" title="增强版的对象字面量"></a>增强版的对象字面量</h2><pre><code>var name ="marry";
 var stu = {
     name,//属性的简写形式，将同名变量的值赋予给属性
     age:20,
@@ -449,7 +453,8 @@ var stu = {
 
 console.log(stu.name);
 stu.hi();
-</code></pre><h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><ol>
+</code></pre>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><ol>
 <li><p>箭头函数：是ES6中函数表达式定义的一种简化写法</p>
 </li>
 <li><p>ES6中允许使用“箭头” (=&gt;)定义函数</p>
@@ -461,7 +466,8 @@ var fun1 = a =&gt; a + 1
 
 var result = fun1(1);
 console.log(result);
-</code></pre><p>注意：</p>
+</code></pre>
+<p>注意：</p>
 <ul>
 <li><p>当方法的形参个数为1的时候，形参外的括号可以省略</p>
 </li>
@@ -473,43 +479,46 @@ console.log(result);
 <pre><code>function test(){
                 console.log(this);//{"name":"tom"}
                 let t;
-
+                
                 /* t = function (){
                     console.log(this);//window
                 } */
-
+                
                 t = ()=&gt;{
                     console.log(this);//{"name":"tom"}
                 }
                 t();
             }
-
+            
             var stu = {"name":"tom"};
-
+            
             stu.test = test;
-
+            
             stu.test();
-</code></pre></li>
+</code></pre>
+</li>
 </ul>
 </li>
 </ol>
 <h2 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h2><p>对象扩展运算符（…）：用于取出参数对象中的所有可遍历的属性，拷贝到当前对象中</p>
 <pre><code>var stu = {"name":"tom","age":20};
-
+            
 var stu2 = {...stu};
 
 stu2.name = "marry";
 
 console.log(stu.name);
 console.log(stu2.name);
-</code></pre><p>数组扩展运算符:</p>
+</code></pre>
+<p>数组扩展运算符:</p>
 <pre><code>var arr = [1,2,3,4,5];
 var arr2 = [...arr];
 
 arr[0] = 10;
 
 console.log(arr2);
-</code></pre><h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><ol>
+</code></pre>
+<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><ol>
 <li><p>ES6模块的主要思想是必须显示地使用标识符导出模块数据，才能从外部访问模块</p>
 </li>
 <li><p>导入导出方式一：要求导入时使用导出时候的名称</p>
@@ -533,7 +542,8 @@ export {test1}
     import {test1} from "./js/1.js";
     test1()
 &lt;/script&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>默认导出导入</p>
 <pre><code>//1.js
 export default {
@@ -545,7 +555,8 @@ import Stu from './js/1.js'
 
 console.log(Stu.name)
 &lt;/script&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>全部导入</p>
 <pre><code>//1.js
 export var name = "tom";
@@ -567,7 +578,8 @@ console.log(app.name)
 console.log(app.default.name)
 app.test1()
 &lt;/script&gt;
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 
                 
@@ -595,7 +607,7 @@ app.test1()
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ffffrance.github.io/2022/060213229.html">http://ffffrance.github.io/2022/060213229.html</a>
+                    <a href="http://ffffrance.github.io/2022/053113229.html">http://ffffrance.github.io/2022/053113229.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -808,60 +820,9 @@ app.test1()
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
-            <div class="card">
-                <a href="/2022/060213229.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="ES6">
-                        
-                        <span class="card-title">ES6</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            ES6
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-02
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/ES6/" class="post-category">
-                                    ES6
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/ES6/">
-                        <span class="chip bg-color">ES6</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2022/060232144.html">
                     <div class="card-image">
@@ -879,9 +840,9 @@ app.test1()
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-02
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-02
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -899,6 +860,55 @@ app.test1()
                     
                     <a href="/tags/Vue-js/">
                         <span class="chip bg-color">Vue.js</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/053018006.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="JavaScript">
+                        
+                        <span class="card-title">JavaScript</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            JavaScript
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
@@ -1008,7 +1018,7 @@ app.test1()
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">106.7k</span>
+                        class="white-color">109.9k</span>
             
             
             
