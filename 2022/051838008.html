@@ -400,7 +400,8 @@
 </li>
 <li><p>安装、配置</p>
 <ul>
-<li>直接解压即可</li>
+<li><p>直接解压即可</p>
+</li>
 <li><p>配置环境变量：</p>
 <ul>
 <li>M2_HOME=&gt;maven解压目录</li>
@@ -425,7 +426,8 @@
 <ul>
 <li><p>修改本地仓库位置：</p>
 <pre><code>&lt;localRepository&gt;D:\mavenrepository&lt;/localRepository&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>配置阿里云镜像</p>
 </li>
 </ul>
@@ -437,7 +439,8 @@
         &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;
     &lt;/mirror&gt;
 &lt;/mirrors&gt;
-</code></pre></li>
+</code></pre>
+</li>
 </ul>
 </li>
 <li><p>在 Idea 中配置</p>
@@ -446,12 +449,9 @@
 <img src="/2022/051838008/2.jpg" class="">   
 </li>
 <li><p>配置maven</p>
-<img src="/2022/051838008/3.jpg" class="">   
-</li>
+<img src="/2022/051838008/3.jpg" class=""></li>
 </ul>
 </li>
-</ol>
-<ol>
 <li><p>Eclipse配置配置</p>
 <ul>
 <li><p>配置maven位置：</p>
@@ -459,19 +459,18 @@
 </li>
 <li><p>配置maven的配置文件：</p>
 <p>首选项=》maven=》User settings =》选择settings.xml文件</p>
-<img src="/2022/051838008/5.jpg" class="">   
-</li>
+<img src="/2022/051838008/5.jpg" class=""></li>
 </ul>
 </li>
 </ol>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ol>
 <li><p>maven的目录结构</p>
 <p>src：源程序目录</p>
-<p>​    main：源程序</p>
-<p>​        java：程序</p>
-<p>​        resources：资源文件(配置文件)</p>
-<p>​        webapp:web项目（不是web项目没有）</p>
-<p>​    test：测试代码</p>
+<p>​	main：源程序</p>
+<p>​		java：程序</p>
+<p>​		resources：资源文件(配置文件)</p>
+<p>​		webapp:web项目（不是web项目没有）</p>
+<p>​	test：测试代码</p>
 <p>target：项目生成的结果</p>
 </li>
 <li><p>创建maven项目</p>
@@ -499,7 +498,7 @@
   &lt;artifactId&gt;test3&lt;/artifactId&gt;
   &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
   &lt;packaging&gt;jar&lt;/packaging&gt;
-
+  
   &lt;build&gt;
         &lt;plugins&gt;
             &lt;!-- 资源文件拷贝插件 --&gt;
@@ -576,9 +575,10 @@
         &lt;/dependency&gt; --&gt;
     &lt;/dependencies&gt;
 &lt;/project&gt;
-</code></pre></li>
+</code></pre>
+</li>
 </ul>
-<ol>
+<ol start="3">
 <li><p>端口号冲突，解决方法</p>
 <ul>
 <li><p>把原来使用该端口的程序关闭</p>
@@ -589,14 +589,16 @@
 </li>
 <li><p>修改当前tomcat服务的端口号，改成与之前冲突不一样即可</p>
 <pre><code>&lt;port&gt;8089&lt;/port&gt;
-</code></pre></li>
+</code></pre>
+</li>
 </ul>
 </li>
 <li><p>web项目</p>
 <ul>
 <li><p>打包方式</p>
 <pre><code>&lt;packaging&gt;war&lt;/packaging&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>idea中运行</p>
 <ul>
 <li>maven面板中，选中项目</li>
@@ -606,7 +608,8 @@
 <li><p>eclipse中运行</p>
 <p>maven build</p>
 <pre><code>tomcat7:run
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>配置 tomcat插件</p>
 <pre><code>&lt;plugin&gt;
     &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;
@@ -618,12 +621,13 @@
         &lt;port&gt;8089&lt;/port&gt;
     &lt;/configuration&gt;
 &lt;/plugin&gt;
-</code></pre></li>
+</code></pre>
+</li>
 </ul>
-<ol>
+<ol start="5">
 <li><p>从maven仓库中搜索并添加jar包</p>
 <ul>
-<li>进入maven中央仓库网站（<a target="_blank" rel="noopener" href="https://mvnrepository.com/）">https://mvnrepository.com/）</a></li>
+<li>进入maven中央仓库网站（<a target="_blank" rel="noopener" href="https://mvnrepository.com/%EF%BC%89">https://mvnrepository.com/）</a></li>
 <li>在搜索栏中输入关键字</li>
 <li>在列表中查找需要的版本</li>
 <li>拷贝“maven”中内容到pom.xml的 <dependencies>中</dependencies></li>
@@ -647,7 +651,8 @@
     &lt;artifactId&gt;taglibs-standard-impl&lt;/artifactId&gt;
     &lt;version&gt;1.2.5&lt;/version&gt;
 &lt;/dependency&gt;
-</code></pre><p>测试：</p>
+</code></pre>
+<p>测试：</p>
 <pre><code>&lt;%@ page contentType="text/html;charset=UTF-8" language="java" %&gt;
 &lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%&gt;
 &lt;html&gt;
@@ -661,7 +666,8 @@
     &lt;/c:forEach&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 </li>
 </ol>
@@ -1126,7 +1132,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">89.7k</span>
+                        class="white-color">106.7k</span>
             
             
             

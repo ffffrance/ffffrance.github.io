@@ -406,7 +406,8 @@
     &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
     &lt;version&gt;4.3.8.RELEASE&lt;/version&gt;
 &lt;/dependency&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>添加了一个SpringMVC组件配置类</p>
 <pre><code>@Configuration
 @EnableWebMvc//启用mvc注解驱动
@@ -414,46 +415,48 @@
 public class SpringMVCConfig {
 
 }
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>修改了web初始化器</p>
 <p>Servlet 3.0 之后，web容器启动后会调用 META-INF/services/javax.servlet.ServletContainerInitializer文件中的类</p>
 <p>在Tomcat8以上版本支持一个配置启动的东西，意思就是tomcat启动时会自动去扫描所有 jar 中目录为「 META-INF/services/ 」中是否有个名字是「javax.servlet.ServletContainerInitializer」的配置文件，然后根据里面内容反编译启动等等一系列操作</p>
 <img src="/2022/05254780/1.jpg" class="">
+
 <p><strong>如上图配置后tomcat启动时就会自动生成HelloServlet了，大概原理就这样，不过SpringMVC已经把上图中的基本配置已经搞定直接使用即可</strong></p>
 <p>在 spring-web的jar包中查看</p>
 <pre><code>org.springframework.web.SpringServletContainerInitializer
-</code></pre></li>
-</ol>
-<pre><code>   public class WebInitializer implements WebApplicationInitializer {
+</code></pre>
+<pre><code>public class WebInitializer implements WebApplicationInitializer {
 
-       @Override
-       public void onStartup(ServletContext servletContext) throws ServletException {
-           //创建spring容器
-           AnnotationConfigWebApplicationContext c = 
-                   new AnnotationConfigWebApplicationContext();
-           //注册配置类
-           c.register(DBConfig.class);
-           c.register(MybatisConfig.class);
-           c.register(MybatisMapperScannerConfig.class);
+    @Override
+    public void onStartup(ServletContext servletContext) throws ServletException {
+        //创建spring容器
+        AnnotationConfigWebApplicationContext c = 
+                new AnnotationConfigWebApplicationContext();
+        //注册配置类
+        c.register(DBConfig.class);
+        c.register(MybatisConfig.class);
+        c.register(MybatisMapperScannerConfig.class);
+        
+        //把spring容器的引用放到ServletContext
+        servletContext.addListener(new ContextLoaderListener(c));
+        //创建SpringMVC组件的容器（子容器，可以访问父容器）
+        AnnotationConfigWebApplicationContext childContext =
+                new AnnotationConfigWebApplicationContext();
+        
+        childContext.register(SpringMVCConfig.class);
+        
+        
+        Dynamic servlet = servletContext.addServlet("dispatcher", new DispatcherServlet(childContext));
+        
+        servlet.addMapping("/");
+        //在启动web服务器的时候，直接创建这个前端控制器
+        servlet.setLoadOnStartup(1);
+    }
 
-           //把spring容器的引用放到ServletContext
-           servletContext.addListener(new ContextLoaderListener(c));
-           //创建SpringMVC组件的容器（子容器，可以访问父容器）
-           AnnotationConfigWebApplicationContext childContext =
-                   new AnnotationConfigWebApplicationContext();
-
-           childContext.register(SpringMVCConfig.class);
-
-
-           Dynamic servlet = servletContext.addServlet("dispatcher", new DispatcherServlet(childContext));
-
-           servlet.addMapping("/");
-           //在启动web服务器的时候，直接创建这个前端控制器
-           servlet.setLoadOnStartup(1);
-       }
-
-   }
-</code></pre><ol>
+}
+</code></pre>
+</li>
 <li><p>配置了一个视图解析器</p>
 <pre><code>@Configuration
 @EnableWebMvc//启用mvc注解驱动
@@ -469,11 +472,12 @@ public class SpringMVCConfig {
         r.setPrefix("/WEB-INF/jsp/");
         //设置后缀
         r.setSuffix(".jsp");
-
+        
         return r;
     }
 }
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>创建业务逻辑控制器和处理器方法</p>
 <pre><code>@Controller
 public class HelloController {
@@ -484,7 +488,8 @@ public class HelloController {
         return "hello";
     }
 }
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="SpringMVC详细配置"><a href="#SpringMVC详细配置" class="headerlink" title="SpringMVC详细配置"></a>SpringMVC详细配置</h2><ol>
 <li><p>@RequestMapping</p>
@@ -500,7 +505,8 @@ public class HelloController {
     public String insert() {
         return "dept/getAll";
     }
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>value:指定请求的url，默认属性</p>
 </li>
 <li><p>params:指定请求中必须包含某些请求参数或参数值</p>
@@ -508,13 +514,16 @@ public class HelloController {
     public String insert() {
         return "dept/getAll";
     }
-</code></pre></li>
+</code></pre>
+</li>
 </ul>
 </li>
 <li><p>GetMapping:只处理get请求</p>
 </li>
-<li>PostMapping：只处理post请求</li>
-<li>请求参数绑定<ul>
+<li><p>PostMapping：只处理post请求</p>
+</li>
+<li><p>请求参数绑定</p>
+<ul>
 <li>定义：把请求参数的key/value绑定到处理器方法的形参上，默认形参名与请求参数名相同，就会自动绑定</li>
 <li>@RequestParam：手工映射请求参数<ul>
 <li>value：请求参数名，默认属性</li>
@@ -537,14 +546,16 @@ public class HelloController {
         &lt;uriEncoding&gt;utf-8&lt;/uriEncoding&gt;
     &lt;/configuration&gt;
 &lt;/plugin&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>post:修改web初始化器</p>
 <pre><code>//注册编码过滤器
 javax.servlet.FilterRegistration.Dynamic filter 
             = servletContext.addFilter("charsetFilter", new CharacterEncodingFilter("utf-8"));
-
+        
 filter.addMappingForUrlPatterns(null, false, "/*");
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="日期格式处理"><a href="#日期格式处理" class="headerlink" title="日期格式处理"></a>日期格式处理</h2><ol>
 <li><p>定义了一个转换器</p>
@@ -564,7 +575,8 @@ filter.addMappingForUrlPatterns(null, false, "/*");
     }
 
 }
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>注册转换器</p>
 <pre><code>@Configuration
 @EnableWebMvc//启用mvc注解驱动
@@ -572,15 +584,17 @@ filter.addMappingForUrlPatterns(null, false, "/*");
 public class SpringMVCConfig implements WebMvcConfigurer {
     @Override
     public void addFormatters(FormatterRegistry registry) {
-        //注册日期转换器        
+        //注册日期转换器		
         registry.addConverter(new DateConverter());
     }
 }
-</code></pre><h2 id="跳转到其他请求的方式"><a href="#跳转到其他请求的方式" class="headerlink" title="跳转到其他请求的方式"></a>跳转到其他请求的方式</h2><pre><code>//请求转发
-//        return "forward:/dept/getAll";
+</code></pre>
+<h2 id="跳转到其他请求的方式"><a href="#跳转到其他请求的方式" class="headerlink" title="跳转到其他请求的方式"></a>跳转到其他请求的方式</h2><pre><code>//请求转发
+//		return "forward:/dept/getAll";
 //重定向
 return "redirect:/dept/getAll";
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="处理器形参"><a href="#处理器形参" class="headerlink" title="处理器形参"></a>处理器形参</h2><ol>
 <li><p>HttpServletRequest</p>
@@ -593,9 +607,10 @@ public class HelloController {
         System.out.println(name);
         return "hello";
     }
-
+    
 }
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>HttpServletResponse</p>
 <pre><code>@Controller
 public class HelloController {
@@ -604,34 +619,36 @@ public class HelloController {
     public void hello(HttpServletRequest request,HttpServletResponse response) throws IOException {
         String name = request.getParameter("name");
         System.out.println(name);
-
+        
         response.getWriter().append(name);
-//        return "hello";
-    }    
-
+//		return "hello";
+    }	
+    
 }
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>HttpSession</p>
 <pre><code>@Controller
 public class HelloController {
-
+    
     @RequestMapping("/")
     public String getLogin() {
         return "login";
     }
-
+    
     @RequestMapping("login")
     public String login(String username,String password,HttpSession session) {
-
+        
         if("admin".equals(username) &amp;&amp; "111".equals(password)) {
             session.setAttribute("username", username);
             return "forward:/dept/getAll";
         }else {
             return "redirect:/";
         }
-    }    
+    }	
 }
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="分页：使用Mybatis分页插件"><a href="#分页：使用Mybatis分页插件" class="headerlink" title="分页：使用Mybatis分页插件"></a>分页：使用Mybatis分页插件</h2><ol>
 <li><p>导入依赖</p>
@@ -640,53 +657,57 @@ public class HelloController {
     &lt;artifactId&gt;pagehelper&lt;/artifactId&gt;
     &lt;version&gt;5.1.10&lt;/version&gt;
 &lt;/dependency&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>在mybatis配置类中，注册分页插件（拦截器）</p>
 <pre><code>@Configuration
 @ComponentScan(basePackages = {"com.neu.mapper","com.neu.service","com.neu.utils"})
 public class MybatisConfig {
     @Autowired
     private DataSource dataSource;
-
+    
     @Bean
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
         factory.setDataSource(dataSource);
         //创建一个分页拦截器
         PageInterceptor interceptor = new PageInterceptor();
-
+        
         Properties prop =factory new Properties();
         interceptor.setProperties(prop);
         //注册拦截器
         factory.setPlugins(new Interceptor[] {interceptor});
-
+        
         return factory.getObject();
     }
 }
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>修改业务逻辑类</p>
 <pre><code>@Override
     public PageInfo&lt;Dept&gt; getPaged(int pageNum, int pageSize) {
         //分页方法，该方法会拦截该语句后的第一个查询，对该查询进行分页操作
         PageHelper.startPage(pageNum, pageSize);
-
+        
         List&lt;Dept&gt; list = deptMapper.getAll();
-
+        
         PageInfo&lt;Dept&gt; pageInfo = new PageInfo&lt;Dept&gt;(list);
         return pageInfo;
     }
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>控制器</p>
 <pre><code>@RequestMapping("getPaged")
     public String getPaged(@RequestParam(defaultValue = "1") int pageNum,@RequestParam(defaultValue = "3") int pageSize,Model model) {
         PageInfo&lt;Dept&gt; pageInfo = deptService.getPaged(pageNum, pageSize);
-
+        
         System.out.println(pageInfo);
         model.addAttribute("pageInfo", pageInfo);
-
+        
         return "dept/paged";
     }
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>jsp</p>
 <pre><code>&lt;%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%&gt;
@@ -732,20 +753,20 @@ public class MybatisConfig {
                     &lt;a href="${ pageContext.request.contextPath }/dept/getPaged?pageNum=1&amp;pageSize=${pageInfo.pageSize}"&gt;第一页&lt;/a&gt;
                     &lt;a href="${ pageContext.request.contextPath }/dept/getPaged?pageNum=${pageInfo.pageNum-1}&amp;pageSize=${pageInfo.pageSize}"&gt;上一页&lt;/a&gt;
                 &lt;/c:if&gt;
-
+                
                 &lt;c:forEach items="${ pageInfo.navigatepageNums }" var="num"&gt;
                     &lt;c:if test="${ num == pageInfo.pageNum }"&gt;
                         &lt;a&gt;[${ num }]&lt;/a&gt;
                     &lt;/c:if&gt;
                     &lt;c:if test="${ num != pageInfo.pageNum }"&gt;
                         &lt;a href="${ pageContext.request.contextPath }/dept/getPaged?pageNum=${ num }&amp;pageSize=${pageInfo.pageSize}"&gt;[${ num }]&lt;/a&gt;
-                    &lt;/c:if&gt;                    
+                    &lt;/c:if&gt;					
                 &lt;/c:forEach&gt;
-
+                
                 &lt;c:if test="${ pageInfo.hasNextPage }"&gt;
                     &lt;a href="${ pageContext.request.contextPath }/dept/getPaged?pageNum=${pageInfo.pageNum+1}&amp;pageSize=${pageInfo.pageSize}"&gt;下一页&lt;/a&gt;
                 &lt;/c:if&gt;
-
+                
                 &lt;c:if test="${ !pageInfo.isLastPage }"&gt;
                     &lt;a href="${ pageContext.request.contextPath }/dept/getPaged?pageNum=${pageInfo.navigateLastPage}&amp;pageSize=${pageInfo.pageSize}"&gt;最后一页&lt;/a&gt;
                 &lt;/c:if&gt;
@@ -767,7 +788,7 @@ public class MybatisConfig {
             //修改地址栏地址
             location.href = "${ pageContext.request.contextPath }/dept/getPaged?pageNum="+pageNum;
         }
-
+        
         function changePageSize(){
             var pageSize = document.getElementById("pageSize").value;
             location.href = "${ pageContext.request.contextPath }/dept/getPaged?pageNum=1&amp;pageSize="+pageSize;
@@ -775,7 +796,8 @@ public class MybatisConfig {
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="请求参数验证"><a href="#请求参数验证" class="headerlink" title="请求参数验证"></a>请求参数验证</h2><ol>
 <li><p>JSR303是JavaBean数据合法性验证标准框架</p>
@@ -793,7 +815,8 @@ public class MybatisConfig {
     &lt;artifactId&gt;classmate&lt;/artifactId&gt;
     &lt;version&gt;1.3.3&lt;/version&gt;
 &lt;/dependency&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>在实体类的属性上添加验证注解</p>
 <pre><code>@Data
 @AllArgsConstructor
@@ -804,7 +827,8 @@ public class Dept {
     private String dname;
     private String loc;
 }
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>在控制器中的处理器方法的形参前添加@Valid注解</p>
 <pre><code>@RequestMapping("insert")
 public String insert(@Valid Dept dept,Errors errors,Model model) {
@@ -814,14 +838,16 @@ public String insert(@Valid Dept dept,Errors errors,Model model) {
     }
     //。。。
 }
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>jsp页面显示错误消息</p>
 <pre><code>&lt;c:if test="${ !(empty errorList) }"&gt;
     &lt;c:forEach items="${ errorList }" var="error"&gt;
         ${ error.defaultMessage }&lt;br&gt;
-    &lt;/c:forEach&gt;        
+    &lt;/c:forEach&gt;		
 &lt;/c:if&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>验证注解</p>
 <ul>
 <li>@NotNull：不能为空，能验证任何对象</li>
@@ -1273,7 +1299,7 @@ public String insert(@Valid Dept dept,Errors errors,Model model) {
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">89.7k</span>
+                        class="white-color">106.7k</span>
             
             
             
