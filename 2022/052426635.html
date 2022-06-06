@@ -397,17 +397,16 @@
 <pre><code>@Data
 @AllArgsConstructor
 public class Student {
-    
+
     private Integer id;
-    
+
     private String name;
-    
+
     private Integer age;
-    
+
     private String schoolName ;
 }
-</code></pre>
-<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><ol>
+</code></pre><h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><ol>
 <li>@NoArgsConstructor：生成无参数构造方法</li>
 <li>@AllArgsConstructor：生成全参数的构造方法</li>
 <li>@RequiredArgsConstructor：生成包含final和@NonNull注解成员变量的构造方法</li>
@@ -419,31 +418,28 @@ public class Student {
 public class Student {
     @NonNull
     private Integer id;
-    
+
     private String name;
-    
+
     private Integer age;
-    
+
     private final String schoolName ;
 }
-</code></pre>
-<h3 id="NonNull"><a href="#NonNull" class="headerlink" title="@NonNull"></a>@NonNull</h3><ul>
+</code></pre><h3 id="NonNull"><a href="#NonNull" class="headerlink" title="@NonNull"></a>@NonNull</h3><ul>
 <li>这个注解可以用在成员方法或者构造方法的参数前面，会自动产生一个关于此参数的非空检查，如果参数为空，则抛出一个空指针异常，举个例子来看看：</li>
 </ul>
 <pre><code>//成员方法参数加上@NonNull注解
 public String getName(@NonNull Person p){
     return p.getName();
 }
-</code></pre>
-<p>实际效果相当于：</p>
+</code></pre><p>实际效果相当于：</p>
 <pre><code>public String getName(@NonNull Person p){
     if(p==null){
         throw new NullPointerException("person");
     }
     return p.getName();
 }
-</code></pre>
-<ul>
+</code></pre><ul>
 <li><p>用在成员变量上面，可以在生成Setter方法和构造方法的时候，检查对应形参是否为空</p>
 <pre><code>@Data
 public class User {
@@ -452,10 +448,9 @@ public class User {
     private String name;
     private Integer age;
 }
-</code></pre>
-</li>
+</code></pre></li>
 </ul>
-<h3 id="Getter-x2F-Setter"><a href="#Getter-x2F-Setter" class="headerlink" title="@Getter/@Setter"></a>@Getter/@Setter</h3><ul>
+<h3 id="Getter-Setter"><a href="#Getter-Setter" class="headerlink" title="@Getter/@Setter"></a>@Getter/@Setter</h3><ul>
 <li><p>作用在类上，生成所有成员变量的getter/setter方法</p>
 </li>
 <li><p>作用在成员变量上，生成该成员变量的getter/setter方法</p>
@@ -467,33 +462,30 @@ public class User {
 @Getter(value = AccessLevel.PROTECTED)
 public class Student {
     private Integer id;
-    
+
     private String name;
-    
-    private Integer age;	
+
+    private Integer age;    
 }
-</code></pre>
-<h3 id="ToString"><a href="#ToString" class="headerlink" title="@ToString"></a>@ToString</h3><p>作用在类上，覆盖默认的toString()方法，可以通过 of 属性限定显示某些字段，通过 exclude 属性排除某些字段</p>
+</code></pre><h3 id="ToString"><a href="#ToString" class="headerlink" title="@ToString"></a>@ToString</h3><p>作用在类上，覆盖默认的toString()方法，可以通过 of 属性限定显示某些字段，通过 exclude 属性排除某些字段</p>
 <pre><code>@ToString(exclude = {"age"},of = {"id","name"})
 public class Student {
     private Integer id;
-    
+
     private String name;
-    
-    private Integer age;	
+
+    private Integer age;    
 }
-</code></pre>
-<h3 id="EqualsAndHashCode"><a href="#EqualsAndHashCode" class="headerlink" title="@EqualsAndHashCode"></a>@EqualsAndHashCode</h3><p>作用在类上，覆盖默认的equals和hashCode方法，可以通过 of 属性限定比较某些字段，通过 exclude 属性排除某些字段</p>
+</code></pre><h3 id="EqualsAndHashCode"><a href="#EqualsAndHashCode" class="headerlink" title="@EqualsAndHashCode"></a>@EqualsAndHashCode</h3><p>作用在类上，覆盖默认的equals和hashCode方法，可以通过 of 属性限定比较某些字段，通过 exclude 属性排除某些字段</p>
 <pre><code>@EqualsAndHashCode(of = {"id"})
 public class Student {
     private Integer id;
-    
+
     private String name;
-    
-    private Integer age;	
+
+    private Integer age;    
 }
-</code></pre>
-<h2 id="Lombok实现原理"><a href="#Lombok实现原理" class="headerlink" title="Lombok实现原理"></a>Lombok实现原理</h2><p>自从Java 6起，javac就支持“JSR 269 Pluggable Annotation Processing API”（插件化注解处理API）规范，只要程序实现了该API，就能在javac运行的时候得到调用。</p>
+</code></pre><h2 id="Lombok实现原理"><a href="#Lombok实现原理" class="headerlink" title="Lombok实现原理"></a>Lombok实现原理</h2><p>自从Java 6起，javac就支持“JSR 269 Pluggable Annotation Processing API”（插件化注解处理API）规范，只要程序实现了该API，就能在javac运行的时候得到调用。</p>
 <p>Lombok就是一个实现了”JSR 269 API”的程序。在使用javac的过程中，它产生作用的具体流程如下：</p>
 <hr>
 <ol>
@@ -509,22 +501,16 @@ public class Student {
 <h2 id="Eclipse安装Lombok插件"><a href="#Eclipse安装Lombok插件" class="headerlink" title="Eclipse安装Lombok插件"></a>Eclipse安装Lombok插件</h2><p>1、下载lombok.jar，lombok.jar官方下载地址：<a target="_blank" rel="noopener" href="https://projectlombok.org/download">https://projectlombok.org/download</a></p>
 <p>2、双击下载好的lombak.jar，安装步骤如下：</p>
 <p>2-1.关闭弹出的警告窗口，点击 Specify location..</p>
- <img src="/2022/052426635/1.jpg" class>
-
+ <img src="/2022/052426635/1.jpg" class="">
 <p>2-2.选择eclipse的安装目录（确保该路径中不能有中文）</p>
- <img src="/2022/052426635/2.jpg" class>
-
+ <img src="/2022/052426635/2.jpg" class="">
 <p>2-3.点击Install / Update</p>
- <img src="/2022/052426635/3.jpg" class>
-
+ <img src="/2022/052426635/3.jpg" class="">
 <p>2-4.点击Quit Installer，完成安装</p>
- <img src="/2022/052426635/4.jpg" class>
-
+ <img src="/2022/052426635/4.jpg" class="">
 <p>3、安装完成之后，请确认eclipse安装路径下是否多了一个lombok.jar包，并且其<br>   配置文件eclipse.ini中是否 添加了如下内容:-javaagent:D:\build-env\eclipse\lombok.jar</p>
- <img src="/2022/052426635/5.jpg" class>
-
- <img src="/2022/052426635/6.jpg" class>
-
+ <img src="/2022/052426635/5.jpg" class="">
+ <img src="/2022/052426635/6.jpg" class="">
 <p>4、重启eclipse或myeclipse</p>
 <p>5、测试，建立如下类：</p>
 <p>import lombok.Data;  </p>
@@ -967,7 +953,7 @@ public class Student {
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">110.2k</span>
+                        class="white-color">111.5k</span>
             
             
             
