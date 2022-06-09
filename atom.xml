@@ -6,7 +6,7 @@
   <link href="http://ffffrance.github.io/atom.xml" rel="self"/>
   
   <link href="http://ffffrance.github.io/"/>
-  <updated>2022-06-06T15:22:53.737Z</updated>
+  <updated>2022-06-09T11:50:56.495Z</updated>
   <id>http://ffffrance.github.io/</id>
   
   <author>
@@ -17,11 +17,111 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>计算机组成原理总线</title>
+    <link href="http://ffffrance.github.io/2022/060954841.html"/>
+    <id>http://ffffrance.github.io/2022/060954841.html</id>
+    <published>2022-06-09T11:19:59.000Z</published>
+    <updated>2022-06-09T11:50:56.495Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;计算机组成原理总线&quot;&gt;&lt;a href=&quot;#计算机组成原理总线&quot; class=&quot;headerlink&quot; title=&quot;计算机组成原理总线&quot;&gt;&lt;/a&gt;计算机组成原理总线&lt;/h1&gt;&lt;h2 id=&quot;总线的概念及分类&quot;&gt;&lt;a href=&quot;#总线的概念及分类&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机组成原理" scheme="http://ffffrance.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+    
+    <category term="计算机组成原理" scheme="http://ffffrance.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机组成原理中央处理器</title>
+    <link href="http://ffffrance.github.io/2022/060947947.html"/>
+    <id>http://ffffrance.github.io/2022/060947947.html</id>
+    <published>2022-06-09T07:08:12.000Z</published>
+    <updated>2022-06-09T11:18:42.505Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;计算机组成原理中央处理器&quot;&gt;&lt;a href=&quot;#计算机组成原理中央处理器&quot; class=&quot;headerlink&quot; title=&quot;计算机组成原理中央处理器&quot;&gt;&lt;/a&gt;计算机组成原理中央处理器&lt;/h1&gt;&lt;h2 id=&quot;CPU的功能和基本结构&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="计算机组成原理" scheme="http://ffffrance.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+    
+    <category term="计算机组成原理" scheme="http://ffffrance.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机组成原理指令系统</title>
+    <link href="http://ffffrance.github.io/2022/060920601.html"/>
+    <id>http://ffffrance.github.io/2022/060920601.html</id>
+    <published>2022-06-09T01:29:37.000Z</published>
+    <updated>2022-06-09T07:07:37.201Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;计算机组成原理指令系统&quot;&gt;&lt;a href=&quot;#计算机组成原理指令系统&quot; class=&quot;headerlink&quot; title=&quot;计算机组成原理指令系统&quot;&gt;&lt;/a&gt;计算机组成原理指令系统&lt;/h1&gt;&lt;img src=&quot;/2022/0609undefined/1.jpg&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机组成原理" scheme="http://ffffrance.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+    
+    <category term="计算机组成原理" scheme="http://ffffrance.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机组成原理存储系统</title>
+    <link href="http://ffffrance.github.io/2022/06079185.html"/>
+    <id>http://ffffrance.github.io/2022/06079185.html</id>
+    <published>2022-06-07T07:55:43.000Z</published>
+    <updated>2022-06-08T11:49:47.822Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;计算机组成原理存储系统&quot;&gt;&lt;a href=&quot;#计算机组成原理存储系统&quot; class=&quot;headerlink&quot; title=&quot;计算机组成原理存储系统&quot;&gt;&lt;/a&gt;计算机组成原理存储系统&lt;/h1&gt;&lt;img src=&quot;/2022/0607undefined/6.jpg&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="计算机组成原理" scheme="http://ffffrance.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+    
+    <category term="计算机组成原理" scheme="http://ffffrance.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>计算机组成原理数据的表示和运算</title>
     <link href="http://ffffrance.github.io/2022/060652765.html"/>
     <id>http://ffffrance.github.io/2022/060652765.html</id>
     <published>2022-06-06T02:20:45.000Z</published>
-    <updated>2022-06-06T15:22:53.737Z</updated>
+    <updated>2022-06-07T07:54:50.609Z</updated>
     
     
       
@@ -416,109 +516,6 @@
     
     
     <category term="操作系统" scheme="http://ffffrance.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>操作系统计算机系统概述</title>
-    <link href="http://ffffrance.github.io/2022/051418462.html"/>
-    <id>http://ffffrance.github.io/2022/051418462.html</id>
-    <published>2022-05-14T07:08:52.000Z</published>
-    <updated>2022-05-26T13:33:19.157Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;计算机系统概述&quot;&gt;&lt;a href=&quot;#计算机系统概述&quot; class=&quot;headerlink&quot; title=&quot;计算机系统概述&quot;&gt;&lt;/a&gt;计算机系统概述&lt;/h1&gt;&lt;img src=&quot;/2022/051418462/5.jpg&quot; class=&quot;&quot;&gt;  
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="操作系统" scheme="http://ffffrance.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-    <category term="操作系统" scheme="http://ffffrance.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机网络应用层</title>
-    <link href="http://ffffrance.github.io/2022/050732155.html"/>
-    <id>http://ffffrance.github.io/2022/050732155.html</id>
-    <published>2022-05-07T01:17:50.804Z</published>
-    <updated>2022-05-07T13:16:09.288Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;计算机网络应用层&quot;&gt;&lt;a href=&quot;#计算机网络应用层&quot; class=&quot;headerlink&quot; title=&quot;计算机网络应用层&quot;&gt;&lt;/a&gt;计算机网络应用层&lt;/h1&gt;&lt;img src=&quot;/2022/050732155/1.jpg&quot; class=&quot;&quot;&gt;  
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="计算机网络" scheme="http://ffffrance.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-    
-    <category term="计算机网络" scheme="http://ffffrance.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机网络传输层</title>
-    <link href="http://ffffrance.github.io/2022/05076519.html"/>
-    <id>http://ffffrance.github.io/2022/05076519.html</id>
-    <published>2022-05-07T01:17:38.000Z</published>
-    <updated>2022-05-07T13:20:14.778Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;计算机网络传输层&quot;&gt;&lt;a href=&quot;#计算机网络传输层&quot; class=&quot;headerlink&quot; title=&quot;计算机网络传输层&quot;&gt;&lt;/a&gt;计算机网络传输层&lt;/h1&gt;&lt;img src=&quot;/2022/05076519/1.jpg&quot; class=&quot;&quot;&gt;  
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="计算机网络" scheme="http://ffffrance.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-    
-    <category term="计算机网络" scheme="http://ffffrance.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>线性代数</title>
-    <link href="http://ffffrance.github.io/2022/050628245.html"/>
-    <id>http://ffffrance.github.io/2022/050628245.html</id>
-    <published>2022-05-06T12:35:19.000Z</published>
-    <updated>2022-05-07T13:02:53.750Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;线性代数&quot;&gt;&lt;a href=&quot;#线性代数&quot; class=&quot;headerlink&quot; title=&quot;线性代数&quot;&gt;&lt;/a&gt;线性代数&lt;/h1&gt;&lt;h2 id=&quot;逆序数&quot;&gt;&lt;a href=&quot;#逆序数&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="线性代数" scheme="http://ffffrance.github.io/categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
-    
-    
-    <category term="线性代数" scheme="http://ffffrance.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
     
   </entry>
   

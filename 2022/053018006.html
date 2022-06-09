@@ -437,7 +437,8 @@
 <pre><code>function 函数名(参数列表){
     return 值;
 }
-</code></pre><p>调用方式：</p>
+</code></pre>
+<p>调用方式：</p>
 <ol>
 <li><p>在 <script>中直接调用</p>
 </li>
@@ -447,13 +448,16 @@
 <pre><code>&lt;button onclick=&quot;hello()&quot;&gt;调用方法&lt;/button&gt;
 
 &lt;a href=&quot;#&quot; onclick=&quot;hello()&quot;&gt;调用方法&lt;/a&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>用超链接调用</p>
 <pre><code>&lt;a href=&quot;javascript:hello()&quot;&gt;调用方法&lt;/a&gt;
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h3 id="得到文本框的值"><a href="#得到文本框的值" class="headerlink" title="得到文本框的值"></a>得到文本框的值</h3><pre><code>document.getElementById(&quot;result&quot;).value
-</code></pre><h3 id="eval"><a href="#eval" class="headerlink" title="eval()"></a>eval()</h3><p>eval(字符串表达式)：能够对表达式进行解析，并求值返回</p>
+</code></pre>
+<h3 id="eval"><a href="#eval" class="headerlink" title="eval()"></a>eval()</h3><p>eval(字符串表达式)：能够对表达式进行解析，并求值返回</p>
 <h3 id="函数是对象，函数名是对象的引用"><a href="#函数是对象，函数名是对象的引用" class="headerlink" title="函数是对象，函数名是对象的引用"></a>函数是对象，函数名是对象的引用</h3><pre><code>&lt;script&gt;
     function test()&#123;
         console.log(&quot;hi&quot;);
@@ -461,12 +465,14 @@
     var a = test;
     a();
 &lt;/script&gt;
-</code></pre><h3 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h3><pre><code>//等号的右边为匿名函数（定义了一个函数对象，但是没有指定该函数名）
+</code></pre>
+<h3 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h3><pre><code>//等号的右边为匿名函数（定义了一个函数对象，但是没有指定该函数名）
 var test = function()&#123;
     console.log(&quot;hi!!!&quot;);
 &#125;
 test();
-</code></pre><h3 id="为元素动态添加事件处理程序"><a href="#为元素动态添加事件处理程序" class="headerlink" title="为元素动态添加事件处理程序"></a>为元素动态添加事件处理程序</h3><pre><code>&lt;form&gt;
+</code></pre>
+<h3 id="为元素动态添加事件处理程序"><a href="#为元素动态添加事件处理程序" class="headerlink" title="为元素动态添加事件处理程序"></a>为元素动态添加事件处理程序</h3><pre><code>&lt;form&gt;
     &lt;input type=&quot;button&quot; name=&quot;btn&quot; value=&quot;按钮&quot;&gt;
 &lt;/form&gt;
 
@@ -477,7 +483,8 @@ test();
     &#125;
     document.forms[0].btn.onclick=test;
 &lt;/script&gt;
-</code></pre><h3 id="javascript中没有函数重载的概念"><a href="#javascript中没有函数重载的概念" class="headerlink" title="javascript中没有函数重载的概念"></a>javascript中没有函数重载的概念</h3><p>如果定义了两个同名的方法，下面的方法会把上面的同名方法覆盖</p>
+</code></pre>
+<h3 id="javascript中没有函数重载的概念"><a href="#javascript中没有函数重载的概念" class="headerlink" title="javascript中没有函数重载的概念"></a>javascript中没有函数重载的概念</h3><p>如果定义了两个同名的方法，下面的方法会把上面的同名方法覆盖</p>
 <h3 id="arguments对象"><a href="#arguments对象" class="headerlink" title="arguments对象"></a>arguments对象</h3><ol>
 <li>js的函数可以接收任意多个参数，通过arguments对象来访问</li>
 <li>该对象类似于数组，可以使用下标来访问，如：arguments[0]</li>
@@ -485,7 +492,8 @@ test();
 <li>方法名.length:得到形参的个数</li>
 </ol>
 <h2 id="数组（Array）"><a href="#数组（Array）" class="headerlink" title="数组（Array）"></a>数组（Array）</h2><ol>
-<li>定义：在单个对象中存储多个值</li>
+<li><p>定义：在单个对象中存储多个值</p>
+</li>
 <li><p>构造函数：</p>
 <ul>
 <li>Array():返回一个长度为0的数组对象</li>
@@ -498,7 +506,8 @@ test();
 </li>
 <li><p>直接创建并初始化数组</p>
 <pre><code>var arr2 = [0,true,null];
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>遍历</p>
 <pre><code>var arr = [1,2,3,4,5];
 /* for(i = 0;i &lt; arr.length;i++)&#123;
@@ -516,7 +525,8 @@ test();
 arr.forEach(function(item,index)&#123;
     console.log(item,index);
 &#125;)
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>常用方法</p>
 <ul>
 <li><p>sort</p>
@@ -527,21 +537,23 @@ arr.sort(function(x,y)&#123;
 &#125;);
 
 console.log(arr);
-</code></pre></li>
-<li><p>splice（index，howmany，element…）:用于向数组添加、删除、替换数组元素</p>
+</code></pre>
+</li>
+<li><p>splice（index，howmany，element...）:用于向数组添加、删除、替换数组元素</p>
 <ul>
 <li>index：必需，从何处添加、删除元素</li>
 <li>howmany：必需，规定应该删除多少个元素，添加元素的时候，该值为0</li>
-<li>element…:元素列表，可选，向数组添加元素的列表</li>
+<li>element...:元素列表，可选，向数组添加元素的列表</li>
 </ul>
 <pre><code>var arr = [10,100,3,1,5];
-
+                
 //arr.splice(1,0,&quot;tom&quot;,&quot;marry&quot;)
 //arr.splice(1,2);
 
 arr.splice(1,3,&quot;tom&quot;,&quot;marry&quot;);
 console.log(arr);
-</code></pre></li>
+</code></pre>
+</li>
 </ul>
 <h2 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h2><pre><code>//生成一个日期字符串
 var d = new Date();
@@ -557,13 +569,15 @@ var t = year +&quot;-&quot;+month+&quot;-&quot;+date +&quot; &quot;+hour+&quot;:
 console.log(t);
 //把它显示在p中
 document.getElementById(&quot;time&quot;).innerText = t;
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><ol>
-<li>setTimeout(“函数()”,时间间隔)：在指定的时间间隔后，调用参数1指定的函数，该方法返回一个值，表示定时器</li>
+<li>setTimeout("函数()",时间间隔)：在指定的时间间隔后，调用参数1指定的函数，该方法返回一个值，表示定时器</li>
 <li>clearTimeout(定时器引用)：关闭定时器</li>
 </ol>
 <h2 id="案例：选择人名"><a href="#案例：选择人名" class="headerlink" title="案例：选择人名"></a>案例：选择人名</h2><h3 id="使用二个按钮控制"><a href="#使用二个按钮控制" class="headerlink" title="使用二个按钮控制"></a>使用二个按钮控制</h3><img src="/2022/053018006/1.jpg" class="">
+
 <pre><code>    &lt;input type=&quot;button&quot; value=&quot;开始&quot; onclick=&quot;startGame()&quot;&gt;
     &lt;input type=&quot;button&quot; value=&quot;停止&quot; onclick=&quot;stopGame()&quot;&gt;
     &lt;script&gt;
@@ -574,17 +588,19 @@ document.getElementById(&quot;time&quot;).innerText = t;
             index = parseInt(Math.random()*names.length);
             var name = names[index];
             document.getElementById(&quot;div1&quot;).innerText = name;
-
+            
             tt = setTimeout(&quot;startGame()&quot;,10);
         &#125;
-
+        
         function stopGame()&#123;
             clearTimeout(tt);
-
+            
             names.splice(index,1);
         &#125;
     &lt;/script&gt;
-</code></pre><h3 id="使用一个按钮控制"><a href="#使用一个按钮控制" class="headerlink" title="使用一个按钮控制"></a>使用一个按钮控制</h3><img src="/2022/053018006/2.jpg" class="">
+</code></pre>
+<h3 id="使用一个按钮控制"><a href="#使用一个按钮控制" class="headerlink" title="使用一个按钮控制"></a>使用一个按钮控制</h3><img src="/2022/053018006/2.jpg" class="">
+
 <pre><code>        &lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;
         &lt;input type=&quot;button&quot; value=&quot;开始&quot; onclick=&quot;game(this)&quot;&gt;
         &lt;!-- &lt;input type=&quot;button&quot; value=&quot;停止&quot; onclick=&quot;stopGame()&quot;&gt; --&gt;
@@ -593,7 +609,7 @@ document.getElementById(&quot;time&quot;).innerText = t;
             var tt;
             var index;
             var isRun = false;
-
+            
             function game(o)&#123;
                 if(isRun)&#123;
                     o.value = &quot;开始&quot;;
@@ -609,21 +625,21 @@ document.getElementById(&quot;time&quot;).innerText = t;
                 index = parseInt(Math.random()*names.length);
                 var name = names[index];
                 document.getElementById(&quot;div1&quot;).innerText = name;
-
-                tt = setTimeout(&quot;startGame()&quot;,10);    
+                
+                tt = setTimeout(&quot;startGame()&quot;,10);	
             &#125;
-
+            
             function stopGame()&#123;
                 clearTimeout(tt);
-
+                
                 names.splice(index,1);
             &#125;
-
+            
             document.onkeydown = function()&#123;
                 //得到按键的键盘码
                 var keyCode = event.keyCode;
                 //console.log(keyCode);
-
+                
                 if(keyCode == 13)&#123;
                     startGame();
                 &#125;else if(keyCode == 32)&#123;
@@ -631,7 +647,8 @@ document.getElementById(&quot;time&quot;).innerText = t;
                 &#125;
             &#125;
         &lt;/script&gt;
-</code></pre><h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><ol>
+</code></pre>
+<h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><ol>
 <li><p>event：事件对象，在事件发生的时候，由系统创建</p>
 <p>属性：</p>
 <p>keyCode：键盘码，每一个按键都不同，13：回车，32：空格，9：tab</p>
@@ -648,7 +665,8 @@ document.getElementById(&quot;time&quot;).innerText = t;
         stopGame();
     &#125;
 &#125;
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="案例：购物车全选和全不选"><a href="#案例：购物车全选和全不选" class="headerlink" title="案例：购物车全选和全不选"></a>案例：购物车全选和全不选</h2><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -658,7 +676,7 @@ document.getElementById(&quot;time&quot;).innerText = t;
         &lt;script type=&quot;text/javascript&quot;&gt;
             function checkAll(o)&#123;
                 var cks = document.getElementsByName(&quot;good&quot;);
-
+                
                 for(c of cks)&#123;
                     c.checked = o.checked;
                 &#125;
@@ -696,7 +714,8 @@ document.getElementById(&quot;time&quot;).innerText = t;
         &lt;/table&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><h2 id="案例：省市级联"><a href="#案例：省市级联" class="headerlink" title="案例：省市级联"></a>案例：省市级联</h2><pre><code>&lt;!DOCTYPE html&gt;
+</code></pre>
+<h2 id="案例：省市级联"><a href="#案例：省市级联" class="headerlink" title="案例：省市级联"></a>案例：省市级联</h2><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;meta charset=&quot;utf-8&quot;&gt;
@@ -714,7 +733,7 @@ document.getElementById(&quot;time&quot;).innerText = t;
         &lt;select id=&quot;city&quot;&gt;
             &lt;option&gt;请选择&lt;/option&gt;
         &lt;/select&gt;
-
+        
         &lt;script&gt;
             var cities = [];
             cities[&quot;辽宁&quot;] = [&quot;沈阳&quot;,&quot;大连&quot;,&quot;锦州&quot;];
@@ -723,12 +742,12 @@ document.getElementById(&quot;time&quot;).innerText = t;
             function getCities(province)&#123;
                 var provinceName = province.value;
                 var city = document.getElementById(&quot;city&quot;);
-
+                
                 city.options.length = 1;
-
+                
                 // var index = province.selectedIndex;
                 var arr = cities[provinceName];
-
+                
                 arr.forEach(function(item,i)&#123;
                     var option = new Option(item,i);
                     city.options.add(option);
@@ -737,7 +756,8 @@ document.getElementById(&quot;time&quot;).innerText = t;
         &lt;/script&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><h2 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h2><ol>
+</code></pre>
+<h2 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h2><ol>
 <li><p>定义：在表单提交到服务器之前，对html表单输入的数据进行校验，如果没有错误，就提交，否则，不提交</p>
 </li>
 <li><p>作用：</p>
@@ -762,17 +782,17 @@ document.getElementById(&quot;time&quot;).innerText = t;
                     alert(&quot;用户名不能为空&quot;);
                     return false;
                 &#125;
-
+                
                 return true;
             &#125;
-
+            
             function checkPassword()&#123;
                 var password = document.forms[0].password.value;
                 if(password.length == 0)&#123;
                     alert(&quot;密码不能为空&quot;);
                     return false;
                 &#125;
-
+                
                 return true;
             &#125;
         &lt;/script&gt;
@@ -801,7 +821,8 @@ document.getElementById(&quot;time&quot;).innerText = t;
         &lt;/form&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>失去焦点验证：onblur</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -820,10 +841,10 @@ document.getElementById(&quot;time&quot;).innerText = t;
                     document.getElementById(&quot;usernameError&quot;).innerHTML=&quot;用户名不能为空&quot;;
                     return false;
                 &#125;
-
+                
                 return true;
             &#125;
-
+            
             function checkPassword()&#123;
                 var password = document.forms[0].password.value;
                 document.getElementById(&quot;passwordError&quot;).innerHTML=&quot;&quot;;
@@ -832,7 +853,7 @@ document.getElementById(&quot;time&quot;).innerText = t;
                     document.getElementById(&quot;passwordError&quot;).innerHTML=&quot;密码不能为空&quot;;
                     return false;
                 &#125;
-
+                
                 return true;
             &#125;
         &lt;/script&gt;
@@ -863,16 +884,17 @@ document.getElementById(&quot;time&quot;).innerText = t;
         &lt;/form&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="使用JS操作CSS"><a href="#使用JS操作CSS" class="headerlink" title="使用JS操作CSS"></a>使用JS操作CSS</h2><ol>
 <li>使用元素的 style 属性<ul>
-<li>元素.style.color = “red”;</li>
-<li>元素.style.fontSize = “30px”;</li>
+<li>元素.style.color = "red";</li>
+<li>元素.style.fontSize = "30px";</li>
 </ul>
 </li>
 <li>使用元素的className属性<ul>
-<li>元素.className = “class1 class2”;</li>
+<li>元素.className = "class1 class2";</li>
 </ul>
 </li>
 <li>元素.offsetTop:得到元素相对于其父级中已经定位的元素的上偏移量（只读属性，数值）</li>
@@ -919,7 +941,7 @@ document.getElementById(&quot;time&quot;).innerText = t;
 <li>innerText:得到或设置当前节点中的文本内容</li>
 </ol>
 <h4 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h4><ol>
-<li>创建一个元素：document.createElement(“标签名”)</li>
+<li>创建一个元素：document.createElement("标签名")</li>
 <li>创建一个文本节点：document.createTextNode(文本节点的内容);</li>
 <li>追加子节点：父节点.appendChild(子节点)</li>
 <li>删除当前元素：当前元素.remove()</li>
@@ -931,7 +953,7 @@ document.getElementById(&quot;time&quot;).innerText = t;
 <li><p>创建、存取操作</p>
 <ul>
 <li>创建：var map = new Map();</li>
-<li>存储：map.set(“键”,值)</li>
+<li>存储：map.set("键",值)</li>
 <li>取：map.get(键)，如果没有键，返回 undefined</li>
 </ul>
 </li>
@@ -949,7 +971,8 @@ document.getElementById(&quot;time&quot;).innerText = t;
 ]);
 
 console.log(map.get(&quot;name&quot;),map.get(&quot;age&quot;));
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 </script></p></li></ol>
                 
@@ -1388,7 +1411,7 @@ console.log(map.get(&quot;name&quot;),map.get(&quot;age&quot;));
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">111.5k</span>
+                        class="white-color">113.5k</span>
             
             
             
