@@ -6,7 +6,7 @@
   <link href="http://ffffrance.github.io/atom.xml" rel="self"/>
   
   <link href="http://ffffrance.github.io/"/>
-  <updated>2022-06-09T11:50:56.495Z</updated>
+  <updated>2022-06-11T15:35:39.109Z</updated>
   <id>http://ffffrance.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>计算机组成原理输入输出系统</title>
+    <link href="http://ffffrance.github.io/2022/061152378.html"/>
+    <id>http://ffffrance.github.io/2022/061152378.html</id>
+    <published>2022-06-11T14:39:09.000Z</published>
+    <updated>2022-06-11T15:35:39.109Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;计算机组成原理输入输出系统&quot;&gt;&lt;a href=&quot;#计算机组成原理输入输出系统&quot; class=&quot;headerlink&quot; title=&quot;计算机组成原理输入输出系统&quot;&gt;&lt;/a&gt;计算机组成原理输入输出系统&lt;/h1&gt;&lt;h2 id=&quot;IO系统基本概念&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="计算机组成原理" scheme="http://ffffrance.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+    
+    <category term="计算机组成原理" scheme="http://ffffrance.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>计算机组成原理总线</title>
     <link href="http://ffffrance.github.io/2022/060954841.html"/>
     <id>http://ffffrance.github.io/2022/060954841.html</id>
     <published>2022-06-09T11:19:59.000Z</published>
-    <updated>2022-06-09T11:50:56.495Z</updated>
+    <updated>2022-06-11T14:38:17.891Z</updated>
     
     
       
@@ -46,7 +71,7 @@
     <link href="http://ffffrance.github.io/2022/060947947.html"/>
     <id>http://ffffrance.github.io/2022/060947947.html</id>
     <published>2022-06-09T07:08:12.000Z</published>
-    <updated>2022-06-09T11:18:42.505Z</updated>
+    <updated>2022-06-09T11:51:17.164Z</updated>
     
     
       
@@ -71,14 +96,14 @@
     <link href="http://ffffrance.github.io/2022/060920601.html"/>
     <id>http://ffffrance.github.io/2022/060920601.html</id>
     <published>2022-06-09T01:29:37.000Z</published>
-    <updated>2022-06-09T07:07:37.201Z</updated>
+    <updated>2022-06-09T11:51:17.168Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;计算机组成原理指令系统&quot;&gt;&lt;a href=&quot;#计算机组成原理指令系统&quot; class=&quot;headerlink&quot; title=&quot;计算机组成原理指令系统&quot;&gt;&lt;/a&gt;计算机组成原理指令系统&lt;/h1&gt;&lt;img src=&quot;/2022/0609undefined/1.jpg&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;计算机组成原理指令系统&quot;&gt;&lt;a href=&quot;#计算机组成原理指令系统&quot; class=&quot;headerlink&quot; title=&quot;计算机组成原理指令系统&quot;&gt;&lt;/a&gt;计算机组成原理指令系统&lt;/h1&gt;&lt;img src=&quot;/2022/060920601/1.jpg&quot;</summary>
         
       
     
@@ -96,14 +121,14 @@
     <link href="http://ffffrance.github.io/2022/06079185.html"/>
     <id>http://ffffrance.github.io/2022/06079185.html</id>
     <published>2022-06-07T07:55:43.000Z</published>
-    <updated>2022-06-08T11:49:47.822Z</updated>
+    <updated>2022-06-09T11:51:17.166Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;计算机组成原理存储系统&quot;&gt;&lt;a href=&quot;#计算机组成原理存储系统&quot; class=&quot;headerlink&quot; title=&quot;计算机组成原理存储系统&quot;&gt;&lt;/a&gt;计算机组成原理存储系统&lt;/h1&gt;&lt;img src=&quot;/2022/0607undefined/6.jpg&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;计算机组成原理存储系统&quot;&gt;&lt;a href=&quot;#计算机组成原理存储系统&quot; class=&quot;headerlink&quot; title=&quot;计算机组成原理存储系统&quot;&gt;&lt;/a&gt;计算机组成原理存储系统&lt;/h1&gt;&lt;img src=&quot;/2022/06079185/6.jpg&quot;</summary>
         
       
     
@@ -490,32 +515,6 @@
     
     
     <category term="Maven" scheme="http://ffffrance.github.io/tags/Maven/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>操作系统进程管理</title>
-    <link href="http://ffffrance.github.io/2022/051537005.html"/>
-    <id>http://ffffrance.github.io/2022/051537005.html</id>
-    <published>2022-05-15T12:28:32.000Z</published>
-    <updated>2022-05-26T13:33:27.214Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;进程管理&quot;&gt;&lt;a href=&quot;#进程管理&quot; class=&quot;headerlink&quot; title=&quot;进程管理&quot;&gt;&lt;/a&gt;进程管理&lt;/h1&gt;&lt;img src=&quot;/2022/051537005/1.jpg&quot; class=&quot;&quot;&gt;  
-&lt;h2 id=&quot;进程和线程&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="操作系统" scheme="http://ffffrance.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-    <category term="操作系统" scheme="http://ffffrance.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   

@@ -387,35 +387,35 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="计算机组成原理指令系统"><a href="#计算机组成原理指令系统" class="headerlink" title="计算机组成原理指令系统"></a>计算机组成原理指令系统</h1><img src="/2022/0609undefined/1.jpg" class="">   
-<h2 id="指令格式"><a href="#指令格式" class="headerlink" title="指令格式"></a>指令格式</h2><img src="/2022/0609undefined/8.jpg" class="">   
+                <h1 id="计算机组成原理指令系统"><a href="#计算机组成原理指令系统" class="headerlink" title="计算机组成原理指令系统"></a>计算机组成原理指令系统</h1><img src="/2022/060920601/1.jpg" class="">   
+<h2 id="指令格式"><a href="#指令格式" class="headerlink" title="指令格式"></a>指令格式</h2><img src="/2022/060920601/8.jpg" class="">   
 <ul>
 <li>定义：指示计算机执行某种操作的命令，是计算机运行的最小功能单位，一台计算机所有指令集合构成该机的指令系统（指令集）。  </li>
-<li>格式：  <img src="/2022/0609undefined/2.jpg" class="">   
-从四地址指令把指令和数据分开放，引入PC，使得减去下条指令的地址，变为三地址指令：  <img src="/2022/0609undefined/3.jpg" class="">   
-定长指令字结构：  <img src="/2022/0609undefined/4.jpg" class="">   
-扩展操作码：   <img src="/2022/0609undefined/5.jpg" class="">   
-不允许短操作码是长操作码前缀，且使用频率高的指令分配较短的操作码（哈夫曼编码的思想）  <img src="/2022/0609undefined/6.jpg" class="">   </li>
-<li>操作类型：  <img src="/2022/0609undefined/7.jpg" class="">   
-<h2 id="指令寻址"><a href="#指令寻址" class="headerlink" title="指令寻址"></a>指令寻址</h2><img src="/2022/0609undefined/11.jpg" class="">   </li>
-<li>数据存取：（存储器定位到某个存储单元）  <img src="/2022/0609undefined/9.jpg" class="">   
-尽量把边界对齐减少存取次数：起始地址是字长的整数倍。    <img src="/2022/0609undefined/10.jpg" class="">   </li>
-<li>指令寻址：<br>分别定位指令（下一个指令的地址）和数据（本指令的操作数地址）<br>指令寻址：<br>顺序寻址（PC自增），跳跃寻址（由转移指令指出）  <h2 id="数据寻址"><a href="#数据寻址" class="headerlink" title="数据寻址"></a>数据寻址</h2><img src="/2022/0609undefined/25.jpg" class="">   </li>
-<li>操作数类型：  <img src="/2022/0609undefined/12.jpg" class="">   </li>
-<li>数据寻址：<br>根据寻址特征，把形式地址转换为操作数的真实地址，称为有效地址。  <img src="/2022/0609undefined/13.jpg" class="">   
-①立即寻址:  <img src="/2022/0609undefined/14.jpg" class="">   
-②直接寻址：  <img src="/2022/0609undefined/15.jpg" class="">   
-③间接寻址：  <img src="/2022/0609undefined/16.jpg" class="">   
-④寄存器寻址：  <img src="/2022/0609undefined/17.jpg" class="">   
-⑤寄存器间接寻址：  <img src="/2022/0609undefined/18.jpg" class="">   
-⑥隐含寻址：  <img src="/2022/0609undefined/19.jpg" class="">   
-⑦基址寻址（偏移寻址）：   <img src="/2022/0609undefined/20.jpg" class="">   
-EA=BR+D（相对地址，直接寻址需要改变）  <img src="/2022/0609undefined/21.jpg" class="">   
-⑧变址寻址：  <img src="/2022/0609undefined/22.jpg" class="">   
-⑨相对寻址：  <img src="/2022/0609undefined/23.jpg" class="">   </li>
-<li>总结：  <img src="/2022/0609undefined/24.jpg" class="">   </li>
-<li>堆栈寻址和隐含寻址：<br>隐含是隐含了一个操作数，而堆栈则是隐藏了所有操作数。使用寄存器实现就是硬堆栈，存储器实现就是软堆栈。   <img src="/2022/0609undefined/26.jpg" class="">   
-<h2 id="CISE和RISE"><a href="#CISE和RISE" class="headerlink" title="CISE和RISE"></a>CISE和RISE</h2><img src="/2022/0609undefined/27.jpg" class=""></li>
+<li>格式：  <img src="/2022/060920601/2.jpg" class="">   
+从四地址指令把指令和数据分开放，引入PC，使得减去下条指令的地址，变为三地址指令：  <img src="/2022/060920601/3.jpg" class="">   
+定长指令字结构：  <img src="/2022/060920601/4.jpg" class="">   
+扩展操作码：   <img src="/2022/060920601/5.jpg" class="">   
+不允许短操作码是长操作码前缀，且使用频率高的指令分配较短的操作码（哈夫曼编码的思想）  <img src="/2022/060920601/6.jpg" class="">   </li>
+<li>操作类型：  <img src="/2022/060920601/7.jpg" class="">   
+<h2 id="指令寻址"><a href="#指令寻址" class="headerlink" title="指令寻址"></a>指令寻址</h2><img src="/2022/060920601/11.jpg" class="">   </li>
+<li>数据存取：（存储器定位到某个存储单元）  <img src="/2022/060920601/9.jpg" class="">   
+尽量把边界对齐减少存取次数：起始地址是字长的整数倍。    <img src="/2022/060920601/10.jpg" class="">   </li>
+<li>指令寻址：<br>分别定位指令（下一个指令的地址）和数据（本指令的操作数地址）<br>指令寻址：<br>顺序寻址（PC自增），跳跃寻址（由转移指令指出）  <h2 id="数据寻址"><a href="#数据寻址" class="headerlink" title="数据寻址"></a>数据寻址</h2><img src="/2022/060920601/25.jpg" class="">   </li>
+<li>操作数类型：  <img src="/2022/060920601/12.jpg" class="">   </li>
+<li>数据寻址：<br>根据寻址特征，把形式地址转换为操作数的真实地址，称为有效地址。  <img src="/2022/060920601/13.jpg" class="">   
+①立即寻址:  <img src="/2022/060920601/14.jpg" class="">   
+②直接寻址：  <img src="/2022/060920601/15.jpg" class="">   
+③间接寻址：  <img src="/2022/060920601/16.jpg" class="">   
+④寄存器寻址：  <img src="/2022/060920601/17.jpg" class="">   
+⑤寄存器间接寻址：  <img src="/2022/060920601/18.jpg" class="">   
+⑥隐含寻址：  <img src="/2022/060920601/19.jpg" class="">   
+⑦基址寻址（偏移寻址）：   <img src="/2022/060920601/20.jpg" class="">   
+EA=BR+D（相对地址，直接寻址需要改变）  <img src="/2022/060920601/21.jpg" class="">   
+⑧变址寻址：  <img src="/2022/060920601/22.jpg" class="">   
+⑨相对寻址：  <img src="/2022/060920601/23.jpg" class="">   </li>
+<li>总结：  <img src="/2022/060920601/24.jpg" class="">   </li>
+<li>堆栈寻址和隐含寻址：<br>隐含是隐含了一个操作数，而堆栈则是隐藏了所有操作数。使用寄存器实现就是硬堆栈，存储器实现就是软堆栈。   <img src="/2022/060920601/26.jpg" class="">   
+<h2 id="CISE和RISE"><a href="#CISE和RISE" class="headerlink" title="CISE和RISE"></a>CISE和RISE</h2><img src="/2022/060920601/27.jpg" class=""></li>
 </ul>
 
                 
@@ -854,7 +854,7 @@ EA=BR+D（相对地址，直接寻址需要改变）  <img src="/2022/0609undefi
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">113.5k</span>
+                        class="white-color">114k</span>
             
             
             
