@@ -404,7 +404,7 @@
         &lt;div id="app"&gt;
             {{msg}}
         &lt;/div&gt;
-        
+
         &lt;script&gt;
             var app = new Vue({
                 el: "#app",
@@ -415,8 +415,7 @@
         &lt;/script&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<p>el：是一个必不可少的属性，用来指定一个页面中已存在的Dom元素来挂载vue实例，其值可以是一个dom元素，也可以是css选择器</p>
+</code></pre><p>el：是一个必不可少的属性，用来指定一个页面中已存在的Dom元素来挂载vue实例，其值可以是一个dom元素，也可以是css选择器</p>
 <p>data:存放数据的对象</p>
 <p>{}（两个）：文本插值，类似于：innerText，会把数据原封不动的显示出来，其中的值可以是JavaScript的表达式</p>
 <p><strong>Vue3</strong></p>
@@ -447,15 +446,14 @@
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<h3 id="2-v-html"><a href="#2-v-html" class="headerlink" title="2.v-html"></a>2.v-html</h3><p>v-html：会对数据中的html内容进行解析，显示解析后的结果，类似于Dom的 innerHTML</p>
+</code></pre><h3 id="2-v-html"><a href="#2-v-html" class="headerlink" title="2.v-html"></a>2.v-html</h3><p>v-html：会对数据中的html内容进行解析，显示解析后的结果，类似于Dom的 innerHTML</p>
 <p>v-text: 不会对数据中的html内容进行解析，类似于dom中的 innerText</p>
 <pre><code>        &lt;div id="app"&gt;
             {{msg}}&lt;br&gt;
             &lt;p v-text="msg"&gt;&lt;/p&gt;
             &lt;p v-html="msg"&gt;&lt;/p&gt;
         &lt;/div&gt;
-        
+
         &lt;script&gt;
             var app = new Vue({
                 el: "#app",
@@ -464,12 +462,11 @@
                 }
             });
         &lt;/script&gt;
-</code></pre>
-<h3 id="3-v-bind"><a href="#3-v-bind" class="headerlink" title="3.v-bind"></a>3.v-bind</h3><p>动态绑定一个或多个属性（简写形式： 冒号）</p>
+</code></pre><h3 id="3-v-bind"><a href="#3-v-bind" class="headerlink" title="3.v-bind"></a>3.v-bind</h3><p>动态绑定一个或多个属性（简写形式： 冒号）</p>
 <pre><code>        &lt;div id="app"&gt;
             &lt;p :align="align" v-html="msg"&gt;&lt;/p&gt;
         &lt;/div&gt;
-        
+
         &lt;script&gt;
             var app = new Vue({
                 el: "#app",
@@ -479,102 +476,94 @@
                 }
             });
         &lt;/script&gt;
-</code></pre>
-<h3 id="4-v-model"><a href="#4-v-model" class="headerlink" title="4.v-model"></a>4.v-model</h3><p>绑定表单数据，双向绑定</p>
-<pre><code>        &lt;div id="app"&gt;			
+</code></pre><h3 id="4-v-model"><a href="#4-v-model" class="headerlink" title="4.v-model"></a>4.v-model</h3><p>绑定表单数据，双向绑定</p>
+<pre><code>        &lt;div id="app"&gt;            
             &lt;input type="text" v-model="msg"&gt;
         &lt;/div&gt;
-        
+
         &lt;script&gt;
             var app = new Vue({
                 el: "#app",
                 data:{
-                    msg:'&lt;span style="color:red;"&gt;hello&lt;/span&gt;',					
+                    msg:'&lt;span style="color:red;"&gt;hello&lt;/span&gt;',                    
                 }
             });
         &lt;/script&gt;
-</code></pre>
-<h3 id="5-v-on"><a href="#5-v-on" class="headerlink" title="5.v-on"></a>5.v-on</h3><p>绑定事件处理程序（简写：@）</p>
+</code></pre><h3 id="5-v-on"><a href="#5-v-on" class="headerlink" title="5.v-on"></a>5.v-on</h3><p>绑定事件处理程序（简写：@）</p>
 <pre><code>        &lt;div id="app"&gt;
-            
+
             &lt;input type="text" :value="msg"&gt;
             &lt;input type="button" value="按钮" @click="del"&gt;
         &lt;/div&gt;
-        
+
         &lt;script&gt;
             var app = new Vue({
                 el: "#app",
                 data:{
                     msg:'&lt;span style="color:red;"&gt;hello&lt;/span&gt;',
                 },
-                methods:{						
+                methods:{                        
                     del(){
                         console.log(100);
                     }
                 }
             });
         &lt;/script&gt;
-</code></pre>
-<h3 id="6-v-show"><a href="#6-v-show" class="headerlink" title="6.v-show"></a>6.v-show</h3><p>是否显示元素</p>
+</code></pre><h3 id="6-v-show"><a href="#6-v-show" class="headerlink" title="6.v-show"></a>6.v-show</h3><p>是否显示元素</p>
 <p>当 v-show的值为：0、空字符串、undefined、null、false、NaN时候隐藏，其他显示</p>
 <pre><code>&lt;p v-show="isShow"&gt;可能隐藏的内容&lt;/p&gt;
 
-data:{					
+data:{                    
     isShow:null
 }
-</code></pre>
-<h3 id="7-v-if、v-else-if、v-else"><a href="#7-v-if、v-else-if、v-else" class="headerlink" title="7.v-if、v-else-if、v-else"></a>7.v-if、v-else-if、v-else</h3><pre><code>&lt;p v-if="isShow"&gt;可能隐藏的内容&lt;/p&gt;
+</code></pre><h3 id="7-v-if、v-else-if、v-else"><a href="#7-v-if、v-else-if、v-else" class="headerlink" title="7.v-if、v-else-if、v-else"></a>7.v-if、v-else-if、v-else</h3><pre><code>&lt;p v-if="isShow"&gt;可能隐藏的内容&lt;/p&gt;
 &lt;p v-else-if="elseIf"&gt;else if 部分&lt;/p&gt;
 &lt;p v-else&gt;else 部分&lt;/p&gt;
 
-data:{					
+data:{                    
     isShow:0,
     elseIf:0
 }
-</code></pre>
-<p>v-if和v-show区别</p>
+</code></pre><p>v-if和v-show区别</p>
 <p>v-if：如果为false，删除dom元素，为true：创建dom元素</p>
 <p>v-show：用来显示和隐藏元素</p>
 <h3 id="8-v-for"><a href="#8-v-for" class="headerlink" title="8.v-for"></a>8.v-for</h3><p>循环指令</p>
 <pre><code>&lt;p v-for="(name,index) in arr" &gt;{{index}}-{{name}}&lt;/p&gt;
 
-data:{					
+data:{                    
   arr:["tom","marry","scott"]
 }
-</code></pre>
-<p>html模板</p>
+</code></pre><p>html模板</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;meta charset="utf-8"&gt;
         &lt;title&gt;&lt;/title&gt;
         &lt;script src="js/vue.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
-        
+
     &lt;/head&gt;
     &lt;body&gt;
         &lt;div id="app"&gt;
-            
+
         &lt;/div&gt;
         &lt;script type="text/javascript"&gt;
             var app = new Vue({
                 el:"#app",
                 data:{
-                    
+
                 }
             });
         &lt;/script&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<h2 id="省市级联案例"><a href="#省市级联案例" class="headerlink" title="省市级联案例"></a>省市级联案例</h2><img src="/2022/060232144/1.jpg" class="">
-
+</code></pre><h2 id="省市级联案例"><a href="#省市级联案例" class="headerlink" title="省市级联案例"></a>省市级联案例</h2><img src="/2022/060232144/1.jpg" class="">
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;meta charset="utf-8"&gt;
         &lt;title&gt;&lt;/title&gt;
         &lt;script src="js/vue.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
-        
+
     &lt;/head&gt;
     &lt;body&gt;
         &lt;div id="app"&gt;
@@ -602,7 +591,7 @@ data:{
                     cities:[]
                 },
                 methods:{
-                    getCity(){						
+                    getCity(){                        
                         this.cities = this.map.get(this.province);
                     }
                 }
@@ -610,9 +599,7 @@ data:{
         &lt;/script&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<h2 id="移动列表选中项案例"><a href="#移动列表选中项案例" class="headerlink" title="移动列表选中项案例"></a>移动列表选中项案例</h2><img src="/2022/060232144/2.jpg" class="">
-
+</code></pre><h2 id="移动列表选中项案例"><a href="#移动列表选中项案例" class="headerlink" title="移动列表选中项案例"></a>移动列表选中项案例</h2><img src="/2022/060232144/2.jpg" class="">
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
@@ -631,7 +618,7 @@ data:{
                 &lt;option v-for="n in rightList" :value="n"&gt;{{n}}&lt;/option&gt;
             &lt;/select&gt;
         &lt;/div&gt;
-        
+
         &lt;script&gt;
             var app = new Vue({
                 el:"#app",
@@ -639,7 +626,7 @@ data:{
                     leftList:[1,2,3,4,5,6,7,8],
                     rightList:[10,20],
                     leftSelected:[2,3]
-                    
+
                 },
                 methods:{
                     toRight(){
@@ -650,15 +637,14 @@ data:{
                         this.leftList = temp;
                     },
                     toLeft(){
-                        
+
                     }
                 }
             });
         &lt;/script&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<h3 id="vue3实现"><a href="#vue3实现" class="headerlink" title="vue3实现"></a>vue3实现</h3><pre><code>&lt;!DOCTYPE html&gt;
+</code></pre><h3 id="vue3实现"><a href="#vue3实现" class="headerlink" title="vue3实现"></a>vue3实现</h3><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
@@ -725,8 +711,7 @@ data:{
 &lt;script&gt;
 
 &lt;/script&gt;
-</code></pre>
-<h2 id="vue绑定复选框"><a href="#vue绑定复选框" class="headerlink" title="vue绑定复选框"></a>vue绑定复选框</h2><pre><code>&lt;input type="checkbox" v-model="all" value="1"&gt;
+</code></pre><h2 id="vue绑定复选框"><a href="#vue绑定复选框" class="headerlink" title="vue绑定复选框"></a>vue绑定复选框</h2><pre><code>&lt;input type="checkbox" v-model="all" value="1"&gt;
 
 如果all为数组，选中复选框，value值在数组中，没有选中，value值不在数组中
 data:{
@@ -737,8 +722,7 @@ data:{
 data:{
     all:true
 }
-</code></pre>
-<h2 id="vue绑定下拉列表框"><a href="#vue绑定下拉列表框" class="headerlink" title="vue绑定下拉列表框"></a>vue绑定下拉列表框</h2><pre><code>&lt;select v-model="s" multiple&gt;
+</code></pre><h2 id="vue绑定下拉列表框"><a href="#vue绑定下拉列表框" class="headerlink" title="vue绑定下拉列表框"></a>vue绑定下拉列表框</h2><pre><code>&lt;select v-model="s" multiple&gt;
     &lt;option&gt;1&lt;/option&gt;
     &lt;option&gt;2&lt;/option&gt;
     &lt;option&gt;3&lt;/option&gt;
@@ -753,16 +737,14 @@ data:{
 data:{
     s:'2'
 }
-</code></pre>
-<h2 id="vue绑定单选按钮"><a href="#vue绑定单选按钮" class="headerlink" title="vue绑定单选按钮"></a>vue绑定单选按钮</h2><pre><code>&lt;input type="radio" value="1" v-model="r"&gt;
+</code></pre><h2 id="vue绑定单选按钮"><a href="#vue绑定单选按钮" class="headerlink" title="vue绑定单选按钮"></a>vue绑定单选按钮</h2><pre><code>&lt;input type="radio" value="1" v-model="r"&gt;
 &lt;input type="radio" value="2" v-model="r"&gt;
 
 单选按钮需要绑定到单个值，不能绑定到数组，当v-model的值与value值相等的时候，单选按钮被选中
 data:{
     r:'1'
 }
-</code></pre>
-<h2 id="Vue动态添加属性"><a href="#Vue动态添加属性" class="headerlink" title="Vue动态添加属性"></a>Vue动态添加属性</h2><p>默认情况下，vue不跟踪动态添加的属性</p>
+</code></pre><h2 id="Vue动态添加属性"><a href="#Vue动态添加属性" class="headerlink" title="Vue动态添加属性"></a>Vue动态添加属性</h2><p>默认情况下，vue不跟踪动态添加的属性</p>
 <pre><code>        &lt;div id="app"&gt;
             {{stu.name}}
             &lt;input type="button" value="动态添加属性" @click="addAttr"&gt;
@@ -782,16 +764,14 @@ data:{
                 }
             });
         &lt;/script&gt;
-</code></pre>
-<h2 id="综合案例：员工管理"><a href="#综合案例：员工管理" class="headerlink" title="综合案例：员工管理"></a>综合案例：员工管理</h2><img src="/2022/060232144/3.jpg" class="">
-
+</code></pre><h2 id="综合案例：员工管理"><a href="#综合案例：员工管理" class="headerlink" title="综合案例：员工管理"></a>综合案例：员工管理</h2><img src="/2022/060232144/3.jpg" class="">
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;meta charset="utf-8"&gt;
         &lt;title&gt;&lt;/title&gt;
         &lt;script src="js/vue.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
-        
+
     &lt;/head&gt;
     &lt;body&gt;
         &lt;div id="app"&gt;
@@ -803,12 +783,12 @@ data:{
                 &lt;tbody &gt;
                     &lt;tr v-for="dept,index in depts"&gt;
                         &lt;td&gt;{{dept.deptno}}&lt;/td&gt;
-                        
+
                         &lt;td v-if="dept.edit"&gt;
                             &lt;input type="text"  v-model="tempDept.dname" size="4"&gt;
                         &lt;/td&gt;
                         &lt;td v-else&gt;{{dept.dname}}&lt;/td&gt;
-                        
+
                         &lt;td v-if="dept.edit"&gt;
                             &lt;input type="text"  v-model="tempDept.loc" size="4"&gt;
                         &lt;/td&gt;
@@ -838,7 +818,7 @@ data:{
                         {"deptno":20,"dname":"生产部","loc":"大连","editBtnValue":"编辑"},
                         {"deptno":30,"dname":"供应部","loc":"北京","editBtnValue":"编辑"}
                     ]
-                    
+
                 },
                 methods:{
                     del(index){
@@ -856,15 +836,15 @@ data:{
                             dept.editBtnValue = "保存";
                             this.tempDept.dname = dept.dname;
                             this.tempDept.loc = dept.loc;
-                            
+
                         }else{
                             dept.edit = false;
                             dept.editBtnValue = "编辑";
-                            
+
                             dept.dname = this.tempDept.dname;
                             dept.loc = this.tempDept.loc;
                         }
-                        
+
                     },
                     cancel(dept,index){
                         dept.edit = false;
@@ -875,8 +855,7 @@ data:{
         &lt;/script&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<h3 id="vue3实现-1"><a href="#vue3实现-1" class="headerlink" title="vue3实现"></a>vue3实现</h3><pre><code>&lt;template&gt;
+</code></pre><h3 id="vue3实现-1"><a href="#vue3实现-1" class="headerlink" title="vue3实现"></a>vue3实现</h3><pre><code>&lt;template&gt;
 员工管理
   &lt;table border="1" width="500"&gt;
     &lt;tr v-for="emp,index in emps" :key="emp.empno"&gt;
@@ -945,8 +924,7 @@ export default {
 &lt;style scoped&gt;
 
 &lt;/style&gt;
-</code></pre>
-<h2 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h2><p>作用：处理一些复杂逻辑</p>
+</code></pre><h2 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h2><p>作用：处理一些复杂逻辑</p>
 <pre><code>        &lt;div id="app"&gt;
             商品单价：&lt;input type="text" v-model="price"&gt;&lt;br&gt;
             商品数量：&lt;input type="text" v-model="num"&gt;&lt;br&gt;
@@ -970,8 +948,7 @@ export default {
                 }
             });
         &lt;/script&gt;
-</code></pre>
-<h2 id="监听属性"><a href="#监听属性" class="headerlink" title="监听属性"></a>监听属性</h2><p>可以通过watch来响应数据的变化</p>
+</code></pre><h2 id="监听属性"><a href="#监听属性" class="headerlink" title="监听属性"></a>监听属性</h2><p>可以通过watch来响应数据的变化</p>
 <pre><code>        &lt;div id="app"&gt;
             &lt;input type="text" v-model="km"&gt;千米&lt;br&gt;
             &lt;input type="text" v-model="m"&gt;米&lt;br&gt;
@@ -993,8 +970,7 @@ export default {
                 }
             });
         &lt;/script&gt;
-</code></pre>
-<p>监听对象</p>
+</code></pre><p>监听对象</p>
 <pre><code>&lt;body&gt;
         &lt;div id="app"&gt;
             商品单价：&lt;input type="text" v-model="good.price"&gt;&lt;br&gt;
@@ -1032,8 +1008,7 @@ export default {
             });
         &lt;/script&gt;
     &lt;/body&gt;
-</code></pre>
-<h2 id="v-model参数特性"><a href="#v-model参数特性" class="headerlink" title="v-model参数特性"></a>v-model参数特性</h2><ol>
+</code></pre><h2 id="v-model参数特性"><a href="#v-model参数特性" class="headerlink" title="v-model参数特性"></a>v-model参数特性</h2><ol>
 <li><p>lazy：在默认情况下，v-mode在每次 input 事件触发后，将输入框的值与数据同步，可以使用 lazy 修饰符，从而转变为使用 change 事件进行同步</p>
 <pre><code>    &lt;body&gt;
         &lt;div id="app"&gt;
@@ -1058,12 +1033,10 @@ export default {
             });
         &lt;/script&gt;
     &lt;/body&gt;
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>number：如果想自动将用户输入值类型转换为数值类型，可以使用number修饰符</p>
 <pre><code>&lt;input type="text" v-model.lazy.number="km"&gt;千米&lt;br&gt;
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>trim:自动过滤用户输入的首尾空白符，使用trim去掉首尾空白符</p>
 <pre><code>        &lt;div id="app"&gt;
             &lt;input type="text" v-model.trim="msg"&gt;
@@ -1076,8 +1049,7 @@ export default {
                 }
             });
         &lt;/script&gt;
-</code></pre>
-</li>
+</code></pre></li>
 </ol>
 <h2 id="样式绑定"><a href="#样式绑定" class="headerlink" title="样式绑定"></a>样式绑定</h2><ol>
 <li><p>绑定 class 类样式（值是一个对象）</p>
@@ -1113,8 +1085,7 @@ export default {
         &lt;/script&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>可以把一个数组传递给class属性</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1148,8 +1119,7 @@ export default {
         &lt;/script&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>style对象语法</p>
 <pre><code>        &lt;div id="app"&gt;
             &lt;div :style="{'color':color,'font-size':size}"&gt;
@@ -1165,8 +1135,7 @@ export default {
                 }
             });
         &lt;/script&gt;
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>style数组语法</p>
 <pre><code>        &lt;div id="app"&gt;
             &lt;div :style="[style1,style2]"&gt;
@@ -1182,18 +1151,16 @@ export default {
                 }
             });
         &lt;/script&gt;
-</code></pre>
-</li>
+</code></pre></li>
 </ol>
 <h2 id="定时器使用案例"><a href="#定时器使用案例" class="headerlink" title="定时器使用案例"></a>定时器使用案例</h2><img src="/2022/060232144/4.jpg" class="">
-
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;meta charset="utf-8"&gt;
         &lt;title&gt;&lt;/title&gt;
         &lt;script src="js/vue.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
-        
+
     &lt;/head&gt;
     &lt;body&gt;
         &lt;div id="app"&gt;
@@ -1214,7 +1181,7 @@ export default {
                     startGame(){
                         this.index = parseInt(Math.random()*this.arr.length);
                         this.name = this.arr[this.index];
-                        
+
                         this.t = setTimeout(this.startGame,100);
                     },
                     stopGame(){
@@ -1226,9 +1193,7 @@ export default {
         &lt;/script&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<h3 id="定时器练习"><a href="#定时器练习" class="headerlink" title="定时器练习"></a>定时器练习</h3><img src="/2022/060232144/5.jpg" class="">
-
+</code></pre><h3 id="定时器练习"><a href="#定时器练习" class="headerlink" title="定时器练习"></a>定时器练习</h3><img src="/2022/060232144/5.jpg" class="">
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
@@ -1295,8 +1260,7 @@ export default {
 &lt;script&gt;
 
 &lt;/script&gt;
-</code></pre>
-<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><ol>
+</code></pre><h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><ol>
 <li><p>定义：可以复用的Vue实例，且带有一个名字</p>
 </li>
 <li><p>使用</p>
@@ -1319,38 +1283,34 @@ export default {
                     }
                 }
             };
-            
+
             const mybtn = Vue.extend({
-            
+
             });
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>注册</p>
 <ul>
 <li><p>全局注册</p>
 <pre><code>Vue.component("mybtn",mybtn);
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>局部注册</p>
 <pre><code>            var app = new Vue({
                 el:"#app",
                 data:{
-                    
+
                 },
                 components:{
                     "mybtn":mybtn//简写：mybtn
                 }
             });
-</code></pre>
-</li>
+</code></pre></li>
 </ul>
 </li>
 <li><p>使用</p>
 <pre><code>&lt;div id="app"&gt;
     &lt;mybtn&gt;&lt;/mybtn&gt;
 &lt;/div&gt;
-</code></pre>
-</li>
+</code></pre></li>
 </ul>
 </li>
 <li><p>vue组件命名</p>
@@ -1383,15 +1343,14 @@ export default {
             var app = new Vue({
                 el:"#app",
                 data:{
-                    
+
                 },
                 components:{
                     "myBtn":mybtn
                 }
             });
         &lt;/script&gt;
-</code></pre>
-</li>
+</code></pre></li>
 </ul>
 </li>
 </ol>
@@ -1423,27 +1382,22 @@ export default {
                     "num"
                 ]
             };
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>在子组件中，可以向使用data的属性一样，来使用props中的属性</p>
 </li>
-<li><p>注意：在子组件中不要去改变属性的值</p>
-</li>
+<li>注意：在子组件中不要去改变属性的值</li>
 </ol>
 <h2 id="通过-自定义事件-子组件向父组件传值"><a href="#通过-自定义事件-子组件向父组件传值" class="headerlink" title="通过 自定义事件 子组件向父组件传值"></a>通过 自定义事件 子组件向父组件传值</h2><ol>
 <li><p>在 子组件中 触发自定义事件（什么时候想向父组件传值，什么时候触发）</p>
 <pre><code>this.$emit("retval",this.n);
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>父组件中，订阅子组件触发的自定义事件</p>
 <pre><code>&lt;my-btn :num="num" @retval="getValue($event)"&gt;&lt;/my-btn&gt;
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>注意：自定义的事件名与组件命名规则相同</p>
 </li>
 </ol>
 <h2 id="组件传值综合练习"><a href="#组件传值综合练习" class="headerlink" title="组件传值综合练习"></a>组件传值综合练习</h2><img src="/2022/060232144/6.jpg" class="">
-
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
@@ -1532,8 +1486,7 @@ export default {
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<h2 id="向子组件传值，修改后再返回"><a href="#向子组件传值，修改后再返回" class="headerlink" title="向子组件传值，修改后再返回"></a>向子组件传值，修改后再返回</h2><pre><code>&lt;!DOCTYPE html&gt;
+</code></pre><h2 id="向子组件传值，修改后再返回"><a href="#向子组件传值，修改后再返回" class="headerlink" title="向子组件传值，修改后再返回"></a>向子组件传值，修改后再返回</h2><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
@@ -1585,8 +1538,7 @@ export default {
   &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<p>简化写法：</p>
+</code></pre><p>简化写法：</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
@@ -1641,8 +1593,7 @@ export default {
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<h2 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h2><p>需求：组件间传递值比较麻烦，有的时候，仅仅需要把父组件的值显示到子组件的可视范围内</p>
+</code></pre><h2 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h2><p>需求：组件间传递值比较麻烦，有的时候，仅仅需要把父组件的值显示到子组件的可视范围内</p>
 <p>匿名插槽：<code>&lt;slot&gt;&lt;/slot&gt;</code>，只能有一个</p>
 <pre><code>&lt;body&gt;
 &lt;div id="app"&gt;
@@ -1670,17 +1621,15 @@ export default {
         }
     });
 &lt;/script&gt;
-</code></pre>
-<p>具名插槽：<code>&lt;slot name="插槽名"&gt;&lt;/slot&gt;</code></p>
+</code></pre><p>具名插槽：<code>&lt;slot name="插槽名"&gt;&lt;/slot&gt;</code></p>
 <img src="/2022/060232144/7.jpg" class="">
-
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;meta charset="utf-8"&gt;
         &lt;title&gt;&lt;/title&gt;
         &lt;script src="js/vue.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
-        
+
     &lt;/head&gt;
     &lt;body&gt;
         &lt;div id="app"&gt;
@@ -1707,7 +1656,7 @@ export default {
         &lt;/template&gt;
         &lt;script type="text/javascript"&gt;
             var child = {
-                template:"#child"				
+                template:"#child"                
             };
             var app = new Vue({
                 el:"#app",
@@ -1721,8 +1670,7 @@ export default {
         &lt;/script&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<p>注意：插槽属于父组件，在子组件中，只能决定放置在哪个地方，不能修改</p>
+</code></pre><p>注意：插槽属于父组件，在子组件中，只能决定放置在哪个地方，不能修改</p>
 <h2 id="作用域插槽"><a href="#作用域插槽" class="headerlink" title="作用域插槽"></a>作用域插槽</h2><p>作用：把子组件的值通过插槽属性传递出来，由父组件决定如何显示，并且只在当前插槽中有效</p>
 <p>slot-scope：就像一个临时变量，包含了从组件传回的所有属性。</p>
 <pre><code>&lt;!DOCTYPE html&gt;
@@ -1769,8 +1717,7 @@ export default {
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<p>也可以传递对象</p>
+</code></pre><p>也可以传递对象</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
@@ -1813,15 +1760,13 @@ export default {
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<img src="/2022/060232144/8.jpg" class="">
-
+</code></pre><img src="/2022/060232144/8.jpg" class="">
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;meta charset="utf-8"&gt;
         &lt;title&gt;&lt;/title&gt;
-        &lt;script src="js/vue.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;	
+        &lt;script src="js/vue.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;    
     &lt;/head&gt;
     &lt;body&gt;
         &lt;div id="app"&gt;
@@ -1838,7 +1783,7 @@ export default {
                 &lt;/ul&gt;
             &lt;/div&gt;
         &lt;/template&gt;
-        
+
         &lt;script type="text/javascript"&gt;
             var child = {
                 template:"#t1",
@@ -1858,15 +1803,14 @@ export default {
         &lt;/script&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<h2 id="动态组件"><a href="#动态组件" class="headerlink" title="动态组件"></a>动态组件</h2><p><code>&lt;component :is="com"&gt;&lt;/component&gt;</code>:com属性的值是一个组件对象</p>
+</code></pre><h2 id="动态组件"><a href="#动态组件" class="headerlink" title="动态组件"></a>动态组件</h2><p><code>&lt;component :is="com"&gt;&lt;/component&gt;</code>:com属性的值是一个组件对象</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;meta charset="utf-8"&gt;
         &lt;title&gt;&lt;/title&gt;
         &lt;script src="js/vue.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
-        
+
     &lt;/head&gt;
     &lt;body&gt;
         &lt;div id="app"&gt;
@@ -1897,8 +1841,7 @@ export default {
         &lt;/script&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><ol>
+</code></pre><h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><ol>
 <li><p>作用：在应用中切换组件</p>
 </li>
 <li><p>使用</p>
@@ -1907,8 +1850,7 @@ export default {
 </li>
 <li><p>导入路由文件</p>
 <pre><code>&lt;script src="js/vue-router.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>创建路由器实例，配置路由器</p>
 <pre><code>            var router = new VueRouter({
                 //路由表
@@ -1924,47 +1866,43 @@ export default {
                     }
                 ]
             });
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>注册路由器</p>
 <pre><code>            var app = new Vue({
                 el:"#app",
                 data:{
-                    
+
                 },
                 router
             });
-</code></pre>
-</li>
+</code></pre></li>
 <li><p><code>&lt;router-link to="/login"&gt;登录页&lt;/router-link&gt;</code>:功能类似于超链接，用来链接组件</p>
 </li>
 <li><p><code>&lt;router-view&gt;&lt;/router-view&gt;</code>：用来显示组件</p>
 </li>
 <li><p>使用代码切换组件</p>
 <pre><code>this.$router.push("/main");
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>显示第一个组件</p>
 <pre><code>//配置路由
  {
      path:'/',
      component:login
  }
- 
+
  //通过代码
              var app = new Vue({
                 el:"#app",
                 data:{
-                    
+
                 },
                 router,
                 created(){
                     this.$router.push("/login");
                 }
-                
+
             });
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>命名路由</p>
 <pre><code>                    {
                         path:'/login',
@@ -1976,11 +1914,9 @@ export default {
                         name:"main",
                         component:main
                     }
-</code></pre>
-<p>使用路由名子切换组件</p>
+</code></pre><p>使用路由名子切换组件</p>
 <pre><code>this.$router.push({name:'login'}).catch(()=&gt;{});
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>嵌套路由</p>
 <pre><code>            var router = new VueRouter({
                 //路由表
@@ -2014,8 +1950,7 @@ export default {
                     }
                 ]
             });
-</code></pre>
-<pre><code>&lt;!DOCTYPE html&gt;
+</code></pre><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;meta charset="utf-8"&gt;
@@ -2119,20 +2054,19 @@ export default {
             var app = new Vue({
                 el:"#app",
                 data:{
-                    
+
                 },
                 router,
                 created(){
                     // this.$router.push("/login");
                     this.$router.push({name:'login'}).catch(()=&gt;{});
                 }
-                
+
             });
         &lt;/script&gt;
     &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-</li>
+</code></pre></li>
 </ul>
 </li>
 </ol>
@@ -2154,8 +2088,7 @@ export default {
 {{$route.params.deptno}}
 
 this.deptno = this.$route.params.deptno;
-</code></pre>
-<pre><code>//路由表
+</code></pre><pre><code>//路由表
 {
     path:'/dept',
     component:dept
@@ -2168,8 +2101,7 @@ this.deptno = this.$route.params.deptno;
 {{$route.query.deptno}}
 
 this.deptno = this.$route.query.deptno;
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>查询参数（查询参数会显示在地址栏中）</p>
 <pre><code>//路由表
 {
@@ -2185,8 +2117,7 @@ this.$router.push({name:'main',query:{username:'admin',age:20}});
 {{$route.query.username}}
 
 this.username = this.$route.query.username;
-</code></pre>
-<p>通过 name 和 params 结合传递参数（地址栏中不显示参数数据）</p>
+</code></pre><p>通过 name 和 params 结合传递参数（地址栏中不显示参数数据）</p>
 <pre><code>//路由表
 {
     path:'/dept',
@@ -2201,8 +2132,7 @@ this.$router.push({name:'main',params:{username:'admin',age:20}});
 {{$route.params.username}}
 
 this.username = this.$route.params.username;
-</code></pre>
-</li>
+</code></pre></li>
 </ol>
 <h2 id="Vue-Cli"><a href="#Vue-Cli" class="headerlink" title="Vue-Cli"></a>Vue-Cli</h2><ol>
 <li><p>vue.js开发的标准工具</p>
@@ -2210,33 +2140,27 @@ this.username = this.$route.params.username;
 <li><p>Node.js:是一个基于 Chrome V8引擎的 JavaScript运行时环境</p>
 </li>
 <li><p>npm：是随着node.js一起安装的包管理工具，允许用户从npm服务器下载别人编写好的第三方包到本地</p>
-<p>测试：npm –version</p>
+<p>测试：npm —version</p>
 </li>
 <li><p>安装 cnpm</p>
 <pre><code>npm install -g cnpm --registry=http://registry.npm.taobao.org
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>安装 Vue-Cli</p>
 <pre><code>cnpm install -g @vue/cli
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>启动项目</p>
 <pre><code>npm run serve
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>安装路由(脚手架插件)</p>
 <pre><code>vue add router
-</code></pre>
-<p>或</p>
+</code></pre><p>或</p>
 <pre><code>npm（cnpm） install vue-router
-</code></pre>
-</li>
+</code></pre></li>
 </ol>
 <h2 id="Axios"><a href="#Axios" class="headerlink" title="Axios"></a>Axios</h2><ol>
 <li><p>安装：</p>
 <pre><code>vue add axios
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>定义：易用、简洁且高效的http库</p>
 </li>
 <li><p>作用：用户向后台服务器发送异步请求，并处理响应的结果</p>
@@ -2246,15 +2170,13 @@ this.username = this.$route.params.username;
 axios.defaults.baseURL="http://localhost:8089/"
 //允许传递证书
 axios.defaults.withCredentials=true
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>get请求</p>
 <pre><code>var url = `emp/getPaged?pageNum=${pageNum}&amp;pageSize=${pageSize}`;
 axios.get(url).then((resp)=&gt;{
     console.log(resp);
 });
-</code></pre>
-<pre><code>var url = `emp/getPaged`;
+</code></pre><pre><code>var url = `emp/getPaged`;
 var params = {
     pageNum:pageNum,
     pageSize:pageSize
@@ -2262,15 +2184,13 @@ var params = {
 axios.get(url,{params:params}).then((resp)=&gt;{
     console.log(resp);
 });
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>post请求</p>
-<pre><code>var url = `emp/getPaged`;	
+<pre><code>var url = `emp/getPaged`;    
                 axios.post(url,`pageNum=${pageNum}&amp;pageSize=${pageSize}`).then((resp)=&gt;{
      console.log(resp);
 });
-</code></pre>
-<pre><code>@RequestMapping("update")
+</code></pre><pre><code>@RequestMapping("update")
 public int update(@RequestBody Emp emp) {
     return empService.update(emp);
 }
@@ -2285,14 +2205,12 @@ update(){
         }
     });
 }
-</code></pre>
-</li>
+</code></pre></li>
 </ol>
 <h2 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h2><ol>
 <li><p>安装</p>
 <pre><code>npm install --save vuex
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>Vuex是Vue的状态管理库，用来管理状态（应用程序中的信息或数据）。它将状态存储在一个中心位置，使得任何组件都很容易与之交互</p>
 </li>
 <li><p>使用</p>
@@ -2309,8 +2227,7 @@ export default new Vuex.Store({
         count:0
     }
 })
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>在main.js,导入 store.js</p>
 <pre><code>import Vue from 'vue'
 import './plugins/axios'
@@ -2329,12 +2246,10 @@ new Vue({
   store,
   render: h =&gt; h(App)
 }).$mount('#app')
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>在组件中访问</p>
 <pre><code>{{$store.state.count}}
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>在组件内，来自store的数据是只读的，不能手工修改，改变 store中数据的唯一途径就是显示的提交mutations</p>
 <pre><code>export default new Vuex.Store({
     state:{
@@ -2351,8 +2266,7 @@ new Vue({
 
 //this.$store.commit("add",{num:6});
 this.$store.commit("add",5);
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>使用store中的getters，来处理state数据，以便以统一的形式来显示数据</p>
 <pre><code>export default new Vuex.Store({
     state:{
@@ -2371,8 +2285,7 @@ this.$store.commit("add",5);
 })
 
 {{$store.getters.formatCount}}
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>使用 store的 actions，来执行异步状态管理</p>
 <pre><code>export default new Vuex.Store({
     state:{
@@ -2398,8 +2311,7 @@ this.$store.commit("add",5);
 })
 
 this.$store.dispatch("add2",{num:7});//异步操作
-</code></pre>
-</li>
+</code></pre></li>
 </ul>
 </li>
 </ol>
@@ -2460,8 +2372,7 @@ this.$store.dispatch("add2",{num:7});//异步操作
     }
   ]
 })
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>路由守卫</p>
 <pre><code>router.beforeEach((to,from,next)=&gt;{
     window.document.title = to.meta.title;
@@ -2473,8 +2384,7 @@ new Vue({
   store,
   render: h =&gt; h(App)
 }).$mount('#app')
-</code></pre>
-<p>to：路由对象，即将要进入的目标</p>
+</code></pre><p>to：路由对象，即将要进入的目标</p>
 <p>from:路由对象，当前导航要离开的路由</p>
 <p>next：方法，一定要调用，决定后续如何导航处理</p>
 <ul>
@@ -2490,17 +2400,15 @@ new Vue({
                 this.$.commit("setUsername","admin");
                 this.$router.push("/main");
             }
-</code></pre>
-<pre><code>router.beforeEach((to,from,next)=&gt;{
+</code></pre><pre><code>router.beforeEach((to,from,next)=&gt;{
     window.document.title = to.meta.title;
-    
+
     if(to.name != "login" &amp;&amp; !store.state.username){
         next("/")
     }
     next();
 })
-</code></pre>
-</li>
+</code></pre></li>
 </ol>
 <h2 id="路由监听"><a href="#路由监听" class="headerlink" title="路由监听"></a>路由监听</h2><ol>
 <li><pre><code>&lt;div id="nav"&gt;
@@ -2524,22 +2432,19 @@ watch:{
         this.deptno = this.$route.params.deptno;
     }
 }
-</code></pre>
-</li>
+</code></pre></li>
 </ol>
 <h2 id="ElementUI"><a href="#ElementUI" class="headerlink" title="ElementUI"></a>ElementUI</h2><ol>
 <li><p>安装</p>
 <pre><code>npm i element-ui -S
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>修改main.js</p>
 <pre><code>import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
 //在vue中安装 element-ui插件
 Vue.use(ElementUI)
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>登录页前端</p>
 <pre><code>&lt;template&gt;
     &lt;div&gt;
@@ -2575,7 +2480,7 @@ Vue.use(ElementUI)
                     }
                 });
             };
-            
+
             return{
                 imgUrl:"http://localhost:8089/user/getCode",
                 user:{},
@@ -2634,8 +2539,7 @@ Vue.use(ElementUI)
         margin:0px auto 40px;
     }
 &lt;/style&gt;
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>登录页后端</p>
 <pre><code>package com.neu.controller;
 
@@ -2655,11 +2559,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UserController {
-    
+
     /*
      * @RequestMapping("/") public String getLogin() { return "user/login"; }
      */
-    
+
     @RequestMapping("user/login")
     public boolean login(String username,String password,HttpSession session) {
         if("admin".equals(username) &amp;&amp; "111".equals(password)) {
@@ -2669,7 +2573,7 @@ public class UserController {
             return false;
         }
     }
-    
+
     @RequestMapping("user/getCode")
     public ResponseEntity&lt;byte[]&gt; getCode(HttpSession session) throws IOException{
         char[] arr = {'0','1','2','3','4','5','6','7','8','9'};
@@ -2679,43 +2583,41 @@ public class UserController {
             n = (int)(Math.random()*arr.length);
             stb.append(arr[n]);
         }
-        
+
         session.setAttribute("code", stb.toString());
-        
+
         //把字符串放入到图片中，写入到输出流中
         BufferedImage buffImg = new BufferedImage(90, 20, BufferedImage.TYPE_INT_RGB);
         //得到画布
         Graphics g = buffImg.getGraphics();
         //向画布中写入字符串
         g.drawString(stb.toString(), 20, 15);
-        
+
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         ImageIO.write(buffImg, "jpeg", bos);
-        
+
         return new ResponseEntity&lt;byte[]&gt;(bos.toByteArray(),HttpStatus.CREATED);
     }
-    
+
     @RequestMapping("user/checkCode")
     public boolean checkCode(String checkCode,HttpSession session) {
         String code = (String)session.getAttribute("code");
-        
+
         if(code != null &amp;&amp; code.equals(checkCode)) {
             return true;
         }else {
             return false;
         }
-        
+
     }
 
 }
-</code></pre>
-</li>
+</code></pre></li>
 </ol>
 <h2 id="Vue-Router-4"><a href="#Vue-Router-4" class="headerlink" title="Vue-Router 4"></a>Vue-Router 4</h2><ol>
 <li><p>安装：</p>
 <pre><code>npm install vue-router
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>配置</p>
 <pre><code>// /router/index.js
 
@@ -2752,8 +2654,7 @@ export default createRouter({
         }
     ]
 })
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>main.js</p>
 <pre><code>import VueRouter from './router/index'
 
@@ -2768,11 +2669,9 @@ VueRouter.beforeEach((to,from,next)=&gt;{
     next()
 })
 app.use(VueRouter)
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>login.vue</p>
 <img src="/2022/060232144/9.jpg" class="">
-
 <pre><code>&lt;template&gt;
   &lt;input type="button" value="登录" @click="login"&gt;
 &lt;/template&gt;
@@ -2788,11 +2687,9 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>main.vue</p>
 <img src="/2022/060232144/10.jpg" class="">
-
 <pre><code>&lt;template&gt;
   &lt;div id="top"&gt;
 &lt;!--    &lt;router-link to="/login"&gt;注销&lt;/router-link&gt;--&gt;
@@ -2848,8 +2745,7 @@ li{
   list-style: none;
 }
 &lt;/style&gt;
-</code></pre>
-</li>
+</code></pre></li>
 </ol>
 <h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><h3 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h3><p>pom.xml</p>
 <pre><code>&lt;dependency&gt;
@@ -2857,8 +2753,7 @@ li{
     &lt;artifactId&gt;pagehelper-spring-boot-starter&lt;/artifactId&gt;
     &lt;version&gt;1.4.1&lt;/version&gt;
 &lt;/dependency&gt;
-</code></pre>
-<p>service</p>
+</code></pre><p>service</p>
 <pre><code>@Override
 public PageInfo&lt;Dept&gt; paged(int pageNum, int pageSize) {
     PageHelper.startPage(pageNum,pageSize);
@@ -2869,15 +2764,13 @@ public PageInfo&lt;Dept&gt; paged(int pageNum, int pageSize) {
 
     return pageInfo;
 }
-</code></pre>
-<p>controller</p>
+</code></pre><p>controller</p>
 <pre><code>@RequestMapping("paged")
 @ResponseBody
-public PageInfo&lt;Dept&gt; paged(@RequestParam(defaultValue = "1") int 	pageNum,@RequestParam(defaultValue = "3") int pageSize){
+public PageInfo&lt;Dept&gt; paged(@RequestParam(defaultValue = "1") int     pageNum,@RequestParam(defaultValue = "3") int pageSize){
     return deptService.paged(pageNum,pageSize);
 }
-</code></pre>
-<h3 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h3><pre><code>&lt;template&gt;
+</code></pre><h3 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h3><pre><code>&lt;template&gt;
   部门管理
   &lt;table border="1" width="500"&gt;
     &lt;tr v-for="dept in pageInfo.list" :key="dept.deptno"&gt;
@@ -2933,10 +2826,8 @@ export default {
 &lt;style scoped&gt;
 
 &lt;/style&gt;
-</code></pre>
-<h2 id="ElementUI-plus"><a href="#ElementUI-plus" class="headerlink" title="ElementUI-plus"></a>ElementUI-plus</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre><code>npm install element-plus --save
-</code></pre>
-<h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><pre><code>// main.ts
+</code></pre><h2 id="ElementUI-plus"><a href="#ElementUI-plus" class="headerlink" title="ElementUI-plus"></a>ElementUI-plus</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre><code>npm install element-plus --save
+</code></pre><h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><pre><code>// main.ts
 import { createApp } from 'vue'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
@@ -2946,15 +2837,13 @@ const app = createApp(App)
 
 app.use(ElementPlus)
 app.mount('#app')
-</code></pre>
-<h3 id="Container-布局容器"><a href="#Container-布局容器" class="headerlink" title="Container 布局容器"></a>Container 布局容器</h3><p>用于布局的容器组件，方便快速搭建页面的基本结构：</p>
+</code></pre><h3 id="Container-布局容器"><a href="#Container-布局容器" class="headerlink" title="Container 布局容器"></a>Container 布局容器</h3><p>用于布局的容器组件，方便快速搭建页面的基本结构：</p>
 <p><code>&lt;el-container&gt;</code>：外层容器。 当子元素中包含 <code>&lt;el-header&gt;</code> 或 <code>&lt;el-footer&gt;</code> 时，全部子元素会垂直上下排列， 否则会水平左右排列。</p>
 <p><code>&lt;el-header&gt;</code>：顶栏容器。</p>
 <p><code>&lt;el-aside&gt;</code>：侧边栏容器。</p>
 <p><code>&lt;el-main&gt;</code>：主要区域容器。</p>
 <p><code>&lt;el-footer&gt;</code>：底栏容器。</p>
 <img src="/2022/060232144/11.jpg" class="">
-
 <pre><code>&lt;template&gt;
   &lt;div class="common-layout"&gt;
     &lt;el-container&gt;
@@ -2990,9 +2879,7 @@ app.mount('#app')
   height: 150px;
 }
 &lt;/style&gt;
-</code></pre>
-<img src="/2022/060232144/12.jpg" class="">
-
+</code></pre><img src="/2022/060232144/12.jpg" class="">
 <pre><code>&lt;template&gt;
   &lt;div class="common-layout"&gt;
     &lt;el-container&gt;
@@ -3037,9 +2924,7 @@ app.mount('#app')
   text-align: center;
 }
 &lt;/style&gt;
-</code></pre>
-<img src="/2022/060232144/13.jpg" class="">
-
+</code></pre><img src="/2022/060232144/13.jpg" class="">
 <pre><code>&lt;template&gt;
   &lt;div class="common-layout"&gt;
     &lt;el-container&gt;
@@ -3079,165 +2964,199 @@ app.mount('#app')
 }
 
 .common-layout .el-aside {
-  /*var()函数中的值可以在浏览器调试中查看*/	
+  /*var()函数中的值可以在浏览器调试中查看*/    
   background-color: var(--el-color-primary-light-8);
   color: var(--el-text-color-primary);
   text-align: center;
 }
 &lt;/style&gt;
-</code></pre>
-<h4 id="Container-属性"><a href="#Container-属性" class="headerlink" title="Container 属性"></a>Container 属性</h4><table>
+</code></pre><h4 id="Container-属性"><a href="#Container-属性" class="headerlink" title="Container 属性"></a>Container 属性</h4><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left">属性</th>
-<th align="left">说明</th>
-<th align="left">类型</th>
-<th align="left">可选值</th>
-<th align="left">默认值</th>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">可选值</th>
+<th style="text-align:left">默认值</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">direction</td>
-<td align="left">子元素的排列方向</td>
-<td align="left">string</td>
-<td align="left">horizontal / vertical</td>
-<td align="left">子元素中有 <code>el-header</code> 或 <code>el-footer</code> 时为 vertical，否则为 horizontal</td>
+<tbody>
+<tr>
+<td style="text-align:left">direction</td>
+<td style="text-align:left">子元素的排列方向</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">horizontal / vertical</td>
+<td style="text-align:left">子元素中有 <code>el-header</code> 或 <code>el-footer</code> 时为 vertical，否则为 horizontal</td>
 </tr>
-</tbody></table>
-<h4 id="Container-插槽"><a href="#Container-插槽" class="headerlink" title="Container 插槽"></a>Container 插槽</h4><table>
+</tbody>
+</table>
+</div>
+<h4 id="Container-插槽"><a href="#Container-插槽" class="headerlink" title="Container 插槽"></a>Container 插槽</h4><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left">插槽名</th>
-<th align="left">说明</th>
-<th align="left">子标签</th>
+<th style="text-align:left">插槽名</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">子标签</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">—</td>
-<td align="left">自定义默认内容</td>
-<td align="left">Container / Header / Aside / Main / Footer</td>
+<tbody>
+<tr>
+<td style="text-align:left">—</td>
+<td style="text-align:left">自定义默认内容</td>
+<td style="text-align:left">Container / Header / Aside / Main / Footer</td>
 </tr>
-</tbody></table>
-<h4 id="Header-属性"><a href="#Header-属性" class="headerlink" title="Header 属性"></a>Header 属性</h4><table>
+</tbody>
+</table>
+</div>
+<h4 id="Header-属性"><a href="#Header-属性" class="headerlink" title="Header 属性"></a>Header 属性</h4><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left">属性</th>
-<th align="left">说明</th>
-<th align="left">类型</th>
-<th align="left">可选值</th>
-<th align="left">默认值</th>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">可选值</th>
+<th style="text-align:left">默认值</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">height</td>
-<td align="left">顶栏高度</td>
-<td align="left">string</td>
-<td align="left">—</td>
-<td align="left">60px</td>
+<tbody>
+<tr>
+<td style="text-align:left">height</td>
+<td style="text-align:left">顶栏高度</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">60px</td>
 </tr>
-</tbody></table>
-<h4 id="Header-插槽"><a href="#Header-插槽" class="headerlink" title="Header 插槽"></a>Header 插槽</h4><table>
+</tbody>
+</table>
+</div>
+<h4 id="Header-插槽"><a href="#Header-插槽" class="headerlink" title="Header 插槽"></a>Header 插槽</h4><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left">插槽名</th>
-<th align="left">说明</th>
+<th style="text-align:left">插槽名</th>
+<th style="text-align:left">说明</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">—</td>
-<td align="left">自定义默认内容</td>
+<tbody>
+<tr>
+<td style="text-align:left">—</td>
+<td style="text-align:left">自定义默认内容</td>
 </tr>
-</tbody></table>
-<h4 id="Aside-属性"><a href="#Aside-属性" class="headerlink" title="Aside 属性"></a>Aside 属性</h4><table>
+</tbody>
+</table>
+</div>
+<h4 id="Aside-属性"><a href="#Aside-属性" class="headerlink" title="Aside 属性"></a>Aside 属性</h4><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left">属性</th>
-<th align="left">说明</th>
-<th align="left">类型</th>
-<th align="left">可选值</th>
-<th align="left">默认值</th>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">可选值</th>
+<th style="text-align:left">默认值</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">width</td>
-<td align="left">侧边栏宽度</td>
-<td align="left">string</td>
-<td align="left">—</td>
-<td align="left">300px</td>
+<tbody>
+<tr>
+<td style="text-align:left">width</td>
+<td style="text-align:left">侧边栏宽度</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">300px</td>
 </tr>
-</tbody></table>
-<h4 id="Aside-插槽"><a href="#Aside-插槽" class="headerlink" title="Aside 插槽"></a>Aside 插槽</h4><table>
+</tbody>
+</table>
+</div>
+<h4 id="Aside-插槽"><a href="#Aside-插槽" class="headerlink" title="Aside 插槽"></a>Aside 插槽</h4><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left">插槽名</th>
-<th align="left">说明</th>
+<th style="text-align:left">插槽名</th>
+<th style="text-align:left">说明</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">—</td>
-<td align="left">自定义默认内容</td>
+<tbody>
+<tr>
+<td style="text-align:left">—</td>
+<td style="text-align:left">自定义默认内容</td>
 </tr>
-</tbody></table>
-<h4 id="Main-插槽"><a href="#Main-插槽" class="headerlink" title="Main 插槽"></a>Main 插槽</h4><table>
+</tbody>
+</table>
+</div>
+<h4 id="Main-插槽"><a href="#Main-插槽" class="headerlink" title="Main 插槽"></a>Main 插槽</h4><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left">插槽名</th>
-<th align="left">说明</th>
+<th style="text-align:left">插槽名</th>
+<th style="text-align:left">说明</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">—</td>
-<td align="left">自定义默认内容</td>
+<tbody>
+<tr>
+<td style="text-align:left">—</td>
+<td style="text-align:left">自定义默认内容</td>
 </tr>
-</tbody></table>
-<h4 id="Footer-属性"><a href="#Footer-属性" class="headerlink" title="Footer 属性"></a>Footer 属性</h4><table>
+</tbody>
+</table>
+</div>
+<h4 id="Footer-属性"><a href="#Footer-属性" class="headerlink" title="Footer 属性"></a>Footer 属性</h4><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left">属性</th>
-<th align="left">说明</th>
-<th align="left">类型</th>
-<th align="left">可选值</th>
-<th align="left">默认值</th>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">可选值</th>
+<th style="text-align:left">默认值</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">height</td>
-<td align="left">底栏高度</td>
-<td align="left">string</td>
-<td align="left">—</td>
-<td align="left">60px</td>
+<tbody>
+<tr>
+<td style="text-align:left">height</td>
+<td style="text-align:left">底栏高度</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">60px</td>
 </tr>
-</tbody></table>
-<h4 id="Footer-插槽"><a href="#Footer-插槽" class="headerlink" title="Footer 插槽"></a>Footer 插槽</h4><table>
+</tbody>
+</table>
+</div>
+<h4 id="Footer-插槽"><a href="#Footer-插槽" class="headerlink" title="Footer 插槽"></a>Footer 插槽</h4><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left">插槽名</th>
-<th align="left">说明</th>
+<th style="text-align:left">插槽名</th>
+<th style="text-align:left">说明</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">—</td>
-<td align="left">自定义默认内容</td>
+<tbody>
+<tr>
+<td style="text-align:left">—</td>
+<td style="text-align:left">自定义默认内容</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h4 id="CSS-var-函数"><a href="#CSS-var-函数" class="headerlink" title="CSS var() 函数"></a>CSS var() 函数</h4><p>实例</p>
-<p>定义一个名为 “–main-bg-color” 的属性，然后使用 var() 函数调用该属性：</p>
+<p>定义一个名为 “—main-bg-color” 的属性，然后使用 var() 函数调用该属性：</p>
 <pre><code>:root {
   --main-bg-color: coral;
 }
- 
+
 #div1 {
   background-color: var(--main-bg-color);
 }
- 
+
 #div2 {
   background-color: var(--main-bg-color);
 }
-</code></pre>
-<h3 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h3><p>通过基础的 24 分栏，迅速简便地创建布局。</p>
+</code></pre><h3 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h3><p>通过基础的 24 分栏，迅速简便地创建布局。</p>
 <h4 id="基础布局"><a href="#基础布局" class="headerlink" title="基础布局"></a>基础布局</h4><p>​       使用列创建基础网格布局。</p>
 <p>​       通过 <code>row</code> 和 <code>col</code> 组件，并通过 col 组件的 <code>span</code> 属性我们就可以自由地组合布局。</p>
-<p>​				<img src="/2022/060232144/14.jpg" class=""></p>
+<p>​                <img src="/2022/060232144/14.jpg" class=""></p>
 <pre><code>&lt;template&gt;
   &lt;el-row&gt;
     &lt;el-col :span="24"&gt;&lt;div class="grid-content bg-purple-dark" /&gt;&lt;/el-col&gt;
@@ -3295,10 +3214,8 @@ app.mount('#app')
     background: #e5e9f2;
 }
 &lt;/style&gt;
-</code></pre>
-<h4 id="分栏间隔"><a href="#分栏间隔" class="headerlink" title="分栏间隔"></a>分栏间隔</h4><p>支持列间距。</p>
+</code></pre><h4 id="分栏间隔"><a href="#分栏间隔" class="headerlink" title="分栏间隔"></a>分栏间隔</h4><p>支持列间距。</p>
 <img src="/2022/060232144/15.jpg" class="">
-
 <p>行提供 <code>gutter</code> 属性来指定列之间的间距，其默认值为0。</p>
 <pre><code>&lt;template&gt;
   &lt;el-row :gutter="20"&gt;
@@ -3336,10 +3253,8 @@ app.mount('#app')
   background: #e5e9f2;
 }
 &lt;/style&gt;
-</code></pre>
-<h4 id="混合布局"><a href="#混合布局" class="headerlink" title="混合布局"></a>混合布局</h4><p>通过基础的 1/24 分栏任意扩展组合形成较为复杂的混合布局。</p>
+</code></pre><h4 id="混合布局"><a href="#混合布局" class="headerlink" title="混合布局"></a>混合布局</h4><p>通过基础的 1/24 分栏任意扩展组合形成较为复杂的混合布局。</p>
 <img src="/2022/060232144/16.jpg" class="">
-
 <pre><code>&lt;template&gt;
   &lt;el-row :gutter="20"&gt;
     &lt;el-col :span="16"&gt;&lt;div class="grid-content bg-purple" /&gt;&lt;/el-col&gt;
@@ -3377,10 +3292,8 @@ app.mount('#app')
   background: rgba(192,132,252);
 }
 &lt;/style&gt;
-</code></pre>
-<h4 id="列偏移"><a href="#列偏移" class="headerlink" title="列偏移"></a>列偏移</h4><p>您可以指定列偏移量。</p>
+</code></pre><h4 id="列偏移"><a href="#列偏移" class="headerlink" title="列偏移"></a>列偏移</h4><p>您可以指定列偏移量。</p>
 <img src="/2022/060232144/17.jpg" class="">
-
 <p>通过制定 col 组件的 <code>offset</code> 属性可以指定分栏偏移的栏数。</p>
 <pre><code>&lt;template&gt;
   &lt;el-row :gutter="20"&gt;
@@ -3423,10 +3336,8 @@ app.mount('#app')
   background: rgba(192,132,252);
 }
 &lt;/style&gt;
-</code></pre>
-<h4 id="对齐方式"><a href="#对齐方式" class="headerlink" title="对齐方式"></a>对齐方式</h4><p>默认使用 flex 布局来对分栏进行灵活的对齐。</p>
+</code></pre><h4 id="对齐方式"><a href="#对齐方式" class="headerlink" title="对齐方式"></a>对齐方式</h4><p>默认使用 flex 布局来对分栏进行灵活的对齐。</p>
 <img src="/2022/060232144/18.jpg" class="">
-
 <p>您可以通过<code>justify</code> 属性来定义子元素的排版方式，其取值为start、center、end、space-between、space-around或space-evenly。</p>
 <pre><code>&lt;template&gt;
   &lt;el-row class="row-bg"&gt;
@@ -3485,129 +3396,135 @@ app.mount('#app')
   background: #e5e9f2;
 }
 &lt;/style&gt;
-</code></pre>
-<h4 id="Row-属性"><a href="#Row-属性" class="headerlink" title="Row 属性"></a>Row 属性</h4><table>
+</code></pre><h4 id="Row-属性"><a href="#Row-属性" class="headerlink" title="Row 属性"></a>Row 属性</h4><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left">属性</th>
-<th align="left">说明</th>
-<th align="left">类型</th>
-<th align="left">可选值</th>
-<th align="left">默认值</th>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">可选值</th>
+<th style="text-align:left">默认值</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">gutter</td>
-<td align="left">栅格间隔</td>
-<td align="left">number</td>
-<td align="left">—</td>
-<td align="left">0</td>
+<tbody>
+<tr>
+<td style="text-align:left">gutter</td>
+<td style="text-align:left">栅格间隔</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">0</td>
 </tr>
 <tr>
-<td align="left">justify</td>
-<td align="left">flex 布局下的水平排列方式</td>
-<td align="left">string</td>
-<td align="left">start/end/center/space-around/space-between/space-evenly</td>
-<td align="left">start</td>
+<td style="text-align:left">justify</td>
+<td style="text-align:left">flex 布局下的水平排列方式</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">start/end/center/space-around/space-between/space-evenly</td>
+<td style="text-align:left">start</td>
 </tr>
 <tr>
-<td align="left">align</td>
-<td align="left">flex 布局下的垂直排列方式</td>
-<td align="left">string</td>
-<td align="left">top/middle/bottom</td>
-<td align="left">top</td>
+<td style="text-align:left">align</td>
+<td style="text-align:left">flex 布局下的垂直排列方式</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">top/middle/bottom</td>
+<td style="text-align:left">top</td>
 </tr>
 <tr>
-<td align="left">tag</td>
-<td align="left">自定义元素标签</td>
-<td align="left">string</td>
-<td align="left">*</td>
-<td align="left">div</td>
+<td style="text-align:left">tag</td>
+<td style="text-align:left">自定义元素标签</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">*</td>
+<td style="text-align:left">div</td>
 </tr>
-</tbody></table>
-<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="Col-属性"><a href="#Col-属性" class="headerlink" title="Col 属性"></a>Col 属性</h4><table>
+</tbody>
+</table>
+</div>
+<h4 id=""><a href="#" class="headerlink" title=" "></a> </h4><h4 id="Col-属性"><a href="#Col-属性" class="headerlink" title="Col 属性"></a>Col 属性</h4><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left">属性</th>
-<th align="left">说明</th>
-<th align="left">类型</th>
-<th align="left">可选值</th>
-<th align="left">默认值</th>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">可选值</th>
+<th style="text-align:left">默认值</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">span</td>
-<td align="left">栅格占据的列数</td>
-<td align="left">number</td>
-<td align="left">—</td>
-<td align="left">24</td>
+<tbody>
+<tr>
+<td style="text-align:left">span</td>
+<td style="text-align:left">栅格占据的列数</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">24</td>
 </tr>
 <tr>
-<td align="left">offset</td>
-<td align="left">栅格左侧的间隔格数</td>
-<td align="left">number</td>
-<td align="left">—</td>
-<td align="left">0</td>
+<td style="text-align:left">offset</td>
+<td style="text-align:left">栅格左侧的间隔格数</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">0</td>
 </tr>
 <tr>
-<td align="left">push</td>
-<td align="left">栅格向右移动格数</td>
-<td align="left">number</td>
-<td align="left">—</td>
-<td align="left">0</td>
+<td style="text-align:left">push</td>
+<td style="text-align:left">栅格向右移动格数</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">0</td>
 </tr>
 <tr>
-<td align="left">pull</td>
-<td align="left">栅格向左移动格数</td>
-<td align="left">number</td>
-<td align="left">—</td>
-<td align="left">0</td>
+<td style="text-align:left">pull</td>
+<td style="text-align:left">栅格向左移动格数</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">0</td>
 </tr>
 <tr>
-<td align="left">xs</td>
-<td align="left"><code>&lt;768px</code> 响应式栅格数或者栅格属性对象</td>
-<td align="left">number/object (例如 {span: 4, offset: 4})</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left">xs</td>
+<td style="text-align:left"><code>&lt;768px</code> 响应式栅格数或者栅格属性对象</td>
+<td style="text-align:left">number/object (例如 {span: 4, offset: 4})</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left">sm</td>
-<td align="left"><code>≥768px</code> 响应式栅格数或者栅格属性对象</td>
-<td align="left">number/object (例如 {span: 4, offset: 4})</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left">sm</td>
+<td style="text-align:left"><code>≥768px</code> 响应式栅格数或者栅格属性对象</td>
+<td style="text-align:left">number/object (例如 {span: 4, offset: 4})</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left">md</td>
-<td align="left"><code>≥992px</code> 响应式栅格数或者栅格属性对象</td>
-<td align="left">number/object (例如 {span: 4, offset: 4})</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left">md</td>
+<td style="text-align:left"><code>≥992px</code> 响应式栅格数或者栅格属性对象</td>
+<td style="text-align:left">number/object (例如 {span: 4, offset: 4})</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left">lg</td>
-<td align="left"><code>≥1200px</code> 响应式栅格数或者栅格属性对象</td>
-<td align="left">number/object (例如 {span: 4, offset: 4})</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left">lg</td>
+<td style="text-align:left"><code>≥1200px</code> 响应式栅格数或者栅格属性对象</td>
+<td style="text-align:left">number/object (例如 {span: 4, offset: 4})</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left">xl</td>
-<td align="left"><code>≥1920px</code> 响应式栅格数或者栅格属性对象</td>
-<td align="left">number/object (例如 {span: 4, offset: 4})</td>
-<td align="left">—</td>
-<td align="left">—</td>
+<td style="text-align:left">xl</td>
+<td style="text-align:left"><code>≥1920px</code> 响应式栅格数或者栅格属性对象</td>
+<td style="text-align:left">number/object (例如 {span: 4, offset: 4})</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">—</td>
 </tr>
 <tr>
-<td align="left">tag</td>
-<td align="left">自定义元素标签</td>
-<td align="left">string</td>
-<td align="left">*</td>
-<td align="left">div</td>
+<td style="text-align:left">tag</td>
+<td style="text-align:left">自定义元素标签</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">*</td>
+<td style="text-align:left">div</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="登录页"><a href="#登录页" class="headerlink" title="登录页"></a>登录页</h2><img src="/2022/060232144/19.jpg" class="">
-
 <pre><code>&lt;template&gt;
   &lt;div&gt;
     &lt;el-form class="login-container"&gt;
@@ -3655,17 +3572,14 @@ export default {
   margin:0px auto 40px;
 }
 &lt;/style&gt;
-</code></pre>
-<h2 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><pre><code>npm install @element-plus/icons-vue
-</code></pre>
-<h3 id="全局注册"><a href="#全局注册" class="headerlink" title="全局注册"></a>全局注册</h3><pre><code>import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+</code></pre><h2 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><pre><code>npm install @element-plus/icons-vue
+</code></pre><h3 id="全局注册"><a href="#全局注册" class="headerlink" title="全局注册"></a>全局注册</h3><pre><code>import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
 const app = createApp(App)
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
 }
-</code></pre>
-<h3 id="使用-2"><a href="#使用-2" class="headerlink" title="使用"></a>使用</h3><pre><code>&lt;template&gt;
+</code></pre><h3 id="使用-2"><a href="#使用-2" class="headerlink" title="使用"></a>使用</h3><pre><code>&lt;template&gt;
   &lt;p&gt;
     with extra class &lt;b&gt;is-loading&lt;/b&gt;, your icon is able to rotate 360 deg in 2
     seconds, you can also override this
@@ -3690,7 +3604,6 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   &lt;/el-button&gt;
 &lt;/template&gt;
 </code></pre>
-
                 
             </div>
             <hr/>
