@@ -1,0 +1,1906 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Redis, Springboot,java,HTML,Vue,linux等">
+    <meta name="description" content="Redis">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+    <style>
+        body{
+            background-image: url(/medias/bg.png);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+    <title>Redis | FFFfrance&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/guixinchn/image/blog/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/guixinchn/image/blog/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">FFFfrance&#39;s Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/guixinchn/image/blog/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">FFFfrance&#39;s Blog</div>
+        <div class="logo-desc">
+            
+            个人分享博客，总结开发经验，记录生活点滴
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Redis</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Redis/">
+                                <span class="chip bg-color">Redis</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Redis/" class="post-category">
+                                Redis
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-06-16
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-06-16
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    7.7k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    33 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ol>
+<li><p>基于内存的key-value数据库</p>
+</li>
+<li><p>基于c语言编写的，可以支持多种语言的api //set每秒11万次，取get 81000次</p>
+</li>
+<li><p>支持数据持久化</p>
+</li>
+<li><p>value可以是string，hash， list， set, sorted set</p>
+</li>
+<li><p>应用场景</p>
+</li>
+</ol>
+<img src="/2022/061627273/798174-20190321203330649-499029266.png" class="" title="img">
+
+<h2 id="基本服务器管理"><a href="#基本服务器管理" class="headerlink" title="基本服务器管理"></a>基本服务器管理</h2><ol>
+<li><p>使用redis客户端连接redis本机服务：<br>[root@CentOs bin]# ./redis-cli</p>
+</li>
+<li><p>使用redis客户端连接redis远程服务（使用本机模拟）：<br>[root@CentOs bin]# ./redis-cli -h 192.168.25.128 -p 6379</p>
+</li>
+<li><p>健康检查命令：<br>192.168.25.128:6379&gt; ping<br>PONG</p>
+</li>
+<li><p>重启redis服务：<br>[root@CentOs bin]# ./redis-server redis.conf</p>
+</li>
+<li><p>使用redis客户端关闭redis服务<br>[root@CentOs bin]# ./redis-cli shutdown</p>
+</li>
+<li><p>重启redis服务：<br>[root@CentOs bin]# ./redis-server redis.conf</p>
+</li>
+</ol>
+<h2 id="Redis的五种数据类型"><a href="#Redis的五种数据类型" class="headerlink" title="Redis的五种数据类型"></a>Redis的五种数据类型</h2><p>对于Redis 来说，他只能存储五种基本数据类型</p>
+<p>在之前的版本中都是String,Hash,List,SortedSet(zSet),Map</p>
+<p>而现在的新版本中String,Hash,List,SortedSet(zSet),Set</p>
+<p>一、字符串String —–String Key-Value</p>
+<p>　　字符串是Redis中最常用的类型，是一个由字节组成的序列，他在Redis中是二进制安全的</p>
+<p>这意味着该类型可以接受任何格式的数据。</p>
+<p>Value最多可以容纳的数据长度为512MB</p>
+<p>set key value</p>
+<p>往key 中存入一个值(value)</p>
+<p>获取键为key的值</p>
+<p>　　注意：redis中的Key和Value时区分大小写，命令不区分大小写，redis是单线程不适合储存大容量的数据</p>
+<p>自增的value是可以转成数字的</p>
+<p>二、散列Hash——key-filed-value</p>
+<p>　　相当于是一个key中存在多个map.Redis中的散列可以看成具有String key和String value的map</p>
+<p>容器，可以将多个key-value存储到一个key钟。每一个Hash可以存储4294967295个键值对。</p>
+<img src="/2022/061627273/2064607-20200623084300564-1806876841.png" class="" title="img">
+
+<p>三、集合Set</p>
+<p>　　Redis的集合是无序不可重复的，此处的无序是数据不能重复。和列表一样，在执行插入和删除</p>
+<p>以及判断是否存在某元素时，效率是很高的。集合最大的优势在于可以进行交集并集，差集操作。</p>
+<p>Set可包含的最大元素数量是4294967295.</p>
+<p>　　应用场景：1.利用交集求共同好友。2.利用唯一性，可以统计访问网站的所有独立Ip。</p>
+<p>3.好友推荐的时候根据tag求交集，大于某个threshold(临界值)就可以推荐。</p>
+<p>四、列表List</p>
+<p>　　Redis的列表允许用户从序列的两端推入或者弹出元素，列表有多个字符串值组成的有序可重复的序列，</p>
+<p>是链表结构，所以向列表两端添加元素的时间复杂度为O(1），获取越接近两端的元素速度就越</p>
+<p>快。这意味着即使是一个有几千万个元素的列表，获取头部活尾部的10条记录也是极快的。List中可以</p>
+<p>包含最大的元素数量是4294967295.</p>
+<p>五、SortedSet(zSet)</p>
+<p>　　有顺序，不能重复！！此处的不能重复是索引为唯一的，数据却可以重复。和Set很像</p>
+<p>都是字符串的集合，都不允许重复的成员出现在一个Set中。他们之间差别在于有序集合中每一个成员都会有一个</p>
+<p>分数与之关联，Redis正是通过分数来为集合中的成员进行从小到大的排序。尽管有序集合中的</p>
+<p>成员必须是唯一的，但是分数却可以重复。</p>
+<p>　　应用场景：可以用于一个大型的在线游戏的积分排行榜，每当玩家的分数发生变化是，可以执行zadd</p>
+<p>更新玩家的分数，此后在通过zrange获取积分top n的用户信息</p>
+<h2 id="数据库键空间"><a href="#数据库键空间" class="headerlink" title="数据库键空间"></a>数据库键空间</h2><p>Redis是一个键值对（key-value pair）数据库服务器，服务器中的每个数据库都由一个redisDb结构表示，其中，redisDb结构的dict字典保存了数据库中的所有键值对，我们将这个字典称为键空间（key space）</p>
+<p>键空间和用户所见的数据库是直接对应的</p>
+<p>键空间的键也就是数据库的键，每个键都是一个字符串对象<br>键空间的值也就是数据库的值，每个值可以是字符串对象、列表对象、哈希表对象、集合对象和有序集合对象中的任意一种Redis对象</p>
+<img src="/2022/061627273/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80ODkyMjE1NA==,size_16,color_FFFFFF,t_70.png" class="" title="在这里插入图片描述">
+
+<img src="/2022/061627273/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80ODkyMjE1NA==,size_16,color_FFFFFF,t_70-16551816665784.png" class="" title="在这里插入图片描述">
+
+<p>读写键空间的维护操作</p>
+<ul>
+<li><p>当使用Redis命令对数据库进行读写时，服务器不仅会对键空间执行指定读写操作，还会执行一些额外的维护操作</p>
+</li>
+<li><p>在读取一个键之后（包括读操作和写操作），服务器会根据键是否存在，来更新服务器的键命中和不命中次数，可以通过INFO stats 命令的 keyspace_hits 属性和 keyspace_misses 属性查看</p>
+</li>
+<li><p>在读取一个键之后，服务器会更新键的LRU（最后一次使用时间），这个值可以用于计算键的限制时间，使用OBJECT idletime &lt; key &gt; 命令查看</p>
+</li>
+<li><p>如果服务器在读取一个键时发现该键已经过期，那么服务器会先删除这个过期键，然后才执行余下的其他操作</p>
+</li>
+<li><p>如果有客户端使用WATCH命令监视某个key，那么服务器在对被监视的键进行修改之后，会将这个键标记为脏，从而让事务程序注意到这个键已经被修改过</p>
+</li>
+<li><p>服务器每次修改一个键之后，都会对脏键计数器的值增1，这个计数器会触发服务器的持久化以及复制操作（例如自动BGSAVE操作，就是查看在多少时间内对键进行了多少次修改，达到设定值则进行RDB持久化）</p>
+</li>
+<li><p>如果服务器开启了数据库通知功能，那么在对键进行修改之后，服务器将按配置发送相应的数据库通知。</p>
+</li>
+</ul>
+<h2 id="Redis的数据的基本操作"><a href="#Redis的数据的基本操作" class="headerlink" title="Redis的数据的基本操作"></a>Redis的数据的基本操作</h2><pre><code>1.set str1 abc：添加键str1，其值为：abc
+2.get str1：得到键为str1的值
+3.incr key1：key1加1，如果key1不存在，自动创建一个key1的键，其值为0，加一，key1的值为1
+4.keys * :显示所有的key
+5.decr key1：key1减一
+    说明：不论是incr还是decr，保存的数据都是字符串，执行incr或decr命令时候，把字符串转换为整数，再进行加减，
+           如果转换失败，则报错
+6.del key1:删除键和值
+
+7.hset hash1 field1 1:键为Hash1，值为hash，键为field1，值为1
+    同一个hash中可以放入多个值，如：
+        hset hash1 field2 2
+        hset hash1 field3 3
+8.hget hash1 field1：取hash1中field1的值
+9.hkeys hash1:查看hash1的所有键
+10.hvals hash1:查看hash1的所有值
+11.hgetall hash1：查看hash1的所有键和值
+12.hdel hash1 field1:删除hash1的field1
+</code></pre>
+<pre><code>以下了解:
+13.lpush list1 1 2 3 4 5 6:从左边压入，后压入的在最左边
+14.rpush list1 a b c d：从右边压入，后压入的在最右边
+15.lrange list1 0 -1:查看list1 的范围值，0表示第一个元素索引，-1表示所有
+16.lpop list1：从list1左边取出第一个元素（相当于出栈，取出后，list1中移除该元素）
+17.rpop list1：从list1右边取出第一个元素（相当于出栈）
+
+18.sadd set1 a b a b d c：向set1中添加一个set，值为a b a b d c（会去掉重复的元素）
+19.srem set1 a：从set1中移除一个元素a（可以一次移除多个元素）
+20.smembers set1:显示set1中的元素
+21：集合相减：
+    sadd seta a b c d e 
+    sadd setb c d e f g 
+    sdiff seta setb :seta - setb =&gt;a b
+    sdiff setb seta :setb - seta =&gt; f g
+22.sinter seta setb :seta和setb的交集=》a b c
+23.sunion seta setb:seta 和set的并集合=》a b c d e f g
+
+24.zadd zset1 1 a 3 b 2 c 5 d :向zset1中添加元素，并且根据分数（权重）排序
+25.zrange zset1 0 -1：查看zset1中的所有元素（排序后的结果）
+26.zrem zset1 a：删除zset1中的a元素
+27.zrevrange zset1 0 -1：降序排序输出
+28.zrevrange zset1 0 -1 withscores：降序排序输出，并输出权重
+
+29.expire key1 100:设置key1的过期时间为100秒（key1必须先存在，没有设置过期时间，就是永久保存的）
+30.ttl key1：查看key1的剩余过期时间
+    值为整数：表示该键正在过期倒计时
+    值为-2：表示该键已经过期（不存在的）
+    值为-1：表示该键永久保存，已经持久化了
+31.persist key1:持久化key1(设置了过期时间后，还没有到过期时间的时候使用)
+</code></pre>
+<h2 id="设置键的生存时间或过期时间"><a href="#设置键的生存时间或过期时间" class="headerlink" title="设置键的生存时间或过期时间"></a>设置键的生存时间或过期时间</h2><p>通过 <strong>EXPIRE</strong> 命令或者 <strong>PEXPIRE</strong> 命令，客户端可以以秒或者毫秒精度为数据库中的某个键设置生存时间（Time To Live，TTL），在经过指定的秒数或者毫秒数之后，服务器就会自动删除生存时间为0的键</p>
+<p>Time命令返回值是一个包含两个字符串的列表： 第一个字符串是当前时间(以 UNIX 时间戳格式表示)，而第二个字符串是当前这一秒钟已经逝去的微秒数</p>
+<p>1秒=1000毫秒(ms), 1毫秒=1／1000秒(s)；<br>1秒=1000000 微秒(μs), 1微秒=1／1000000秒(s)；<br>1秒=1000000000 纳秒(ns),1纳秒=1／1000000000秒(s)；<br>1秒=1000000000000皮秒 1皮秒==1/1000000000000秒。</p>
+<img src="/2022/061627273/20210621145432307.png" class="" title="在这里插入图片描述">
+
+<p>通过 <strong>EXPIREAT</strong> 和 <strong>PEXPIREAT</strong> 命令，可以设定一个时间戳，该过期时间是一个UNIX时间戳，当键的过期时间来临时，服务器就会自动从数据库中删除这个键，可以通过TIME命令查看UNIX的时间</p>
+<img src="/2022/061627273/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80ODkyMjE1NA==,size_16,color_FFFFFF,t_70-16551819661559.png" class="" title="在这里插入图片描述">
+
+<p>TTL命令和PTTL命令接受一个带有生存时间或者过期时间的键，返回这个键的剩余生存时间，也就是，返回距离这个键被服务器自动删除还有多长时间</p>
+<h3 id="设置过期时间"><a href="#设置过期时间" class="headerlink" title="设置过期时间"></a>设置过期时间</h3><p>通过上面的例子，可以看出Redis有四个不同的命令可以用于设置键的生存时间（键可以存在多久）或过期时间（键什么时候会被删除）</p>
+<ul>
+<li>EXPIRE＜key＞＜ttl＞命令用于将键key的生存时间设置为ttl<strong>秒</strong></li>
+<li>PEXPIRE＜key＞＜ttl＞命令用于将键key的生存时间设置为ttl<strong>毫秒</strong></li>
+<li>EXPIREAT＜key＞＜timestamp＞命令用于将键key的过期时间设置为timestamp所指定的<strong>秒数时间戳</strong></li>
+<li>PEXPIREAT＜key＞＜timestamp＞命令用于将键key的过期时间设置为timestamp所指定的<strong>毫秒数时间戳</strong></li>
+</ul>
+<p>虽然有多种不同单位和不同形式的设置命令，但实际上EXPIRE、PEXPIRE、EXPIREAT三个命令都是使用PEXPIREAT命令来实现的</p>
+<img src="/2022/061627273/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80ODkyMjE1NA==,size_16,color_FFFFFF,t_70-165518201197212.png" class="" title="在这里插入图片描述">
+
+<h3 id="保存过期时间"><a href="#保存过期时间" class="headerlink" title="保存过期时间"></a>保存过期时间</h3><p>redisDb结构的expires字典保存了数据库中所有键的过期时间，我们称这个字典为过期字典</p>
+<p>过期字典的键是一个指针，这个指针指向键空间中的某个键对象（也即是某个数据库键）<br>过期字典的值是一个long long类型的整数，这个整数保存了键所指向的数据库键的过期时间——一个毫秒精度的UNIX时间戳</p>
+<img src="/2022/061627273/image-20220614124802056.png" class="" title="image-20220614124802056">
+
+<h3 id="移除过期时间"><a href="#移除过期时间" class="headerlink" title="移除过期时间"></a>移除过期时间</h3><p><strong>PERSIST</strong>命令可以移除一个键的过期时间</p>
+<p><strong>PERSIST</strong>命令就是<strong>PEXPIREAT</strong>命令的反操作：PERSIST命令在过期字典中查找给定的键，并解除键和值（过期时间）在过期字典中的关联</p>
+<h3 id="计算并返回剩余时间和过期键的判定"><a href="#计算并返回剩余时间和过期键的判定" class="headerlink" title="计算并返回剩余时间和过期键的判定"></a>计算并返回剩余时间和过期键的判定</h3><p>计算并返回剩余生存时间</p>
+<p>TTL命令以秒为单位返回键的剩余生存时间，而PTTL命令则以毫秒为单位返回键的剩余生存时间。这两个命令都是通过计算键的过期时间和当前时间之间的差来实现的</p>
+<p><strong>过期键的判定</strong></p>
+<p>通过过期字典，程序可以用以下步骤检查一个给定键是否过期</p>
+<ul>
+<li>检查给定键是否存在于过期字典<ul>
+<li>如果存在，那么取得键的过期时间</li>
+</ul>
+</li>
+<li>检查当前UNIX时间戳是否大于键的过期时间<ul>
+<li>是的话，那么键已经过期</li>
+<li>不是的话，键未过期</li>
+</ul>
+</li>
+</ul>
+<h2 id="redis的持久化"><a href="#redis的持久化" class="headerlink" title="redis的持久化"></a>redis的持久化</h2><ol>
+<li><p>Redis的所有数据都是保存到内存中的。<br>1）Rdb：快照形式，定期把内存中当前时刻的数据保存到磁盘。Redis默认支持的持久化方案。<br>2）aof形式：append only file。把所有对redis数据库操作的命令，增删改操作的命令。保存到文件中。数据库恢复时把所有的命令执行一遍即可。</p>
+</li>
+<li><p>查看redis.conf文件<br>1）rdb形式：（看redis.conf中的注释说明）<br>    save 900 1	//15分钟有一次变化，则保存<br>    save 300 10  //5分钟有10次变化，保存<br>    save 60 10000 //在60秒中有10000次变化了，则保存一次<br>2）开启aof形式：<br>    修改appendonly no为appendonly yes即可<br>    a）修改后，使用客户端关闭redis服务<br>        ./redis-cli shutdown<br>    b）重启redis服务<br>        ./redis-server redis.conf<br>    c）开启服务后，在bin目录中多了一个文件：appendonly.aof<br>    d）添加几个key，测试，在查看appendonly.aof文件大小和内容变化（cat appendonly.aof）</p>
+</li>
+</ol>
+<h2 id="RedisTemplate"><a href="#RedisTemplate" class="headerlink" title="RedisTemplate"></a>RedisTemplate</h2><h3 id="Jedis"><a href="#Jedis" class="headerlink" title="Jedis"></a>Jedis</h3><p>Jedis是Redis官方推出的一款面向Java的客户端，提供了很多接口供Java语言调用。可以在Redis官网下载，当然还有一些开源爱好者提供的客户端，如Jredis、SRP等等，推荐使用Jedis。</p>
+<h3 id="Spring-Data-Redis"><a href="#Spring-Data-Redis" class="headerlink" title="Spring Data Redis"></a>Spring Data Redis</h3><p>Spring-data-redis是spring大家族的一部分，提供了在srping应用中通过简单的配置访问redis服务，对reids底层开发包(Jedis, JRedis, and RJC)进行了高度封装，RedisTemplate提供了redis各种操作、异常处理及序列化，支持发布订阅，并对spring 3.1 cache进行了实现。</p>
+<p><strong>spring-data-redis针对jedis提供了如下功能：</strong></p>
+<ol>
+<li>连接池自动管理，提供了一个高度封装的“RedisTemplate”类</li>
+<li>针对jedis客户端中大量api进行了归类封装,将同一类型操作封装为operation接口</li>
+</ol>
+<ul>
+<li>ValueOperations：简单K-V操作</li>
+<li>SetOperations：set类型数据操作</li>
+<li>ZSetOperations：zset类型数据操作</li>
+<li>HashOperations：针对map类型的数据操作</li>
+<li>ListOperations：针对list类型的数据操作</li>
+</ul>
+<ol start="3">
+<li>提供了对key的“bound”(绑定)便捷化操作API，可以通过bound封装指定的key，然后进行一系列的操作而无须“显式”的再次指定Key，即BoundKeyOperations：</li>
+</ol>
+<ul>
+<li>BoundValueOperations</li>
+<li>BoundSetOperations</li>
+<li>BoundListOperations</li>
+<li>BoundSetOperations</li>
+<li>BoundHashOperations</li>
+</ul>
+<ol start="4">
+<li><p>将事务操作封装，有容器控制。</p>
+</li>
+<li><p>针对数据的“序列化/反序列化”，提供了多种可选择策略(RedisSerializer)</p>
+<ul>
+<li><p>JdkSerializationRedisSerializer：POJO对象的存取场景，使用JDK本身序列化机制，将pojo类通过ObjectInputStream/ObjectOutputStream进行序列化操作，最终redis-server中将存储字节序列。是目前最常用的序列化策略。</p>
+<ul>
+<li><p>StringRedisSerializer：Key或者value为字符串的场景，根据指定的charset对数据的字节序列编码成string，是“new String(bytes, charset)”和“string.getBytes(charset)”的直接封装。是最轻量级和高效的策略。</p>
+</li>
+<li><p>JacksonJsonRedisSerializer：jackson-json工具提供了javabean与json之间的转换能力，可以将pojo实例序列化成json格式存储在redis中，也可以将json格式的数据转换成pojo实例。因为jackson工具在序列化和反序列化时，需要明确指定Class类型，因此此策略封装起来稍微复杂。【需要jackson-mapper-asl工具支持】</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><h3 id="1、pom-xml依赖"><a href="#1、pom-xml依赖" class="headerlink" title="1、pom.xml依赖"></a>1、pom.xml依赖</h3><pre class=" language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>Redis<span class="token operator">--</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>dependency<span class="token operator">></span>
+    <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+    <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>data<span class="token operator">-</span>redis<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span>
+</code></pre>
+<h3 id="2、配置文件"><a href="#2、配置文件" class="headerlink" title="2、配置文件"></a>2、配置文件</h3><pre class=" language-perl"><code class="language-perl"><span class="token comment" spellcheck="true"># Redis服务器连接端口</span>
+spring<span class="token operator">.</span>redis<span class="token operator">.</span>port<span class="token operator">=</span><span class="token number">6379</span>
+<span class="token comment" spellcheck="true"># Redis服务器地址</span>
+spring<span class="token operator">.</span>redis<span class="token operator">.</span>host<span class="token operator">=</span><span class="token vstring string">127.0.0.1</span>
+<span class="token comment" spellcheck="true"># Redis数据库索引（默认为0）</span>
+spring<span class="token operator">.</span>redis<span class="token operator">.</span>database<span class="token operator">=</span><span class="token number">0</span>
+<span class="token comment" spellcheck="true"># Redis服务器连接密码（默认为空）</span>
+spring<span class="token operator">.</span>redis<span class="token operator">.</span>password<span class="token operator">=</span>
+<span class="token comment" spellcheck="true"># 连接池最大连接数（使用负值表示没有限制）</span>
+spring<span class="token operator">.</span>redis<span class="token operator">.</span>jedis<span class="token operator">.</span>pool<span class="token operator">.</span>max<span class="token operator">-</span>active<span class="token operator">=</span><span class="token number">8</span>
+<span class="token comment" spellcheck="true"># 连接池最大阻塞等待时间（使用负值表示没有限制）</span>
+spring<span class="token operator">.</span>redis<span class="token operator">.</span>jedis<span class="token operator">.</span>pool<span class="token operator">.</span>max<span class="token operator">-</span>wait<span class="token operator">=</span><span class="token operator">-</span>1ms
+<span class="token comment" spellcheck="true"># 连接池中的最大空闲连接</span>
+spring<span class="token operator">.</span>redis<span class="token operator">.</span>jedis<span class="token operator">.</span>pool<span class="token operator">.</span>max<span class="token operator">-</span>idle<span class="token operator">=</span><span class="token number">8</span>
+<span class="token comment" spellcheck="true"># 连接池中的最小空闲连接</span>
+spring<span class="token operator">.</span>redis<span class="token operator">.</span>jedis<span class="token operator">.</span>pool<span class="token operator">.</span>min<span class="token operator">-</span>idle<span class="token operator">=</span><span class="token number">0</span>
+<span class="token comment" spellcheck="true"># 连接超时时间（毫秒）</span>
+spring<span class="token operator">.</span>redis<span class="token operator">.</span>timeout<span class="token operator">=</span>5000ms
+</code></pre>
+<h3 id="3、RedisTemplate的直接方法"><a href="#3、RedisTemplate的直接方法" class="headerlink" title="3、RedisTemplate的直接方法"></a>3、RedisTemplate的直接方法</h3><p><strong>首先使用@Autowired注入RedisTemplate（后面直接使用，就不特殊说明）</strong></p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Autowired</span>
+<span class="token keyword">private</span> RedisTemplate redisTemplate<span class="token punctuation">;</span>
+</code></pre>
+<p>1、删除单个key</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//    删除key</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">delete</span><span class="token punctuation">(</span>String key<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    redisTemplate<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>2、删除多个key</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//    删除多个key</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">deleteKey</span> <span class="token punctuation">(</span>String <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>keys<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    redisTemplate<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>keys<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>3、指定key的失效时间</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//    指定key的失效时间</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">expire</span><span class="token punctuation">(</span>String key<span class="token punctuation">,</span><span class="token keyword">long</span> time<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    redisTemplate<span class="token punctuation">.</span><span class="token function">expire</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span>time<span class="token punctuation">,</span>TimeUnit<span class="token punctuation">.</span>MINUTES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>4、根据key获取过期时间</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//    根据key获取过期时间</span>
+<span class="token keyword">public</span> <span class="token keyword">long</span> <span class="token function">getExpire</span><span class="token punctuation">(</span>String key<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    Long expire <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">getExpire</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> expire<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>5、判断key是否存在</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//    判断key是否存在</span>
+<span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">hasKey</span><span class="token punctuation">(</span>String key<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> redisTemplate<span class="token punctuation">.</span><span class="token function">hasKey</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="4、String类型相关操作"><a href="#4、String类型相关操作" class="headerlink" title="4、String类型相关操作"></a>4、String类型相关操作</h3><h5 id="1-、添加缓存"><a href="#1-、添加缓存" class="headerlink" title="1)、添加缓存"></a>1)、添加缓存</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//1、通过redisTemplate设置值</span>
+redisTemplate<span class="token punctuation">.</span><span class="token function">boundValueOps</span><span class="token punctuation">(</span><span class="token string">"StringKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"StringValue"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+redisTemplate<span class="token punctuation">.</span><span class="token function">boundValueOps</span><span class="token punctuation">(</span><span class="token string">"StringKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"StringValue"</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span> TimeUnit<span class="token punctuation">.</span>MINUTES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//2、通过BoundValueOperations设置值</span>
+BoundValueOperations stringKey <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundValueOps</span><span class="token punctuation">(</span><span class="token string">"StringKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+stringKey<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"StringVaule"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+stringKey<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"StringValue"</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span> TimeUnit<span class="token punctuation">.</span>MINUTES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//3、通过ValueOperations设置值</span>
+ValueOperations ops <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ops<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"StringKey"</span><span class="token punctuation">,</span> <span class="token string">"StringVaule"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ops<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"StringValue"</span><span class="token punctuation">,</span><span class="token string">"StringVaule"</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span> TimeUnit<span class="token punctuation">.</span>MINUTES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="2-、设置过期时间-单独设置"><a href="#2-、设置过期时间-单独设置" class="headerlink" title="2)、设置过期时间(单独设置)"></a>2)、设置过期时间(单独设置)</h5><pre class=" language-java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">boundValueOps</span><span class="token punctuation">(</span><span class="token string">"StringKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">expire</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>TimeUnit<span class="token punctuation">.</span>MINUTES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+redisTemplate<span class="token punctuation">.</span><span class="token function">expire</span><span class="token punctuation">(</span><span class="token string">"StringKey"</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>TimeUnit<span class="token punctuation">.</span>MINUTES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="3-、获取缓存值"><a href="#3-、获取缓存值" class="headerlink" title="3)、获取缓存值"></a>3)、获取缓存值</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//1、通过redisTemplate设置值</span>
+String str1 <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundValueOps</span><span class="token punctuation">(</span><span class="token string">"StringKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//2、通过BoundValueOperations获取值</span>
+BoundValueOperations stringKey <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundValueOps</span><span class="token punctuation">(</span><span class="token string">"StringKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+String str2 <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> stringKey<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//3、通过ValueOperations获取值</span>
+ValueOperations ops <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+String str3 <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> ops<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"StringKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="4-、删除key"><a href="#4-、删除key" class="headerlink" title="4)、删除key"></a>4)、删除key</h5><pre class=" language-java"><code class="language-java">Boolean result <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token string">"StringKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="5-、顺序递增"><a href="#5-、顺序递增" class="headerlink" title="5)、顺序递增"></a>5)、顺序递增</h5><pre class=" language-java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">boundValueOps</span><span class="token punctuation">(</span><span class="token string">"StringKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">increment</span><span class="token punctuation">(</span>3L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="6-、顺序递减"><a href="#6-、顺序递减" class="headerlink" title="6)、顺序递减"></a>6)、顺序递减</h5><pre class=" language-java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">boundValueOps</span><span class="token punctuation">(</span><span class="token string">"StringKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">increment</span><span class="token punctuation">(</span><span class="token operator">-</span>3L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="5、Hash类型相关操作"><a href="#5、Hash类型相关操作" class="headerlink" title="5、Hash类型相关操作"></a>5、Hash类型相关操作</h3><h5 id="1-、添加缓存-1"><a href="#1-、添加缓存-1" class="headerlink" title="1)、添加缓存"></a>1)、添加缓存</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//1、通过redisTemplate设置值</span>
+redisTemplate<span class="token punctuation">.</span><span class="token function">boundHashOps</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"SmallKey"</span><span class="token punctuation">,</span> <span class="token string">"HashVaue"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//2、通过BoundValueOperations设置值</span>
+BoundHashOperations hashKey <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundHashOps</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+hashKey<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"SmallKey"</span><span class="token punctuation">,</span> <span class="token string">"HashVaue"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//3、通过ValueOperations设置值</span>
+HashOperations hashOps <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForHash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+hashOps<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">,</span> <span class="token string">"SmallKey"</span><span class="token punctuation">,</span> <span class="token string">"HashVaue"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="2-、设置过期时间-单独设置-1"><a href="#2-、设置过期时间-单独设置-1" class="headerlink" title="2)、设置过期时间(单独设置)"></a>2)、设置过期时间(单独设置)</h5><pre class=" language-java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">boundValueOps</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">expire</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>TimeUnit<span class="token punctuation">.</span>MINUTES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+redisTemplate<span class="token punctuation">.</span><span class="token function">expire</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>TimeUnit<span class="token punctuation">.</span>MINUTES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="3-、添加一个Map集合"><a href="#3-、添加一个Map集合" class="headerlink" title="3)、添加一个Map集合"></a>3)、添加一个Map集合</h5><pre class=" language-java"><code class="language-java">HashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> hashMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+redisTemplate<span class="token punctuation">.</span><span class="token function">boundHashOps</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">putAll</span><span class="token punctuation">(</span>hashMap <span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="4-、设置过期时间-单独设置"><a href="#4-、设置过期时间-单独设置" class="headerlink" title="4)、设置过期时间(单独设置)"></a>4)、设置过期时间(单独设置)</h5><pre class=" language-java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">boundValueOps</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">expire</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>TimeUnit<span class="token punctuation">.</span>MINUTES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+redisTemplate<span class="token punctuation">.</span><span class="token function">expire</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>TimeUnit<span class="token punctuation">.</span>MINUTES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="5-、提取所有的key"><a href="#5-、提取所有的key" class="headerlink" title="5)、提取所有的key"></a>5)、提取所有的key</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//1、通过redisTemplate获取值</span>
+Set keys1 <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundHashOps</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//2、通过BoundValueOperations获取值</span>
+BoundHashOperations hashKey <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundHashOps</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Set keys2 <span class="token operator">=</span> hashKey<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//3、通过ValueOperations获取值</span>
+HashOperations hashOps <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForHash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Set keys3 <span class="token operator">=</span> hashOps<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="6-、提取所有的value值"><a href="#6-、提取所有的value值" class="headerlink" title="6)、提取所有的value值"></a>6)、提取所有的value值</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//1、通过redisTemplate获取值</span>
+List values1 <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundHashOps</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//2、通过BoundValueOperations获取值</span>
+BoundHashOperations hashKey <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundHashOps</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+List values2 <span class="token operator">=</span> hashKey<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//3、通过ValueOperations获取值</span>
+HashOperations hashOps <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForHash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+List values3 <span class="token operator">=</span> hashOps<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="7-、根据key提取value值"><a href="#7-、根据key提取value值" class="headerlink" title="7)、根据key提取value值"></a>7)、根据key提取value值</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//1、通过redisTemplate获取</span>
+String value1 <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundHashOps</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"SmallKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//2、通过BoundValueOperations获取值</span>
+BoundHashOperations hashKey <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundHashOps</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+String value2 <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> hashKey<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"SmallKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//3、通过ValueOperations获取值</span>
+HashOperations hashOps <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForHash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+String value3 <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> hashOps<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">,</span> <span class="token string">"SmallKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="8-、获取所有的键值对集合"><a href="#8-、获取所有的键值对集合" class="headerlink" title="8)、获取所有的键值对集合"></a>8)、获取所有的键值对集合</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//1、通过redisTemplate获取</span>
+Map entries <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundHashOps</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//2、通过BoundValueOperations获取值</span>
+BoundHashOperations hashKey <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundHashOps</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Map entries1 <span class="token operator">=</span> hashKey<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//3、通过ValueOperations获取值</span>
+HashOperations hashOps <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForHash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Map entries2 <span class="token operator">=</span> hashOps<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="9-、删除"><a href="#9-、删除" class="headerlink" title="9)、删除"></a>9)、删除</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//删除小key</span>
+redisTemplate<span class="token punctuation">.</span><span class="token function">boundHashOps</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token string">"SmallKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//删除大key</span>
+redisTemplate<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="10-、判断Hash中是否含有该值"><a href="#10-、判断Hash中是否含有该值" class="headerlink" title="10)、判断Hash中是否含有该值"></a>10)、判断Hash中是否含有该值</h5><pre class=" language-java"><code class="language-java">Boolean isEmpty <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundHashOps</span><span class="token punctuation">(</span><span class="token string">"HashKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hasKey</span><span class="token punctuation">(</span><span class="token string">"SmallKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="6、Set类型相关操作"><a href="#6、Set类型相关操作" class="headerlink" title="6、Set类型相关操作"></a>6、Set类型相关操作</h3><h5 id="1-、添加Set缓存-值可以是一个，也可是多个"><a href="#1-、添加Set缓存-值可以是一个，也可是多个" class="headerlink" title="1)、添加Set缓存(值可以是一个，也可是多个)"></a>1)、添加Set缓存(值可以是一个，也可是多个)</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//1、通过redisTemplate设置值</span>
+redisTemplate<span class="token punctuation">.</span><span class="token function">boundSetOps</span><span class="token punctuation">(</span><span class="token string">"setKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"setValue1"</span><span class="token punctuation">,</span> <span class="token string">"setValue2"</span><span class="token punctuation">,</span> <span class="token string">"setValue3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//2、通过BoundValueOperations设置值</span>
+BoundSetOperations setKey <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundSetOps</span><span class="token punctuation">(</span><span class="token string">"setKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+setKey<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"setValue1"</span><span class="token punctuation">,</span> <span class="token string">"setValue2"</span><span class="token punctuation">,</span> <span class="token string">"setValue3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//3、通过ValueOperations设置值</span>
+SetOperations setOps <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+setOps<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"setKey"</span><span class="token punctuation">,</span> <span class="token string">"SetValue1"</span><span class="token punctuation">,</span> <span class="token string">"setValue2"</span><span class="token punctuation">,</span> <span class="token string">"setValue3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="2-、设置过期时间-单独设置-2"><a href="#2-、设置过期时间-单独设置-2" class="headerlink" title="2)、设置过期时间(单独设置)"></a>2)、设置过期时间(单独设置)</h5><pre class=" language-java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">boundValueOps</span><span class="token punctuation">(</span><span class="token string">"setKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">expire</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>TimeUnit<span class="token punctuation">.</span>MINUTES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+redisTemplate<span class="token punctuation">.</span><span class="token function">expire</span><span class="token punctuation">(</span><span class="token string">"setKey"</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>TimeUnit<span class="token punctuation">.</span>MINUTES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">12</span>
+</code></pre>
+<h5 id="3-、根据key获取Set中的所有值"><a href="#3-、根据key获取Set中的所有值" class="headerlink" title="3)、根据key获取Set中的所有值"></a>3)、根据key获取Set中的所有值</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//1、通过redisTemplate获取值</span>
+Set set1 <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundSetOps</span><span class="token punctuation">(</span><span class="token string">"setKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">members</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//2、通过BoundValueOperations获取值</span>
+BoundSetOperations setKey <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundSetOps</span><span class="token punctuation">(</span><span class="token string">"setKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Set set2 <span class="token operator">=</span> setKey<span class="token punctuation">.</span><span class="token function">members</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//3、通过ValueOperations获取值</span>
+SetOperations setOps <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Set set3 <span class="token operator">=</span> setOps<span class="token punctuation">.</span><span class="token function">members</span><span class="token punctuation">(</span><span class="token string">"setKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">12345678910</span>
+</code></pre>
+<h5 id="4-、根据value从一个set中查询-是否存在"><a href="#4-、根据value从一个set中查询-是否存在" class="headerlink" title="4)、根据value从一个set中查询,是否存在"></a>4)、根据value从一个set中查询,是否存在</h5><pre class=" language-java"><code class="language-java">Boolean isEmpty <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundSetOps</span><span class="token punctuation">(</span><span class="token string">"setKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">isMember</span><span class="token punctuation">(</span><span class="token string">"setValue2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">1</span>
+</code></pre>
+<h5 id="5-、获取Set缓存的长度"><a href="#5-、获取Set缓存的长度" class="headerlink" title="5)、获取Set缓存的长度"></a>5)、获取Set缓存的长度</h5><pre class=" language-java"><code class="language-java">Long size <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundSetOps</span><span class="token punctuation">(</span><span class="token string">"setKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">1</span>
+</code></pre>
+<h5 id="6-、移除指定的元素"><a href="#6-、移除指定的元素" class="headerlink" title="6)、移除指定的元素"></a>6)、移除指定的元素</h5><pre class=" language-java"><code class="language-java">Long result1 <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundSetOps</span><span class="token punctuation">(</span><span class="token string">"setKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"setValue1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">1</span>
+</code></pre>
+<h5 id="7-、移除指定的key"><a href="#7-、移除指定的key" class="headerlink" title="7)、移除指定的key"></a>7)、移除指定的key</h5><pre class=" language-java"><code class="language-java">Boolean result2 <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token string">"setKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">1</span>
+</code></pre>
+<h3 id="7、-LIST类型相关操作"><a href="#7、-LIST类型相关操作" class="headerlink" title="7、 LIST类型相关操作"></a>7、 LIST类型相关操作</h3><h5 id="1-、添加缓存（2-x2F-3是1的递进值）"><a href="#1-、添加缓存（2-x2F-3是1的递进值）" class="headerlink" title="1)、添加缓存（2/3是1的递进值）"></a>1)、添加缓存（2/3是1的递进值）</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//1、通过redisTemplate设置值</span>
+redisTemplate<span class="token punctuation">.</span><span class="token function">boundListOps</span><span class="token punctuation">(</span><span class="token string">"listKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">leftPush</span><span class="token punctuation">(</span><span class="token string">"listLeftValue1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+redisTemplate<span class="token punctuation">.</span><span class="token function">boundListOps</span><span class="token punctuation">(</span><span class="token string">"listKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">rightPush</span><span class="token punctuation">(</span><span class="token string">"listRightValue2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//2、通过BoundValueOperations设置值</span>
+BoundListOperations listKey <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundListOps</span><span class="token punctuation">(</span><span class="token string">"listKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+listKey<span class="token punctuation">.</span><span class="token function">leftPush</span><span class="token punctuation">(</span><span class="token string">"listLeftValue3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+listKey<span class="token punctuation">.</span><span class="token function">rightPush</span><span class="token punctuation">(</span><span class="token string">"listRightValue4"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//3、通过ValueOperations设置值</span>
+ListOperations opsList <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+opsList<span class="token punctuation">.</span><span class="token function">leftPush</span><span class="token punctuation">(</span><span class="token string">"listKey"</span><span class="token punctuation">,</span> <span class="token string">"listLeftValue5"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+opsList<span class="token punctuation">.</span><span class="token function">rightPush</span><span class="token punctuation">(</span><span class="token string">"listKey"</span><span class="token punctuation">,</span> <span class="token string">"listRightValue6"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="2-、将List放入缓存"><a href="#2-、将List放入缓存" class="headerlink" title="2)、将List放入缓存"></a>2)、将List放入缓存</h5><pre class=" language-java"><code class="language-java">ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+redisTemplate<span class="token punctuation">.</span><span class="token function">boundListOps</span><span class="token punctuation">(</span><span class="token string">"listKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">rightPushAll</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+redisTemplate<span class="token punctuation">.</span><span class="token function">boundListOps</span><span class="token punctuation">(</span><span class="token string">"listKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">leftPushAll</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="3-、设置过期时间-单独设置"><a href="#3-、设置过期时间-单独设置" class="headerlink" title="3)、设置过期时间(单独设置)"></a>3)、设置过期时间(单独设置)</h5><pre class=" language-java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">boundValueOps</span><span class="token punctuation">(</span><span class="token string">"listKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">expire</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>TimeUnit<span class="token punctuation">.</span>MINUTES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+redisTemplate<span class="token punctuation">.</span><span class="token function">expire</span><span class="token punctuation">(</span><span class="token string">"listKey"</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>TimeUnit<span class="token punctuation">.</span>MINUTES<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="4-、获取List缓存全部内容（起始索引，结束索引）"><a href="#4-、获取List缓存全部内容（起始索引，结束索引）" class="headerlink" title="4)、获取List缓存全部内容（起始索引，结束索引）"></a>4)、获取List缓存全部内容（起始索引，结束索引）</h5><pre class=" language-java"><code class="language-java">List listKey1 <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundListOps</span><span class="token punctuation">(</span><span class="token string">"listKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+</code></pre>
+<h5 id="5-、从左或从右弹出一个元素"><a href="#5-、从左或从右弹出一个元素" class="headerlink" title="5)、从左或从右弹出一个元素"></a>5)、从左或从右弹出一个元素</h5><pre class=" language-java"><code class="language-java">String listKey2 <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundListOps</span><span class="token punctuation">(</span><span class="token string">"listKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">leftPop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//从左侧弹出一个元素</span>
+String listKey3 <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundListOps</span><span class="token punctuation">(</span><span class="token string">"listKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">rightPop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//从右侧弹出一个元素</span>
+</code></pre>
+<h5 id="6-、根据索引查询元素"><a href="#6-、根据索引查询元素" class="headerlink" title="6)、根据索引查询元素"></a>6)、根据索引查询元素</h5><pre class=" language-java"><code class="language-java">String listKey4 <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundListOps</span><span class="token punctuation">(</span><span class="token string">"listKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">index</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="7-、获取List缓存的长度"><a href="#7-、获取List缓存的长度" class="headerlink" title="7)、获取List缓存的长度"></a>7)、获取List缓存的长度</h5><pre class=" language-java"><code class="language-java">Long size <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundListOps</span><span class="token punctuation">(</span><span class="token string">"listKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="8-、根据索引修改List中的某条数据-key，索引，值"><a href="#8-、根据索引修改List中的某条数据-key，索引，值" class="headerlink" title="8)、根据索引修改List中的某条数据(key，索引，值)"></a>8)、根据索引修改List中的某条数据(key，索引，值)</h5><pre class=" language-java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">boundListOps</span><span class="token punctuation">(</span><span class="token string">"listKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>3L<span class="token punctuation">,</span><span class="token string">"listLeftValue3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="9-、移除N个值为value-key-移除个数，值"><a href="#9-、移除N个值为value-key-移除个数，值" class="headerlink" title="9)、移除N个值为value(key,移除个数，值)"></a>9)、移除N个值为value(key,移除个数，值)</h5><pre class=" language-java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">boundListOps</span><span class="token punctuation">(</span><span class="token string">"listKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>3L<span class="token punctuation">,</span><span class="token string">"value"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="8、Zset类型的相关操作"><a href="#8、Zset类型的相关操作" class="headerlink" title="8、Zset类型的相关操作"></a>8、Zset类型的相关操作</h3><h5 id="1-、向集合中插入元素，并设置分数"><a href="#1-、向集合中插入元素，并设置分数" class="headerlink" title="1)、向集合中插入元素，并设置分数"></a>1)、向集合中插入元素，并设置分数</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//1、通过redisTemplate设置值</span>
+redisTemplate<span class="token punctuation">.</span><span class="token function">boundZSetOps</span><span class="token punctuation">(</span><span class="token string">"zSetKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"zSetVaule"</span><span class="token punctuation">,</span> <span class="token number">100D</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//2、通过BoundValueOperations设置值</span>
+BoundZSetOperations zSetKey <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundZSetOps</span><span class="token punctuation">(</span><span class="token string">"zSetKey"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+zSetKey<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"zSetVaule"</span><span class="token punctuation">,</span> <span class="token number">100D</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//3、通过ValueOperations设置值</span>
+ZSetOperations zSetOps <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForZSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+zSetOps<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"zSetKey"</span><span class="token punctuation">,</span> <span class="token string">"zSetVaule"</span><span class="token punctuation">,</span> <span class="token number">100D</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="2-、向集合中插入多个元素-并设置分数"><a href="#2-、向集合中插入多个元素-并设置分数" class="headerlink" title="2)、向集合中插入多个元素,并设置分数"></a>2)、向集合中插入多个元素,并设置分数</h5><pre class=" language-java"><code class="language-java">DefaultTypedTuple<span class="token operator">&lt;</span>String<span class="token operator">></span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DefaultTypedTuple</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token string">"zSetVaule1"</span><span class="token punctuation">,</span> <span class="token number">2.1D</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+DefaultTypedTuple<span class="token operator">&lt;</span>String<span class="token operator">></span> p2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DefaultTypedTuple</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token string">"zSetVaule2"</span><span class="token punctuation">,</span> <span class="token number">3.3D</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+redisTemplate<span class="token punctuation">.</span><span class="token function">boundZSetOps</span><span class="token punctuation">(</span><span class="token string">"zSetKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>p1<span class="token punctuation">,</span>p2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="3-、按照排名先后-从小到大-打印指定区间内的元素-1为打印全部"><a href="#3-、按照排名先后-从小到大-打印指定区间内的元素-1为打印全部" class="headerlink" title="3)、按照排名先后(从小到大)打印指定区间内的元素, -1为打印全部"></a>3)、按照排名先后(从小到大)打印指定区间内的元素, -1为打印全部</h5><pre class=" language-java"><code class="language-java">Set<span class="token operator">&lt;</span>String<span class="token operator">></span> range <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundZSetOps</span><span class="token punctuation">(</span><span class="token string">"zSetKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">range</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="4-、获得指定元素的分数"><a href="#4-、获得指定元素的分数" class="headerlink" title="4)、获得指定元素的分数"></a>4)、获得指定元素的分数</h5><pre class=" language-java"><code class="language-java">Double score <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundZSetOps</span><span class="token punctuation">(</span><span class="token string">"zSetKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">score</span><span class="token punctuation">(</span><span class="token string">"zSetVaule"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="5-、返回集合内的成员个数"><a href="#5-、返回集合内的成员个数" class="headerlink" title="5)、返回集合内的成员个数"></a>5)、返回集合内的成员个数</h5><pre class=" language-java"><code class="language-java">Long size <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundZSetOps</span><span class="token punctuation">(</span><span class="token string">"zSetKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="6-、返回集合内指定分数范围的成员个数（Double类型）"><a href="#6-、返回集合内指定分数范围的成员个数（Double类型）" class="headerlink" title="6)、返回集合内指定分数范围的成员个数（Double类型）"></a>6)、返回集合内指定分数范围的成员个数（Double类型）</h5><pre class=" language-java"><code class="language-java">Long COUNT <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundZSetOps</span><span class="token punctuation">(</span><span class="token string">"zSetKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token number">0D</span><span class="token punctuation">,</span> <span class="token number">2.2D</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="7-、返回集合内元素在指定分数范围内的排名（从小到大）"><a href="#7-、返回集合内元素在指定分数范围内的排名（从小到大）" class="headerlink" title="7)、返回集合内元素在指定分数范围内的排名（从小到大）"></a>7)、返回集合内元素在指定分数范围内的排名（从小到大）</h5><pre class=" language-java"><code class="language-java">Set byScore <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundZSetOps</span><span class="token punctuation">(</span><span class="token string">"zSetKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">rangeByScore</span><span class="token punctuation">(</span><span class="token number">0D</span><span class="token punctuation">,</span> <span class="token number">2.2D</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="8-、带偏移量和个数，-key，起始分数，最大分数，偏移量，个数"><a href="#8-、带偏移量和个数，-key，起始分数，最大分数，偏移量，个数" class="headerlink" title="8)、带偏移量和个数，(key，起始分数，最大分数，偏移量，个数)"></a>8)、带偏移量和个数，(key，起始分数，最大分数，偏移量，个数)</h5><pre class=" language-java"><code class="language-java">Set<span class="token operator">&lt;</span>String<span class="token operator">></span> ranking2 <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForZSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">rangeByScore</span><span class="token punctuation">(</span><span class="token string">"zSetKey"</span><span class="token punctuation">,</span> <span class="token number">0D</span><span class="token punctuation">,</span> <span class="token number">2.2D</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="9-、返回集合内元素的排名，以及分数（从小到大）"><a href="#9-、返回集合内元素的排名，以及分数（从小到大）" class="headerlink" title="9)、返回集合内元素的排名，以及分数（从小到大）"></a>9)、返回集合内元素的排名，以及分数（从小到大）</h5><pre class=" language-java"><code class="language-java">Set<span class="token operator">&lt;</span>TypedTuple<span class="token operator">&lt;</span>String<span class="token operator">>></span> tuples <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundZSetOps</span><span class="token punctuation">(</span><span class="token string">"zSetKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">rangeWithScores</span><span class="token punctuation">(</span>0L<span class="token punctuation">,</span> 3L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span>TypedTuple<span class="token operator">&lt;</span>String<span class="token operator">></span> tuple <span class="token operator">:</span> tuples<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>tuple<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" : "</span> <span class="token operator">+</span> tuple<span class="token punctuation">.</span><span class="token function">getScore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>ss
+</code></pre>
+<h5 id="10-、返回指定成员的排名"><a href="#10-、返回指定成员的排名" class="headerlink" title="10)、返回指定成员的排名"></a>10)、返回指定成员的排名</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//从小到大</span>
+Long startRank <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundZSetOps</span><span class="token punctuation">(</span><span class="token string">"zSetKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">rank</span><span class="token punctuation">(</span><span class="token string">"zSetVaule"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//从大到小</span>
+Long endRank <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundZSetOps</span><span class="token punctuation">(</span><span class="token string">"zSetKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverseRank</span><span class="token punctuation">(</span><span class="token string">"zSetVaule"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="11-、从集合中删除指定元素"><a href="#11-、从集合中删除指定元素" class="headerlink" title="11)、从集合中删除指定元素"></a>11)、从集合中删除指定元素</h5><pre class=" language-java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">boundZSetOps</span><span class="token punctuation">(</span><span class="token string">"zSetKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"zSetVaule"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="12-、删除指定索引范围的元素（Long类型）"><a href="#12-、删除指定索引范围的元素（Long类型）" class="headerlink" title="12)、删除指定索引范围的元素（Long类型）"></a>12)、删除指定索引范围的元素（Long类型）</h5><pre class=" language-java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">boundZSetOps</span><span class="token punctuation">(</span><span class="token string">"zSetKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">removeRange</span><span class="token punctuation">(</span>0L<span class="token punctuation">,</span>3L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="13-、删除指定分数范围内的元素（Double类型）"><a href="#13-、删除指定分数范围内的元素（Double类型）" class="headerlink" title="13)、删除指定分数范围内的元素（Double类型）"></a>13)、删除指定分数范围内的元素（Double类型）</h5><pre class=" language-java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">boundZSetOps</span><span class="token punctuation">(</span><span class="token string">"zSetKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">removeRangeByScorssse</span><span class="token punctuation">(</span><span class="token number">0D</span><span class="token punctuation">,</span><span class="token number">2.2D</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="14-、为指定元素加分（Double类型）"><a href="#14-、为指定元素加分（Double类型）" class="headerlink" title="14)、为指定元素加分（Double类型）"></a>14)、为指定元素加分（Double类型）</h5><pre class=" language-java"><code class="language-java">Double score <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">boundZSetOps</span><span class="token punctuation">(</span><span class="token string">"zSetKey"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">incrementScore</span><span class="token punctuation">(</span><span class="token string">"zSetVaule"</span><span class="token punctuation">,</span><span class="token number">1.1D</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="配置-RedisTemplate"><a href="#配置-RedisTemplate" class="headerlink" title="配置 RedisTemplate"></a>配置 RedisTemplate</h3><p>修改 RedisTemplate 中键和值的序列化方式（默认key的序列化方式是：JdkSerializationRedisSerializer）</p>
+<pre><code>package com.neu.springdemo;
+
+import org.springframework.cache.annotation.CachingConfigurerSupport;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.core.HashOperations;
+import org.springframework.data.redis.core.ListOperations;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.SetOperations;
+import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.data.redis.core.ZSetOperations;
+import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
+
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.jsontype.impl.LaissezFaireSubTypeValidator;
+ 
+@Configuration
+@EnableCaching //开启注解
+public class RedisConfig extends CachingConfigurerSupport { 
+    /**
+     * retemplate相关配置
+     */
+    @Bean
+    public RedisTemplate&lt;String, Object&gt; redisTemplate(RedisConnectionFactory factory) {
+ 
+        RedisTemplate&lt;String, Object&gt; template = new RedisTemplate&lt;&gt;();
+        // 配置连接工厂
+        template.setConnectionFactory(factory);
+ 
+        //使用Jackson2JsonRedisSerializer来序列化和反序列化redis的value值（默认使用JDK的序列化方式）
+        Jackson2JsonRedisSerializer&lt;Object&gt; jacksonSeial = new Jackson2JsonRedisSerializer&lt;&gt;(Object.class);
+ 
+        ObjectMapper om = new ObjectMapper();
+        // 指定要序列化的域，field,get和set,以及修饰符范围，ANY是都有包括private和public
+        om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
+        // 指定序列化输入的类型，类必须是非final修饰的，final修饰的类，比如String,Integer等会跑出异常
+        om.activateDefaultTyping(LaissezFaireSubTypeValidator.instance, ObjectMapper.DefaultTyping.NON_FINAL);
+        jacksonSeial.setObjectMapper(om);
+ 
+        // 值采用json序列化
+        template.setValueSerializer(jacksonSeial);
+        //使用StringRedisSerializer来序列化和反序列化redis的key值
+        template.setKeySerializer(new StringRedisSerializer());
+ 
+        // 设置hash key 和value序列化模式
+        template.setHashKeySerializer(new StringRedisSerializer());
+        template.setHashValueSerializer(jacksonSeial);
+        template.afterPropertiesSet();
+ 
+        return template;
+    }
+}
+</code></pre>
+<h3 id="Redis-缓存工具类"><a href="#Redis-缓存工具类" class="headerlink" title="Redis 缓存工具类"></a>Redis 缓存工具类</h3><pre><code>package com.neu.springdemo;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.BoundSetOperations;
+import org.springframework.data.redis.core.HashOperations;
+import org.springframework.data.redis.core.ListOperations;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.stereotype.Component;
+
+/**
+ * spring redis 工具类
+ * 
+ * @author ruoyi
+ **/
+@SuppressWarnings(value = { "unchecked", "rawtypes" })
+@Component
+public class RedisCache
+{
+    @Autowired
+    public RedisTemplate redisTemplate;
+
+    /**
+     * 缓存基本的对象，Integer、String、实体类等
+     *
+     * @param key 缓存的键值
+     * @param value 缓存的值
+     * @return 缓存的对象
+     */
+    public &lt;T&gt; ValueOperations&lt;String, T&gt; setCacheObject(String key, T value)
+    {
+        ValueOperations&lt;String, T&gt; operation = redisTemplate.opsForValue();
+        operation.set(key, value);
+        return operation;
+    }
+
+    /**
+     * 缓存基本的对象，Integer、String、实体类等
+     *
+     * @param key 缓存的键值
+     * @param value 缓存的值
+     * @param timeout 时间
+     * @param timeUnit 时间颗粒度
+     * @return 缓存的对象
+     */
+    public &lt;T&gt; ValueOperations&lt;String, T&gt; setCacheObject(String key, T value, Integer timeout, TimeUnit timeUnit)
+    {
+        ValueOperations&lt;String, T&gt; operation = redisTemplate.opsForValue();
+        operation.set(key, value, timeout, timeUnit);
+        return operation;
+    }
+
+    /**
+     * 获得缓存的基本对象。
+     *
+     * @param key 缓存键值
+     * @return 缓存键值对应的数据
+     */
+    public &lt;T&gt; T getCacheObject(String key)
+    {
+        ValueOperations&lt;String, T&gt; operation = redisTemplate.opsForValue();
+        return operation.get(key);
+    }
+
+    /**
+     * 删除单个对象
+     *
+     * @param key
+     */
+    public void deleteObject(String key)
+    {
+        redisTemplate.delete(key);
+    }
+
+    /**
+     * 删除集合对象
+     *
+     * @param collection
+     */
+    public void deleteObject(Collection collection)
+    {
+        redisTemplate.delete(collection);
+    }
+
+    /**
+     * 缓存List数据
+     *
+     * @param key 缓存的键值
+     * @param dataList 待缓存的List数据
+     * @return 缓存的对象
+     */
+    public &lt;T&gt; ListOperations&lt;String, T&gt; setCacheList(String key, List&lt;T&gt; dataList)
+    {
+        ListOperations listOperation = redisTemplate.opsForList();
+        if (null != dataList)
+        {
+            int size = dataList.size();
+            for (int i = 0; i &lt; size; i++)
+            {
+                listOperation.leftPush(key, dataList.get(i));
+            }
+        }
+        return listOperation;
+    }
+
+    /**
+     * 获得缓存的list对象
+     *
+     * @param key 缓存的键值
+     * @return 缓存键值对应的数据
+     */
+    public &lt;T&gt; List&lt;T&gt; getCacheList(String key)
+    {
+        List&lt;T&gt; dataList = new ArrayList&lt;T&gt;();
+        ListOperations&lt;String, T&gt; listOperation = redisTemplate.opsForList();
+        Long size = listOperation.size(key);
+
+        for (int i = 0; i &lt; size; i++)
+        {
+            dataList.add(listOperation.index(key, i));
+        }
+        return dataList;
+    }
+
+    /**
+     * 缓存Set
+     *
+     * @param key 缓存键值
+     * @param dataSet 缓存的数据
+     * @return 缓存数据的对象
+     */
+    public &lt;T&gt; BoundSetOperations&lt;String, T&gt; setCacheSet(String key, Set&lt;T&gt; dataSet)
+    {
+        BoundSetOperations&lt;String, T&gt; setOperation = redisTemplate.boundSetOps(key);
+        Iterator&lt;T&gt; it = dataSet.iterator();
+        while (it.hasNext())
+        {
+            setOperation.add(it.next());
+        }
+        return setOperation;
+    }
+
+    /**
+     * 获得缓存的set
+     *
+     * @param key
+     * @return
+     */
+    public &lt;T&gt; Set&lt;T&gt; getCacheSet(String key)
+    {
+        Set&lt;T&gt; dataSet = new HashSet&lt;T&gt;();
+        BoundSetOperations&lt;String, T&gt; operation = redisTemplate.boundSetOps(key);
+        dataSet = operation.members();
+        return dataSet;
+    }
+
+    /**
+     * 缓存Map
+     *
+     * @param key
+     * @param dataMap
+     * @return
+     */
+    public &lt;T&gt; HashOperations&lt;String, String, T&gt; setCacheMap(String key, Map&lt;String, T&gt; dataMap)
+    {
+        HashOperations hashOperations = redisTemplate.opsForHash();
+        if (null != dataMap)
+        {
+            for (Map.Entry&lt;String, T&gt; entry : dataMap.entrySet())
+            {
+                hashOperations.put(key, entry.getKey(), entry.getValue());
+            }
+        }
+        return hashOperations;
+    }
+
+    /**
+     * 获得缓存的Map
+     *
+     * @param key
+     * @return
+     */
+    public &lt;T&gt; Map&lt;String, T&gt; getCacheMap(String key)
+    {
+        Map&lt;String, T&gt; map = redisTemplate.opsForHash().entries(key);
+        return map;
+    }
+
+    /**
+     * 获得缓存的基本对象列表
+     * 
+     * @param pattern 字符串前缀
+     * @return 对象列表
+     */
+    public Collection&lt;String&gt; keys(String pattern)
+    {
+        return redisTemplate.keys(pattern);
+    }
+}
+
+</code></pre>
+<h4 id="测试类"><a href="#测试类" class="headerlink" title="测试类"></a>测试类</h4><pre><code>package com.neu.springdemo;
+
+import java.util.Date;
+
+import javax.annotation.Resource;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
+
+@SpringBootTest
+class SpringdemoRedisDemo1ApplicationTests {
+
+    @Autowired
+    private RedisCache redisCache;
+
+    @Test
+    void contextLoads() {		
+        Student stu = new Student();
+        stu.setAge(18);
+        stu.setId(10);
+        stu.setName("marry");
+        stu.setBirthday(new Date());
+        
+        //缓存对象
+        redisCache.setCacheObject("stu3", stu);
+        //得到缓存对象
+        Student stu3 = redisCache.getCacheObject("stu3");
+        System.out.println(stu3);
+    }
+
+}
+</code></pre>
+<h1 id="命令附录"><a href="#命令附录" class="headerlink" title="命令附录"></a>命令附录</h1><h2 id="key"><a href="#key" class="headerlink" title="key"></a>key</h2><p>keys * 获取所有的key<br>select 0 选择第一个库<br>move myString 1 将当前的数据库key移动到某个数据库,目标库有，则不能移动<br>flush db      清除指定库<br>randomkey     随机key<br>type key      类型<br>set key1 value1 设置key<br>get key1    获取key<br>mset key1 value1 key2 value2 key3 value3<br>mget key1 key2 key3<br>del key1   删除key<br>exists key      判断是否存在key<br>expire key 10   10秒过期<br>pexpire key 1000 毫秒<br>persist key     删除过期时间</p>
+<p>TTL key 获取key的过期时间。</p>
+<p>​		如果key存在过期时间，返回剩余生存时间(秒)；如果key是永久的，返回-1；如果key不存在或者已过期，返回-2</p>
+<h2 id="string"><a href="#string" class="headerlink" title="string"></a>string</h2><p>​    set name cxx<br>​    get name<br>​    getrange name 0 -1        字符串分段<br>​    getset name new_cxx       设置值，返回旧值<br>​    mset key1 key2            批量设置<br>​    mget key1 key2            批量获取<br>​    setnx key value           不存在就插入（not exists）<br>​    setex key time value      过期时间（expire）<br>​    setrange key index value  从index开始替换value<br>​    incr age        递增<br>​    incrby age 10   递增<br>​    decr age        递减<br>​    decrby age 10   递减<br>​    incrbyfloat     增减浮点数<br>​    append          追加<br>​    strlen          长度<br>​    getbit/setbit/bitcount/bitop    位操作<br>​    </p>
+<h2 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h2><p>​    hset myhash name cxx<br>​    hget myhash name<br>​    hmset myhash name cxx age 25 note “i am notes”<br>​    hmget myhash name age note<br>​    hgetall myhash               获取所有的<br>​    hexists myhash name          是否存在<br>​    hsetnx myhash score 100      设置不存在的<br>​    hincrby myhash id 1          递增<br>​    hdel myhash name             删除<br>​    hkeys myhash                 只取key<br>​    hvals myhash                 只取value<br>​    hlen myhash                  长度</p>
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><p>​    lpush mylist a b c  左插入<br>​    rpush mylist x y z  右插入<br>​    lrange mylist 0 -1  数据集合（查询）<br>​    lpop mylist  弹出元素<br>​    rpop mylist  弹出元素<br>​    llen mylist  长度<br>​    lrem mylist count value  删除<br>​    lindex mylist 2          指定索引的值<br>​    lset mylist 2 n          索引设值<br>​    ltrim mylist 0 4         删除key<br>​    linsert mylist before a  插入<br>​    linsert mylist after a   插入<br>​    rpoplpush list list2     转移列表的数据<br>​    </p>
+<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><p>​    sadd myset redis<br>​    smembers myset       数据集合<br>​    srem myset set1         删除<br>​    sismember myset set1 判断元素是否在集合中<br>​    scard key_name       个数<br>​    sdiff | sinter | sunion 操作：集合间运算：差集 | 交集 | 并集<br>​    srandmember          随机获取集合中的元素<br>​    spop                 从集合中弹出一个元素<br>​    </p>
+<h2 id="zset"><a href="#zset" class="headerlink" title="zset"></a>zset</h2><p>​    zadd zset 1 one<br>​    zadd zset 2 two<br>​    zadd zset 3 three<br>​    zincrby zset 1 one              增长分数<br>​    zscore zset two                 获取分数<br>​    zrange zset 0 -1 withscores     范围值<br>​    zrangebyscore zset 10 25 withscores 指定范围的值<br>​    zrangebyscore zset 10 25 withscores limit 1 2 分页<br>​    Zrevrangebyscore zset 10 25 withscores  指定范围的值<br>​    zcard zset  元素数量<br>​    Zcount zset 获得指定分数范围内的元素个数<br>​    Zrem zset one two        删除一个或多个元素<br>​    Zremrangebyrank zset 0 1  按照排名范围删除元素<br>​    Zremrangebyscore zset 0 1 按照分数范围删除元素<br>​    Zrank zset 0 -1    分数最小的元素排名为0<br>​    Zrevrank zset 0 -1  分数最大的元素排名为0<br>​    Zinterstore<br>​    zunionstore rank:last_week 7 rank:20150323 rank:20150324 rank:20150325  weights 1 1 1 1 1 1 1<br>​<br>​    </p>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>​    sort mylist  排序<br>​    sort mylist alpha desc limit 0 2 字母排序<br>​    sort list by it:* desc           by命令<br>​    sort list by it:* desc get it:*  get参数<br>​    sort list by it:* desc get it:* store sorc:result  sort命令之store参数：表示把sort查询的结果集保存起来</p>
+<h2 id="订阅与发布"><a href="#订阅与发布" class="headerlink" title="订阅与发布"></a>订阅与发布</h2><p>​    订阅频道：subscribe chat1<br>​    发布消息：publish chat1 “hell0 ni hao”<br>​    查看频道：pubsub channels<br>​    查看某个频道的订阅者数量: pubsub numsub chat1<br>​    退订指定频道： unsubscrible chat1   , punsubscribe java.*<br>​    订阅一组频道： psubscribe java.*<br>​    </p>
+<h2 id="redis事务"><a href="#redis事务" class="headerlink" title="redis事务"></a>redis事务</h2><p>​     隔离性，原子性，<br>​     步骤：  开始事务，执行命令，提交事务<br>​             multi  //开启事务<br>​             sadd myset a b c<br>​             sadd myset e f g<br>​             lpush mylist aa bb cc<br>​             lpush mylist dd ff gg</p>
+<p>​			exec //提交事务</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">FFFfrance</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://ffffrance.github.io/2022/061627273.html">http://ffffrance.github.io/2022/061627273.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">FFFfrance</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Redis/">
+                                    <span class="chip bg-color">Redis</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/061625246.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Git">
+                        
+                        <span class="card-title">Git</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Git
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Git/" class="post-category">
+                                    Git
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Git/">
+                        <span class="chip bg-color">Git</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/061640991.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Docker">
+                        
+                        <span class="card-title">Docker</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Docker
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Docker/" class="post-category">
+                                    Docker
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="7402561500"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.5'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <a href="/about" target="_blank">FFFfrance</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">174.8k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/ffffrance" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:605026336@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=605026336" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 605026336" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    <script src="/js/FunnyTitle.js"></script>
+    
+    
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body>
+
+</html>
