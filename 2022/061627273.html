@@ -119,17 +119,6 @@
     
   </li>
   
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
-    </a>
-    
-  </li>
-  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -205,17 +194,6 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/friends" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-address-book"></i>
-			
-			友情链接
 		</a>
           
         </li>
@@ -399,7 +377,7 @@
 <li><p>应用场景</p>
 </li>
 </ol>
-<img src="/2022/061627273/798174-20190321203330649-499029266.png" class="" title="img">
+<img src="/2022/061627273/798174-20190321203330649-499029266.png" class title="img">
 
 <h2 id="基本服务器管理"><a href="#基本服务器管理" class="headerlink" title="基本服务器管理"></a>基本服务器管理</h2><ol>
 <li><p>使用redis客户端连接redis本机服务：<br>[root@CentOs bin]# ./redis-cli</p>
@@ -430,7 +408,7 @@
 <p>二、散列Hash——key-filed-value</p>
 <p>　　相当于是一个key中存在多个map.Redis中的散列可以看成具有String key和String value的map</p>
 <p>容器，可以将多个key-value存储到一个key钟。每一个Hash可以存储4294967295个键值对。</p>
-<img src="/2022/061627273/2064607-20200623084300564-1806876841.png" class="" title="img">
+<img src="/2022/061627273/2064607-20200623084300564-1806876841.png" class title="img">
 
 <p>三、集合Set</p>
 <p>　　Redis的集合是无序不可重复的，此处的无序是数据不能重复。和列表一样，在执行插入和删除</p>
@@ -453,9 +431,9 @@
 <h2 id="数据库键空间"><a href="#数据库键空间" class="headerlink" title="数据库键空间"></a>数据库键空间</h2><p>Redis是一个键值对（key-value pair）数据库服务器，服务器中的每个数据库都由一个redisDb结构表示，其中，redisDb结构的dict字典保存了数据库中的所有键值对，我们将这个字典称为键空间（key space）</p>
 <p>键空间和用户所见的数据库是直接对应的</p>
 <p>键空间的键也就是数据库的键，每个键都是一个字符串对象<br>键空间的值也就是数据库的值，每个值可以是字符串对象、列表对象、哈希表对象、集合对象和有序集合对象中的任意一种Redis对象</p>
-<img src="/2022/061627273/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80ODkyMjE1NA==,size_16,color_FFFFFF,t_70.png" class="" title="在这里插入图片描述">
+<img src="/2022/061627273/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80ODkyMjE1NA==,size_16,color_FFFFFF,t_70.png" class title="在这里插入图片描述">
 
-<img src="/2022/061627273/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80ODkyMjE1NA==,size_16,color_FFFFFF,t_70-16551816665784.png" class="" title="在这里插入图片描述">
+<img src="/2022/061627273/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80ODkyMjE1NA==,size_16,color_FFFFFF,t_70-16551816665784.png" class title="在这里插入图片描述">
 
 <p>读写键空间的维护操作</p>
 <ul>
@@ -527,10 +505,10 @@
 <h2 id="设置键的生存时间或过期时间"><a href="#设置键的生存时间或过期时间" class="headerlink" title="设置键的生存时间或过期时间"></a>设置键的生存时间或过期时间</h2><p>通过 <strong>EXPIRE</strong> 命令或者 <strong>PEXPIRE</strong> 命令，客户端可以以秒或者毫秒精度为数据库中的某个键设置生存时间（Time To Live，TTL），在经过指定的秒数或者毫秒数之后，服务器就会自动删除生存时间为0的键</p>
 <p>Time命令返回值是一个包含两个字符串的列表： 第一个字符串是当前时间(以 UNIX 时间戳格式表示)，而第二个字符串是当前这一秒钟已经逝去的微秒数</p>
 <p>1秒=1000毫秒(ms), 1毫秒=1／1000秒(s)；<br>1秒=1000000 微秒(μs), 1微秒=1／1000000秒(s)；<br>1秒=1000000000 纳秒(ns),1纳秒=1／1000000000秒(s)；<br>1秒=1000000000000皮秒 1皮秒==1/1000000000000秒。</p>
-<img src="/2022/061627273/20210621145432307.png" class="" title="在这里插入图片描述">
+<img src="/2022/061627273/20210621145432307.png" class title="在这里插入图片描述">
 
 <p>通过 <strong>EXPIREAT</strong> 和 <strong>PEXPIREAT</strong> 命令，可以设定一个时间戳，该过期时间是一个UNIX时间戳，当键的过期时间来临时，服务器就会自动从数据库中删除这个键，可以通过TIME命令查看UNIX的时间</p>
-<img src="/2022/061627273/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80ODkyMjE1NA==,size_16,color_FFFFFF,t_70-16551819661559.png" class="" title="在这里插入图片描述">
+<img src="/2022/061627273/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80ODkyMjE1NA==,size_16,color_FFFFFF,t_70-16551819661559.png" class title="在这里插入图片描述">
 
 <p>TTL命令和PTTL命令接受一个带有生存时间或者过期时间的键，返回这个键的剩余生存时间，也就是，返回距离这个键被服务器自动删除还有多长时间</p>
 <h3 id="设置过期时间"><a href="#设置过期时间" class="headerlink" title="设置过期时间"></a>设置过期时间</h3><p>通过上面的例子，可以看出Redis有四个不同的命令可以用于设置键的生存时间（键可以存在多久）或过期时间（键什么时候会被删除）</p>
@@ -541,11 +519,11 @@
 <li>PEXPIREAT＜key＞＜timestamp＞命令用于将键key的过期时间设置为timestamp所指定的<strong>毫秒数时间戳</strong></li>
 </ul>
 <p>虽然有多种不同单位和不同形式的设置命令，但实际上EXPIRE、PEXPIRE、EXPIREAT三个命令都是使用PEXPIREAT命令来实现的</p>
-<img src="/2022/061627273/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80ODkyMjE1NA==,size_16,color_FFFFFF,t_70-165518201197212.png" class="" title="在这里插入图片描述">
+<img src="/2022/061627273/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80ODkyMjE1NA==,size_16,color_FFFFFF,t_70-165518201197212.png" class title="在这里插入图片描述">
 
 <h3 id="保存过期时间"><a href="#保存过期时间" class="headerlink" title="保存过期时间"></a>保存过期时间</h3><p>redisDb结构的expires字典保存了数据库中所有键的过期时间，我们称这个字典为过期字典</p>
 <p>过期字典的键是一个指针，这个指针指向键空间中的某个键对象（也即是某个数据库键）<br>过期字典的值是一个long long类型的整数，这个整数保存了键所指向的数据库键的过期时间——一个毫秒精度的UNIX时间戳</p>
-<img src="/2022/061627273/image-20220614124802056.png" class="" title="image-20220614124802056">
+<img src="/2022/061627273/image-20220614124802056.png" class title="image-20220614124802056">
 
 <h3 id="移除过期时间"><a href="#移除过期时间" class="headerlink" title="移除过期时间"></a>移除过期时间</h3><p><strong>PERSIST</strong>命令可以移除一个键的过期时间</p>
 <p><strong>PERSIST</strong>命令就是<strong>PEXPIREAT</strong>命令的反操作：PERSIST命令在过期字典中查找给定的键，并解除键和值（过期时间）在过期字典中的关联</p>
@@ -1447,46 +1425,48 @@ class SpringdemoRedisDemo1ApplicationTests {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/061625246.html">
+                <a href="/2022/061627273.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Git">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Redis">
                         
-                        <span class="card-title">Git</span>
+                        <span class="card-title">Redis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Git
+                            Redis
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Git/" class="post-category">
-                                    Git
+                            <a href="/categories/Redis/" class="post-category">
+                                    Redis
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Git/">
-                        <span class="chip bg-color">Git</span>
+                    <a href="/tags/Redis/">
+                        <span class="chip bg-color">Redis</span>
                     </a>
                     
                 </div>
@@ -1500,31 +1480,31 @@ class SpringdemoRedisDemo1ApplicationTests {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/061640991.html">
+                <a href="/2022/061415691.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Docker">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Linux">
                         
-                        <span class="card-title">Docker</span>
+                        <span class="card-title">Linux</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Docker
+                            Linux
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Docker/" class="post-category">
-                                    Docker
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
@@ -1534,8 +1514,8 @@ class SpringdemoRedisDemo1ApplicationTests {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Docker/">
-                        <span class="chip bg-color">Docker</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -1696,10 +1676,6 @@ class SpringdemoRedisDemo1ApplicationTests {
 
 
 
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
 
 </div>
     </div>

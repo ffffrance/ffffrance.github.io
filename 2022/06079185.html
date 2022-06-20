@@ -119,17 +119,6 @@
     
   </li>
   
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
-    </a>
-    
-  </li>
-  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -205,17 +194,6 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/friends" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-address-book"></i>
-			
-			友情链接
 		</a>
           
         </li>
@@ -387,48 +365,48 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="计算机组成原理存储系统"><a href="#计算机组成原理存储系统" class="headerlink" title="计算机组成原理存储系统"></a>计算机组成原理存储系统</h1><img src="/2022/06079185/6.jpg" class="">   
-<h2 id="主存模型和寻址"><a href="#主存模型和寻址" class="headerlink" title="主存模型和寻址"></a>主存模型和寻址</h2><img src="/2022/06079185/5.jpg" class="">   
+                <h1 id="计算机组成原理存储系统"><a href="#计算机组成原理存储系统" class="headerlink" title="计算机组成原理存储系统"></a>计算机组成原理存储系统</h1><img src="/2022/06079185/6.jpg" class>   
+<h2 id="主存模型和寻址"><a href="#主存模型和寻址" class="headerlink" title="主存模型和寻址"></a>主存模型和寻址</h2><img src="/2022/06079185/5.jpg" class>   
 <ul>
-<li>一个能够完成二进制位读写的单元为存储元，存储体由多个存储元构成。  <img src="/2022/06079185/1.jpg" class="">    
-其中时序控制逻辑如图：  <img src="/2022/06079185/2.jpg" class="">    
-封装称为存储器芯片。其中有若干接口线：地址线，数据线，片选线，读写控制线。总容量=存储单元个数X存储字长。  <img src="/2022/06079185/3.jpg" class="">   </li>
-<li>寻址：如何定位到一个存储单元（一行）<br>按照字节寻址，每单元1B。按照字寻址，每个单元4B。还有半字2B和双字8B。根据单元个数求出地址线根数，分出若干组，求出每组的组号作为字地址。<br>而此时如何存放一个字？字长为4B，可以根据大端和小端方式来存放字。    <img src="/2022/06079185/4.jpg" class="">   
-<h2 id="半导体存储器RAM"><a href="#半导体存储器RAM" class="headerlink" title="半导体存储器RAM"></a>半导体存储器RAM</h2><img src="/2022/06079185/8.jpg" class="">   </li>
-<li>半导体存储器芯片的基本结构：  <img src="/2022/06079185/9.jpg" class="">   </li>
-<li>SRAM和DRAM比较：  <img src="/2022/06079185/7.jpg" class="">   </li>
-<li>DRAM的刷新：<br>①刷新周期2ms。<br>②每次刷新一行存储单元，并且根据行列等长地址定位（减少选通线的数量）。<br>③根据硬件，读出一行之后重新写入，占用一个读/写周期。<br>④整个刷新周期每行刷新一次即可。  <h2 id="半导体存储器ROM"><a href="#半导体存储器ROM" class="headerlink" title="半导体存储器ROM"></a>半导体存储器ROM</h2><img src="/2022/06079185/11.jpg" class="">   
-RAM是易失性存储器，断电丢失数据，所以不能作为主存，所以出现了ROM（存储开机之后需要初始的固定信息）。  <img src="/2022/06079185/10.jpg" class="">   
-<h2 id="存储系统基本概念"><a href="#存储系统基本概念" class="headerlink" title="存储系统基本概念"></a>存储系统基本概念</h2><img src="/2022/06079185/16.jpg" class="">   </li>
-<li>分类：<br>使用不同材料：①磁表面存储器：磁盘（直接存取）磁带（顺序存储）。②磁芯存储器。③半导体存储器（随机存储ROM，RAM）。④光存储器。  <img src="/2022/06079185/13.jpg" class="">   </li>
-<li>性能指标：  <img src="/2022/06079185/14.jpg" class="">   </li>
-<li>存储器层次化结构：  <img src="/2022/06079185/15.jpg" class="">   
-<h2 id="主存和CPU的连接"><a href="#主存和CPU的连接" class="headerlink" title="主存和CPU的连接"></a>主存和CPU的连接</h2><img src="/2022/06079185/21.jpg" class="">     </li>
-<li>CPU和存储器之间地址线和数据线分别连接，可以通过位扩展和字扩展。<br>位扩展：  <img src="/2022/06079185/17.jpg" class="">   
-字扩展：<br>①线选法：n条线控制n个选片信号  <img src="/2022/06079185/18.jpg" class="">   
-②译码器片选法：n条线控制2的n次方个选片信号  <img src="/2022/06079185/19.jpg" class="">   
-字位同时扩展：  <img src="/2022/06079185/20.jpg" class="">   
-<h2 id="双端口RAM和多模块存储器"><a href="#双端口RAM和多模块存储器" class="headerlink" title="双端口RAM和多模块存储器"></a>双端口RAM和多模块存储器</h2>两者都是为了提高存储器的工作速度。<br>存取周期：存取时间+恢复时间（利用恢复时间存取其他数据）  <img src="/2022/06079185/36.jpg" class="">   </li>
-<li>双端口RAM：  <img src="/2022/06079185/37.jpg" class="">   </li>
-<li>多模块存储器：  <img src="/2022/06079185/38.jpg" class=""></li>
+<li>一个能够完成二进制位读写的单元为存储元，存储体由多个存储元构成。  <img src="/2022/06079185/1.jpg" class>    
+其中时序控制逻辑如图：  <img src="/2022/06079185/2.jpg" class>    
+封装称为存储器芯片。其中有若干接口线：地址线，数据线，片选线，读写控制线。总容量=存储单元个数X存储字长。  <img src="/2022/06079185/3.jpg" class>   </li>
+<li>寻址：如何定位到一个存储单元（一行）<br>按照字节寻址，每单元1B。按照字寻址，每个单元4B。还有半字2B和双字8B。根据单元个数求出地址线根数，分出若干组，求出每组的组号作为字地址。<br>而此时如何存放一个字？字长为4B，可以根据大端和小端方式来存放字。    <img src="/2022/06079185/4.jpg" class>   
+<h2 id="半导体存储器RAM"><a href="#半导体存储器RAM" class="headerlink" title="半导体存储器RAM"></a>半导体存储器RAM</h2><img src="/2022/06079185/8.jpg" class>   </li>
+<li>半导体存储器芯片的基本结构：  <img src="/2022/06079185/9.jpg" class>   </li>
+<li>SRAM和DRAM比较：  <img src="/2022/06079185/7.jpg" class>   </li>
+<li>DRAM的刷新：<br>①刷新周期2ms。<br>②每次刷新一行存储单元，并且根据行列等长地址定位（减少选通线的数量）。<br>③根据硬件，读出一行之后重新写入，占用一个读/写周期。<br>④整个刷新周期每行刷新一次即可。  <h2 id="半导体存储器ROM"><a href="#半导体存储器ROM" class="headerlink" title="半导体存储器ROM"></a>半导体存储器ROM</h2><img src="/2022/06079185/11.jpg" class>   
+RAM是易失性存储器，断电丢失数据，所以不能作为主存，所以出现了ROM（存储开机之后需要初始的固定信息）。  <img src="/2022/06079185/10.jpg" class>   
+<h2 id="存储系统基本概念"><a href="#存储系统基本概念" class="headerlink" title="存储系统基本概念"></a>存储系统基本概念</h2><img src="/2022/06079185/16.jpg" class>   </li>
+<li>分类：<br>使用不同材料：①磁表面存储器：磁盘（直接存取）磁带（顺序存储）。②磁芯存储器。③半导体存储器（随机存储ROM，RAM）。④光存储器。  <img src="/2022/06079185/13.jpg" class>   </li>
+<li>性能指标：  <img src="/2022/06079185/14.jpg" class>   </li>
+<li>存储器层次化结构：  <img src="/2022/06079185/15.jpg" class>   
+<h2 id="主存和CPU的连接"><a href="#主存和CPU的连接" class="headerlink" title="主存和CPU的连接"></a>主存和CPU的连接</h2><img src="/2022/06079185/21.jpg" class>     </li>
+<li>CPU和存储器之间地址线和数据线分别连接，可以通过位扩展和字扩展。<br>位扩展：  <img src="/2022/06079185/17.jpg" class>   
+字扩展：<br>①线选法：n条线控制n个选片信号  <img src="/2022/06079185/18.jpg" class>   
+②译码器片选法：n条线控制2的n次方个选片信号  <img src="/2022/06079185/19.jpg" class>   
+字位同时扩展：  <img src="/2022/06079185/20.jpg" class>   
+<h2 id="双端口RAM和多模块存储器"><a href="#双端口RAM和多模块存储器" class="headerlink" title="双端口RAM和多模块存储器"></a>双端口RAM和多模块存储器</h2>两者都是为了提高存储器的工作速度。<br>存取周期：存取时间+恢复时间（利用恢复时间存取其他数据）  <img src="/2022/06079185/36.jpg" class>   </li>
+<li>双端口RAM：  <img src="/2022/06079185/37.jpg" class>   </li>
+<li>多模块存储器：  <img src="/2022/06079185/38.jpg" class></li>
 </ul>
-<h2 id="高速缓冲存储器局部性原理"><a href="#高速缓冲存储器局部性原理" class="headerlink" title="高速缓冲存储器局部性原理"></a>高速缓冲存储器局部性原理</h2><img src="/2022/06079185/24.jpg" class="">   
+<h2 id="高速缓冲存储器局部性原理"><a href="#高速缓冲存储器局部性原理" class="headerlink" title="高速缓冲存储器局部性原理"></a>高速缓冲存储器局部性原理</h2><img src="/2022/06079185/24.jpg" class>   
 <p>把主存数据调入Cache之后，使CPU和Cache交互处理数据。  </p>
-<img src="/2022/06079185/22.jpg" class="">   
-<img src="/2022/06079185/23.jpg" class="">   
-<h2 id="Cache和主存之间的地址映射"><a href="#Cache和主存之间的地址映射" class="headerlink" title="Cache和主存之间的地址映射"></a>Cache和主存之间的地址映射</h2><img src="/2022/06079185/25.jpg" class="">  
-<img src="/2022/06079185/27.jpg" class="">    
-<img src="/2022/06079185/26.jpg" class="">   
-<h2 id="Cache替换算法"><a href="#Cache替换算法" class="headerlink" title="Cache替换算法"></a>Cache替换算法</h2><img src="/2022/06079185/30.jpg" class="">   
-<img src="/2022/06079185/28.jpg" class="">   
-<img src="/2022/06079185/29.jpg" class="">  
-<h2 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h2><img src="/2022/06079185/31.jpg" class="">    
+<img src="/2022/06079185/22.jpg" class>   
+<img src="/2022/06079185/23.jpg" class>   
+<h2 id="Cache和主存之间的地址映射"><a href="#Cache和主存之间的地址映射" class="headerlink" title="Cache和主存之间的地址映射"></a>Cache和主存之间的地址映射</h2><img src="/2022/06079185/25.jpg" class>  
+<img src="/2022/06079185/27.jpg" class>    
+<img src="/2022/06079185/26.jpg" class>   
+<h2 id="Cache替换算法"><a href="#Cache替换算法" class="headerlink" title="Cache替换算法"></a>Cache替换算法</h2><img src="/2022/06079185/30.jpg" class>   
+<img src="/2022/06079185/28.jpg" class>   
+<img src="/2022/06079185/29.jpg" class>  
+<h2 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h2><img src="/2022/06079185/31.jpg" class>    
 <p>根据划分单位不同，分为三种不同虚拟存储器：  </p>
 <ul>
-<li>页式虚拟存储器：  <img src="/2022/06079185/32.jpg" class="">   </li>
-<li>段式虚拟存储器：  <img src="/2022/06079185/33.jpg" class="">   </li>
-<li>段页式虚拟存储器：  <img src="/2022/06079185/34.jpg" class="">   
-快表TLB：<br>页表，段表放在主存中，收到虚拟地址之后要先访问主存，查询页表和段表进行转换，放在内存中的表称为慢表。为了提高变换速度，用高速缓冲存储器存放常用的页表项，形成了快表TLB。  <img src="/2022/06079185/35.jpg" class=""></li>
+<li>页式虚拟存储器：  <img src="/2022/06079185/32.jpg" class>   </li>
+<li>段式虚拟存储器：  <img src="/2022/06079185/33.jpg" class>   </li>
+<li>段页式虚拟存储器：  <img src="/2022/06079185/34.jpg" class>   
+快表TLB：<br>页表，段表放在主存中，收到虚拟地址之后要先访问主存，查询页表和段表进行转换，放在内存中的表称为慢表。为了提高变换速度，用高速缓冲存储器存放常用的页表项，形成了快表TLB。  <img src="/2022/06079185/35.jpg" class></li>
 </ul>
 
                 
@@ -918,10 +896,6 @@ RAM是易失性存储器，断电丢失数据，所以不能作为主存，所�
 
 
 
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
 
 </div>
     </div>

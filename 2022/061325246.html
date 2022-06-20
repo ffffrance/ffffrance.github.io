@@ -119,17 +119,6 @@
     
   </li>
   
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
-    </a>
-    
-  </li>
-  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -205,17 +194,6 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/friends" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-address-book"></i>
-			
-			友情链接
 		</a>
           
         </li>
@@ -351,14 +329,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-16
+                    2022-06-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-06-16
+                    2022-06-17
                 </div>
                 
 
@@ -407,7 +385,7 @@
 <li><p>暂存区：下一次要提交的文件快照</p>
 </li>
 <li><p>工作目录：编写代码的目录</p>
-<img src="/2022/061625246/image-20201016103153310.png" class="" title="image-20201016103153310"></li>
+<img src="/2022/061325246/image-20201016103153310.png" class title="image-20201016103153310"></li>
 </ul>
 </li>
 </ol>
@@ -459,7 +437,7 @@ git log --stat
 </blockquote>
 </li>
 <li><p>舍弃工作目录中所有未保存的变更 （文件可能已暂存也可能没有，但未被提交），命令： reset –hard</p>
-<img src="/2022/061625246/image-20201013144708354.png" class="" title="image-20201013144708354">
+<img src="/2022/061325246/image-20201013144708354.png" class title="image-20201013144708354">
 
 <blockquote>
 <p>注意：git reset 确实是个危险的命令，如果加上了 –hard 选项则更是如此。 然而在上述场景中，工作目录中的文件尚未修改，因此相对安全一些。</p>
@@ -510,21 +488,21 @@ git reflog
 $ git commit -m 'The initial commit of my project'
 </code></pre>
 <p>当使用 git commit 进行提交操作时， Git 会先计算每一个子目录（ 本例中只有项目根目录） 的校验<br>和， 然后在 Git 仓库中这些校验和保存为树对象。 随后， Git 便会创建一个提交对象， 它除了包含上面提<br>到的那些信息外， 还包含指向这个树对象（ 项目根目录） 的指针。 如此一来， Git 就可以在需要的时候重<br>现此次保存的快照。<br>现在， Git 仓库中有五个对象： 三个 blob 对象（ 保存着文件快照） 、 一个树对象（ 记录着目录结构和<br>blob 对象索引） 以及一个提交对象（ 包含着指向前述树对象的指针和所有提交信息） 。  </p>
-<img src="/2022/061625246/image-20201016151815452.png" class="" title="image-20201016151815452">
+<img src="/2022/061325246/image-20201016151815452.png" class title="image-20201016151815452">
 
 <p>做些修改后再次提交， 那么这次产生的提交对象会包含一个指向上次提交对象（ 父对象） 的指针。  </p>
-<img src="/2022/061625246/image-20201016152229190.png" class="" title="image-20201016152229190">
+<img src="/2022/061325246/image-20201016152229190.png" class title="image-20201016152229190">
 
 <h2 id="Git分支"><a href="#Git分支" class="headerlink" title="Git分支"></a>Git分支</h2><p>Git 的分支， 其实本质上仅仅是指向提交对象的可变指针。 Git 的默认分支名字是 master 。 在多次提交<br>操作之后， 你其实已经有一个指向最后那个提交对象的 master 分支。 它会在每次的提交操作中自动向<br>前移动。<br>Git 的 “master” 分支并不是一个特殊分支。 它就跟其它分支完全没有区别。 之所以几乎每一个仓库都<br>有 master 分支， 是因为 git init 命令默认创建它， 并且大多数人都懒得去改动它。  </p>
-<img src="/2022/061625246/image-20201016152447869.png" class="" title="image-20201016152447869">
+<img src="/2022/061325246/image-20201016152447869.png" class title="image-20201016152447869">
 
 <h3 id="分支创建"><a href="#分支创建" class="headerlink" title="分支创建"></a>分支创建</h3><pre><code>git branch testing
 </code></pre>
 <p>这会在当前所在的提交对象上创建一个指针。  </p>
-<img src="/2022/061625246/image-20201016153329285.png" class="" title="image-20201016153329285">
+<img src="/2022/061325246/image-20201016153329285.png" class title="image-20201016153329285">
 
 <h3 id="当前工作分支"><a href="#当前工作分支" class="headerlink" title="当前工作分支"></a>当前工作分支</h3><p>那么， Git 又是怎么知道当前在哪一个分支上呢？ 也很简单， 它有一个名为 HEAD 的特殊指针。 请注意<br>它和许多其它版本控制系统（ 如 Subversion 或 CVS） 里的 HEAD 概念完全不同。 在 Git 中， 它是一个<br>指针， 指向当前所在的本地分支（ 译注： 将 HEAD 想象为当前分支的别名） 。 在本例中， 你仍然在<br>master 分支上。 因为 git branch 命令仅仅 创建 一个新分支， 并不会自动切换到新分支中去。  </p>
-<img src="/2022/061625246/image-20201016154219293.png" class="" title="image-20201016154219293">
+<img src="/2022/061325246/image-20201016154219293.png" class title="image-20201016154219293">
 
 <p>你可以简单地使用 git log 命令查看各个分支当前所指的对象。 提供这一功能的参数是–decorate 。  </p>
 <pre><code>$ git log --oneline --decorate
@@ -535,17 +513,17 @@ f30ab (HEAD-&gt;master, testing) add feature #32 - ability to add new
 <h3 id="分支切换"><a href="#分支切换" class="headerlink" title="分支切换"></a>分支切换</h3><p>要切换到一个已存在的分支， 你需要使用 git checkout 命令。 我们现在切换到新创建的 testing 分支去：  </p>
 <pre><code>git checkout testing
 </code></pre>
-<img src="/2022/061625246/image-20201016155045816.png" class="" title="image-20201016155045816">
+<img src="/2022/061325246/image-20201016155045816.png" class title="image-20201016155045816">
 
 <blockquote>
 <p>分支切换会改变你工作目录中的文件<br>在切换分支时， 一定要注意你工作目录里的文件会被改变。 如果是切换到一个较旧的分支， 你的工作<br>目录会恢复到该分支最后一次提交时的样子。 如果 Git 不能干净利落地完成这个任务， 它将禁止切换<br>分支。  </p>
 </blockquote>
-<h3 id="切换分支后提交"><a href="#切换分支后提交" class="headerlink" title="切换分支后提交"></a>切换分支后提交</h3><img src="/2022/061625246/image-20201017133254590.png" class="" title="image-20201017133254590">
+<h3 id="切换分支后提交"><a href="#切换分支后提交" class="headerlink" title="切换分支后提交"></a>切换分支后提交</h3><img src="/2022/061325246/image-20201017133254590.png" class title="image-20201017133254590">
 
 <p>如图所示， 你的 testing 分支向前移动了， 但是 master 分支却没有， 它仍然指向运行 git checkout 时所指的对象。 这就有意思了， 现在我们切换回 master 分支看看：  </p>
 <pre><code>git checkout master
 </code></pre>
-<img src="/2022/061625246/image-20201017145248415.png" class="" title="image-20201017145248415">
+<img src="/2022/061325246/image-20201017145248415.png" class title="image-20201017145248415">
 
 <p>这条命令做了两件事。 一是使 HEAD 指回 master 分支， 二是将工作目录恢复成 master 分支所指向<br>的快照内容。 也就是说， 你现在做修改的话， 项目将始于一个较旧的版本。 本质上来讲， 这就是忽略<br>testing 分支所做的修改， 以便于向另一个方向进行开发。  </p>
 <p>我们不妨再稍微做些修改并提交：  </p>
@@ -553,7 +531,7 @@ f30ab (HEAD-&gt;master, testing) add feature #32 - ability to add new
 $ git commit -a -m 'made other changes'
 </code></pre>
 <p>现在， 这个项目的提交历史已经产生了分叉（ 参见 Figure 3-9） 。 因为刚才你创建了一个新分支， 并切换<br>过去进行了一些工作， 随后又切换回 master 分支进行了另外一些工作。 上述两次改动针对的是不同分<br>支： 你可以在不同分支间不断地来回切换和工作， 并在时机成熟时将它们合并起来。 而所有这些工作， 你<br>需要的命令只有 branch 、 checkout 和 commit 。  </p>
-<img src="/2022/061625246/image-20201017145544382.png" class="" title="image-20201017145544382">
+<img src="/2022/061325246/image-20201017145544382.png" class title="image-20201017145544382">
 
 <p>你可以简单地使用 git log 命令查看分叉历史。 运行<br>git log –oneline –decorate –graph –all ， 它会输出你的提交历史、 各个分支的指向以<br>及项目的分支分叉情况。  </p>
 <pre><code>$ git log --oneline --decorate --graph --all
@@ -571,22 +549,22 @@ $ git commit -a -m 'made other changes'
 
 git merge hotfix
 </code></pre>
-<img src="/2022/061625246/image-20210222071315943.png" class="" title="image-20210222071315943">
+<img src="/2022/061325246/image-20210222071315943.png" class title="image-20210222071315943">
 
 <h4 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h4><pre><code>git branch -d hotfix
 </code></pre>
 <h4 id="合并提交"><a href="#合并提交" class="headerlink" title="合并提交"></a>合并提交</h4><p>这和你之前合并 hotfix 分支的时候看起来有一点不一样。 在这种情况下， 你的开发历史从一个更早的<br>地方开始分叉开来（ diverged） 。 因为， master 分支所在提交并不是 iss53 分支所在提交的直接祖<br>先， Git 不得不做一些额外的工作。 出现这种情况的时候， Git 会使用两个分支的末端所指的快照（ C4<br>和 C5 ） 以及这两个分支的工作祖先（ C2 ） ， 做一个简单的三方合并。  </p>
-<img src="/2022/061625246/image-20210222071640080.png" class="" title="image-20210222071640080">
+<img src="/2022/061325246/image-20210222071640080.png" class title="image-20210222071640080">
 
 <p>和之间将分支指针向前推进所不同的是， Git 将此次三方合并的结果做了一个新的快照并且自动创建一个<br>新的提交指向它。 这个被称作一次合并提交， 它的特别之处在于他有不止一个父提交。  </p>
-<img src="/2022/061625246/image-20210222071723379.png" class="" title="image-20210222071723379">
+<img src="/2022/061325246/image-20210222071723379.png" class title="image-20210222071723379">
 
 <h4 id="遇到冲突时的分支合并"><a href="#遇到冲突时的分支合并" class="headerlink" title="遇到冲突时的分支合并"></a>遇到冲突时的分支合并</h4><p>有时候合并操作不会如此顺利。 如果你在两个不同的分支中， 对同一个文件的同一个部分进行了不同的修<br>改， Git 就没法干净的合并它们。 如果你对 #53 问题的修改和有关 hotfix 的修改都涉及到同一个文件<br>的同一处， 在合并它们的时候就会产生合并冲突：  </p>
 <p>此时 Git 做了合并， 但是没有自动地创建一个新的合并提交。 Git 会暂停下来， 等待你去解决合并产生的<br>冲突。 你可以在合并冲突后的任意时刻使用 git status 命令来查看那些因包含合并冲突而处于未合并<br>（ unmerged） 状态的文件：  </p>
-<img src="/2022/061625246/image-20210222071918884.png" class="" title="image-20210222071918884">
+<img src="/2022/061325246/image-20210222071918884.png" class title="image-20210222071918884">
 
 <p>任何因包含合并冲突而有待解决的文件， 都会以未合并状态标识出来。 Git 会在有冲突的文件中加入标准<br>的冲突解决标记， 这样你可以打开这些包含冲突的文件然后手动解决冲突。 出现冲突的文件会包含一些特<br>殊区段， 看起来像下面这个样子：  </p>
-<img src="/2022/061625246/image-20210222071957893.png" class="" title="image-20210222071957893">
+<img src="/2022/061325246/image-20210222071957893.png" class title="image-20210222071957893">
 
 <pre><code>//解决冲突后，添加冲突文件到缓冲区中，标记冲突解决
 git add index.html
@@ -632,7 +610,7 @@ origin https://github.com:emmajane/gitforteams.git (push)
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ffffrance.github.io/2022/061625246.html">http://ffffrance.github.io/2022/061625246.html</a>
+                    <a href="http://ffffrance.github.io/2022/061325246.html">http://ffffrance.github.io/2022/061325246.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -849,31 +827,31 @@ origin https://github.com:emmajane/gitforteams.git (push)
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/061638097.html">
+                <a href="/2022/061415691.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Swagger">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Linux">
                         
-                        <span class="card-title">Swagger</span>
+                        <span class="card-title">Linux</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Swagger
+                            Linux
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-14
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Swagger/" class="post-category">
-                                    Swagger
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
@@ -883,8 +861,8 @@ origin https://github.com:emmajane/gitforteams.git (push)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Swagger/">
-                        <span class="chip bg-color">Swagger</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -898,31 +876,31 @@ origin https://github.com:emmajane/gitforteams.git (push)
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/061627273.html">
+                <a href="/2022/061240101.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Redis">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Echarts">
                         
-                        <span class="card-title">Redis</span>
+                        <span class="card-title">Echarts</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Redis
+                            Echarts
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Redis/" class="post-category">
-                                    Redis
+                            <a href="/categories/Echarts/" class="post-category">
+                                    Echarts
                                 </a>
                             
                             
@@ -932,8 +910,8 @@ origin https://github.com:emmajane/gitforteams.git (push)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Redis/">
-                        <span class="chip bg-color">Redis</span>
+                    <a href="/tags/Echarts/">
+                        <span class="chip bg-color">Echarts</span>
                     </a>
                     
                 </div>
@@ -1094,10 +1072,6 @@ origin https://github.com:emmajane/gitforteams.git (push)
 
 
 
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
 
 </div>
     </div>

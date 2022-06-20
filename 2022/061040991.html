@@ -119,17 +119,6 @@
     
   </li>
   
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
-    </a>
-    
-  </li>
-  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -205,17 +194,6 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/friends" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-address-book"></i>
-			
-			友情链接
 		</a>
           
         </li>
@@ -351,14 +329,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-16
+                    2022-06-10
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-06-16
+                    2022-06-17
                 </div>
                 
 
@@ -395,12 +373,12 @@
 <p>Docker可以把项目和它所依赖的环境整合打包，非常方便！</p>
 <p>Docker的思想就来自于集装箱，应用之间相互隔离，隔离的思想</p>
 <p>Docker通过隔离机制，将服务器利用到极致</p>
-<img src="/2022/061640991/960a304e251f95caa3e7fe4a6c703737660952a8.jpeg" class="" title="img">
+<img src="/2022/061040991/960a304e251f95caa3e7fe4a6c703737660952a8.jpeg" class title="img">
 
 <p><strong>docker架构</strong></p>
-<img src="/2022/061640991/a6efce1b9d16fdfa01ae7674e7f0855d96ee7bf6.png" class="" title="img">
+<img src="/2022/061040991/a6efce1b9d16fdfa01ae7674e7f0855d96ee7bf6.png" class title="img">
 
-<img src="/2022/061640991/image-20210320160948248.png" class="" title="image-20210320160948248">
+<img src="/2022/061040991/image-20210320160948248.png" class title="image-20210320160948248">
 
 <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ol>
 <li><p>安装docker引擎</p>
@@ -566,7 +544,7 @@ E45: 'readonly' option is set (add ! to override)
 <li><p>使用navicat连接mysql</p>
 </li>
 </ol>
-<img src="/2022/061640991/image-20220611053744048.png" class="" title="image-20220611053744048">
+<img src="/2022/061040991/image-20220611053744048.png" class title="image-20220611053744048">
 
 <ol start="2">
 <li><p>进入docker mysql</p>
@@ -602,13 +580,13 @@ mkdir /root/mysql/log
 <p>说明：<br>Docker如果想安装软件 , 必须先到 Docker 镜像仓库下载镜像。</p>
 <p>Docker官方镜像 </p>
 <p>1、寻找Nginx镜像 </p>
-<img src="/2022/061640991/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAVG91Y2gm,size_20,color_FFFFFF,t_70,g_se,x_16.png" class="" title="img">
+<img src="/2022/061040991/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAVG91Y2gm,size_20,color_FFFFFF,t_70,g_se,x_16.png" class title="img">
 
 <p> 2、下载Nginx镜像<br>命令	描述</p>
 <pre><code>docker pull nginx	下载最新版Nginx镜像 (其实此命令就等同于 : docker pull nginx:latest )
 docker pull nginx:xxx	下载指定版本的Nginx镜像 (xxx指具体版本号)
 </code></pre>
-<img src="/2022/061640991/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAVG91Y2gm,size_20,color_FFFFFF,t_70,g_se,x_16-16548994344123.png" class="" title="img">
+<img src="/2022/061040991/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAVG91Y2gm,size_20,color_FFFFFF,t_70,g_se,x_16-16548994344123.png" class title="img">
 
 
 <p> 检查当前所有Docker下载的镜像</p>
@@ -621,7 +599,7 @@ docker pull nginx:xxx	下载指定版本的Nginx镜像 (xxx指具体版本号)
 <p>测试：</p>
 <pre><code>http://192.168.136.129
 </code></pre>
-<img src="/2022/061640991/image-20220612053039896.png" class="" title="image-20220612053039896">
+<img src="/2022/061040991/image-20220612053039896.png" class title="image-20220612053039896">
 
 <p>进入容器</p>
 <pre><code>docker exec -it my-nginx bash
@@ -668,7 +646,7 @@ docker cp my-nginx:/var/log/nginx /opt/nginx/log
 <hr>
 <p> 5、结果检测</p>
 <p> 6、修改内容进行展示</p>
-<img src="/2022/061640991/image-20220612061210504.png" class="" title="image-20220612061210504">
+<img src="/2022/061040991/image-20220612061210504.png" class title="image-20220612061210504">
 
 <p>6.删除容器，重新挂载，测试修改后的内容是否还在</p>
 <pre><code>docker rm -f nginx
@@ -679,7 +657,7 @@ docker run -p 80:80 --name nginx \
     -v /opt/nginx/log:/var/log/nginx \
     -d nginx
 </code></pre>
-<img src="/2022/061640991/image-20220612061252131.png" class="" title="image-20220612061252131">
+<img src="/2022/061040991/image-20220612061252131.png" class title="image-20220612061252131">
 
 <h2 id="Docker安装Redis"><a href="#Docker安装Redis" class="headerlink" title="Docker安装Redis"></a>Docker安装Redis</h2><p>一、Docker搜索redis镜像<br>命令：docker search &lt;镜像名称&gt;</p>
 <pre><code>docker search redis
@@ -719,13 +697,13 @@ docker run -p 80:80 --name nginx \
 <p>验证密码：</p>
 <pre><code>auth 密码
 </code></pre>
-<img src="/2022/061640991/bb3eff84e9e54af1af36ac779dc429dc.png" class="" title="在这里插入图片描述">
+<img src="/2022/061040991/bb3eff84e9e54af1af36ac779dc429dc.png" class title="在这里插入图片描述">
 
 
 <p>查看当前redis有没有设置密码：（得验证通过了才能输入的）</p>
 <pre><code>config get requirepass
 </code></pre>
-<img src="/2022/061640991/d0eecb450247469383cb3b60105ba568.png" class="" title="在这里插入图片描述">
+<img src="/2022/061040991/d0eecb450247469383cb3b60105ba568.png" class title="在这里插入图片描述">
 
 
 <p>六、配置文件<br>myredis.conf</p>
@@ -884,7 +862,7 @@ tomcat       8.0       ef6a7c98d192   3 years ago   356MB
 root@2779cb76c827:/usr/local/tomcat/webapps.dist# cp * ../webapps -r
 </code></pre>
 <p>这里的 -p 8080:8080 的意思就是把容器的端口号8080映射到linux系统里的8080端口这里的两个端口8080前边的是linux里的端口号，后边的是运行的tomcat里的端口，外边也就是linux里的端口号可以随便换的，而容器里的是不能换的。<br>这里的 -d 的意思是后台运行<br>这里 –name 是给容器起一个别名</p>
-<img src="/2022/061640991/image-20220612081134878.png" class="" title="image-20220612081134878">
+<img src="/2022/061040991/image-20220612081134878.png" class title="image-20220612081134878">
 
 <p>再次查看docker里的容器</p>
 <pre><code>docker ps
@@ -1028,7 +1006,7 @@ systemctl stop firewalld.service
 <li><p>测试</p>
 <pre><code>http://192.168.136.129:8000
 </code></pre>
-<img src="/2022/061640991/image-20220612065452739.png" class="" title="image-20220612065452739"></li>
+<img src="/2022/061040991/image-20220612065452739.png" class title="image-20220612065452739"></li>
 </ul>
 </li>
 </ol>
@@ -1062,10 +1040,10 @@ docker push pcbhyy/mytest:9
 <li><p>拉取自己的镜像</p>
 <pre><code>docker pull pcbhyy/mytest:9
 </code></pre>
-<img src="/2022/061640991/image-20220612071430023.png" class="" title="image-20220612071430023"></li>
+<img src="/2022/061040991/image-20220612071430023.png" class title="image-20220612071430023"></li>
 </ol>
 <p>中文手册：<a target="_blank" rel="noopener" href="http://www.dockerinfo.net/document">http://www.dockerinfo.net/document</a></p>
-<img src="/2022/061640991/image-20210320061746159.png" class="" title="image-20210320061746159">
+<img src="/2022/061040991/image-20210320061746159.png" class title="image-20210320061746159">
 
 <p>简而言之，容器运行着由镜像定义的系统。这些镜像由一个或多个层（或差异集）加上一些Docker的元数据组成。</p>
 <p>Docker的中心功能是构建、分发及在任何具有Docker的地方运行软件。对终端用户而言，Docker是他们运行的一个命令行程序。就像Git（或任何源代码控制工具）一样，这个程序具有用于执行不同操作的子命令。表1-1中列出了将在宿主机上使用的主要的Docker子命令。</p>
@@ -1073,7 +1051,7 @@ docker push pcbhyy/mytest:9
 <p><code>docker run</code> 以容器形式运行一个Docker镜像</p>
 <p><code>docker commit</code> 将一个Docker容器作为一个镜像提交</p>
 <p><code>docker tag</code> 给一个Docker镜像打标签</p>
-<img src="/2022/061640991/image-20210320062815434.png" class="" title="image-20210320062815434">
+<img src="/2022/061040991/image-20210320062815434.png" class title="image-20210320062815434">
 
 <p>看待镜像和容器的一种方式是将它们类比成程序与进程。一个进程可以视为一个“被执行的应用程序”，同样，一个Docker容器可以视为一个运行中的Docker镜像。</p>
 <p>如果读者熟悉面向对象原理，看待镜像和容器的另一种方法是将镜像看作类而将容器看作对象。对象是类的具体实例，同样，容器是镜像的实例。用户可以从单个镜像创建多个容器，就像对象一样，它们之间全都是相互隔离的。不论用户在对象内修改了什么，都不会影响类的定义——它们从根本上就是不同的东西。</p>
@@ -1129,7 +1107,7 @@ CMD ["npm","start"]
 <p>现在使用WORKDIR命令移动到新克隆的目录中。这不仅会改变构建环境中的目录，最后一条WORKDIR命令还决定了从所构建镜像启动容器时用户所处的默认目录。<br>接下来，执行node包管理器的安装命令（npm）。这将为应用程序设置依赖。我们对输出的信息不感兴趣，所以将其重定向到/dev/null上。<br>由于应用程序使用了8000端口，使用EXPOSE命令告诉Docker从所构建镜像启动的容器应该监听这个端口。</p>
 <p>最后，使用CMD命令告诉Docker在容器启动时将执行哪条命令。</p>
 <p>这个简单的示例演示了Docker及Dockerfile的几个核心功能。Dockerfile是一组严格按顺序执行的有限的命令集的简单序列。它影响了最终镜像的文件和元数据。这里的RUN命令通过签出并安装应用程序影响了文件系统，而EXPOSE、CMD和WORKDIR命令影响了镜像的元数据。</p>
-<img src="/2022/061640991/image-20210320065823742.png" class="" title="image-20210320065823742">
+<img src="/2022/061040991/image-20210320065823742.png" class title="image-20210320065823742">
 
 <p>输出看起来和下面类似。</p>
 <pre><code>Sending build context to Docker daemon 2.048kB　　⇽---　 Docker会上传docker build指定目录下的文件和目录
@@ -1164,7 +1142,7 @@ Removing intermediate container ccc076ee38fe
 Successfully built 66c76cea05bb　　⇽---　此次构建的最终镜像ID，可用于打标签
 </code></pre>
 <p>现在，拥有了一个具有镜像ID（前面示例中的“66c76cea05bb”，不过读者的ID会不一样）的Docker镜像。总是引用这个ID会很麻烦，可以为其打标签以方便引用，如图1-8所示。</p>
-<img src="/2022/061640991/image-20210320065947023.png" class="" title="image-20210320065947023">
+<img src="/2022/061040991/image-20210320065947023.png" class title="image-20210320065947023">
 
 <p>输入图1-8所示的命令，将66c76cea05bb替换成读者生成的镜像ID。<br>现在就能从一个Dockerfile构建自己的Docker镜像副本，并重现别人定义的环境了！</p>
 <h2 id="运行一个Docker容器"><a href="#运行一个Docker容器" class="headerlink" title="运行一个Docker容器"></a>运行一个Docker容器</h2><p>运行一个Docker容器</p>
@@ -1257,7 +1235,7 @@ C /todo/node_modules
 <p>docker run子命令启动容器。-p标志将容器的8000端口映射到宿主机的8000端口上，读者现在应该可以使用浏览器访问<a href="http://localhost:8000来查看这个应用程序了。--name标志赋予了容器一个唯一的名称，以便后面引用。最后的参数是镜像名称。">http://localhost:8000来查看这个应用程序了。--name标志赋予了容器一个唯一的名称，以便后面引用。最后的参数是镜像名称。</a></p>
 <p>一旦容器启动，我们就可以按组合键Ctrl+C终止进程和容器。读者可以执行ps命令查看被启动且未被移除的容器。注意，每个容器都具有自己的容器 ID 和状态，与进程类似。它的状态是Exited（已退出），不过读者可以重新启动它。这么做之后，注意状态已经改变为Up（运行中），且容器到宿主机的端口映射现在也显示出来了。</p>
 <p>docker diff子命令显示了自镜像被实例化成一个容器以来哪些文件受到了影响。在这个示例中，todo目录被修改了（C），而其他列出的文件是新增的（A）。没有文件被删除（D），这是另一种可能性。</p>
-<h2 id="Docker的架构"><a href="#Docker的架构" class="headerlink" title="Docker的架构"></a>Docker的架构</h2><img src="/2022/061640991/image-20210320160948248.png" class="" title="image-20210320160948248">
+<h2 id="Docker的架构"><a href="#Docker的架构" class="headerlink" title="Docker的架构"></a>Docker的架构</h2><img src="/2022/061040991/image-20210320160948248.png" class title="image-20210320160948248">
 
 <h3 id="Docker守护进程"><a href="#Docker守护进程" class="headerlink" title="Docker守护进程"></a>Docker守护进程</h3><p>Docker守护进程（见图2-2）是用户与Docker交互的枢纽，因而它是理解所有相关部分的最佳切入点。它控制着用户机器上的Docker访问权限，管理着容器与镜像的状态，同时代理着与外界的交互。</p>
 <p>守护进程是运行在后台的一个进程，不在用户的直接控制之下。服务器是负责接受客户端请求，并执行用于满足该请求所需的操作的一个进程。守护进程通常也是服务器，接收来自客户端的请求，为其执行操作。docker命令是一个客户端，而Docker守护进程则作为服务器对Docker容器和镜像进行操作。</p>
@@ -1389,7 +1367,7 @@ $ sudo rm -rf /var/lib/containerd
 </code></pre>
 <p>socat是一个强大的命令，能让用户在两个几乎任意类型的数据通道之间中继数据。如果熟悉netcat，可以将其看作是加强版的netcat。你可使用系统的标准包管理器来安装它。</p>
 <p>在这条命令中，-v用于提高输出的可读性，带有数据流的指示。UNIX-LISTEN部分是让socat在一个Unix套接字上进行监听，fork确保socat不会在首次请求后退出，而UNIX-CONNECT是让socat连接到Docker的Unix套接字。&amp;符号指定在后台执行该命令。如果你通常使用sudo来运行Docker客户端，这里也需要这么做。<br>发往守护进程的请求所经过的新路由如图2-6所示。所有双向流量都会被socat看到，并与Docker客户端所提供的任何输出一起记录到终端日志中。</p>
-<img src="/2022/061640991/image-20210321141714179.png" class="" title="image-20210321141714179">
+<img src="/2022/061040991/image-20210321141714179.png" class title="image-20210321141714179">
 
 <p>现在一个简单的docker命令的输出看起来将类似下面这样：</p>
 <pre><code>docker -H unix:///tmp/dockerapi.sock ps -a　　⇽---　用于查看请求与响应所发送的命令
@@ -1430,7 +1408,7 @@ $ sudo rm -rf /var/lib/containerd
 </code></pre>
 <p>如果需要，现在就可以通过管理端口分配在宿主机上运行多个相同的镜像和服务了</p>
 <h2 id="Docker注册中心"><a href="#Docker注册中心" class="headerlink" title="Docker注册中心"></a>Docker注册中心</h2><p>Docker注册中心允许多个用户使用REST风格API将镜像推送到一个中央存储中，也可以从中拉取镜像。<br>与Docker自身一样，注册中心代码也是开源的。很多公司（如我们公司）建立了私有注册中心在内部存储和共享专有的镜像。这是在我们进一步说明Docker公司的注册中心之前，我们将要讨论的东西。</p>
-<img src="/2022/061640991/image-20210322130851350.png" class="" title="image-20210322130851350">
+<img src="/2022/061040991/image-20210322130851350.png" class title="image-20210322130851350">
 
 <h3 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h3><p>想要一个在本地托管镜像的方法。</p>
 <h3 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h3><p>在本地网络上建立一个注册中心服务器。<br>简单地在一台具有大量磁盘空间的机器上发起以下命令：</p>
@@ -1660,9 +1638,9 @@ curl baidu.com
 <p>业界所说的 shell 通常都是指 shell 脚本，但读者朋友要知道，shell 和 shell script 是两个不同的概念。</p>
 <p>由于习惯的原因，简洁起见，本文出现的 “shell编程” 都是指 shell 脚本编程，不是指开发 shell 自身。</p>
 <h3 id="shell中文乱码"><a href="#shell中文乱码" class="headerlink" title="shell中文乱码"></a>shell中文乱码</h3><p>修改文件类型为：utf-8</p>
-<img src="/2022/061640991/image-20211224103305667.png" class="" title="image-20211224103305667">
+<img src="/2022/061040991/image-20211224103305667.png" class title="image-20211224103305667">
 
-<img src="/2022/061640991/image-20211224103350347.png" class="" title="image-20211224103350347">
+<img src="/2022/061040991/image-20211224103350347.png" class title="image-20211224103350347">
 
 
 
@@ -1938,7 +1916,7 @@ lengthn=${#array_name[n]}
 多行注释还可以使用以下格式：
 
 ```
-:&lt;<eof 0="" 1="" 2="" 3="" 4="" 30="" 200="" 注释内容...="" eof="" ```="" 也可以使用其他符号:="" :<<'="" '="" :<<!="" !="" ###="" shell="" 传递参数="" 我们可以在执行="" 脚本时，向脚本传递参数，脚本内获取参数的格式为：**$n**。**n**="" 代表一个数字，1="" 为执行脚本的第一个参数，2="" 为执行脚本的第二个参数，以此类推……="" ####="" 实例="" 以下实例我们向脚本传递三个参数，并分别输出，其中="" **$0**="" 为执行的文件名（包含文件路径）：="" #!="" bin="" bash="" #="" author:菜鸟教程="" url:www.runoob.com="" echo="" "shell="" 传递参数实例！";="" "执行的文件名：$0";="" "第一个参数为：$1";="" "第二个参数为：$2";="" "第三个参数为：$3";="" 为脚本设置可执行权限，并执行脚本，输出结果如下所示：="" $="" chmod="" +x="" test.sh="" .="" 传递参数实例！="" 执行的文件名：.="" 第一个参数为：1="" 第二个参数为：2="" 第三个参数为：3="" 另外，还有几个特殊字符用来处理参数：="" |="" 参数处理="" 说明="" :-------="" :-----------------------------------------------------------="" $#="" 传递到脚本的参数个数="" $*="" 以一个单字符串显示所有向脚本传递的参数。="" 如"$*"用「"」括起来的情况、以"$1="" $2="" …="" $n"的形式输出所有参数。="" $$="" 脚本运行的当前进程id号="" $!="" 后台运行的最后一个进程的id号="" $@="" 与$*相同，但是使用时加引号，并在引号中返回每个参数。="" 如"$@"用「"」括起来的情况、以"$1"="" "$2"="" "$n"="" 的形式输出所有参数。="" $-="" 显示shell使用的当前选项，与[set命令](https:="" www.runoob.com="" linux="" linux-comm-set.html)功能相同。="" $?="" 显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。="" "参数个数为：$#";="" "传递的参数作为一个字符串显示：$*";="" 执行脚本，输出结果如下所示：="" 参数个数为：3="" 传递的参数作为一个字符串显示：1="" 与="" 区别：="" -="" 相同点：都是引用所有参数。="" 不同点：只有在双引号中体现出来。假设在脚本运行时写了三个参数="" 1、2、3，，则="" "="" *="" 等价于="" "1="" 3"（传递了一个参数），而="" "@"="" "1"="" "2"="" "3"（传递了三个参数）。="" "--="" \$*="" 演示="" ---"="" for="" i="" in="" "$*";="" do="" $i="" done="" \$@="" "$@";="" --="" ---="" 基本运算符="" 和其他编程语言一样，支持多种运算符，包括：="" 算数运算符="" 关系运算符="" 布尔运算符="" 字符串运算符="" 文件测试运算符="" 原生bash不支持简单的数学运算，但是可以通过其他命令来实现，例如="" awk="" 和="" expr，expr="" 最常用。="" expr="" 是一款表达式计算工具，使用它能完成表达式的求值操作。="" 例如，两个数相加(**注意使用的是反引号="" \**`\**="" 而不是单引号="" \**'\****)：="" *#!="" bash*="" val="`expr" +="" 2`="" **echo**="" "两数之和为="" :="" $val"="" [运行实例="" »](https:="" try="" runcode.php?filename="add2data&amp;type=bash)" 两数之和为="" 两点注意：="" 表达式和运算符之间要有空格，例如="" 2+2="" 是不对的，必须写成="" 2，这与我们熟悉的大多数编程语言不一样。="" 完整的表达式要被="" 反引号="" 包含，注意这个字符不是常用的单引号，在="" esc="" 键下边。="" ------="" 算术运算符="" 下表列出了常用的算术运算符，假定变量="" a="" 为="" 10，变量="" b="" 20：="" 运算符="" 举例="" :-----="" :--------------------------------------------="" :----------------------------="" 加法="" `expr="" $a="" $b`="" 结果为="" 30。="" 减法="" -10。="" 乘法="" \*="" 200。="" 除法="" $b="" $a`="" 2。="" %="" 取余="" 0。="" 赋值="" 将把变量="" 的值赋给="" a。="" 相等。用于比较两个数字，相同则返回="" true。="" [="" ]="" 返回="" false。="" 不相等。用于比较两个数字，不相同则返回="" **注意：**条件表达式要放在方括号之间，并且要有空格，例如:="" **[$a="=$b]**" 是错误的，必须写成="" **[="" ]**。="" 算术运算符实例如下：="" *#="" author:菜鸟教程*="" url:www.runoob.com*="" $b**`**="" "a="" \*****="" **="" $a**`**="" "b="" **%**="" **if**="" **[**="" **]**="" **then**="" 等于="" b"="" **fi**="" **!**="$b" 不等于="" -10=""> **注意：**
+:&lt;<eof 0 1 2 3 4 30 200 注释内容... eof ``` 也可以使用其他符号: :<<' ' :<<! ! ### shell 传递参数 我们可以在执行 脚本时，向脚本传递参数，脚本内获取参数的格式为：**$n**。**n** 代表一个数字，1 为执行脚本的第一个参数，2 为执行脚本的第二个参数，以此类推…… #### 实例 以下实例我们向脚本传递三个参数，并分别输出，其中 **$0** 为执行的文件名（包含文件路径）： #! bin bash # author:菜鸟教程 url:www.runoob.com echo "shell 传递参数实例！"; "执行的文件名：$0"; "第一个参数为：$1"; "第二个参数为：$2"; "第三个参数为：$3"; 为脚本设置可执行权限，并执行脚本，输出结果如下所示： $ chmod +x test.sh . 传递参数实例！ 执行的文件名：. 第一个参数为：1 第二个参数为：2 第三个参数为：3 另外，还有几个特殊字符用来处理参数： | 参数处理 说明 :------- :----------------------------------------------------------- $# 传递到脚本的参数个数 $* 以一个单字符串显示所有向脚本传递的参数。 如"$*"用「"」括起来的情况、以"$1 $2 … $n"的形式输出所有参数。 $$ 脚本运行的当前进程id号 $! 后台运行的最后一个进程的id号 $@ 与$*相同，但是使用时加引号，并在引号中返回每个参数。 如"$@"用「"」括起来的情况、以"$1" "$2" "$n" 的形式输出所有参数。 $- 显示shell使用的当前选项，与[set命令](https: www.runoob.com linux linux-comm-set.html)功能相同。 $? 显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。 "参数个数为：$#"; "传递的参数作为一个字符串显示：$*"; 执行脚本，输出结果如下所示： 参数个数为：3 传递的参数作为一个字符串显示：1 与 区别： - 相同点：都是引用所有参数。 不同点：只有在双引号中体现出来。假设在脚本运行时写了三个参数 1、2、3，，则 " * 等价于 "1 3"（传递了一个参数），而 "@" "1" "2" "3"（传递了三个参数）。 "-- \$* 演示 ---" for i in "$*"; do $i done \$@ "$@"; -- --- 基本运算符 和其他编程语言一样，支持多种运算符，包括： 算数运算符 关系运算符 布尔运算符 字符串运算符 文件测试运算符 原生bash不支持简单的数学运算，但是可以通过其他命令来实现，例如 awk 和 expr，expr 最常用。 expr 是一款表达式计算工具，使用它能完成表达式的求值操作。 例如，两个数相加(**注意使用的是反引号 \**`\** 而不是单引号 \**'\****)： *#! bash* val="`expr" + 2` **echo** "两数之和为 : $val" [运行实例 »](https: try runcode.php?filename="add2data&amp;type=bash)" 两数之和为 两点注意： 表达式和运算符之间要有空格，例如 2+2 是不对的，必须写成 2，这与我们熟悉的大多数编程语言不一样。 完整的表达式要被 反引号 包含，注意这个字符不是常用的单引号，在 esc 键下边。 ------ 算术运算符 下表列出了常用的算术运算符，假定变量 a 为 10，变量 b 20： 运算符 举例 :----- :-------------------------------------------- :---------------------------- 加法 `expr $a $b` 结果为 30。 减法 -10。 乘法 \* 200。 除法 $b $a` 2。 % 取余 0。 赋值 将把变量 的值赋给 a。 相等。用于比较两个数字，相同则返回 true。 [ ] 返回 false。 不相等。用于比较两个数字，不相同则返回 **注意：**条件表达式要放在方括号之间，并且要有空格，例如: **[$a="=$b]**" 是错误的，必须写成 **[ ]**。 算术运算符实例如下： *# author:菜鸟教程* url:www.runoob.com* $b**`** "a \***** ** $a**`** "b **%** **if** **[** **]** **then** 等于 b" **fi** **!**="$b" 不等于 -10> **注意：**
 &gt;
 &gt; - 乘号(*)前边必须加反斜杠(\)才能实现乘法运算；
 &gt; - if...then...fi 是条件语句，后续将会讲解。
@@ -2531,7 +2509,8 @@ $ **printf** "a string, no processing:&lt;%s&gt;**\n**" "A**\n**B"
 a string, no processing:**&lt;**A\nB**&gt;**
 
 $ **printf** "a string, no processing:&lt;%b&gt;**\n**" "A**\n**B"
-a string, no processing:**&lt;**A b**&gt;**
+a string, no processing:**&lt;**A
+B**&gt;**
 
 $ **printf** "www.runoob.com \a"
 www.runoob.com $          *#不换行*
@@ -3281,7 +3260,10 @@ funWithParam 1 2 3 4 5 6 7 8 9 34 73
 | n &gt; file        | 将文件描述符为 n 的文件重定向到 file。             |
 | n &gt;&gt; file       | 将文件描述符为 n 的文件以追加的方式重定向到 file。 |
 | n &gt;&amp; m          | 将输出文件 m 和 n 合并。                           |
-| n &lt;&amp; m | 将输入文件 和 n 合并。 &lt;&lt; tag 将开始标记 和结束标记 之间的内容作为输入。&gt; 需要注意的是文件描述符 0 通常是标准输入（STDIN），1 是标准输出（STDOUT），2 是标准错误输出（STDERR）。
+| n &lt;&amp; m          | 将输入文件 m 和 n 合并。                           |
+| &lt;&lt; tag          | 将开始标记 tag 和结束标记 tag 之间的内容作为输入。 |
+
+&gt; 需要注意的是文件描述符 0 通常是标准输入（STDIN），1 是标准输出（STDOUT），2 是标准错误输出（STDERR）。
 
 ------
 
@@ -3347,7 +3329,28 @@ command1 &lt; file1
 
 这样，本来需要从键盘获取输入的命令会转移到文件读取内容。
 
-注意：输出重定向是大于号(&gt;)，输入重定向是小于号(&lt;)。 2 #### 实例 接着以上实例，我们需要统计 users 文件的行数,执行以下命令： ``` $ wc -l 也可以将输入重定向到 文件： &lt; 注意：上面两个例子的结果不同：第一个例子，会输出文件名；第二个不会，因为它仅仅知道从标准输入读取内容。 command1 infile&gt; outfile
+注意：输出重定向是大于号(&gt;)，输入重定向是小于号(&lt;)。
+
+#### 实例
+
+接着以上实例，我们需要统计 users 文件的行数,执行以下命令：
+
+```
+$ wc -l users
+       2 users
+```
+
+也可以将输入重定向到 users 文件：
+
+```
+$  wc -l &lt; users
+       2 
+```
+
+注意：上面两个例子的结果不同：第一个例子，会输出文件名；第二个不会，因为它仅仅知道从标准输入读取内容。
+
+```
+command1 &lt; infile &gt; outfile
 ```
 
 同时替换输入和输出，执行command1，从文件infile读取内容，然后将输出写入到outfile中。
@@ -3559,7 +3562,128 @@ $ ./test2.sh
    #!/bin/bash
    i=1
    s=0
-   while (($i &lt;= 1 2="=" 3 50 1099 1200 10)) do if (($i % 0)) then s="$((" $s + $i )) fi i="$((" done echo "the sum is:$s" ``` let命令可以直接执行基本的算术操作。当使用let时，变量名之前不需要再添加$，例如： let result="no1+no2" $result no2］ 在［］中也可以使用$前缀，例如： 5］ 也可以使用(())，但使用(())时，变量名之前需要加上$： no1 expr同样可以用于基本算术操作： 4` $no1 5) 以上这些方法只能用于整数运算，而不支持浮点数。 bc是一个用于数学运算的高级工具，这个精密计算器包含了大量的选项。我们可以借助它执行浮点数运算并应用一些高级函数： "4 * 0.56" | bc 2.24 no="54" "$no 1.5" bc` 81.0 ## docker卷——持久化的问题 容器的大部分力量源自它们能够尽可能多地封装运行时环境里的文件系统状态，这一点的确很有用处。 然而，有时候用户并不想把文件放到容器里。用户可能想要在容器之间共享或者单独管理一些大文件。一个经典的例子便是想要在容器里访问一个大型的集中式数据库，但是又希望其他的（也许是更传统的）客户端也能和新容器一样访问它。 解决方案便是卷，一种docker用来管理容器生命周期之外的文件的机制。尽管这有悖于容器“可以在任意地方部署”的原则（例如，用户将无法在不兼容数据库挂载的地方部署有数据库依赖的容器），但是在实际的docker使用中这仍然是一个很有用的功能。 ### 问题 想要在容器里访问宿主机上的文件。 解决方案 使用docker的volume标志，在容器里访问宿主机上的文件。图5-3演示了使用volume标志和宿主机上的文件系统交互的例子。 下面的命令展示了如何将宿主机上的 var db tables目录挂载到容器里的 data1目录，该命令在图5-3里启动容器时被执行： $ docker run -v tables: data1 -it debian bash {% asset_img image-20210326051559896.png image-20210326051559896 %} 图5-3　容器里的一个数据卷-v标志（--volume的简写）表示容器指定的一个外部卷。随后的参数以冒号分隔两个目录的形式给出了卷的挂载配置，告知docker将外部的 tables目录映射到容器里的 data1目录。外部目录和容器目录两者任一不存在的话均会被创建。 对已经存在的目录建立映射时要小心。即便镜像里已经存在需要映射的目录，该目录依旧会映射到宿主机上的对应目录。这意味着容器里映射目录的原本内容将会消失。如果用户试图映射一个关键目录，将会发生一些有趣的事情！例如，试试挂载一个空目录到 bin。 另外要注意的一点是，dockerfile里的卷被设定为不是持久化的。如果用户添加了一个卷，然后在一个dockerfile里对该目录做了一些更改，那么这些变化将不会被持久化到最终生成的镜像里。 最后还有一点，用户将会看到不少技巧里用到了-v docker.sock: docker.sock，技巧45就是其中的一个。这样做会把特殊的unix套接字文件公开到容器里，并且展示出此项技巧的一个重要功能——用户不必局限于所谓的“常规”文件，还可以应用更多不常见的文件系统层面的用例。但是，如果用户遇到设备节点的权限问题（举个例子），可能需要参考技巧93，了解一下--privileged标志的作用。 部署 springboot项目 1.创建springboot项目 ![img](https: upload-images.jianshu.io upload_images 15536448-022dcb5d56f43d70.png?imagemogr2 auto-orient strip|imageview2 w format webp) 创建springboot项目 ```css package com.eangulee.demo.controller; import org.springframework.stereotype.controller; org.springframework.web.bind.annotation.getmapping; org.springframework.web.bind.annotation.requestmapping; org.springframework.web.bind.annotation.responsebody; @controller public class hellocontroller { @requestmapping(" ") @responsebody string hello() return "hello, springboot with docker"; } 2.打包springboot项目为jar包 15536448-30b7e78666cc0094.png?imagemogr2 打包命令： clean 3. 编写dockerfile文件 ```ruby # image for file version 0.0.1 author: eangulee 基础镜像使用java from java:8 作者 maintainer <eangulee@gmail.com>
+   while (($i &lt;= 10))
+   do
+   if (($i % 2 == 0))
+   then
+   s=$(( $s + $i ))
+   fi
+   i=$(( $i + 1 ))
+   done
+   echo "The sum is:$s"
+   ```
+
+let命令可以直接执行基本的算术操作。当使用let时，变量名之前不需要再添加$，例如：
+
+```
+let result=no1+no2
+
+echo $result
+
+result=$［no1 + no2］
+在［］中也可以使用$前缀，例如：
+result=$［$no1 + 5］
+也可以使用(())，但使用(())时，变量名之前需要加上$：
+result=$(( no1 + 50 ))
+expr同样可以用于基本算术操作：
+result=`expr 3 + 4`
+result=$(expr $no1 + 5)
+以上这些方法只能用于整数运算，而不支持浮点数。
+```
+
+```
+bc是一个用于数学运算的高级工具，这个精密计算器包含了大量的选项。我们可以借助它执行浮点数运算并应用一些高级函数：
+echo "4 * 0.56" | bc
+2.24
+no=54
+result=`echo "$no * 1.5" | bc`
+echo $result
+81.0
+```
+
+
+
+## Docker卷——持久化的问题
+
+容器的大部分力量源自它们能够尽可能多地封装运行时环境里的文件系统状态，这一点的确很有用处。
+然而，有时候用户并不想把文件放到容器里。用户可能想要在容器之间共享或者单独管理一些大文件。一个经典的例子便是想要在容器里访问一个大型的集中式数据库，但是又希望其他的（也许是更传统的）客户端也能和新容器一样访问它。
+解决方案便是卷，一种Docker用来管理容器生命周期之外的文件的机制。尽管这有悖于容器“可以在任意地方部署”的原则（例如，用户将无法在不兼容数据库挂载的地方部署有数据库依赖的容器），但是在实际的Docker使用中这仍然是一个很有用的功能。
+
+### 问题
+
+想要在容器里访问宿主机上的文件。
+
+### 解决方案
+
+使用Docker的volume标志，在容器里访问宿主机上的文件。图5-3演示了使用volume标志和宿主机上的文件系统交互的例子。
+下面的命令展示了如何将宿主机上的/var/db/tables目录挂载到容器里的/var/data1目录，该命令在图5-3里启动容器时被执行：
+
+```
+$ docker run -v /var/db/tables:/var/data1 -it debian bash
+```
+
+{% asset_img image-20210326051559896.png image-20210326051559896 %}
+
+图5-3　容器里的一个数据卷-v标志（--volume的简写）表示容器指定的一个外部卷。随后的参数以冒号分隔两个目录的形式给出了卷的挂载配置，告知Docker将外部的/var/db/tables目录映射到容器里的/var/data1目录。外部目录和容器目录两者任一不存在的话均会被创建。
+对已经存在的目录建立映射时要小心。即便镜像里已经存在需要映射的目录，该目录依旧会映射到宿主机上的对应目录。这意味着容器里映射目录的原本内容将会消失。如果用户试图映射一个关键目录，将会发生一些有趣的事情！例如，试试挂载一个空目录到/bin。
+另外要注意的一点是，Dockerfile里的卷被设定为不是持久化的。如果用户添加了一个卷，然后在一个Dockerfile里对该目录做了一些更改，那么这些变化将不会被持久化到最终生成的镜像里。
+
+ 最后还有一点，用户将会看到不少技巧里用到了-v /var/run/docker.sock:/var/run/docker.sock，技巧45就是其中的一个。这样做会把特殊的Unix套接字文件公开到容器里，并且展示出此项技巧的一个重要功能——用户不必局限于所谓的“常规”文件，还可以应用更多不常见的文件系统层面的用例。但是，如果用户遇到设备节点的权限问题（举个例子），可能需要参考技巧93，了解一下--privileged标志的作用。
+
+## Docker 部署 springboot项目
+
+### 1.创建springboot项目
+
+![img](https:////upload-images.jianshu.io/upload_images/15536448-022dcb5d56f43d70.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
+
+创建springboot项目
+
+
+
+```css
+package com.eangulee.demo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class HelloController {
+    @RequestMapping("/")
+    @ResponseBody
+    public String hello() {
+        return "Hello, SpringBoot With Docker";
+    }
+}
+```
+
+
+
+### 2.打包springboot项目为jar包
+
+
+
+![img](https:////upload-images.jianshu.io/upload_images/15536448-30b7e78666cc0094.png?imageMogr2/auto-orient/strip|imageView2/2/w/1099/format/webp)
+
+打包命令：
+
+clean package
+
+
+
+### 3. 编写Dockerfile文件
+
+
+
+```ruby
+# Docker image for springboot file run
+# VERSION 0.0.1
+# Author: eangulee
+# 基础镜像使用java
+FROM java:8
+# 作者
+MAINTAINER eangulee <eangulee@gmail.com>
 # VOLUME 指定了临时文件目录为/tmp。
 # 其效果是在主机 /var/lib/docker 目录下创建了一个临时文件，并链接到容器的/tmp
 VOLUME /tmp 
@@ -5047,7 +5171,7 @@ pwd的执行结果是/path/$DIRNAME
 语法：
 
 ```
-ARG <name>[=<default value="">]
+ARG <name>[=<default value>]
 ```
 
 设置变量命令，ARG命令定义了一个变量，在docker build创建镜像的时候，使用 --build-arg <varname>=<value>来指定参数
@@ -5574,7 +5698,7 @@ root@ubuntu:~/docker# docker inspect --format '{{json .State.Health}}' web | pyt
         }
     ]
 }
-<!--次数--><!--时长--><!--间隔--><!--命令--><!--容器端口--><!--宿主--><!--路径2--><!--路径1--><!--路径--><!--命令--><!--命令--><!--目标路径--><!--源路径--></value></varname></default></name></src></dest></src></dest></src></src></scr></src></src></dest></dest></src></dest></src></value></key></value></key></name></value></key></value></key></value></key></command></digest></tag></digest></tag></connector></connector></connector></connector></server></server></server></connector></connector></connector></connector></connector></connector></server></server><!--=--><!--)。--><!--&--></eangulee@gmail.com></ctrl-d></ctrl-d><!--**A--><!--%b--><!--**A\nB**--><!--%s--></eof></code></pre>
+</value></varname></default></name></src></dest></src></dest></src></src></scr></src></src></dest></dest></src></dest></src></value></key></value></key></name></value></key></value></key></value></key></digest></tag></digest></tag></connector></connector></connector></connector></server></server></server></connector></connector></connector></connector></connector></connector></server></server></eangulee@gmail.com></ctrl-d></ctrl-d></eof></code></pre>
 <p>和<code>CMD</code>、<code>NETRYPOINT</code>一样，<code>HEALTHCHECK</code>指令只可以出现一次，如果有多个<code>HEALTHCHECK</code>指令，那么只有最后一个才会生效！！！</p>
 <h2 id="ONBUILD"><a href="#ONBUILD" class="headerlink" title="ONBUILD"></a>ONBUILD</h2><pre><code>格式ONBUILD [INSTRUCTION]该配置指定当所创建的镜像作为其他新建镜像的基础镜像时所执行的指令。例如下面的Dockerfile创建了镜像A：ONBUILD ADD . /appONBUILD RUN python app.py
 </code></pre>
@@ -5679,7 +5803,7 @@ a29e200a18e9        2 years ago         /bin/sh -c <span class="token comment" s
 <p>为什么选择docker？在众多的容器实现中，docker无疑是出类拔萃的，它甚至是行业标准的推进者，尽管容器编排老大k8s说在新版本中默认编排工具放弃使用docker，但终端用户完全无需担心，因为，docker是符合OCI标准的，用户使用docker进行的镜像构建，打包的应用，完全可以在k8s中的容器中运行，并且，docker对终端用户来说，使用起来，真的很方便！</p>
 <p>好了，上面是一些背景知识，现在，接下来就可以开始docker的学习了。学习docker之前，我们要先了解要学习哪些内容，这样，才不至于，只见树木不见森林！</p>
 <p>docker学习中，将学习哪些内容呢？下面是学习路线：</p>
-<img src="/2022/061640991/241f95cad1c8a7864903d91c99435f3570cf504e.jpeg" class="" title="img">
+<img src="/2022/061040991/241f95cad1c8a7864903d91c99435f3570cf504e.jpeg" class title="img">
 
 
 
@@ -5852,7 +5976,7 @@ docker exec 容器id cat /etc/hosts
 <p> systemctl restart network &amp;&amp; systemctl restart docker</p>
 <p>第三步：重启建容器</p>
 <h2 id="汉化"><a href="#汉化" class="headerlink" title="汉化"></a>汉化</h2><p>可以下载汉化包之后解压，并将解压后的public文件夹上传到centos系统的根目录下</p>
-<img src="/2022/061640991/image-20220101110247704.png" class="" title="image-20220101110247704">
+<img src="/2022/061040991/image-20220101110247704.png" class title="image-20220101110247704">
 
 <p>然后执行以下命令：（如果已部署，需要将之前的容器删除）</p>
 <pre><code>docker run -d --restart=always -p 9000:9000 \
@@ -5862,7 +5986,7 @@ docker exec 容器id cat /etc/hosts
 &gt;  --name=portainer portainer/portainer
 </code></pre>
 <p>汉化后效果图：</p>
-<img src="/2022/061640991/image-20220101110436310.png" class="" title="image-20220101110436310">
+<img src="/2022/061040991/image-20220101110436310.png" class title="image-20220101110436310">
 
 <h1 id="镜像导出与导入"><a href="#镜像导出与导入" class="headerlink" title="镜像导出与导入"></a>镜像导出与导入</h1><pre><code>#导出
 docker save -o debian.tar 镜像Id
@@ -5961,7 +6085,7 @@ volumes:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://ffffrance.github.io/2022/061640991.html">http://ffffrance.github.io/2022/061640991.html</a>
+                    <a href="http://ffffrance.github.io/2022/061040991.html">http://ffffrance.github.io/2022/061040991.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -6178,31 +6302,31 @@ volumes:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/061627273.html">
+                <a href="/2022/061152378.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Redis">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="计算机组成原理输入输出系统">
                         
-                        <span class="card-title">Redis</span>
+                        <span class="card-title">计算机组成原理输入输出系统</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Redis
+                            计算机组成原理输入输出系统
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-11
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Redis/" class="post-category">
-                                    Redis
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" class="post-category">
+                                    计算机组成原理
                                 </a>
                             
                             
@@ -6212,8 +6336,8 @@ volumes:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Redis/">
-                        <span class="chip bg-color">Redis</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
+                        <span class="chip bg-color">计算机组成原理</span>
                     </a>
                     
                 </div>
@@ -6227,31 +6351,31 @@ volumes:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/061615691.html">
+                <a href="/2022/060954841.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Linux">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="计算机组成原理总线">
                         
-                        <span class="card-title">Linux</span>
+                        <span class="card-title">计算机组成原理总线</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Linux
+                            计算机组成原理总线
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux/" class="post-category">
-                                    Linux
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" class="post-category">
+                                    计算机组成原理
                                 </a>
                             
                             
@@ -6261,8 +6385,8 @@ volumes:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
+                        <span class="chip bg-color">计算机组成原理</span>
                     </a>
                     
                 </div>
@@ -6423,10 +6547,6 @@ volumes:
 
 
 
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
 
 </div>
     </div>

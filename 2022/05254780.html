@@ -119,17 +119,6 @@
     
   </li>
   
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
-    </a>
-    
-  </li>
-  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -205,17 +194,6 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/friends" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-address-book"></i>
-			
-			友情链接
 		</a>
           
         </li>
@@ -420,7 +398,7 @@ public class SpringMVCConfig {
 <li><p>修改了web初始化器</p>
 <p>Servlet 3.0 之后，web容器启动后会调用 META-INF/services/javax.servlet.ServletContainerInitializer文件中的类</p>
 <p>在Tomcat8以上版本支持一个配置启动的东西，意思就是tomcat启动时会自动去扫描所有 jar 中目录为「 META-INF/services/ 」中是否有个名字是「javax.servlet.ServletContainerInitializer」的配置文件，然后根据里面内容反编译启动等等一系列操作</p>
-<img src="/2022/05254780/1.jpg" class="">
+<img src="/2022/05254780/1.jpg" class>
 
 <p><strong>如上图配置后tomcat启动时就会自动生成HelloServlet了，大概原理就这样，不过SpringMVC已经把上图中的基本配置已经搞定直接使用即可</strong></p>
 <p>在 spring-web的jar包中查看</p>
@@ -1350,10 +1328,6 @@ public String insert(@Valid Dept dept,Errors errors,Model model) {
 
 
 
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
 
 </div>
     </div>
