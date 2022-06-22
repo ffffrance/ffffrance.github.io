@@ -41,9 +41,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -343,14 +341,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    11 分
                 </div>
                 
 
@@ -400,96 +398,96 @@
 </li>
 <li><p>添加spring容器的配置类，并添加组件</p>
 <pre><code>@Configuration
-public class AppConfig {
+public class AppConfig &#123;
     
-    @Bean(name = {"empDao1","empDao2"})
-    public EmpDao empDao() {
+    @Bean(name = &#123;&quot;empDao1&quot;,&quot;empDao2&quot;&#125;)
+    public EmpDao empDao() &#123;
         return new EmpDaoImpl();
-    }
-}
+    &#125;
+&#125;
 </code></pre>
 </li>
 <li><p>测试</p>
-<pre><code>public class EmpDaoTest {
+<pre><code>public class EmpDaoTest &#123;
     
     @Test
-    public void testInsert() {
+    public void testInsert() &#123;
         //启动容器
         ApplicationContext c =
                 new AnnotationConfigApplicationContext(AppConfig.class);
         //得到组件
         //EmpDao empDao = c.getBean(EmpDao.class);
         //通过组件名得到组件,默认是方法名
-        EmpDao empDao = (EmpDao)c.getBean("empDao2");
+        EmpDao empDao = (EmpDao)c.getBean(&quot;empDao2&quot;);
         //调用业务方法
         empDao.insert();
         //关闭容器
         ((AnnotationConfigApplicationContext)c).close();
-    }
+    &#125;
 
-}
+&#125;
 </code></pre>
 </li>
 <li><p>组件装配</p>
 <pre><code>@Getter
 @Setter
-public class EmpServiceImpl implements EmpService {
+public class EmpServiceImpl implements EmpService &#123;
 
     private EmpDao empDao ;
     @Override
-    public int insert() {
+    public int insert() &#123;
         
         return empDao.insert();
-    }
+    &#125;
 
-}
+&#125;
 </code></pre>
 <p>属性注入：</p>
 <pre><code>@Configuration
-public class AppConfig {
+public class AppConfig &#123;
     
-    @Bean(name = {"empDao1","empDao2"})
-    public EmpDao empDao() {
+    @Bean(name = &#123;&quot;empDao1&quot;,&quot;empDao2&quot;&#125;)
+    public EmpDao empDao() &#123;
         return new EmpDaoImpl();
-    }
+    &#125;
     
     @Bean
-    public EmpService empService() {
+    public EmpService empService() &#123;
         EmpServiceImpl service = new EmpServiceImpl();
         //依赖注入
         service.setEmpDao(empDao());
         
         return service;
-    }
-}
+    &#125;
+&#125;
 </code></pre>
 <p>构造注入：</p>
 <pre><code>@Getter
 @Setter
-public class EmpServiceImpl implements EmpService {
-    public EmpServiceImpl() {
+public class EmpServiceImpl implements EmpService &#123;
+    public EmpServiceImpl() &#123;
         
-    }
+    &#125;
     
-    public EmpServiceImpl(EmpDao empDao) {
+    public EmpServiceImpl(EmpDao empDao) &#123;
         this.empDao = empDao;
-    }
+    &#125;
 
     private EmpDao empDao ;
     @Override
-    public int insert() {
+    public int insert() &#123;
         
         return empDao.insert();
-    }
+    &#125;
 
-}
+&#125;
 </code></pre>
 <pre><code>@Bean
-    public EmpService empService() {
+    public EmpService empService() &#123;
         EmpServiceImpl service = new EmpServiceImpl(empDao());
                 
         return service;
-    }
+    &#125;
 </code></pre>
 <p>依赖注入三种方式：</p>
 <ul>
@@ -502,38 +500,38 @@ public class EmpServiceImpl implements EmpService {
 <h2 id="Bean说明"><a href="#Bean说明" class="headerlink" title="Bean说明"></a>Bean说明</h2><ol>
 <li><p>@Scope:作用域（单例：singleton（默认的），原生：prototype）</p>
 <pre><code>@Bean
-@Scope("prototype")
-public EmpService empService() {
+@Scope(&quot;prototype&quot;)
+public EmpService empService() &#123;
     EmpServiceImpl service = new EmpServiceImpl(empDao());
 
     return service;
-}
+&#125;
 </code></pre>
 </li>
 <li><p>@Lazy：懒加载（延迟加载，在getBean()的时候再加载），默认值@Lazy（false）</p>
 <p>注意：在@Scope(“prototype”)的时候，一定是懒加载的</p>
 <pre><code>    @Bean
-//	@Scope("prototype")
+//	@Scope(&quot;prototype&quot;)
     @Lazy(true)
-    public EmpService empService() {
+    public EmpService empService() &#123;
         EmpServiceImpl service = new EmpServiceImpl(empDao());
         
         return service;
-    }
+    &#125;
 </code></pre>
 </li>
 <li><p>组件扫描</p>
 <ul>
 <li><p>在配置类上添加组件扫描注解</p>
 <pre><code>@Configuration
-@ComponentScan(basePackages = {"com.neu.dao","com.neu.service"})
-public class AppConfig {}
+@ComponentScan(basePackages = &#123;&quot;com.neu.dao&quot;,&quot;com.neu.service&quot;&#125;)
+public class AppConfig &#123;&#125;
 </code></pre>
 </li>
 <li><p>在需要成为组件的类上添加@Component注解（组件默认名字为：类名首字母小写）</p>
 <pre><code>//组件
 @Component
-public class EmpDaoImpl implements EmpDao {}
+public class EmpDaoImpl implements EmpDao &#123;&#125;
 </code></pre>
 </li>
 </ul>
@@ -546,13 +544,13 @@ private EmpDao empDao ;
 </li>
 <li><p>解决自动装配冲突（使用组件名装配）</p>
 <pre><code>@Autowired
-@Qualifier("empOracleDaoImpl")//注解参数就是组件名，默认为类名首字母小写
+@Qualifier(&quot;empOracleDaoImpl&quot;)//注解参数就是组件名，默认为类名首字母小写
 private EmpDao empDao ;
 </code></pre>
 </li>
 <li><p>修改组件的默认名</p>
-<pre><code>@Component(value = "oracleemp")
-public class EmpOracleDaoImpl implements EmpDao {}
+<pre><code>@Component(value = &quot;oracleemp&quot;)
+public class EmpOracleDaoImpl implements EmpDao &#123;&#125;
 </code></pre>
 </li>
 </ol>
@@ -567,19 +565,19 @@ public class EmpOracleDaoImpl implements EmpDao {}
 </li>
 <li><p>测试</p>
 <pre><code>//设置配置文件
-@ContextConfiguration(classes = {AppConfig.class})
+@ContextConfiguration(classes = &#123;AppConfig.class&#125;)
 //相当于测试框架与Spring的一个接口
 @RunWith(SpringJUnit4ClassRunner.class)
-public class EmpTest {
+public class EmpTest &#123;
     @Autowired
     private EmpService empService;
     
     @Test
-    public void testInsert() {
+    public void testInsert() &#123;
         empService.insert();
-    }
+    &#125;
 
-}
+&#125;
 </code></pre>
 </li>
 </ol>
@@ -621,32 +619,32 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 //配置属性源文件
-@PropertySource("classpath:db.properties")
-public class DBConfig {
+@PropertySource(&quot;classpath:db.properties&quot;)
+public class DBConfig &#123;
 
-    @Value("${jdbc.username}")
+    @Value(&quot;$&#123;jdbc.username&#125;&quot;)
     private String username;
     
-    @Value("${jdbc.password}")
+    @Value(&quot;$&#123;jdbc.password&#125;&quot;)
     private String password;
     
-    @Value("${jdbc.url}")
+    @Value(&quot;$&#123;jdbc.url&#125;&quot;)
     private String url;
     
-    @Value("${jdbc.driverClassName}")
+    @Value(&quot;$&#123;jdbc.driverClassName&#125;&quot;)
     private String driverClassName;
     
-    @Value("${jdbc.maxActive}")
+    @Value(&quot;$&#123;jdbc.maxActive&#125;&quot;)
     private int maxActive;
     
-    @Value("${jdbc.maxWait}")
+    @Value(&quot;$&#123;jdbc.maxWait&#125;&quot;)
     private int maxWait;
     
-    @Value("${jdbc.maxIdle}")
+    @Value(&quot;$&#123;jdbc.maxIdle&#125;&quot;)
     private int maxIdle;
     
     @Bean
-    public DataSource dataSource() {
+    public DataSource dataSource() &#123;
         BasicDataSource ds = new BasicDataSource();
         ds.setUsername(username);
         ds.setPassword(password);
@@ -658,15 +656,15 @@ public class DBConfig {
         ds.setMaxWait(maxWait);
         
         return ds;
-    }
-}
+    &#125;
+&#125;
 </code></pre>
 </li>
 <li><p>测试</p>
-<pre><code>@ContextConfiguration(classes = {AppConfig.class,DBConfig.class})
+<pre><code>@ContextConfiguration(classes = &#123;AppConfig.class,DBConfig.class&#125;)
 //相当于测试框架与Spring的一个接口
 @RunWith(SpringJUnit4ClassRunner.class)
-public class EmpTest {
+public class EmpTest &#123;
     @Autowired
     private EmpService empService;
     
@@ -674,18 +672,18 @@ public class EmpTest {
     private DataSource dataSource;
     
     @Test
-    public void testDataSource() throws SQLException {
+    public void testDataSource() throws SQLException &#123;
         Connection connection = dataSource.getConnection();
-        System.out.println("连接成功！");
+        System.out.println(&quot;连接成功！&quot;);
         connection.close();
-    }
+    &#125;
     
     @Test
-    public void testInsert() {
+    public void testInsert() &#123;
         empService.insert();
-    }
+    &#125;
 
-}
+&#125;
 </code></pre>
 <h2 id="Spring与Mybatis集成"><a href="#Spring与Mybatis集成" class="headerlink" title="Spring与Mybatis集成"></a>Spring与Mybatis集成</h2><ol>
 <li><p>导入依赖</p>
@@ -708,35 +706,35 @@ public class EmpTest {
 </li>
 <li><p>配置SqlSessionFactory</p>
 <pre><code>@Configuration
-@ComponentScan(basePackages = {"com.neu.service","com.neu.mapper"})
-public class MybatisConfig {
+@ComponentScan(basePackages = &#123;&quot;com.neu.service&quot;,&quot;com.neu.mapper&quot;&#125;)
+public class MybatisConfig &#123;
     @Autowired
     private DataSource dataSource;
     
     @Bean
-    public SqlSessionFactory sqlSessionFactory() throws Exception {
+    public SqlSessionFactory sqlSessionFactory() throws Exception &#123;
         SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
         factory.setDataSource(dataSource);
         
         return factory.getObject();
-    }
-}
+    &#125;
+&#125;
 </code></pre>
 </li>
 <li><p>配置 mapper 扫描</p>
 <pre><code>@Configuration
-public class MybatisMapperScannerConfig {
+public class MybatisMapperScannerConfig &#123;
 
     @Bean
-    public MapperScannerConfigurer mapperScannerConfigurer() {
+    public MapperScannerConfigurer mapperScannerConfigurer() &#123;
         MapperScannerConfigurer c = new MapperScannerConfigurer();
-        c.setSqlSessionFactoryBeanName("sqlSessionFactory");
+        c.setSqlSessionFactoryBeanName(&quot;sqlSessionFactory&quot;);
         
-        c.setBasePackage("com.neu.mapper");
+        c.setBasePackage(&quot;com.neu.mapper&quot;);
         
         return c;
-    }
-}
+    &#125;
+&#125;
 </code></pre>
 </li>
 </ol>
@@ -785,17 +783,17 @@ public class MybatisMapperScannerConfig {
 @EnableAspectJAutoProxy//开启切面自动代理
 @Component
 @Aspect//切面
-public class AOPUtil {
+public class AOPUtil &#123;
 
     //切点(切入点):加入相同代码的一组关注点(连接点)
-    @Pointcut("execution (* com.neu.mapper.*.*(..))")
-    public void pointcut() {
+    @Pointcut(&quot;execution (* com.neu.mapper.*.*(..))&quot;)
+    public void pointcut() &#123;
         
-    }
+    &#125;
     
     //通知
-    @Around("pointcut()")
-    public Object around(ProceedingJoinPoint p) throws Throwable {
+    @Around(&quot;pointcut()&quot;)
+    public Object around(ProceedingJoinPoint p) throws Throwable &#123;
         long startTime = System.nanoTime();
         //调用代理的方法
         Object object = p.proceed();
@@ -805,9 +803,9 @@ public class AOPUtil {
         System.out.println(m);
         
         return object;
-    }
+    &#125;
     
-}
+&#125;
 </code></pre>
 <ul>
 <li>连接点（joinPoint)：程序执行过程中的特定点</li>
@@ -817,52 +815,52 @@ public class AOPUtil {
 </ul>
 </li>
 <li><p>前置通知</p>
-<pre><code>@Before("pointcut()")
-    public void before() {
-        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+<pre><code>@Before(&quot;pointcut()&quot;)
+    public void before() &#123;
+        SimpleDateFormat f = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
         String format = f.format(new Date());
         
-        System.out.println("开始执行方法："+format);
+        System.out.println(&quot;开始执行方法：&quot;+format);
         
-    }
+    &#125;
 </code></pre>
 </li>
 <li><p>返回后通知：执行了return语句后执行的代码</p>
-<pre><code>@AfterReturning("pointcut()")
-    public void afterReturning() {
-        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+<pre><code>@AfterReturning(&quot;pointcut()&quot;)
+    public void afterReturning() &#123;
+        SimpleDateFormat f = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
         String format = f.format(new Date());
         
-        System.out.println("方法正常结束："+format);
+        System.out.println(&quot;方法正常结束：&quot;+format);
         
-    }
+    &#125;
 </code></pre>
 </li>
 <li><p>异常通知：</p>
-<pre><code>@AfterThrowing("pointcut()")
-    public void afterThrowing() {
-        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+<pre><code>@AfterThrowing(&quot;pointcut()&quot;)
+    public void afterThrowing() &#123;
+        SimpleDateFormat f = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
         String format = f.format(new Date());
         
-        System.out.println("抛出异常："+format);
+        System.out.println(&quot;抛出异常：&quot;+format);
         
-    }
+    &#125;
 </code></pre>
 </li>
 <li><p>最终通知</p>
-<pre><code>@After("pointcut()")
-    public void after() {
-        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+<pre><code>@After(&quot;pointcut()&quot;)
+    public void after() &#123;
+        SimpleDateFormat f = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
         String format = f.format(new Date());
         
-        System.out.println("方法最终结束时间："+format);
+        System.out.println(&quot;方法最终结束时间：&quot;+format);
         
-    }
+    &#125;
 </code></pre>
 </li>
 <li><p>环绕通知</p>
-<pre><code>@Around("pointcut()")
-    public Object around(ProceedingJoinPoint p) throws Throwable {
+<pre><code>@Around(&quot;pointcut()&quot;)
+    public Object around(ProceedingJoinPoint p) throws Throwable &#123;
         long startTime = System.nanoTime();
         //调用代理的方法
         Object object = p.proceed();
@@ -872,54 +870,54 @@ public class AOPUtil {
         System.out.println(m);
         
         return object;
-    }
+    &#125;
 </code></pre>
 </li>
 </ol>
 <h2 id="Spring对事务的支持"><a href="#Spring对事务的支持" class="headerlink" title="Spring对事务的支持"></a>Spring对事务的支持</h2><ol>
 <li><p>添加事务管理器</p>
 <pre><code>@Bean
-public PlatformTransactionManager transactionManager() {
+public PlatformTransactionManager transactionManager() &#123;
     return new DataSourceTransactionManager(dataSource());
-}
+&#125;
 </code></pre>
 </li>
 <li><p>启用事务管理器</p>
 <pre><code>@Configuration
 //配置属性源文件
-@PropertySource("classpath:db.properties")
+@PropertySource(&quot;classpath:db.properties&quot;)
 @EnableTransactionManagement//启用事务管理器
-public class DBConfig {}
+public class DBConfig &#123;&#125;
 </code></pre>
 </li>
 <li><p>在业务逻辑类上或方法上添加@Transactional</p>
 <p>当添加了事务注解的方法中，抛出异常，则回滚事务，否则，提交事务</p>
 <pre><code>@Transactional
-    public int insert(Dept dept) {
+    public int insert(Dept dept) &#123;
         deptMapper.insert(dept);
         return deptMapper.insert(dept);
-    }
+    &#125;
 </code></pre>
 </li>
 </ol>
 <h2 id="使用静态资源"><a href="#使用静态资源" class="headerlink" title="使用静态资源"></a>使用静态资源</h2><ol>
 <li><p>在 webapp 目录下，新建一个文件夹：staitc，在其中放入静态资源（css、js）</p>
-<p>例如：/webapp/static/css/style1.css</p>
+<p>例如：&#x2F;webapp&#x2F;static&#x2F;css&#x2F;style1.css</p>
 </li>
 <li><p>配置资源注册</p>
 <pre><code>@Configuration
 @EnableWebMvc//启用mvc注解驱动
-@ComponentScan(basePackages = "com.neu.controller")
-public class SpringMVCConfig implements WebMvcConfigurer {
+@ComponentScan(basePackages = &quot;com.neu.controller&quot;)
+public class SpringMVCConfig implements WebMvcConfigurer &#123;
     @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/static/**").addResourceLocations("/static/");//访问的静态资源
-    }
-}
+    public void addResourceHandlers(ResourceHandlerRegistry registry) &#123;
+        registry.addResourceHandler(&quot;/static/**&quot;).addResourceLocations(&quot;/static/&quot;);//访问的静态资源
+    &#125;
+&#125;
 </code></pre>
 </li>
 <li><p>在 jsp 中引入css</p>
-<pre><code>&lt;link rel="stylesheet" href="${ pageContext.request.contextPath }/static/css/style1.css"&gt;
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;$&#123; pageContext.request.contextPath &#125;/static/css/style1.css&quot;&gt;
 </code></pre>
 </li>
 </ol>
@@ -1360,7 +1358,7 @@ public class SpringMVCConfig implements WebMvcConfigurer {
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">174.8k</span>
+                        class="white-color">198.2k</span>
             
             
             

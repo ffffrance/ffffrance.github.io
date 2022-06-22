@@ -41,9 +41,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -398,28 +396,28 @@
 <p>1.有线：双绞线网络，同轴电缆网络等。<br>2.无线：蓝牙，微波，无线电等。  </p>
 <h2 id="计算机网络的性能指标"><a href="#计算机网络的性能指标" class="headerlink" title="计算机网络的性能指标"></a>计算机网络的性能指标</h2><ul>
 <li>带宽：bandwidth，单位Hz，表示网络通信线路传输数据能力，“最高数据传输速率”。</li>
-<li>时延：delay，端到端传送总时间，总时延=发送时延+传播时延+处理时延+排队时延。</li>
+<li>时延：delay，端到端传送总时间，总时延&#x3D;发送时延+传播时延+处理时延+排队时延。</li>
 <li>时延带宽积：传播时延x信道带宽。</li>
 <li>往返时延：round-trip-time”RTT”,从发送端开始到接收到接收端的确认历经总时延。</li>
 <li>吞吐量：throughput，单位时间内通过某个网络数据量。</li>
-<li>速率：speed，计算机网络上主机在数据信道上传送数据的速率，最高速率为带宽，单位为比特/秒，b/s。  </li>
-<li>信道利用率： 有数据通过的时间/有无数据通过的时间。<h2 id="计算机网络的体系结构"><a href="#计算机网络的体系结构" class="headerlink" title="计算机网络的体系结构"></a>计算机网络的体系结构</h2><h3 id="计算机网络的分层结构"><a href="#计算机网络的分层结构" class="headerlink" title="计算机网络的分层结构"></a>计算机网络的分层结构</h3></li>
+<li>速率：speed，计算机网络上主机在数据信道上传送数据的速率，最高速率为带宽，单位为比特&#x2F;秒，b&#x2F;s。  </li>
+<li>信道利用率： 有数据通过的时间&#x2F;有无数据通过的时间。<h2 id="计算机网络的体系结构"><a href="#计算机网络的体系结构" class="headerlink" title="计算机网络的体系结构"></a>计算机网络的体系结构</h2><h3 id="计算机网络的分层结构"><a href="#计算机网络的分层结构" class="headerlink" title="计算机网络的分层结构"></a>计算机网络的分层结构</h3></li>
 <li>计算机网络各层及其协议的集合就是计算机网络的体系结构。</li>
 <li>每层活动元素成为实体，每层传送的数据单位不同，但都有两部分：数据服务单元SDU和协议控制单元PCI，共同组成协议数据单元PDU。</li>
-<li>从上到下包装,从下到上拆解，n-SDU+n-PCI=n-n-PDU=(n-1)-SDU。</li>
+<li>从上到下包装,从下到上拆解，n-SDU+n-PCI&#x3D;n-n-PDU&#x3D;(n-1)-SDU。</li>
 <li>每层使用下层的服务，服务上层：最底层只提供服务，最高层只面向用户服务，中间层既享受服务也服务上层。</li>
 <li>每层只能调用相邻层接口服务。</li>
 <li>两台主机通信的时候对等层有一条直接信道。<h3 id="计算机网络协议，接口，服务"><a href="#计算机网络协议，接口，服务" class="headerlink" title="计算机网络协议，接口，服务"></a>计算机网络协议，接口，服务</h3></li>
-<li>协议：为网络数据交换建立的规则，标准，约定。控制两个/多个对等实体进行通信的规则的集合，是水平的，不对等实体之间没有协议。包括语法，语义，同步。</li>
+<li>协议：为网络数据交换建立的规则，标准，约定。控制两个&#x2F;多个对等实体进行通信的规则的集合，是水平的，不对等实体之间没有协议。包括语法，语义，同步。</li>
 <li>接口：同一个结点内相邻层之间交换信息的连接点，系统内部的规定，n+1层通过访问n层的SAP（服务访问点）来获取服务，每个SAP有自己的地址。</li>
 <li>服务：下层为紧邻的上层提供的功能调用，是垂直的。上下层提供服务的时候有四类原语：请求request，指示indication，响应response，证实confirmation。<br>计算机提供的服务有三种：</li>
 </ul>
 <p>1.面向连接服务和无连接服务：面向连接必须先建立连接分配资源，结束再释放连接和资源，三个阶段，如TCP，无连接服务只需要直接发送数据，把带目的地的包传送在线路上，不可靠的服务，Best-Effort-Delivery，如IP和UDP<br>2.可靠服务和不可靠服务：可靠指的是有纠错，检错，应答机制，保证正确可靠传输数据，而不可靠是尽量正确可靠，尽力而为的服务。<br>3.有应答服务和无应答服务：是否有接受方接收数据之后向发送方发送应答，文件传输服务就是有应答，WWW就是无应答</p>
-<h3 id="ISO-x2F-OSI与TCP-x2F-IP模型"><a href="#ISO-x2F-OSI与TCP-x2F-IP模型" class="headerlink" title="ISO/OSI与TCP/IP模型"></a>ISO/OSI与TCP/IP模型</h3><ul>
+<h3 id="ISO-x2F-OSI与TCP-x2F-IP模型"><a href="#ISO-x2F-OSI与TCP-x2F-IP模型" class="headerlink" title="ISO&#x2F;OSI与TCP&#x2F;IP模型"></a>ISO&#x2F;OSI与TCP&#x2F;IP模型</h3><ul>
 <li>OSI模型：七层，从下到上分别为：物理层，数据链路层，网络层，传输层，会话层，表示层，应用层。<br>低三层为通信子网（为了连接网络的通信设备），传输层承上启下，上三层为资源子网（相当于计算机，完成数据处理）。</li>
-<li>TCP/IP模型：四层，从下到上分别为：网络接口层，网际层，传输层，应用层。  </li>
+<li>TCP&#x2F;IP模型：四层，从下到上分别为：网络接口层，网际层，传输层，应用层。  </li>
 <li>两者共同点：都采取分层结构。都基于独立协议栈的概念。都可以解决异构网络的互连（不同厂家计算机互联）</li>
-<li>两者不同点：<br>OSI产生服务，协议，接口概念，与面向对象思想吻合。OSI先产生的模型而没有对应协议，TCP/TP先产生了协议再产生的模型。<br>TCP/IP设计之初就考虑了异构网络的问题，并用IP分层，OSI后来才在网络层中产生子层完成类似IP的功能。<br>OSI支持无连接和面向连接服务，但在传输层只有面向连接服务，而TCP/IP认为可靠性是端到端的问题，网际层仅有无连接，传输层支持两种模式。</li>
+<li>两者不同点：<br>OSI产生服务，协议，接口概念，与面向对象思想吻合。OSI先产生的模型而没有对应协议，TCP&#x2F;TP先产生了协议再产生的模型。<br>TCP&#x2F;IP设计之初就考虑了异构网络的问题，并用IP分层，OSI后来才在网络层中产生子层完成类似IP的功能。<br>OSI支持无连接和面向连接服务，但在传输层只有面向连接服务，而TCP&#x2F;IP认为可靠性是端到端的问题，网际层仅有无连接，传输层支持两种模式。</li>
 <li>我们折中，综合两个模型来划分五层：物理层，数据链路层，网络层，传输层，应用层。发送方用户给出自然语言通过应用层转化为数据，从上到下层层包装数据，接收方从下到上层层逆向拆解数据把数据提交给用户。</li>
 </ul>
 
@@ -863,7 +861,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">174.8k</span>
+                        class="white-color">198.2k</span>
             
             
             

@@ -41,9 +41,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -343,14 +341,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.9k
+                    3.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    15 分
                 </div>
                 
 
@@ -413,14 +411,14 @@ spring.mvc.view.suffix=.jsp
 </li>
 <li><p>添加mapper扫描注解</p>
 <pre><code>@SpringBootApplication
-@MapperScan(basePackages = "com.neu.mapper")
-public class SpringbootDemo1Application {
+@MapperScan(basePackages = &quot;com.neu.mapper&quot;)
+public class SpringbootDemo1Application &#123;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) &#123;
         SpringApplication.run(SpringbootDemo1Application.class, args);
-    }
+    &#125;
 
-}
+&#125;
 </code></pre>
 </li>
 </ol>
@@ -442,7 +440,7 @@ public class SpringbootDemo1Application {
 </code></pre>
 </li>
 </ol>
-<h2 id="mybatis执行时显示sql"><a href="#mybatis执行时显示sql" class="headerlink" title="mybatis执行时显示sql"></a>mybatis执行时显示sql</h2><p>在application.<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=properties&amp;spm=1001.2101.3001.7020">properties</a>或application.yml文件中配置对应mapper所在包的日志级别即可。</p>
+<h2 id="mybatis执行时显示sql"><a href="#mybatis执行时显示sql" class="headerlink" title="mybatis执行时显示sql"></a>mybatis执行时显示sql</h2><p>在application.<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=properties&spm=1001.2101.3001.7020">properties</a>或application.yml文件中配置对应mapper所在包的日志级别即可。</p>
 <p><strong>示列：com.neu.springbootdemodd.mapper 指向mapper 接口包路径地址</strong></p>
 <pre><code># 日志记录输出配置
 logging.level.com.neu.springbootdemodd.mapper=debug
@@ -459,17 +457,17 @@ logging.level.com.neu.springbootdemodd.mapper=debug
 </li>
 <li><p>测试</p>
 <pre><code>@Test
-    void testGetPaged(){
+    void testGetPaged()&#123;
         PageHelper.startPage(2,3);
 
         List&lt;Dept&gt; list = deptMapper.getAll();
 
         PageInfo&lt;Dept&gt; pageInfo = new PageInfo&lt;&gt;(list);
         System.out.println(pageInfo);
-    }
+    &#125;
    
 输出：
-PageInfo{pageNum=2, pageSize=3, size=3, startRow=4, endRow=6, total=11, pages=4, list=Page{count=true, pageNum=2, pageSize=3, startRow=3, endRow=6, total=11, pages=4, reasonable=false, pageSizeZero=false}[Dept(deptno=30, dname=SALES, loc=沈阳), Dept(deptno=33, dname=hr5, loc=南京), Dept(deptno=37, dname=hr, loc=sy)], prePage=1, nextPage=3, isFirstPage=false, isLastPage=false, hasPreviousPage=true, hasNextPage=true, navigatePages=8, navigateFirstPage=1, navigateLastPage=4, navigatepageNums=[1, 2, 3, 4]}
+PageInfo&#123;pageNum=2, pageSize=3, size=3, startRow=4, endRow=6, total=11, pages=4, list=Page&#123;count=true, pageNum=2, pageSize=3, startRow=3, endRow=6, total=11, pages=4, reasonable=false, pageSizeZero=false&#125;[Dept(deptno=30, dname=SALES, loc=沈阳), Dept(deptno=33, dname=hr5, loc=南京), Dept(deptno=37, dname=hr, loc=sy)], prePage=1, nextPage=3, isFirstPage=false, isLastPage=false, hasPreviousPage=true, hasNextPage=true, navigatePages=8, navigateFirstPage=1, navigateLastPage=4, navigatepageNums=[1, 2, 3, 4]&#125;
 </code></pre>
 </li>
 <li><p>设置（可选）</p>
@@ -504,11 +502,11 @@ pageSize=0 or RowBounds.Limit = 0的时候就不适用分页，但是返回对�
 </ol>
 <h2 id="Spring对mybatis事务的支持"><a href="#Spring对mybatis事务的支持" class="headerlink" title="Spring对mybatis事务的支持"></a>Spring对mybatis事务的支持</h2><p>注意：mysql只有InnoDB引擎支持事务</p>
 <pre><code>@Transactional
-public int insert(Dept dept) {
+public int insert(Dept dept) &#123;
     int n = deptMapper.insert(dept);
     deptMapper.insert(dept);
     return n;
-}
+&#125;
 </code></pre>
 <h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><ol>
 <li><p>导入jar包</p>
@@ -523,20 +521,20 @@ public int insert(Dept dept) {
 @EnableAspectJAutoProxy//开启切面自动代理
 @Component
 @Aspect//切面
-public class AOPUtil {
+public class AOPUtil &#123;
     
     //定义切入点
-    @Pointcut("execution (* com.neu.controller.*.*(..))")
-    public void pointcut() {
+    @Pointcut(&quot;execution (* com.neu.controller.*.*(..))&quot;)
+    public void pointcut() &#123;
         
-    }
+    &#125;
     
-    @Before("pointcut()")
-    public void before() {
-        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    @Before(&quot;pointcut()&quot;)
+    public void before() &#123;
+        SimpleDateFormat f = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
         System.out.println(f.format(new Date()));
-    }
-}
+    &#125;
+&#125;
 </code></pre>
 </li>
 </ol>
@@ -555,7 +553,7 @@ public class AOPUtil {
 <img src="/2022/052617366/3.jpg" class>
 
 <ol start="3">
-<li><p>如何触发<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E7%83%AD%E9%83%A8%E7%BD%B2&amp;spm=1001.2101.3001.7020">热部署</a></p>
+<li><p>如何触发<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E7%83%AD%E9%83%A8%E7%BD%B2&spm=1001.2101.3001.7020">热部署</a></p>
 <ol>
 <li><p>虽然idea会自动保存，但是触发时间不确定，可以手动触发保存 Ctrl + S</p>
 </li>
@@ -567,61 +565,61 @@ public class AOPUtil {
 <h2 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h2><ol>
 <li><p>编写上传网页</p>
 <pre><code>&lt;form 
-        action="${ pageContext.request.contextPath }/emp/upload" 
-        method="post"
-        enctype="multipart/form-data"
+        action=&quot;$&#123; pageContext.request.contextPath &#125;/emp/upload&quot; 
+        method=&quot;post&quot;
+        enctype=&quot;multipart/form-data&quot;
     &gt;
-        文件名：&lt;input type="file" name="file"&gt;
-        &lt;input type="submit" value="提交"&gt;
+        文件名：&lt;input type=&quot;file&quot; name=&quot;file&quot;&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
     &lt;/form&gt;
 </code></pre>
 </li>
 <li><p>服务器端</p>
-<pre><code>@RequestMapping("upload")
-    public void upload(MultipartFile file,HttpServletRequest request, HttpServletResponse response) throws IllegalStateException, IOException {
-        String path = request.getServletContext().getRealPath("/WEB-INF/upload");
+<pre><code>@RequestMapping(&quot;upload&quot;)
+    public void upload(MultipartFile file,HttpServletRequest request, HttpServletResponse response) throws IllegalStateException, IOException &#123;
+        String path = request.getServletContext().getRealPath(&quot;/WEB-INF/upload&quot;);
         
-        if(file != null &amp;&amp; !file.isEmpty()) {
+        if(file != null &amp;&amp; !file.isEmpty()) &#123;
             String filename = file.getOriginalFilename();
             File f = new File(path, filename);
             //保存
             file.transferTo(f);
-        }
+        &#125;
         
-        response.setContentType("text/html;charset=utf-8");
-        response.getWriter().append("文件上传成功！");
-    }
+        response.setContentType(&quot;text/html;charset=utf-8&quot;);
+        response.getWriter().append(&quot;文件上传成功！&quot;);
+    &#125;
 </code></pre>
 </li>
 <li><p>多文件上传</p>
 <pre><code>&lt;form 
-        action="${ pageContext.request.contextPath }/emp/upload" 
-        method="post"
-        enctype="multipart/form-data"
+        action=&quot;$&#123; pageContext.request.contextPath &#125;/emp/upload&quot; 
+        method=&quot;post&quot;
+        enctype=&quot;multipart/form-data&quot;
     &gt;
-        文件名：&lt;input type="file" name="files"&gt;&lt;br&gt;
-        文件名：&lt;input type="file" name="files"&gt;&lt;br&gt;
-        文件名：&lt;input type="file" name="files"&gt;&lt;br&gt;
-        &lt;input type="submit" value="提交"&gt;
+        文件名：&lt;input type=&quot;file&quot; name=&quot;files&quot;&gt;&lt;br&gt;
+        文件名：&lt;input type=&quot;file&quot; name=&quot;files&quot;&gt;&lt;br&gt;
+        文件名：&lt;input type=&quot;file&quot; name=&quot;files&quot;&gt;&lt;br&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
     &lt;/form&gt;
 </code></pre>
-<pre><code>@RequestMapping("upload")
-    public void upload(@RequestParam("files") MultipartFile[] files,HttpServletRequest request, HttpServletResponse response) throws IllegalStateException, IOException {
-        String path = request.getServletContext().getRealPath("/WEB-INF/upload");
+<pre><code>@RequestMapping(&quot;upload&quot;)
+    public void upload(@RequestParam(&quot;files&quot;) MultipartFile[] files,HttpServletRequest request, HttpServletResponse response) throws IllegalStateException, IOException &#123;
+        String path = request.getServletContext().getRealPath(&quot;/WEB-INF/upload&quot;);
         
-        for(MultipartFile file : files) {
-            if(file != null &amp;&amp; !file.isEmpty()) {
+        for(MultipartFile file : files) &#123;
+            if(file != null &amp;&amp; !file.isEmpty()) &#123;
                 String filename = file.getOriginalFilename();
                 File f = new File(path, filename);
                 //保存
                 file.transferTo(f);
-            }
-        }
+            &#125;
+        &#125;
         
         
-        response.setContentType("text/html;charset=utf-8");
-        response.getWriter().append("文件上传成功！");
-    }
+        response.setContentType(&quot;text/html;charset=utf-8&quot;);
+        response.getWriter().append(&quot;文件上传成功！&quot;);
+    &#125;
 </code></pre>
 </li>
 <li><p>设置上传尺寸大小</p>
@@ -637,18 +635,18 @@ spring.servlet.multipart.max-request-size=10MB
 </li>
 <li><p>代码：</p>
 <pre><code>@ControllerAdvice
-public class GlobalExceptionHandle {
+public class GlobalExceptionHandle &#123;
 
     @ExceptionHandler(Exception.class)
     @ResponseBody
-    public String exceptionHandler(Exception ex) {
-        if(ex instanceof MaxUploadSizeExceededException) {
-            return "文件超过规定大小";
-        }
+    public String exceptionHandler(Exception ex) &#123;
+        if(ex instanceof MaxUploadSizeExceededException) &#123;
+            return &quot;文件超过规定大小&quot;;
+        &#125;
         
-        return "服务器错误，请联系管理员！";
-    }
-}
+        return &quot;服务器错误，请联系管理员！&quot;;
+    &#125;
+&#125;
 </code></pre>
 </li>
 </ol>
@@ -678,57 +676,57 @@ public class GlobalExceptionHandle {
 <li><p>拦截器类似于Ｓｅｒｖｌｅｔ中的过滤器，用于对处理器进行预处理和后处理</p>
 </li>
 <li><p>创建一个拦截器</p>
-<pre><code>public class LoginCheckInterceptor implements HandlerInterceptor {
+<pre><code>public class LoginCheckInterceptor implements HandlerInterceptor &#123;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
-            throws Exception {
+            throws Exception &#123;
         
         HttpSession session = request.getSession();
         
-        Object username = session.getAttribute("username");
+        Object username = session.getAttribute(&quot;username&quot;);
         
-        if(username != null) {
+        if(username != null) &#123;
             //表示放行，不拦截
             return true;
-        }
+        &#125;
         
-        response.setContentType("text/html;charset=utf-8");
-        response.getWriter().print("没有权限，不能访问!!!");
+        response.setContentType(&quot;text/html;charset=utf-8&quot;);
+        response.getWriter().print(&quot;没有权限，不能访问!!!&quot;);
         
         
         return false;
-    }
-}
+    &#125;
+&#125;
 </code></pre>
 </li>
 <li><p>注册拦截器</p>
 <pre><code>@Configuration
-public class SpringMVCConfig implements WebMvcConfigurer {
+public class SpringMVCConfig implements WebMvcConfigurer &#123;
     @Override
-    public void addFormatters(FormatterRegistry registry) {
+    public void addFormatters(FormatterRegistry registry) &#123;
         
-    }
+    &#125;
     
     @Override
-    public void addInterceptors(InterceptorRegistry registry) {
+    public void addInterceptors(InterceptorRegistry registry) &#123;
         registry.addInterceptor(new LoginCheckInterceptor())
-            .addPathPatterns("/**")
-            .excludePathPatterns("/","/user/login");
-    }
-}
+            .addPathPatterns(&quot;/**&quot;)
+            .excludePathPatterns(&quot;/&quot;,&quot;/user/login&quot;);
+    &#125;
+&#125;
 </code></pre>
 </li>
 </ol>
 <h2 id="注册视图控制器"><a href="#注册视图控制器" class="headerlink" title="注册视图控制器"></a>注册视图控制器</h2><pre><code>@Configuration
-public class SpringMVCConfig implements WebMvcConfigurer {
+public class SpringMVCConfig implements WebMvcConfigurer &#123;
         
     @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("user/login");
-        registry.addViewController("/emp/getUpload").setViewName("emp/upload");
-    }
-}
+    public void addViewControllers(ViewControllerRegistry registry) &#123;
+        registry.addViewController(&quot;/&quot;).setViewName(&quot;user/login&quot;);
+        registry.addViewController(&quot;/emp/getUpload&quot;).setViewName(&quot;emp/upload&quot;);
+    &#125;
+&#125;
 </code></pre>
 <h2 id="RESTFul"><a href="#RESTFul" class="headerlink" title="RESTFul"></a>RESTFul</h2><ol>
 <li><p>定义：Rest是一种规范，一种编程风格，简单的说，就是利用http协议通过Get、Post、Put、Patch、Delete来操作具有URI标识的服务器资源，返回统一格式的资源信息，包括：JSON、xml等</p>
@@ -742,28 +740,28 @@ public class SpringMVCConfig implements WebMvcConfigurer {
 <li><p>返回JSON数据</p>
 <ul>
 <li><pre><code>@Controller
-@RequestMapping("emp")
-public class EmpController {
-    @RequestMapping("getAll2")
+@RequestMapping(&quot;emp&quot;)
+public class EmpController &#123;
+    @RequestMapping(&quot;getAll2&quot;)
     @ResponseBody
-    public List&lt;Emp&gt; getAll2() {
+    public List&lt;Emp&gt; getAll2() &#123;
         List&lt;Emp&gt; list = empService.getAll();		
         
         return list;
-    }
-}
+    &#125;
+&#125;
 </code></pre>
 </li>
 <li><pre><code>@RestController
-@RequestMapping("emp")
-public class EmpController {
-    @RequestMapping("getAll2")
-    public List&lt;Emp&gt; getAll2() {
+@RequestMapping(&quot;emp&quot;)
+public class EmpController &#123;
+    @RequestMapping(&quot;getAll2&quot;)
+    public List&lt;Emp&gt; getAll2() &#123;
         List&lt;Emp&gt; list = empService.getAll();		
         
         return list;
-    }
-}
+    &#125;
+&#125;
 </code></pre>
 </li>
 </ul>
@@ -779,43 +777,43 @@ public class EmpController {
 </li>
 <li><p>get请求</p>
 <pre><code>@RestController
-@RequestMapping("dept2")
-public class RestDeptController {
+@RequestMapping(&quot;dept2&quot;)
+public class RestDeptController &#123;
 
     @Autowired
     private DeptService deptService;
     //dept2/10
-    @GetMapping("{deptno}")
-    public Dept getById(@PathVariable("deptno")int deptno) {
+    @GetMapping(&quot;&#123;deptno&#125;&quot;)
+    public Dept getById(@PathVariable(&quot;deptno&quot;)int deptno) &#123;
         return deptService.getById(deptno);
-    }
+    &#125;
     
     @GetMapping
-    public List&lt;Dept&gt; getAll() {
+    public List&lt;Dept&gt; getAll() &#123;
         return deptService.getAll();
-    }
+    &#125;
     
-    @GetMapping("{dname}/{loc}")
-    public List&lt;Dept&gt; getById(@PathVariable("dname") String dname,@PathVariable("loc") String loc) {
+    @GetMapping(&quot;&#123;dname&#125;/&#123;loc&#125;&quot;)
+    public List&lt;Dept&gt; getById(@PathVariable(&quot;dname&quot;) String dname,@PathVariable(&quot;loc&quot;) String loc) &#123;
         System.out.println(dname);
         System.out.println(loc);
         return deptService.getAll();
-    }
-}
+    &#125;
+&#125;
 </code></pre>
 </li>
 <li><p>post请求</p>
 <pre><code>@PostMapping
-public int insert(@RequestBody Dept dept) {
+public int insert(@RequestBody Dept dept) &#123;
     return deptService.insert(dept);
-}
+&#125;
 </code></pre>
 </li>
 <li><p>put请求</p>
 <pre><code>@PutMapping
-public int update(@RequestBody Dept dept) {
+public int update(@RequestBody Dept dept) &#123;
     return deptService.update(dept);
-}
+&#125;
 </code></pre>
 </li>
 </ol>
@@ -825,7 +823,7 @@ public int update(@RequestBody Dept dept) {
 <li><p>打 jar 包</p>
 <ul>
 <li>关闭原来的项目</li>
-<li>run as=》maven build =》 clean package</li>
+<li>run as&#x3D;》maven build &#x3D;》 clean package</li>
 <li>运行：java -jar jar包路径</li>
 <li>测试：<a target="_blank" rel="noopener" href="http://localhost:8089/dept/hr/sy">http://localhost:8089/dept/hr/sy</a></li>
 </ul>
@@ -835,21 +833,21 @@ public int update(@RequestBody Dept dept) {
 <li><p>修改打包方式：war</p>
 </li>
 <li><p>添加启动配置类</p>
-<pre><code>public class ServletInitializer extends SpringBootServletInitializer {
+<pre><code>public class ServletInitializer extends SpringBootServletInitializer &#123;
 
     @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) &#123;
         return application.sources(Springbootdemo2Application.class);
-    }
+    &#125;
 
-}
+&#125;
 </code></pre>
 </li>
-<li><p>run as=》maven build =》clean package</p>
+<li><p>run as&#x3D;》maven build &#x3D;》clean package</p>
 </li>
-<li><p>把生成的war包拷贝到 tomcat安装目录 /webapps 文件夹下</p>
+<li><p>把生成的war包拷贝到 tomcat安装目录 &#x2F;webapps 文件夹下</p>
 </li>
-<li><p>启动 tomcat服务器 ： bin/startup.bat</p>
+<li><p>启动 tomcat服务器 ： bin&#x2F;startup.bat</p>
 </li>
 <li><p>测试：<a target="_blank" rel="noopener" href="http://localhost:9000/war%E5%8C%85%E5%90%8D/%E8%B5%84%E6%BA%90url">http://localhost:9000/war包名/资源url</a></p>
 </li>
@@ -870,7 +868,7 @@ public int update(@RequestBody Dept dept) {
                 &lt;/includes&gt;
             &lt;/resource&gt;
             &lt;resource&gt;
-                &lt;directory&gt;${project.basedir}/src/main/resources&lt;/directory&gt;
+                &lt;directory&gt;$&#123;project.basedir&#125;/src/main/resources&lt;/directory&gt;
             &lt;/resource&gt;
         &lt;/resources&gt;
 &lt;/build&gt;
@@ -906,7 +904,7 @@ public int update(@RequestBody Dept dept) {
 <p>2）对jar包进行解压，进入解压目录查看是否有jsp页面，命令如下：</p>
 <p>unzip xxx.jar<br>如果发现目录下没有jsp页面，则需要在pon文件<build>里指将jsp页面目录加入到 <resource>。</resource></build></p>
 <p>3）指定 spring-boot-maven-plugin 版本为 1.4.2.RELEASE，其它版本的都不可以，具体原因不详，据说是个bug。</p>
-<p>设置 targetPath 只能是 META-INF/resources。然后用这个版本最好指定一下启动类main函数<mainclass>，否则当你项目里面存在多个main方法就会报错不知道用哪个。</mainclass></p>
+<p>设置 targetPath 只能是 META-INF&#x2F;resources。然后用这个版本最好指定一下启动类main函数<mainClass>，否则当你项目里面存在多个main方法就会报错不知道用哪个。</mainClass></p>
 <pre><code>&lt;!-- jsp加入resources，指定插件版本--&gt;
 &lt;build&gt;
         &lt;plugins&gt;
@@ -1385,7 +1383,7 @@ server:
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">174.8k</span>
+                        class="white-color">198.2k</span>
             
             
             

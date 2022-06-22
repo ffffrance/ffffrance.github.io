@@ -41,9 +41,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -374,7 +372,7 @@
 <h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><h3 id="Data"><a href="#Data" class="headerlink" title="@Data"></a>@Data</h3><p>作用在类上，是以下注解的集合：@ToString、@EqualsAndHashCode、@Getter、@Setter、@RequiredArgsConstructor</p>
 <pre><code>@Data
 @AllArgsConstructor
-public class Student {
+public class Student &#123;
     
     private Integer id;
     
@@ -383,7 +381,7 @@ public class Student {
     private Integer age;
     
     private String schoolName ;
-}
+&#125;
 </code></pre>
 <h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><ol>
 <li>@NoArgsConstructor：生成无参数构造方法</li>
@@ -394,7 +392,7 @@ public class Student {
 @AllArgsConstructor
 //生成包含final和@NonNull注解成员变量的构造方法
 @RequiredArgsConstructor
-public class Student {
+public class Student &#123;
     @NonNull
     private Integer id;
     
@@ -403,73 +401,73 @@ public class Student {
     private Integer age;
     
     private final String schoolName ;
-}
+&#125;
 </code></pre>
 <h3 id="NonNull"><a href="#NonNull" class="headerlink" title="@NonNull"></a>@NonNull</h3><ul>
 <li>这个注解可以用在成员方法或者构造方法的参数前面，会自动产生一个关于此参数的非空检查，如果参数为空，则抛出一个空指针异常，举个例子来看看：</li>
 </ul>
 <pre><code>//成员方法参数加上@NonNull注解
-public String getName(@NonNull Person p){
+public String getName(@NonNull Person p)&#123;
     return p.getName();
-}
+&#125;
 </code></pre>
 <p>实际效果相当于：</p>
-<pre><code>public String getName(@NonNull Person p){
-    if(p==null){
-        throw new NullPointerException("person");
-    }
+<pre><code>public String getName(@NonNull Person p)&#123;
+    if(p==null)&#123;
+        throw new NullPointerException(&quot;person&quot;);
+    &#125;
     return p.getName();
-}
+&#125;
 </code></pre>
 <ul>
 <li><p>用在成员变量上面，可以在生成Setter方法和构造方法的时候，检查对应形参是否为空</p>
 <pre><code>@Data
-public class User {
+public class User &#123;
     @NonNull
     private Integer id;
     private String name;
     private Integer age;
-}
+&#125;
 </code></pre>
 </li>
 </ul>
-<h3 id="Getter-x2F-Setter"><a href="#Getter-x2F-Setter" class="headerlink" title="@Getter/@Setter"></a>@Getter/@Setter</h3><ul>
-<li><p>作用在类上，生成所有成员变量的getter/setter方法</p>
+<h3 id="Getter-x2F-Setter"><a href="#Getter-x2F-Setter" class="headerlink" title="@Getter&#x2F;@Setter"></a>@Getter&#x2F;@Setter</h3><ul>
+<li><p>作用在类上，生成所有成员变量的getter&#x2F;setter方法</p>
 </li>
-<li><p>作用在成员变量上，生成该成员变量的getter/setter方法</p>
+<li><p>作用在成员变量上，生成该成员变量的getter&#x2F;setter方法</p>
 </li>
 <li><p>可以设定访问权限</p>
 </li>
 </ul>
 <pre><code>@Setter
 @Getter(value = AccessLevel.PROTECTED)
-public class Student {
+public class Student &#123;
     private Integer id;
     
     private String name;
     
     private Integer age;	
-}
+&#125;
 </code></pre>
 <h3 id="ToString"><a href="#ToString" class="headerlink" title="@ToString"></a>@ToString</h3><p>作用在类上，覆盖默认的toString()方法，可以通过 of 属性限定显示某些字段，通过 exclude 属性排除某些字段</p>
-<pre><code>@ToString(exclude = {"age"},of = {"id","name"})
-public class Student {
+<pre><code>@ToString(exclude = &#123;&quot;age&quot;&#125;,of = &#123;&quot;id&quot;,&quot;name&quot;&#125;)
+public class Student &#123;
     private Integer id;
     
     private String name;
     
     private Integer age;	
-}
+&#125;
 </code></pre>
 <h3 id="EqualsAndHashCode"><a href="#EqualsAndHashCode" class="headerlink" title="@EqualsAndHashCode"></a>@EqualsAndHashCode</h3><p>作用在类上，覆盖默认的equals和hashCode方法，可以通过 of 属性限定比较某些字段，通过 exclude 属性排除某些字段</p>
-<pre><code>@EqualsAndHashCode(of = {"id"})
-public class Student {
+<pre><code>@EqualsAndHashCode(of = &#123;&quot;id&quot;&#125;)
+public class Student &#123;
     private Integer id;
     
     private String name;
     
     private Integer age;	
-}
+&#125;
 </code></pre>
 <h2 id="Lombok实现原理"><a href="#Lombok实现原理" class="headerlink" title="Lombok实现原理"></a>Lombok实现原理</h2><p>自从Java 6起，javac就支持“JSR 269 Pluggable Annotation Processing API”（插件化注解处理API）规范，只要程序实现了该API，就能在javac运行的时候得到调用。</p>
 <p>Lombok就是一个实现了”JSR 269 API”的程序。在使用javac的过程中，它产生作用的具体流程如下：</p>
@@ -492,7 +490,7 @@ public class Student {
 <p>2-2.选择eclipse的安装目录（确保该路径中不能有中文）</p>
  <img src="/2022/052426635/2.jpg" class>
 
-<p>2-3.点击Install / Update</p>
+<p>2-3.点击Install &#x2F; Update</p>
  <img src="/2022/052426635/3.jpg" class>
 
 <p>2-4.点击Quit Installer，完成安装</p>
@@ -945,7 +943,7 @@ public class Student {
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">174.8k</span>
+                        class="white-color">198.2k</span>
             
             
             

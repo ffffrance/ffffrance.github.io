@@ -41,9 +41,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -343,14 +341,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    845
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
 
@@ -370,7 +368,7 @@
 <h2 id="安装-echarts"><a href="#安装-echarts" class="headerlink" title="安装 echarts"></a>安装 echarts</h2><pre><code>npm install echarts --save
 </code></pre>
 <h2 id="main-js-中引入"><a href="#main-js-中引入" class="headerlink" title="main.js 中引入"></a>main.js 中引入</h2><pre><code>// 部分代码展示
-import * as echarts from 'echarts'
+import * as echarts from &#39;echarts&#39;
   
 const app = createApp(App);
 
@@ -378,275 +376,275 @@ const app = createApp(App);
 app.config.globalProperties.$echarts = echarts;
 
 
-app.use(store).use(router).use(ElementPlus).mount('#app');
+app.use(store).use(router).use(ElementPlus).mount(&#39;#app&#39;);
 </code></pre>
 <h2 id="组件中使用"><a href="#组件中使用" class="headerlink" title="组件中使用"></a>组件中使用</h2><pre><code>&lt;template&gt;
-  &lt;div id="myChart" :style="{  width:'600px', height: '300px' }"&gt;&lt;/div&gt;
+  &lt;div id=&quot;myChart&quot; :style=&quot;&#123;  width:&#39;600px&#39;, height: &#39;300px&#39; &#125;&quot;&gt;&lt;/div&gt;
 &lt;/template&gt;
 
 &lt;script&gt;
 
-export default {
-  data() {
-    return {
-      option: {},
-    };
-  },
-  mounted() {
+export default &#123;
+  data() &#123;
+    return &#123;
+      option: &#123;&#125;,
+    &#125;;
+  &#125;,
+  mounted() &#123;
     //this.$root =&gt; app
     console.log(this.echarts)
-    let myChart = this.$echarts.init(document.getElementById("myChart"));
+    let myChart = this.$echarts.init(document.getElementById(&quot;myChart&quot;));
     // 绘制图表
-    myChart.setOption({
-      title: { text: "总用户量" },
-      tooltip: {},
-      xAxis: {
-        data: ["12-3", "12-4", "12-5", "12-6", "12-7", "12-8"],
-      },
-      yAxis: {},
+    myChart.setOption(&#123;
+      title: &#123; text: &quot;总用户量&quot; &#125;,
+      tooltip: &#123;&#125;,
+      xAxis: &#123;
+        data: [&quot;12-3&quot;, &quot;12-4&quot;, &quot;12-5&quot;, &quot;12-6&quot;, &quot;12-7&quot;, &quot;12-8&quot;],
+      &#125;,
+      yAxis: &#123;&#125;,
       series: [
-        {
-          name: "用户量",
-          type: "line",
+        &#123;
+          name: &quot;用户量&quot;,
+          type: &quot;line&quot;,
           data: [5, 20, 36, 10, 10, 20],
-        },
+        &#125;,
       ],
-    });
-  },
-};
+    &#125;);
+  &#125;,
+&#125;;
 &lt;/script&gt;
 
 &lt;style scoped&gt;
-.chart {
+.chart &#123;
   height: 400px;
-}
+&#125;
 &lt;/style&gt;
 </code></pre>
 <h2 id="柱状图"><a href="#柱状图" class="headerlink" title="柱状图"></a>柱状图</h2><img src="/2022/061240101/image-20220613204122997.png" class title="image-20220613204122997">
 
-<pre><code>myChart.setOption({
-      xAxis: {
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-      },
-      yAxis: {},
+<pre><code>myChart.setOption(&#123;
+      xAxis: &#123;
+        data: [&#39;Mon&#39;, &#39;Tue&#39;, &#39;Wed&#39;, &#39;Thu&#39;, &#39;Fri&#39;, &#39;Sat&#39;, &#39;Sun&#39;]
+      &#125;,
+      yAxis: &#123;&#125;,
       series: [
-        {
-          type: 'bar',
+        &#123;
+          type: &#39;bar&#39;,
           data: [23, 24, 18, 25, 27, 28, 25]
-        }
+        &#125;
       ]
-    });
+    &#125;);
 </code></pre>
 <h2 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h2><img src="/2022/061240101/image-20220613204346504.png" class title="image-20220613204346504">
 
-<pre><code>myChart.setOption({
+<pre><code>myChart.setOption(&#123;
       series: [
-        {
-          type: 'pie',
+        &#123;
+          type: &#39;pie&#39;,
           data: [
-            {
+            &#123;
               value: 335,
-              name: '直接访问'
-            },
-            {
+              name: &#39;直接访问&#39;
+            &#125;,
+            &#123;
               value: 234,
-              name: '联盟广告'
-            },
-            {
+              name: &#39;联盟广告&#39;
+            &#125;,
+            &#123;
               value: 1548,
-              name: '搜索引擎'
-            }
+              name: &#39;搜索引擎&#39;
+            &#125;
           ]
-        }
+        &#125;
       ]
-    });
+    &#125;);
 </code></pre>
 <h2 id="散点图"><a href="#散点图" class="headerlink" title="散点图"></a>散点图</h2><img src="/2022/061240101/image-20220613204558053.png" class title="image-20220613204558053">
 
-<pre><code>myChart.setOption({
-      xAxis: {
-        data: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-      },
-      yAxis: {},
+<pre><code>myChart.setOption(&#123;
+      xAxis: &#123;
+        data: [&#39;Sun&#39;, &#39;Mon&#39;, &#39;Tue&#39;, &#39;Wed&#39;, &#39;Thu&#39;, &#39;Fri&#39;, &#39;Sat&#39;]
+      &#125;,
+      yAxis: &#123;&#125;,
       series: [
-        {
-          type: 'scatter',
+        &#123;
+          type: &#39;scatter&#39;,
           data: [220, 182, 191, 234, 290, 330, 310]
-        }
+        &#125;
       ]
 
-    });
+    &#125;);
 </code></pre>
 <h2 id="异步加载数据"><a href="#异步加载数据" class="headerlink" title="异步加载数据"></a>异步加载数据</h2><p>前端</p>
 <pre><code>&lt;template&gt;
-  &lt;div :style="{  width:'600px', height: '300px' }" ref="chart"&gt;&lt;/div&gt;
+  &lt;div :style=&quot;&#123;  width:&#39;600px&#39;, height: &#39;300px&#39; &#125;&quot; ref=&quot;chart&quot;&gt;&lt;/div&gt;
 &lt;/template&gt;
 
 &lt;script&gt;
 
-export default {
-  data() {
-    return {
-      myChart:{}
-    };
-  },
-  mounted() {
+export default &#123;
+  data() &#123;
+    return &#123;
+      myChart:&#123;&#125;
+    &#125;;
+  &#125;,
+  mounted() &#123;
     this.myChart = this.$echarts.init(this.$refs.chart);
     // 绘制图表
-    this.myChart.setOption({
-      title: {
-        text: '异步数据加载示例'
-      },
-      tooltip: {},
-      legend: {
-        data: ['销量']
-      },
-      xAxis: {
+    this.myChart.setOption(&#123;
+      title: &#123;
+        text: &#39;异步数据加载示例&#39;
+      &#125;,
+      tooltip: &#123;&#125;,
+      legend: &#123;
+        data: [&#39;销量&#39;]
+      &#125;,
+      xAxis: &#123;
         data: []
-      },
-      yAxis: {},
+      &#125;,
+      yAxis: &#123;&#125;,
       series: [
-        {
-          name: '销量',
-          type: 'bar',
+        &#123;
+          name: &#39;销量&#39;,
+          type: &#39;bar&#39;,
           data: []
-        }
+        &#125;
       ]
-    });
+    &#125;);
 
-    this.$http.get('echarts').then(resp=&gt;{
-      this.myChart.setOption({
-        xAxis: {
+    this.$http.get(&#39;echarts&#39;).then(resp=&gt;&#123;
+      this.myChart.setOption(&#123;
+        xAxis: &#123;
           data: resp.data.categories
-        },
+        &#125;,
         series: [
-          {
+          &#123;
             // 根据名字对应到相应的系列
-            name: '销量',
+            name: &#39;销量&#39;,
             data: resp.data.data
-          }
+          &#125;
         ]
-      });
-    });
-  },
-};
+      &#125;);
+    &#125;);
+  &#125;,
+&#125;;
 &lt;/script&gt;
 
 &lt;style scoped&gt;
-.chart {
+.chart &#123;
   height: 400px;
-}
+&#125;
 &lt;/style&gt;
 </code></pre>
 <p>ECharts 中在更新数据的时候需要通过<code>name</code>属性对应到相应的系列，上面示例中如果<code>name</code>不存在也可以根据系列的顺序正常更新，但是更多时候推荐更新数据的时候加上系列的<code>name</code>数据。</p>
 <p>后端</p>
 <pre><code>@RestController
-@RequestMapping("echarts")
-public class EchartController {
+@RequestMapping(&quot;echarts&quot;)
+public class EchartController &#123;
 
     @GetMapping
-    public Map&lt;String,Object&gt; getData(){
+    public Map&lt;String,Object&gt; getData()&#123;
         Map&lt;String,Object&gt; map = new HashMap&lt;&gt;();
-        String[] categories = new String[]{"衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"};
-        map.put("categories",categories);
+        String[] categories = new String[]&#123;&quot;衬衫&quot;,&quot;羊毛衫&quot;,&quot;雪纺衫&quot;,&quot;裤子&quot;,&quot;高跟鞋&quot;,&quot;袜子&quot;&#125;;
+        map.put(&quot;categories&quot;,categories);
 
-        int[] data = new int[]{5, 20, 36, 10, 10, 20};
-        map.put("data",data);
+        int[] data = new int[]&#123;5, 20, 36, 10, 10, 20&#125;;
+        map.put(&quot;data&quot;,data);
         return map;
-    }
-}
+    &#125;
+&#125;
 </code></pre>
 <h2 id="loading-动画"><a href="#loading-动画" class="headerlink" title="loading 动画"></a>loading 动画</h2><p>如果数据加载时间较长，一个空的坐标轴放在画布上也会让用户觉得是不是产生 bug 了，因此需要一个 loading 的动画来提示用户数据正在加载。</p>
 <p>ECharts 默认有提供了一个简单的加载动画。只需要调用 <a target="_blank" rel="noopener" href="https://echarts.apache.org//api.html#echartsInstance.showLoading">showLoading</a> 方法显示。数据加载完成后再调用 <a target="_blank" rel="noopener" href="https://echarts.apache.org//api.html#echartsInstance.hideLoading">hideLoading</a> 方法隐藏加载动画。</p>
 <pre><code>myChart.showLoading();
-$.get('data.json').done(function (data) {
+$.get(&#39;data.json&#39;).done(function (data) &#123;
     myChart.hideLoading();
     myChart.setOption(...);
-});
+&#125;);
 </code></pre>
 <p>案例：</p>
 <p>前端：</p>
 <pre><code>&lt;template&gt;
-  &lt;div :style="{  width:'600px', height: '300px' }" ref="chart"&gt;&lt;/div&gt;
+  &lt;div :style=&quot;&#123;  width:&#39;600px&#39;, height: &#39;300px&#39; &#125;&quot; ref=&quot;chart&quot;&gt;&lt;/div&gt;
 &lt;/template&gt;
 
 &lt;script&gt;
 
-export default {
-  data() {
-    return {
-      myChart:{}
-    };
-  },
-  mounted() {
-    // let myChart = this.$echarts.init(document.getElementById("myChart"));
+export default &#123;
+  data() &#123;
+    return &#123;
+      myChart:&#123;&#125;
+    &#125;;
+  &#125;,
+  mounted() &#123;
+    // let myChart = this.$echarts.init(document.getElementById(&quot;myChart&quot;));
     this.myChart = this.$echarts.init(this.$refs.chart);
     // 绘制图表
-    this.myChart.setOption({
-      title: {
-        text: '异步数据加载示例'
-      },
-      tooltip: {},
-      legend: {
-        data: ['销量']
-      },
-      xAxis: {
+    this.myChart.setOption(&#123;
+      title: &#123;
+        text: &#39;异步数据加载示例&#39;
+      &#125;,
+      tooltip: &#123;&#125;,
+      legend: &#123;
+        data: [&#39;销量&#39;]
+      &#125;,
+      xAxis: &#123;
         data: []
-      },
-      yAxis: {},
+      &#125;,
+      yAxis: &#123;&#125;,
       series: [
-        {
-          name: '销量',
-          type: 'bar',
+        &#123;
+          name: &#39;销量&#39;,
+          type: &#39;bar&#39;,
           data: []
-        }
+        &#125;
       ]
-    });
+    &#125;);
 
     this.myChart.showLoading();
-    this.$http.get('echarts').then(resp=&gt;{
+    this.$http.get(&#39;echarts&#39;).then(resp=&gt;&#123;
       this.myChart.hideLoading();
-      this.myChart.setOption({
-        xAxis: {
+      this.myChart.setOption(&#123;
+        xAxis: &#123;
           data: resp.data.categories
-        },
+        &#125;,
         series: [
-          {
+          &#123;
             // 根据名字对应到相应的系列
-            name: '销量',
+            name: &#39;销量&#39;,
             data: resp.data.data
-          }
+          &#125;
         ]
-      });
-    });
-  },
-};
+      &#125;);
+    &#125;);
+  &#125;,
+&#125;;
 &lt;/script&gt;
 
 &lt;style scoped&gt;
-.chart {
+.chart &#123;
   height: 400px;
-}
+&#125;
 &lt;/style&gt;
 </code></pre>
 <p>后端</p>
 <pre><code>@RestController
-@RequestMapping("echarts")
-public class EchartController {
+@RequestMapping(&quot;echarts&quot;)
+public class EchartController &#123;
 
     @GetMapping
-    public Map&lt;String,Object&gt; getData() throws InterruptedException {
+    public Map&lt;String,Object&gt; getData() throws InterruptedException &#123;
         Map&lt;String,Object&gt; map = new HashMap&lt;&gt;();
-        String[] categories = new String[]{"衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"};
-        map.put("categories",categories);
+        String[] categories = new String[]&#123;&quot;衬衫&quot;,&quot;羊毛衫&quot;,&quot;雪纺衫&quot;,&quot;裤子&quot;,&quot;高跟鞋&quot;,&quot;袜子&quot;&#125;;
+        map.put(&quot;categories&quot;,categories);
 
-        int[] data = new int[]{5, 20, 36, 10, 10, 20};
-        map.put("data",data);
+        int[] data = new int[]&#123;5, 20, 36, 10, 10, 20&#125;;
+        map.put(&quot;data&quot;,data);
 
         Thread.sleep(3000);
         return map;
-    }
-}
+    &#125;
+&#125;
 </code></pre>
 
                 
@@ -1085,7 +1083,7 @@ public class EchartController {
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">174.8k</span>
+                        class="white-color">198.2k</span>
             
             
             

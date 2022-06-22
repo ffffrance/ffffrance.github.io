@@ -41,9 +41,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -343,14 +341,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    2.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    13 分
                 </div>
                 
 
@@ -389,25 +387,25 @@
 <li><p>添加了一个SpringMVC组件配置类</p>
 <pre><code>@Configuration
 @EnableWebMvc//启用mvc注解驱动
-@ComponentScan(basePackages = "com.neu.controller")
-public class SpringMVCConfig {
+@ComponentScan(basePackages = &quot;com.neu.controller&quot;)
+public class SpringMVCConfig &#123;
 
-}
+&#125;
 </code></pre>
 </li>
 <li><p>修改了web初始化器</p>
-<p>Servlet 3.0 之后，web容器启动后会调用 META-INF/services/javax.servlet.ServletContainerInitializer文件中的类</p>
-<p>在Tomcat8以上版本支持一个配置启动的东西，意思就是tomcat启动时会自动去扫描所有 jar 中目录为「 META-INF/services/ 」中是否有个名字是「javax.servlet.ServletContainerInitializer」的配置文件，然后根据里面内容反编译启动等等一系列操作</p>
+<p>Servlet 3.0 之后，web容器启动后会调用 META-INF&#x2F;services&#x2F;javax.servlet.ServletContainerInitializer文件中的类</p>
+<p>在Tomcat8以上版本支持一个配置启动的东西，意思就是tomcat启动时会自动去扫描所有 jar 中目录为「 META-INF&#x2F;services&#x2F; 」中是否有个名字是「javax.servlet.ServletContainerInitializer」的配置文件，然后根据里面内容反编译启动等等一系列操作</p>
 <img src="/2022/05254780/1.jpg" class>
 
 <p><strong>如上图配置后tomcat启动时就会自动生成HelloServlet了，大概原理就这样，不过SpringMVC已经把上图中的基本配置已经搞定直接使用即可</strong></p>
 <p>在 spring-web的jar包中查看</p>
 <pre><code>org.springframework.web.SpringServletContainerInitializer
 </code></pre>
-<pre><code>public class WebInitializer implements WebApplicationInitializer {
+<pre><code>public class WebInitializer implements WebApplicationInitializer &#123;
 
     @Override
-    public void onStartup(ServletContext servletContext) throws ServletException {
+    public void onStartup(ServletContext servletContext) throws ServletException &#123;
         //创建spring容器
         AnnotationConfigWebApplicationContext c = 
                 new AnnotationConfigWebApplicationContext();
@@ -425,47 +423,47 @@ public class SpringMVCConfig {
         childContext.register(SpringMVCConfig.class);
         
         
-        Dynamic servlet = servletContext.addServlet("dispatcher", new DispatcherServlet(childContext));
+        Dynamic servlet = servletContext.addServlet(&quot;dispatcher&quot;, new DispatcherServlet(childContext));
         
-        servlet.addMapping("/");
+        servlet.addMapping(&quot;/&quot;);
         //在启动web服务器的时候，直接创建这个前端控制器
         servlet.setLoadOnStartup(1);
-    }
+    &#125;
 
-}
+&#125;
 </code></pre>
 </li>
 <li><p>配置了一个视图解析器</p>
 <pre><code>@Configuration
 @EnableWebMvc//启用mvc注解驱动
-@ComponentScan(basePackages = "com.neu.controller")
-public class SpringMVCConfig {
+@ComponentScan(basePackages = &quot;com.neu.controller&quot;)
+public class SpringMVCConfig &#123;
 
     //物理路径：/WEB-INF/jsp/hello.jsp
     ///WEB-INF/jsp/hello.jsp
     @Bean
-    public InternalResourceViewResolver viewResolver() {
+    public InternalResourceViewResolver viewResolver() &#123;
         InternalResourceViewResolver r = new InternalResourceViewResolver();
         //设置前缀
-        r.setPrefix("/WEB-INF/jsp/");
+        r.setPrefix(&quot;/WEB-INF/jsp/&quot;);
         //设置后缀
-        r.setSuffix(".jsp");
+        r.setSuffix(&quot;.jsp&quot;);
         
         return r;
-    }
-}
+    &#125;
+&#125;
 </code></pre>
 </li>
 <li><p>创建业务逻辑控制器和处理器方法</p>
 <pre><code>@Controller
-public class HelloController {
+public class HelloController &#123;
 
-    @RequestMapping("hello")
-    public String hello() {
-        System.out.println("hello!");
-        return "hello";
-    }
-}
+    @RequestMapping(&quot;hello&quot;)
+    public String hello() &#123;
+        System.out.println(&quot;hello!&quot;);
+        return &quot;hello&quot;;
+    &#125;
+&#125;
 </code></pre>
 </li>
 </ol>
@@ -479,19 +477,19 @@ public class HelloController {
 </ul>
 </li>
 <li><p>method：表示能处理的请求方法，默认能处理get和post请求</p>
-<pre><code>@RequestMapping(value="insert",method = {RequestMethod.POST,RequestMethod.GET})
-    public String insert() {
-        return "dept/getAll";
-    }
+<pre><code>@RequestMapping(value=&quot;insert&quot;,method = &#123;RequestMethod.POST,RequestMethod.GET&#125;)
+    public String insert() &#123;
+        return &quot;dept/getAll&quot;;
+    &#125;
 </code></pre>
 </li>
 <li><p>value:指定请求的url，默认属性</p>
 </li>
 <li><p>params:指定请求中必须包含某些请求参数或参数值</p>
-<pre><code>@RequestMapping(value="insert",params = {"deptno=1","dname"})
-    public String insert() {
-        return "dept/getAll";
-    }
+<pre><code>@RequestMapping(value=&quot;insert&quot;,params = &#123;&quot;deptno=1&quot;,&quot;dname&quot;&#125;)
+    public String insert() &#123;
+        return &quot;dept/getAll&quot;;
+    &#125;
 </code></pre>
 </li>
 </ul>
@@ -502,7 +500,7 @@ public class HelloController {
 </li>
 <li><p>请求参数绑定</p>
 <ul>
-<li>定义：把请求参数的key/value绑定到处理器方法的形参上，默认形参名与请求参数名相同，就会自动绑定</li>
+<li>定义：把请求参数的key&#x2F;value绑定到处理器方法的形参上，默认形参名与请求参数名相同，就会自动绑定</li>
 <li>@RequestParam：手工映射请求参数<ul>
 <li>value：请求参数名，默认属性</li>
 <li>required：必须的，默认为：true,</li>
@@ -529,102 +527,102 @@ public class HelloController {
 <li><p>post:修改web初始化器</p>
 <pre><code>//注册编码过滤器
 javax.servlet.FilterRegistration.Dynamic filter 
-            = servletContext.addFilter("charsetFilter", new CharacterEncodingFilter("utf-8"));
+            = servletContext.addFilter(&quot;charsetFilter&quot;, new CharacterEncodingFilter(&quot;utf-8&quot;));
         
-filter.addMappingForUrlPatterns(null, false, "/*");
+filter.addMappingForUrlPatterns(null, false, &quot;/*&quot;);
 </code></pre>
 </li>
 </ol>
 <h2 id="日期格式处理"><a href="#日期格式处理" class="headerlink" title="日期格式处理"></a>日期格式处理</h2><ol>
 <li><p>定义了一个转换器</p>
-<pre><code>public class DateConverter implements Converter&lt;String, Date&gt; {
+<pre><code>public class DateConverter implements Converter&lt;String, Date&gt; &#123;
 
     @Override
-    public Date convert(String source) {
-        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+    public Date convert(String source) &#123;
+        SimpleDateFormat f = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
         Date date = null;
-        try {
+        try &#123;
             date = f.parse(source);
-        } catch (ParseException e) {
+        &#125; catch (ParseException e) &#123;
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
+        &#125;
         return date;
-    }
+    &#125;
 
-}
+&#125;
 </code></pre>
 </li>
 <li><p>注册转换器</p>
 <pre><code>@Configuration
 @EnableWebMvc//启用mvc注解驱动
-@ComponentScan(basePackages = "com.neu.controller")
-public class SpringMVCConfig implements WebMvcConfigurer {
+@ComponentScan(basePackages = &quot;com.neu.controller&quot;)
+public class SpringMVCConfig implements WebMvcConfigurer &#123;
     @Override
-    public void addFormatters(FormatterRegistry registry) {
+    public void addFormatters(FormatterRegistry registry) &#123;
         //注册日期转换器		
         registry.addConverter(new DateConverter());
-    }
-}
+    &#125;
+&#125;
 </code></pre>
 <h2 id="跳转到其他请求的方式"><a href="#跳转到其他请求的方式" class="headerlink" title="跳转到其他请求的方式"></a>跳转到其他请求的方式</h2><pre><code>//请求转发
-//		return "forward:/dept/getAll";
+//		return &quot;forward:/dept/getAll&quot;;
 //重定向
-return "redirect:/dept/getAll";
+return &quot;redirect:/dept/getAll&quot;;
 </code></pre>
 </li>
 </ol>
 <h2 id="处理器形参"><a href="#处理器形参" class="headerlink" title="处理器形参"></a>处理器形参</h2><ol>
 <li><p>HttpServletRequest</p>
 <pre><code>@Controller
-public class HelloController {
+public class HelloController &#123;
 
-    @RequestMapping("hello")
-    public String hello(HttpServletRequest request) {
-        String name = request.getParameter("name");
+    @RequestMapping(&quot;hello&quot;)
+    public String hello(HttpServletRequest request) &#123;
+        String name = request.getParameter(&quot;name&quot;);
         System.out.println(name);
-        return "hello";
-    }
+        return &quot;hello&quot;;
+    &#125;
     
-}
+&#125;
 </code></pre>
 </li>
 <li><p>HttpServletResponse</p>
 <pre><code>@Controller
-public class HelloController {
+public class HelloController &#123;
 
-    @RequestMapping("hello")
-    public void hello(HttpServletRequest request,HttpServletResponse response) throws IOException {
-        String name = request.getParameter("name");
+    @RequestMapping(&quot;hello&quot;)
+    public void hello(HttpServletRequest request,HttpServletResponse response) throws IOException &#123;
+        String name = request.getParameter(&quot;name&quot;);
         System.out.println(name);
         
         response.getWriter().append(name);
-//		return "hello";
-    }	
+//		return &quot;hello&quot;;
+    &#125;	
     
-}
+&#125;
 </code></pre>
 </li>
 <li><p>HttpSession</p>
 <pre><code>@Controller
-public class HelloController {
+public class HelloController &#123;
     
-    @RequestMapping("/")
-    public String getLogin() {
-        return "login";
-    }
+    @RequestMapping(&quot;/&quot;)
+    public String getLogin() &#123;
+        return &quot;login&quot;;
+    &#125;
     
-    @RequestMapping("login")
-    public String login(String username,String password,HttpSession session) {
+    @RequestMapping(&quot;login&quot;)
+    public String login(String username,String password,HttpSession session) &#123;
         
-        if("admin".equals(username) &amp;&amp; "111".equals(password)) {
-            session.setAttribute("username", username);
-            return "forward:/dept/getAll";
-        }else {
-            return "redirect:/";
-        }
-    }	
-}
+        if(&quot;admin&quot;.equals(username) &amp;&amp; &quot;111&quot;.equals(password)) &#123;
+            session.setAttribute(&quot;username&quot;, username);
+            return &quot;forward:/dept/getAll&quot;;
+        &#125;else &#123;
+            return &quot;redirect:/&quot;;
+        &#125;
+    &#125;	
+&#125;
 </code></pre>
 </li>
 </ol>
@@ -639,13 +637,13 @@ public class HelloController {
 </li>
 <li><p>在mybatis配置类中，注册分页插件（拦截器）</p>
 <pre><code>@Configuration
-@ComponentScan(basePackages = {"com.neu.mapper","com.neu.service","com.neu.utils"})
-public class MybatisConfig {
+@ComponentScan(basePackages = &#123;&quot;com.neu.mapper&quot;,&quot;com.neu.service&quot;,&quot;com.neu.utils&quot;&#125;)
+public class MybatisConfig &#123;
     @Autowired
     private DataSource dataSource;
     
     @Bean
-    public SqlSessionFactory sqlSessionFactory() throws Exception {
+    public SqlSessionFactory sqlSessionFactory() throws Exception &#123;
         SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
         factory.setDataSource(dataSource);
         //创建一个分页拦截器
@@ -654,16 +652,16 @@ public class MybatisConfig {
         Properties prop =factory new Properties();
         interceptor.setProperties(prop);
         //注册拦截器
-        factory.setPlugins(new Interceptor[] {interceptor});
+        factory.setPlugins(new Interceptor[] &#123;interceptor&#125;);
         
         return factory.getObject();
-    }
-}
+    &#125;
+&#125;
 </code></pre>
 </li>
 <li><p>修改业务逻辑类</p>
 <pre><code>@Override
-    public PageInfo&lt;Dept&gt; getPaged(int pageNum, int pageSize) {
+    public PageInfo&lt;Dept&gt; getPaged(int pageNum, int pageSize) &#123;
         //分页方法，该方法会拦截该语句后的第一个查询，对该查询进行分页操作
         PageHelper.startPage(pageNum, pageSize);
         
@@ -671,106 +669,106 @@ public class MybatisConfig {
         
         PageInfo&lt;Dept&gt; pageInfo = new PageInfo&lt;Dept&gt;(list);
         return pageInfo;
-    }
+    &#125;
 </code></pre>
 </li>
 <li><p>控制器</p>
-<pre><code>@RequestMapping("getPaged")
-    public String getPaged(@RequestParam(defaultValue = "1") int pageNum,@RequestParam(defaultValue = "3") int pageSize,Model model) {
+<pre><code>@RequestMapping(&quot;getPaged&quot;)
+    public String getPaged(@RequestParam(defaultValue = &quot;1&quot;) int pageNum,@RequestParam(defaultValue = &quot;3&quot;) int pageSize,Model model) &#123;
         PageInfo&lt;Dept&gt; pageInfo = deptService.getPaged(pageNum, pageSize);
         
         System.out.println(pageInfo);
-        model.addAttribute("pageInfo", pageInfo);
+        model.addAttribute(&quot;pageInfo&quot;, pageInfo);
         
-        return "dept/paged";
-    }
+        return &quot;dept/paged&quot;;
+    &#125;
 </code></pre>
 </li>
 <li><p>jsp</p>
-<pre><code>&lt;%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%&gt;
-&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %&gt;
+<pre><code>&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;%@ taglib uri=&quot;http://java.sun.com/jsp/jstl/core&quot; prefix=&quot;c&quot; %&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-&lt;meta charset="UTF-8"&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
 &lt;title&gt;Insert title here&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    用户名：${ username }&lt;br&gt;
-    &lt;a href="${ pageContext.request.contextPath }/dept/getinsertpage"&gt;添加部门&lt;/a&gt;
-    &lt;form action="${ pageContext.request.contextPath }/dept/batchDelete" method="post"&gt;
-    &lt;input type="submit" value="批量删除"&gt;
-    &lt;table border="1" width="900"&gt;
+    用户名：$&#123; username &#125;&lt;br&gt;
+    &lt;a href=&quot;$&#123; pageContext.request.contextPath &#125;/dept/getinsertpage&quot;&gt;添加部门&lt;/a&gt;
+    &lt;form action=&quot;$&#123; pageContext.request.contextPath &#125;/dept/batchDelete&quot; method=&quot;post&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;批量删除&quot;&gt;
+    &lt;table border=&quot;1&quot; width=&quot;900&quot;&gt;
         &lt;thead&gt;
             &lt;tr&gt;
                 &lt;th&gt;&amp;nbsp;&lt;/th&gt;&lt;th&gt;编号&lt;/th&gt;&lt;th&gt;名称&lt;/th&gt;&lt;th&gt;地址&lt;/th&gt;&lt;th&gt;操作&lt;/th&gt;
             &lt;/tr&gt;
         &lt;/thead&gt;
         &lt;tbody&gt;
-        &lt;c:forEach items="${ pageInfo.list }" var="dept"&gt;
+        &lt;c:forEach items=&quot;$&#123; pageInfo.list &#125;&quot; var=&quot;dept&quot;&gt;
         &lt;tr&gt;
             &lt;td&gt;
-                &lt;input type="checkbox" name="deptno" value="${ dept.deptno }"&gt;
+                &lt;input type=&quot;checkbox&quot; name=&quot;deptno&quot; value=&quot;$&#123; dept.deptno &#125;&quot;&gt;
             &lt;/td&gt;
-            &lt;td&gt;${ dept.deptno }&lt;/td&gt;
-            &lt;td&gt;${ dept.dname }&lt;/td&gt;
-            &lt;td&gt;${ dept.loc }&lt;/td&gt;
+            &lt;td&gt;$&#123; dept.deptno &#125;&lt;/td&gt;
+            &lt;td&gt;$&#123; dept.dname &#125;&lt;/td&gt;
+            &lt;td&gt;$&#123; dept.loc &#125;&lt;/td&gt;
             &lt;td&gt;
-                &lt;a href="${ pageContext.request.contextPath }/dept/delete?deptno=${ dept.deptno }"&gt;删除&lt;/a&gt;
-                &lt;a href="${ pageContext.request.contextPath }/dept/getById?deptno=${ dept.deptno }"&gt;编辑&lt;/a&gt;
+                &lt;a href=&quot;$&#123; pageContext.request.contextPath &#125;/dept/delete?deptno=$&#123; dept.deptno &#125;&quot;&gt;删除&lt;/a&gt;
+                &lt;a href=&quot;$&#123; pageContext.request.contextPath &#125;/dept/getById?deptno=$&#123; dept.deptno &#125;&quot;&gt;编辑&lt;/a&gt;
             &lt;/td&gt;
         &lt;/tr&gt;
         &lt;/c:forEach&gt;
         &lt;/tbody&gt;
         &lt;tfoot&gt;
-            &lt;td colspan="5"&gt;
-                共${ pageInfo.total }记录
-                第 ${ pageInfo.pageNum } 页/共${ pageInfo.pages }页
-                &lt;c:if test="${ !pageInfo.isFirstPage }"&gt;
-                    &lt;a href="${ pageContext.request.contextPath }/dept/getPaged?pageNum=1&amp;pageSize=${pageInfo.pageSize}"&gt;第一页&lt;/a&gt;
-                    &lt;a href="${ pageContext.request.contextPath }/dept/getPaged?pageNum=${pageInfo.pageNum-1}&amp;pageSize=${pageInfo.pageSize}"&gt;上一页&lt;/a&gt;
+            &lt;td colspan=&quot;5&quot;&gt;
+                共$&#123; pageInfo.total &#125;记录
+                第 $&#123; pageInfo.pageNum &#125; 页/共$&#123; pageInfo.pages &#125;页
+                &lt;c:if test=&quot;$&#123; !pageInfo.isFirstPage &#125;&quot;&gt;
+                    &lt;a href=&quot;$&#123; pageContext.request.contextPath &#125;/dept/getPaged?pageNum=1&amp;pageSize=$&#123;pageInfo.pageSize&#125;&quot;&gt;第一页&lt;/a&gt;
+                    &lt;a href=&quot;$&#123; pageContext.request.contextPath &#125;/dept/getPaged?pageNum=$&#123;pageInfo.pageNum-1&#125;&amp;pageSize=$&#123;pageInfo.pageSize&#125;&quot;&gt;上一页&lt;/a&gt;
                 &lt;/c:if&gt;
                 
-                &lt;c:forEach items="${ pageInfo.navigatepageNums }" var="num"&gt;
-                    &lt;c:if test="${ num == pageInfo.pageNum }"&gt;
-                        &lt;a&gt;[${ num }]&lt;/a&gt;
+                &lt;c:forEach items=&quot;$&#123; pageInfo.navigatepageNums &#125;&quot; var=&quot;num&quot;&gt;
+                    &lt;c:if test=&quot;$&#123; num == pageInfo.pageNum &#125;&quot;&gt;
+                        &lt;a&gt;[$&#123; num &#125;]&lt;/a&gt;
                     &lt;/c:if&gt;
-                    &lt;c:if test="${ num != pageInfo.pageNum }"&gt;
-                        &lt;a href="${ pageContext.request.contextPath }/dept/getPaged?pageNum=${ num }&amp;pageSize=${pageInfo.pageSize}"&gt;[${ num }]&lt;/a&gt;
+                    &lt;c:if test=&quot;$&#123; num != pageInfo.pageNum &#125;&quot;&gt;
+                        &lt;a href=&quot;$&#123; pageContext.request.contextPath &#125;/dept/getPaged?pageNum=$&#123; num &#125;&amp;pageSize=$&#123;pageInfo.pageSize&#125;&quot;&gt;[$&#123; num &#125;]&lt;/a&gt;
                     &lt;/c:if&gt;					
                 &lt;/c:forEach&gt;
                 
-                &lt;c:if test="${ pageInfo.hasNextPage }"&gt;
-                    &lt;a href="${ pageContext.request.contextPath }/dept/getPaged?pageNum=${pageInfo.pageNum+1}&amp;pageSize=${pageInfo.pageSize}"&gt;下一页&lt;/a&gt;
+                &lt;c:if test=&quot;$&#123; pageInfo.hasNextPage &#125;&quot;&gt;
+                    &lt;a href=&quot;$&#123; pageContext.request.contextPath &#125;/dept/getPaged?pageNum=$&#123;pageInfo.pageNum+1&#125;&amp;pageSize=$&#123;pageInfo.pageSize&#125;&quot;&gt;下一页&lt;/a&gt;
                 &lt;/c:if&gt;
                 
-                &lt;c:if test="${ !pageInfo.isLastPage }"&gt;
-                    &lt;a href="${ pageContext.request.contextPath }/dept/getPaged?pageNum=${pageInfo.navigateLastPage}&amp;pageSize=${pageInfo.pageSize}"&gt;最后一页&lt;/a&gt;
+                &lt;c:if test=&quot;$&#123; !pageInfo.isLastPage &#125;&quot;&gt;
+                    &lt;a href=&quot;$&#123; pageContext.request.contextPath &#125;/dept/getPaged?pageNum=$&#123;pageInfo.navigateLastPage&#125;&amp;pageSize=$&#123;pageInfo.pageSize&#125;&quot;&gt;最后一页&lt;/a&gt;
                 &lt;/c:if&gt;
-                跳转到&lt;input type="text" style="width:25px;" id="page"&gt;页
-                &lt;input type="button" value="go" onclick="goPage()"&gt;
-                &lt;select onchange="changePageSize()" id="pageSize"&gt;
-                    &lt;option ${ pageInfo.pageSize == 3?"selected":"" }&gt;3&lt;/option&gt;
-                    &lt;option ${ pageInfo.pageSize == 5?"selected":"" }&gt;5&lt;/option&gt;
-                    &lt;option ${ pageInfo.pageSize == 10?"selected":"" }&gt;10&lt;/option&gt;
+                跳转到&lt;input type=&quot;text&quot; style=&quot;width:25px;&quot; id=&quot;page&quot;&gt;页
+                &lt;input type=&quot;button&quot; value=&quot;go&quot; onclick=&quot;goPage()&quot;&gt;
+                &lt;select onchange=&quot;changePageSize()&quot; id=&quot;pageSize&quot;&gt;
+                    &lt;option $&#123; pageInfo.pageSize == 3?&quot;selected&quot;:&quot;&quot; &#125;&gt;3&lt;/option&gt;
+                    &lt;option $&#123; pageInfo.pageSize == 5?&quot;selected&quot;:&quot;&quot; &#125;&gt;5&lt;/option&gt;
+                    &lt;option $&#123; pageInfo.pageSize == 10?&quot;selected&quot;:&quot;&quot; &#125;&gt;10&lt;/option&gt;
                 &lt;/select&gt;
             &lt;/td&gt;
         &lt;/tfoot&gt;
     &lt;/table&gt;
     &lt;/form&gt;
-    &lt;script type="text/javascript"&gt;
-        function goPage(){
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        function goPage()&#123;
             //得到文本框的值
-            var pageNum = document.getElementById("page").value;
+            var pageNum = document.getElementById(&quot;page&quot;).value;
             //修改地址栏地址
-            location.href = "${ pageContext.request.contextPath }/dept/getPaged?pageNum="+pageNum;
-        }
+            location.href = &quot;$&#123; pageContext.request.contextPath &#125;/dept/getPaged?pageNum=&quot;+pageNum;
+        &#125;
         
-        function changePageSize(){
-            var pageSize = document.getElementById("pageSize").value;
-            location.href = "${ pageContext.request.contextPath }/dept/getPaged?pageNum=1&amp;pageSize="+pageSize;
-        }
+        function changePageSize()&#123;
+            var pageSize = document.getElementById(&quot;pageSize&quot;).value;
+            location.href = &quot;$&#123; pageContext.request.contextPath &#125;/dept/getPaged?pageNum=1&amp;pageSize=&quot;+pageSize;
+        &#125;
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
@@ -799,29 +797,29 @@ public class MybatisConfig {
 <pre><code>@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Dept {
-    @NotNull(message = "部门编号不能为空")
+public class Dept &#123;
+    @NotNull(message = &quot;部门编号不能为空&quot;)
     private Integer deptno;
     private String dname;
     private String loc;
-}
+&#125;
 </code></pre>
 </li>
 <li><p>在控制器中的处理器方法的形参前添加@Valid注解</p>
-<pre><code>@RequestMapping("insert")
-public String insert(@Valid Dept dept,Errors errors,Model model) {
-    if(errors.hasErrors()) {
-        model.addAttribute("errorList", errors.getAllErrors());
-        return "dept/insert";
-    }
+<pre><code>@RequestMapping(&quot;insert&quot;)
+public String insert(@Valid Dept dept,Errors errors,Model model) &#123;
+    if(errors.hasErrors()) &#123;
+        model.addAttribute(&quot;errorList&quot;, errors.getAllErrors());
+        return &quot;dept/insert&quot;;
+    &#125;
     //。。。
-}
+&#125;
 </code></pre>
 </li>
 <li><p>jsp页面显示错误消息</p>
-<pre><code>&lt;c:if test="${ !(empty errorList) }"&gt;
-    &lt;c:forEach items="${ errorList }" var="error"&gt;
-        ${ error.defaultMessage }&lt;br&gt;
+<pre><code>&lt;c:if test=&quot;$&#123; !(empty errorList) &#125;&quot;&gt;
+    &lt;c:forEach items=&quot;$&#123; errorList &#125;&quot; var=&quot;error&quot;&gt;
+        $&#123; error.defaultMessage &#125;&lt;br&gt;
     &lt;/c:forEach&gt;		
 &lt;/c:if&gt;
 </code></pre>
@@ -830,13 +828,13 @@ public String insert(@Valid Dept dept,Errors errors,Model model) {
 <ul>
 <li>@NotNull：不能为空，能验证任何对象</li>
 <li>@NotBlank：表示注解的属性不能为null和空串，只能验证字符串</li>
-<li>@Size（min=2,max=10,message=””):验证字符串的长度</li>
+<li>@Size（min&#x3D;2,max&#x3D;10,message&#x3D;””):验证字符串的长度</li>
 <li>@Email：验证邮箱</li>
 <li>@Post():必须是一个过去的日期</li>
 <li>@Futrue：必须是一个未来的日期</li>
 <li>@Min():最小值</li>
 <li>@Max（）：最大值</li>
-<li><code>@Pattern(regexp="^\\d{3,8}$")</code>：使用正则表达式验证</li>
+<li><code>@Pattern(regexp=&quot;^\\d&#123;3,8&#125;$&quot;)</code>：使用正则表达式验证</li>
 </ul>
 </li>
 </ol>
@@ -1277,7 +1275,7 @@ public String insert(@Valid Dept dept,Errors errors,Model model) {
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">174.8k</span>
+                        class="white-color">198.2k</span>
             
             
             

@@ -41,9 +41,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -392,8 +390,8 @@
 <h2 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h2><p>在某个文件夹中，使用如下命令，将在当前目录下创建一个 gittest 文件夹，并在该文件夹中初始化git本地仓库</p>
 <pre><code>git init gittest
 </code></pre>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><pre><code>git config --global user.name "pcbhyy"
-git config --global user.email "pcbhyy@163.com"
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><pre><code>git config --global user.name &quot;pcbhyy&quot;
+git config --global user.email &quot;pcbhyy@163.com&quot;
  
 --global ：针对当前用户
 --system:针对当前系统所有用户
@@ -406,7 +404,7 @@ git add 1.txt
 <pre><code>git status
 </code></pre>
 <h2 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h2><p>将暂存区中内容提交到本地仓库中</p>
-<pre><code>git commit -m "提交说明"
+<pre><code>git commit -m &quot;提交说明&quot;
 
 //打开一个文件，在其中添加注释，适合于注释比较多和需要换行的情况
 git commit
@@ -450,11 +448,11 @@ git log --stat
 <p>-f：强制删除</p>
 </li>
 <li><p>修补最后一次提交</p>
-<pre><code>git commit -m 'init commit'
+<pre><code>git commit -m &#39;init commit&#39;
 //修改最后一次提交的注释
-git commit -m 'change common' --amend
+git commit -m &#39;change common&#39; --amend
 
-git commit -m 'init commit'
+git commit -m &#39;init commit&#39;
 //增加一个暂存文件
 git add 3.txt
 //修改最后一次提交的内容
@@ -485,7 +483,7 @@ git reflog
 </ol>
 <h2 id="提交过程"><a href="#提交过程" class="headerlink" title="提交过程"></a>提交过程</h2><p>我们假设现在有一个工作目录， 里面包含了三个将要被暂存和提交的文件。 暂存操作<br>会为每一个文件计算校验和（ 使用我们在 Chapter 1 中提到的 SHA-1 哈希算法） ， 然后会把当前版本的<br>文件快照保存到 Git 仓库中（ Git 使用 blob 对象来保存它们） ， 最终将校验和加入到暂存区域等待提交：  </p>
 <pre><code>$ git add README test.rb LICENSE
-$ git commit -m 'The initial commit of my project'
+$ git commit -m &#39;The initial commit of my project&#39;
 </code></pre>
 <p>当使用 git commit 进行提交操作时， Git 会先计算每一个子目录（ 本例中只有项目根目录） 的校验<br>和， 然后在 Git 仓库中这些校验和保存为树对象。 随后， Git 便会创建一个提交对象， 它除了包含上面提<br>到的那些信息外， 还包含指向这个树对象（ 项目根目录） 的指针。 如此一来， Git 就可以在需要的时候重<br>现此次保存的快照。<br>现在， Git 仓库中有五个对象： 三个 blob 对象（ 保存着文件快照） 、 一个树对象（ 记录着目录结构和<br>blob 对象索引） 以及一个提交对象（ 包含着指向前述树对象的指针和所有提交信息） 。  </p>
 <img src="/2022/061325246/image-20201016151815452.png" class title="image-20201016151815452">
@@ -528,7 +526,7 @@ f30ab (HEAD-&gt;master, testing) add feature #32 - ability to add new
 <p>这条命令做了两件事。 一是使 HEAD 指回 master 分支， 二是将工作目录恢复成 master 分支所指向<br>的快照内容。 也就是说， 你现在做修改的话， 项目将始于一个较旧的版本。 本质上来讲， 这就是忽略<br>testing 分支所做的修改， 以便于向另一个方向进行开发。  </p>
 <p>我们不妨再稍微做些修改并提交：  </p>
 <pre><code>$ vim test.rb
-$ git commit -a -m 'made other changes'
+$ git commit -a -m &#39;made other changes&#39;
 </code></pre>
 <p>现在， 这个项目的提交历史已经产生了分叉（ 参见 Figure 3-9） 。 因为刚才你创建了一个新分支， 并切换<br>过去进行了一些工作， 随后又切换回 master 分支进行了另外一些工作。 上述两次改动针对的是不同分<br>支： 你可以在不同分支间不断地来回切换和工作， 并在时机成熟时将它们合并起来。 而所有这些工作， 你<br>需要的命令只有 branch 、 checkout 和 commit 。  </p>
 <img src="/2022/061325246/image-20201017145544382.png" class title="image-20201017145544382">
@@ -570,7 +568,7 @@ git merge hotfix
 git add index.html
 
 //提交冲突文件到本地仓库
-git commit -m '解决合并冲突'
+git commit -m &#39;解决合并冲突&#39;
 </code></pre>
 <h2 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h2><p>Git 通过储存一个称为远程（remote）的连接来联系远方的朋友。本地仓库可以有零个、一个或多个远程连接。通常情况下， Git 仓库只有一个远程连接，即 origin（源）。你可能已经见过了这个术语。分配给远程仓库的这个别名，从中下载或克隆了你的本地副本。你可以使用任何你喜欢的名称来命名你的远程连接。在你第一次启动一个新项目时，可能还没有现成的代码，也可能有了一些代码。（这显而易见，不是么？）如果你还没有代码，那么可以遵循代码托管系统中的指示，将这个空项目克隆到你本地的开发环境中。然而，如果你在本地已经有了一些代码，那么将会想要上传你已有的代码。要想这么做，你需要建立一个从你的本地仓库到项目托管服务的新连接。在项目仓库的本地副本中，检查你是否已经设置好一个远程连接，如下所示。<br><code>$ git remote --verbose</code><br>如果你从本地启动项目，就不会看到任何远程连接，因此，如果现在什么都没有显示也没关系。如果你为这个仓库设置了一个远程连接，将会看到如下内容。</p>
 <pre><code>origin https://github.com:emmajane/gitforteams.git (fetch)
@@ -1021,7 +1019,7 @@ origin https://github.com:emmajane/gitforteams.git (push)
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">174.8k</span>
+                        class="white-color">198.2k</span>
             
             
             

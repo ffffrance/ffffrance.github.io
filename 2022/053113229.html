@@ -41,9 +41,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -343,7 +341,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    916
+                    1k
                 </div>
                 
 
@@ -380,20 +378,20 @@
 </ol>
 <h3 id="函数的扩展–rest参数（剩余参数）"><a href="#函数的扩展–rest参数（剩余参数）" class="headerlink" title="函数的扩展–rest参数（剩余参数）"></a>函数的扩展–rest参数（剩余参数）</h3><ol>
 <li><p>语法格式：</p>
-<pre><code>function 函数名(命名参数,...剩余参数名){
-}
+<pre><code>function 函数名(命名参数,...剩余参数名)&#123;
+&#125;
 </code></pre>
 </li>
 <li><p>剩余参数：不与任何命名参数相比配的其他参数</p>
 </li>
 <li><p>案例：</p>
-<pre><code>function add(sum,...args){
-    for(n of args){
+<pre><code>function add(sum,...args)&#123;
+    for(n of args)&#123;
        sum += n;
-    }
+    &#125;
 
     console.log(sum);
-}
+&#125;
 let sum = 10;
 add(sum,1,2,3,4);
 </code></pre>
@@ -404,30 +402,30 @@ add(sum,1,2,3,4);
 <h3 id="对象解构"><a href="#对象解构" class="headerlink" title="对象解构"></a>对象解构</h3><ol>
 <li><p>可以一次性的将每个属性赋予给<strong>同名</strong>变量</p>
 <pre><code>//同名
-let stu = {name:"tom",age:20};
-let {name,age} = stu;
+let stu = &#123;name:&quot;tom&quot;,age:20&#125;;
+let &#123;name,age&#125; = stu;
 console.log(name,age);
 
 //不同名
-let stu = {name:"tom",age:20};			
-let {name:stuName,age:stuAge} = stu;
+let stu = &#123;name:&quot;tom&quot;,age:20&#125;;			
+let &#123;name:stuName,age:stuAge&#125; = stu;
 console.log(stuName,stuAge);
 </code></pre>
 </li>
 </ol>
-<h3 id="数组解构"><a href="#数组解构" class="headerlink" title="数组解构"></a>数组解构</h3><pre><code>var arr = ["tom","marry","scott"];
+<h3 id="数组解构"><a href="#数组解构" class="headerlink" title="数组解构"></a>数组解构</h3><pre><code>var arr = [&quot;tom&quot;,&quot;marry&quot;,&quot;scott&quot;];
 var [a,b,c] = arr;
 console.log(a,b,c);
 </code></pre>
-<h2 id="增强版的对象字面量"><a href="#增强版的对象字面量" class="headerlink" title="增强版的对象字面量"></a>增强版的对象字面量</h2><pre><code>var name ="marry";
-var stu = {
+<h2 id="增强版的对象字面量"><a href="#增强版的对象字面量" class="headerlink" title="增强版的对象字面量"></a>增强版的对象字面量</h2><pre><code>var name =&quot;marry&quot;;
+var stu = &#123;
     name,//属性的简写形式，将同名变量的值赋予给属性
     age:20,
     //方法的简写形式
-    hi(){
-        alert("hi")
-    }
-}
+    hi()&#123;
+        alert(&quot;hi&quot;)
+    &#125;
+&#125;
 
 console.log(stu.name);
 stu.hi();
@@ -435,11 +433,11 @@ stu.hi();
 <h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><ol>
 <li><p>箭头函数：是ES6中函数表达式定义的一种简化写法</p>
 </li>
-<li><p>ES6中允许使用“箭头” (=&gt;)定义函数</p>
-<pre><code>/* var fun1 = function(a){
+<li><p>ES6中允许使用“箭头” (&#x3D;&gt;)定义函数</p>
+<pre><code>/* var fun1 = function(a)&#123;
     return a + 1;
-} */
-//var fun1 = (a)=&gt;{return a+1;}
+&#125; */
+//var fun1 = (a)=&gt;&#123;return a+1;&#125;
 var fun1 = a =&gt; a + 1
 
 var result = fun1(1);
@@ -454,21 +452,21 @@ console.log(result);
 <li><p>箭头函数在被调用的时候，不会向其传递隐式的 arguments 和 this 对象</p>
 </li>
 <li><p>箭头函数的函数体内的this对象，就是定义箭头函数时所在的对象，而不是调用时的对象</p>
-<pre><code>function test(){
-                console.log(this);//{"name":"tom"}
+<pre><code>function test()&#123;
+                console.log(this);//&#123;&quot;name&quot;:&quot;tom&quot;&#125;
                 let t;
                 
-                /* t = function (){
+                /* t = function ()&#123;
                     console.log(this);//window
-                } */
+                &#125; */
                 
-                t = ()=&gt;{
-                    console.log(this);//{"name":"tom"}
-                }
+                t = ()=&gt;&#123;
+                    console.log(this);//&#123;&quot;name&quot;:&quot;tom&quot;&#125;
+                &#125;
                 t();
-            }
+            &#125;
             
-            var stu = {"name":"tom"};
+            var stu = &#123;&quot;name&quot;:&quot;tom&quot;&#125;;
             
             stu.test = test;
             
@@ -479,11 +477,11 @@ console.log(result);
 </li>
 </ol>
 <h2 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h2><p>对象扩展运算符（…）：用于取出参数对象中的所有可遍历的属性，拷贝到当前对象中</p>
-<pre><code>var stu = {"name":"tom","age":20};
+<pre><code>var stu = &#123;&quot;name&quot;:&quot;tom&quot;,&quot;age&quot;:20&#125;;
             
-var stu2 = {...stu};
+var stu2 = &#123;...stu&#125;;
 
-stu2.name = "marry";
+stu2.name = &quot;marry&quot;;
 
 console.log(stu.name);
 console.log(stu2.name);
@@ -501,35 +499,35 @@ console.log(arr2);
 </li>
 <li><p>导入导出方式一：要求导入时使用导出时候的名称</p>
 <pre><code>//1.js
-export var name = "tom";
+export var name = &quot;tom&quot;;
 
-&lt;script type="module"&gt;
-import {name} from './js/1.js'
+&lt;script type=&quot;module&quot;&gt;
+import &#123;name&#125; from &#39;./js/1.js&#39;
 
 console.log(name)
 &lt;/script&gt;
 
 //1.js
-function test1(){
-    alert('test1')
-}
+function test1()&#123;
+    alert(&#39;test1&#39;)
+&#125;
 //导出方法
-export {test1}
+export &#123;test1&#125;
 
-&lt;script type="module"&gt;
-    import {test1} from "./js/1.js";
+&lt;script type=&quot;module&quot;&gt;
+    import &#123;test1&#125; from &quot;./js/1.js&quot;;
     test1()
 &lt;/script&gt;
 </code></pre>
 </li>
 <li><p>默认导出导入</p>
 <pre><code>//1.js
-export default {
-    name:"tom"
-}
+export default &#123;
+    name:&quot;tom&quot;
+&#125;
 
-&lt;script type="module"&gt;
-import Stu from './js/1.js'
+&lt;script type=&quot;module&quot;&gt;
+import Stu from &#39;./js/1.js&#39;
 
 console.log(Stu.name)
 &lt;/script&gt;
@@ -537,19 +535,19 @@ console.log(Stu.name)
 </li>
 <li><p>全部导入</p>
 <pre><code>//1.js
-export var name = "tom";
-export default {
-    name:"tom"
-}
-function test1(){
-    alert('test1')
-}
+export var name = &quot;tom&quot;;
+export default &#123;
+    name:&quot;tom&quot;
+&#125;
+function test1()&#123;
+    alert(&#39;test1&#39;)
+&#125;
 //导出方法
-export {test1}
+export &#123;test1&#125;
 
-&lt;script type="module"&gt;
-import Stu from './js/1.js'
-import * as app from './js/1.js'
+&lt;script type=&quot;module&quot;&gt;
+import Stu from &#39;./js/1.js&#39;
+import * as app from &#39;./js/1.js&#39;
 
 console.log(Stu.name)
 console.log(app.name)
@@ -996,7 +994,7 @@ app.test1()
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">174.8k</span>
+                        class="white-color">198.2k</span>
             
             
             

@@ -41,9 +41,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -343,14 +341,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.3k
+                    4.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    20 分
+                    22 分
                 </div>
                 
 
@@ -375,7 +373,7 @@
 <img src="/2022/051238097/image-20220613214902679.png" class title="image-20220613214902679">
 
 <p>对于传参的设计也有规范，可以像下面这样：</p>
-<p>路径参数, 例如 /users/{id}<br>查询参数, 例如 /users?role=未读代码<br>header 参数, 例如 X-MyHeader: Value<br>cookie 参数, 例如 Cookie: debug=0; csrftoken=BUSe35dohU3O1MZvDCU<br>OpenAPI 规范的东西远远不止这些，目前 OpenAPI 规范最新版本是 3.0.2，如果你想了解更多的 OpenAPI 规范，可以访问下面的链接。<br>OpenAPI Specification (<a target="_blank" rel="noopener" href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md">https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md</a>)</p>
+<p>路径参数, 例如 &#x2F;users&#x2F;{id}<br>查询参数, 例如 &#x2F;users?role&#x3D;未读代码<br>header 参数, 例如 X-MyHeader: Value<br>cookie 参数, 例如 Cookie: debug&#x3D;0; csrftoken&#x3D;BUSe35dohU3O1MZvDCU<br>OpenAPI 规范的东西远远不止这些，目前 OpenAPI 规范最新版本是 3.0.2，如果你想了解更多的 OpenAPI 规范，可以访问下面的链接。<br>OpenAPI Specification (<a target="_blank" rel="noopener" href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md">https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md</a>)</p>
 <h2 id="Swagger-介绍"><a href="#Swagger-介绍" class="headerlink" title="Swagger 介绍"></a>Swagger 介绍</h2><img src="/2022/051238097/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3MzU3MzQ=,size_16,color_FFFFFF,t_70.png" class title="img">
 
 <p>很多人都以为 Swagger 只是一个接口文档生成框架，其实并不是。 Swagger 是一个围绕着 OpenAPI Specification（OAS，中文也称 OpenAPI规范）构建的一组开源工具。可以帮助你从 API 的设计到 API 文档的输出再到 API 的测试，直至最后的 API 部署等整个 API 的开发周期提供相应的解决方案，是一个庞大的项目。 Swagger 不仅免费，而且开源，不管你是企业用户还是个人玩家，都可以使用 Swagger 提供的方案构建令人惊艳的 REST API。</p>
@@ -411,13 +409,13 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 @SpringBootConfiguration
 @EnableOpenApi
-public class Swagger3Config {    
+public class Swagger3Config &#123;    
     /**
      * ture 启用Swagger3.0， false 禁用（生产环境要禁用）
      */
     Boolean swaggerEnabled=true;
     @Bean
-    public Docket createRestApi(){
+    public Docket createRestApi()&#123;
         return new Docket(DocumentationType.OAS_30)
                 .apiInfo(apiInfo())
                 // 是否开启
@@ -427,18 +425,18 @@ public class Swagger3Config {
                 // 指定路径处理PathSelectors.any()代表所有的路径
                 .paths(PathSelectors.any())
                 .build();
-    }
+    &#125;
 
-    private ApiInfo apiInfo(){
+    private ApiInfo apiInfo()&#123;
         return new ApiInfoBuilder()
-                .title("东软人力资源管理系统接口文档")
-                .description("使用springboot实现后端内容")
+                .title(&quot;东软人力资源管理系统接口文档&quot;)
+                .description(&quot;使用springboot实现后端内容&quot;)
                 //作者信息
-                .contact(new Contact("鲍晖","http://www.neusoft.com/", "pcbhyy@163.com"))
-                .version("1.0")
+                .contact(new Contact(&quot;鲍晖&quot;,&quot;http://www.neusoft.com/&quot;, &quot;pcbhyy@163.com&quot;))
+                .version(&quot;1.0&quot;)
                 .build();
-    }
-}
+    &#125;
+&#125;
 </code></pre>
 <h3 id="注解类和方法"><a href="#注解类和方法" class="headerlink" title="注解类和方法"></a>注解类和方法</h3><pre><code>package com.neu.springbootdemo1.controller;
 
@@ -453,50 +451,50 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import java.util.List;
 
-@Api(tags = "部门管理")
+@Api(tags = &quot;部门管理&quot;)
 @RestController
-@RequestMapping("dept")
-public class DeptController {
+@RequestMapping(&quot;dept&quot;)
+public class DeptController &#123;
     @Resource
     private DeptService deptService;
 
-    @ApiOperation("查询所有部门")
-    @GetMapping("getAll")
-    public Result getAll(){
+    @ApiOperation(&quot;查询所有部门&quot;)
+    @GetMapping(&quot;getAll&quot;)
+    public Result getAll()&#123;
         return new Result(deptService.getAll());
-    }
+    &#125;
 
-    @ApiOperation("根据部门编号查询部门")
-    @GetMapping("{deptno}")
-    public Dept getById(@PathVariable("deptno") long deptno){
+    @ApiOperation(&quot;根据部门编号查询部门&quot;)
+    @GetMapping(&quot;&#123;deptno&#125;&quot;)
+    public Dept getById(@PathVariable(&quot;deptno&quot;) long deptno)&#123;
         return deptService.selectByPrimaryKey(deptno);
-    }
+    &#125;
 
-    @ApiOperation("添加部门")
+    @ApiOperation(&quot;添加部门&quot;)
     @PostMapping
-    public Result insert(@RequestBody Dept dept){
+    public Result insert(@RequestBody Dept dept)&#123;
         return new Result(deptService.insert(dept));
-    }
+    &#125;
 
-    @ApiOperation("修改部门")
+    @ApiOperation(&quot;修改部门&quot;)
     @PutMapping
-    public Result update(@RequestBody Dept dept){
+    public Result update(@RequestBody Dept dept)&#123;
         return  new Result(deptService.updateByPrimaryKey(dept));
-    }
+    &#125;
 
-    @ApiOperation("修改部门部分值")
+    @ApiOperation(&quot;修改部门部分值&quot;)
     @PatchMapping
-    public int updateByPrimaryKeySelective(@RequestBody Dept dept){
+    public int updateByPrimaryKeySelective(@RequestBody Dept dept)&#123;
         return deptService.updateByPrimaryKeySelective(dept);
-    }
+    &#125;
 
-    @ApiOperation("根据部门编号删除部门")
-    @DeleteMapping("{deptno}")
-    public Result delete(@PathVariable("deptno") long deptno){
+    @ApiOperation(&quot;根据部门编号删除部门&quot;)
+    @DeleteMapping(&quot;&#123;deptno&#125;&quot;)
+    public Result delete(@PathVariable(&quot;deptno&quot;) long deptno)&#123;
         return new Result(deptService.deleteByPrimaryKey(deptno));
-    }
+    &#125;
     
-}
+&#125;
 </code></pre>
 <h3 id="运行测试"><a href="#运行测试" class="headerlink" title="运行测试"></a>运行测试</h3><pre><code>http://localhost:8086/swagger-ui/index.html
 </code></pre>
@@ -506,10 +504,10 @@ public class DeptController {
 <li><p>新建一个maven项目</p>
 </li>
 <li><p>配置pom.xml</p>
-<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
     &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 
     &lt;groupId&gt;org.example&lt;/groupId&gt;
@@ -587,38 +585,38 @@ public class DeptController {
 </code></pre>
 </li>
 <li><p>配置 resources 目录下的 spring-mvc.xml文件</p>
-<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd"&gt;
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd&quot;&gt;
     &lt;!-- 启用mvc注解驱动 --&gt;
     &lt;mvc:annotation-driven&gt;&lt;/mvc:annotation-driven&gt;
     &lt;!-- 组件扫描 --&gt;
-    &lt;context:component-scan base-package="com.neu.controller"&gt;&lt;/context:component-scan&gt;
+    &lt;context:component-scan base-package=&quot;com.neu.controller&quot;&gt;&lt;/context:component-scan&gt;
     &lt;!-- 配置视图解析器,把逻辑视图名转换为物理视图名 --&gt;
-    &lt;bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"&gt;
-        &lt;property name="prefix" value="/WEB-INF/jsp/"&gt;&lt;/property&gt;
-        &lt;property name="suffix" value=".jsp"&gt;&lt;/property&gt;
+    &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;&gt;&lt;/property&gt;
     &lt;/bean&gt;
 
-    &lt;bean class="com.neu.SwaggerConfig" /&gt;
+    &lt;bean class=&quot;com.neu.SwaggerConfig&quot; /&gt;
 
-    &lt;mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/" /&gt;
-    &lt;mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/" /&gt;
+    &lt;mvc:resources mapping=&quot;swagger-ui.html&quot; location=&quot;classpath:/META-INF/resources/&quot; /&gt;
+    &lt;mvc:resources mapping=&quot;/webjars/**&quot; location=&quot;classpath:/META-INF/resources/webjars/&quot; /&gt;
 &lt;/beans&gt;
 
 </code></pre>
 </li>
 <li><p>配置 web.xml 文件</p>
-<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-    version="3.0"&gt;
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;web-app xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot; xmlns:web=&quot;http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot;
+    xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd&quot;
+    version=&quot;3.0&quot;&gt;
     &lt;servlet&gt;
         &lt;servlet-name&gt;DispatcherServlet&lt;/servlet-name&gt;
         &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
@@ -659,27 +657,27 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableWebMvc
 @EnableSwagger2
-public class SwaggerConfig{
+public class SwaggerConfig&#123;
     @Bean
-    public Docket api() {
+    public Docket api() &#123;
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()            .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
                 .build()
                 .apiInfo(apiInfo());
-    }
-    private ApiInfo apiInfo() {
+    &#125;
+    private ApiInfo apiInfo() &#123;
         return new ApiInfoBuilder()
-                .title("监管平台-国际版API")
-                .description("http不对外开放接口")
-                .version("1.0.0")
-                .termsOfServiceUrl("http://xxx.xxx.com")
-                .license("假装这里有license")
-                .licenseUrl("http://xxx.xxx.com")
+                .title(&quot;监管平台-国际版API&quot;)
+                .description(&quot;http不对外开放接口&quot;)
+                .version(&quot;1.0.0&quot;)
+                .termsOfServiceUrl(&quot;http://xxx.xxx.com&quot;)
+                .license(&quot;假装这里有license&quot;)
+                .licenseUrl(&quot;http://xxx.xxx.com&quot;)
                 .build();
-    }
+    &#125;
 
-}
+&#125;
 </code></pre>
 </li>
 <li><p>编写控制器（没有与接口内容对应匹配）</p>
@@ -692,16 +690,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@Api(value = "User控制器")
+@Api(value = &quot;User控制器&quot;)
 @RestController
-public class HelloController {
-    @ApiOperation(value="创建用户", notes="根据User对象创建用户")
-    @ApiImplicitParam(name = "user", value = "用户详细实体user", required = true, dataType = "User")
-    @RequestMapping(value="hi",method = {RequestMethod.GET})
-    public String hi(){
-        return "hi";
-    }
-}
+public class HelloController &#123;
+    @ApiOperation(value=&quot;创建用户&quot;, notes=&quot;根据User对象创建用户&quot;)
+    @ApiImplicitParam(name = &quot;user&quot;, value = &quot;用户详细实体user&quot;, required = true, dataType = &quot;User&quot;)
+    @RequestMapping(value=&quot;hi&quot;,method = &#123;RequestMethod.GET&#125;)
+    public String hi()&#123;
+        return &quot;hi&quot;;
+    &#125;
+&#125;
 </code></pre>
 </li>
 <li><p>测试：</p>
@@ -715,38 +713,38 @@ http://localhost:8089/doc.html
 <h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>注解	属性	备注</p>
 <h3 id="Api"><a href="#Api" class="headerlink" title="@Api"></a>@Api</h3><p>用于类上，说明该类的作用。可以标记一个Controller类做为swagger 文档资源</p>
 <p>示例：</p>
-<p>@Api(value = “xxx”, description = “xxx”)</p>
+<p>@Api(value &#x3D; “xxx”, description &#x3D; “xxx”)</p>
 <pre><code> value	url的路径值
  tags	如果设置这个值、value的值会被覆盖
  description	对api资源的描述
  basePath	基本路径可以不配置
  position	如果配置多个Api 想改变显示的顺序位置
- produces	For example, "application/json, application/xml"
- consumes	For example, "application/json, application/xml"
+ produces	For example, &quot;application/json, application/xml&quot;
+ consumes	For example, &quot;application/json, application/xml&quot;
  protocols	Possible values: http, https, ws, wss.
  authorizations	高级特性认证时配置
  hidden	配置为true 将在文档中隐藏
 </code></pre>
 <h3 id="ApiOperation"><a href="#ApiOperation" class="headerlink" title="@ApiOperation"></a>@ApiOperation</h3><p>用于方法上，说明方法的作用，每一个url资源的定义</p>
 <p>示例：</p>
-<p>@ApiOperation(value = “xxx”,httpMethod=”POST”, notes= “xxx”,response=String.class)</p>
+<p>@ApiOperation(value &#x3D; “xxx”,httpMethod&#x3D;”POST”, notes&#x3D; “xxx”,response&#x3D;String.class)</p>
 <pre><code> value	url的路径值
  tags	如果设置这个值、value的值会被覆盖
  notes	对api资源的描述
  position	如果配置多个Api 想改变显示的顺序位置
- produces	For example, "application/json, application/xml"
- consumes	For example, "application/json, application/xml"
+ produces	For example, &quot;application/json, application/xml&quot;
+ consumes	For example, &quot;application/json, application/xml&quot;
  protocols	Possible values: http, https, ws, wss.
  authorizations	高级特性认证时配置
  hidden	配置为true 将在文档中隐藏
  response	返回的对象
- responseContainer	这些对象是有效的 "List", "Set" or "Map".，其他无效
- httpMethod	"GET", "HEAD", "POST", "PUT", "DELETE", "OPTIONS" and "PATCH"
+ responseContainer	这些对象是有效的 &quot;List&quot;, &quot;Set&quot; or &quot;Map&quot;.，其他无效
+ httpMethod	&quot;GET&quot;, &quot;HEAD&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;DELETE&quot;, &quot;OPTIONS&quot; and &quot;PATCH&quot;
  code	http的状态码 默认 200
  extensions	扩展属性
 </code></pre>
 <h3 id="ApiParam"><a href="#ApiParam" class="headerlink" title="@ApiParam"></a>@ApiParam</h3><p>用于方法、参数、字段上，请求属性</p>
-<p>示例：<br>public ResponseEntity<user> createUser(@RequestBody @ApiParam(value = “Created user object”, required = true)  User user)</user></p>
+<p>示例：<br>public ResponseEntity<User> createUser(@RequestBody @ApiParam(value &#x3D; “Created user object”, required &#x3D; true)  User user)</User></p>
 <pre><code> name	属性名称
  value	属性值
  defaultValue	默认属性值
@@ -759,7 +757,7 @@ http://localhost:8089/doc.html
 </code></pre>
 <h3 id="ApiResponse"><a href="#ApiResponse" class="headerlink" title="@ApiResponse"></a>@ApiResponse</h3><p>用于方法上，响应配置</p>
 <p>示例：</p>
-<p>@ApiResponse(code = 400, message = “Invalid user supplied”)</p>
+<p>@ApiResponse(code &#x3D; 400, message &#x3D; “Invalid user supplied”)</p>
 <pre><code> code	http的状态码
  message	描述
  response	默认响应类 Void
@@ -769,19 +767,19 @@ http://localhost:8089/doc.html
 </code></pre>
 <h3 id="ApiResponses"><a href="#ApiResponses" class="headerlink" title="@ApiResponses"></a>@ApiResponses</h3><p>用于方法上，响应集配置</p>
 <p>示例：</p>
-<p> @ApiResponses({ @ApiResponse(code = 400, message = “Invalid Order”) })</p>
+<p> @ApiResponses({ @ApiResponse(code &#x3D; 400, message &#x3D; “Invalid Order”) })</p>
 <pre><code> value	多个ApiResponse配置
 </code></pre>
 <h3 id="ResponseHeader"><a href="#ResponseHeader" class="headerlink" title="@ResponseHeader"></a>@ResponseHeader</h3><p>用于方法上，响应头设置</p>
 <p>示例：</p>
-<p>@ResponseHeader(name=”head1”,description=”response head conf”)</p>
+<p>@ResponseHeader(name&#x3D;”head1”,description&#x3D;”response head conf”)</p>
 <pre><code> name	响应头名称
  description	头描述
  response	默认响应类 Void
  responseContainer	参考ApiOperation中配置
 </code></pre>
 <h3 id="ApiImplicitParams"><a href="#ApiImplicitParams" class="headerlink" title="@ApiImplicitParams"></a>@ApiImplicitParams</h3><p>用于方法上，包含一组参数说明</p>
-<h3 id="ApiImplicitParam"><a href="#ApiImplicitParam" class="headerlink" title="@ApiImplicitParam"></a>@ApiImplicitParam</h3><p>用于方法上，用在@ApiImplicitParams注解中，指定一个请求参数的各个方面<br>     paramType	参数放在哪个地方<br>            · header 参数在request headers 里边提交（@RequestHeader）<br>            · query 直接跟参数完成自动映射赋值（@RequestParam）<br>            · path 用于restful接口，以地址的形式提交数据（@PathVariable）<br>            · body 以流的形式提交 仅支持POST（@RequestBody）<br>            · form 以form表单的形式提交 仅支持POST<br>     name	参数名<br>     value	参数的汉字说明、解释<br>     dataType	参数类型，默认String，其它值dataType=”Integer”   ，无用<br>     required 	是否必要<br>     defaultValue	参数的默认值</p>
+<h3 id="ApiImplicitParam"><a href="#ApiImplicitParam" class="headerlink" title="@ApiImplicitParam"></a>@ApiImplicitParam</h3><p>用于方法上，用在@ApiImplicitParams注解中，指定一个请求参数的各个方面<br>     paramType	参数放在哪个地方<br>            · header 参数在request headers 里边提交（@RequestHeader）<br>            · query 直接跟参数完成自动映射赋值（@RequestParam）<br>            · path 用于restful接口，以地址的形式提交数据（@PathVariable）<br>            · body 以流的形式提交 仅支持POST（@RequestBody）<br>            · form 以form表单的形式提交 仅支持POST<br>     name	参数名<br>     value	参数的汉字说明、解释<br>     dataType	参数类型，默认String，其它值dataType&#x3D;”Integer”   ，无用<br>     required 	是否必要<br>     defaultValue	参数的默认值</p>
 <h3 id="ApiModel"><a href="#ApiModel" class="headerlink" title="@ApiModel"></a>@ApiModel</h3><p>用于类上，描述一个Model的信息（这种一般用在post创建的时候，使用@RequestBody这样的场景，请求参数无法使用@ApiImplicitParam注解进行描述的时候</p>
 <h3 id="ApiModelProperty"><a href="#ApiModelProperty" class="headerlink" title="@ApiModelProperty"></a>@ApiModelProperty</h3><p>用于方法、字段上，描述一个model的属性</p>
 <h3 id="ApiIgnore"><a href="#ApiIgnore" class="headerlink" title="@ApiIgnore"></a>@ApiIgnore</h3><p>用于类，属性，方法上，忽略某项api,使用@ApiIgnore</p>
@@ -797,9 +795,9 @@ http://localhost:8089/doc.html
 </code></pre>
 </li>
 <li><p>修改 spring-mvc.xml ，添加内容如下：</p>
-<pre><code>&lt;bean class="com.zzjee.swagger.SwaggerConfig" /&gt;
-&lt;mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/" /&gt;
-&lt;mvc:resources mapping="webjars/**" location="classpath:/META-INF/resources/webjars/" /&gt;
+<pre><code>&lt;bean class=&quot;com.zzjee.swagger.SwaggerConfig&quot; /&gt;
+&lt;mvc:resources mapping=&quot;swagger-ui.html&quot; location=&quot;classpath:/META-INF/resources/&quot; /&gt;
+&lt;mvc:resources mapping=&quot;webjars/**&quot; location=&quot;classpath:/META-INF/resources/webjars/&quot; /&gt;
 </code></pre>
 </li>
 <li><p>修改 spring-mvc.xml ，添加内容如下：</p>
@@ -1333,7 +1331,7 @@ http://localhost:8089/doc.html
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">174.8k</span>
+                        class="white-color">198.2k</span>
             
             
             

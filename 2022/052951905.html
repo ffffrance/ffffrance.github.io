@@ -41,9 +41,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -343,14 +341,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    10.4k
+                    10.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    54 分
+                    56 分
                 </div>
                 
 
@@ -370,10 +368,10 @@
 </li>
 <li><p>动静结合，不破坏文档结构</p>
 <pre><code>//jsp
-&lt;span&gt;${username}&lt;/span&gt;
+&lt;span&gt;$&#123;username&#125;&lt;/span&gt;
 
 //thymeleaf
-&lt;span th:text="${username}"&gt;tom&lt;/span&gt;
+&lt;span th:text=&quot;$&#123;username&#125;&quot;&gt;tom&lt;/span&gt;
 </code></pre>
 </li>
 <li><p>Thymeleaf可以运行在服务器里面，也可以本地运行，它既可以让美工在浏览器查看页面的静态效果，也可以让开发人员在服务器端看动态数据渲染之后的效果。</p>
@@ -406,24 +404,24 @@
 </ul>
 </li>
 <li><p>从上下文中取值</p>
-<pre><code>&lt;p th:text="${name}"&gt;&lt;/p&gt;
+<pre><code>&lt;p th:text=&quot;$&#123;name&#125;&quot;&gt;&lt;/p&gt;
 </code></pre>
-<pre><code>@RequestMapping("test1")
-    public String test1(Model model) {
-        model.addAttribute("title", "&lt;h1&gt;标题&lt;/h1&gt;");
+<pre><code>@RequestMapping(&quot;test1&quot;)
+    public String test1(Model model) &#123;
+        model.addAttribute(&quot;title&quot;, &quot;&lt;h1&gt;标题&lt;/h1&gt;&quot;);
         
-        return "index";
-    }
+        return &quot;index&quot;;
+    &#125;
     
 //index.html	
 &lt;!DOCTYPE html&gt;
-&lt;html lang="zh" xmlns:th="http://www.thymeleaf.org"&gt;
+&lt;html lang=&quot;zh&quot; xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;
 &lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
     &lt;title&gt;&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;p th:utext="${title}"&gt;&lt;/p&gt;
+    &lt;p th:utext=&quot;$&#123;title&#125;&quot;&gt;&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 &lt;script&gt;
@@ -436,133 +434,133 @@
 </ul>
 </li>
 <li><p>拼接字符串（文本替换）</p>
-<pre><code>&lt;p th:text="|欢迎，${name}!!!|"&gt;marry&lt;/p&gt;
+<pre><code>&lt;p th:text=&quot;|欢迎，$&#123;name&#125;!!!|&quot;&gt;marry&lt;/p&gt;
 </code></pre>
 </li>
 <li><p>选择表达式</p>
-<pre><code>&lt;div th:object="${dept}"&gt;
-           &lt;p th:text="*{deptno}"&gt;&lt;/p&gt;
-           &lt;p th:text="*{dname}"&gt;&lt;/p&gt;
-           &lt;p th:text="*{loc}"&gt;&lt;/p&gt;
+<pre><code>&lt;div th:object=&quot;$&#123;dept&#125;&quot;&gt;
+           &lt;p th:text=&quot;*&#123;deptno&#125;&quot;&gt;&lt;/p&gt;
+           &lt;p th:text=&quot;*&#123;dname&#125;&quot;&gt;&lt;/p&gt;
+           &lt;p th:text=&quot;*&#123;loc&#125;&quot;&gt;&lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
 </li>
 <li><p>if</p>
-<pre><code>&lt;p th:if="${user.isVip}" th:text="会员"&gt;&lt;/p&gt;
+<pre><code>&lt;p th:if=&quot;$&#123;user.isVip&#125;&quot; th:text=&quot;会员&quot;&gt;&lt;/p&gt;
 </code></pre>
 </li>
 <li><p>each</p>
-<pre><code>&lt;table border="1" width="400"&gt;
+<pre><code>&lt;table border=&quot;1&quot; width=&quot;400&quot;&gt;
        &lt;tbody &gt;
-           &lt;tr th:each="dept,status : ${depts}" th:object="${dept}"&gt;
-               &lt;td th:text="*{deptno}"&gt;&lt;/td&gt;
-               &lt;td th:text="*{dname}"&gt;&lt;/td&gt;
-               &lt;td th:text="*{loc}"&gt;&lt;/td&gt;
-               &lt;td th:text="${status.index}"&gt;&lt;/td&gt;
-               &lt;td th:text="${status.count}"&gt;&lt;/td&gt;
-               &lt;td th:text="${status.first}"&gt;&lt;/td&gt;
-               &lt;td th:text="${status.last}"&gt;&lt;/td&gt;
-               &lt;td th:text="${status.even}"&gt;&lt;/td&gt;
-               &lt;td th:text="${status.odd}"&gt;&lt;/td&gt;
-               &lt;td th:text="${status.size}"&gt;&lt;/td&gt;
+           &lt;tr th:each=&quot;dept,status : $&#123;depts&#125;&quot; th:object=&quot;$&#123;dept&#125;&quot;&gt;
+               &lt;td th:text=&quot;*&#123;deptno&#125;&quot;&gt;&lt;/td&gt;
+               &lt;td th:text=&quot;*&#123;dname&#125;&quot;&gt;&lt;/td&gt;
+               &lt;td th:text=&quot;*&#123;loc&#125;&quot;&gt;&lt;/td&gt;
+               &lt;td th:text=&quot;$&#123;status.index&#125;&quot;&gt;&lt;/td&gt;
+               &lt;td th:text=&quot;$&#123;status.count&#125;&quot;&gt;&lt;/td&gt;
+               &lt;td th:text=&quot;$&#123;status.first&#125;&quot;&gt;&lt;/td&gt;
+               &lt;td th:text=&quot;$&#123;status.last&#125;&quot;&gt;&lt;/td&gt;
+               &lt;td th:text=&quot;$&#123;status.even&#125;&quot;&gt;&lt;/td&gt;
+               &lt;td th:text=&quot;$&#123;status.odd&#125;&quot;&gt;&lt;/td&gt;
+               &lt;td th:text=&quot;$&#123;status.size&#125;&quot;&gt;&lt;/td&gt;
            &lt;/tr&gt;
        &lt;/tbody&gt;
    &lt;/table&gt;
 </code></pre>
 </li>
 <li><p>switch</p>
-<pre><code>&lt;p th:switch="${sex}"&gt;
-       &lt;span th:case="1"&gt;男&lt;/span&gt;
-       &lt;span th:case="2"&gt;女&lt;/span&gt;
-       &lt;span th:case="*"&gt;默认&lt;/span&gt;
+<pre><code>&lt;p th:switch=&quot;$&#123;sex&#125;&quot;&gt;
+       &lt;span th:case=&quot;1&quot;&gt;男&lt;/span&gt;
+       &lt;span th:case=&quot;2&quot;&gt;女&lt;/span&gt;
+       &lt;span th:case=&quot;*&quot;&gt;默认&lt;/span&gt;
    &lt;/p&gt;
 </code></pre>
 </li>
 <li><p>引入样式表</p>
 <p>/resources/static/css/style1.css</p>
-<pre><code>&lt;link rel="stylesheet" th:href="@{/css/style1.css}"&gt;
+<pre><code>&lt;link rel=&quot;stylesheet&quot; th:href=&quot;@&#123;/css/style1.css&#125;&quot;&gt;
 </code></pre>
 </li>
 <li><p>javascript</p>
-<pre><code>&lt;script th:inline="javascript" type="text/javascript"&gt;
-       alert([[${sex}]]);
+<pre><code>&lt;script th:inline=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt;
+       alert([[$&#123;sex&#125;]]);
 &lt;/script&gt;
 </code></pre>
 </li>
 <li><p>动态添加样式</p>
 <pre><code>&lt;style&gt;
-    .active{
+    .active&#123;
         color:blue;
-    }
+    &#125;
 &lt;/style&gt;
 
-&lt;p th:text="${sex}" th:classappend="${sex=='3'}?'active'"&gt;&lt;/p&gt;
+&lt;p th:text=&quot;$&#123;sex&#125;&quot; th:classappend=&quot;$&#123;sex==&#39;3&#39;&#125;?&#39;active&#39;&quot;&gt;&lt;/p&gt;
 </code></pre>
 </li>
 <li><p>日期格式化</p>
-<pre><code>&lt;p th:text="${#dates.format(hiredate,'yyyy-MM-dd HH:mm:ss')}"&gt;&lt;/p&gt;
+<pre><code>&lt;p th:text=&quot;$&#123;#dates.format(hiredate,&#39;yyyy-MM-dd HH:mm:ss&#39;)&#125;&quot;&gt;&lt;/p&gt;
 </code></pre>
 </li>
 <li><p>生成数值序列</p>
-<pre><code>&lt;a href="#" th:each="num : ${#numbers.sequence(1,10)}" th:text="| ${num} |"&gt;&lt;/a&gt;
+<pre><code>&lt;a href=&quot;#&quot; th:each=&quot;num : $&#123;#numbers.sequence(1,10)&#125;&quot; th:text=&quot;| $&#123;num&#125; |&quot;&gt;&lt;/a&gt;
 </code></pre>
 </li>
 <li><p>得到请求参数</p>
 <pre><code>//请求参数为数组
-&lt;p th:text="${param.username[1]}"&gt;&lt;/p&gt;
+&lt;p th:text=&quot;$&#123;param.username[1]&#125;&quot;&gt;&lt;/p&gt;
 
-&lt;p th:text="${param.size()}"&gt;&lt;/p&gt;
-&lt;p th:text="${param.isEmpty()}"&gt;&lt;/p&gt;
-&lt;p th:text="${param.containsKey('username')}"&gt;&lt;/p&gt;
+&lt;p th:text=&quot;$&#123;param.size()&#125;&quot;&gt;&lt;/p&gt;
+&lt;p th:text=&quot;$&#123;param.isEmpty()&#125;&quot;&gt;&lt;/p&gt;
+&lt;p th:text=&quot;$&#123;param.containsKey(&#39;username&#39;)&#125;&quot;&gt;&lt;/p&gt;
 </code></pre>
 </li>
 <li><p>从 HttpServletRequest 和 HttpSession中取值</p>
-<pre><code>&lt;p th:text="${#request.getAttribute('msg')}"&gt;&lt;/p&gt;
-&lt;p th:text="${#session.getAttribute('msg')}"&gt;&lt;/p&gt;
+<pre><code>&lt;p th:text=&quot;$&#123;#request.getAttribute(&#39;msg&#39;)&#125;&quot;&gt;&lt;/p&gt;
+&lt;p th:text=&quot;$&#123;#session.getAttribute(&#39;msg&#39;)&#125;&quot;&gt;&lt;/p&gt;
 </code></pre>
 </li>
 <li><p>使用外部js</p>
-<pre><code>&lt;script type="text/javascript" th:src="@{/js/script1.js}"&gt;&lt;/script&gt;
+<pre><code>&lt;script type=&quot;text/javascript&quot; th:src=&quot;@&#123;/js/script1.js&#125;&quot;&gt;&lt;/script&gt;
 </code></pre>
 </li>
 <li><p>得到应用程序上下文：contextPath</p>
-<pre><code>&lt;p th:text="${#request.contextPath}"&gt;&lt;/p&gt;
-&lt;p th:text="${#request.getContextPath()}"&gt;&lt;/p&gt;
+<pre><code>&lt;p th:text=&quot;$&#123;#request.contextPath&#125;&quot;&gt;&lt;/p&gt;
+&lt;p th:text=&quot;$&#123;#request.getContextPath()&#125;&quot;&gt;&lt;/p&gt;
 </code></pre>
 </li>
 <li><p>组件</p>
 <p><code>/resources/templates/component/coms.html</code></p>
 <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html xmlns:th="http://www.thymeleaf.org"&gt;
+&lt;html xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;
 &lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
     &lt;title&gt;&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-   &lt;div th:fragment="com1"&gt;
+   &lt;div th:fragment=&quot;com1&quot;&gt;
            div1
    &lt;/div&gt;
    
-   &lt;div id="com2"&gt;
+   &lt;div id=&quot;com2&quot;&gt;
            div2
    &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
 <p>引用组件：</p>
-<pre><code>//~{}:片段表达式
-&lt;div th:insert="~{/component/coms::com1}"&gt;&lt;/div&gt;
+<pre><code>//~&#123;&#125;:片段表达式
+&lt;div th:insert=&quot;~&#123;/component/coms::com1&#125;&quot;&gt;&lt;/div&gt;
 
-&lt;div th:replace="~{/component/coms::com1}"&gt;&lt;/div&gt;
+&lt;div th:replace=&quot;~&#123;/component/coms::com1&#125;&quot;&gt;&lt;/div&gt;
 
-&lt;div th:replace="~{/component/coms::#com2}"&gt;&lt;/div&gt;
+&lt;div th:replace=&quot;~&#123;/component/coms::#com2&#125;&quot;&gt;&lt;/div&gt;
 </code></pre>
 <p>Thymeleaf 是一款用于渲染 XML/XHTML/HTML5 内容的模板引擎。它与 JSP，Velocity，FreeMaker 等模板引擎类似，也可以轻易地与 Spring MVC 等 Web 框架集成。与其它模板引擎相比，Thymeleaf 最大的特点是，即使不启动 Web 应用，也可以直接在浏览器中打开并正确显示模板页面 。</p>
 </li>
 </ol>
 <h2 id="1-Thymeleaf-简介"><a href="#1-Thymeleaf-简介" class="headerlink" title="1. Thymeleaf 简介"></a>1. Thymeleaf 简介</h2><p>Thymeleaf 是新一代 Java 模板引擎，与 Velocity、FreeMarker 等传统 Java 模板引擎不同，Thymeleaf 支持 HTML 原型，其文件后缀为“.html”，因此它可以直接被浏览器打开，此时浏览器会忽略未定义的 Thymeleaf 标签属性，展示 thymeleaf 模板的静态页面效果；当通过 Web 应用程序访问时，Thymeleaf 会动态地替换掉静态内容，使页面动态显示。</p>
 <p>Thymeleaf 通过在 html 标签中，增加额外属性来达到“模板+数据”的展示方式，示例代码如下。</p>
-<pre><code>&lt;!DOCTYPE html&gt;&lt;html lang="en" xmlns:th="http://www.thymeleaf.org"&gt;&lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;title&gt;Title&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;!--th:text 为 Thymeleaf 属性，用于在展示文本--&gt;&lt;h1 th:text="迎您来到Thymeleaf"&gt;欢迎您访问静态页面 HTML&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;
+<pre><code>&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot; xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;title&gt;Title&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;!--th:text 为 Thymeleaf 属性，用于在展示文本--&gt;&lt;h1 th:text=&quot;迎您来到Thymeleaf&quot;&gt;欢迎您访问静态页面 HTML&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;
 </code></pre>
 <p>当直接使用浏览器打开时，浏览器展示结果如下。</p>
 <pre><code>欢迎您访问静态页面HTML
@@ -578,7 +576,7 @@
 <li>与 SpringBoot 完美整合：SpringBoot 为 Thymeleaf 提供了的默认配置，并且还为 Thymeleaf 设置了视图解析器，因此 Thymeleaf 可以与 Spring Boot 完美整合。</li>
 </ul>
 <h2 id="2-Thymeleaf-语法规则"><a href="#2-Thymeleaf-语法规则" class="headerlink" title="2. Thymeleaf 语法规则"></a>2. Thymeleaf 语法规则</h2><p>在使用 Thymeleaf 之前，首先要在页面的 html 标签中声明名称空间，示例代码如下。</p>
-<pre><code>xmlns:th="http://www.thymeleaf.org"
+<pre><code>xmlns:th=&quot;http://www.thymeleaf.org&quot;
 </code></pre>
 <blockquote>
 <p>在 html 标签中声明此名称空间，可避免编辑器出现 html 验证错误，但这一步并非必须进行的，即使我们不声明该命名空间，也不影响 Thymeleaf 的使用。</p>
@@ -604,7 +602,7 @@
 </ul>
 <p>① 获取对象的属性和方法</p>
 <p>使用变量表达式可以获取对象的属性和方法，例如，获取 person 对象的 lastName 属性，表达式形式如下：</p>
-<pre><code>${person.lastName}
+<pre><code>$&#123;person.lastName&#125;
 </code></pre>
 <p>② 使用内置的基本对象</p>
 <p>使用变量表达式还可以使用内置基本对象，获取内置对象的属性，调用内置对象的方法。 Thymeleaf 中常用的内置基本对象如下：</p>
@@ -618,7 +616,7 @@
 <li>#servletContext：ServletContext 对象（仅在 Web 应用中可用）。</li>
 </ul>
 <p>例如，我们通过以下 2 种形式，都可以获取到 session 对象中的 map 属性：</p>
-<pre><code>${#session.getAttribute('map')}${session.map}
+<pre><code>$&#123;#session.getAttribute(&#39;map&#39;)&#125;$&#123;session.map&#125;
 </code></pre>
 <p>③ 使用内置的工具对象</p>
 <p>除了能使用内置的基本对象外，变量表达式还可以使用一些内置的工具对象。</p>
@@ -632,11 +630,11 @@
 <li>dates：日期工具对象，常用的方法有：format、year、month、hour 和 createNow 等。</li>
 </ul>
 <p>例如，我们可以使用内置工具对象 strings 的 equals 方法，来判断字符串与对象的某个属性是否相等，代码如下。</p>
-<pre><code>${#strings.equals('编程帮',name)}
+<pre><code>$&#123;#strings.equals(&#39;编程帮&#39;,name)&#125;
 </code></pre>
 <h4 id="2-1-2-选择变量表达式"><a href="#2-1-2-选择变量表达式" class="headerlink" title="2.1.2 选择变量表达式"></a>2.1.2 选择变量表达式</h4><p>选择变量表达式与变量表达式功能基本一致，只是在变量表达式的基础上增加了与 th:object 的配合使用。当使用 th:object 存储一个对象后，我们可以在其后代中使用选择变量表达式（*{...}）获取该对象中的属性，其中，“*”即代表该对象。</p>
-<pre><code>&lt;div th:object="${session.user}" &gt;    
-    &lt;p th:text="*{fisrtName}"&gt;firstname&lt;/p&gt;
+<pre><code>&lt;div th:object=&quot;$&#123;session.user&#125;&quot; &gt;    
+    &lt;p th:text=&quot;*&#123;fisrtName&#125;&quot;&gt;firstname&lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
 <blockquote>
@@ -649,10 +647,10 @@
 <li>有参请求：@{/xxx(k1=v1,k2=v2)}</li>
 </ul>
 <p>例如使用链接表达式引入 css 样式表，代码如下。</p>
-<pre><code>&lt;link href="asserts/css/signin.css" th:href="@{/asserts/css/signin.css}" rel="stylesheet"&gt;
+<pre><code>&lt;link href=&quot;asserts/css/signin.css&quot; th:href=&quot;@&#123;/asserts/css/signin.css&#125;&quot; rel=&quot;stylesheet&quot;&gt;
 </code></pre>
 <h4 id="2-1-4-国际化表达式"><a href="#2-1-4-国际化表达式" class="headerlink" title="2.1.4 国际化表达式"></a>2.1.4 国际化表达式</h4><p>消息表达式一般用于国际化的场景。结构如下。</p>
-<pre><code>th:text="#{msg}"
+<pre><code>th:text=&quot;#&#123;msg&#125;&quot;
 </code></pre>
 <p>注意：此处了解即可，我们会在后面的章节中详细介绍。</p>
 <h4 id="2-1-5-片段引用表达式"><a href="#2-1-5-片段引用表达式" class="headerlink" title="2.1.5 片段引用表达式"></a>2.1.5 片段引用表达式</h4><p>片段引用表达式用于在模板页面中引用其他的模板片段，该表达式支持以下 2 中语法结构：</p>
@@ -678,87 +676,87 @@
 <tbody><tr>
 <td>th:id</td>
 <td>替换 HTML 的 id 属性</td>
-<td><code>&lt;input  id="html-id"  th:id="thymeleaf-id"  /&gt;</code></td>
+<td><code>&lt;input  id=&quot;html-id&quot;  th:id=&quot;thymeleaf-id&quot;  /&gt;</code></td>
 </tr>
 <tr>
 <td>th:text</td>
 <td>文本替换，转义特殊字符</td>
-<td><code>&lt;h1 th:text="hello，bianchengbang" &gt;hello&lt;/h1&gt;</code></td>
+<td><code>&lt;h1 th:text=&quot;hello，bianchengbang&quot; &gt;hello&lt;/h1&gt;</code></td>
 </tr>
 <tr>
 <td>th:utext</td>
 <td>文本替换，不转义特殊字符</td>
-<td><code>&lt;div th:utext="'&lt;h1&gt;欢迎来到编程帮！&lt;/h1&gt;'" &gt;欢迎你&lt;/div&gt;</code></td>
+<td><code>&lt;div th:utext=&quot;&#39;&lt;h1&gt;欢迎来到编程帮！&lt;/h1&gt;&#39;&quot; &gt;欢迎你&lt;/div&gt;</code></td>
 </tr>
 <tr>
 <td>th:object</td>
 <td>在父标签选择对象，子标签使用 *{…} 选择表达式选取值。 没有选择对象，那子标签使用选择表达式和 ${…} 变量表达式是一样的效果。 同时即使选择了对象，子标签仍然可以使用变量表达式。</td>
-<td><code>&lt;div th:object="${session.user}" &gt;    &lt;p th:text="*{fisrtName}"&gt;firstname&lt;/p&gt;&lt;/div&gt;</code></td>
+<td><code>&lt;div th:object=&quot;$&#123;session.user&#125;&quot; &gt;    &lt;p th:text=&quot;*&#123;fisrtName&#125;&quot;&gt;firstname&lt;/p&gt;&lt;/div&gt;</code></td>
 </tr>
 <tr>
 <td>th:value</td>
 <td>替换 value 属性</td>
-<td><code>&lt;input th:value = "${user.name}" /&gt;</code></td>
+<td><code>&lt;input th:value = &quot;$&#123;user.name&#125;&quot; /&gt;</code></td>
 </tr>
 <tr>
 <td>th:with</td>
 <td>局部变量赋值运算</td>
-<td><code>&lt;div th:with="isEvens = ${prodStat.count}%2 == 0"  th:text="${isEvens}"&gt;&lt;/div&gt;</code></td>
+<td><code>&lt;div th:with=&quot;isEvens = $&#123;prodStat.count&#125;%2 == 0&quot;  th:text=&quot;$&#123;isEvens&#125;&quot;&gt;&lt;/div&gt;</code></td>
 </tr>
 <tr>
 <td>th:style</td>
 <td>设置样式</td>
-<td><code>&lt;div th:style="'color:#F00; font-weight:bold'"&gt;编程帮 www.biancheng.net&lt;/div&gt;</code></td>
+<td><code>&lt;div th:style=&quot;&#39;color:#F00; font-weight:bold&#39;&quot;&gt;编程帮 www.biancheng.net&lt;/div&gt;</code></td>
 </tr>
 <tr>
 <td>th:onclick</td>
 <td>点击事件</td>
-<td><code>&lt;td th:onclick = "'getInfo()'"&gt;&lt;/td&gt;</code></td>
+<td><code>&lt;td th:onclick = &quot;&#39;getInfo()&#39;&quot;&gt;&lt;/td&gt;</code></td>
 </tr>
 <tr>
 <td>th:each</td>
 <td>遍历，支持 Iterable、Map、数组等。</td>
-<td><code>&lt;table&gt;    &lt;tr th:each="m:${session.map}"&gt;        &lt;td th:text="${m.getKey()}"&gt;&lt;/td&gt;        &lt;td th:text="${m.getValue()}"&gt;&lt;/td&gt;    &lt;/tr&gt;&lt;/table&gt;</code></td>
+<td><code>&lt;table&gt;    &lt;tr th:each=&quot;m:$&#123;session.map&#125;&quot;&gt;        &lt;td th:text=&quot;$&#123;m.getKey()&#125;&quot;&gt;&lt;/td&gt;        &lt;td th:text=&quot;$&#123;m.getValue()&#125;&quot;&gt;&lt;/td&gt;    &lt;/tr&gt;&lt;/table&gt;</code></td>
 </tr>
 <tr>
 <td>th:if</td>
 <td>根据条件判断是否需要展示此标签</td>
-<td><code>&lt;a th:if ="${userId == collect.userId}"&gt;</code></td>
+<td><code>&lt;a th:if =&quot;$&#123;userId == collect.userId&#125;&quot;&gt;</code></td>
 </tr>
 <tr>
 <td>th:unless</td>
 <td>和 th:if 判断相反，满足条件时不显示</td>
-<td><code> &lt;div th:unless="${m.getKey()=='name'}" &gt;&lt;/div&gt;</code></td>
+<td><code> &lt;div th:unless=&quot;$&#123;m.getKey()==&#39;name&#39;&#125;&quot; &gt;&lt;/div&gt;</code></td>
 </tr>
 <tr>
 <td>th:switch</td>
 <td>与 Java 的 switch case语句类似 通常与 th:case 配合使用，根据不同的条件展示不同的内容</td>
-<td><code>&lt;div th:switch="${name}"&gt;    &lt;span th:case="a"&gt;编程帮&lt;/span&gt;    &lt;span th:case="b"&gt;www.biancheng.net&lt;/span&gt;&lt;/div&gt;</code></td>
+<td><code>&lt;div th:switch=&quot;$&#123;name&#125;&quot;&gt;    &lt;span th:case=&quot;a&quot;&gt;编程帮&lt;/span&gt;    &lt;span th:case=&quot;b&quot;&gt;www.biancheng.net&lt;/span&gt;&lt;/div&gt;</code></td>
 </tr>
 <tr>
 <td>th:fragment</td>
 <td>模板布局，类似 JSP 的 tag，用来定义一段被引用或包含的模板片段</td>
-<td><code>&lt;footer th:fragment="footer"&gt;插入的内容&lt;/footer&gt;</code></td>
+<td><code>&lt;footer th:fragment=&quot;footer&quot;&gt;插入的内容&lt;/footer&gt;</code></td>
 </tr>
 <tr>
 <td>th:insert</td>
 <td>布局标签； 将使用 th:fragment 属性指定的模板片段（包含标签）插入到当前标签中。</td>
-<td><code>&lt;div th:insert="commons/bar::footer"&gt;&lt;/div&gt;</code></td>
+<td><code>&lt;div th:insert=&quot;commons/bar::footer&quot;&gt;&lt;/div&gt;</code></td>
 </tr>
 <tr>
 <td>th:replace</td>
 <td>布局标签； 使用 th:fragment 属性指定的模板片段（包含标签）替换当前整个标签。</td>
-<td><code>&lt;div th:replace="commons/bar::footer"&gt;&lt;/div&gt;</code></td>
+<td><code>&lt;div th:replace=&quot;commons/bar::footer&quot;&gt;&lt;/div&gt;</code></td>
 </tr>
 <tr>
 <td>th:selected</td>
 <td>select 选择框选中</td>
-<td><code>&lt;select&gt;    &lt;option&gt;---&lt;/option&gt;    &lt;option th:selected="${name=='a'}"&gt;        编程帮    &lt;/option&gt;    &lt;option th:selected="${name=='b'}"&gt;        www.biancheng.net    &lt;/option&gt;&lt;/select&gt;</code></td>
+<td><code>&lt;select&gt;    &lt;option&gt;---&lt;/option&gt;    &lt;option th:selected=&quot;$&#123;name==&#39;a&#39;&#125;&quot;&gt;        编程帮    &lt;/option&gt;    &lt;option th:selected=&quot;$&#123;name==&#39;b&#39;&#125;&quot;&gt;        www.biancheng.net    &lt;/option&gt;&lt;/select&gt;</code></td>
 </tr>
 <tr>
 <td>th:src</td>
 <td>替换 HTML 中的 src 属性</td>
-<td><code>&lt;img  th:src="@{/asserts/img/bootstrap-solid.svg}" src="asserts/img/bootstrap-solid.svg" /&gt;</code></td>
+<td><code>&lt;img  th:src=&quot;@&#123;/asserts/img/bootstrap-solid.svg&#125;&quot; src=&quot;asserts/img/bootstrap-solid.svg&quot; /&gt;</code></td>
 </tr>
 <tr>
 <td>th:inline</td>
@@ -2149,7 +2147,7 @@ class Springbootdemo1ApplicationTests &#123;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">174.8k</span>
+                        class="white-color">198.2k</span>
             
             
             

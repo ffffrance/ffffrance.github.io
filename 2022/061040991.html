@@ -41,9 +41,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -343,14 +341,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    18.6k
+                    32.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    75 分
+                    131 分
                 </div>
                 
 
@@ -523,11 +521,11 @@ cd /opt/test/ &amp;&amp; ls
 #在容器中的目录后添加ro，设置为只读则不能对文件进行更改动作
 rm -f 1.txt
 #结果如下
-rm: cannot remove '1.txt': Read-only file system
+rm: cannot remove &#39;1.txt&#39;: Read-only file system
 
 vi 1.txt
 #对内容进行修改之后保存的结果如下
-E45: 'readonly' option is set (add ! to override)
+E45: &#39;readonly&#39; option is set (add ! to override)
 </code></pre>
 <h2 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h2><ol>
 <li><p>运行mysql</p>
@@ -570,7 +568,7 @@ mkdir /root/mysql/log
 </code></pre>
 <p>对应的参数解释如下：</p>
 <p>-p 3306:3306<br>端口映射，将宿主机3306端口与容器3306端口做映射，这样就可以通过宿主机IP+端口访问容器的3306端口了<br>格式：-p 宿主机端口:容器端口<br>–name mysql:<br>指定容器名字为mysql，也可以不指定，不指定会给容器默认制定一个名字</p>
-<p>-v /root/mysql/datadir:/var/lib/mysql -v /root/mysql/conf:/etc/mysql/conf.d -v /root/mysql/logs:/var/log/mysql<br>数据容器卷挂载:<br>-v /root/mysql/datadir:/var/lib/mysql：对宿主机数据库目录与容器数据库目录进行映射挂载<br>-v /root/mysql/conf:/etc/mysql/conf.d：对宿主机数据库配置文件与容器数据库配置文件进行映射挂载<br>-v /root/mysql/logs:/var/log/mysql：对宿主机数据库日志与容器数据库日志进行映射挂载<br>-e MYSQL_ROOT_PASSWORD=123456<br>配置mysql的root账号的密码为123456（可以根据需要自行修改密码）<br>-d:后台执行<br>mysql:5.7.32 ：镜像id，容器第一次启动要根据镜像来启动，所以镜像id必不可少。可以通过明林docker iamges查看镜像id</p>
+<p>-v &#x2F;root&#x2F;mysql&#x2F;datadir:&#x2F;var&#x2F;lib&#x2F;mysql -v &#x2F;root&#x2F;mysql&#x2F;conf:&#x2F;etc&#x2F;mysql&#x2F;conf.d -v &#x2F;root&#x2F;mysql&#x2F;logs:&#x2F;var&#x2F;log&#x2F;mysql<br>数据容器卷挂载:<br>-v &#x2F;root&#x2F;mysql&#x2F;datadir:&#x2F;var&#x2F;lib&#x2F;mysql：对宿主机数据库目录与容器数据库目录进行映射挂载<br>-v &#x2F;root&#x2F;mysql&#x2F;conf:&#x2F;etc&#x2F;mysql&#x2F;conf.d：对宿主机数据库配置文件与容器数据库配置文件进行映射挂载<br>-v &#x2F;root&#x2F;mysql&#x2F;logs:&#x2F;var&#x2F;log&#x2F;mysql：对宿主机数据库日志与容器数据库日志进行映射挂载<br>-e MYSQL_ROOT_PASSWORD&#x3D;123456<br>配置mysql的root账号的密码为123456（可以根据需要自行修改密码）<br>-d:后台执行<br>mysql:5.7.32 ：镜像id，容器第一次启动要根据镜像来启动，所以镜像id必不可少。可以通过明林docker iamges查看镜像id</p>
 <p>最后，使用Navicat连接mysql测试，测试成功！</p>
 </li>
 </ol>
@@ -592,7 +590,7 @@ docker pull nginx:xxx	下载指定版本的Nginx镜像 (xxx指具体版本号)
 <p> 检查当前所有Docker下载的镜像</p>
 <pre><code>docker images
 </code></pre>
-<p> 3、创建Nginx配置文件<br>启动前需要先创建Nginx外部挂载的配置文件（ /home/nginx/conf/nginx.conf）<br>之所以要先创建 , 是因为Nginx本身容器只存在/etc/nginx 目录 , 本身就不创建 nginx.conf 文件<br>当服务器和容器都不存在 nginx.conf 文件时, 执行启动命令的时候 docker会将nginx.conf 作为目录创建 , 这并不是我们想要的结果 。</p>
+<p> 3、创建Nginx配置文件<br>启动前需要先创建Nginx外部挂载的配置文件（ &#x2F;home&#x2F;nginx&#x2F;conf&#x2F;nginx.conf）<br>之所以要先创建 , 是因为Nginx本身容器只存在&#x2F;etc&#x2F;nginx 目录 , 本身就不创建 nginx.conf 文件<br>当服务器和容器都不存在 nginx.conf 文件时, 执行启动命令的时候 docker会将nginx.conf 作为目录创建 , 这并不是我们想要的结果 。</p>
 <p>首先启动一个Nginx容器</p>
 <pre><code>docker run --name my-nginx -p 80:80 -d nginx
 </code></pre>
@@ -614,10 +612,10 @@ root@33aab93c60f7:/# find / -name nginx
 /etc/init.d/nginx
 /etc/logrotate.d/nginx
 /etc/nginx
-find: '/proc/1/map_files': Operation not permitted
-find: '/proc/31/map_files': Operation not permitted
-find: '/proc/32/map_files': Operation not permitted
-find: '/proc/38/map_files': Operation not permitted
+find: &#39;/proc/1/map_files&#39;: Operation not permitted
+find: &#39;/proc/31/map_files&#39;: Operation not permitted
+find: &#39;/proc/32/map_files&#39;: Operation not permitted
+find: &#39;/proc/38/map_files&#39;: Operation not permitted
 /usr/lib/nginx
 /usr/sbin/nginx
 /usr/share/doc/nginx
@@ -625,10 +623,10 @@ find: '/proc/38/map_files': Operation not permitted
 /var/cache/nginx
 /var/log/nginx
 </code></pre>
-<p>exit退出容器，在/opt下创建nginx目录用来存放html、配置和日志目录</p>
+<p>exit退出容器，在&#x2F;opt下创建nginx目录用来存放html、配置和日志目录</p>
 <pre><code>mkdir /opt/nginx
 </code></pre>
-<p>拷贝容器中nginx的配置目录到/opt/nginx，并改名为conf</p>
+<p>拷贝容器中nginx的配置目录到&#x2F;opt&#x2F;nginx，并改名为conf</p>
 <pre><code>docker cp my-nginx:/etc/nginx/conf.d /opt/nginx/conf.d
 docker cp my-nginx:/usr/share/nginx/html /opt/nginx
 docker cp my-nginx:/var/log/nginx /opt/nginx/log
@@ -670,8 +668,8 @@ docker run -p 80:80 --name nginx \
 <p>1）、挂载redis的配置文件</p>
 <p>2）、挂载redis 的持久化文件（为了数据的持久化）。</p>
 <p>本人的配置文件是放在</p>
-<p>liunx 下redis.conf文件位置： /home/redis/myredis/redis.conf</p>
-<p>liunx 下redis的data文件位置 ： /home/redis/myredis/data</p>
+<p>liunx 下redis.conf文件位置： &#x2F;home&#x2F;redis&#x2F;myredis&#x2F;redis.conf</p>
+<p>liunx 下redis的data文件位置 ： &#x2F;home&#x2F;redis&#x2F;myredis&#x2F;data</p>
 <p>位置可以自己随便选择哈</p>
 <pre><code>mkdir -p /home/redis/myredis 命令 是不存在就直接创建/home/redis/myredis 文件夹
 </code></pre>
@@ -679,7 +677,7 @@ docker run -p 80:80 --name nginx \
 <p>四、启动redis 容器</p>
 <pre><code>docker run --restart=always --log-opt max-size=100m --log-opt max-file=2 -p 6379:6379 --name myredis -v /home/redis/myredis/myredis.conf:/etc/redis/redis.conf -v /home/redis/myredis/data:/data -d redis redis-server /etc/redis/redis.conf  --appendonly yes  --requirepass 000415
 </code></pre>
-<p>–restart=always 总是开机启动<br>–log是日志方面的<br>-p 6379:6379 将6379端口挂载出去<br>–name 给这个容器取一个名字<br>-v 数据卷挂载<br>/home/redis/myredis/myredis.conf:/etc/redis/redis.conf 这里是将 liunx 路径下的myredis.conf 和redis下的redis.conf 挂载在一起。<br>/home/redis/myredis/data:/data 这个同上<br>-d redis 表示后台启动redis<br>redis-server /etc/redis/redis.conf 以配置文件启动redis，加载容器内的conf文件，最终找到的是挂载的目录 /etc/redis/redis.conf 也就是liunx下的/home/redis/myredis/myredis.conf<br>–appendonly yes 开启redis 持久化<br>–requirepass 000415 设置密码 （如果你是通过docker 容器内部连接的话，就随意，可设可不设。但是如果想向外开放的话，一定要设置，我被搞过，可以看这篇文章“阿里云服务器中毒‘Kirito666’经历”）<br>成功界面</p>
+<p>–restart&#x3D;always 总是开机启动<br>–log是日志方面的<br>-p 6379:6379 将6379端口挂载出去<br>–name 给这个容器取一个名字<br>-v 数据卷挂载<br>&#x2F;home&#x2F;redis&#x2F;myredis&#x2F;myredis.conf:&#x2F;etc&#x2F;redis&#x2F;redis.conf 这里是将 liunx 路径下的myredis.conf 和redis下的redis.conf 挂载在一起。<br>&#x2F;home&#x2F;redis&#x2F;myredis&#x2F;data:&#x2F;data 这个同上<br>-d redis 表示后台启动redis<br>redis-server &#x2F;etc&#x2F;redis&#x2F;redis.conf 以配置文件启动redis，加载容器内的conf文件，最终找到的是挂载的目录 &#x2F;etc&#x2F;redis&#x2F;redis.conf 也就是liunx下的&#x2F;home&#x2F;redis&#x2F;myredis&#x2F;myredis.conf<br>–appendonly yes 开启redis 持久化<br>–requirepass 000415 设置密码 （如果你是通过docker 容器内部连接的话，就随意，可设可不设。但是如果想向外开放的话，一定要设置，我被搞过，可以看这篇文章“阿里云服务器中毒‘Kirito666’经历”）<br>成功界面</p>
 <p>五、测试<br>1、通过docker ps指令查看启动状态</p>
 <pre><code>docker ps -a |grep myredis # 通过docker ps指令查看启动状态，是否成功.
 </code></pre>
@@ -688,7 +686,7 @@ docker run -p 80:80 --name nginx \
 <pre><code>docker logs --since 30m myredis
 </code></pre>
 <p>3、容器内部连接进行测试<br>进入容器</p>
-<p>命令：docker exec -it &lt;容器名&gt; /bin/bash</p>
+<p>命令：docker exec -it &lt;容器名&gt; &#x2F;bin&#x2F;bash</p>
 <p>此处跟着的redis-cli是直接将命令输在上面了。</p>
 <pre><code>docker exec -it myredis redis-cli
 </code></pre>
@@ -731,7 +729,7 @@ pidfile /var/run/redis_6379.pid
 
 loglevel notice
 
-logfile ""
+logfile &quot;&quot;
 
 databases 30
 
@@ -768,7 +766,7 @@ replica-lazy-flush no
 
 appendonly yes
 
-appendfilename "appendonly.aof"
+appendfilename &quot;appendonly.aof&quot;
 
 no-appendfsync-on-rewrite no
 
@@ -783,7 +781,7 @@ lua-time-limit 5000
 
 slowlog-max-len 128
 
-notify-keyspace-events ""
+notify-keyspace-events &quot;&quot;
 
 hash-max-ziplist-entries 512
 hash-max-ziplist-value 64
@@ -900,7 +898,7 @@ root@2779cb76c827:/usr/local/tomcat/webapps.dist# cp * ../webapps -r
 <p>查看容器运行的日志</p>
 <pre><code>docker logs tomcat02
 </code></pre>
-<p>也可以用docker logs -f id/name(容器的id或名字)，用这个命令之后就进去了，想出来就按CTRL+C</p>
+<p>也可以用docker logs -f id&#x2F;name(容器的id或名字)，用这个命令之后就进去了，想出来就按CTRL+C</p>
 <p>进入容器内部<br>之后就可以到容器里了，镜像是不能动的，容器是可以进去的</p>
 <pre><code>docker exec -it tomcat01 bash #-it进入交互模式最后记得加bash
 </code></pre>
@@ -946,8 +944,8 @@ index.html  jsp  servlets  WEB-INF  websocket
 <p>5、查看所有容器</p>
 <pre><code>[root@wangazure ~]# docker  ps
 CONTAINER ID   IMAGE        COMMAND             CREATED          STATUS          PORTS                                       NAMES
-1adf1a9b21a1   tomcat:8.0   "catalina.sh run"   17 minutes ago   Up 5 minutes    0.0.0.0:8082-&gt;8080/tcp, :::8082-&gt;8080/tcp   tomcat02
-643b0adcfd17   tomcat:8.0   "catalina.sh run"   23 minutes ago   Up 23 minutes   0.0.0.0:8080-&gt;8080/tcp, :::8080-&gt;8080/tcp   tomcat01
+1adf1a9b21a1   tomcat:8.0   &quot;catalina.sh run&quot;   17 minutes ago   Up 5 minutes    0.0.0.0:8082-&gt;8080/tcp, :::8082-&gt;8080/tcp   tomcat02
+643b0adcfd17   tomcat:8.0   &quot;catalina.sh run&quot;   23 minutes ago   Up 23 minutes   0.0.0.0:8080-&gt;8080/tcp, :::8080-&gt;8080/tcp   tomcat01
 [root@wangazure ~]# docker ps -aq
 1adf1a9b21a1
 643b0adcfd17
@@ -956,8 +954,8 @@ CONTAINER ID   IMAGE        COMMAND             CREATED          STATUS         
 643b0adcfd17
 [root@wangazure ~]# docker ps -a
 CONTAINER ID   IMAGE        COMMAND             CREATED          STATUS          PORTS                                       NAMES
-1adf1a9b21a1   tomcat:8.0   "catalina.sh run"   16 minutes ago   Up 4 minutes    0.0.0.0:8082-&gt;8080/tcp, :::8082-&gt;8080/tcp   tomcat02
-643b0adcfd17   tomcat:8.0   "catalina.sh run"   22 minutes ago   Up 22 minutes   0.0.0.0:8080-&gt;8080/tcp, :::8080-&gt;8080/tcp   tomcat01
+1adf1a9b21a1   tomcat:8.0   &quot;catalina.sh run&quot;   16 minutes ago   Up 4 minutes    0.0.0.0:8082-&gt;8080/tcp, :::8082-&gt;8080/tcp   tomcat02
+643b0adcfd17   tomcat:8.0   &quot;catalina.sh run&quot;   22 minutes ago   Up 22 minutes   0.0.0.0:8080-&gt;8080/tcp, :::8080-&gt;8080/tcp   tomcat01
 [root@wangazure ~]# 
 </code></pre>
 <p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44953395/article/details/122639514">https://blog.csdn.net/weixin_44953395/article/details/122639514</a></p>
@@ -969,7 +967,7 @@ RUN git clone -q https://gitee.com/null_476_2723/todo.git
 WORKDIR todo
 RUN npm install &gt; /dev/null
 EXPOSE 8000
-CMD ["npm","start"]
+CMD [&quot;npm&quot;,&quot;start&quot;]
 </code></pre>
 </li>
 <li><p>构建镜像（在dockerfile文件所在目录下执行）</p>
@@ -1064,7 +1062,7 @@ docker push pcbhyy/mytest:9
 </tr>
 </thead>
 <tbody><tr>
-<td>Docker命令/“手工”</td>
+<td>Docker命令&#x2F;“手工”</td>
 <td>使用docker run 启动一个容器，并在命令行输入命令来创建镜像。使用docker commit来创建一个新镜像</td>
 <td>详见技巧15</td>
 </tr>
@@ -1092,7 +1090,7 @@ RUN git clone -q https://gitee.com/null_476_2723/todo.git　　⇽---　克隆to
 WORKDIR todo　　⇽---　移动到新的克隆目录
 RUN npm install &gt; /dev/null　　⇽---　执行node包管理器的安装命令（npm）
 EXPOSE 8000　　⇽---　指定从所构建的镜像启动的容器需要监听这个端口
-CMD ["npm","start"]　　⇽---　指定在启动时需要执行的命令
+CMD [&quot;npm&quot;,&quot;start&quot;]　　⇽---　指定在启动时需要执行的命令
 </code></pre>
 <pre><code>FROM node
 LABEL maintainer ian.miell@gmail.com
@@ -1100,11 +1098,11 @@ RUN git clone -q https://gitee.com/null_476_2723/todo.git
 WORKDIR todo
 RUN npm install &gt; /dev/null
 EXPOSE 8000
-CMD ["npm","start"]
+CMD [&quot;npm&quot;,&quot;start&quot;]
 </code></pre>
 <p>Dockerfile的开始部分是使用FROM命令定义基础镜像。本示例使用了一个Node.js镜像以便访问Node.js程序。官方的Node.js镜像名为node。</p>
 <p>接下来，使用LABEL命令声明维护人员。在这里，我们使用的是其中一个人的电子邮件地址，读者也可以替换成自己的，因为现在它是你的Dockerfile了。这一行不是创建可工作的Docker镜像所必需的，不过将其包含进来是一个很好的做法。到这个时候，构建已经继承了node容器的状态，读者可以在它上面做操作了。<br>接下来，使用RUN命令克隆todoapp代码。这里使用指定的命令获取应用程序的代码：在容器内运行git。在这个示例中，Git是安装在基础node镜像里的，不过读者不能对这类事情做假定。</p>
-<p>现在使用WORKDIR命令移动到新克隆的目录中。这不仅会改变构建环境中的目录，最后一条WORKDIR命令还决定了从所构建镜像启动容器时用户所处的默认目录。<br>接下来，执行node包管理器的安装命令（npm）。这将为应用程序设置依赖。我们对输出的信息不感兴趣，所以将其重定向到/dev/null上。<br>由于应用程序使用了8000端口，使用EXPOSE命令告诉Docker从所构建镜像启动的容器应该监听这个端口。</p>
+<p>现在使用WORKDIR命令移动到新克隆的目录中。这不仅会改变构建环境中的目录，最后一条WORKDIR命令还决定了从所构建镜像启动容器时用户所处的默认目录。<br>接下来，执行node包管理器的安装命令（npm）。这将为应用程序设置依赖。我们对输出的信息不感兴趣，所以将其重定向到&#x2F;dev&#x2F;null上。<br>由于应用程序使用了8000端口，使用EXPOSE命令告诉Docker从所构建镜像启动的容器应该监听这个端口。</p>
 <p>最后，使用CMD命令告诉Docker在容器启动时将执行哪条命令。</p>
 <p>这个简单的示例演示了Docker及Dockerfile的几个核心功能。Dockerfile是一组严格按顺序执行的有限的命令集的简单序列。它影响了最终镜像的文件和元数据。这里的RUN命令通过签出并安装应用程序影响了文件系统，而EXPOSE、CMD和WORKDIR命令影响了镜像的元数据。</p>
 <img src="/2022/061040991/image-20210320065823742.png" class title="image-20210320065823742">
@@ -1181,14 +1179,14 @@ if [ ! -e dist/ ]; then mkdir dist; fi
 cp node_modules/react/dist/react.min.js dist/react.min.js
 
 LocalTodoApp.js:9:    // TODO: default english version
-LocalTodoApp.js:84:            fwdList = this.host.get('/TodoList#'+listId);
+LocalTodoApp.js:84:            fwdList = this.host.get(&#39;/TodoList#&#39;+listId);
  // TODO fn+id sig
 TodoApp.js:117:        // TODO scroll into view
-TodoApp.js:176:        if (i&gt;=list.length()) { i=list.length()-1; } // TODO
+TodoApp.js:176:        if (i&gt;=list.length()) &#123; i=list.length()-1; &#125; // TODO
 ➥ .length
 local.html:30:    &lt;!-- TODO 2-split, 3-split --&gt;
 model/TodoList.js:29:        // TODO one op - repeated spec? long spec?
-view/Footer.jsx:61:        // TODO: show the entry's metadata
+view/Footer.jsx:61:        // TODO: show the entry&#39;s metadata
 view/Footer.jsx:80:            todoList.addObject(new TodoItem()); // TODO
 ➥ create default
 view/Header.jsx:25:        // TODO list some meaningful header (apart from the
@@ -1208,7 +1206,7 @@ npm info ok
 
 $ docker ps -a　　⇽---　执行这个命令查看已经启动和移除的容器，以及其ID和状态（就像进程一样）
  CONTAINER ID  IMAGE    COMMAND      CREATED        STATUS PORTS NAMES
-b9db5ada0461  todoapp  "npm start"  2 minutes ago  Exited (0) 2 minutes ago
+b9db5ada0461  todoapp  &quot;npm start&quot;  2 minutes ago  Exited (0) 2 minutes ago
 ➥                example1
 
 $ docker start example1　　⇽---　重新启动容器，这次是在后台运行
@@ -1216,7 +1214,7 @@ example1
 $ docker ps
 CONTAINER ID  IMAGE    COMMAND      CREATED       STATUS
 ➥ PORTS                    NAMES
-b9db5ada0461  todoapp  "npm start"  8 minutes ago  Up 10 seconds
+b9db5ada0461  todoapp  &quot;npm start&quot;  8 minutes ago  Up 10 seconds
 ➥ 0.0.0.0:8000-&gt;8000/tcp example1　　⇽---　再次执行ps命令查看发生变化的状态
 $ docker diff example1　　⇽---　 docker diff子命令显示了自镜像被实例化成一个容器以来哪些文件受到了影响
 C /root
@@ -1293,7 +1291,7 @@ $ sudo rm -rf /var/lib/containerd
 <td>查看状态</td>
 </tr>
 <tr>
-<td>docker run centos /bin/bash</td>
+<td>docker run centos &#x2F;bin&#x2F;bash</td>
 <td>运行镜像</td>
 </tr>
 <tr>
@@ -1329,7 +1327,7 @@ $ sudo rm -rf /var/lib/containerd
 <td>进入已经启动的容器</td>
 </tr>
 <tr>
-<td>docker exec  -it centos /bin/bash</td>
+<td>docker exec  -it centos &#x2F;bin&#x2F;bash</td>
 <td>在启动的容器中执行命令</td>
 </tr>
 <tr>
@@ -1353,7 +1351,7 @@ $ sudo rm -rf /var/lib/containerd
 <td>删除未被任何容器使用的本地卷</td>
 </tr>
 <tr>
-<td>docker cp /root/my.cnf 16ff8a4cd5d9:/etc/mysql/my.cnf</td>
+<td>docker cp &#x2F;root&#x2F;my.cnf 16ff8a4cd5d9:&#x2F;etc&#x2F;mysql&#x2F;my.cnf</td>
 <td>拷贝文件到容器中</td>
 </tr>
 <tr>
@@ -1389,7 +1387,7 @@ $ sudo rm -rf /var/lib/containerd
 <p>要运行第一个博客，可使用如下命令：</p>
 <pre><code>docker run -d -p 10001:80 --name blog1 tutum/wordpress
 </code></pre>
-<p>这里的docker run命令以守护进程方式（-d）及发布标志（-p）运行容器。它指定将宿主机端口（10001）映射到容器端口（80）上，并赋予该容器一个名称用于识别它（–name blog1 tutum/wordpress）。</p>
+<p>这里的docker run命令以守护进程方式（-d）及发布标志（-p）运行容器。它指定将宿主机端口（10001）映射到容器端口（80）上，并赋予该容器一个名称用于识别它（–name blog1 tutum&#x2F;wordpress）。</p>
 <p>可以对第二个博客做相同操作：</p>
 <pre><code>docker run -d -p 10002:80 --name blog2 tutum/wordpress
 </code></pre>
@@ -1398,9 +1396,9 @@ $ sudo rm -rf /var/lib/containerd
 </code></pre>
 <p>将看到列出的两个博客容器及其端口映射，看起来像下面这样：</p>
 <pre><code>$ docker ps | grep blog
-9afb95ad3617　tutum/wordpress:latest "/run.sh" 9 seconds ago
+9afb95ad3617　tutum/wordpress:latest &quot;/run.sh&quot; 9 seconds ago
 ➥ Up 9 seconds　 3306/tcp, 0.0.0.0:10001-&gt;80/tcp blog1
-31ddc8a7a2fd　tutum/wordpress:latest　"/run.sh" 17 seconds ago
+31ddc8a7a2fd　tutum/wordpress:latest　&quot;/run.sh&quot; 17 seconds ago
 ➥ Up 16 seconds　3306/tcp, 0.0.0.0:10002-&gt;80/tcp　blog2
 </code></pre>
 <p>现在可以通过浏览<a href="http://localhost:10001和http://localhost:10002来访问自己的容器。">http://localhost:10001和http://localhost:10002来访问自己的容器。</a><br>要在完成后删除这些容器（假设不想保留它们——我们将在技巧7中利用它们），可执行下面这个命令：</p>
@@ -1414,7 +1412,7 @@ $ sudo rm -rf /var/lib/containerd
 <h3 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h3><p>在本地网络上建立一个注册中心服务器。<br>简单地在一台具有大量磁盘空间的机器上发起以下命令：</p>
 <pre><code>docker run -d -p 5000:5000 -v $HOME/registry:/var/lib/registry registry:2
 </code></pre>
-<p>这条命令让注册中心运行于Docker宿主机的5000端口上（-p 5000:5000）。使用-v标志，它可以使宿主机（/var/lib/registry）上的registry在容器中用作$HOME/registry。因此，该registry的文件将存储在/var/lib/registry目录下。<br>在所有想访问这个注册中心的机器上，将下列内容添加到守护进程选项中（HOSTNAME是新的注册中心服务器的主机名或IP地址）：–insecure-registry HOSTNAME（有关如何执行此操作的详细信息，参见附录B）。现在可以发出docker push HOSTNAME:5000/image:tag命令。</p>
+<p>这条命令让注册中心运行于Docker宿主机的5000端口上（-p 5000:5000）。使用-v标志，它可以使宿主机（&#x2F;var&#x2F;lib&#x2F;registry）上的registry在容器中用作$HOME&#x2F;registry。因此，该registry的文件将存储在&#x2F;var&#x2F;lib&#x2F;registry目录下。<br>在所有想访问这个注册中心的机器上，将下列内容添加到守护进程选项中（HOSTNAME是新的注册中心服务器的主机名或IP地址）：–insecure-registry HOSTNAME（有关如何执行此操作的详细信息，参见附录B）。现在可以发出docker push HOSTNAME:5000&#x2F;image:tag命令。</p>
 <h2 id="Docker-Hub"><a href="#Docker-Hub" class="headerlink" title="Docker Hub"></a>Docker Hub</h2><p>Docker Hub（见图2-10）是由Docker公司维护的一个注册中心。它拥有成千上万个镜像可供下载和运行。任何Docker用户都可以在上面创建免费账号，并存储公共Docker镜像。除了用户提供的镜像，上面还维护着一些作为参考的官方镜像。</p>
 <p>镜像受用户认证的保护，同时具有一个与GitHub类似的支持率打星系统。这些官方镜像的表现形式可能是Linux发行版（如Ubuntu或Cent OS）、预装软件包（如Node.js）或完整的软件栈（如WordPress）。</p>
 <h2 id="查找并运行一个Docker镜像"><a href="#查找并运行一个Docker镜像" class="headerlink" title="查找并运行一个Docker镜像"></a>查找并运行一个Docker镜像</h2><h3 id="问题-2"><a href="#问题-2" class="headerlink" title="问题"></a>问题</h3><p>想要查找一个Docker镜像形式的应用程序或工具，并进行尝试。</p>
@@ -1468,7 +1466,7 @@ $ sudo rm -rf /var/lib/containerd
 </code></pre>
 </li>
 <li><p>运行容器</p>
-<pre><code>docker run -d --name redis -p 6379:6379 redis redis-server --appendonly yes --requirepass "123456"
+<pre><code>docker run -d --name redis -p 6379:6379 redis redis-server --appendonly yes --requirepass &quot;123456&quot;
 </code></pre>
 <p>–appendonly yes ：使用 aof 模式持久化数据</p>
 <p>requirepass “123456” ：服务器连接密码</p>
@@ -1549,13 +1547,13 @@ RUN ls -lRt /opt/libeatmydata
 <p>从输出中可以看到，压缩包被Docker守护进程解压到了目标目录（所有文件的扩展输出已被省略）。Docker支持解压绝大多数标准类型的压缩文件（.gz、.bz2、.xz、.tar）。</p>
 <p>值得留意的是，尽管用户可以从指定的URL下载压缩包，但是只有当它们被存储在本地文件系统时才会被自动解压。这一点可能会导致混淆。</p>
 <p>文件名里带有空格如果指定的文件名里带有空格，用户将需要在ADD（或COPY）时带上引号的形式</p>
-<pre><code>ADD "space file.txt" "/tmp/space file.txt"
+<pre><code>ADD &quot;space file.txt&quot; &quot;/tmp/space file.txt&quot;
 </code></pre>
 <p>人们常问的一个问题是如何添加一个压缩文件，但不对其进行解压。为此，用户应该使用的是COPY命令，该命令看上去和ADD命令完全相同，但是它不会解压任何文件，也不支持通过互联网下载文件。docker –</p>
 </li>
 </ol>
-<h2 id="privileged-x3D-true-参数作用"><a href="#privileged-x3D-true-参数作用" class="headerlink" title="privileged=true 参数作用"></a>privileged=true 参数作用</h2><p>大约在0.6版，privileged被引入docker。<br>使用该参数，container内的root拥有真正的root权限。<br>否则，container内的root只是外部的一个普通用户权限。<br>privileged启动的容器，可以看到很多host上的设备，并且可以执行mount。<br>甚至允许你在docker容器中启动docker容器</p>
-<h2 id="IPv4-forwarding-is-disabled"><a href="#IPv4-forwarding-is-disabled" class="headerlink" title="IPv4 forwarding is disabled"></a>IPv4 forwarding is disabled</h2><p>装完了Docker，然后启动镜像，发现没有网络，而且不能ifconfig，因网桥配置完后，需要开启转发，不然容器启动后，就会没有网络，配置/etc/sysctl.conf,添加net.ipv4.ip_forward=1即可，操作如下：</p>
+<h2 id="privileged-x3D-true-参数作用"><a href="#privileged-x3D-true-参数作用" class="headerlink" title="privileged&#x3D;true 参数作用"></a>privileged&#x3D;true 参数作用</h2><p>大约在0.6版，privileged被引入docker。<br>使用该参数，container内的root拥有真正的root权限。<br>否则，container内的root只是外部的一个普通用户权限。<br>privileged启动的容器，可以看到很多host上的设备，并且可以执行mount。<br>甚至允许你在docker容器中启动docker容器</p>
+<h2 id="IPv4-forwarding-is-disabled"><a href="#IPv4-forwarding-is-disabled" class="headerlink" title="IPv4 forwarding is disabled"></a>IPv4 forwarding is disabled</h2><p>装完了Docker，然后启动镜像，发现没有网络，而且不能ifconfig，因网桥配置完后，需要开启转发，不然容器启动后，就会没有网络，配置&#x2F;etc&#x2F;sysctl.conf,添加net.ipv4.ip_forward&#x3D;1即可，操作如下：</p>
 <pre><code>配置转发
 vim /etc/sysctl.conf
 
@@ -1617,19 +1615,19 @@ curl baidu.com
 </code></pre>
 <h2 id="Shell教程"><a href="#Shell教程" class="headerlink" title="Shell教程"></a>Shell教程</h2><h3 id="为什么学Shell"><a href="#为什么学Shell" class="headerlink" title="为什么学Shell"></a>为什么学Shell</h3><p>链接：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/309875771/answer/579235911">https://www.zhihu.com/question/309875771/answer/579235911</a></p>
 <p>你看，每一种语言，它都封装了一些东西——除了汇编。</p>
-<p>这些封装，使得它的使用者可以更简洁的完成日常功能的同时，也不可避免的要付出一些底层控制能力/灵活性方面的代价——毕竟你只能通过它提供的、“封装”的代理，才能完成任务。</p>
-<p>其中，汇编可以控制一切；但用它时，就连if你都得自己拆开，用cmp/jnz/jz等指令的组合实现类if控制结构——在程序流程控制可以无限精确、无限复杂的同时……你不觉得每次都得根据实际情况，把if这俩字母拆成三五条甚至十几条语句，太过繁琐了吗？</p>
-<p>而C/C++呢，你近似可以控制一切，汇编能做到的，你99.99%都能做到。这就大大提高了开发效率。</p>
-<p>等到了java，你失去了对内存的大部分控制权；但当你要写一个商业/工业程序时，却前所未有的简单。</p>
+<p>这些封装，使得它的使用者可以更简洁的完成日常功能的同时，也不可避免的要付出一些底层控制能力&#x2F;灵活性方面的代价——毕竟你只能通过它提供的、“封装”的代理，才能完成任务。</p>
+<p>其中，汇编可以控制一切；但用它时，就连if你都得自己拆开，用cmp&#x2F;jnz&#x2F;jz等指令的组合实现类if控制结构——在程序流程控制可以无限精确、无限复杂的同时……你不觉得每次都得根据实际情况，把if这俩字母拆成三五条甚至十几条语句，太过繁琐了吗？</p>
+<p>而C&#x2F;C++呢，你近似可以控制一切，汇编能做到的，你99.99%都能做到。这就大大提高了开发效率。</p>
+<p>等到了java，你失去了对内存的大部分控制权；但当你要写一个商业&#x2F;工业程序时，却前所未有的简单。</p>
 <p>脚本语言，如python、php等，也都类似——它们比java更简单，但也更慢。</p>
-<p>再往上，就是<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=shell%E8%84%9A%E6%9C%AC&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:579235911%7D">shell脚本</a>了。</p>
+<p>再往上，就是<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=shell%E8%84%9A%E6%9C%AC&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:579235911%7D">shell脚本</a>了。</p>
 <p>shell脚本是一种比python更“糙”、因此性能等方面更为受限的语言；但它有个极大的优点，那就是可以把其他人写的程序本身，像其他语言的库函数那样使用。</p>
-<p>为了做到这个，它要求每个程序都把命令行参数当作“函数输入”、向stdout/stderr的输出当作函数输出，同时以<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%A8%8B%E5%BA%8F%E8%BF%94%E5%9B%9E%E5%80%BC&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:579235911%7D">程序返回值</a>说明执行成功与否。</p>
+<p>为了做到这个，它要求每个程序都把命令行参数当作“函数输入”、向stdout&#x2F;stderr的输出当作函数输出，同时以<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%A8%8B%E5%BA%8F%E8%BF%94%E5%9B%9E%E5%80%BC&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:579235911%7D">程序返回值</a>说明执行成功与否。</p>
 <p>这个约定是强制性的，在操作系统设计时就确定了的——这也是C语言的main函数需要返回一个int的原因。</p>
-<p>但是，这个“<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:579235911%7D">命令行参数</a>”的约定也束缚了shell，使得它比起其他语言更在乎空格/回车等符号——因为它的每一行，都必须是“命令 参数1 参数2”的格式。</p>
-<p>这个约定就使得它语法怪异，也很难像其他编程语言那样，支持<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E8%AF%AD%E6%B3%95%E7%BB%93%E6%9E%84&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:579235911%7D">语法结构</a>的任意嵌套——不管有多像，它毕竟是“用命令行模拟出来的语法结构”。</p>
+<p>但是，这个“<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:579235911%7D">命令行参数</a>”的约定也束缚了shell，使得它比起其他语言更在乎空格&#x2F;回车等符号——因为它的每一行，都必须是“命令 参数1 参数2”的格式。</p>
+<p>这个约定就使得它语法怪异，也很难像其他编程语言那样，支持<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E8%AF%AD%E6%B3%95%E7%BB%93%E6%9E%84&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:579235911%7D">语法结构</a>的任意嵌套——不管有多像，它毕竟是“用命令行模拟出来的语法结构”。</p>
 <p>那么，这就是shell脚本的定位：它是一种只能支持较为简单逻辑的、可以直接把任意现有程序当作函数无缝集成的“超高级语言”；但因为“命令行模拟”这个本质，它的语法较为笨拙，很难像正规的脚本语言那样得到很多很多的语法糖或者其它便利。</p>
-<p>但，同样的，其它<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:579235911%7D">脚本语言</a>语法结构是灵活了；但它们也就不可能很方便的和系统安装的现有程序交互了——注意是不方便，不是不能。你完全可以通过popen/shellexec等方法调用外部程序。</p>
+<p>但，同样的，其它<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:579235911%7D">脚本语言</a>语法结构是灵活了；但它们也就不可能很方便的和系统安装的现有程序交互了——注意是不方便，不是不能。你完全可以通过popen&#x2F;shellexec等方法调用外部程序。</p>
 <p>程序员都是一群特别特别“懒”的人。他们会根据目标的不同，选择能够最轻易达到目标的方法——这种选择同样包括编程语言。这反过来也导致了诸多不同定位的语言的出现。</p>
 <h3 id="什么是Shell"><a href="#什么是Shell" class="headerlink" title="什么是Shell"></a>什么是Shell</h3><p>Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。</p>
 <p>Shell 是指一种应用程序，这个应用程序提供了一个界面，用户通过这个界面访问操作系统内核的服务。</p>
@@ -1647,30 +1645,30 @@ curl baidu.com
 <h3 id="Shell-环境"><a href="#Shell-环境" class="headerlink" title="Shell 环境"></a>Shell 环境</h3><p>Shell 编程跟 JavaScript、php 编程一样，只要有一个能编写代码的文本编辑器和一个能解释执行的脚本解释器就可以了。</p>
 <p>Linux 的 Shell 种类众多，常见的有：</p>
 <ul>
-<li>Bourne Shell（/usr/bin/sh或/bin/sh）</li>
-<li>Bourne Again Shell（/bin/bash）</li>
-<li>C Shell（/usr/bin/csh）</li>
-<li>K Shell（/usr/bin/ksh）</li>
-<li>Shell for Root（/sbin/sh）</li>
+<li>Bourne Shell（&#x2F;usr&#x2F;bin&#x2F;sh或&#x2F;bin&#x2F;sh）</li>
+<li>Bourne Again Shell（&#x2F;bin&#x2F;bash）</li>
+<li>C Shell（&#x2F;usr&#x2F;bin&#x2F;csh）</li>
+<li>K Shell（&#x2F;usr&#x2F;bin&#x2F;ksh）</li>
+<li>Shell for Root（&#x2F;sbin&#x2F;sh）</li>
 <li>……</li>
 </ul>
 <p>本教程关注的是 Bash，也就是 Bourne Again Shell，由于易用和免费，Bash 在日常工作中被广泛使用。同时，Bash 也是大多数Linux 系统默认的 Shell。</p>
-<p>在一般情况下，人们并不区分 Bourne Shell 和 Bourne Again Shell，所以，像 <strong>#!/bin/sh</strong>，它同样也可以改为 <strong>#!/bin/bash</strong>。</p>
+<p>在一般情况下，人们并不区分 Bourne Shell 和 Bourne Again Shell，所以，像 <strong>#!&#x2F;bin&#x2F;sh</strong>，它同样也可以改为 <strong>#!&#x2F;bin&#x2F;bash</strong>。</p>
 <p><strong>#!</strong> 告诉系统其后路径所指定的程序即是解释此脚本文件的 Shell 程序。</p>
-<h3 id="第一个shell脚本"><a href="#第一个shell脚本" class="headerlink" title="第一个shell脚本"></a>第一个shell脚本</h3><p>打开文本编辑器(可以使用 vi/vim 命令来创建文件)，新建一个文件 test.sh，扩展名为 sh（sh代表shell），扩展名并不影响脚本执行，见名知意就好，如果你用 php 写 shell 脚本，扩展名就用 php 好了。</p>
+<h3 id="第一个shell脚本"><a href="#第一个shell脚本" class="headerlink" title="第一个shell脚本"></a>第一个shell脚本</h3><p>打开文本编辑器(可以使用 vi&#x2F;vim 命令来创建文件)，新建一个文件 test.sh，扩展名为 sh（sh代表shell），扩展名并不影响脚本执行，见名知意就好，如果你用 php 写 shell 脚本，扩展名就用 php 好了。</p>
 <p>输入一些代码，第一行一般是这样：</p>
 <h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><pre><code>#!/bin/bash
-echo "Hello World !"
+echo &quot;Hello World !&quot;
 </code></pre>
 <p><strong>#!</strong> 是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell。</p>
 <p>echo 命令用于向窗口输出文本。</p>
-<p>注意：#！和 /bin/bash中间不能有空格</p>
+<p>注意：#！和 &#x2F;bin&#x2F;bash中间不能有空格</p>
 <h3 id="运行-Shell-脚本有两种方法："><a href="#运行-Shell-脚本有两种方法：" class="headerlink" title="运行 Shell 脚本有两种方法："></a>运行 Shell 脚本有两种方法：</h3><p><strong>1、作为可执行程序</strong></p>
 <p>将上面的代码保存为 test.sh，并 cd 到相应目录：</p>
 <pre><code>chmod +x ./test.sh  #使脚本具有执行权限
 ./test.sh  #执行脚本
 </code></pre>
-<p>注意，一定要写成 <strong>./test.sh</strong>，而不是 <strong>test.sh</strong>，运行其它二进制的程序也一样，直接写 test.sh，linux 系统会去 PATH 里寻找有没有叫 test.sh 的，而只有 /bin, /sbin, /usr/bin，/usr/sbin 等在 PATH 里，你的当前目录通常不在 PATH 里，所以写成 test.sh 是会找不到命令的，要用 ./test.sh 告诉系统说，就在当前目录找。</p>
+<p>注意，一定要写成 <strong>.&#x2F;test.sh</strong>，而不是 <strong>test.sh</strong>，运行其它二进制的程序也一样，直接写 test.sh，linux 系统会去 PATH 里寻找有没有叫 test.sh 的，而只有 &#x2F;bin, &#x2F;sbin, &#x2F;usr&#x2F;bin，&#x2F;usr&#x2F;sbin 等在 PATH 里，你的当前目录通常不在 PATH 里，所以写成 test.sh 是会找不到命令的，要用 .&#x2F;test.sh 告诉系统说，就在当前目录找。</p>
 <p><strong>2、作为解释器参数</strong></p>
 <p>这种运行方式是，直接运行解释器，其参数就是 shell 脚本的文件名，如：</p>
 <pre><code>/bin/sh test.sh
@@ -1678,7 +1676,7 @@ echo "Hello World !"
 </code></pre>
 <p>这种方式运行的脚本，不需要在第一行指定解释器信息，写了也没用。</p>
 <h3 id="Shell-变量"><a href="#Shell-变量" class="headerlink" title="Shell 变量"></a>Shell 变量</h3><p>定义变量时，变量名不加美元符号（$，PHP语言中变量需要），如：</p>
-<pre><code>your_name="runoob.com"
+<pre><code>your_name=&quot;runoob.com&quot;
 </code></pre>
 <p>注意，变量名和等号之间不能有空格，这可能和你熟悉的所有编程语言都不一样。同时，变量名的命名须遵循如下规则：</p>
 <ul>
@@ -1702,32 +1700,32 @@ user*name=runoob
 或
 for file in $(ls /etc)
 </code></pre>
-<p>以上语句将 /etc 下目录的文件名循环出来。</p>
+<p>以上语句将 &#x2F;etc 下目录的文件名循环出来。</p>
 <h3 id="使用变量"><a href="#使用变量" class="headerlink" title="使用变量"></a>使用变量</h3><p>使用一个定义过的变量，只要在变量名前面加美元符号即可，如：</p>
-<pre><code>your_name="qinjx"
+<pre><code>your_name=&quot;qinjx&quot;
 echo $your_name
-echo ${your_name}
+echo $&#123;your_name&#125;
 </code></pre>
 <p>变量名外面的花括号是可选的，加不加都行，加花括号是为了帮助解释器识别变量的边界，比如下面这种情况：</p>
 <pre><code>for skill in Ada Coffe Action Java; do
-    echo "I am good at ${skill}Script"
+    echo &quot;I am good at $&#123;skill&#125;Script&quot;
 done
 </code></pre>
 <p>如果不给skill变量加花括号，写成echo “I am good at $skillScript”，解释器就会把$skillScript当成一个变量（其值为空），代码执行结果就不是我们期望的样子了。</p>
 <p>推荐给所有变量加上花括号，这是个好的编程习惯。</p>
 <p>已定义的变量，可以被重新定义，如：</p>
-<pre><code>your_name="tom"
+<pre><code>your_name=&quot;tom&quot;
 echo $your_name
-your_name="alibaba"
+your_name=&quot;alibaba&quot;
 echo $your_name
 </code></pre>
-<p>这样写是合法的，但注意，第二次赋值的时候不能写$your_name=”alibaba”，使用变量的时候才加美元符（$）。</p>
+<p>这样写是合法的，但注意，第二次赋值的时候不能写$your_name&#x3D;”alibaba”，使用变量的时候才加美元符（$）。</p>
 <h3 id="只读变量"><a href="#只读变量" class="headerlink" title="只读变量"></a>只读变量</h3><p>使用 readonly 命令可以将变量定义为只读变量，只读变量的值不能被改变。</p>
 <p>下面的例子尝试更改只读变量，结果报错：</p>
 <pre><code>#!/bin/bash
-myUrl="https://www.google.com"
+myUrl=&quot;https://www.google.com&quot;
 readonly myUrl
-myUrl="https://www.runoob.com"
+myUrl=&quot;https://www.runoob.com&quot;
 </code></pre>
 <p>运行脚本，结果如下：</p>
 <pre><code>/bin/sh: NAME: This variable is read only.
@@ -1738,7 +1736,7 @@ myUrl="https://www.runoob.com"
 <p>变量被删除后不能再次使用。unset 命令不能删除只读变量。</p>
 <p><strong>实例</strong></p>
 <pre><code>#!/bin/sh
-myUrl="https://www.runoob.com"
+myUrl=&quot;https://www.runoob.com&quot;
 unset myUrl
 echo $myUrl
 </code></pre>
@@ -1750,41 +1748,41 @@ echo $myUrl
 <li><strong>3) shell变量</strong> shell变量是由shell程序设置的特殊变量。shell变量中有一部分是环境变量，有一部分是局部变量，这些变量保证了shell的正常运行</li>
 </ul>
 <h3 id="Shell-字符串"><a href="#Shell-字符串" class="headerlink" title="Shell 字符串"></a>Shell 字符串</h3><p>字符串是shell编程中最常用最有用的数据类型（除了数字和字符串，也没啥其它类型好用了），字符串可以用单引号，也可以用双引号，也可以不用引号。</p>
-<h4 id="单引号"><a href="#单引号" class="headerlink" title="单引号"></a>单引号</h4><pre><code>str='this is a string'
+<h4 id="单引号"><a href="#单引号" class="headerlink" title="单引号"></a>单引号</h4><pre><code>str=&#39;this is a string&#39;
 </code></pre>
 <p>单引号字符串的限制：</p>
 <ul>
 <li>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；</li>
 <li>单引号字串中不能出现单独一个的单引号（对单引号使用转义符后也不行），但可成对出现，作为字符串拼接使用。</li>
 </ul>
-<h4 id="双引号"><a href="#双引号" class="headerlink" title="双引号"></a>双引号</h4><pre><code>your_name='runoob'
-str="Hello, I know you are \"$your_name\"! \n"
+<h4 id="双引号"><a href="#双引号" class="headerlink" title="双引号"></a>双引号</h4><pre><code>your_name=&#39;runoob&#39;
+str=&quot;Hello, I know you are \&quot;$your_name\&quot;! \n&quot;
 echo -e $str
 </code></pre>
 <p>输出结果为：</p>
-<pre><code>Hello, I know you are "runoob"! 
+<pre><code>Hello, I know you are &quot;runoob&quot;! 
 </code></pre>
 <p>双引号的优点：</p>
 <ul>
 <li>双引号里可以有变量</li>
 <li>双引号里可以出现转义字符</li>
 </ul>
-<h4 id="拼接字符串"><a href="#拼接字符串" class="headerlink" title="拼接字符串"></a>拼接字符串</h4><pre><code>your_name="runoob"
+<h4 id="拼接字符串"><a href="#拼接字符串" class="headerlink" title="拼接字符串"></a>拼接字符串</h4><pre><code>your_name=&quot;runoob&quot;
 # 使用双引号拼接
-greeting="hello, "$your_name" !"
-greeting_1="hello, ${your_name} !"
+greeting=&quot;hello, &quot;$your_name&quot; !&quot;
+greeting_1=&quot;hello, $&#123;your_name&#125; !&quot;
 echo $greeting  $greeting_1
 # 使用单引号拼接
-greeting_2='hello, '$your_name' !'
-greeting_3='hello, ${your_name} !'
+greeting_2=&#39;hello, &#39;$your_name&#39; !&#39;
+greeting_3=&#39;hello, $&#123;your_name&#125; !&#39;
 echo $greeting_2  $greeting_3
 </code></pre>
 <p>输出结果为：</p>
 <pre><code>hello, runoob ! hello, runoob !
-hello, runoob ! hello, ${your_name} !
+hello, runoob ! hello, $&#123;your_name&#125; !
 </code></pre>
-<h4 id="获取字符串长度"><a href="#获取字符串长度" class="headerlink" title="获取字符串长度"></a>获取字符串长度</h4><pre><code>string="abcd"
-echo ${#string} #输出 4
+<h4 id="获取字符串长度"><a href="#获取字符串长度" class="headerlink" title="获取字符串长度"></a>获取字符串长度</h4><pre><code>string=&quot;abcd&quot;
+echo $&#123;#string&#125; #输出 4
 ```
 
 #### 提取子字符串
@@ -1793,7 +1791,7 @@ echo ${#string} #输出 4
 
 ```
 string="runoob is a great site"
-echo ${string:1:4} # 输出 unoo
+echo $&#123;string:1:4&#125; # 输出 unoo
 ```
 
 **注意**：第一个字符的索引值为 **0**。
@@ -1857,19 +1855,19 @@ array_name[n]=valuen
 读取数组元素值的一般格式是：
 
 ```
-${数组名[下标]}
+$&#123;数组名[下标]&#125;
 ```
 
 例如：
 
 ```
-valuen=${array_name[n]}
+valuen=$&#123;array_name[n]&#125;
 ```
 
 使用 **@** 符号可以获取数组中的所有元素，例如：
 
 ```
-echo ${array_name[@]}
+echo $&#123;array_name[@]&#125;
 ```
 
 #### 获取数组的长度
@@ -1878,11 +1876,11 @@ echo ${array_name[@]}
 
 ```
 # 取得数组元素的个数
-length=${#array_name[@]}
+length=$&#123;#array_name[@]&#125;
 # 或者
-length=${#array_name[*]}
+length=$&#123;#array_name[*]&#125;
 # 取得数组单个元素的长度
-lengthn=${#array_name[n]}
+lengthn=$&#123;#array_name[n]&#125;
 ```
 
 ### Shell 注释
@@ -1916,11 +1914,11 @@ lengthn=${#array_name[n]}
 多行注释还可以使用以下格式：
 
 ```
-:&lt;<eof 0 1 2 3 4 30 200 注释内容... eof ``` 也可以使用其他符号: :<<' ' :<<! ! ### shell 传递参数 我们可以在执行 脚本时，向脚本传递参数，脚本内获取参数的格式为：**$n**。**n** 代表一个数字，1 为执行脚本的第一个参数，2 为执行脚本的第二个参数，以此类推…… #### 实例 以下实例我们向脚本传递三个参数，并分别输出，其中 **$0** 为执行的文件名（包含文件路径）： #! bin bash # author:菜鸟教程 url:www.runoob.com echo "shell 传递参数实例！"; "执行的文件名：$0"; "第一个参数为：$1"; "第二个参数为：$2"; "第三个参数为：$3"; 为脚本设置可执行权限，并执行脚本，输出结果如下所示： $ chmod +x test.sh . 传递参数实例！ 执行的文件名：. 第一个参数为：1 第二个参数为：2 第三个参数为：3 另外，还有几个特殊字符用来处理参数： | 参数处理 说明 :------- :----------------------------------------------------------- $# 传递到脚本的参数个数 $* 以一个单字符串显示所有向脚本传递的参数。 如"$*"用「"」括起来的情况、以"$1 $2 … $n"的形式输出所有参数。 $$ 脚本运行的当前进程id号 $! 后台运行的最后一个进程的id号 $@ 与$*相同，但是使用时加引号，并在引号中返回每个参数。 如"$@"用「"」括起来的情况、以"$1" "$2" "$n" 的形式输出所有参数。 $- 显示shell使用的当前选项，与[set命令](https: www.runoob.com linux linux-comm-set.html)功能相同。 $? 显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。 "参数个数为：$#"; "传递的参数作为一个字符串显示：$*"; 执行脚本，输出结果如下所示： 参数个数为：3 传递的参数作为一个字符串显示：1 与 区别： - 相同点：都是引用所有参数。 不同点：只有在双引号中体现出来。假设在脚本运行时写了三个参数 1、2、3，，则 " * 等价于 "1 3"（传递了一个参数），而 "@" "1" "2" "3"（传递了三个参数）。 "-- \$* 演示 ---" for i in "$*"; do $i done \$@ "$@"; -- --- 基本运算符 和其他编程语言一样，支持多种运算符，包括： 算数运算符 关系运算符 布尔运算符 字符串运算符 文件测试运算符 原生bash不支持简单的数学运算，但是可以通过其他命令来实现，例如 awk 和 expr，expr 最常用。 expr 是一款表达式计算工具，使用它能完成表达式的求值操作。 例如，两个数相加(**注意使用的是反引号 \**`\** 而不是单引号 \**'\****)： *#! bash* val="`expr" + 2` **echo** "两数之和为 : $val" [运行实例 »](https: try runcode.php?filename="add2data&amp;type=bash)" 两数之和为 两点注意： 表达式和运算符之间要有空格，例如 2+2 是不对的，必须写成 2，这与我们熟悉的大多数编程语言不一样。 完整的表达式要被 反引号 包含，注意这个字符不是常用的单引号，在 esc 键下边。 ------ 算术运算符 下表列出了常用的算术运算符，假定变量 a 为 10，变量 b 20： 运算符 举例 :----- :-------------------------------------------- :---------------------------- 加法 `expr $a $b` 结果为 30。 减法 -10。 乘法 \* 200。 除法 $b $a` 2。 % 取余 0。 赋值 将把变量 的值赋给 a。 相等。用于比较两个数字，相同则返回 true。 [ ] 返回 false。 不相等。用于比较两个数字，不相同则返回 **注意：**条件表达式要放在方括号之间，并且要有空格，例如: **[$a="=$b]**" 是错误的，必须写成 **[ ]**。 算术运算符实例如下： *# author:菜鸟教程* url:www.runoob.com* $b**`** "a \***** ** $a**`** "b **%** **if** **[** **]** **then** 等于 b" **fi** **!**="$b" 不等于 -10> **注意：**
-&gt;
-&gt; - 乘号(*)前边必须加反斜杠(\)才能实现乘法运算；
-&gt; - if...then...fi 是条件语句，后续将会讲解。
-&gt; - 在 MAC 中 shell 的 expr 语法是：**$((表达式))**，此处表达式中的 "*" 不需要转义符号 "\" 。
+:<<EOF 0 1 2 3 4 30 200 注释内容... eof ``` 也可以使用其他符号: :<<' ' :<<! ! ### shell 传递参数 我们可以在执行 脚本时，向脚本传递参数，脚本内获取参数的格式为：**$n**。**n** 代表一个数字，1 为执行脚本的第一个参数，2 为执行脚本的第二个参数，以此类推…… #### 实例 以下实例我们向脚本传递三个参数，并分别输出，其中 **$0** 为执行的文件名（包含文件路径）： #! bin bash # author:菜鸟教程 url:www.runoob.com echo "shell 传递参数实例！"; "执行的文件名：$0"; "第一个参数为：$1"; "第二个参数为：$2"; "第三个参数为：$3"; 为脚本设置可执行权限，并执行脚本，输出结果如下所示： $ chmod +x test.sh . 传递参数实例！ 执行的文件名：. 第一个参数为：1 第二个参数为：2 第三个参数为：3 另外，还有几个特殊字符用来处理参数： | 参数处理 说明 :------- :----------------------------------------------------------- $# 传递到脚本的参数个数 $* 以一个单字符串显示所有向脚本传递的参数。 如"$*"用「"」括起来的情况、以"$1 $2 … $n"的形式输出所有参数。 $$ 脚本运行的当前进程id号 $! 后台运行的最后一个进程的id号 $@ 与$*相同，但是使用时加引号，并在引号中返回每个参数。 如"$@"用「"」括起来的情况、以"$1" "$2" "$n" 的形式输出所有参数。 $- 显示shell使用的当前选项，与[set命令](https: www.runoob.com linux linux-comm-set.html)功能相同。 $? 显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。 "参数个数为：$#"; "传递的参数作为一个字符串显示：$*"; 执行脚本，输出结果如下所示： 参数个数为：3 传递的参数作为一个字符串显示：1 与 区别： - 相同点：都是引用所有参数。 不同点：只有在双引号中体现出来。假设在脚本运行时写了三个参数 1、2、3，，则 " * 等价于 "1 3"（传递了一个参数），而 "@" "1" "2" "3"（传递了三个参数）。 "-- \$* 演示 ---" for i in "$*"; do $i done \$@ "$@"; -- --- 基本运算符 和其他编程语言一样，支持多种运算符，包括： 算数运算符 关系运算符 布尔运算符 字符串运算符 文件测试运算符 原生bash不支持简单的数学运算，但是可以通过其他命令来实现，例如 awk 和 expr，expr 最常用。 expr 是一款表达式计算工具，使用它能完成表达式的求值操作。 例如，两个数相加(**注意使用的是反引号 \**`\** 而不是单引号 \**'\****)： *#! bash* val="`expr" + 2` **echo** "两数之和为 : $val" [运行实例 »](https: try runcode.php?filename="add2data&type=bash)" 两数之和为 两点注意： 表达式和运算符之间要有空格，例如 2+2 是不对的，必须写成 2，这与我们熟悉的大多数编程语言不一样。 完整的表达式要被 反引号 包含，注意这个字符不是常用的单引号，在 esc 键下边。 ------ 算术运算符 下表列出了常用的算术运算符，假定变量 a 为 10，变量 b 20： 运算符 举例 :----- :-------------------------------------------- :---------------------------- 加法 `expr $a $b` 结果为 30。 减法 -10。 乘法 \* 200。 除法 $b $a` 2。 % 取余 0。 赋值 将把变量 的值赋给 a。 相等。用于比较两个数字，相同则返回 true。 [ ] 返回 false。 不相等。用于比较两个数字，不相同则返回 **注意：**条件表达式要放在方括号之间，并且要有空格，例如: **[$a="=$b]**" 是错误的，必须写成 **[ ]**。 算术运算符实例如下： *# author:菜鸟教程* url:www.runoob.com* $b**`** "a \***** ** $a**`** "b **%** **if** **[** **]** **then** 等于 b" **fi** **!**="$b" 不等于 -10> **注意：**
+>
+> - 乘号(*)前边必须加反斜杠(\)才能实现乘法运算；
+> - if...then...fi 是条件语句，后续将会讲解。
+> - 在 MAC 中 shell 的 expr 语法是：**$((表达式))**，此处表达式中的 "*" 不需要转义符号 "\" 。
 
 ------
 
@@ -2067,7 +2065,7 @@ b=20
 
 | 运算符 | 说明       | 举例                                       |
 | :----- | :--------- | :----------------------------------------- |
-| &amp;&amp;     | 逻辑的 AND | [[ $a -lt 100 &amp;&amp; $b -gt 100 ]] 返回 false  |
+| &&     | 逻辑的 AND | [[ $a -lt 100 && $b -gt 100 ]] 返回 false  |
 | \|\|   | 逻辑的 OR  | [[ $a -lt 100 \|\| $b -gt 100 ]] 返回 true |
 
 #### 实例
@@ -2083,7 +2081,7 @@ b=20
 a=10
 b=20
 
-**if** **[****[** $a -lt 100 **&amp;&amp;** $b -gt 100 **]****]**
+**if** **[****[** $a -lt 100 **&&** $b -gt 100 **]****]**
 **then**
   **echo** "返回 true"
 **else**
@@ -2358,7 +2356,7 @@ OK! It is a test
 #### 6.显示结果定向至文件
 
 ```
-echo "It is a test" &gt; myfile
+echo "It is a test" > myfile
 ```
 
 #### 7.原样输出字符串，不进行转义或取变量(用单引号)
@@ -2505,12 +2503,11 @@ j
 
 #### 实例
 
-$ **printf** "a string, no processing:&lt;%s&gt;**\n**" "A**\n**B"
-a string, no processing:**&lt;**A\nB**&gt;**
+$ **printf** "a string, no processing:<%s>**\n**" "A**\n**B"
+a string, no processing:**<**A\nB**>**
 
-$ **printf** "a string, no processing:&lt;%b&gt;**\n**" "A**\n**B"
-a string, no processing:**&lt;**A
-B**&gt;**
+$ **printf** "a string, no processing:<%b>**\n**" "A**\n**B"
+a string, no processing:**<**A b**>**
 
 $ **printf** "www.runoob.com \a"
 www.runoob.com $          *#不换行*
@@ -2651,7 +2648,7 @@ num2="runoob"
 
 #### 实例
 
-<!--?php
+<?php
 if (isset($_GET["q"])) &#123;
   search(q);
 &#125;
@@ -2869,11 +2866,11 @@ int=1
 
 。
 
-while循环可用于读取键盘信息。下面的例子中，输入信息被设置为变量FILM，按<Ctrl-D-->结束循环。
+while循环可用于读取键盘信息。下面的例子中，输入信息被设置为变量FILM，按<Ctrl-D>结束循环。
 
 #### 实例
 
-**echo** '按下 <ctrl-d> 退出'
+**echo** '按下 <CTRL-D> 退出'
 **echo** -n '输入你最喜欢的网站名: '
 **while** **read** FILM
 **do**
@@ -2883,7 +2880,7 @@ while循环可用于读取键盘信息。下面的例子中，输入信息被设
 运行脚本，输出类似下面：
 
 ```
-按下 <ctrl-d> 退出
+按下 <CTRL-D> 退出
 输入你最喜欢的网站名:菜鸟教程
 是的！菜鸟教程 是一个好网站
 ```
@@ -3122,13 +3119,13 @@ shell中函数的定义格式如下：
 ```
 [ function ] funname [()]
 
-{
+&#123;
 
     action;
 
     [return int;]
 
-}
+&#125;
 ```
 
 说明：
@@ -3143,9 +3140,9 @@ shell中函数的定义格式如下：
 # author:菜鸟教程
 # url:www.runoob.com
 
-demoFun(){
+demoFun()&#123;
     echo "这是我的第一个 shell 函数!"
-}
+&#125;
 echo "-----函数开始执行-----"
 demoFun
 echo "-----函数执行完毕-----"
@@ -3166,7 +3163,7 @@ echo "-----函数执行完毕-----"
 # author:菜鸟教程
 # url:www.runoob.com
 
-funWithReturn(){
+funWithReturn()&#123;
     echo "这个函数会对输入的两个数字进行相加运算..."
     echo "输入第一个数字: "
     read aNum
@@ -3174,7 +3171,7 @@ funWithReturn(){
     read anotherNum
     echo "两个数字分别为 $aNum 和 $anotherNum !"
     return $(($aNum+$anotherNum))
-}
+&#125;
 funWithReturn
 echo "输入的两个数字之和为 $? !"
 ```
@@ -3208,15 +3205,15 @@ echo "输入的两个数字之和为 $? !"
 # author:菜鸟教程
 # url:www.runoob.com
 
-funWithParam(){
+funWithParam()&#123;
     echo "第一个参数为 $1 !"
     echo "第二个参数为 $2 !"
     echo "第十个参数为 $10 !"
-    echo "第十个参数为 ${10} !"
-    echo "第十一个参数为 ${11} !"
+    echo "第十个参数为 $&#123;10&#125; !"
+    echo "第十一个参数为 $&#123;11&#125; !"
     echo "参数总数有 $# 个!"
     echo "作为一个字符串输出所有参数 $* !"
-}
+&#125;
 funWithParam 1 2 3 4 5 6 7 8 9 34 73
 ```
 
@@ -3232,7 +3229,7 @@ funWithParam 1 2 3 4 5 6 7 8 9 34 73
 作为一个字符串输出所有参数 1 2 3 4 5 6 7 8 9 34 73 !
 ```
 
-注意，$10 不能获取第十个参数，获取第十个参数需要${10}。当n&gt;=10时，需要使用${n}来获取参数。
+注意，$10 不能获取第十个参数，获取第十个参数需要$&#123;10&#125;。当n>=10时，需要使用$&#123;n&#125;来获取参数。
 
 另外，还有几个特殊字符用来处理参数：
 
@@ -3254,16 +3251,13 @@ funWithParam 1 2 3 4 5 6 7 8 9 34 73
 
 | 命令            | 说明                                               |
 | :-------------- | :------------------------------------------------- |
-| command &gt; file  | 将输出重定向到 file。                              |
-| command &lt; file  | 将输入重定向到 file。                              |
-| command &gt;&gt; file | 将输出以追加的方式重定向到 file。                  |
-| n &gt; file        | 将文件描述符为 n 的文件重定向到 file。             |
-| n &gt;&gt; file       | 将文件描述符为 n 的文件以追加的方式重定向到 file。 |
-| n &gt;&amp; m          | 将输出文件 m 和 n 合并。                           |
-| n &lt;&amp; m          | 将输入文件 m 和 n 合并。                           |
-| &lt;&lt; tag          | 将开始标记 tag 和结束标记 tag 之间的内容作为输入。 |
-
-&gt; 需要注意的是文件描述符 0 通常是标准输入（STDIN），1 是标准输出（STDOUT），2 是标准错误输出（STDERR）。
+| command > file  | 将输出重定向到 file。                              |
+| command < file  | 将输入重定向到 file。                              |
+| command >> file | 将输出以追加的方式重定向到 file。                  |
+| n > file        | 将文件描述符为 n 的文件重定向到 file。             |
+| n >> file       | 将文件描述符为 n 的文件以追加的方式重定向到 file。 |
+| n >& m          | 将输出文件 m 和 n 合并。                           |
+| n <& m | 将输入文件 和 n 合并。 << tag 将开始标记 和结束标记 之间的内容作为输入。> 需要注意的是文件描述符 0 通常是标准输入（STDIN），1 是标准输出（STDOUT），2 是标准错误输出（STDERR）。
 
 ------
 
@@ -3272,19 +3266,19 @@ funWithParam 1 2 3 4 5 6 7 8 9 34 73
 重定向一般通过在命令间插入特定的符号来实现。特别的，这些符号的语法如下所示:
 
 ```
-command1 &gt; file1
+command1 > file1
 ```
 
 上面这个命令执行command1然后将输出的内容存入file1。
 
-注意任何file1内的已经存在的内容将被新内容替代。如果要将新内容添加在文件末尾，请使用&gt;&gt;操作符。
+注意任何file1内的已经存在的内容将被新内容替代。如果要将新内容添加在文件末尾，请使用>>操作符。
 
 #### 实例
 
 执行下面的 who 命令，它将命令的完整的输出重定向在用户文件中(users):
 
 ```
-$ who &gt; users
+$ who > users
 ```
 
 执行后，并没有在终端输出信息，这是因为输出已被从默认的标准输出设备（终端）重定向到指定的文件。
@@ -3301,16 +3295,16 @@ tianqixin    ttys000  Dec  1 11:33
 输出重定向会覆盖文件内容，请看下面的例子：
 
 ```
-$ echo "菜鸟教程：www.runoob.com" &gt; users
+$ echo "菜鸟教程：www.runoob.com" > users
 $ cat users
 菜鸟教程：www.runoob.com
 $
 ```
 
-如果不希望文件内容被覆盖，可以使用 &gt;&gt; 追加到文件末尾，例如：
+如果不希望文件内容被覆盖，可以使用 >> 追加到文件末尾，例如：
 
 ```
-$ echo "菜鸟教程：www.runoob.com" &gt;&gt; users
+$ echo "菜鸟教程：www.runoob.com" >> users
 $ cat users
 菜鸟教程：www.runoob.com
 菜鸟教程：www.runoob.com
@@ -3324,33 +3318,12 @@ $
 和输出重定向一样，Unix 命令也可以从文件获取输入，语法为：
 
 ```
-command1 &lt; file1
+command1 < file1
 ```
 
 这样，本来需要从键盘获取输入的命令会转移到文件读取内容。
 
-注意：输出重定向是大于号(&gt;)，输入重定向是小于号(&lt;)。
-
-#### 实例
-
-接着以上实例，我们需要统计 users 文件的行数,执行以下命令：
-
-```
-$ wc -l users
-       2 users
-```
-
-也可以将输入重定向到 users 文件：
-
-```
-$  wc -l &lt; users
-       2 
-```
-
-注意：上面两个例子的结果不同：第一个例子，会输出文件名；第二个不会，因为它仅仅知道从标准输入读取内容。
-
-```
-command1 &lt; infile &gt; outfile
+注意：输出重定向是大于号(>)，输入重定向是小于号(<)。 2 #### 实例 接着以上实例，我们需要统计 users 文件的行数,执行以下命令： ``` $ wc -l 也可以将输入重定向到 文件： < 注意：上面两个例子的结果不同：第一个例子，会输出文件名；第二个不会，因为它仅仅知道从标准输入读取内容。 command1 infile> outfile
 ```
 
 同时替换输入和输出，执行command1，从文件infile读取内容，然后将输出写入到outfile中。
@@ -3363,18 +3336,18 @@ command1 &lt; infile &gt; outfile
 - 标准输出文件(stdout)：stdout 的文件描述符为1，Unix程序默认向stdout输出数据。
 - 标准错误文件(stderr)：stderr的文件描述符为2，Unix程序会向stderr流中写入错误信息。
 
-默认情况下，command &gt; file 将 stdout 重定向到 file，command &lt; file 将stdin 重定向到 file。
+默认情况下，command > file 将 stdout 重定向到 file，command < file 将stdin 重定向到 file。
 
 如果希望 stderr 重定向到 file，可以这样写：
 
 ```
-$ command 2&gt;file
+$ command 2>file
 ```
 
 如果希望 stderr 追加到 file 文件末尾，可以这样写：
 
 ```
-$ command 2&gt;&gt;file
+$ command 2>>file
 ```
 
 **2** 表示标准错误文件(stderr)。
@@ -3382,17 +3355,17 @@ $ command 2&gt;&gt;file
 如果希望将 stdout 和 stderr 合并后重定向到 file，可以这样写：
 
 ```
-$ command &gt; file 2&gt;&amp;1
+$ command > file 2>&1
 
 或者
 
-$ command &gt;&gt; file 2&gt;&amp;1
+$ command >> file 2>&1
 ```
 
 如果希望对 stdin 和 stdout 都重定向，可以这样写：
 
 ```
-$ command &lt; file1 &gt;file2
+$ command < file1 >file2
 ```
 
 command 命令将 stdin 重定向到 file1，将 stdout 重定向到 file2。
@@ -3406,24 +3379,24 @@ Here Document 是 Shell 中的一种特殊的重定向方式，用来将输入�
 它的基本的形式如下：
 
 ```
-command &lt;&lt; delimiter
+command << delimiter
     document
 delimiter
 ```
 
 它的作用是将两个 delimiter 之间的内容(document) 作为输入传递给 command。
 
-&gt; 注意：
-&gt;
-&gt; - 结尾的delimiter 一定要顶格写，前面不能有任何字符，后面也不能有任何字符，包括空格和 tab 缩进。
-&gt; - 开始的delimiter前后的空格会被忽略掉。
+> 注意：
+>
+> - 结尾的delimiter 一定要顶格写，前面不能有任何字符，后面也不能有任何字符，包括空格和 tab 缩进。
+> - 开始的delimiter前后的空格会被忽略掉。
 
 #### 实例
 
 在命令行中通过 **wc -l** 命令计算 Here Document 的行数：
 
 ```
-$ wc -l &lt;&lt; EOF
+$ wc -l << EOF
     欢迎来到
     菜鸟教程
     www.runoob.com
@@ -3439,7 +3412,7 @@ $
 # author:菜鸟教程
 # url:www.runoob.com
 
-cat &lt;&lt; EOF
+cat << EOF
 欢迎来到
 菜鸟教程
 www.runoob.com
@@ -3461,7 +3434,7 @@ www.runoob.com
 如果希望执行某个命令，但又不希望在屏幕上显示输出结果，那么可以将输出重定向到 /dev/null：
 
 ```
-$ command &gt; /dev/null
+$ command > /dev/null
 ```
 
 /dev/null 是一个特殊的文件，写入到它的内容都会被丢弃；如果尝试从该文件读取内容，那么什么也读不到。但是 /dev/null 文件非常有用，将命令的输出重定向到它，会起到"禁止输出"的效果。
@@ -3469,12 +3442,12 @@ $ command &gt; /dev/null
 如果希望屏蔽 stdout 和 stderr，可以这样写：
 
 ```
-$ command &gt; /dev/null 2&gt;&amp;1
+$ command > /dev/null 2>&1
 ```
 
-&gt; **注意：**0 是标准输入（STDIN），1 是标准输出（STDOUT），2 是标准错误输出（STDERR）。
-&gt;
-&gt; 这里的 **2** 和 **&gt;** 之间不可以有空格，**2&gt;** 是一体的时候才表示错误输出。
+> **注意：**0 是标准输入（STDIN），1 是标准输出（STDOUT），2 是标准错误输出（STDERR）。
+>
+> 这里的 **2** 和 **>** 之间不可以有空格，**2>** 是一体的时候才表示错误输出。
 
 ### Shell 文件包含
 
@@ -3528,27 +3501,27 @@ $ ./test2.sh
 菜鸟教程官网地址：http://www.runoob.com
 ```
 
-&gt; **注：**被包含的文件 test1.sh 不需要可执行权限。
+> **注：**被包含的文件 test1.sh 不需要可执行权限。
 
 ### 在Idea中编辑shell脚本
 
-{% asset_img image-20211224111619055.png image-20211224111619055 %}
+&#123;% asset_img image-20211224111619055.png image-20211224111619055 %&#125;
 
-{% asset_img image-20211224111715173.png image-20211224111715173 %}
+&#123;% asset_img image-20211224111715173.png image-20211224111715173 %&#125;
 
-{% asset_img image-20211224111744060.png image-20211224111744060 %}
+&#123;% asset_img image-20211224111744060.png image-20211224111744060 %&#125;
 
-{% asset_img image-20211224111916874.png image-20211224111916874 %}
+&#123;% asset_img image-20211224111916874.png image-20211224111916874 %&#125;
 
-{% asset_img image-20211224112414039.png image-20211224112414039 %}
+&#123;% asset_img image-20211224112414039.png image-20211224112414039 %&#125;
 
-{% asset_img image-20211224112123123.png image-20211224112123123 %}
+&#123;% asset_img image-20211224112123123.png image-20211224112123123 %&#125;
 
-{% asset_img image-20211224112159463.png image-20211224112159463 %}
+&#123;% asset_img image-20211224112159463.png image-20211224112159463 %&#125;
 
-{% asset_img image-20211224112526807.png image-20211224112526807 %}
+&#123;% asset_img image-20211224112526807.png image-20211224112526807 %&#125;
 
-{% asset_img image-20211224112648343.png image-20211224112648343 %}
+&#123;% asset_img image-20211224112648343.png image-20211224112648343 %&#125;
 
 
 
@@ -3562,128 +3535,7 @@ $ ./test2.sh
    #!/bin/bash
    i=1
    s=0
-   while (($i &lt;= 10))
-   do
-   if (($i % 2 == 0))
-   then
-   s=$(( $s + $i ))
-   fi
-   i=$(( $i + 1 ))
-   done
-   echo "The sum is:$s"
-   ```
-
-let命令可以直接执行基本的算术操作。当使用let时，变量名之前不需要再添加$，例如：
-
-```
-let result=no1+no2
-
-echo $result
-
-result=$［no1 + no2］
-在［］中也可以使用$前缀，例如：
-result=$［$no1 + 5］
-也可以使用(())，但使用(())时，变量名之前需要加上$：
-result=$(( no1 + 50 ))
-expr同样可以用于基本算术操作：
-result=`expr 3 + 4`
-result=$(expr $no1 + 5)
-以上这些方法只能用于整数运算，而不支持浮点数。
-```
-
-```
-bc是一个用于数学运算的高级工具，这个精密计算器包含了大量的选项。我们可以借助它执行浮点数运算并应用一些高级函数：
-echo "4 * 0.56" | bc
-2.24
-no=54
-result=`echo "$no * 1.5" | bc`
-echo $result
-81.0
-```
-
-
-
-## Docker卷——持久化的问题
-
-容器的大部分力量源自它们能够尽可能多地封装运行时环境里的文件系统状态，这一点的确很有用处。
-然而，有时候用户并不想把文件放到容器里。用户可能想要在容器之间共享或者单独管理一些大文件。一个经典的例子便是想要在容器里访问一个大型的集中式数据库，但是又希望其他的（也许是更传统的）客户端也能和新容器一样访问它。
-解决方案便是卷，一种Docker用来管理容器生命周期之外的文件的机制。尽管这有悖于容器“可以在任意地方部署”的原则（例如，用户将无法在不兼容数据库挂载的地方部署有数据库依赖的容器），但是在实际的Docker使用中这仍然是一个很有用的功能。
-
-### 问题
-
-想要在容器里访问宿主机上的文件。
-
-### 解决方案
-
-使用Docker的volume标志，在容器里访问宿主机上的文件。图5-3演示了使用volume标志和宿主机上的文件系统交互的例子。
-下面的命令展示了如何将宿主机上的/var/db/tables目录挂载到容器里的/var/data1目录，该命令在图5-3里启动容器时被执行：
-
-```
-$ docker run -v /var/db/tables:/var/data1 -it debian bash
-```
-
-{% asset_img image-20210326051559896.png image-20210326051559896 %}
-
-图5-3　容器里的一个数据卷-v标志（--volume的简写）表示容器指定的一个外部卷。随后的参数以冒号分隔两个目录的形式给出了卷的挂载配置，告知Docker将外部的/var/db/tables目录映射到容器里的/var/data1目录。外部目录和容器目录两者任一不存在的话均会被创建。
-对已经存在的目录建立映射时要小心。即便镜像里已经存在需要映射的目录，该目录依旧会映射到宿主机上的对应目录。这意味着容器里映射目录的原本内容将会消失。如果用户试图映射一个关键目录，将会发生一些有趣的事情！例如，试试挂载一个空目录到/bin。
-另外要注意的一点是，Dockerfile里的卷被设定为不是持久化的。如果用户添加了一个卷，然后在一个Dockerfile里对该目录做了一些更改，那么这些变化将不会被持久化到最终生成的镜像里。
-
- 最后还有一点，用户将会看到不少技巧里用到了-v /var/run/docker.sock:/var/run/docker.sock，技巧45就是其中的一个。这样做会把特殊的Unix套接字文件公开到容器里，并且展示出此项技巧的一个重要功能——用户不必局限于所谓的“常规”文件，还可以应用更多不常见的文件系统层面的用例。但是，如果用户遇到设备节点的权限问题（举个例子），可能需要参考技巧93，了解一下--privileged标志的作用。
-
-## Docker 部署 springboot项目
-
-### 1.创建springboot项目
-
-![img](https:////upload-images.jianshu.io/upload_images/15536448-022dcb5d56f43d70.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
-
-创建springboot项目
-
-
-
-```css
-package com.eangulee.demo.controller;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-@Controller
-public class HelloController {
-    @RequestMapping("/")
-    @ResponseBody
-    public String hello() {
-        return "Hello, SpringBoot With Docker";
-    }
-}
-```
-
-
-
-### 2.打包springboot项目为jar包
-
-
-
-![img](https:////upload-images.jianshu.io/upload_images/15536448-30b7e78666cc0094.png?imageMogr2/auto-orient/strip|imageView2/2/w/1099/format/webp)
-
-打包命令：
-
-clean package
-
-
-
-### 3. 编写Dockerfile文件
-
-
-
-```ruby
-# Docker image for springboot file run
-# VERSION 0.0.1
-# Author: eangulee
-# 基础镜像使用java
-FROM java:8
-# 作者
-MAINTAINER eangulee <eangulee@gmail.com>
+   while (($i <= 1 2="=" 3 50 1099 1200 10)) do if (($i % 0)) then s="$((" $s + $i )) fi i="$((" done echo "the sum is:$s" ``` let命令可以直接执行基本的算术操作。当使用let时，变量名之前不需要再添加$，例如： let result="no1+no2" $result no2］ 在［］中也可以使用$前缀，例如： 5］ 也可以使用(())，但使用(())时，变量名之前需要加上$： no1 expr同样可以用于基本算术操作： 4` $no1 5) 以上这些方法只能用于整数运算，而不支持浮点数。 bc是一个用于数学运算的高级工具，这个精密计算器包含了大量的选项。我们可以借助它执行浮点数运算并应用一些高级函数： "4 * 0.56" | bc 2.24 no="54" "$no 1.5" bc` 81.0 ## docker卷——持久化的问题 容器的大部分力量源自它们能够尽可能多地封装运行时环境里的文件系统状态，这一点的确很有用处。 然而，有时候用户并不想把文件放到容器里。用户可能想要在容器之间共享或者单独管理一些大文件。一个经典的例子便是想要在容器里访问一个大型的集中式数据库，但是又希望其他的（也许是更传统的）客户端也能和新容器一样访问它。 解决方案便是卷，一种docker用来管理容器生命周期之外的文件的机制。尽管这有悖于容器“可以在任意地方部署”的原则（例如，用户将无法在不兼容数据库挂载的地方部署有数据库依赖的容器），但是在实际的docker使用中这仍然是一个很有用的功能。 ### 问题 想要在容器里访问宿主机上的文件。 解决方案 使用docker的volume标志，在容器里访问宿主机上的文件。图5-3演示了使用volume标志和宿主机上的文件系统交互的例子。 下面的命令展示了如何将宿主机上的 var db tables目录挂载到容器里的 data1目录，该命令在图5-3里启动容器时被执行： $ docker run -v tables: data1 -it debian bash &#123;% asset_img image-20210326051559896.png image-20210326051559896 %&#125; 图5-3　容器里的一个数据卷-v标志（--volume的简写）表示容器指定的一个外部卷。随后的参数以冒号分隔两个目录的形式给出了卷的挂载配置，告知docker将外部的 tables目录映射到容器里的 data1目录。外部目录和容器目录两者任一不存在的话均会被创建。 对已经存在的目录建立映射时要小心。即便镜像里已经存在需要映射的目录，该目录依旧会映射到宿主机上的对应目录。这意味着容器里映射目录的原本内容将会消失。如果用户试图映射一个关键目录，将会发生一些有趣的事情！例如，试试挂载一个空目录到 bin。 另外要注意的一点是，dockerfile里的卷被设定为不是持久化的。如果用户添加了一个卷，然后在一个dockerfile里对该目录做了一些更改，那么这些变化将不会被持久化到最终生成的镜像里。 最后还有一点，用户将会看到不少技巧里用到了-v docker.sock: docker.sock，技巧45就是其中的一个。这样做会把特殊的unix套接字文件公开到容器里，并且展示出此项技巧的一个重要功能——用户不必局限于所谓的“常规”文件，还可以应用更多不常见的文件系统层面的用例。但是，如果用户遇到设备节点的权限问题（举个例子），可能需要参考技巧93，了解一下--privileged标志的作用。 部署 springboot项目 1.创建springboot项目 ![img](https: upload-images.jianshu.io upload_images 15536448-022dcb5d56f43d70.png?imagemogr2 auto-orient strip|imageview2 w format webp) 创建springboot项目 ```css package com.eangulee.demo.controller; import org.springframework.stereotype.controller; org.springframework.web.bind.annotation.getmapping; org.springframework.web.bind.annotation.requestmapping; org.springframework.web.bind.annotation.responsebody; @controller public class hellocontroller &#123; @requestmapping(" ") @responsebody string hello() return "hello, springboot with docker"; &#125; 2.打包springboot项目为jar包 15536448-30b7e78666cc0094.png?imagemogr2 打包命令： clean 3. 编写dockerfile文件 ```ruby # image for file version 0.0.1 author: eangulee 基础镜像使用java from java:8 作者 maintainer <eangulee@gmail.com>
 # VOLUME 指定了临时文件目录为/tmp。
 # 其效果是在主机 /var/lib/docker 目录下创建了一个临时文件，并链接到容器的/tmp
 VOLUME /tmp 
@@ -3848,11 +3700,11 @@ docker run    --net=host  --name=news  -d -p 8081:8081 news
 
 3. 访问镜像加速器
 
-   {% asset_img image-20210410061812531.png image-20210410061812531 %}
+   &#123;% asset_img image-20210410061812531.png image-20210410061812531 %&#125;
 
 4. 粘贴加速器地址到 docker desktop 的设置中
 
-   {% asset_img image-20210410061910390.png image-20210410061910390 %}
+   &#123;% asset_img image-20210410061910390.png image-20210410061910390 %&#125;
 
 5. 保存并重启
 
@@ -3919,7 +3771,7 @@ dhclient //获取IP
 
 **netstat -lnpt**
 
-{% asset_img 1336432-20190302110949754-1765820036.png img %}
+&#123;% asset_img 1336432-20190302110949754-1765820036.png img %&#125;
 
 *PS:centos7默认没有 netstat 命令，需要安装 net-tools 工具，yum install -y net-tools*
 
@@ -3931,7 +3783,7 @@ dhclient //获取IP
 
 **netstat -lnpt |grep 5672**
 
-{% asset_img 1336432-20190302104128381-1210567174.png img %}
+&#123;% asset_img 1336432-20190302104128381-1210567174.png img %&#125;
 
  
 
@@ -3939,7 +3791,7 @@ dhclient //获取IP
 
 **ps 6832**
 
-{% asset_img 1336432-20190302104342651-779103690.png img %}
+&#123;% asset_img 1336432-20190302104342651-779103690.png img %&#125;
 
  
 
@@ -4014,7 +3866,7 @@ http://192.168.1.190:8080/
 ```
  curl 192.168.1.190:5000/v2/_catalog
  
- {"repositories":["centos/mysql-57-centos7","nginx","redis","tomcat"]}
+ &#123;"repositories":["centos/mysql-57-centos7","nginx","redis","tomcat"]&#125;
 ```
 
 ## 查看镜像版本号
@@ -4026,10 +3878,10 @@ http://192.168.1.190:8080/
 ## 添加/etc/docker/daemon.json文件
 
 ```
-{
+&#123;
        "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"],
        "insecure-registries":["192.168.1.190:5000"]
-}
+&#125;
 ```
 
 ## 重启docker服务
@@ -4072,7 +3924,7 @@ mv ./*.repo ./backup/
 
 REPO_URL=http://192.168.1.190:5001/repository/dhee-group-yum/
 
-cat &gt; /etc/yum.repos.d/nexus.repo &lt;&lt; EOF
+cat > /etc/yum.repos.d/nexus.repo << EOF
 [base]
 name=Nexus
 baseurl=$REPO_URL\$releasever/os/\$basearch/
@@ -4162,7 +4014,7 @@ yum update
 
 redis最新版下载地址：https://redis.io/download
 
-{% asset_img image-20211223110812306.png image-20211223110812306 %}
+&#123;% asset_img image-20211223110812306.png image-20211223110812306 %&#125;
 
 **[root@localhost local]# tar -zxvf redis-5.0.3.tar.gz**
 
@@ -4204,13 +4056,13 @@ redis最新版下载地址：https://redis.io/download
 
 **[root@localhost bin]# vi redis.conf**
 
-{% asset_img 1336432-20190302212509880-1874470634.png img %}
+&#123;% asset_img 1336432-20190302212509880-1874470634.png img %&#125;
 
 后台启动
 
 **[root@localhost bin]# ./redis-server redis.conf**
 
-{% asset_img 1336432-20190302212804992-1094141996.png img %}
+&#123;% asset_img 1336432-20190302212804992-1094141996.png img %&#125;
 
  
 
@@ -4222,7 +4074,7 @@ redis最新版下载地址：https://redis.io/download
 
 复制粘贴以下内容：
 
-[{% asset_img copycode.gif)](javascript:void(0); 复制代码 %}
+[&#123;% asset_img copycode.gif)](javascript:void(0); 复制代码 %&#125;
 
 [Unit]
 Description=redis-server
@@ -4236,7 +4088,7 @@ PrivateTmp=true
 [Install]
 WantedBy=multi-user.target
 
-[{% asset_img copycode.gif)](javascript:void(0); 复制代码 %}
+[&#123;% asset_img copycode.gif)](javascript:void(0); 复制代码 %&#125;
 
 注意：ExecStart配置成自己的路径 
 
@@ -4258,7 +4110,7 @@ WantedBy=multi-user.target
 
 测试 redis
 
-{% asset_img 1336432-20190302221347104-518199130.png img %}
+&#123;% asset_img 1336432-20190302221347104-518199130.png img %&#125;
 
  
 
@@ -4335,7 +4187,7 @@ rpm包缺少依赖
    --http-scgi-temp-path=/var/temp/nginx/scgi
    ```
 
-   &gt; 注：将临时文件目录指定为/var/temp/nginx，需要在/var下创建temp及nginx目录
+   > 注：将临时文件目录指定为/var/temp/nginx，需要在/var下创建temp及nginx目录
 
 4. 编译安装
 
@@ -4373,8 +4225,8 @@ nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
  
 ```
 
-&gt; `./nginx -s quit`:此方式停止步骤是待nginx进程处理任务完毕进行停止。
-&gt; `./nginx -s stop`:此方式相当于先查出nginx进程id再使用kill命令强制杀掉进程。
+> `./nginx -s quit`:此方式停止步骤是待nginx进程处理任务完毕进行停止。
+> `./nginx -s stop`:此方式相当于先查出nginx进程id再使用kill命令强制杀掉进程。
 
 查询nginx进程：
 
@@ -4398,7 +4250,7 @@ ps aux|grep nginx
 
 启动成功后，在浏览器可以看到这样的页面：
 
-{% asset_img 160905180451093.png nginx-welcome.png %}
+&#123;% asset_img 160905180451093.png nginx-welcome.png %&#125;
 
 # 华信安装jdk8
 
@@ -4457,7 +4309,7 @@ Tomcat安装
 	1)修改Nginx的配置文件：（注意修改内容，如下，注意结束大括号的位置）
 		/usr/local/nginx/conf/nginx.conf，在最下面copy一个server，修改其端口号：
 		
-		server {
+		server &#123;
 			listen       81;
 			server_name  localhost;
 
@@ -4465,11 +4317,11 @@ Tomcat安装
 
 			#access_log  logs/host.access.log  main;
 
-			location / {
+			location / &#123;
 				root   html-81;
 				index  index.html index.htm;
-			}
-		}
+			&#125;
+		&#125;
 		保存
 	2）复制html文件夹，命名为html-81
 		[root@CentOs nginx]# cp -r html html-81
@@ -4516,7 +4368,7 @@ Tomcat安装
 	5）在浏览器中测试，分别输入上面设置的域名，如：www.test2.com,看能不能访问nginx网站
 9.nginx域名配置
 	1）修改nginx的配置文件：/usr/local/nginx/conf/nginx.conf，改为：		
-		server {
+		server &#123;
 			listen       80;
 			server_name  www.test.com;
 
@@ -4524,13 +4376,13 @@ Tomcat安装
 
 			#access_log  logs/host.access.log  main;
 
-			location / {
+			location / &#123;
 				root   html-test;
 				index  index.html index.htm;
-			}
-		}
+			&#125;
+		&#125;
 
-		server {
+		server &#123;
 			listen       80;
 			server_name  www.test2.com;
 
@@ -4538,11 +4390,11 @@ Tomcat安装
 
 			#access_log  logs/host.access.log  main;
 
-			location / {
+			location / &#123;
 				root   html-test2;
 				index  index.html index.htm;
-			}
-		}
+			&#125;
+		&#125;
 		目的：一个ip地址，可以为多个域名提供80端口的服务映射
 	2）在linux上复制出html-test和html-test2目录：
 		[root@CentOs nginx]# cp -r html html-test
@@ -4551,8 +4403,8 @@ Tomcat安装
 		nginx-test! 和 nginx-test2!
 	2）刷新nginx服务器：[root@CentOs sbin]# ./nginx -s reload
 	3）在浏览器中测试：
-		http://www.test.com =&gt;nginx-test!
-		http://www.test2.com =&gt;nginx-test2!
+		http://www.test.com =>nginx-test!
+		http://www.test2.com =>nginx-test2!
 10.nginx反向代理
 	反向代理服务器决定哪台服务器提供服务。
 	反向代理服务器不提供服务，就是请求的转发。
@@ -4581,14 +4433,14 @@ Tomcat安装
 	4）复制一份，命名为：cp apache-tomcat-7.0.57 tomcat-sina -r
 	5）复制一份，命名为：cp apache-tomcat-7.0.57 tomcat-sohu -r
 	6）编辑sohu tomcat端口号：vim tomcat-sohu/conf/server.xml（使用/port查找）
-		i）<server port="8005" shutdown="SHUTDOWN">
-			改为：<server port="8006" shutdown="SHUTDOWN">
-		ii）<connector port="8080" protocol="HTTP/1.1" connectiontimeout="20000" redirectport="8443">
+		i）<Server port="8005" shutdown="SHUTDOWN">
+			改为：<Server port="8006" shutdown="SHUTDOWN">
+		ii）<Connector port="8080" protocol="HTTP/1.1" connectiontimeout="20000" redirectport="8443">
 			改为：
-			<connector port="8081" protocol="HTTP/1.1" connectiontimeout="20000" redirectport="8443">
-		iii）<connector port="8009" protocol="AJP/1.3" redirectport="8443">
+			<Connector port="8081" protocol="HTTP/1.1" connectiontimeout="20000" redirectport="8443">
+		iii）<Connector port="8009" protocol="AJP/1.3" redirectport="8443">
 			改为：
-			<connector port="8010" protocol="AJP/1.3" redirectport="8443">
+			<Connector port="8010" protocol="AJP/1.3" redirectport="8443">
 			
 		以Tomcat7.0为例, 在安装目录下. conf/server.xml 中可以配置三个端口号, 如果使用多个tomcat 是需要配置这三个.
 		该Connector 用于监听请求.
@@ -4596,11 +4448,11 @@ Tomcat安装
 			   AJP/1.3   协议 ， 用于监听其他服务器转发过来的请求.
 		connectionTimeout: 连接超时时间
 		redirectPort: 如果发送的是https 请求. 就将请求转发到8443 端口.
-		 <connector port="8080" protocol="HTTP/1.1" connectiontimeout="20000" redirectport="8443">
+		 <Connector port="8080" protocol="HTTP/1.1" connectiontimeout="20000" redirectport="8443">
 		使用8009 接受其他服务器转发过来的请求.
-			<connector port="8009" protocol="AJP/1.3" redirectport="8443">
+			<Connector port="8009" protocol="AJP/1.3" redirectport="8443">
 		tomcat 监听的关闭端口.
-		<server port="8005" shutdown="SHUTDOWN">
+		<Server port="8005" shutdown="SHUTDOWN">
 	7）分别启动两个tomcat：
 			tomcat-sina/bin/startup.sh
 			tomcat-sohu/bin/startup.sh
@@ -4610,19 +4462,19 @@ Tomcat安装
 	9）修改tomcat中欢迎页内容，表示区别
 		i）vim tomcat-sina/webapps/ROOT/index.jsp
 		ii）使用命令:/h1，定位到h1标签，修改内容为：
-			<h1>${pageContext.servletContext.serverInfo}-sina</h1>
+			<h1>$&#123;pageContext.servletContext.serverInfo&#125;-sina</h1>
 		iii）vim tomcat-sohu/webapps/ROOT/index.jsp
 		iv）使用命令:/h1，定位到h1标签，修改内容为：
-			<h1>${pageContext.servletContext.serverInfo}-sohu</h1>
+			<h1>$&#123;pageContext.servletContext.serverInfo&#125;-sohu</h1>
 	10）在浏览器中重新测试：
 			http://192.168.146.128:8080/
 			http://192.168.146.128:8081/
 	11）修改nginx的配置文件：/usr/local/nginx/conf/nginx.conf，添加如下内容：
-		upstream sina{
+		upstream sina&#123;
 		server 192.168.146.128:8080;
-		}
+		&#125;
 
-		server {
+		server &#123;
 			listen       80;
 			server_name  www.sina.com.cn;
 
@@ -4630,17 +4482,17 @@ Tomcat安装
 
 			#access_log  logs/host.access.log  main;
 
-			location / {
+			location / &#123;
 				proxy_pass   http://sina;
 				index  index.html index.htm;
-			}
-		}
+			&#125;
+		&#125;
 
-		upstream sohu{
+		upstream sohu&#123;
 		server 192.168.146.128:8081;
-		}
+		&#125;
 
-		server {
+		server &#123;
 			listen       80;
 			server_name  www.sohu.com;
 
@@ -4648,57 +4500,57 @@ Tomcat安装
 
 			#access_log  logs/host.access.log  main;
 
-			location / {
+			location / &#123;
 				proxy_pass   http://sohu;
 				index  index.html index.htm;
-			}
-		}	
+			&#125;
+		&#125;	
 	12）刷新nginx服务器：[root@CentOs sbin]# ./nginx -s reload
 	13）在浏览器中测试：
 			http://www.sina.com.cn
 			http://www.sohu.com
 12)nginx负载均衡
 	如果一个服务由多个服务器提供，需要把负载分配到不同的服务器处理，需要负载均衡。
-	 upstream sina {
+	 upstream sina &#123;
 		server 192.168.25.148:8081;
 		server 192.168.25.148:8082;
-	  }
+	  &#125;
 	1）复制一份tomcat，命名为：cp apache-tomcat-7.0.57 tomcat-sina2 -r
 	2）编辑sohu tomcat端口号：vim tomcat-sina2/conf/server.xml（使用/port查找）
-		i）<server port="8005" shutdown="SHUTDOWN">
-			改为：<server port="8007" shutdown="SHUTDOWN">
-		ii）<connector port="8080" protocol="HTTP/1.1" connectiontimeout="20000" redirectport="8443">
+		i）<Server port="8005" shutdown="SHUTDOWN">
+			改为：<Server port="8007" shutdown="SHUTDOWN">
+		ii）<Connector port="8080" protocol="HTTP/1.1" connectiontimeout="20000" redirectport="8443">
 			改为：
-			<connector port="8082" protocol="HTTP/1.1" connectiontimeout="20000" redirectport="8443">
-		iii）<connector port="8009" protocol="AJP/1.3" redirectport="8443">
+			<Connector port="8082" protocol="HTTP/1.1" connectiontimeout="20000" redirectport="8443">
+		iii）<Connector port="8009" protocol="AJP/1.3" redirectport="8443">
 			改为：
-			<connector port="8011" protocol="AJP/1.3" redirectport="8443">
+			<Connector port="8011" protocol="AJP/1.3" redirectport="8443">
 	3）启动tomcat：
 			tomcat-sina2/bin/startup.sh
 	4）修改tomcat中欢迎页内容，表示区别
 		i）vim tomcat-sina2/webapps/ROOT/index.jsp
 		ii）使用命令:/h1，定位到h1标签，修改内容为：
-			<h1>${pageContext.servletContext.serverInfo}-sina2</h1>
+			<h1>$&#123;pageContext.servletContext.serverInfo&#125;-sina2</h1>
 	5）在浏览器中重新测试：
 			http://192.168.146.128:8082/
 	6）修改
-		upstream sina{
+		upstream sina&#123;
 			server 192.168.146.128:8080;
-		}
+		&#125;
 		改为：
-		upstream sina{
+		upstream sina&#123;
 			server 192.168.146.128:8080;
 			server 192.168.146.128:8082;
-		}
+		&#125;
 	7）刷新nginx服务器：[root@CentOs sbin]# ./nginx -s reload
 	8）在浏览器中测试：（反复刷新，看是否在两台服务器间负载均衡，别再eclipse中的浏览器测试，最好使用谷歌浏览器）
 			http://www.sina.com.cn
 	9）可以根据服务器的实际情况调整服务器权重。权重越高分配的请求越多，权重越低，请求越少。默认是都是1
 		i）修改权重
-			upstream sina{
+			upstream sina&#123;
 				server 192.168.146.128:8080;
 				server 192.168.146.128:8082 weight=2;
-			}
+			&#125;
 		ii）刷新nginx服务器：[root@CentOs sbin]# ./nginx -s reload
 		iii）在浏览器中测试：（反复刷新，看是否在两台服务器间负载均衡，别再eclipse中的浏览器测试，最好使用谷歌浏览器）
 			http://www.sina.com.cn
@@ -4719,7 +4571,7 @@ Tomcat安装
  docker run -v /var/db/tables:/var/data1 -it debian bash
 ```
 
-{% asset_img image-20211227133001386.png image-20211227133001386 %}
+&#123;% asset_img image-20211227133001386.png image-20211227133001386 %&#125;
 
 -v标志（--volume的简写）表示容器指定的一个外部卷。随后的参数以冒号分隔两个目录的形式给出了卷的挂载配置，告知Docker将外部的/var/db/tables目录映射到容器里的/var/data1目录。外部目录和容器目录两者任一不存在的话均会被创建。
 
@@ -4750,9 +4602,9 @@ docker exec -it 容器id
 语法：
 
 ```
-FROM <img>
-FROM <img>:<tag>
-FROM <img>:<digest> 
+FROM <image>
+FROM <image>:<tag>
+FROM <image>:<digest> 
 ```
 
 三种写法，其中<tag>和<digest> 是可选项，如果没有选择，那么默认值为latest
@@ -4839,7 +4691,7 @@ RUN书写时的换行符是\
 
  
 
-RUN &amp; CMD
+RUN & CMD
 
 不要把RUN和CMD搞混了。
 
@@ -5061,7 +4913,7 @@ Docker官方使用一张表格来展示了ENTRYPOINT 和CMD不同组合的执行
 
 （下方表格来自docker官网）
 
-{% asset_img 0.jpeg img %}
+&#123;% asset_img 0.jpeg img %&#125;
 
  
 
@@ -5336,7 +5188,7 @@ FROM scratch
 - **shell格式**：就像在命令行中输入的Shell脚本命令一样，比如之前的：
 
 ```bash
-echo '<h1>Hello Docker!</h1>' &gt; /usr/share/nginx/html/index.html
+echo '<h1>Hello Docker!</h1>' > /usr/share/nginx/html/index.html
 ```
 
 - **exec格式**：像是函数调用的格式，例如：
@@ -5351,17 +5203,17 @@ DockerFile的每一个指令都会新构建一层，`RUN`命令也不例外。�
 UnionFS是有最大层数限制的，比如AUFS，曾经是最大不能超过42层，现在是最大不能超过127层。所以，对于一些编译、软件的安装、更新等操作，无需分成好几层来操作，这样会使得镜像非常臃肿，拥有非常多的层，不仅仅增加了构建部署的时间，也很容易出错！！例如，上面的`exec`格式的命令可以写作一层：
 
 ```bash
-RUN buildDeps=apt-get update &amp;&amp; mkdir -p /usr/src/redis &amp;&amp; apt-get purge -y --auto-remove $buildDeps
+RUN buildDeps=apt-get update && mkdir -p /usr/src/redis && apt-get purge -y --auto-remove $buildDeps
 ```
 
-这里仅仅使用了一个`RUN`指令，所以只会新建一层！对于一些编译、安装以及软件的更新等操作，没有必要分为很多层来操作，只需要一层就可以了！在此，我们可以使用`&amp;&amp;`符号将多个命令分割开，使其先后执行。此时，一个`RUN`指令有可能会变得非常长，为了使DockerFile的可阅读性和代码更加美观，我们可以使用`\`进行换行操作。另外，我们还可以使用`#`进行行首的注释。
+这里仅仅使用了一个`RUN`指令，所以只会新建一层！对于一些编译、安装以及软件的更新等操作，没有必要分为很多层来操作，只需要一层就可以了！在此，我们可以使用`&&`符号将多个命令分割开，使其先后执行。此时，一个`RUN`指令有可能会变得非常长，为了使DockerFile的可阅读性和代码更加美观，我们可以使用`\`进行换行操作。另外，我们还可以使用`#`进行行首的注释。
 
 观察刚刚编写的`RUN`指令，我们会发现在指令的结尾处添加了清理工作的命令，删除了为了编译构建的软件，清理了所有下载、展开的文件，并且还清理`apt`缓存文件。我们之前说过，镜像是多层存储，每一层存储的东西不会在下一层删除，会一直跟随着镜像。因此在镜像构建时，一定要确保每一层只添加真正需要的东西，任何无关的东西都应该被清理掉。
 
 格式为RUN command或 RUN ["EXECUTABLE","PARAM1","PARAM2".....]，前者在shell终端中运行命令，/bin/sh -c command，例如：/bin/sh -c "echo hello"；后者使用exec执行，指定其他运行终端使用RUN["/bin/bash","-c","echo hello"]
-{% asset_img 270324-20180407222151795-458304224.png img %}
+&#123;% asset_img 270324-20180407222151795-458304224.png img %&#125;
 
-{% asset_img 270324-20180407222206219-1004812737.png img %}
+&#123;% asset_img 270324-20180407222206219-1004812737.png img %&#125;
 
 每条RUN指令将当前的镜像基础上执行指令，并提交为新的镜像，命令较长的时候可以使用\来换行。
 
@@ -5370,7 +5222,7 @@ RUN buildDeps=apt-get update &amp;&amp; mkdir -p /usr/src/redis &amp;&amp; apt-g
 `COPY`指令将从上下文目录中的指定路径下的文件或文件夹复制到新的一层的镜像内的指定路径之下，格式为：
 
 ```bash
-COPY &lt;源路径&gt; ... &lt;目标路径&gt;
+COPY <源路径> ... <目标路径>
 ```
 
 原路径可以是多个，甚至是通配符，其通配规则只需要满足GO语言的`filepath.Math`规则即可，如下：
@@ -5415,7 +5267,7 @@ CMD用于指定容器启动时执行的命令，每个Dockerfile只能有一个C
 
 `CMD`指令与`RUN`指令相似，也具有两种格式：
 
-- **shell格式**：**CMD &lt;命令&gt;**
+- **shell格式**：**CMD <命令>**
 - **exec格式**：**CMD [“可执行文件”, “参数1”, “参数2”, …]**
 
 之前介绍容器的时候就说过，Docker不是虚拟机，容器就是进程。既然是进程，那么在启动容器的时候，就需要指定运行的程序及参数。`CMD`就是指定默认的容器主进程的启动命令的。
@@ -5464,7 +5316,7 @@ ENTRYPOINT command param1,param2 会在shell中执行。
 
 `ENTRYPOINT`指令和`CMD`指令目的一样，都是指定容器运行程序及参数，并且与`CMD`一样拥有两种格式的写法：
 
-- **shell格式**：**ENTRYPOINT &lt;命令&gt;**
+- **shell格式**：**ENTRYPOINT <命令>**
 - **exec格式**：**ENTRYPOINT [“可执行文件”, “参数1”, “参数2”, …]**
 
 与`CMD`指令一样，`ENTRYPOINT`也更加推荐使用`exec`格式，`ENTRYPOINT`在`docker run`命令中同样也可以进行指定，只不过比`CMD`指令来的繁琐一些，需要指定`--entrypoint`参数。同样，在`docker run`命令中指定了`--entrypoint`参数的话，会覆盖Dockerfile中`ENTRYPOINT`上的指令。
@@ -5489,7 +5341,7 @@ rm docker2 -rf
 
 ```bash
 FROM ubuntu
-RUN apt-get update &amp;&amp; apt-get install -y curl &amp;&amp; rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 ENTRYPOINT ["curl", "-s", "http://ip.cn"]
 ```
 
@@ -5519,7 +5371,7 @@ docker run -it ubuntu:v1.2 -i
 ```bash
 FROM ubuntu:16.04
 ENV MODE=test
-RUN apt-get update &amp;&amp; apt-get install -y curl &amp;&amp; curl http://192.168.0.89:5000/$MODE &amp;&amp; rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y curl && curl http://192.168.0.89:5000/$MODE && rm -rf /var/lib/apt/lists/*
 ```
 
 如果你要设置多个环境变量，为了美观，你可以使用`\`来进行换行。多个环境变量的隔开，使用空格进行隔开的，如果某个环境变量的值是由一组英文单词构成，那么你可以将其使用`""`进行圈起来。如下：
@@ -5554,7 +5406,7 @@ CMD ["sh", "-c", "echo $MODE"]
 ```bash
 FROM ubuntu:16.04
 ARG app="python-pip"
-RUN apt-get update &amp;&amp; apt-get install -y $app &amp;&amp; rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y $app && rm -rf /var/lib/apt/lists/*
 ```
 
 `ARG`构建参数可以通过`docker run`命令中的`--build-arg`参数来进行覆盖
@@ -5563,8 +5415,8 @@ RUN apt-get update &amp;&amp; apt-get install -y $app &amp;&amp; rm -rf /var/lib
 
 `VOLUME`指令用于构建镜像时定义匿名卷，其格式有两种：
 
-- **VOLUME &lt;路径&gt;**
-- **VOLUME [“&lt;路径1&gt;”, “&lt;路径2&gt;”, …]**
+- **VOLUME <路径>**
+- **VOLUME [“<路径1>”, “<路径2>”, …]**
 
 之前我们说过，容器存储层应该保持无状态化，容器运行时应尽量保持容器内不发生任何写入操作，对于需要保存动态数据的应用，其数据文件应该将其保存在数据卷中(VOLUME)
 
@@ -5591,7 +5443,7 @@ VOLUME ["/data", "/command"]
 
 `EXPOSE`指令是声明运行时容器服务端口，这只是一个声明，在运行时并不会因为这个声明应用就会开启这个端口的服务。在Dockerfile中这样声明有两个好处：一个是帮助镜像使用者更好的理解这个镜像服务的守护端口，另一个作用则是在运行时使用随机端口映射时，也就是`docker run -p`命令时，会自动随机映射`EXPOSE`端口。
 
-要将`EXPOSE`和在运行时使用`-p &lt;宿主&gt;:&lt;容器端口&gt;`区分开来，`-p`是映射宿主端口和容器端口，换句话说，就是将容器的对应端口服务公开给外界访问，而`EXPOSE`仅仅是声明端口使用什么端口而已，并不会自动在宿主进行端口映射。
+要将`EXPOSE`和在运行时使用`-p <宿主>:<容器端口>`区分开来，`-p`是映射宿主端口和容器端口，换句话说，就是将容器的对应端口服务公开给外界访问，而`EXPOSE`仅仅是声明端口使用什么端口而已，并不会自动在宿主进行端口映射。
 
 ## WORKDIR
 
@@ -5603,7 +5455,7 @@ VOLUME ["/data", "/command"]
 ```bash
 FROM ubuntu:16.04
 WORKDIR /data/test
-RUN mkdir docker &amp;&amp; echo "test" &gt; demo.txt
+RUN mkdir docker && echo "test" > demo.txt
 ```
 
 当我们使用`docker build`构建此镜像，并使用`docker run`命令进行创建和启动容器之后，会发现目录被自动切换到了`/data/test`，并且在当前目录下有一个文件夹`docker`，在`docker`下有一个文件`domo.txt`并且有相应的内容。我们还可以为特定的指令指定不同的工作目录，如下：
@@ -5613,7 +5465,7 @@ FROM ubuntu:16.04
 WORKDIR /data/test
 RUN mkdir docker
 WORKDIR /data/test/docker
-RUN echo "test" &gt; demo.txt
+RUN echo "test" > demo.txt
 ```
 
 这样，Dockerfile中两次`RUN`指令的操作都在不同的目录下进行，最终容器会切换到最后一次`WORKDIR`指令下的目录。
@@ -5623,7 +5475,7 @@ RUN echo "test" &gt; demo.txt
 ## USER
 
 ```
-格式为：USER username指定容器运行时的用户名或UID，后续的RUN也会使用指定的用户。要临时使用管理员权限可以使用sudo。在USER命令之前可以使用RUN命令创建需要的用户。例如：RUN groupadd -r docker &amp;&amp; useradd -r -g docker docker
+格式为：USER username指定容器运行时的用户名或UID，后续的RUN也会使用指定的用户。要临时使用管理员权限可以使用sudo。在USER命令之前可以使用RUN命令创建需要的用户。例如：RUN groupadd -r docker && useradd -r -g docker docker
 ```
 
 `USER`指令用于将会用以什么样的用户去运行，例如：
@@ -5651,14 +5503,14 @@ USER uid:group
 
 `HEALTHECHECK`指令是告诉Docker该如何判断容器的状态是否正常，这是1.12引入的新指令，其格式有两种：
 
-- **HEALTHCHECK [options] CMD &lt;命令&gt;**：检查容器健康状态的命令
+- **HEALTHCHECK [options] CMD <命令>**：检查容器健康状态的命令
 - **HEALTHCHECK NONE**：如果基础镜像有健康检查指令，这一行将会屏蔽掉其健康检查指令
 
 HEALTHECHECK支持下列选项：
 
-- **–interval=&lt;间隔&gt;**：两次检查的时间间隔，默认为30s
-- **–timeout=&lt;时长&gt;**：健康检查命令运行超时时间，如果超过这个时间，本次健康检查将会判定为失败，默认为30s
-- **–retries=&lt;次数&gt;**：当连续失败指定次数之后，则将容器状态视为`unhealthy`，默认为3次
+- **–interval=<间隔>**：两次检查的时间间隔，默认为30s
+- **–timeout=<时长>**：健康检查命令运行超时时间，如果超过这个时间，本次健康检查将会判定为失败，默认为30s
+- **–retries=<次数>**：当连续失败指定次数之后，则将容器状态视为`unhealthy`，默认为3次
 
 在没有`HEALTHCHECK`指令之前，Docker引擎只可以通过容器内主进程是否退出来判断容器状态是否异常。很多情况下这没有问题，但是如果程序进入了死锁状态，或者死循环状态，应用进程并不退出，但是该容器已经无法继续提供服务了。在1.12之前，Docker引擎不会检测到容器的这种状态，从而不会重新调度，导致可能容器已经无法提供服务了却仍然还在接收用户的请求。
 
@@ -5666,7 +5518,7 @@ HEALTHECHECK支持下列选项：
 
 ```bash
 FROM nginx
-RUN apt-get update &amp;&amp; apt-get install -y curl &amp;&amp; rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 HEALTHCHECK --interval=5s --timeout=3s CMD curl -fs http://localhost/ || exit 1
 ```
 
@@ -5675,7 +5527,7 @@ HEALTHCHECK --interval=5s --timeout=3s CMD curl -fs http://localhost/ || exit 1
 ```bash
 root@ubuntu:~/docker# docker container ls
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                   PORTS                NAMES
-036b91eea00d        nginx:v1.2          "nginx -g 'daemon of…"   7 seconds ago       Up 6 seconds (healthy)   0.0.0.0:80-&gt;80/tcp   web
+036b91eea00d        nginx:v1.2          "nginx -g 'daemon of…"   7 seconds ago       Up 6 seconds (healthy)   0.0.0.0:80->80/tcp   web
 ```
 
 我们再`STATUS`这一列中可以看到，状态未`healthy`。如果我们快速的多次执行`docker container ls`的话，会发现`STATUS`状态是由`health: starting`最后变为`healthy`，当然如果容器未在正常工作，最后的状态将会变为`unhealthy`
@@ -5685,24 +5537,24 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 为了帮助排除故障，健康检查命令的输出会被存储于健康状态里，我们可以使用`docker inspect`命令来进行查看：
 
 ```bash
-root@ubuntu:~/docker# docker inspect --format '{{json .State.Health}}' web | python3 -m json.tool
-{
-    "Status": "healthy",
-    "FailingStreak": 0,
-    "Log": [
-        {
-            "Start": "2018-07-17T21:15:05.900643297+08:00",
-            "End": "2018-07-17T21:15:05.968989028+08:00",
-            "ExitCode": 0,
-            "Output": "&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n&lt;title&gt;Welcome to nginx!&lt;/title&gt;\n&lt;style&gt;\n    body {\n width: 35em;\n margin: 0 auto;\n font-family: Tahoma, Verdana, Arial, sans-serif;\n }\n&lt;/style&gt;\n&lt;/head&gt;\n&lt;body&gt;\n&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;\n&lt;p&gt;If you see this page, the nginx web server is successfully installed and\nworking. Further configuration is required.&lt;/p&gt;\n\n&lt;p&gt;For online documentation and support please refer to\n&lt;a href=\"http://nginx.org/\"&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;\nCommercial support is available at\n&lt;a href=\"http://nginx.com/\"&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;\n\n&lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n"
-        }
+root@ubuntu:~/docker# docker inspect --format '&#123;&#123;json .State.Health&#125;&#125;&#39; web | python3 -m json.tool
+&#123;
+    &quot;Status&quot;: &quot;healthy&quot;,
+    &quot;FailingStreak&quot;: 0,
+    &quot;Log&quot;: [
+        &#123;
+            &quot;Start&quot;: &quot;2018-07-17T21:15:05.900643297+08:00&quot;,
+            &quot;End&quot;: &quot;2018-07-17T21:15:05.968989028+08:00&quot;,
+            &quot;ExitCode&quot;: 0,
+            &quot;Output&quot;: &quot;&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n&lt;title&gt;Welcome to nginx!&lt;/title&gt;\n&lt;style&gt;\n    body &#123;\n width: 35em;\n margin: 0 auto;\n font-family: Tahoma, Verdana, Arial, sans-serif;\n &#125;\n&lt;/style&gt;\n&lt;/head&gt;\n&lt;body&gt;\n&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;\n&lt;p&gt;If you see this page, the nginx web server is successfully installed and\nworking. Further configuration is required.&lt;/p&gt;\n\n&lt;p&gt;For online documentation and support please refer to\n&lt;a href=\&quot;http://nginx.org/\&quot;&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;\nCommercial support is available at\n&lt;a href=\&quot;http://nginx.com/\&quot;&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;\n\n&lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n&quot;
+        &#125;
     ]
-}
-</value></varname></default></name></src></dest></src></dest></src></src></scr></src></src></dest></dest></src></dest></src></value></key></value></key></name></value></key></value></key></value></key></digest></tag></digest></tag></connector></connector></connector></connector></server></server></server></connector></connector></connector></connector></connector></connector></server></server></eangulee@gmail.com></ctrl-d></ctrl-d></eof></code></pre>
+&#125;
+</次数></时长></间隔></命令></容器端口></宿主></路径2></路径1></路径></命令></命令></目标路径></源路径></value></varname></default></name></src></dest></src></dest></src></src></scr></src></src></dest></dest></src></dest></src></value></key></value></key></name></value></key></value></key></value></key></digest></tag></digest></image></tag></image></image></Connector></Connector></Connector></Connector></Server></Server></Server></Connector></Connector></Connector></Connector></Connector></Connector></Server></Server></=></)。></&></CTRL-D></CTRL-D></**A></%b></**A\nB**></%s></EOF></code></pre>
 <p>和<code>CMD</code>、<code>NETRYPOINT</code>一样，<code>HEALTHCHECK</code>指令只可以出现一次，如果有多个<code>HEALTHCHECK</code>指令，那么只有最后一个才会生效！！！</p>
 <h2 id="ONBUILD"><a href="#ONBUILD" class="headerlink" title="ONBUILD"></a>ONBUILD</h2><pre><code>格式ONBUILD [INSTRUCTION]该配置指定当所创建的镜像作为其他新建镜像的基础镜像时所执行的指令。例如下面的Dockerfile创建了镜像A：ONBUILD ADD . /appONBUILD RUN python app.py
 </code></pre>
-<p>``</p>
+<p>&#96;&#96;</p>
 <pre><code>ONBUILD`是一个特殊的指令，它后面跟着的是其他指令，比如`COPY`、`RUN`等，而这些命令在当前镜像被构建时，并不会被执行。只有以当前镜像为基础镜像去构建下一级镜像时，才会被执行。格式为：`ONBUILD &lt;其他指令&gt;
 </code></pre>
 <p><code>Dockerfile</code>中的其他指令都是为了构建当前镜像准备的，只有<code>ONBUILD</code>指令是为了帮助别人定制而准备的。例如：</p>
@@ -5725,7 +5577,7 @@ root@5394e605b6ea:/data<span class="token comment" spellcheck="true"># ls</span>
 </code></pre>
 <h2 id="LABEL"><a href="#LABEL" class="headerlink" title="LABEL"></a>LABEL</h2><pre><code>LABEL`指令可以为镜像指定标签，其格式为：`LABEL &lt;key1&gt;=&lt;value1&gt; &lt;key2&gt;=&lt;value2&gt; ...
 </code></pre>
-<p><code>LABEL</code>后面是键值对，多个键值对以空格进行隔开，如果value中包含空格，请使用<code>""</code>将value进行圈起来，如下：</p>
+<p><code>LABEL</code>后面是键值对，多个键值对以空格进行隔开，如果value中包含空格，请使用<code>&quot;&quot;</code>将value进行圈起来，如下：</p>
 <pre class=" language-bash"><code class="language-bash">FROM ubuntu:16.04
 LABEL name<span class="token operator">=</span>test
 LABEL description<span class="token operator">=</span><span class="token string">"a container is used to test"</span>
@@ -5736,11 +5588,11 @@ LABEL name<span class="token operator">=</span>test description<span class="toke
 </code></pre>
 <p>为了美观，我们还可以使用<code>\</code>符号进行换行操作。</p>
 <p>要查看镜像的标签，我们可以使用<code>docker inspect</code>命令，如下：</p>
-<pre class=" language-bash"><code class="language-bash">root@ubuntu:~<span class="token comment" spellcheck="true"># docker inspect --format '{{json .Config.Labels}}' test | python3 -m json.tool </span>
-<span class="token punctuation">{</span>
+<pre class=" language-bash"><code class="language-bash">root@ubuntu:~<span class="token comment" spellcheck="true"># docker inspect --format '&amp;#123;&amp;#123;json .Config.Labels&amp;#125;&amp;#125;' test | python3 -m json.tool </span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
     <span class="token string">"description"</span><span class="token keyword">:</span> <span class="token string">"a container is used to test"</span>,
     <span class="token string">"name"</span><span class="token keyword">:</span> <span class="token string">"test"</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
 </code></pre>
 <p>其中“test”为容器名称！</p>
 <p>值得注意的是，这里的标签并非是我们一开始将镜像名称中的<code>&lt;仓库&gt;:&lt;标签&gt;</code>，这两者是不一样的！这里标签，类似于签条，注解之类的意思</p>
@@ -5751,7 +5603,7 @@ LABEL name<span class="token operator">=</span>test description<span class="toke
 </code></pre>
 <p><code>MAINTAINER</code>指令在一些老的Dockerfile中仍然可以看到，所以还是需要了解一下的！</p>
 <p><strong>docker build</strong><br>创建好Dockerfile之后，通过docker build命令来创建镜像，该命令首先会上传Dockerfile文件给Docker服务器端，服务器端将逐行执行Dockerfile中定义的指令。<br>通常建议放置Dockerfile的目录为空目录。另外可以在目录下创建.dockerignore文件，让Docker忽略路径下的文件和目录，这一点与Git中的配置很相似。</p>
-<p>通过 -t 指定镜像的标签信息，例如：docker build -t regenzm/first_image . ##”.”指定的是Dockerfile所在的路径</p>
+<p>通过 -t 指定镜像的标签信息，例如：docker build -t regenzm&#x2F;first_image . ##”.”指定的是Dockerfile所在的路径</p>
 <h2 id="Docker-history-查看docker镜像构建过程-还原dockerfile"><a href="#Docker-history-查看docker镜像构建过程-还原dockerfile" class="headerlink" title="Docker history 查看docker镜像构建过程 还原dockerfile"></a>Docker history 查看docker镜像构建过程 还原dockerfile</h2><p>介绍：</p>
 <pre class=" language-bash"><code class="language-bash">docker <span class="token function">history</span> --help
 Usage:  docker <span class="token function">history</span> <span class="token punctuation">[</span>OPTIONS<span class="token punctuation">]</span> IMAGE
@@ -5777,17 +5629,17 @@ a29e200a18e9        2 years ago         /bin/sh -c <span class="token comment" s
 <span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ENV TOMCAT_MAJOR=8            0B                  </span>
 <span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token keyword">set</span> -ex  <span class="token operator">&amp;&amp;</span> <span class="token keyword">for</span> key <span class="token keyword">in</span>   05AB33<span class="token punctuation">..</span>.   114kB               
 <span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token function">apt-get</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> insta<span class="token punctuation">..</span>.   7.18MB              
-<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token punctuation">{</span>   <span class="token keyword">echo</span> <span class="token string">'deb http://httpredir....   172B                
-&lt;missing>           2 years ago         /bin/sh -c #(nop) ENV OPENSSL_VERSION=1.0....   0B                  
-&lt;missing>           2 years ago         /bin/sh -c #(nop) WORKDIR /usr/local/tomcat     0B                  
-&lt;missing>           2 years ago         /bin/sh -c mkdir -p "<span class="token variable">$CATALINA_HOME</span>"            0B                  
-&lt;missing>           2 years ago         /bin/sh -c #(nop) ENV PATH=/usr/local/tomc...   0B                  
-&lt;missing>           2 years ago         /bin/sh -c #(nop) ENV CATALINA_HOME=/usr/l...   0B                  
-&lt;missing>           2 years ago         /bin/sh -c set -x  &amp;&amp; apt-get update  &amp;&amp; a...   163MB               
-&lt;missing>           2 years ago         /bin/sh -c #(nop) ENV JAVA_DEBIAN_VERSION=...   0B                  
-&lt;missing>           2 years ago         /bin/sh -c #(nop) ENV JAVA_VERSION=7u101        0B                  
-&lt;missing>           2 years ago         /bin/sh -c #(nop) ENV JAVA_HOME=/usr/lib/j...   0B                  
-&lt;missing>           2 years ago         /bin/sh -c {   echo '</span><span class="token comment" spellcheck="true">#!/bin/sh';   echo 's...   87B                 </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;   echo 'deb http://httpredir....   172B                </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ENV OPENSSL_VERSION=1.0....   0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) WORKDIR /usr/local/tomcat     0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token function">mkdir</span> -p <span class="token string">"<span class="token variable">$CATALINA_HOME</span>"</span>            0B                  
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ENV PATH=/usr/local/tomc...   0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ENV CATALINA_HOME=/usr/l...   0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token keyword">set</span> -x  <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> update  <span class="token operator">&amp;&amp;</span> a<span class="token punctuation">..</span>.   163MB               
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ENV JAVA_DEBIAN_VERSION=...   0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ENV JAVA_VERSION=7u101        0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ENV JAVA_HOME=/usr/lib/j...   0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;   echo '#!/bin/sh';   echo 's...   87B                 </span>
 <span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ENV LANG=C.UTF-8              0B                  </span>
 <span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token function">apt-get</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> insta<span class="token punctuation">..</span>.   1.17MB              
 <span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token function">apt-get</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> insta<span class="token punctuation">..</span>.   44.3MB              
@@ -5848,7 +5700,7 @@ a29e200a18e9        2 years ago         /bin/sh -c <span class="token comment" s
 FROM tomcat:9.0-jdk8-corretto
 RUN mkdir $CATALINA_HOME/webapps/ROOT
 ADD index.html $CATALINA_HOME/webapps/ROOT/index.html
-CMD ["catalina.sh","run"]
+CMD [&quot;catalina.sh&quot;,&quot;run&quot;]
 
 //运行镜像
 docker run --name tomcat -d -p 80:8080 镜像id
@@ -5867,7 +5719,7 @@ tar -zcvf app.tar.gz *
 FROM tomcat:9.0-jdk8-corretto
 RUN mkdir $CATALINA_HOME/webapps/ROOT
 ADD app.tar.gz $CATALINA_HOME/webapps/ROOT/
-CMD ["catalina.sh","run"]
+CMD [&quot;catalina.sh&quot;,&quot;run&quot;]
 
 //运行镜像
 docker run --name tomcat -d -p 80:8080 镜像id
@@ -5891,8 +5743,8 @@ ADD init.sql .
 //-t: 为容器重新分配一个伪输入终端，通常与 -i 同时使用；
 //-d: 后台运行容器，并返回容器ID；
 //-i: 以交互模式运行容器，通常与 -t 同时使用；
-//-e username="ritchie": 设置环境变量；
-//--name="nginx-lb": 为容器指定一个名称；
+//-e username=&quot;ritchie&quot;: 设置环境变量；
+//--name=&quot;nginx-lb&quot;: 为容器指定一个名称；
 //-p: 指定端口映射，格式为：主机(宿主)端口:容器端口
 docker run -e MYSQL_ROOT_PASSWORD=root --name mysql -it -d -p 5001:3306  镜像Id
 </code></pre>
@@ -5909,11 +5761,11 @@ CREATE TABLE `dept` (
   PRIMARY KEY (`deptno`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `dept` VALUES (10, 'ACCOUNTING', 'NEW YORK');
-INSERT INTO `dept` VALUES (20, 'RESEARCH', 'DALLAS');
-INSERT INTO `dept` VALUES (30, 'SALES', 'CHICAGO');
-INSERT INTO `dept` VALUES (40, 'OPERATIONS', 'BOSTON');
-INSERT INTO `dept` VALUES (50, 'hr2', 'sy3');
+INSERT INTO `dept` VALUES (10, &#39;ACCOUNTING&#39;, &#39;NEW YORK&#39;);
+INSERT INTO `dept` VALUES (20, &#39;RESEARCH&#39;, &#39;DALLAS&#39;);
+INSERT INTO `dept` VALUES (30, &#39;SALES&#39;, &#39;CHICAGO&#39;);
+INSERT INTO `dept` VALUES (40, &#39;OPERATIONS&#39;, &#39;BOSTON&#39;);
+INSERT INTO `dept` VALUES (50, &#39;hr2&#39;, &#39;sy3&#39;);
 </code></pre>
 </li>
 </ul>
@@ -5970,8 +5822,8 @@ docker exec 容器id cat /etc/hosts
 <p>执行上述命令将会在后台启动一个portainer容器。如果现在访问 <a target="_blank" rel="noopener" href="http://localhost:9000/">http://localhost:9000</a> ，可以在看板上看到机器上运行的Docker的简要信息。</p>
 <p>解决错误：<strong>WARNING: IPv4 forwarding is disabled. Networking will not work.</strong></p>
 <p>解决方法:</p>
-<p>第一步：找到文件 ：vim /usr/lib/sysctl.d/00-system.conf</p>
-<p> 添加代码：net.ipv4.ip_forward=1</p>
+<p>第一步：找到文件 ：vim &#x2F;usr&#x2F;lib&#x2F;sysctl.d&#x2F;00-system.conf</p>
+<p> 添加代码：net.ipv4.ip_forward&#x3D;1</p>
 <p>第二步：重启network服务和docker服务：</p>
 <p> systemctl restart network &amp;&amp; systemctl restart docker</p>
 <p>第三步：重启建容器</p>
@@ -6017,7 +5869,7 @@ docker-compose version 1.29.2, build unknown
 </code></pre>
 </li>
 <li><p>配置 wordpress</p>
-<pre><code>version: "3.9"
+<pre><code>version: &quot;3.9&quot;
     
 services:
   db:
@@ -6038,7 +5890,7 @@ services:
     volumes:
       - wordpress_data:/var/www/html
     ports:
-      - "8000:80"
+      - &quot;8000:80&quot;
     restart: always
     environment:
       WORDPRESS_DB_HOST: db
@@ -6046,8 +5898,8 @@ services:
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
 volumes:
-  db_data: {}
-  wordpress_data: {}
+  db_data: &#123;&#125;
+  wordpress_data: &#123;&#125;
 </code></pre>
 </li>
 <li><p>安装 wordpress</p>
@@ -6496,7 +6348,7 @@ volumes:
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">174.8k</span>
+                        class="white-color">198.2k</span>
             
             
             
