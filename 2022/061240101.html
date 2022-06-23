@@ -366,10 +366,9 @@
                 <h1 id="Vue中使用Echarts"><a href="#Vue中使用Echarts" class="headerlink" title="Vue中使用Echarts"></a>Vue中使用Echarts</h1><p>Echarts官网：<a target="_blank" rel="noopener" href="https://echarts.apache.org/zh/index.html">https://echarts.apache.org/zh/index.html</a></p>
 <p>ECharts: 一个基于 JavaScript 的开源可视化图表库。</p>
 <h2 id="安装-echarts"><a href="#安装-echarts" class="headerlink" title="安装 echarts"></a>安装 echarts</h2><pre><code>npm install echarts --save
-</code></pre>
-<h2 id="main-js-中引入"><a href="#main-js-中引入" class="headerlink" title="main.js 中引入"></a>main.js 中引入</h2><pre><code>// 部分代码展示
+</code></pre><h2 id="main-js-中引入"><a href="#main-js-中引入" class="headerlink" title="main.js 中引入"></a>main.js 中引入</h2><pre><code>// 部分代码展示
 import * as echarts from &#39;echarts&#39;
-  
+
 const app = createApp(App);
 
 // vue3 给原型上挂载属性
@@ -377,8 +376,7 @@ app.config.globalProperties.$echarts = echarts;
 
 
 app.use(store).use(router).use(ElementPlus).mount(&#39;#app&#39;);
-</code></pre>
-<h2 id="组件中使用"><a href="#组件中使用" class="headerlink" title="组件中使用"></a>组件中使用</h2><pre><code>&lt;template&gt;
+</code></pre><h2 id="组件中使用"><a href="#组件中使用" class="headerlink" title="组件中使用"></a>组件中使用</h2><pre><code>&lt;template&gt;
   &lt;div id=&quot;myChart&quot; :style=&quot;&#123;  width:&#39;600px&#39;, height: &#39;300px&#39; &#125;&quot;&gt;&lt;/div&gt;
 &lt;/template&gt;
 
@@ -419,9 +417,7 @@ export default &#123;
   height: 400px;
 &#125;
 &lt;/style&gt;
-</code></pre>
-<h2 id="柱状图"><a href="#柱状图" class="headerlink" title="柱状图"></a>柱状图</h2><img src="/2022/061240101/image-20220613204122997.png" class title="image-20220613204122997">
-
+</code></pre><h2 id="柱状图"><a href="#柱状图" class="headerlink" title="柱状图"></a>柱状图</h2><img src="/2022/061240101/image-20220613204122997.png" class title="image-20220613204122997">
 <pre><code>myChart.setOption(&#123;
       xAxis: &#123;
         data: [&#39;Mon&#39;, &#39;Tue&#39;, &#39;Wed&#39;, &#39;Thu&#39;, &#39;Fri&#39;, &#39;Sat&#39;, &#39;Sun&#39;]
@@ -434,9 +430,7 @@ export default &#123;
         &#125;
       ]
     &#125;);
-</code></pre>
-<h2 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h2><img src="/2022/061240101/image-20220613204346504.png" class title="image-20220613204346504">
-
+</code></pre><h2 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h2><img src="/2022/061240101/image-20220613204346504.png" class title="image-20220613204346504">
 <pre><code>myChart.setOption(&#123;
       series: [
         &#123;
@@ -458,9 +452,7 @@ export default &#123;
         &#125;
       ]
     &#125;);
-</code></pre>
-<h2 id="散点图"><a href="#散点图" class="headerlink" title="散点图"></a>散点图</h2><img src="/2022/061240101/image-20220613204558053.png" class title="image-20220613204558053">
-
+</code></pre><h2 id="散点图"><a href="#散点图" class="headerlink" title="散点图"></a>散点图</h2><img src="/2022/061240101/image-20220613204558053.png" class title="image-20220613204558053">
 <pre><code>myChart.setOption(&#123;
       xAxis: &#123;
         data: [&#39;Sun&#39;, &#39;Mon&#39;, &#39;Tue&#39;, &#39;Wed&#39;, &#39;Thu&#39;, &#39;Fri&#39;, &#39;Sat&#39;]
@@ -474,8 +466,7 @@ export default &#123;
       ]
 
     &#125;);
-</code></pre>
-<h2 id="异步加载数据"><a href="#异步加载数据" class="headerlink" title="异步加载数据"></a>异步加载数据</h2><p>前端</p>
+</code></pre><h2 id="异步加载数据"><a href="#异步加载数据" class="headerlink" title="异步加载数据"></a>异步加载数据</h2><p>前端</p>
 <pre><code>&lt;template&gt;
   &lt;div :style=&quot;&#123;  width:&#39;600px&#39;, height: &#39;300px&#39; &#125;&quot; ref=&quot;chart&quot;&gt;&lt;/div&gt;
 &lt;/template&gt;
@@ -535,8 +526,7 @@ export default &#123;
   height: 400px;
 &#125;
 &lt;/style&gt;
-</code></pre>
-<p>ECharts 中在更新数据的时候需要通过<code>name</code>属性对应到相应的系列，上面示例中如果<code>name</code>不存在也可以根据系列的顺序正常更新，但是更多时候推荐更新数据的时候加上系列的<code>name</code>数据。</p>
+</code></pre><p>ECharts 中在更新数据的时候需要通过<code>name</code>属性对应到相应的系列，上面示例中如果<code>name</code>不存在也可以根据系列的顺序正常更新，但是更多时候推荐更新数据的时候加上系列的<code>name</code>数据。</p>
 <p>后端</p>
 <pre><code>@RestController
 @RequestMapping(&quot;echarts&quot;)
@@ -553,16 +543,14 @@ public class EchartController &#123;
         return map;
     &#125;
 &#125;
-</code></pre>
-<h2 id="loading-动画"><a href="#loading-动画" class="headerlink" title="loading 动画"></a>loading 动画</h2><p>如果数据加载时间较长，一个空的坐标轴放在画布上也会让用户觉得是不是产生 bug 了，因此需要一个 loading 的动画来提示用户数据正在加载。</p>
+</code></pre><h2 id="loading-动画"><a href="#loading-动画" class="headerlink" title="loading 动画"></a>loading 动画</h2><p>如果数据加载时间较长，一个空的坐标轴放在画布上也会让用户觉得是不是产生 bug 了，因此需要一个 loading 的动画来提示用户数据正在加载。</p>
 <p>ECharts 默认有提供了一个简单的加载动画。只需要调用 <a target="_blank" rel="noopener" href="https://echarts.apache.org//api.html#echartsInstance.showLoading">showLoading</a> 方法显示。数据加载完成后再调用 <a target="_blank" rel="noopener" href="https://echarts.apache.org//api.html#echartsInstance.hideLoading">hideLoading</a> 方法隐藏加载动画。</p>
 <pre><code>myChart.showLoading();
 $.get(&#39;data.json&#39;).done(function (data) &#123;
     myChart.hideLoading();
     myChart.setOption(...);
 &#125;);
-</code></pre>
-<p>案例：</p>
+</code></pre><p>案例：</p>
 <p>前端：</p>
 <pre><code>&lt;template&gt;
   &lt;div :style=&quot;&#123;  width:&#39;600px&#39;, height: &#39;300px&#39; &#125;&quot; ref=&quot;chart&quot;&gt;&lt;/div&gt;
@@ -626,8 +614,7 @@ export default &#123;
   height: 400px;
 &#125;
 &lt;/style&gt;
-</code></pre>
-<p>后端</p>
+</code></pre><p>后端</p>
 <pre><code>@RestController
 @RequestMapping(&quot;echarts&quot;)
 public class EchartController &#123;
@@ -646,7 +633,6 @@ public class EchartController &#123;
     &#125;
 &#125;
 </code></pre>
-
                 
             </div>
             <hr/>
@@ -1083,7 +1069,7 @@ public class EchartController &#123;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">198.2k</span>
+                        class="white-color">195.1k</span>
             
             
             

@@ -383,38 +383,33 @@
 <li><p>暂存区：下一次要提交的文件快照</p>
 </li>
 <li><p>工作目录：编写代码的目录</p>
-<img src="/2022/061325246/image-20201016103153310.png" class title="image-20201016103153310"></li>
+<img src="/2022/061325246/image-20201016103153310.png" class title="image-20201016103153310">
+</li>
 </ul>
 </li>
 </ol>
 <h2 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h2><p>在某个文件夹中，使用如下命令，将在当前目录下创建一个 gittest 文件夹，并在该文件夹中初始化git本地仓库</p>
 <pre><code>git init gittest
-</code></pre>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><pre><code>git config --global user.name &quot;pcbhyy&quot;
+</code></pre><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><pre><code>git config --global user.name &quot;pcbhyy&quot;
 git config --global user.email &quot;pcbhyy@163.com&quot;
- 
+
 --global ：针对当前用户
 --system:针对当前系统所有用户
 不加选项：针对当前项目
-</code></pre>
-<h2 id="创建并添加文件到暂存区中"><a href="#创建并添加文件到暂存区中" class="headerlink" title="创建并添加文件到暂存区中"></a>创建并添加文件到暂存区中</h2><pre><code>//先创建 1.txt文件
+</code></pre><h2 id="创建并添加文件到暂存区中"><a href="#创建并添加文件到暂存区中" class="headerlink" title="创建并添加文件到暂存区中"></a>创建并添加文件到暂存区中</h2><pre><code>//先创建 1.txt文件
 git add 1.txt
-</code></pre>
-<h2 id="查看git状态"><a href="#查看git状态" class="headerlink" title="查看git状态"></a>查看git状态</h2><p>显示 暂存区 与 工作区 状态不同的文件。这其中包含了已修改但未暂存， 或已经暂存但没有提交的文件。   </p>
+</code></pre><h2 id="查看git状态"><a href="#查看git状态" class="headerlink" title="查看git状态"></a>查看git状态</h2><p>显示 暂存区 与 工作区 状态不同的文件。这其中包含了已修改但未暂存， 或已经暂存但没有提交的文件。   </p>
 <pre><code>git status
-</code></pre>
-<h2 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h2><p>将暂存区中内容提交到本地仓库中</p>
+</code></pre><h2 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h2><p>将暂存区中内容提交到本地仓库中</p>
 <pre><code>git commit -m &quot;提交说明&quot;
 
 //打开一个文件，在其中添加注释，适合于注释比较多和需要换行的情况
 git commit
-</code></pre>
-<h2 id="查看命令帮助"><a href="#查看命令帮助" class="headerlink" title="查看命令帮助"></a>查看命令帮助</h2><pre><code>git --help 命令名
+</code></pre><h2 id="查看命令帮助"><a href="#查看命令帮助" class="headerlink" title="查看命令帮助"></a>查看命令帮助</h2><pre><code>git --help 命令名
 
 如：
 git --help commit
-</code></pre>
-<h2 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h2><p>默认不用任何参数的话， git log 会按提交时间列出所有的更新， 最近的更新排在最上面。  </p>
+</code></pre><h2 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h2><p>默认不用任何参数的话， git log 会按提交时间列出所有的更新， 最近的更新排在最上面。  </p>
 <pre><code>git log
 
 //n:显示的提交数
@@ -425,26 +420,22 @@ git log -p
 
 //--stat:查看每次提交的简略的统计信息 
 git log --stat
-</code></pre>
-<h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><ol>
-<li><p>舍弃工作目录中对一个文件的修改 （修改的文件未被暂存或提交），命令： checkout –filename</p>
+</code></pre><h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><ol>
+<li><p>舍弃工作目录中对一个文件的修改 （修改的文件未被暂存或提交），命令： checkout —filename</p>
 <pre><code> git checkout test.txt
-</code></pre>
-<blockquote>
+</code></pre><blockquote>
 <p>注意：请务必记得 <code>git checkout -- &lt;file&gt;</code> 是一个危险的命令。 你对那个文件在本地的任何修改都会消失——Git 会用最近提交的版本覆盖掉它。 除非你确实清楚不想要对那个文件的本地修改了，否则请不要使用这个命令。</p>
 </blockquote>
 </li>
-<li><p>舍弃工作目录中所有未保存的变更 （文件可能已暂存也可能没有，但未被提交），命令： reset –hard</p>
+<li><p>舍弃工作目录中所有未保存的变更 （文件可能已暂存也可能没有，但未被提交），命令： reset —hard</p>
 <img src="/2022/061325246/image-20201013144708354.png" class title="image-20201013144708354">
-
 <blockquote>
-<p>注意：git reset 确实是个危险的命令，如果加上了 –hard 选项则更是如此。 然而在上述场景中，工作目录中的文件尚未修改，因此相对安全一些。</p>
+<p>注意：git reset 确实是个危险的命令，如果加上了 —hard 选项则更是如此。 然而在上述场景中，工作目录中的文件尚未修改，因此相对安全一些。</p>
 </blockquote>
 </li>
 <li><p>从工作目录中删除未跟踪（新添加未缓存或提交过）的文件</p>
 <pre><code>git clean -fd
-</code></pre>
-<p>-d：删除未跟踪文件夹</p>
+</code></pre><p>-d：删除未跟踪文件夹</p>
 <p>-f：强制删除</p>
 </li>
 <li><p>修补最后一次提交</p>
@@ -457,8 +448,7 @@ git commit -m &#39;init commit&#39;
 git add 3.txt
 //修改最后一次提交的内容
 git commit --amend
-</code></pre>
-<blockquote>
+</code></pre><blockquote>
 <p>当你在修补最后的提交时，并不是通过用改进后的提交 <strong>原位替换</strong> 掉旧有提交的方式来修复的， 理解这一点非常重要。从效果上来说，就像是旧有的提交从未存在过一样，它并不会出现在仓库的历史中。</p>
 <p>修补提交最明显的价值是可以稍微改进你最后的提交，而不会让“啊，忘了添加一个文件”或者 “小修补，修正笔误”这种提交信息弄乱你的仓库历史。</p>
 </blockquote>
@@ -466,72 +456,55 @@ git commit --amend
 <li><p>恢复到某次提交</p>
 <pre><code>//e5c3f2ce79fc005c5208ceb95b170b614d0a63e3：为提交Id
 git reset --hard e5c3f2ce79fc005c5208ceb95b170b614d0a63e3
-</code></pre>
-</li>
+</code></pre></li>
 <li><p>显示所有提交历史</p>
 <pre><code>//该命令分析你所有分支的头指针的日志来查找出你在重写历史上可能丢失的提交  
 git reflog
-</code></pre>
-</li>
+</code></pre></li>
 </ol>
 <h2 id="重要目录结构"><a href="#重要目录结构" class="headerlink" title="重要目录结构"></a>重要目录结构</h2><p>HEAD 文件、 （ 尚待创建的） index 文件， 和 objects 目录、 refs 目录。 这些条目是 Git 的核心组成部分。</p>
 <ol>
 <li>objects 目录存储所有数据内容； </li>
 <li>refs 目录存储指向数据（ 分支） 的提交对象的指针；</li>
 <li>HEAD 文件指示目前被检出的分支； </li>
-<li>index 文件保存暂存区信息。</li>
+<li>index 文件保存暂存区信息。   </li>
 </ol>
 <h2 id="提交过程"><a href="#提交过程" class="headerlink" title="提交过程"></a>提交过程</h2><p>我们假设现在有一个工作目录， 里面包含了三个将要被暂存和提交的文件。 暂存操作<br>会为每一个文件计算校验和（ 使用我们在 Chapter 1 中提到的 SHA-1 哈希算法） ， 然后会把当前版本的<br>文件快照保存到 Git 仓库中（ Git 使用 blob 对象来保存它们） ， 最终将校验和加入到暂存区域等待提交：  </p>
 <pre><code>$ git add README test.rb LICENSE
 $ git commit -m &#39;The initial commit of my project&#39;
-</code></pre>
-<p>当使用 git commit 进行提交操作时， Git 会先计算每一个子目录（ 本例中只有项目根目录） 的校验<br>和， 然后在 Git 仓库中这些校验和保存为树对象。 随后， Git 便会创建一个提交对象， 它除了包含上面提<br>到的那些信息外， 还包含指向这个树对象（ 项目根目录） 的指针。 如此一来， Git 就可以在需要的时候重<br>现此次保存的快照。<br>现在， Git 仓库中有五个对象： 三个 blob 对象（ 保存着文件快照） 、 一个树对象（ 记录着目录结构和<br>blob 对象索引） 以及一个提交对象（ 包含着指向前述树对象的指针和所有提交信息） 。  </p>
+</code></pre><p>当使用 git commit 进行提交操作时， Git 会先计算每一个子目录（ 本例中只有项目根目录） 的校验<br>和， 然后在 Git 仓库中这些校验和保存为树对象。 随后， Git 便会创建一个提交对象， 它除了包含上面提<br>到的那些信息外， 还包含指向这个树对象（ 项目根目录） 的指针。 如此一来， Git 就可以在需要的时候重<br>现此次保存的快照。<br>现在， Git 仓库中有五个对象： 三个 blob 对象（ 保存着文件快照） 、 一个树对象（ 记录着目录结构和<br>blob 对象索引） 以及一个提交对象（ 包含着指向前述树对象的指针和所有提交信息） 。  </p>
 <img src="/2022/061325246/image-20201016151815452.png" class title="image-20201016151815452">
-
 <p>做些修改后再次提交， 那么这次产生的提交对象会包含一个指向上次提交对象（ 父对象） 的指针。  </p>
 <img src="/2022/061325246/image-20201016152229190.png" class title="image-20201016152229190">
-
 <h2 id="Git分支"><a href="#Git分支" class="headerlink" title="Git分支"></a>Git分支</h2><p>Git 的分支， 其实本质上仅仅是指向提交对象的可变指针。 Git 的默认分支名字是 master 。 在多次提交<br>操作之后， 你其实已经有一个指向最后那个提交对象的 master 分支。 它会在每次的提交操作中自动向<br>前移动。<br>Git 的 “master” 分支并不是一个特殊分支。 它就跟其它分支完全没有区别。 之所以几乎每一个仓库都<br>有 master 分支， 是因为 git init 命令默认创建它， 并且大多数人都懒得去改动它。  </p>
 <img src="/2022/061325246/image-20201016152447869.png" class title="image-20201016152447869">
-
 <h3 id="分支创建"><a href="#分支创建" class="headerlink" title="分支创建"></a>分支创建</h3><pre><code>git branch testing
-</code></pre>
-<p>这会在当前所在的提交对象上创建一个指针。  </p>
+</code></pre><p>这会在当前所在的提交对象上创建一个指针。  </p>
 <img src="/2022/061325246/image-20201016153329285.png" class title="image-20201016153329285">
-
 <h3 id="当前工作分支"><a href="#当前工作分支" class="headerlink" title="当前工作分支"></a>当前工作分支</h3><p>那么， Git 又是怎么知道当前在哪一个分支上呢？ 也很简单， 它有一个名为 HEAD 的特殊指针。 请注意<br>它和许多其它版本控制系统（ 如 Subversion 或 CVS） 里的 HEAD 概念完全不同。 在 Git 中， 它是一个<br>指针， 指向当前所在的本地分支（ 译注： 将 HEAD 想象为当前分支的别名） 。 在本例中， 你仍然在<br>master 分支上。 因为 git branch 命令仅仅 创建 一个新分支， 并不会自动切换到新分支中去。  </p>
 <img src="/2022/061325246/image-20201016154219293.png" class title="image-20201016154219293">
-
-<p>你可以简单地使用 git log 命令查看各个分支当前所指的对象。 提供这一功能的参数是–decorate 。  </p>
+<p>你可以简单地使用 git log 命令查看各个分支当前所指的对象。 提供这一功能的参数是—decorate 。  </p>
 <pre><code>$ git log --oneline --decorate
 f30ab (HEAD-&gt;master, testing) add feature #32 - ability to add new
 34ac2 fixed bug #1328 - stack overflow under certain conditions
 98ca9 initial commit of my project
-</code></pre>
-<h3 id="分支切换"><a href="#分支切换" class="headerlink" title="分支切换"></a>分支切换</h3><p>要切换到一个已存在的分支， 你需要使用 git checkout 命令。 我们现在切换到新创建的 testing 分支去：  </p>
+</code></pre><h3 id="分支切换"><a href="#分支切换" class="headerlink" title="分支切换"></a>分支切换</h3><p>要切换到一个已存在的分支， 你需要使用 git checkout 命令。 我们现在切换到新创建的 testing 分支去：  </p>
 <pre><code>git checkout testing
-</code></pre>
-<img src="/2022/061325246/image-20201016155045816.png" class title="image-20201016155045816">
-
+</code></pre><img src="/2022/061325246/image-20201016155045816.png" class title="image-20201016155045816">
 <blockquote>
 <p>分支切换会改变你工作目录中的文件<br>在切换分支时， 一定要注意你工作目录里的文件会被改变。 如果是切换到一个较旧的分支， 你的工作<br>目录会恢复到该分支最后一次提交时的样子。 如果 Git 不能干净利落地完成这个任务， 它将禁止切换<br>分支。  </p>
 </blockquote>
 <h3 id="切换分支后提交"><a href="#切换分支后提交" class="headerlink" title="切换分支后提交"></a>切换分支后提交</h3><img src="/2022/061325246/image-20201017133254590.png" class title="image-20201017133254590">
-
 <p>如图所示， 你的 testing 分支向前移动了， 但是 master 分支却没有， 它仍然指向运行 git checkout 时所指的对象。 这就有意思了， 现在我们切换回 master 分支看看：  </p>
 <pre><code>git checkout master
-</code></pre>
-<img src="/2022/061325246/image-20201017145248415.png" class title="image-20201017145248415">
-
+</code></pre><img src="/2022/061325246/image-20201017145248415.png" class title="image-20201017145248415">
 <p>这条命令做了两件事。 一是使 HEAD 指回 master 分支， 二是将工作目录恢复成 master 分支所指向<br>的快照内容。 也就是说， 你现在做修改的话， 项目将始于一个较旧的版本。 本质上来讲， 这就是忽略<br>testing 分支所做的修改， 以便于向另一个方向进行开发。  </p>
 <p>我们不妨再稍微做些修改并提交：  </p>
 <pre><code>$ vim test.rb
 $ git commit -a -m &#39;made other changes&#39;
-</code></pre>
-<p>现在， 这个项目的提交历史已经产生了分叉（ 参见 Figure 3-9） 。 因为刚才你创建了一个新分支， 并切换<br>过去进行了一些工作， 随后又切换回 master 分支进行了另外一些工作。 上述两次改动针对的是不同分<br>支： 你可以在不同分支间不断地来回切换和工作， 并在时机成熟时将它们合并起来。 而所有这些工作， 你<br>需要的命令只有 branch 、 checkout 和 commit 。  </p>
+</code></pre><p>现在， 这个项目的提交历史已经产生了分叉（ 参见 Figure 3-9） 。 因为刚才你创建了一个新分支， 并切换<br>过去进行了一些工作， 随后又切换回 master 分支进行了另外一些工作。 上述两次改动针对的是不同分<br>支： 你可以在不同分支间不断地来回切换和工作， 并在时机成熟时将它们合并起来。 而所有这些工作， 你<br>需要的命令只有 branch 、 checkout 和 commit 。  </p>
 <img src="/2022/061325246/image-20201017145544382.png" class title="image-20201017145544382">
-
-<p>你可以简单地使用 git log 命令查看分叉历史。 运行<br>git log –oneline –decorate –graph –all ， 它会输出你的提交历史、 各个分支的指向以<br>及项目的分支分叉情况。  </p>
+<p>你可以简单地使用 git log 命令查看分叉历史。 运行<br>git log —oneline —decorate —graph —all ， 它会输出你的提交历史、 各个分支的指向以<br>及项目的分支分叉情况。  </p>
 <pre><code>$ git log --oneline --decorate --graph --all
 * c2b9e (HEAD, master) made other changes
 | * 87ab2 (testing) made a change
@@ -539,50 +512,39 @@ $ git commit -a -m &#39;made other changes&#39;
 * f30ab add feature #32 - ability to add new formats to the
 * 34ac2 fixed bug #1328 - stack overflow under certain conditions
 * 98ca9 initial commit of my project
-</code></pre>
-<p><strong>创建分支实质上就是向一个文件中写入一个对象校验和</strong></p>
+</code></pre><p><strong>创建分支实质上就是向一个文件中写入一个对象校验和</strong></p>
 <p>由于 Git 的分支实质上仅是包含所指对象校验和（ 长度为 40 的 SHA-1 值字符串） 的文件， 所以它的创建<br>和销毁都异常高效。 创建一个新分支就像是往一个文件中写入 41 个字节（ 40 个字符和 1 个换行符） ， 如<br>此的简单能不快吗？  </p>
 <h3 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h3><h4 id="快进"><a href="#快进" class="headerlink" title="快进"></a>快进</h4><p>在合并的时候， 你应该注意到了”快进（ fast-forward） “这个词。 由于当前 master 分支所指向的提交<br>是你当前提交（ 有关 hotfix 的提交） 的直接上游， 所以 Git 只是简单的将指针向前移动。 换句话说， 当你<br>试图合并两个分支时， 如果顺着一个分支走下去能够到达另一个分支， 那么 Git 在合并两者的时候， 只会<br>简单的将指针向前推进（ 指针右移） ， 因为这种情况下的合并操作没有需要解决的分歧——这就叫做<br>“快进（ fast-forward） ” 。  </p>
 <pre><code>git checkout master
 
 git merge hotfix
-</code></pre>
-<img src="/2022/061325246/image-20210222071315943.png" class title="image-20210222071315943">
-
+</code></pre><img src="/2022/061325246/image-20210222071315943.png" class title="image-20210222071315943">
 <h4 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h4><pre><code>git branch -d hotfix
-</code></pre>
-<h4 id="合并提交"><a href="#合并提交" class="headerlink" title="合并提交"></a>合并提交</h4><p>这和你之前合并 hotfix 分支的时候看起来有一点不一样。 在这种情况下， 你的开发历史从一个更早的<br>地方开始分叉开来（ diverged） 。 因为， master 分支所在提交并不是 iss53 分支所在提交的直接祖<br>先， Git 不得不做一些额外的工作。 出现这种情况的时候， Git 会使用两个分支的末端所指的快照（ C4<br>和 C5 ） 以及这两个分支的工作祖先（ C2 ） ， 做一个简单的三方合并。  </p>
+</code></pre><h4 id="合并提交"><a href="#合并提交" class="headerlink" title="合并提交"></a>合并提交</h4><p>这和你之前合并 hotfix 分支的时候看起来有一点不一样。 在这种情况下， 你的开发历史从一个更早的<br>地方开始分叉开来（ diverged） 。 因为， master 分支所在提交并不是 iss53 分支所在提交的直接祖<br>先， Git 不得不做一些额外的工作。 出现这种情况的时候， Git 会使用两个分支的末端所指的快照（ C4<br>和 C5 ） 以及这两个分支的工作祖先（ C2 ） ， 做一个简单的三方合并。  </p>
 <img src="/2022/061325246/image-20210222071640080.png" class title="image-20210222071640080">
-
 <p>和之间将分支指针向前推进所不同的是， Git 将此次三方合并的结果做了一个新的快照并且自动创建一个<br>新的提交指向它。 这个被称作一次合并提交， 它的特别之处在于他有不止一个父提交。  </p>
 <img src="/2022/061325246/image-20210222071723379.png" class title="image-20210222071723379">
-
 <h4 id="遇到冲突时的分支合并"><a href="#遇到冲突时的分支合并" class="headerlink" title="遇到冲突时的分支合并"></a>遇到冲突时的分支合并</h4><p>有时候合并操作不会如此顺利。 如果你在两个不同的分支中， 对同一个文件的同一个部分进行了不同的修<br>改， Git 就没法干净的合并它们。 如果你对 #53 问题的修改和有关 hotfix 的修改都涉及到同一个文件<br>的同一处， 在合并它们的时候就会产生合并冲突：  </p>
 <p>此时 Git 做了合并， 但是没有自动地创建一个新的合并提交。 Git 会暂停下来， 等待你去解决合并产生的<br>冲突。 你可以在合并冲突后的任意时刻使用 git status 命令来查看那些因包含合并冲突而处于未合并<br>（ unmerged） 状态的文件：  </p>
 <img src="/2022/061325246/image-20210222071918884.png" class title="image-20210222071918884">
-
 <p>任何因包含合并冲突而有待解决的文件， 都会以未合并状态标识出来。 Git 会在有冲突的文件中加入标准<br>的冲突解决标记， 这样你可以打开这些包含冲突的文件然后手动解决冲突。 出现冲突的文件会包含一些特<br>殊区段， 看起来像下面这个样子：  </p>
 <img src="/2022/061325246/image-20210222071957893.png" class title="image-20210222071957893">
-
 <pre><code>//解决冲突后，添加冲突文件到缓冲区中，标记冲突解决
 git add index.html
 
 //提交冲突文件到本地仓库
 git commit -m &#39;解决合并冲突&#39;
-</code></pre>
-<h2 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h2><p>Git 通过储存一个称为远程（remote）的连接来联系远方的朋友。本地仓库可以有零个、一个或多个远程连接。通常情况下， Git 仓库只有一个远程连接，即 origin（源）。你可能已经见过了这个术语。分配给远程仓库的这个别名，从中下载或克隆了你的本地副本。你可以使用任何你喜欢的名称来命名你的远程连接。在你第一次启动一个新项目时，可能还没有现成的代码，也可能有了一些代码。（这显而易见，不是么？）如果你还没有代码，那么可以遵循代码托管系统中的指示，将这个空项目克隆到你本地的开发环境中。然而，如果你在本地已经有了一些代码，那么将会想要上传你已有的代码。要想这么做，你需要建立一个从你的本地仓库到项目托管服务的新连接。在项目仓库的本地副本中，检查你是否已经设置好一个远程连接，如下所示。<br><code>$ git remote --verbose</code><br>如果你从本地启动项目，就不会看到任何远程连接，因此，如果现在什么都没有显示也没关系。如果你为这个仓库设置了一个远程连接，将会看到如下内容。</p>
+</code></pre><h2 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h2><p>Git 通过储存一个称为远程（remote）的连接来联系远方的朋友。本地仓库可以有零个、一个或多个远程连接。通常情况下， Git 仓库只有一个远程连接，即 origin（源）。你可能已经见过了这个术语。分配给远程仓库的这个别名，从中下载或克隆了你的本地副本。你可以使用任何你喜欢的名称来命名你的远程连接。在你第一次启动一个新项目时，可能还没有现成的代码，也可能有了一些代码。（这显而易见，不是么？）如果你还没有代码，那么可以遵循代码托管系统中的指示，将这个空项目克隆到你本地的开发环境中。然而，如果你在本地已经有了一些代码，那么将会想要上传你已有的代码。要想这么做，你需要建立一个从你的本地仓库到项目托管服务的新连接。在项目仓库的本地副本中，检查你是否已经设置好一个远程连接，如下所示。<br><code>$ git remote --verbose</code><br>如果你从本地启动项目，就不会看到任何远程连接，因此，如果现在什么都没有显示也没关系。如果你为这个仓库设置了一个远程连接，将会看到如下内容。</p>
 <pre><code>origin https://github.com:emmajane/gitforteams.git (fetch)
 origin https://github.com:emmajane/gitforteams.git (push)
-</code></pre>
-<p>每行都以远程连接（origin）的别名开头，后跟远程仓库的原地址。这些行总是会成对出现：每一对的第一行表明你将从哪里获取新的工作（fetch），而第二行表明你会将新的工作上传到哪里（push）</p>
-<h3 id="添加一个远程仓库连接"><a href="#添加一个远程仓库连接" class="headerlink" title="添加一个远程仓库连接"></a>添加一个远程仓库连接</h3><p><code>git remote add nickname project-url  </code></p>
-<h3 id="移除一个远程连接"><a href="#移除一个远程连接" class="headerlink" title="移除一个远程连接"></a>移除一个远程连接</h3><p><code>git remote remove nickname  </code></p>
-<h3 id="将仓库的本地副本上传到远程服务器"><a href="#将仓库的本地副本上传到远程服务器" class="headerlink" title="将仓库的本地副本上传到远程服务器"></a>将仓库的本地副本上传到远程服务器</h3><p><code>git push nickname branch_name  </code></p>
-<h3 id="如果你希望与别人共享所有的本地分支，可以修改这个命令，如下所示"><a href="#如果你希望与别人共享所有的本地分支，可以修改这个命令，如下所示" class="headerlink" title="如果你希望与别人共享所有的本地分支，可以修改这个命令，如下所示"></a>如果你希望与别人共享所有的本地分支，可以修改这个命令，如下所示</h3><p><code>git push --all nickname  </code></p>
+</code></pre><p>每行都以远程连接（origin）的别名开头，后跟远程仓库的原地址。这些行总是会成对出现：每一对的第一行表明你将从哪里获取新的工作（fetch），而第二行表明你会将新的工作上传到哪里（push）</p>
+<h3 id="添加一个远程仓库连接"><a href="#添加一个远程仓库连接" class="headerlink" title="添加一个远程仓库连接"></a>添加一个远程仓库连接</h3><p><code>git remote add nickname project-url</code></p>
+<h3 id="移除一个远程连接"><a href="#移除一个远程连接" class="headerlink" title="移除一个远程连接"></a>移除一个远程连接</h3><p><code>git remote remove nickname</code></p>
+<h3 id="将仓库的本地副本上传到远程服务器"><a href="#将仓库的本地副本上传到远程服务器" class="headerlink" title="将仓库的本地副本上传到远程服务器"></a>将仓库的本地副本上传到远程服务器</h3><p><code>git push nickname branch_name</code></p>
+<h3 id="如果你希望与别人共享所有的本地分支，可以修改这个命令，如下所示"><a href="#如果你希望与别人共享所有的本地分支，可以修改这个命令，如下所示" class="headerlink" title="如果你希望与别人共享所有的本地分支，可以修改这个命令，如下所示"></a>如果你希望与别人共享所有的本地分支，可以修改这个命令，如下所示</h3><p><code>git push --all nickname</code></p>
 <h3 id="fatal-refusing-to-merge-unrelated-histories"><a href="#fatal-refusing-to-merge-unrelated-histories" class="headerlink" title="fatal: refusing to merge unrelated histories"></a>fatal: refusing to merge unrelated histories</h3><p>允许不相关历史提，强制合并</p>
 <pre><code>git pull origin master --allow-unrelated-histories
 </code></pre>
-
                 
             </div>
             <hr/>
@@ -1019,7 +981,7 @@ origin https://github.com:emmajane/gitforteams.git (push)
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">198.2k</span>
+                        class="white-color">195.1k</span>
             
             
             
