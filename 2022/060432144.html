@@ -334,21 +334,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-06-17
+                    2022-06-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    31.2k
+                    31.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    173 分
+                    172 分
                 </div>
                 
 
@@ -378,7 +378,7 @@
     &lt;/head&gt;
     &lt;body&gt;
         &lt;div id=&quot;app&quot;&gt;
-            &#123;&#123;msg&#125;&#125;
+            &#123;msg&#125;
         &lt;/div&gt;
         
         &lt;script&gt;
@@ -405,7 +405,7 @@
 &lt;/head&gt;
 &lt;body&gt;
     &lt;div id=&quot;app&quot;&gt;
-        &#123;&#123;msg&#125;&#125;
+        &#123;msg&#125;
     &lt;/div&gt;
 
     &lt;script&gt;
@@ -427,7 +427,7 @@
 <h3 id="2-v-html"><a href="#2-v-html" class="headerlink" title="2.v-html"></a>2.v-html</h3><p>v-html：会对数据中的html内容进行解析，显示解析后的结果，类似于Dom的 innerHTML</p>
 <p>v-text: 不会对数据中的html内容进行解析，类似于dom中的 innerText</p>
 <pre><code>        &lt;div id=&quot;app&quot;&gt;
-            &#123;&#123;msg&#125;&#125;&lt;br&gt;
+            &#123;msg&#125;&lt;br&gt;
             &lt;p v-text=&quot;msg&quot;&gt;&lt;/p&gt;
             &lt;p v-html=&quot;msg&quot;&gt;&lt;/p&gt;
         &lt;/div&gt;
@@ -512,7 +512,7 @@ data:&#123;
 <p>v-if：如果为false，删除dom元素，为true：创建dom元素</p>
 <p>v-show：用来显示和隐藏元素</p>
 <h3 id="8-v-for"><a href="#8-v-for" class="headerlink" title="8.v-for"></a>8.v-for</h3><p>循环指令</p>
-<pre><code>&lt;p v-for=&quot;(name,index) in arr&quot; &gt;&#123;&#123;index&#125;&#125;-&#123;&#123;name&#125;&#125;&lt;/p&gt;
+<pre><code>&lt;p v-for=&quot;(name,index) in arr&quot; &gt;&#123;index&#125;-&#123;name&#125;&lt;/p&gt;
 
 data:&#123;					
   arr:[&quot;tom&quot;,&quot;marry&quot;,&quot;scott&quot;]
@@ -557,12 +557,12 @@ data:&#123;
             省份：
             &lt;select @change=&quot;getCity&quot; v-model=&quot;province&quot;&gt;
                 &lt;option&gt;请选择&lt;/option&gt;
-                &lt;option v-for=&quot;(item,index) in map.keys()&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/option&gt;
+                &lt;option v-for=&quot;(item,index) in map.keys()&quot;&gt;&#123;item&#125;&lt;/option&gt;
             &lt;/select&gt;
             城市：
             &lt;select&gt;
                 &lt;option&gt;请选择&lt;/option&gt;
-                &lt;option v-for=&quot;(item,index) in cities&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/option&gt;
+                &lt;option v-for=&quot;(item,index) in cities&quot;&gt;&#123;item&#125;&lt;/option&gt;
             &lt;/select&gt;
         &lt;/div&gt;
         &lt;script type=&quot;text/javascript&quot;&gt;
@@ -599,12 +599,12 @@ data:&#123;
     &lt;body&gt;
         &lt;div id=&quot;app&quot;&gt;
             &lt;select size=&quot;10&quot; multiple=&quot;multiple&quot; v-model=&quot;leftSelected&quot;&gt;
-                &lt;option v-for=&quot;n in leftList&quot; &gt;&#123;&#123;n&#125;&#125;&lt;/option&gt;
+                &lt;option v-for=&quot;n in leftList&quot; &gt;&#123;n&#125;&lt;/option&gt;
             &lt;/select&gt;
             &lt;input type=&quot;button&quot; value=&quot;=&gt;&quot; @click=&quot;toRight&quot;&gt;
             &lt;input type=&quot;button&quot; value=&quot;&lt;=&quot; @click=&quot;toLeft&quot;&gt;
             &lt;select size=&quot;10&quot; multiple=&quot;multiple&quot;&gt;
-                &lt;option v-for=&quot;n in rightList&quot; :value=&quot;n&quot;&gt;&#123;&#123;n&#125;&#125;&lt;/option&gt;
+                &lt;option v-for=&quot;n in rightList&quot; :value=&quot;n&quot;&gt;&#123;n&#125;&lt;/option&gt;
             &lt;/select&gt;
         &lt;/div&gt;
         
@@ -650,12 +650,12 @@ data:&#123;
 &lt;body&gt;
     &lt;div id=&quot;app&quot;&gt;
         &lt;select multiple size=&quot;15&quot; v-model=&quot;leftSel&quot;&gt;
-            &lt;option v-for=&quot;n in left&quot;&gt;&#123;&#123;n&#125;&#125;&lt;/option&gt;
+            &lt;option v-for=&quot;n in left&quot;&gt;&#123;n&#125;&lt;/option&gt;
         &lt;/select&gt;
         &lt;input type=&quot;button&quot; value=&quot;=&gt;&quot; @click=&quot;toRight&quot;&gt;
         &lt;input type=&quot;button&quot; value=&quot;&lt;=&quot; @click=&quot;toLeft&quot;&gt;
         &lt;select multiple size=&quot;15&quot; v-model=&quot;rightSel&quot;&gt;
-            &lt;option v-for=&quot;n in right&quot;&gt;&#123;&#123;n&#125;&#125;&lt;/option&gt;
+            &lt;option v-for=&quot;n in right&quot;&gt;&#123;n&#125;&lt;/option&gt;
         &lt;/select&gt;
     &lt;/div&gt;
     &lt;script&gt;
@@ -740,7 +740,7 @@ data:&#123;
 </code></pre>
 <h2 id="Vue动态添加属性"><a href="#Vue动态添加属性" class="headerlink" title="Vue动态添加属性"></a>Vue动态添加属性</h2><p>默认情况下，vue不跟踪动态添加的属性</p>
 <pre><code>        &lt;div id=&quot;app&quot;&gt;
-            &#123;&#123;stu.name&#125;&#125;
+            &#123;stu.name&#125;
             &lt;input type=&quot;button&quot; value=&quot;动态添加属性&quot; @click=&quot;addAttr&quot;&gt;
         &lt;/div&gt;
         &lt;script type=&quot;text/javascript&quot;&gt;
@@ -778,17 +778,17 @@ data:&#123;
             &lt;table border=&quot;1&quot; width=&quot;500&quot;&gt;
                 &lt;tbody &gt;
                     &lt;tr v-for=&quot;dept,index in depts&quot;&gt;
-                        &lt;td&gt;&#123;&#123;dept.deptno&#125;&#125;&lt;/td&gt;
+                        &lt;td&gt;&#123;dept.deptno&#125;&lt;/td&gt;
                         
                         &lt;td v-if=&quot;dept.edit&quot;&gt;
                             &lt;input type=&quot;text&quot;  v-model=&quot;tempDept.dname&quot; size=&quot;4&quot;&gt;
                         &lt;/td&gt;
-                        &lt;td v-else&gt;&#123;&#123;dept.dname&#125;&#125;&lt;/td&gt;
+                        &lt;td v-else&gt;&#123;dept.dname&#125;&lt;/td&gt;
                         
                         &lt;td v-if=&quot;dept.edit&quot;&gt;
                             &lt;input type=&quot;text&quot;  v-model=&quot;tempDept.loc&quot; size=&quot;4&quot;&gt;
                         &lt;/td&gt;
-                        &lt;td v-else&gt;&#123;&#123;dept.loc&#125;&#125;&lt;/td&gt;
+                        &lt;td v-else&gt;&#123;dept.loc&#125;&lt;/td&gt;
                         &lt;td&gt;
                             &lt;input type=&quot;button&quot; value=&quot;删除&quot; @click=&quot;del(index)&quot;&gt;
                             &lt;input type=&quot;button&quot; :value=&quot;dept.editBtnValue&quot; @click=&quot;handleClick(dept,index)&quot;&gt;
@@ -857,7 +857,7 @@ data:&#123;
   &lt;table border=&quot;1&quot; width=&quot;500&quot;&gt;
     &lt;tr v-for=&quot;emp,index in emps&quot; :key=&quot;emp.empno&quot;&gt;
       &lt;template v-if=&quot;emp.edit&quot;&gt;
-        &lt;td&gt;&#123;&#123;emp.empno&#125;&#125;&lt;/td&gt;
+        &lt;td&gt;&#123;emp.empno&#125;&lt;/td&gt;
         &lt;td&gt;&lt;input type=&quot;text&quot; v-model=&quot;copyEmps[index].ename&quot;&gt;&lt;/td&gt;
         &lt;td&gt;&lt;input type=&quot;text&quot; v-model=&quot;copyEmps[index].sal&quot;&gt;&lt;/td&gt;
         &lt;td&gt;
@@ -866,9 +866,9 @@ data:&#123;
         &lt;/td&gt;
       &lt;/template&gt;
       &lt;template v-else&gt;
-        &lt;td&gt;&#123;&#123;emp.empno&#125;&#125;&lt;/td&gt;
-        &lt;td&gt;&#123;&#123;emp.ename&#125;&#125;&lt;/td&gt;
-        &lt;td&gt;&#123;&#123;emp.sal&#125;&#125;&lt;/td&gt;
+        &lt;td&gt;&#123;emp.empno&#125;&lt;/td&gt;
+        &lt;td&gt;&#123;emp.ename&#125;&lt;/td&gt;
+        &lt;td&gt;&#123;emp.sal&#125;&lt;/td&gt;
         &lt;td&gt;
           &lt;input type=&quot;button&quot; value=&quot;编辑&quot; @click=&quot;edit(index)&quot;&gt;
           &lt;input type=&quot;button&quot; value=&quot;删除&quot; @click=&quot;del(index)&quot;&gt;
@@ -928,7 +928,7 @@ export default &#123;
 <pre><code>        &lt;div id=&quot;app&quot;&gt;
             商品单价：&lt;input type=&quot;text&quot; v-model=&quot;price&quot;&gt;&lt;br&gt;
             商品数量：&lt;input type=&quot;text&quot; v-model=&quot;num&quot;&gt;&lt;br&gt;
-            总额：&#123;&#123;total&#125;&#125;
+            总额：&#123;total&#125;
         &lt;/div&gt;
         &lt;script type=&quot;text/javascript&quot;&gt;
             var app = new Vue(&#123;
@@ -953,7 +953,7 @@ export default &#123;
 <pre><code>&lt;div id=&quot;app&quot;&gt;
   商品单价：&lt;input type=&quot;text&quot; v-model=&quot;price&quot;&gt;&lt;br&gt;
   商品数量：&lt;input type=&quot;text&quot; v-model=&quot;num&quot;&gt;&lt;br&gt;
-  总额：&#123;&#123;total&#125;&#125;
+  总额：&#123;total&#125;
 &lt;/div&gt;
 
 computed:&#123;
@@ -977,7 +977,7 @@ computed:&#123;
 &lt;div id=&quot;app&quot;&gt;
   商品单价：&lt;input type=&quot;text&quot; v-model=&quot;price&quot;&gt;&lt;br&gt;
   商品数量：&lt;input type=&quot;text&quot; v-model=&quot;num&quot;&gt;&lt;br&gt;
-  总额：&#123;&#123;total&#125;&#125;
+  总额：&#123;total&#125;
 &lt;/div&gt;
 
 &lt;script&gt;
@@ -1038,7 +1038,7 @@ computed:&#123;
         &lt;div id=&quot;app&quot;&gt;
             商品单价：&lt;input type=&quot;text&quot; v-model=&quot;good.price&quot;&gt;&lt;br&gt;
             商品数量：&lt;input type=&quot;text&quot; v-model=&quot;good.num&quot;&gt;&lt;br&gt;
-            总额：&lt;span v-if=&quot;!isNaN(good.total)&quot;&gt;&#123;&#123;good.total&#125;&#125;&lt;/span&gt;
+            总额：&lt;span v-if=&quot;!isNaN(good.total)&quot;&gt;&#123;good.total&#125;&lt;/span&gt;
         &lt;/div&gt;
         &lt;script type=&quot;text/javascript&quot;&gt;
             var app = new Vue(&#123;
@@ -1074,7 +1074,7 @@ computed:&#123;
 &lt;div id=&quot;app&quot;&gt;
   商品单价：&lt;input type=&quot;text&quot; v-model=&quot;good.price&quot;&gt;&lt;br&gt;
   商品数量：&lt;input type=&quot;text&quot; v-model=&quot;good.num&quot;&gt;&lt;br&gt;
-  总额：&lt;span v-if=&quot;!isNaN(good.total)&quot;&gt;&#123;&#123;good.total&#125;&#125;&lt;/span&gt;
+  总额：&lt;span v-if=&quot;!isNaN(good.total)&quot;&gt;&#123;good.total&#125;&lt;/span&gt;
 &lt;/div&gt;
 
 &lt;script&gt;
@@ -1267,7 +1267,7 @@ computed:&#123;
     &lt;/head&gt;
     &lt;body&gt;
         &lt;div id=&quot;app&quot;&gt;
-            &lt;div&gt;&#123;&#123;name&#125;&#125;&lt;/div&gt;
+            &lt;div&gt;&#123;name&#125;&lt;/div&gt;
             &lt;input type=&quot;button&quot; value=&quot;开始&quot; @click=&quot;startGame&quot;&gt;
             &lt;input type=&quot;button&quot; value=&quot;停止&quot; @click=&quot;stopGame&quot;&gt;
         &lt;/div&gt;
@@ -1314,7 +1314,7 @@ computed:&#123;
 &lt;/head&gt;
 &lt;body&gt;
 &lt;div id=&quot;app&quot;&gt;
-  &lt;div id=&quot;style1&quot;&gt;&#123;&#123;name&#125;&#125;&lt;/div&gt;
+  &lt;div id=&quot;style1&quot;&gt;&#123;name&#125;&lt;/div&gt;
   &lt;input type=&quot;button&quot;  value=&quot;开始&quot; @click=&quot;startGame&quot; ref=&quot;startGame&quot;&gt;
   &lt;input type=&quot;button&quot;  value=&quot;结束&quot; @click=&quot;endGame&quot; ref=&quot;endGame&quot;&gt;
 &lt;/div&gt;
@@ -1376,7 +1376,7 @@ computed:&#123;
     &lt;div id=&quot;app&quot;&gt;
         &lt;div&gt;
             &lt;input type=&quot;button&quot; v-for=&quot;num in arr&quot; :value=&quot;num&quot;&gt;
-            和：&#123;&#123;sum&#125;&#125;
+            和：&#123;sum&#125;
         &lt;/div&gt;
         &lt;input type=&quot;button&quot; value=&quot;开始&quot; @click=&quot;startGame&quot;&gt;
         &lt;input type=&quot;button&quot; value=&quot;结束&quot; @click=&quot;stopGame&quot;&gt;
@@ -1580,7 +1580,7 @@ npm i -g @vue/cli
 <pre><code>            const mybtn = &#123;
                 template:
                 `
-                &lt;button type=&quot;button&quot; @click=&quot;add&quot;&gt;点击 &#123;&#123;num&#125;&#125;&lt;/button&gt;
+                &lt;button type=&quot;button&quot; @click=&quot;add&quot;&gt;点击 &#123;num&#125;&lt;/button&gt;
                 `,
                 //data必须是一个方法
                 data()&#123;
@@ -1653,7 +1653,7 @@ app.mount(&#39;#app&#39;)
 </li>
 <li><p>使用<template>标签</template></p>
 <pre><code>        &lt;template id=&quot;btn&quot;&gt;
-            &lt;button type=&quot;button&quot; @click=&quot;add&quot;&gt;点击 &#123;&#123;num&#125;&#125;&lt;/button&gt;
+            &lt;button type=&quot;button&quot; @click=&quot;add&quot;&gt;点击 &#123;num&#125;&lt;/button&gt;
         &lt;/template&gt;
         &lt;script type=&quot;text/javascript&quot;&gt;
             const mybtn = &#123;
@@ -1693,7 +1693,7 @@ app.mount(&#39;#app&#39;)
 
 //子组件
         &lt;template id=&quot;btn&quot;&gt;
-            &lt;button type=&quot;button&quot; @click=&quot;add&quot;&gt;点击 &#123;&#123;num&#125;&#125;&lt;/button&gt;
+            &lt;button type=&quot;button&quot; @click=&quot;add&quot;&gt;点击 &#123;num&#125;&lt;/button&gt;
         &lt;/template&gt;
             const mybtn = &#123;
                 template:&quot;#btn&quot;,
@@ -1802,7 +1802,7 @@ export default &#123;
         &lt;div&gt;
             &lt;input type=&quot;button&quot; value=&quot;开始&quot; @click=&quot;isstart=true&quot; &gt;
             &lt;input type=&quot;button&quot; value=&quot;停止&quot; @click=&quot;isstart=false&quot; &gt;
-            和:&#123;&#123;sum&#125;&#125;
+            和:&#123;sum&#125;
         &lt;/div&gt;
     &lt;/div&gt;
 
@@ -1945,7 +1945,7 @@ export default &#123;
     &lt;div&gt;
       &lt;input type=&quot;button&quot; value=&quot;开始&quot; @click=&quot;isstart=true&quot; &gt;
       &lt;input type=&quot;button&quot; value=&quot;停止&quot; @click=&quot;isstart=false&quot; &gt;
-      和:&#123;&#123;sum&#125;&#125;
+      和:&#123;sum&#125;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/template&gt;
@@ -2028,7 +2028,7 @@ export default &#123;
     &lt;child :com-num=&quot;num&quot; @myevent=&quot;num=$event&quot; &gt;&lt;/child&gt;
       &lt;!--&lt;child :com-num.sync=&quot;num&quot;&gt;&lt;/child&gt;--&gt;
       &lt;div&gt;
-          &#123;&#123;num&#125;&#125;
+          &#123;num&#125;
       &lt;/div&gt;
   &lt;/div&gt;
 &lt;template id=&quot;child&quot;&gt;
@@ -2083,7 +2083,7 @@ export default &#123;
     &lt;!--.sync表示异步修改，需要组件内支持，即自定义事件名为：update:组件属性名--&gt;
     &lt;child :com-num.sync=&quot;num&quot;&gt;&lt;/child&gt;
     &lt;div&gt;
-        &#123;&#123;num&#125;&#125;
+        &#123;num&#125;
     &lt;/div&gt;
 &lt;/div&gt;
 &lt;template id=&quot;child&quot;&gt;
@@ -2132,7 +2132,7 @@ export default &#123;
 </code></pre>
 <h4 id="写法一"><a href="#写法一" class="headerlink" title="写法一"></a>写法一</h4><p>子组件：Child1</p>
 <pre><code>&lt;template&gt;
-  &lt;div&gt;&#123;&#123;sonProp&#125;&#125;&lt;/div&gt;
+  &lt;div&gt;&#123;sonProp&#125;&lt;/div&gt;
   &lt;button @click=&quot;change&quot;&gt;返回&lt;/button&gt;
 &lt;/template&gt;
 
@@ -2180,7 +2180,7 @@ export default &#123;
 </code></pre>
 <h4 id="简化写法"><a href="#简化写法" class="headerlink" title="简化写法"></a>简化写法</h4><p>子组件：Child1</p>
 <pre><code>&lt;template&gt;
-  &lt;div&gt;&#123;&#123;sonProp&#125;&#125;&lt;/div&gt;
+  &lt;div&gt;&#123;sonProp&#125;&lt;/div&gt;
   &lt;button @click=&quot;change&quot;&gt;返回&lt;/button&gt;
 &lt;/template&gt;
 
@@ -2243,8 +2243,8 @@ export default &#123;
 </code></pre>
 <h4 id="多属性"><a href="#多属性" class="headerlink" title="多属性"></a>多属性</h4><p>子组件：Child1</p>
 <pre><code>&lt;template&gt;
-  &lt;div&gt;&#123;&#123;sonProp&#125;&#125;&lt;/div&gt;
-  &lt;div&gt;&#123;&#123;prop2&#125;&#125;&lt;/div&gt;
+  &lt;div&gt;&#123;sonProp&#125;&lt;/div&gt;
+  &lt;div&gt;&#123;prop2&#125;&lt;/div&gt;
   &lt;button @click=&quot;change&quot;&gt;返回&lt;/button&gt;
 &lt;/template&gt;
 
@@ -2298,7 +2298,7 @@ export default &#123;
 <p>匿名插槽：<code>&lt;slot&gt;&lt;/slot&gt;</code>，只能有一个</p>
 <pre><code>&lt;body&gt;
 &lt;div id=&quot;app&quot;&gt;
-    &lt;child&gt;&#123;&#123;msg&#125;&#125;&lt;/child&gt;
+    &lt;child&gt;&#123;msg&#125;&lt;/child&gt;
 &lt;/div&gt;
 &lt;template id=&quot;child&quot;&gt;
     &lt;div&gt;
@@ -2341,8 +2341,8 @@ export default &#123;
                 &lt;template slot=&quot;s1&quot;&gt;marry&lt;/template&gt;
                 &lt;template slot=&quot;s2&quot;&gt;scott&lt;/template&gt;
                 &lt;!--为匿名插槽赋值--&gt;
-                &lt;template&gt;&#123;&#123;msg&#125;&#125;&lt;/template&gt;
-                &lt;!--或 &#123;&#123;msg&#125;&#125;--&gt;
+                &lt;template&gt;&#123;msg&#125;&lt;/template&gt;
+                &lt;!--或 &#123;msg&#125;--&gt;
             &lt;/child&gt;
         &lt;/div&gt;
         &lt;template id=&quot;child&quot;&gt;
@@ -2469,8 +2469,8 @@ export default &#123;
 &lt;div id=&quot;app&quot;&gt;
     &lt;child&gt;
         &lt;template slot-scope=&quot;scope&quot; slot=&quot;s1&quot;&gt;
-            &lt;span&gt;姓名：&#123;&#123;scope.name1&#125;&#125;&lt;/span&gt;
-            &lt;span&gt;年龄：&#123;&#123;scope.age&#125;&#125;&lt;/span&gt;
+            &lt;span&gt;姓名：&#123;scope.name1&#125;&lt;/span&gt;
+            &lt;span&gt;年龄：&#123;scope.age&#125;&lt;/span&gt;
         &lt;/template&gt;
     &lt;/child&gt;
 &lt;/div&gt;
@@ -2515,8 +2515,8 @@ export default &#123;
 &lt;div id=&quot;app&quot;&gt;
     &lt;child&gt;
         &lt;template slot-scope=&quot;scope&quot; slot=&quot;s1&quot;&gt;
-            &lt;span&gt;姓名：&#123;&#123;scope.stu.name&#125;&#125;&lt;/span&gt;
-            &lt;span&gt;年龄：&#123;&#123;scope.stu.age&#125;&#125;&lt;/span&gt;
+            &lt;span&gt;姓名：&#123;scope.stu.name&#125;&lt;/span&gt;
+            &lt;span&gt;年龄：&#123;scope.stu.age&#125;&lt;/span&gt;
         &lt;/template&gt;
     &lt;/child&gt;
 &lt;/div&gt;
@@ -2560,7 +2560,7 @@ export default &#123;
         &lt;div id=&quot;app&quot;&gt;
             &lt;child :data=&quot;arr&quot;&gt;
                 &lt;template slot-scope=&quot;scope&quot;&gt;
-                    &lt;li&gt;&lt;h3&gt;&#123;&#123;scope.n&#125;&#125;&lt;/h3&gt;&lt;h4&gt;&#123;&#123;scope.i&#125;&#125;&lt;/h4&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;h3&gt;&#123;scope.n&#125;&lt;/h3&gt;&lt;h4&gt;&#123;scope.i&#125;&lt;/h4&gt;&lt;/li&gt;
                 &lt;/template&gt;
             &lt;/child&gt;
         &lt;/div&gt;
@@ -2606,7 +2606,7 @@ export default &#123;
 <h4 id="父组件"><a href="#父组件" class="headerlink" title="父组件"></a>父组件</h4><p>Parent3.vue</p>
 <pre><code>&lt;template&gt;
   &lt;Child3 v-slot=&quot;scope&quot;&gt;
-    &#123;&#123;scope.age&#125;&#125;-&#123;&#123;scope.name2&#125;&#125;
+    &#123;scope.age&#125;-&#123;scope.name2&#125;
   &lt;/Child3&gt;
 &lt;/template&gt;
 
@@ -2640,11 +2640,11 @@ export default &#123;
   &lt;Child3  &gt;
     &lt;!--  可简写为：#default=&quot;scope&quot;   --&gt;
     &lt;template v-slot:default=&quot;scope&quot;&gt;
-      &#123;&#123;scope.age&#125;&#125;
+      &#123;scope.age&#125;
     &lt;/template&gt;
     &lt;!--  可简写为：#name1=&quot;scope&quot;   --&gt;
     &lt;template v-slot:name1=&quot;scope&quot;&gt;
-      &#123;&#123;scope.name2&#125;&#125;-&#123;&#123;scope.age&#125;&#125;
+      &#123;scope.name2&#125;-&#123;scope.age&#125;
     &lt;/template&gt;
   &lt;/Child3&gt;
 &lt;/template&gt;
@@ -2999,7 +2999,7 @@ export default &#123;
 this.$router.push(&#123;path:&#39;/editdept/20/hr5&#39;&#125;);
 
 //在组件中得到路由参数
-&#123;&#123;$route.params.deptno&#125;&#125;
+&#123;$route.params.deptno&#125;
 
 this.deptno = this.$route.params.deptno;
 </code></pre>
@@ -3010,10 +3010,10 @@ this.deptno = this.$route.params.deptno;
 &#125;
 
 //router-link
-&lt;router-link :to=&quot;&#123;path:&#39;/update_dept&#39;,query:&#123;&#39;deptno&#39;:dept.deptno&#125;&#125;&quot;&gt;更新&lt;/router-link&gt;
+&lt;router-link :to=&quot;&#123;path:&#39;/update_dept&#39;,query:&#123;&#39;deptno&#39;:dept.deptno&#125;&quot;&gt;更新&lt;/router-link&gt;
 
 //在组件中得到路由参数
-&#123;&#123;$route.query.deptno&#125;&#125;
+&#123;$route.query.deptno&#125;
 
 this.deptno = this.$route.query.deptno;
 </code></pre>
@@ -3027,10 +3027,10 @@ this.deptno = this.$route.query.deptno;
 &#125;
 
 发送数据：
-this.$router.push(&#123;name:&#39;main&#39;,query:&#123;username:&#39;admin&#39;,age:20&#125;&#125;);
+this.$router.push(&#123;name:&#39;main&#39;,query:&#123;username:&#39;admin&#39;,age:20&#125;);
 
 接收数据：
-&#123;&#123;$route.query.username&#125;&#125;
+&#123;$route.query.username&#125;
 
 this.username = this.$route.query.username;
 </code></pre>
@@ -3043,10 +3043,10 @@ this.username = this.$route.query.username;
 &#125;
 
 发送数据：
-this.$router.push(&#123;name:&#39;main&#39;,params:&#123;username:&#39;admin&#39;,age:20&#125;&#125;);
+this.$router.push(&#123;name:&#39;main&#39;,params:&#123;username:&#39;admin&#39;,age:20&#125;);
 
 接收数据：
-&#123;&#123;$route.params.username&#125;&#125;
+&#123;$route.params.username&#125;
 
 this.username = this.$route.params.username;
 </code></pre>
@@ -3439,7 +3439,7 @@ app.mount(&#39;#app&#39;)
 </code></pre>
 </li>
 <li><p>在组件中访问</p>
-<pre><code>&#123;&#123;$store.state.user.username&#125;&#125;
+<pre><code>&#123;$store.state.user.username&#125;
 </code></pre>
 </li>
 <li><p>在组件内，来自store的数据是只读的，不能手工修改，改变 store中数据的唯一途径就是显示的提交mutations</p>
@@ -3477,7 +3477,7 @@ this.$store.commit(&quot;add&quot;,5);
     &#125;
 &#125;)
 
-&#123;&#123;$store.getters.formatCount&#125;&#125;
+&#123;$store.getters.formatCount&#125;
 </code></pre>
 </li>
 <li><p>使用 store的 actions，来执行异步状态管理</p>
@@ -3547,7 +3547,7 @@ app.mount(&#39;#app&#39;)
 </code></pre>
 </li>
 <li><p>在组件中访问</p>
-<pre><code>&#123;&#123;$store.state.user.username&#125;&#125;
+<pre><code>&#123;$store.state.user.username&#125;
 </code></pre>
 </li>
 <li><p>在组件内，来自store的数据是只读的，不能手工修改，改变 store中数据的唯一途径就是显示的提交mutations</p>
@@ -3585,7 +3585,7 @@ this.$store.commit(&quot;add&quot;,5);
     &#125;
 &#125;)
 
-&#123;&#123;$store.getters.formatCount&#125;&#125;
+&#123;$store.getters.formatCount&#125;
 </code></pre>
 </li>
 <li><p>使用 store的 actions，来执行异步状态管理</p>
@@ -4102,7 +4102,7 @@ li&#123;
 ]
 </code></pre>
 <p>要链接到一个命名的路由，可以向 <code>router-link</code> 组件的 <code>to</code> 属性传递一个对象：</p>
-<pre><code>&lt;router-link :to=&quot;&#123; name: &#39;user&#39;, params: &#123; username: &#39;erina&#39; &#125;&#125;&quot;&gt;
+<pre><code>&lt;router-link :to=&quot;&#123; name: &#39;user&#39;, params: &#123; username: &#39;erina&#39; &#125;&quot;&gt;
   User
 &lt;/router-link&gt;
 </code></pre>
@@ -4294,13 +4294,13 @@ public PageInfo&lt;Dept&gt; paged(@RequestParam(defaultValue = &quot;1&quot;) in
   部门管理
   &lt;table border=&quot;1&quot; width=&quot;500&quot;&gt;
     &lt;tr v-for=&quot;dept in pageInfo.list&quot; :key=&quot;dept.deptno&quot;&gt;
-      &lt;td&gt;&#123;&#123;dept.deptno&#125;&#125;&lt;/td&gt;
-      &lt;td&gt;&#123;&#123;dept.dname&#125;&#125;&lt;/td&gt;
-      &lt;td&gt;&#123;&#123;dept.loc&#125;&#125;&lt;/td&gt;
+      &lt;td&gt;&#123;dept.deptno&#125;&lt;/td&gt;
+      &lt;td&gt;&#123;dept.dname&#125;&lt;/td&gt;
+      &lt;td&gt;&#123;dept.loc&#125;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td colspan=&quot;3&quot;&gt;
-        &lt;a href=&quot;#&quot; v-for=&quot;num in pageInfo.navigatepageNums&quot; :key=&quot;num&quot; @click=&quot;paged(num,pageInfo.pageSize)&quot;&gt;[&#123;&#123;num&#125;&#125;]&lt;/a&gt;
+        &lt;a href=&quot;#&quot; v-for=&quot;num in pageInfo.navigatepageNums&quot; :key=&quot;num&quot; @click=&quot;paged(num,pageInfo.pageSize)&quot;&gt;[&#123;num&#125;]&lt;/a&gt;
 
        &lt;a href=&quot;#&quot; @click=&quot;paged(pageInfo.navigateFirstPage,pageInfo.pageSize)&quot; v-show=&quot;pageInfo.hasPreviousPage&quot;&gt;第一页&lt;/a&gt;
         &lt;a href=&quot;#&quot; @click=&quot;paged(pageInfo.prePage,pageInfo.pageSize)&quot; v-show=&quot;pageInfo.hasPreviousPage&quot;&gt;上一页&lt;/a&gt;
@@ -5499,7 +5499,7 @@ a &#123;
 </code></pre>
 <h5 id="Vuex-1"><a href="#Vuex-1" class="headerlink" title="Vuex"></a>Vuex</h5><p>显示用户名</p>
 <pre><code>&lt;span&gt;
-    &#123;&#123; $store.state.username.toUpperCase() &#125;&#125;
+    &#123; $store.state.username.toUpperCase() &#125;(两个大括号)
 &lt;/span&gt;
 </code></pre>
 <h5 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h5><pre><code>&lt;el-aside width=&quot;200px&quot; v-show=&quot;isShowMenu&quot; &gt;
@@ -5530,12 +5530,12 @@ a &#123;
 <h5 id="下拉菜单"><a href="#下拉菜单" class="headerlink" title="下拉菜单"></a>下拉菜单</h5><pre><code>&lt;el-col :span=&quot;2&quot; :offset=&quot;16&quot; class=&quot;user_title&quot;&gt;
             &lt;el-dropdown class=&quot;el-dropdown-link&quot; @command=&quot;handleCommand&quot;&gt;
                         &lt;span&gt;
-              &#123;&#123; $store.state.username.toUpperCase() &#125;&#125;
+              &#123; $store.state.username.toUpperCase() &#125;
                             &lt;i class=&quot;el-icon-arrow-down el-icon--right&quot;&gt;&lt;/i&gt;
                         &lt;/span&gt;
               &lt;template #dropdown&gt;
                 &lt;el-dropdown-menu&gt;
-                  &lt;el-dropdown-item command=&quot;hideMenu&quot;&gt;&#123;&#123; hideMenuText &#125;&#125;&lt;/el-dropdown-item&gt;
+                  &lt;el-dropdown-item command=&quot;hideMenu&quot;&gt;&#123; hideMenuText &#125;&lt;/el-dropdown-item&gt;
                   &lt;el-dropdown-item command=&quot;exit&quot;&gt;退出登录&lt;/el-dropdown-item&gt;
                 &lt;/el-dropdown-menu&gt;
               &lt;/template&gt;
@@ -5584,12 +5584,12 @@ export default &#123;
             
             &lt;el-dropdown class=&quot;el-dropdown-link&quot; @command=&quot;handleCommand&quot;&gt;
                         &lt;span&gt;
-              &#123;&#123; $store.state.username.toUpperCase() &#125;&#125;
+              &#123; $store.state.username.toUpperCase() &#125;
                             &lt;i class=&quot;el-icon-arrow-down el-icon--right&quot;&gt;&lt;/i&gt;
                         &lt;/span&gt;
               &lt;template #dropdown&gt;
                 &lt;el-dropdown-menu&gt;
-                  &lt;el-dropdown-item command=&quot;hideMenu&quot;&gt;&#123;&#123; hideMenuText &#125;&#125;&lt;/el-dropdown-item&gt;
+                  &lt;el-dropdown-item command=&quot;hideMenu&quot;&gt;&#123; hideMenuText &#125;&lt;/el-dropdown-item&gt;
                   &lt;el-dropdown-item command=&quot;exit&quot;&gt;退出登录&lt;/el-dropdown-item&gt;
                 &lt;/el-dropdown-menu&gt;
               &lt;/template&gt;
@@ -5714,7 +5714,7 @@ a &#123;
             &lt;el-input type=&quot;text&quot; v-model=&quot;tempDepts[$index].deptno&quot;&gt;&lt;/el-input&gt;
           &lt;/template&gt;
           &lt;template v-else&gt;
-            &lt;span&gt;&#123;&#123; row.deptno &#125;&#125;&lt;/span&gt;
+            &lt;span&gt;&#123; row.deptno &#125;&lt;/span&gt;
           &lt;/template&gt;
         &lt;/template&gt;
       &lt;/el-table-column&gt;
@@ -5727,7 +5727,7 @@ a &#123;
             &lt;el-input type=&quot;text&quot; v-model=&quot;tempDepts[$index].dname&quot;&gt;&lt;/el-input&gt;
           &lt;/template&gt;
           &lt;template v-else&gt;
-            &lt;span&gt;&#123;&#123; row.dname &#125;&#125;&lt;/span&gt;
+            &lt;span&gt;&#123; row.dname &#125;&lt;/span&gt;
           &lt;/template&gt;
         &lt;/template&gt;
       &lt;/el-table-column&gt;
@@ -5740,7 +5740,7 @@ a &#123;
             &lt;el-input type=&quot;text&quot; v-model=&quot;tempDepts[$index].loc&quot;&gt;&lt;/el-input&gt;
           &lt;/template&gt;
           &lt;template v-else&gt;
-            &lt;span&gt;&#123;&#123; row.loc &#125;&#125;&lt;/span&gt;
+            &lt;span&gt;&#123; row.loc &#125;&lt;/span&gt;
           &lt;/template&gt;
         &lt;/template&gt;
       &lt;/el-table-column&gt;
@@ -6215,7 +6215,7 @@ public int importData(MultipartFile file) throws IOException &#123;
         action=&quot;http://localhost:8089/dept/import&quot;
         :disabled=&quot;importDataDisabled&quot;
     &gt;
-      &lt;el-button type=&quot;success&quot; :disabled=&quot;importDataDisabled&quot; :icon=&quot;importDataIcon&quot;&gt;&#123;&#123;btnText&#125;&#125;&lt;/el-button&gt;
+      &lt;el-button type=&quot;success&quot; :disabled=&quot;importDataDisabled&quot; :icon=&quot;importDataIcon&quot;&gt;&#123;btnText&#125;&lt;/el-button&gt;
 &lt;/el-upload&gt;
 
 //导入图标
@@ -6360,7 +6360,7 @@ export default &#123;
     return &#123;
       pageInfo: &#123;&#125;,
       disableDialog: false,
-      emp: &#123;dept: &#123;&#125;&#125;,
+      emp: &#123;dept: &#123;&#125;,
       depts: [],
       dialogTitle: &quot;&quot;
     &#125;
@@ -6386,7 +6386,7 @@ export default &#123;
     add() &#123;
       this.disableDialog = true;
       this.dialogTitle = &quot;添加员工&quot;;
-      this.emp = &#123;dept: &#123;&#125;&#125;;
+      this.emp = &#123;dept: &#123;&#125;;
     &#125;,
     del(row) &#123;
       this.$confirm(&quot;是否删除员工?&quot;, &quot;提示&quot;, &#123;
@@ -6468,7 +6468,7 @@ export default &#123;
 &lt;/style&gt;
 </code></pre>
 <h3 id="下拉菜单-1"><a href="#下拉菜单-1" class="headerlink" title="下拉菜单"></a>下拉菜单</h3><pre><code>&lt;el-header&gt;
-        &lt;!-- &lt;h1&gt;东软人力资源管理系统-&#123;&#123;$store.state.username&#125;&#125;&lt;/h1&gt;
+        &lt;!-- &lt;h1&gt;东软人力资源管理系统-&#123;$store.state.username&#125;&lt;/h1&gt;
          --&gt;
         &lt;el-row&gt;
           &lt;el-col :span=&quot;6&quot;&gt;
@@ -6478,14 +6478,14 @@ export default &#123;
             &lt;!--  --&gt;
             &lt;el-dropdown class=&quot;el-dropdown-link&quot; @command=&quot;handleCommand&quot;&gt;
                         &lt;span&gt;
-              &#123;&#123; $store.state.username.toUpperCase() &#125;&#125;
+              &#123; $store.state.username.toUpperCase() &#125;
               &lt;el-icon class=&quot;el-icon--right&quot;&gt;
                 &lt;arrow-down /&gt;
               &lt;/el-icon&gt;
                         &lt;/span&gt;
               &lt;template #dropdown&gt;
                 &lt;el-dropdown-menu&gt;
-                  &lt;el-dropdown-item command=&quot;hideMenu&quot;&gt;&#123;&#123; hideMenuText &#125;&#125;&lt;/el-dropdown-item&gt;
+                  &lt;el-dropdown-item command=&quot;hideMenu&quot;&gt;&#123; hideMenuText &#125;&lt;/el-dropdown-item&gt;
                   &lt;el-dropdown-item command=&quot;exit&quot;&gt;退出登录&lt;/el-dropdown-item&gt;
                 &lt;/el-dropdown-menu&gt;
               &lt;/template&gt;
@@ -6618,7 +6618,7 @@ data()&#123;
     :label=&quot;item.title&quot;
     :name=&quot;item.name&quot;
   &gt;
-    &#123;&#123;item.content&#125;&#125;
+    &#123;item.content&#125;
   &lt;/el-tab-pane&gt;
 &lt;/el-tabs&gt;
 &lt;/template&gt;
@@ -6700,7 +6700,7 @@ data()&#123;
     :label=&quot;item.title&quot;
     :name=&quot;item.name&quot;
   &gt;
-    &#123;&#123;item.content&#125;&#125;
+    &#123;item.content&#125;
   &lt;/el-tab-pane&gt;
 &lt;/el-tabs&gt;
 &lt;/template&gt;
@@ -7221,7 +7221,7 @@ spring.jackson.time-zone=GMT+8
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">195.1k</span>
+                        class="white-color">199.8k</span>
             
             
             

@@ -341,14 +341,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    11.6k
+                    11.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    43 分
+                    44 分
                 </div>
                 
 
@@ -384,120 +384,106 @@
 </ol>
 <h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>查看目录结构：<code>ls /</code></p>
 <img src="/2022/061415691/image-20210619153339734.png" class>
+
 <p>以下是对这些目录的解释：</p>
 <ul>
-<li><p><strong>/bin</strong>：<br>bin 是 Binaries (二进制文件) 的缩写, 这个目录存放着最经常使用的命令。</p>
+<li><p><strong>&#x2F;bin</strong>：<br>bin 是 Binaries (二进制文件) 的缩写, 这个目录存放着最经常使用的命令。</p>
 </li>
-<li><p><strong>/boot：</strong><br>这里存放的是启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件。</p>
+<li><p><strong>&#x2F;boot：</strong><br>这里存放的是启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件。</p>
 </li>
-<li><p><strong>/dev ：</strong><br>dev 是 Device(设备) 的缩写, 该目录下存放的是 Linux 的外部设备，在 Linux 中访问设备的方式和访问文件的方式是相同的。</p>
+<li><p><strong>&#x2F;dev ：</strong><br>dev 是 Device(设备) 的缩写, 该目录下存放的是 Linux 的外部设备，在 Linux 中访问设备的方式和访问文件的方式是相同的。</p>
 </li>
-<li><p><strong>/etc：</strong><br>etc 是 Etcetera(等等) 的缩写,这个目录用来存放所有的系统管理所需要的配置文件和子目录。</p>
+<li><p><strong>&#x2F;etc：</strong><br>etc 是 Etcetera(等等) 的缩写,这个目录用来存放所有的系统管理所需要的配置文件和子目录。</p>
 </li>
-<li><p><strong>/home</strong>：<br>用户的主目录，在 Linux 中，每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的，如上图中的 alice、bob 和 eve。</p>
+<li><p><strong>&#x2F;home</strong>：<br>用户的主目录，在 Linux 中，每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的，如上图中的 alice、bob 和 eve。</p>
 </li>
-<li><p><strong>/lib</strong>：<br>lib 是 Library(库) 的缩写这个目录里存放着系统最基本的动态连接共享库，其作用类似于 Windows 里的 DLL 文件。几乎所有的应用程序都需要用到这些共享库。</p>
+<li><p><strong>&#x2F;lib</strong>：<br>lib 是 Library(库) 的缩写这个目录里存放着系统最基本的动态连接共享库，其作用类似于 Windows 里的 DLL 文件。几乎所有的应用程序都需要用到这些共享库。</p>
 </li>
-<li><p><strong>/lost+found</strong>：<br>这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。</p>
+<li><p><strong>&#x2F;lost+found</strong>：<br>这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。</p>
 </li>
-<li><p><strong>/media</strong>：<br>linux 系统会自动识别一些设备，例如U盘、光驱等等，当识别后，Linux 会把识别的设备挂载到这个目录下。</p>
+<li><p><strong>&#x2F;media</strong>：<br>linux 系统会自动识别一些设备，例如U盘、光驱等等，当识别后，Linux 会把识别的设备挂载到这个目录下。</p>
 </li>
-<li><p><strong>/mnt</strong>：<br>系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在 /mnt/ 上，然后进入该目录就可以查看光驱里的内容了。</p>
+<li><p><strong>&#x2F;mnt</strong>：<br>系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在 &#x2F;mnt&#x2F; 上，然后进入该目录就可以查看光驱里的内容了。</p>
 </li>
-<li><p><strong>/opt</strong>：<br>opt 是 optional(可选) 的缩写，这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。</p>
+<li><p><strong>&#x2F;opt</strong>：<br>opt 是 optional(可选) 的缩写，这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。</p>
 </li>
-<li><p><strong>/proc</strong>：<br>proc 是 Processes(进程) 的缩写，/proc 是一种伪文件系统（也即虚拟文件系统），存储的是当前内核运行状态的一系列特殊文件，这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。<br>这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件，比如可以通过下面的命令来屏蔽主机的ping命令，使别人无法ping你的机器：</p>
+<li><p><strong>&#x2F;proc</strong>：<br>proc 是 Processes(进程) 的缩写，&#x2F;proc 是一种伪文件系统（也即虚拟文件系统），存储的是当前内核运行状态的一系列特殊文件，这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。<br>这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件，比如可以通过下面的命令来屏蔽主机的ping命令，使别人无法ping你的机器：</p>
 <pre><code>echo 1 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all
-</code></pre></li>
-<li><p><strong>/root</strong>：<br>该目录为系统管理员，也称作超级权限者的用户主目录。</p>
+</code></pre>
 </li>
-<li><p><strong>/sbin</strong>：<br>s 就是 Super User 的意思，是 Superuser Binaries (超级用户的二进制文件) 的缩写，这里存放的是系统管理员使用的系统管理程序。</p>
+<li><p><strong>&#x2F;root</strong>：<br>该目录为系统管理员，也称作超级权限者的用户主目录。</p>
 </li>
-<li><p><strong>/selinux</strong>：<br> 这个目录是 Redhat/CentOS 所特有的目录，Selinux 是一个安全机制，类似于 windows 的防火墙，但是这套机制比较复杂，这个目录就是存放selinux相关的文件的。</p>
+<li><p><strong>&#x2F;sbin</strong>：<br>s 就是 Super User 的意思，是 Superuser Binaries (超级用户的二进制文件) 的缩写，这里存放的是系统管理员使用的系统管理程序。</p>
 </li>
-<li><p><strong>/srv</strong>：<br> 该目录存放一些服务启动之后需要提取的数据。</p>
+<li><p><strong>&#x2F;selinux</strong>：<br> 这个目录是 Redhat&#x2F;CentOS 所特有的目录，Selinux 是一个安全机制，类似于 windows 的防火墙，但是这套机制比较复杂，这个目录就是存放selinux相关的文件的。</p>
 </li>
-<li><p><strong>/sys</strong>：</p>
+<li><p><strong>&#x2F;srv</strong>：<br> 该目录存放一些服务启动之后需要提取的数据。</p>
+</li>
+<li><p><strong>&#x2F;sys</strong>：</p>
 <p>这是 Linux2.6 内核的一个很大的变化。该目录下安装了 2.6 内核中新出现的一个文件系统 sysfs 。</p>
 <p>sysfs 文件系统集成了下面3种文件系统的信息：针对进程信息的 proc 文件系统、针对设备的 devfs 文件系统以及针对伪终端的 devpts 文件系统。</p>
 <p>该文件系统是内核设备树的一个直观反映。</p>
 <p>当一个内核对象被创建的时候，对应的文件和目录也在内核对象子系统中被创建。</p>
 </li>
-<li><p><strong>/tmp</strong>：<br>tmp 是 temporary(临时) 的缩写这个目录是用来存放一些临时文件的。</p>
+<li><p><strong>&#x2F;tmp</strong>：<br>tmp 是 temporary(临时) 的缩写这个目录是用来存放一些临时文件的。</p>
 </li>
-<li><p><strong>/usr</strong>：<br> usr 是 unix shared resources(共享资源) 的缩写，这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于 windows 下的 program files 目录。</p>
+<li><p><strong>&#x2F;usr</strong>：<br> usr 是 unix shared resources(共享资源) 的缩写，这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于 windows 下的 program files 目录。</p>
 </li>
-<li><p><strong>/usr/bin：</strong><br>系统用户使用的应用程序。</p>
+<li><p><strong>&#x2F;usr&#x2F;bin：</strong><br>系统用户使用的应用程序。</p>
 </li>
-<li><p><strong>/usr/sbin：</strong><br>超级用户使用的比较高级的管理程序和系统守护程序。</p>
+<li><p><strong>&#x2F;usr&#x2F;sbin：</strong><br>超级用户使用的比较高级的管理程序和系统守护程序。</p>
 </li>
-<li><p><strong>/usr/src：</strong><br>内核源代码默认的放置目录。</p>
+<li><p><strong>&#x2F;usr&#x2F;src：</strong><br>内核源代码默认的放置目录。</p>
 </li>
-<li><p><strong>/var</strong>：<br>var 是 variable(变量) 的缩写，这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件。</p>
+<li><p><strong>&#x2F;var</strong>：<br>var 是 variable(变量) 的缩写，这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件。</p>
 </li>
-<li><p><strong>/run</strong>：<br>是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。如果你的系统上有 /var/run 目录，应该让它指向 run。</p>
+<li><p><strong>&#x2F;run</strong>：<br>是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。如果你的系统上有 &#x2F;var&#x2F;run 目录，应该让它指向 run。</p>
 </li>
 </ul>
 <h2 id="使用-PuTTY-远程登录"><a href="#使用-PuTTY-远程登录" class="headerlink" title="使用 PuTTY 远程登录"></a>使用 PuTTY 远程登录</h2><h3 id="PuTTY-创建-SSH-会话连接"><a href="#PuTTY-创建-SSH-会话连接" class="headerlink" title="PuTTY 创建 SSH 会话连接"></a>PuTTY 创建 SSH 会话连接</h3><p>运行 putty.exe，在程序界面内输入服务器 IP 地址和端口（22 是 SSH 默认端口），选中 SSH 连接类型，设置连接会话名称及点击保存，然后点击 Open 按钮开始连接登录。</p>
 <img src="/2022/061415691/putty-tutorial-1.png" class>
+
 <p>如果需要注销连接会话，使用 <code>exit</code> 命令或 <code>Ctrl+d</code> 快捷键。</p>
 <h3 id="PuTTY-修改保存设置"><a href="#PuTTY-修改保存设置" class="headerlink" title="PuTTY 修改保存设置"></a>PuTTY 修改保存设置</h3><p>估计不少人遇到过这个问题，不知道怎么保存 PuTTY 设置。正确方法是先选中 SSH 会话，然后点击 Load 加载设置，这时就可以开始修改设置，之后点击保存会话设置。</p>
 <p>如果需要修改 PuTTY 默认设置，就选中修改 Default Setting 会话。</p>
-<p><a target="_blank" rel="noopener" href="https://www.hostarr.com/wp-content/uploads/putty-tutorial-4.png"><img src="/2022/putty-tutorial-4.png" alt></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.hostarr.com/wp-content/uploads/putty-tutorial-4.png"><img src="/Linux/putty-tutorial-4.png"></a></p>
 <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ol>
-<li>pwd：查看当前所在目录名（当前工作目录名）</li>
-<li><p>ls：查看当前目录内容</p>
-<pre><code>ls -a:查看当前目录的所有内容，包括隐藏文件
-ls -l:查看当前目录的详细信息(简写为ll)
-</code></pre></li>
-<li><p>cd：目录切换命令</p>
-<pre><code>cd usr        切换到该目录下usr目录
-cd ../        切换到上一层目录
-cd /        切换到系统根目录
-cd ~        切换到用户主目录
-cd -        切换到上一个所在目录
-</code></pre></li>
-<li><p>mkdir:新增目录</p>
-<pre><code>mkdir test:在当前目录下创建文件夹test
-mkdir /test/xxx:在/test目录下创建文件夹test
-</code></pre><p>​           -p:创建父目录</p>
+<li><p>pwd：查看当前所在目录名（当前工作目录名）</p>
+</li>
+<li><p>ls：查看当前目录内容<br>ls -a:查看当前目录的所有内容，包括隐藏文件<br>ls -l:查看当前目录的详细信息(简写为ll)</p>
+</li>
+<li><p>cd：目录切换命令<br>cd usr		切换到该目录下usr目录<br>cd ..&#x2F;		切换到上一层目录<br>cd &#x2F;		切换到系统根目录<br>cd ~		切换到用户主目录<br>cd -		切换到上一个所在目录</p>
+</li>
+<li><p>mkdir:新增目录<br>mkdir test:在当前目录下创建文件夹test<br>mkdir &#x2F;test&#x2F;xxx:在&#x2F;test目录下创建文件夹test<br>​           -p:创建父目录</p>
 </li>
 <li><p>clear：清屏</p>
 </li>
 </ol>
 <h2 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h2><ol>
-<li><p>修改目录的名称（改）<br>命令：mv 目录名称 新目录名称<br>示例：test目录下有一个oldTest目录，使用mv oldTest newTest命令修改<br>注意：mv的语法不仅可以对目录进行重命名而且也可以对各种文件，压缩包等进行    重命名的操作</p>
+<li><p>修改目录的名称（改）<br>命令：mv 目录名称 新目录名称<br>示例：test目录下有一个oldTest目录，使用mv oldTest newTest命令修改<br>注意：mv的语法不仅可以对目录进行重命名而且也可以对各种文件，压缩包等进行	重命名的操作</p>
 </li>
-<li><p>移动目录的位置—-剪切（改）<br>命令：mv 目录名称 目录的新位置<br>示例：在test下将newTest目录剪切到 /usr下面，使用mv newTest /usr<br>注意：mv语法不仅可以对目录进行剪切操作，对文件和压缩包等都可执行剪切操作</p>
+<li><p>移动目录的位置—剪切（改）<br>命令：mv 目录名称 目录的新位置<br>示例：在test下将newTest目录剪切到 &#x2F;usr下面，使用mv newTest &#x2F;usr<br>注意：mv语法不仅可以对目录进行剪切操作，对文件和压缩包等都可执行剪切操作</p>
 </li>
-<li><p>拷贝目录（改）<br>命令：cp -r 目录名称 目录拷贝的目标位置 ——-r代表递归拷贝<br>示例：将/usr下的newTest拷贝到根目录下的test中，使用cp -r /usr/newTest /test<br>注意：cp命令不仅可以拷贝目录还可以拷贝文件，压缩包等，拷贝文件和压缩包时不用写-r递归</p>
+<li><p>拷贝目录（改）<br>命令：cp -r 目录名称 目录拷贝的目标位置 —–r代表递归拷贝<br>示例：将&#x2F;usr下的newTest拷贝到根目录下的test中，使用cp -r &#x2F;usr&#x2F;newTest &#x2F;test<br>注意：cp命令不仅可以拷贝目录还可以拷贝文件，压缩包等，拷贝文件和压缩包时不用写-r递归</p>
 </li>
-<li><p>删除目录（删）<br>命令：rm [-rf] 目录<br>示例：删除/usr下的newTest，进入/usr下使用rm -r newTest</p>
-<p>示例：删除/test下的newTest而不需要询问强制删除，在/test下使用rm -rf newTest</p>
-<p>注意：rm不仅可以删除目录，也可以删除其他文件或压缩包，为了增强大家的记忆，无论删除任何目录或文件，都直接使用rm -rf 目录/文件/压缩包</p>
+<li><p>删除目录（删）<br>命令：rm [-rf] 目录<br>示例：删除&#x2F;usr下的newTest，进入&#x2F;usr下使用rm -r newTest</p>
+<p>示例：删除&#x2F;test下的newTest而不需要询问强制删除，在&#x2F;test下使用rm -rf newTest</p>
+<p>注意：rm不仅可以删除目录，也可以删除其他文件或压缩包，为了增强大家的记忆，无论删除任何目录或文件，都直接使用rm -rf 目录&#x2F;文件&#x2F;压缩包</p>
 </li>
 </ol>
 <h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><ol>
-<li><p>文件的创建（增）<br>命令：touch 文件名称  ——- 空文件<br>示例：在test目录下创建一个空文件 touch aaa.txt</p>
+<li><p>文件的创建（增）<br>命令：touch 文件名称  —– 空文件<br>示例：在test目录下创建一个空文件 touch aaa.txt</p>
 </li>
-<li><p>文件的查看（查）<br>命令：cat/more/less/tail 文件<br>示例：使用cat查看/etc/sudo.conf文件，只能显示最后一屏内容</p>
-<p>示例：使用more查看/etc/sudo.conf文件，可以显示百分比，回车可以向下一行，    空格可以向下一页，q可以退出查看</p>
-<p>示例：使用less查看/etc/sudo.conf文件，可以使用键盘上的PgUp和PgDn向上    和向下翻页，q结束查看</p>
-<p>示例：使用tail -10 查看/etc/sudo.conf文件的后10行，Ctrl+C结束<br>注意：命令 tail -f 文件 可以对某个文件进行动态监控，例如tomcat的日志文件，    会随着程序的运行，日志会变化，可以使用tail -f catalina-2016-11-11.log 监控文件的变化 </p>
+<li><p>文件的查看（查）<br>命令：cat&#x2F;more&#x2F;less&#x2F;tail 文件<br>示例：使用cat查看&#x2F;etc&#x2F;sudo.conf文件，只能显示最后一屏内容</p>
+<p>示例：使用more查看&#x2F;etc&#x2F;sudo.conf文件，可以显示百分比，回车可以向下一行，	空格可以向下一页，q可以退出查看</p>
+<p>示例：使用less查看&#x2F;etc&#x2F;sudo.conf文件，可以使用键盘上的PgUp和PgDn向上	和向下翻页，q结束查看</p>
+<p>示例：使用tail -10 查看&#x2F;etc&#x2F;sudo.conf文件的后10行，Ctrl+C结束<br>注意：命令 tail -f 文件 可以对某个文件进行动态监控，例如tomcat的日志文件，	会随着程序的运行，日志会变化，可以使用tail -f catalina-2016-11-11.log 监控文件的变化 </p>
 </li>
-<li><p>修改文件的内容（改）<br>命令：vim 文件<br>示例：编辑/test下的aaa.txt文件，使用vim aaa.txt<br>但此时并不能编辑，因为此时处于命令模式，点击键盘i/a/o进入编辑模式，可以    编辑文件</p>
+<li><p>修改文件的内容（改）<br>命令：vim 文件<br>示例：编辑&#x2F;test下的aaa.txt文件，使用vim aaa.txt<br>但此时并不能编辑，因为此时处于命令模式，点击键盘i&#x2F;a&#x2F;o进入编辑模式，可以	编辑文件</p>
 <p>编辑完成后，按下Esc，退回命令模式</p>
 <p>此时文件虽然已经编辑完成，但是没有保存，需输入冒号：进入底行模式，在底行模式下输入wq代表写入内容并退出，即保存；输入q!代表强制退出不保存。</p>
-<p>vim的模式</p>
-<pre><code>基本上vim可以分为三种模式:命令模式，插入模式和底行模式，其实vim有多种模式，我们只需要掌握这三种即可。
-1.命令模式
-    用vim 打开一个文件刚开始进入的就是命令模式，在这个模式下我们可以控制光标的移动，字符，字或者行的删除，移动复制某段区域，在该模式下可以进入插入模式也可以进入底行模式。
- 2.插入模式
-     在插入模式下才可以插入文字，按Esc进入底行模式.
- 3.底行模式
-     在底行模式下保存文件或者退出vim，也可以在底行模式下使用man查找函数等。。。
-</code></pre><p>总结：<br>vim编辑器是Linux中的强大组件，是vi编辑器的加强版，vim编辑器的命令和快捷方式有很多，但此处不一一阐述，大家也无需研究的很透彻，使用vim编辑修改文件的方式基本会使用就可以了。</p>
-<p>关于vim使用过程：<br>在实际开发中，使用vim编辑器主要作用就是修改配置文件<br>vim 文件———&gt;进入文件——-&gt;命令模式———&gt;按i进入编辑模式——-&gt;编辑文件    ———-&gt;按Esc进入底行模式——-&gt;输入:wq/q!</p>
+<p>vim的模式<br>基本上vim可以分为三种模式:命令模式，插入模式和底行模式，其实vim有多种模式，我们只需要掌握这三种即可。<br>1.命令模式<br>    用vim 打开一个文件刚开始进入的就是命令模式，在这个模式下我们可以控制光标的移动，字符，字或者行的删除，移动复制某段区域，在该模式下可以进入插入模式也可以进入底行模式。<br> 2.插入模式<br>     在插入模式下才可以插入文字，按Esc进入底行模式.<br> 3.底行模式<br>     在底行模式下保存文件或者退出vim，也可以在底行模式下使用man查找函数等。。。<br>总结：<br>vim编辑器是Linux中的强大组件，是vi编辑器的加强版，vim编辑器的命令和快捷方式有很多，但此处不一一阐述，大家也无需研究的很透彻，使用vim编辑修改文件的方式基本会使用就可以了。</p>
+<p>关于vim使用过程：<br>在实际开发中，使用vim编辑器主要作用就是修改配置文件<br>vim 文件——&gt;进入文件—–&gt;命令模式——&gt;按i进入编辑模式—–&gt;编辑文件	——-&gt;按Esc进入底行模式—–&gt;输入:wq&#x2F;q!</p>
 <p>在命令模式下，输入file，后跟路径和文件名，即可在保存。如将此文件命名为welcome.txt，并保存在当前目录下。<br>命令：file welcome.txt</p>
 </li>
 <li><p>删除文件（删）<br>同目录删除：熟记 rm -rf 文件 即可</p>
@@ -505,26 +491,30 @@ mkdir /test/xxx:在/test目录下创建文件夹test
 </ol>
 <h2 id="压缩文件的操作命令"><a href="#压缩文件的操作命令" class="headerlink" title="压缩文件的操作命令"></a>压缩文件的操作命令</h2><p>打包和压缩：<br>    打包是指将一大堆文件或目录变成一个总的文件；<br>    压缩则是将一个大的文件通过一些压缩算法变成一个小文件。</p>
 <ol>
-<li><p>打包并压缩文件<br>Linux中的打包文件一般是以.tar结尾的，压缩的命令一般是以.gz结尾的。<br>而一般情况下打包和压缩是一起进行的，打包并压缩后的文件的后缀名一般.tar.gz。<br>命令：tar -zcvf 打包压缩后的文件名 要打包压缩的文件<br>其中：z：调用gzip压缩命令进行压缩<br>  c：打包文件(或 -create)<br>  v：显示运行过程<br>  f：指定文件名<br>示例：打包并压缩/test下的所有文件 压缩后的压缩包指定名称为xxx.tar.gz</p>
+<li><p>打包并压缩文件<br>Linux中的打包文件一般是以.tar结尾的，压缩的命令一般是以.gz结尾的。<br>而一般情况下打包和压缩是一起进行的，打包并压缩后的文件的后缀名一般.tar.gz。<br>命令：tar -zcvf 打包压缩后的文件名 要打包压缩的文件<br>其中：z：调用gzip压缩命令进行压缩<br>  c：打包文件(或 -create)<br>  v：显示运行过程<br>  f：指定文件名<br>示例：打包并压缩&#x2F;test下的所有文件 压缩后的压缩包指定名称为xxx.tar.gz</p>
 <pre><code>tar -zcvf xxx.tar.gz aaa.txt bbb.txt ccc.txt
 或：tar -zcvf xxx.tar.gz /test/*
-</code></pre></li>
-<li><p>解压压缩包（重点）<br>命令：tar [-xvf] 压缩文件<br>其中：x：代表解压<br>示例：将/test下的xxx.tar.gz解压到当前目录下</p>
+</code></pre>
+</li>
+<li><p>解压压缩包（重点）<br>命令：tar [-xvf] 压缩文件<br>其中：x：代表解压<br>示例：将&#x2F;test下的xxx.tar.gz解压到当前目录下</p>
 <pre><code>tar -xvf xxx.tar.gz
-</code></pre><p>示例：将/test下的xxx.tar.gz解压到根目录/usr下</p>
+</code></pre>
+<p>示例：将&#x2F;test下的xxx.tar.gz解压到根目录&#x2F;usr下</p>
 <pre><code>tar -xvf xxx.tar.gz -C /usr ----- -C代表指定解压的位置
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>查看tar包中的内容<br>命令：</p>
 <pre><code>tar -tvf xxx.tar.gz
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><ol>
-<li><p>搜索命令<br>命令：grep 要搜索的字符串 要搜索的文件<br>示例：搜索/etc/sudo.conf文件中包含字符串to的行</p>
+<li><p>搜索命令<br>命令：grep 要搜索的字符串 要搜索的文件<br>示例：搜索&#x2F;etc&#x2F;sudo.conf文件中包含字符串to的行</p>
 <pre><code>grep to /etc/sudo.conf
-</code></pre></li>
-<li><p>管道命令<br>命令：|   将前一个命令的输出作为本次目录的输入<br>示例：查看当前系统中所有的进程中包括system字符串的进程</p>
-<pre><code>ps -ef | grep system 
-</code></pre></li>
+</code></pre>
+</li>
+<li><p>管道命令<br>命令：|   将前一个命令的输出作为本次目录的输入<br>示例：查看当前系统中所有的进程中包括system字符串的进程<br>ps -ef | grep system </p>
+</li>
 <li><p>查看进程<br>命令：ps -ef<br>示例：查看当前系统中运行的进程 </p>
 </li>
 <li><p>杀死进程<br>命令：kill -9 进程的pid</p>
@@ -534,33 +524,37 @@ mkdir /test/xxx:在/test目录下创建文件夹test
 <p>查看当前系统的端口使用：netstat -an</p>
 </li>
 </ol>
-<h2 id="权限命令"><a href="#权限命令" class="headerlink" title="权限命令"></a>权限命令</h2><p>权限是Linux中的重要概念，每个文件/目录等都具有权限，通过ls -l命令我们可以    查看某个目录下的文件或目录的权限<br>示例：在随意某个目录下ls -l</p>
+<h2 id="权限命令"><a href="#权限命令" class="headerlink" title="权限命令"></a>权限命令</h2><p>权限是Linux中的重要概念，每个文件&#x2F;目录等都具有权限，通过ls -l命令我们可以	查看某个目录下的文件或目录的权限<br>示例：在随意某个目录下ls -l</p>
 <p>第一列的内容的信息解释如下：</p>
 <p>文件的类型：<br>d：代表目录<br>-：代表文件<br>l：代表链接（可以认为是window中的快捷方式）<br>后面的9位分为3组，每3位置一组，分别代表所属用户的权限，与当前用户同组的用户的权限，其他用户的权限<br>r：代表权限是可读，r也可以用数字4表示<br>w：代表权限是可写，w也可以用数字2表示<br>x：代表权限是可执行，x也可以用数字1表示</p>
-<p>属主（user）    属组（group）    其他用户<br>r    w    x    r    w    x    r    w    x<br>4    2    1    4    2    1    4    2    1</p>
-<p>修改文件/目录的权限的命令：chmod<br>示例：修改/test下的aaa.txt的权限为属主有全部权限，属主所在的组有读写权限，<br>其他用户只有读的权限<br><code>chmod u=rwx,g=rw,o=r aaa.txt</code></p>
+<p>属主（user）	属组（group）	其他用户<br>r	w	x	r	w	x	r	w	x<br>4	2	1	4	2	1	4	2	1</p>
+<p>修改文件&#x2F;目录的权限的命令：chmod<br>示例：修改&#x2F;test下的aaa.txt的权限为属主有全部权限，属主所在的组有读写权限，<br>其他用户只有读的权限<br><code>chmod u=rwx,g=rw,o=r aaa.txt</code></p>
 <p>上述示例还可以使用数字表示：<br><code>chmod 764 aaa.txt</code></p>
-<h2 id="添加用户和组"><a href="#添加用户和组" class="headerlink" title="添加用户和组"></a>添加用户和组</h2><p><code>useradd testuser</code> 创建用户testuser<br><code>passwd testuser</code> 给已创建的用户testuser设置密码<br>说明：新创建的用户会在/home下创建一个用户目录testuser<br><code>usermod --help</code> 修改用户这个命令的相关参数<br><code>userdel testuser</code> 删除用户testuser<br><code>rm -rf testuser</code> 删除用户testuser所在目录</p>
+<h2 id="添加用户和组"><a href="#添加用户和组" class="headerlink" title="添加用户和组"></a>添加用户和组</h2><p><code>useradd testuser</code> 创建用户testuser<br><code>passwd testuser</code> 给已创建的用户testuser设置密码<br>说明：新创建的用户会在&#x2F;home下创建一个用户目录testuser<br><code>usermod --help</code> 修改用户这个命令的相关参数<br><code>userdel testuser</code> 删除用户testuser<br><code>rm -rf testuser</code> 删除用户testuser所在目录</p>
 <p>上面的几个命令只有root账号才可以使用，如果你不知道自己的系统上面的命令在什么位置可以使用如下命令查找其路径：</p>
 <p><code>locate useradd</code></p>
-<p><a target="_blank" rel="noopener" href="https://www.linuxidc.com/upload/2017_06/170618075833851.png"><img src="/2022/170618075833851.png" alt></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.linuxidc.com/upload/2017_06/170618075833851.png"><img src="/Linux/170618075833851.png"></a></p>
 <p>创建新用户后，同时会在etc目录下的passwd文件中添加这个新用户的相关信息<br>说明：为了截图，此处我使用了<code>tail -3 passwd</code>命令，只将该文件的最后3行信息（也是我关注的信息）显示出来</p>
-<p><a target="_blank" rel="noopener" href="https://www.linuxidc.com/upload/2017_06/170618075964621.png"><img src="/2022/170618075964621.png" alt></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.linuxidc.com/upload/2017_06/170618075964621.png"><img src="/Linux/170618075964621.png"></a></p>
 <p>命令行窗口下用户的相互切换：<br>su 用户名<br>说明：su是switch user的缩写，表示用户切换<br>从新的用户状态下输入“exit”即可退回到刚才的用户状态</p>
-<p><a target="_blank" rel="noopener" href="https://www.linuxidc.com/upload/2017_06/170618075964622.png"><img src="/2022/170618075964622.png" alt></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.linuxidc.com/upload/2017_06/170618075964622.png"><img src="/Linux/170618075964622.png"></a></p>
 <p>用户组的添加和删除：<br><code>groupadd testgroup</code>  组的添加<br><code>groupdel testgroup</code>  组的删除<br>说明：组的增加和删除信息会在etc目录的group文件中体现出来。</p>
-<p><a target="_blank" rel="noopener" href="https://www.linuxidc.com/upload/2017_06/170618075964623.png"><img src="/2022/170618075964623.png" alt></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.linuxidc.com/upload/2017_06/170618075964623.png"><img src="/Linux/170618075964623.png"></a></p>
 <p>添加用户到已经存在的组</p>
 <p>将一个已有用户 cnzhx 增加到一个已有用户组 apache 中，使此用户组成为该用户的附加用户组，可以使用带 -a 参数的 <code>usermod</code> 指令。-a 代表 append， 也就是将用户添加到新用户组中而不必离开原有的其他用户组。不过需要与 -G 选项配合使用：</p>
 <pre><code>usermod -a -G apache cnzhx
-</code></pre><p>如果要将一个用户从某个组中删除，则</p>
+</code></pre>
+<p>如果要将一个用户从某个组中删除，则</p>
 <pre><code>gpasswd -d user group
-</code></pre><p>查看自己用户名</p>
+</code></pre>
+<p>查看自己用户名</p>
 <p><code>whoami</code></p>
 <h2 id="Filezilla使用教程"><a href="#Filezilla使用教程" class="headerlink" title="Filezilla使用教程"></a>Filezilla使用教程</h2><p><strong>注意：要使用SFTP连接CentOS7</strong>，默认端口号：22</p>
 <p>FileZilla是一款免费开源的FTP客户端软件，虽然它是免费软件，可性能却一点也不含糊，比起那些共享软件来有过之而无不及，具备大多数的FTP软件功能。其可控性、有条理的界面和管理多站点的简化方式、特别是它的传输速度，简直是出神入化，也是它最大的特色。总的来说是它一款出类拔萃的免费FTP客户端软件(Filezilla下载)。下面是FileZilla的使用教程：FileZilla是一款免费开源的FTP客户端软件，虽然它是免费软件，可性能却一点也不含糊，比起那些共享软件来有过之而无不及，具备大多数的FTP软件功能。其可控性、有条理的界面和管理多站点的简化方式、特别是它的传输速度，简直是出神入化，也是它最大的特色。总的来说是它一款出类拔萃的免费FTP客户端软件(Filezilla下载)。下面是FileZilla的使用教程：FileZilla是一款免费开源的FTP客户端软件，虽然它是免费软件，可性能却一点也不含糊，比起那些共享软件来有过之而无不及，具备大多数的FTP软件功能。其可控性、有条理的界面和管理多站点的简化方式、特别是它的传输速度，简直是出神入化，也是它最大的特色。总的来说是它一款出类拔萃的免费FTP客户端软件(Filezilla下载)。下面是FileZilla的使用教程：</p>
 <p>快速连接</p>
-<p>快速连接就是不需通过站点设置，直接输入IP地址、用户名及密码进行连接。所以它适合用在需要临时性连接的站点，并且快速连信息接会被保存，如果下次还想使用，就可以直接选择进行连接了，非常方便。通过快速连接工具栏输入相关信息，点击快速连接按钮就可以了<br><img src="/2022/061415691/70.jpeg" class></p>
+<p>快速连接就是不需通过站点设置，直接输入IP地址、用户名及密码进行连接。所以它适合用在需要临时性连接的站点，并且快速连信息接会被保存，如果下次还想使用，就可以直接选择进行连接了，非常方便。通过快速连接工具栏输入相关信息，点击快速连接按钮就可以了</p>
+<img src="/2022/061415691/70.jpeg" class>
+
 <p>连接成功后，在左边看到的就是您电脑上的文件，右边就是空间上的文件，选中您要上传的文件，然后右击，选上传(如果是上传到空间上某个特定的文件夹，请先在右边打开那个文件夹，再上传)。</p>
 <p>下面给您详细的介绍一下Filezilla经常会用到的一些功能，有兴趣的可以了解下：</p>
 <p>一、站点设置</p>
@@ -571,7 +565,8 @@ mkdir /test/xxx:在/test目录下创建文件夹test
 <p>第三步：在高级选项卡我们可以设置默认的远程及本地目录，远程目录其实就是连上FTP服务器后默认打开的目录；而本地目录就是每次进入FTP软件后默认显示的本地文件目录（当然了，如果大家不太清楚或者感觉麻烦的话也可以先不设置远程及本地路径，系统将会使用自己的默认路径）。</p>
 <p>以上这些参数都设置好之后，便可使用FTP进行文件上传下载了。</p>
 <img src="/2022/061415691/70-16547799793411.jpeg" class>
-<p>二、连接FTP/上传（下载）文件</p>
+
+<p>二、连接FTP&#x2F;上传（下载）文件</p>
 <p>1)连接</p>
 <p>通过上面的设置之后现在就可以连接服务器上传文件了。我们可以通过菜单【文件】—&gt;【站点管理器】或者CTRL+S4键进入站点管理器选择要连接的FTP服务器，点击【连接】按钮就可以了或者点击工具栏中的第一个按钮，打开站点管理器，进行选择。连接之后，便可选择目录或文件进行上传下载了。</p>
 <p>2)上传下载</p>
@@ -579,123 +574,146 @@ mkdir /test/xxx:在/test目录下创建文件夹test
 <p>第一种：选中所要传输的文件或目录，直接拖拽到目的主机中就可以了；</p>
 <p>第二种：在选中所要传输的文件或目录后，单击鼠标右键选择【传输】就可以了；</p>
 <p>第三种：双击想要传输的文件就可以了；</p>
-<p>第四种：将选中的文件或文件夹加入到传输<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=队列&amp;spm=1001.2101.3001.7020">队列</a>中（可以直接拖放也使用鼠标右键），然后在进行传输。使用传输队列最大的好处是可以随时加入或删除传输的文件，并且对于需要经常更新的内容，允许你把它们放到队列中导出，等以后要传输的时候还可以通过导入功能调出之前保存的队列进行文件更新，就是有点复杂了，哈哈。不过要注意的是不同的文件上传到不同目录时，必须先将该目录打开之后再添加到要传的文件到队列之中。</p>
+<p>第四种：将选中的文件或文件夹加入到传输<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E9%98%9F%E5%88%97&spm=1001.2101.3001.7020">队列</a>中（可以直接拖放也使用鼠标右键），然后在进行传输。使用传输队列最大的好处是可以随时加入或删除传输的文件，并且对于需要经常更新的内容，允许你把它们放到队列中导出，等以后要传输的时候还可以通过导入功能调出之前保存的队列进行文件更新，就是有点复杂了，哈哈。不过要注意的是不同的文件上传到不同目录时，必须先将该目录打开之后再添加到要传的文件到队列之中。</p>
 <p>三、其它功能及设置</p>
 <p>1)站点导入</p>
 <p>站点导入就是将之前版本的站点信息或其它FTP软件的站点信息导入进来，而不需要再进行重复的设置，这给广大的用户节省了时间，也减少了麻烦。通过菜单【站点】—&gt;【导入】及【导出】我们就可以进行站点导入、导出操作了。</p>
 <img src="/2022/061415691/70-16547799793432.jpeg" class>
+
 <p>FileZilla站点导入(只支持XML格式文件的导入)</p>
-<p>FileZilla站点导出(支持管理器数据、设置数据及队列的导出)<br><img src="/2022/061415691/70-16547799793433.jpeg" class></p>
+<p>FileZilla站点导出(支持管理器数据、设置数据及队列的导出)</p>
+<img src="/2022/061415691/70-16547799793433.jpeg" class>
+
 <p>2)队列管理</p>
 <p>队列管理就是对所传输的文件及目录进行的一些功能设置，包括队列的保存，载入、清除、恢复和传输等，可以说是比较重要的功能。FileZilla的队列功能比较简单，其中队列的保存及载入功能，可以通过菜单【文件】—&gt;【导入】及【导出】来实现，就是麻烦了一些。</p>
 <img src="/2022/061415691/70-16547799793444.jpeg" class>
+
 <p>FileZilla队列导出画面</p>
 <p>3)文件夹内容比较</p>
 <p>文件夹内容比较就是对两台不同的机器上的相关目录下的内容进行比较，然后把不相同的内容显示出来，这对于保持版本一致性非常有用。通过菜单【查看】—&gt;【比较目录】我们就可以比较出两个目录下不同的内容。</p>
 <img src="/2022/061415691/70-16547799793445.jpeg" class>
+
 <p>FileZilla文件目录比较功能</p>
 <p>4)断点续传</p>
 <p>断点续传功能可以说几乎是每个FTP软件必备的功能，也可以说是最基本和重要的功能了。它的实质就是当传输文件过程中，由于各种原因使得传输过程发生异常，产生中断，在系统恢复正常后，FTP软件能够在之前发生中断的位置继续传输文件，直到数据传送完毕为止。通过菜单【编辑】—&gt;【设置】的对已存在文件的操作选项我们就可以设置断点续传。</p>
 <img src="/2022/061415691/70-16547799793446.jpeg" class>
+
 <p>FileZilla断点续传设置画面</p>
 <p>5)速度限制</p>
 <p>速度限制功能就是当网络比较拥挤或FTP站点有特定要求的时候，对文件的上传和下载的速度进行具体的限制。通过菜单【编辑】—&gt;【设置】的对已存在文件的操作选项，我们就可以设置速度限制了。</p>
 <img src="/2022/061415691/70-16547799793447.jpeg" class>
+
 <p>FileZilla速度限制画面（0表示没有限制）</p>
 <p>6)文件过滤器</p>
 <p>过滤器功能简单的说就是将符合条件的待传输文件及目录进行传输，我们可以通过设置扩展名、优先级类表等来控制文件的传输。通过菜单【查看】—&gt;【文件过滤器】我们就可以对传输的文件进行选择。（但是感觉好像不起作用）</p>
 <img src="/2022/061415691/70-16547799793448.jpeg" class>
+
 <p>FileZilla过滤器画面</p>
 <p>7)快速拖放</p>
 <p>快速拖放功能是大多数FTP软件都支持的功能，它主要就是为了用户操作的方便。</p>
 <p>8)多语言支持</p>
 <p>FileZilla3.0标准版支持包括中文简体在内的多语言界面。通过菜单【编辑】—&gt;【设置】的语言选项，我们就可以设置使用的语言。</p>
 <img src="/2022/061415691/70-16547799793449.jpeg" class>
+
 <p>FileZilla语言设置画面</p>
 <p>9)备份恢复功能</p>
 <p>备份恢复功能是针对FTP软件的设置、站点列表等信息内容的备份及恢复。通过菜单【文件】—&gt;【导入】及【导出】功能我们就可以进行信息的备份和恢复。</p>
 <p>10)文件关联</p>
 <p>许多用户在使用FTP软件传输文件的时候，突然发现了一些错误想要修改，但是如果要在调用相关的软件打开，又比较麻烦，所以很多FTP软件就通过文件关联来让用户直接调用相关软件打开要修改的文件，方便了用户的操作。通过菜单【编辑】—&gt;【设置】的正在编辑文件选项，我们就可以设置关联程序。</p>
 <img src="/2022/061415691/70-165477997934510.jpeg" class>
+
 <p>FileZilla文件关联画面</p>
 <p>11)防掉线（反空闲、闲置保护）</p>
 <p>所谓防掉线或者说反空闲、闲置保护功能就是让计算机在空闲状态下每隔一段时间向FTP服务器发送一段特定信息，以便让FTP服务器知道自己还是活动的，从而并且FTP服务器断开对自己的连接。通过菜单【编辑】—&gt;【设置】的FTP选项，我们就可以设置相关的参数。</p>
 <img src="/2022/061415691/70-165477997934511.jpeg" class>
+
 <p>FileZilla反空闲设置画面</p>
 <p>12)远程管理</p>
 <p>远程管理简单的说就是在远程FTP服务器上也可以自由的新建、删除、打开文件或目录等操作。这都是方便性的体现。</p>
 <p>13)分组管理</p>
 <p>分组管理就是将多个不同的FTP服务器放在同一个组（就相当于目录）中，这样可以更加便于用户的管理。在新建站点的时候，我们就可以先建组，然后再建立新的站点保存在组中。</p>
 <img src="/2022/061415691/70-165477997934512.jpeg" class>
+
 <p>FileZilla组管理画面</p>
 <p>14)文件存在处理</p>
 <p>文件存在处理就是当传输文件过程中，如果遇到相同文件名的文件怎么处理?FileZilla共提供了七种方。通过菜单【传输】—&gt;【对已存在文件的默认操作】我们就可以进行相关的设置。</p>
 <img src="/2022/061415691/70-165477997934513.jpeg" class>
+
 <p>FileZilla文件存在处理</p>
 <h2 id="开启FTP服务"><a href="#开启FTP服务" class="headerlink" title="开启FTP服务"></a>开启FTP服务</h2><p>vsftpd 是Linux系统中比较好用的一款FTP服务端软件</p>
 <p><strong>1.</strong> 运行图示命令确认本机是否已经安装了 vsftpd </p>
 <img src="/2022/061415691/image-20210620154601326.png" class>
+
 <p><strong>2.</strong> 如果没有安装，运行图示命令进行安装</p>
 <img src="/2022/061415691/image-20210620154654079.png" class>
-<ol>
+
+<ol start="3">
 <li>修改配置文件，禁止匿名登录</li>
 </ol>
-<p>vsftpd默认允许匿名登录，通常被视为不安全的做法，需要通过修改配置文件来禁止匿名登录，默认配置文件的路径是：/etc/vsftpd/vsftpd.conf , 修改图示配置项即可。</p>
+<p>vsftpd默认允许匿名登录，通常被视为不安全的做法，需要通过修改配置文件来禁止匿名登录，默认配置文件的路径是：&#x2F;etc&#x2F;vsftpd&#x2F;vsftpd.conf , 修改图示配置项即可。</p>
 <pre><code>vim /etc/vsftpd/vsftpd.conf
-</code></pre><img src="/2022/061415691/image-20210620154746359.png" class>
-<ol>
+</code></pre>
+<img src="/2022/061415691/image-20210620154746359.png" class>
+
+<ol start="4">
 <li><p>启动 vsftpd 服务，停止安全控制相关服务 </p>
 <pre><code>#启动ftp服务
 systemctl start vsftpd
 
 #设置开启启动ftp服务
 systemctl enable vsftpd.service
-</code></pre><img src="/2022/061415691/image-20210620154948141.png" class>
+</code></pre>
+<img src="/2022/061415691/image-20210620154948141.png" class>
+
+
 </li>
-</ol>
-<ol>
 <li><p>运行图示命令停止安全控制相关服务（<strong>图2示</strong>），因为 ftp 是不安全的协议，所以如果开启该服务，无法进行连接</p>
 <pre><code>#临时关闭防火墙
 systemctl stop firewalld
 #永久关闭防火墙
 systemctl disable firewalld.service
-</code></pre><img src="/2022/061415691/image-20210620155132021.png" class>
+</code></pre>
+<img src="/2022/061415691/image-20210620155132021.png" class>
 </li>
 <li><p>修改配置文件中的userlist_enable的值改为NO</p>
 <pre><code>vim /etc/vsftpd/vsftpd.conf
-</code></pre><img src="/2022/061415691/image-20210620155753642.png" class>
+</code></pre>
+<img src="/2022/061415691/image-20210620155753642.png" class>
 </li>
 <li><p>修改vsftpd禁止名单，删除root（该步骤可以不做）</p>
 <pre><code>vim /etc/vsftpd/ftpusers
-</code></pre><img src="/2022/061415691/image-20210620155654754.png" class>
+</code></pre>
+<img src="/2022/061415691/image-20210620155654754.png" class>
 </li>
 <li><p>重启 ftp服务</p>
 <pre><code>systemctl restart vsftpd
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>FTP客户端登录</p>
 <p>打开一款客户端软件（比如filezilla）,配置FTP连接的主机信息和登陆用户及密码，即可连接成功，FTP连接后，就可以向 Linux 上传输文件了。</p>
 <p><strong>注意：不要使用 root 账号</strong></p>
 </li>
 </ol>
 <img src="/2022/061415691/image-20210620213156349.png" class>
+
 <h2 id="配置Editplus的ftp功能打开远程文件"><a href="#配置Editplus的ftp功能打开远程文件" class="headerlink" title="配置Editplus的ftp功能打开远程文件"></a>配置Editplus的ftp功能打开远程文件</h2><ol>
 <li><p>打开EditPlus，点击“文件-&gt;FTP(F)-&gt;FTP设置”</p>
-<p><img src="https://exp-picture.cdn.bcebos.com/e996472ae3efe078458abf02b96c576698cf6513.jpg?x-bce-process=image%2Fresize%2Cm_lfit%2Cw_500%2Climit_1%2Fquality%2Cq_80" alt="配置Editplus的ftp功能打开远程文件"></p>
+<p><img src="https://exp-picture.cdn.bcebos.com/e996472ae3efe078458abf02b96c576698cf6513.jpg?x-bce-process=image/resize,m_lfit,w_500,limit_1/quality,q_80" alt="配置Editplus的ftp功能打开远程文件"></p>
 </li>
 <li><p>在弹出的“FTP设置”窗口中点击“添加(A)”，产生新“新FTP账号”项目</p>
-<p><img src="https://exp-picture.cdn.bcebos.com/562787cf02532f637b3e8082699147e832e05c13.jpg?x-bce-process=image%2Fresize%2Cm_lfit%2Cw_500%2Climit_1%2Fquality%2Cq_80" alt="配置Editplus的ftp功能打开远程文件"></p>
+<p><img src="https://exp-picture.cdn.bcebos.com/562787cf02532f637b3e8082699147e832e05c13.jpg?x-bce-process=image/resize,m_lfit,w_500,limit_1/quality,q_80" alt="配置Editplus的ftp功能打开远程文件"></p>
 </li>
 <li><p>设置“新FTP账号”信息，其中“描述”可以更改为你喜欢的任何名字（本例中更改为“labsite”），并填写“FTP服务器”、“用户名(U)”、“密码(P)”，然后点击“确定”就可以了。</p>
-<p><img src="https://exp-picture.cdn.bcebos.com/32a127723d03bbea5e3d50fcea43d7d449315413.jpg?x-bce-process=image%2Fresize%2Cm_lfit%2Cw_500%2Climit_1%2Fquality%2Cq_80" alt="配置Editplus的ftp功能打开远程文件"></p>
+<p><img src="https://exp-picture.cdn.bcebos.com/32a127723d03bbea5e3d50fcea43d7d449315413.jpg?x-bce-process=image/resize,m_lfit,w_500,limit_1/quality,q_80" alt="配置Editplus的ftp功能打开远程文件"></p>
 </li>
 <li><p>然后点击 “高级设置”</p>
 <img src="/2022/061415691/image-20210622054928245.png" class>
+
 <p>选择 加密方式 为 “sftp”</p>
 <img src="/2022/061415691/image-20210622055158834.png" class>
 </li>
 <li><p>然后在EditPlus侧边栏的“快速目录路径”中可以找到已设置好的FTP，点击即可打开远程文件</p>
-<img src="/2022/061415691/d695563104ebf6a738b4e29fffee1c324a184f13.jpg" class>
-</li>
+<img src="/2022/061415691/d695563104ebf6a738b4e29fffee1c324a184f13.jpg" class></li>
 </ol>
 <h2 id="Linux的软件安装"><a href="#Linux的软件安装" class="headerlink" title="Linux的软件安装"></a>Linux的软件安装</h2><ol>
 <li><p>通常Linux应用软件的安装包有两种：<br>1） tar包，如software-1.2.3-1.tar.gz。它是使用UNIX系统的打包工具tar打包的。<br>2） rpm包，如software-1.2.3-1.i386.rpm。它是RedHat Linux提供的一种包封装格式。</p>
@@ -706,63 +724,72 @@ systemctl disable firewalld.service
 <li><p>Yum（全称为 Yellow dog Updater, Modified）是一个在Fedora中的Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理 依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装。</p>
 </li>
 </ol>
-<h2 id="JDK安装"><a href="#JDK安装" class="headerlink" title="JDK安装"></a>JDK安装</h2><p>​    注意：rpm与软件相关命令 相当于window下的软件助手 管理软件<br>​    步骤：<br>​    1. 查看当前Linux系统是否已经安装java<br>​        输入<br>​<br>​    <code>​     rpm -qa | grep java
-​</code><br>​<br>​    <img src="/2022/061415691/image-20210620060426938.png" class></p>
-<ol>
+<h2 id="JDK安装"><a href="#JDK安装" class="headerlink" title="JDK安装"></a>JDK安装</h2><p>​	注意：rpm与软件相关命令 相当于window下的软件助手 管理软件<br>​	步骤：<br>​	1. 查看当前Linux系统是否已经安装java<br>​	    输入<br>​	<br>​	<code> ​	 rpm -qa | grep java ​	</code><br>​	<br>​	<img src="/2022/061415691/image-20210620060426938.png" class></p>
+<ol start="2">
 <li><p>卸载两个openJDK<br>  输入</p>
-<pre><code>  rpm -e --nodeps 要卸载的软件名
-</code></pre></li>
+<pre><code>rpm -e --nodeps 要卸载的软件名
+</code></pre>
+</li>
 <li><p>上传jdk到linux</p>
 </li>
 <li><p>安装jdk运行需要的插件yum install glibc.i686（特殊情况下可选做，一般还是要安装的）</p>
 </li>
-<li><p>解压jdk到/usr/local下</p>
+<li><p>解压jdk到&#x2F;usr&#x2F;local下</p>
 <pre><code>tar -xvf jdk-8u181-linux-x64.tar.gz -C /usr/local
-</code></pre></li>
-<li><p>配置jdk环境变量，打开/etc/profile配置文件，将下面配置拷贝进去    </p>
+</code></pre>
+</li>
+<li><p>配置jdk环境变量，打开&#x2F;etc&#x2F;profile配置文件，将下面配置拷贝进去	</p>
 <pre><code>#set java environment
 JAVA_HOME=/usr/local/jdk1.8.0_181
 CLASSPATH=.:$JAVA_HOME/lib.tools.jar
 PATH=$JAVA_HOME/bin:$PATH
-export JAVA_HOME CLASSPATH PATH
-</code></pre></li>
-<li><p>重新加载/etc/profile配置文件 </p>
+export JAVA_HOME CLASSPATH PATH 
+</code></pre>
+</li>
+<li><p>重新加载&#x2F;etc&#x2F;profile配置文件 </p>
 <pre><code>source /etc/profile
-</code></pre></li>
-<li><p>使用命令测试，是否安装成功    </p>
+</code></pre>
+</li>
+<li><p>使用命令测试，是否安装成功	</p>
 <pre><code>java -version
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
-<h2 id="Tomcat安装"><a href="#Tomcat安装" class="headerlink" title="Tomcat安装"></a>Tomcat安装</h2><p>​    步骤：</p>
+<h2 id="Tomcat安装"><a href="#Tomcat安装" class="headerlink" title="Tomcat安装"></a>Tomcat安装</h2><p>​	步骤：</p>
 <ol>
 <li><p>上传Tomcat到linux上</p>
 </li>
-<li><p>解压Tomcat到/usr/local下</p>
+<li><p>解压Tomcat到&#x2F;usr&#x2F;local下</p>
 <pre><code>tar -xvf apache-tomcat-9.0.30.tar.gz -C /usr/local
-</code></pre></li>
-<li><p>开放Linux的对外访问的端口8080    </p>
-<pre><code>/sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
-</code></pre></li>
-<li><p>启动关闭Tomcat<br>进入tomcat的bin下启动：./startup.sh<br>进入tomcat的bin下关闭：./shutdown.sh</p>
+</code></pre>
 </li>
-<li><p>测试：</p>
-<pre><code>http://linux服务器ip:8080
-显示tomcat主页，验证成功！
-</code></pre></li>
+<li><p>开放Linux的对外访问的端口8080</p>
+</li>
+</ol>
+<p>	</p>
+<pre><code>/sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+</code></pre>
+<ol start="4">
+<li><p>启动关闭Tomcat<br>进入tomcat的bin下启动：.&#x2F;startup.sh<br>进入tomcat的bin下关闭：.&#x2F;shutdown.sh</p>
+</li>
+<li><p>测试：<br><a target="_blank" rel="noopener" href="http://linux服务器ip:8080/">http://linux服务器ip:8080</a><br>显示tomcat主页，验证成功！</p>
+</li>
 </ol>
 <h2 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h2><h3 id="1-下载mysql5-7的rpm安装包"><a href="#1-下载mysql5-7的rpm安装包" class="headerlink" title="1.下载mysql5.7的rpm安装包"></a>1.下载mysql5.7的rpm安装包</h3><p>   rpm的mysql包,安装起来简单,解压版的mysql还需要做许多配置，稍有不慎就会出错！！！</p>
 <ul>
 <li>下载地址：<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/mysql/5.7.html#downloads">https://dev.mysql.com/downloads/mysql/5.7.html#downloads</a></li>
 </ul>
 <img src="/2022/061415691/1419795-20190725154212674-340577749.png" class title="image_thumb1">
+
 <ul>
 <li>下载后的安装包是这个样子的</li>
 </ul>
 <img src="/2022/061415691/1419795-20190725154227433-854603804.png" class title="image_thumb3">
+
 <h3 id="2-上传mysql安装包到centos7的系统下"><a href="#2-上传mysql安装包到centos7的系统下" class="headerlink" title="2.上传mysql安装包到centos7的系统下"></a>2.上传mysql安装包到centos7的系统下</h3><h3 id="3-安装依赖"><a href="#3-安装依赖" class="headerlink" title="3.安装依赖"></a>3.安装依赖</h3><h4 id="3-1-查看linux上是否已经安装了mysql-有则卸载。"><a href="#3-1-查看linux上是否已经安装了mysql-有则卸载。" class="headerlink" title="3.1 查看linux上是否已经安装了mysql,有则卸载。"></a>3.1 查看linux上是否已经安装了mysql,有则卸载。</h4><p>一般centos7默认安装了mariadb,这里把它卸载。</p>
 <blockquote>
 <p>查看：[root@localhost bin]# rpm -qa|grep mariadb</p>
-<p>卸载：[root@localhost bin]# rpm -e —nodeps mariadb-libs-5.5.56-2.el7.x86_64</p>
+<p>卸载：[root@localhost bin]# rpm -e –nodeps mariadb-libs-5.5.56-2.el7.x86_64</p>
 </blockquote>
 <h4 id="3-2-安装mysql5-7所需要的依赖"><a href="#3-2-安装mysql5-7所需要的依赖" class="headerlink" title="3.2 安装mysql5.7所需要的依赖"></a>3.2 安装mysql5.7所需要的依赖</h4><blockquote>
 <p>[root@localhost src]# yum install libaio</p>
@@ -771,12 +798,14 @@ export JAVA_HOME CLASSPATH PATH
 </blockquote>
 <p>安装依赖时会询问你是下载并安装还是下载或者不下载。(输入y回车，下载并安装即可。)</p>
 <img src="/2022/061415691/1419795-20190725154258146-1333597514.png" class title="image_thumb9">
+
 <h3 id="4-安装mysql5-7"><a href="#4-安装mysql5-7" class="headerlink" title="4.安装mysql5.7"></a>4.安装mysql5.7</h3><h4 id="4-1-解压mysql5-7安装包"><a href="#4-1-解压mysql5-7安装包" class="headerlink" title="4.1 解压mysql5.7安装包"></a>4.1 解压mysql5.7安装包</h4><blockquote>
-<p>mkdir /usr/local/mysql</p>
-<p>[root@localhost src]#tar -xvf mysql-5.7.34-1.el7.x86_64.rpm-bundle.tar -C /usr/local/mysql</p>
+<p>mkdir &#x2F;usr&#x2F;local&#x2F;mysql</p>
+<p>[root@localhost src]#tar -xvf mysql-5.7.34-1.el7.x86_64.rpm-bundle.tar -C &#x2F;usr&#x2F;local&#x2F;mysql</p>
 </blockquote>
 <p>   解压完后会有很过rpm文件,这些就是我们需要安装的。</p>
 <img src="/2022/061415691/1419795-20190725154318153-1948589555.png" class title="image_thumb12">
+
 <h4 id="4-2-安装mysql5-7"><a href="#4-2-安装mysql5-7" class="headerlink" title="4.2 安装mysql5.7"></a>4.2 安装mysql5.7</h4><blockquote>
 <p>[root@localhost src]# rpm -ivh mysql-community-common-5.7.34-1.el7.x86_64.rpm</p>
 <p>[root@localhost src]# rpm -ivh mysql-community-libs-5.7.34-1.el7.x86_64.rpm</p>
@@ -785,34 +814,39 @@ export JAVA_HOME CLASSPATH PATH
 </blockquote>
 <h4 id="4-3-查看mysql5-7的状态-没有启动则把mysql启动"><a href="#4-3-查看mysql5-7的状态-没有启动则把mysql启动" class="headerlink" title="4.3 查看mysql5.7的状态,没有启动则把mysql启动"></a>4.3 查看mysql5.7的状态,没有启动则把mysql启动</h4><p>出现下面这个death就是没有启动,新装的第一次是没有启动的。</p>
 <img src="/2022/061415691/1419795-20190725154339966-584125135.png" class title="image_thumb17">
+
 <blockquote>
 <p>查看mysql启动状态</p>
 <p>[root@localhost src]# service mysqld status</p>
+</blockquote>
+<blockquote>
 <p>启动mysql    active(running)代表启动成功</p>
 <p>[root@localhost src]# service mysqld start</p>
 </blockquote>
 <img src="/2022/061415691/1419795-20190725154359951-1294954345.png" class title="image_thumb19">
+
 <h4 id="4-4-修改密码"><a href="#4-4-修改密码" class="headerlink" title="4.4 修改密码"></a>4.4 修改密码</h4><blockquote>
 <p>查看临时密码：得知临时密码就是如图</p>
-<p>[root@localhost src]# grep password /var/log/mysqld.log</p>
+<p>[root@localhost src]# grep password &#x2F;var&#x2F;log&#x2F;mysqld.log</p>
 </blockquote>
 <img src="/2022/061415691/1419795-20190725154417320-433555237.png" class title="image_thumb33">
+
 <blockquote>
 <p>用临时密码登录mysql<br>[root@localhost src]# mysql -uroot –p</p>
-<p>或(上面命令不好用的话) /usr/bin/mysql -uroot -p</p>
-<p>修改成新的密码<br>mysql&gt; set password = password(“Szfore_68638”);</p>
+<p>或(上面命令不好用的话) &#x2F;usr&#x2F;bin&#x2F;mysql -uroot -p</p>
+<p>修改成新的密码<br>mysql&gt; set password &#x3D; password(“Szfore_68638”);</p>
 </blockquote>
 <h4 id="4-5-开启远程连接-允许远程连接数据库"><a href="#4-5-开启远程连接-允许远程连接数据库" class="headerlink" title="4.5 开启远程连接,允许远程连接数据库"></a>4.5 开启远程连接,允许远程连接数据库</h4><blockquote>
-<p>mysql&gt; GRANT ALL PRIVILEGES ON <em>.</em> TO ‘root’@’%’ IDENTIFIED BY ‘Szfore_68638’ WITH GRANT OPTION;</p>
+<p>mysql&gt; GRANT ALL PRIVILEGES ON <em>.</em> TO ‘root‘@’%’ IDENTIFIED BY ‘Szfore_68638’ WITH GRANT OPTION;</p>
 </blockquote>
 <h4 id="4-6-配置mysql的配置文件my-cnf-用默认的也行-个人觉得配置一下好一些"><a href="#4-6-配置mysql的配置文件my-cnf-用默认的也行-个人觉得配置一下好一些" class="headerlink" title="4.6 配置mysql的配置文件my.cnf(用默认的也行,个人觉得配置一下好一些)"></a>4.6 配置mysql的配置文件my.cnf(用默认的也行,个人觉得配置一下好一些)</h4><blockquote>
 <p>打开配置文件my.cnf</p>
-<p>[root@localhost src]# vi /etc/my.cnf</p>
+<p>[root@localhost src]# vi &#x2F;etc&#x2F;my.cnf</p>
 <p>在[mysqld]下面配置几行</p>
-<p>lower_case_table_names=1    #配置表名不区分大小写 1：不区分大小写 0：区分大小写 这行必须配置 默认表名是区分大小写的，不利于开发</p>
-<p>character-set-server=utf8     #设置为默认编码为utf8</p>
-<p>init_connect=’SET NAMES utf8’</p>
-<p>max_connections=1024       #设置最大连接数</p>
+<p>lower_case_table_names&#x3D;1    #配置表名不区分大小写 1：不区分大小写 0：区分大小写 这行必须配置 默认表名是区分大小写的，不利于开发</p>
+<p>character-set-server&#x3D;utf8     #设置为默认编码为utf8</p>
+<p>init_connect&#x3D;’SET NAMES utf8’</p>
+<p>max_connections&#x3D;1024       #设置最大连接数</p>
 <p>重启mysql 重启配置才能生效</p>
 <p>[root@localhost src]# service mysqld restart</p>
 </blockquote>
@@ -826,7 +860,7 @@ export JAVA_HOME CLASSPATH PATH
 <h2 id="springboot项目打包"><a href="#springboot项目打包" class="headerlink" title="springboot项目打包"></a>springboot项目打包</h2><h3 id="打jar包"><a href="#打jar包" class="headerlink" title="打jar包"></a>打jar包</h3><ol>
 <li>关闭其他的项目</li>
 <li>修改数据库连接密码、删除测试代码</li>
-<li>run as=》maven build =》 clean package</li>
+<li>run as&#x3D;》maven build &#x3D;》 clean package</li>
 <li>上传 jar 包文件到linux上</li>
 <li>运行：java -jar jar包路径</li>
 <li>测试：<a target="_blank" rel="noopener" href="http://192.168.136.134:8089/emp/getPaged">http://192.168.136.134:8089/emp/getPaged</a></li>
@@ -840,15 +874,18 @@ export JAVA_HOME CLASSPATH PATH
 </li>
 <li><p>在终端中运行：</p>
 <pre><code>npm run build
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>把生成的 dist 目录中的内容 拷贝到 linux中的tomcat 的 webapps 的ROOT目录中（原ROOT目录中内容删除）</p>
 </li>
 <li><p>启动虚拟机的tomcat服务</p>
 <pre><code>./startup.sh
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>测试:</p>
 <pre><code>http://192.168.136.134:8080
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="centos7图形界面与命令界面的切换"><a href="#centos7图形界面与命令界面的切换" class="headerlink" title="centos7图形界面与命令界面的切换"></a>centos7图形界面与命令界面的切换</h2><ol>
 <li>输入ctrl+alt+F2切换到dos界面</li>
@@ -861,7 +898,8 @@ export JAVA_HOME CLASSPATH PATH
 
 //直接输入su命令，即使用root用户名登录
 su
-</code></pre><p>在创建用户时，系统会在/home目录下自动生成一个目录作为该用户的“家目录”，该用户在登录后会首先进入家目录。家目录可以在添加用户时指定，如果不指定，默认会以用户名来命名。例如，用户bob的家目录默认是/home/bob，他在登录linux系统后，会首先进入/home/bob。</p>
+</code></pre>
+<p>在创建用户时，系统会在&#x2F;home目录下自动生成一个目录作为该用户的“家目录”，该用户在登录后会首先进入家目录。家目录可以在添加用户时指定，如果不指定，默认会以用户名来命名。例如，用户bob的家目录默认是&#x2F;home&#x2F;bob，他在登录linux系统后，会首先进入&#x2F;home&#x2F;bob。</p>
 <h2 id="防火墙操作"><a href="#防火墙操作" class="headerlink" title="防火墙操作"></a>防火墙操作</h2><ul>
 <li>查看状态：systemctl status firewalld</li>
 <li>关闭防火墙：systemctl stop firewalld</li>
@@ -871,27 +909,31 @@ su
 dhclient -r //release ip 释放IP
 
 dhclient //获取IP
-</code></pre><h2 id="开放及查看端口"><a href="#开放及查看端口" class="headerlink" title="开放及查看端口"></a>开放及查看端口</h2><p>1、开放端口</p>
-<p><strong>firewall-cmd —zone=public —add-port=5672/tcp —permanent</strong>  # 开放5672端口</p>
-<p><strong>firewall-cmd —zone=public —remove-port=5672/tcp —permanent</strong> #关闭5672端口</p>
-<p><strong>firewall-cmd —reload</strong>  # 配置立即生效</p>
+</code></pre>
+<h2 id="开放及查看端口"><a href="#开放及查看端口" class="headerlink" title="开放及查看端口"></a>开放及查看端口</h2><p>1、开放端口</p>
+<p><strong>firewall-cmd –zone&#x3D;public –add-port&#x3D;5672&#x2F;tcp –permanent</strong>  # 开放5672端口</p>
+<p><strong>firewall-cmd –zone&#x3D;public –remove-port&#x3D;5672&#x2F;tcp –permanent</strong> #关闭5672端口</p>
+<p><strong>firewall-cmd –reload</strong>  # 配置立即生效</p>
 <p>2、查看防火墙所有开放的端口</p>
-<p><strong>firewall-cmd —zone=public —list-ports</strong> </p>
+<p><strong>firewall-cmd –zone&#x3D;public –list-ports</strong> </p>
 <p>3.、关闭防火墙</p>
 <p>如果要开放的端口太多，嫌麻烦，可以关闭防火墙，安全性自行评估</p>
 <p><strong>systemctl stop firewalld.service</strong></p>
 <p>4、查看防火墙状态</p>
-<p> <strong>firewall-cmd —state</strong></p>
+<p> <strong>firewall-cmd –state</strong></p>
 <p>5、查看监听的端口</p>
 <p><strong>netstat -lnpt</strong></p>
 <img src="/2022/061415691/1336432-20190302110949754-1765820036.png" class title="img">
+
 <p><em>PS:centos7默认没有 netstat 命令，需要安装 net-tools 工具，yum install -y net-tools</em></p>
 <p>6、检查端口被哪个进程占用</p>
 <p><strong>netstat -lnpt |grep 5672</strong></p>
 <img src="/2022/061415691/1336432-20190302104128381-1210567174.png" class title="img">
+
 <p>7、查看进程的详细信息</p>
 <p><strong>ps 6832</strong></p>
 <img src="/2022/061415691/1336432-20190302104342651-779103690.png" class title="img">
+
 <p>8、中止进程</p>
 <p><strong>kill -9 6832</strong></p>
 <h2 id="菜鸟教程"><a href="#菜鸟教程" class="headerlink" title="菜鸟教程"></a>菜鸟教程</h2><p><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-tutorial.html">https://www.runoob.com/linux/linux-tutorial.html</a></p>
@@ -901,7 +943,7 @@ dhclient //获取IP
 <p>　　如果没有加入-参数，就是non-login-shell的方式，也就是说当前的shell还是加载切换之前的那个用户的环境变量以及各种设置。</p>
 <p>　　如果不想因为切换到另一个用户导致自己在当前用户下的设置不可用，那么就可以用non-login-shell的方式；如果切换用户后，需要用到该用户的各种环境变量，那么使用login-shell方式即可。</p>
 <p>　　什么是sudo?</p>
-<p>　　全称为super user do，即以超级用户的方式执行命令，这里的超级用户指的就是root用户，我们在Linux中有时会遇到permission denied的情况，如以ubuntu用户的身份查看/etc/shadow的内容，因为它是只有root用户才能查看的，这个时候就可以使用sudo。</p>
+<p>　　全称为super user do，即以超级用户的方式执行命令，这里的超级用户指的就是root用户，我们在Linux中有时会遇到permission denied的情况，如以ubuntu用户的身份查看&#x2F;etc&#x2F;shadow的内容，因为它是只有root用户才能查看的，这个时候就可以使用sudo。</p>
 <p>　　两者的区别在于：</p>
 <p>　　使用su - 提供root账号的密码，可以切换到root用户；</p>
 <p>　　使用sudo su -，提供当前用户的密码，也可以切换到root用户。</p>
@@ -910,129 +952,148 @@ dhclient //获取IP
 <li>查看编码</li>
 </ol>
 <pre><code>echo $LANG$LANGUAGE
-</code></pre><ol>
+</code></pre>
+<ol start="2">
 <li><p>修改</p>
 <pre><code>修改为英文字符集：
-vi /etc/locale.conf 
+vi /etc/locale.conf 
 
 LANG=en_US.UTF-8
 修改为中文字符集：
 
 LANG=zh_CN.UTF-8
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>使配置生效</p>
-<pre><code>source /etc/locale.conf
-</code></pre></li>
+<pre><code>source /etc/locale.conf 
+</code></pre>
+</li>
 </ol>
 <h2 id="putty支持中文编码"><a href="#putty支持中文编码" class="headerlink" title="putty支持中文编码"></a>putty支持中文编码</h2><ol>
 <li><p>选择支持中文的字体</p>
 <img src="/2022/061415691/image-20220613062111019.png" class>
 </li>
 <li><p>设置编码</p>
-<img src="/2022/061415691/image-20220613062147584.png" class title="image-20220613062147584">
-<h1 id="Linux补充"><a href="#Linux补充" class="headerlink" title="Linux补充"></a>Linux补充</h1></li>
+<img src="/2022/061415691/image-20220613062147584.png" class title="image-20220613062147584"></li>
 </ol>
-<h2 id="RPM"><a href="#RPM" class="headerlink" title="RPM"></a>RPM</h2><p>1）是Red Hat Package Manager的缩写，由Red Hat公司开发。<br>2）它是以一种数据库记录的方式将我们所需要的套件安装到Linux主机的一套管理程序。也就是说，你的Linux系统中存在着一个关于RPM的数据库，它记录了安装的包以及包与包之间的依赖关系。<br>3）RPM包是预先在Linux机器上编译并打包的文件，安装非常快捷。但它也有一些缺点，比如安装环境必须与变异时的环境一致或者相当，包与包之间存在着相互依赖的情况，卸载包时，需要先把依赖的包卸载。如果依赖的包是系统所必需的，就不能卸载这个包，否则系统会崩溃。<br>4）挂载光驱<br>先检查一下VMware右下角的小光驱图标是否点亮，如果没有，点击一下，再点击“连接”就可以点亮它。如果没有，点击一下，再点击“连接”就可以点亮它。当挂载光驱后，会在/mnt/Packages目录下看到很多后缀为.rpm的文件，这些文件就是RPM包<br>挂载光驱：<br>mount /dev/cdrom /mnt<br>5)每个RPM包的名称都由”-“和”.”分成了若干部分。比如在abrt-2.1.11-45.el7.centos.x86_64.rpm包中，abrt为包名，2.1.11为版本信息，45.el7.centos为发布版本号，x86_64为运行平台。常见的运行平台有i386、i586、i686和x86_64。需要注意的是，CPU目前分32位和64位，i386、i586和i686都为32位平台，x86_64则为64位平台。另外，有些RPM包并没有写具体的平台而是noarch（如ant-1.9.2-9.el7.noarch.rpm）,这说明在这个RPM包没有硬件平台限制.<br>6)安装RPM包:</p>
+<h1 id="Linux补充"><a href="#Linux补充" class="headerlink" title="Linux补充"></a>Linux补充</h1><h2 id="RPM"><a href="#RPM" class="headerlink" title="RPM"></a>RPM</h2><p>1）是Red Hat Package Manager的缩写，由Red Hat公司开发。<br>2）它是以一种数据库记录的方式将我们所需要的套件安装到Linux主机的一套管理程序。也就是说，你的Linux系统中存在着一个关于RPM的数据库，它记录了安装的包以及包与包之间的依赖关系。<br>3）RPM包是预先在Linux机器上编译并打包的文件，安装非常快捷。但它也有一些缺点，比如安装环境必须与变异时的环境一致或者相当，包与包之间存在着相互依赖的情况，卸载包时，需要先把依赖的包卸载。如果依赖的包是系统所必需的，就不能卸载这个包，否则系统会崩溃。<br>4）挂载光驱<br>先检查一下VMware右下角的小光驱图标是否点亮，如果没有，点击一下，再点击“连接”就可以点亮它。如果没有，点击一下，再点击“连接”就可以点亮它。当挂载光驱后，会在&#x2F;mnt&#x2F;Packages目录下看到很多后缀为.rpm的文件，这些文件就是RPM包<br>挂载光驱：<br>mount &#x2F;dev&#x2F;cdrom &#x2F;mnt<br>5)每个RPM包的名称都由”-“和”.”分成了若干部分。比如在abrt-2.1.11-45.el7.centos.x86_64.rpm包中，abrt为包名，2.1.11为版本信息，45.el7.centos为发布版本号，x86_64为运行平台。常见的运行平台有i386、i586、i686和x86_64。需要注意的是，CPU目前分32位和64位，i386、i586和i686都为32位平台，x86_64则为64位平台。另外，有些RPM包并没有写具体的平台而是noarch（如ant-1.9.2-9.el7.noarch.rpm）,这说明在这个RPM包没有硬件平台限制.<br>6)安装RPM包:</p>
 <pre><code>rpm -ivh libject-turbo-devel-1.2.90-5.el7.x86_64.rpm
-</code></pre><p>其中各个选项的含义如下：<br>-i:表示安装<br>-v：表示可视化<br>-h:表示显示安装进度<br>另外，在安装RPM包时，常用的附带参数还包括如下几项：<br>—force:表示强制安装，即使覆盖属于其他包的文件也要安装<br>—nodeps:表示当要安装的RPM包依赖于其他包时，即使其他包没有安装，也要安装这个包。<br>7）升级RPM包</p>
+</code></pre>
+<p>其中各个选项的含义如下：<br>-i:表示安装<br>-v：表示可视化<br>-h:表示显示安装进度<br>另外，在安装RPM包时，常用的附带参数还包括如下几项：<br>–force:表示强制安装，即使覆盖属于其他包的文件也要安装<br>–nodeps:表示当要安装的RPM包依赖于其他包时，即使其他包没有安装，也要安装这个包。<br>7）升级RPM包</p>
 <pre><code>rpm -Uvh filename，其中-U选项表示升级
-</code></pre><p>8）卸载RPM包<br>rpm -e filename,这里的filename是通过rpm的查询功能所查询到的<br>如：</p>
+</code></pre>
+<p>8）卸载RPM包<br>rpm -e filename,这里的filename是通过rpm的查询功能所查询到的<br>如：</p>
 <pre><code>rpm -qa lbjpeg-turbo-devel
-</code></pre><pre><code>rpm -e libjpeg-turbo-devel
-</code></pre><p>卸载时，-e选项后面的filename和安装时是有区别的。安装时，是把一个存在的文件作为参数，而卸载时只需要包名即可<br>9）rpm -qa ：查询当前系统所有已安装的RPM包<br>10）rpm -qi 包名 ：得到已安装RPM包的相关信息<br>11）rpm -ql 包名 :列出一个RPM包的安装文件列表<br>12）rpm -qf 文件的绝对路径  ：列出某个文件属于哪个RPM包</p>
+</code></pre>
+<pre><code>rpm -e libjpeg-turbo-devel
+</code></pre>
+<p>卸载时，-e选项后面的filename和安装时是有区别的。安装时，是把一个存在的文件作为参数，而卸载时只需要包名即可<br>9）rpm -qa ：查询当前系统所有已安装的RPM包<br>10）rpm -qi 包名 ：得到已安装RPM包的相关信息<br>11）rpm -ql 包名 :列出一个RPM包的安装文件列表<br>12）rpm -qf 文件的绝对路径  ：列出某个文件属于哪个RPM包</p>
 <h2 id="yum工具"><a href="#yum工具" class="headerlink" title="yum工具"></a>yum工具</h2><ol>
 <li><p>yum工具最大的优势在于可以联网去下载所需要的RPM包，然后自动安装。如果要安装的RPM包邮依赖关系，yum工具会帮我们依次安装所有相关的RPM包。</p>
 </li>
 <li><p>yum list:列出所有的RPM包资源</p>
+<pre><code>yum list | head -20   ：使用管道列出前20个
+</code></pre>
+<img src="/2022/061415691/image-20210623054604488.png" class title="image-20210623054604488"> 
+
+<p>显示的信息中，最左侧是RPM包名，中间是版本信息，最右侧是安装信息。如果已经安装，最右侧就显示@base、@updates或者@anaconda,它们前面都会有一个@符号。如果未安装，则显示base或者anaconda。如果RPM包已安装但需要升级，则显示updates。yum list命令会先列出已经安装的包，再列出可以安装的包</p>
 </li>
-</ol>
-<pre><code>   yum list | head -20   ：使用管道列出前20个
-</code></pre>   <img src="/2022/061415691/image-20210623054604488.png" class title="image-20210623054604488"> 
-<p>   显示的信息中，最左侧是RPM包名，中间是版本信息，最右侧是安装信息。如果已经安装，最右侧就显示@base、@updates或者@anaconda,它们前面都会有一个@符号。如果未安装，则显示base或者anaconda。如果RPM包已安装但需要升级，则显示updates。yum list命令会先列出已经安装的包，再列出可以安装的包</p>
-<ol>
 <li><p>yum search [相关关键词] :搜索RMP包<br>如：</p>
 <pre><code>yum search vim
-</code></pre><p>或者可以使用：</p>
+</code></pre>
+<p>或者可以使用：</p>
 <pre><code>yum list | grep &#39;vim&#39;
-</code></pre></li>
-</ol>
-<ol>
+</code></pre>
+</li>
 <li><p>yum install [-y][RMP包名]：安装RPM包，如果不加-y选项，则会以与用户交互的方式安装。<br>   在安装过程中，它首先会把需要安装的RPM包列出来，如果有依赖关系，也会把所有依赖的包列出来。<br>如：</p>
 <pre><code>yum install -y protobuf-vim
-</code></pre></li>
-</ol>
-<ol>
+</code></pre>
+</li>
 <li><p>yum remove RPM包名：卸载RPM包</p>
 <pre><code>yum remove protobuf-vim   ：可以加-y选项（不建议）
-</code></pre></li>
-</ol>
-<ol>
+</code></pre>
+</li>
 <li><p>yum update [-y] [RPM包]:升级RPM包</p>
 <pre><code>yum update bash
-</code></pre></li>
-</ol>
-<ol>
-<li><p>利用yum工具下载RPM包<br>i）yum install 包名 -y —downloadonly —downloaddir=路径<br>如：</p>
+</code></pre>
+</li>
+<li><p>利用yum工具下载RPM包<br>i）yum install 包名 -y –downloadonly –downloaddir&#x3D;路径<br>如：</p>
 <pre><code>yum install -y ypbind --downloadonly --downloaddir=/tmp/
-</code></pre><p>ii)如果包已经安装过了，上面的命令就不起作用了，改用：</p>
+</code></pre>
+<p>ii)如果包已经安装过了，上面的命令就不起作用了，改用：</p>
 <pre><code>yum reinstall -y bash --downloadonly --downloaddir=/tmp/
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
-<h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><p>Nginx(“engine x”)是一款是由俄罗斯的程序设计师Igor Sysoev所开发高性能的 Web和 反向代理 服务器，也是一个 IMAP/POP3/SMTP 代理服务器。</p>
+<h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><p>Nginx(“engine x”)是一款是由俄罗斯的程序设计师Igor Sysoev所开发高性能的 Web和 反向代理 服务器，也是一个 IMAP&#x2F;POP3&#x2F;SMTP 代理服务器。</p>
 <p>在高连接并发的情况下，Nginx是Apache服务器不错的替代品。</p>
 <h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><ol>
 <li>添加Nginx到YUM源</li>
 </ol>
 <pre><code>rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
-</code></pre><ol>
+</code></pre>
+<ol start="2">
 <li>安装Nginx</li>
 </ol>
 <pre><code>yum install -y nginx
-</code></pre><ol>
+</code></pre>
+<ol start="3">
 <li>启动Nginx</li>
 </ol>
 <pre><code>systemctl start nginx.service
-</code></pre><p>如果一切进展顺利的话，现在你可以通过你的域名或IP来访问你的Web页面来预览一下Nginx的默认页面；</p>
+</code></pre>
+<p>如果一切进展顺利的话，现在你可以通过你的域名或IP来访问你的Web页面来预览一下Nginx的默认页面；</p>
 <img src="/2022/061415691/17023-b8bd8cdcfa37c42b.png" class title="img">
-<ol>
+
+<ol start="4">
 <li>CentOS 7 开机启动Nginx</li>
 </ol>
 <pre><code>systemctl enable nginx.service
-</code></pre><ol>
+</code></pre>
+<ol start="5">
 <li>开放80端口</li>
 </ol>
 <pre><code>##Add
 firewall-cmd --permanent --zone=public --add-port=80/tcp
 ##Reload
 firewall-cmd --reload
-</code></pre><h3 id="Nginx配置信息"><a href="#Nginx配置信息" class="headerlink" title="Nginx配置信息"></a>Nginx配置信息</h3><ul>
+</code></pre>
+<h3 id="Nginx配置信息"><a href="#Nginx配置信息" class="headerlink" title="Nginx配置信息"></a>Nginx配置信息</h3><ul>
 <li>网站文件存放默认目录，拷贝vue-cli构建之后的dist目录内容到该目录下（删除该目录原来所有文件）</li>
 </ul>
 <pre><code>/usr/share/nginx/html
-</code></pre><ul>
+</code></pre>
+<ul>
 <li>网站默认站点配置</li>
 </ul>
 <pre><code>/etc/nginx/conf.d/default.conf
-</code></pre><ul>
+</code></pre>
+<ul>
 <li>自定义Nginx站点配置文件存放目录</li>
 </ul>
 <pre><code>/etc/nginx/conf.d/
-</code></pre><ul>
+</code></pre>
+<ul>
 <li>Nginx全局配置</li>
 </ul>
 <pre><code>/etc/nginx/nginx.conf
-</code></pre><ul>
+</code></pre>
+<ul>
 <li>Nginx启动</li>
 </ul>
 <pre><code>nginx -c nginx.conf
-</code></pre><h3 id="Nginx-其他命令"><a href="#Nginx-其他命令" class="headerlink" title="Nginx 其他命令"></a>Nginx 其他命令</h3><p>以下包含了 Nginx 常用的几个命令：</p>
+</code></pre>
+<h3 id="Nginx-其他命令"><a href="#Nginx-其他命令" class="headerlink" title="Nginx 其他命令"></a>Nginx 其他命令</h3><p>以下包含了 Nginx 常用的几个命令：</p>
 <pre><code>/usr/sbin/nginx -s reload            # 重新载入配置文件
 /usr/sbin/nginx -s reopen            # 重启 Nginx
 /usr/sbin/nginx -s stop              # 停止 Nginx
 /usr/sbin/nginx                      # 启动 Nginx
-</code></pre><h2 id="which：用户查找某个命令的绝对路径"><a href="#which：用户查找某个命令的绝对路径" class="headerlink" title="which：用户查找某个命令的绝对路径"></a>which：用户查找某个命令的绝对路径</h2><pre><code>which nginx
-</code></pre><h2 id="环境变量PATH"><a href="#环境变量PATH" class="headerlink" title="环境变量PATH"></a>环境变量PATH</h2><pre><code>echo $PATH     //显示环境变量，区分大小写，PATH前面的$是变量的前缀符号
 </code></pre>
+<h2 id="which：用户查找某个命令的绝对路径"><a href="#which：用户查找某个命令的绝对路径" class="headerlink" title="which：用户查找某个命令的绝对路径"></a>which：用户查找某个命令的绝对路径</h2><pre><code>which nginx
+</code></pre>
+<h2 id="环境变量PATH"><a href="#环境变量PATH" class="headerlink" title="环境变量PATH"></a>环境变量PATH</h2><pre><code>echo $PATH     //显示环境变量，区分大小写，PATH前面的$是变量的前缀符号
+</code></pre>
+
                 
             </div>
             <hr/>
@@ -1469,7 +1530,7 @@ firewall-cmd --reload
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">195.1k</span>
+                        class="white-color">199.8k</span>
             
             
             

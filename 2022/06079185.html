@@ -341,7 +341,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    733
+                    735
                 </div>
                 
 
@@ -368,12 +368,12 @@
 <ul>
 <li>一个能够完成二进制位读写的单元为存储元，存储体由多个存储元构成。  <img src="/2022/06079185/1.jpg" class>    
 其中时序控制逻辑如图：  <img src="/2022/06079185/2.jpg" class>    
-封装称为存储器芯片。其中有若干接口线：地址线，数据线，片选线，读写控制线。总容量=存储单元个数X存储字长。  <img src="/2022/06079185/3.jpg" class>   </li>
+封装称为存储器芯片。其中有若干接口线：地址线，数据线，片选线，读写控制线。总容量&#x3D;存储单元个数X存储字长。  <img src="/2022/06079185/3.jpg" class>   </li>
 <li>寻址：如何定位到一个存储单元（一行）<br>按照字节寻址，每单元1B。按照字寻址，每个单元4B。还有半字2B和双字8B。根据单元个数求出地址线根数，分出若干组，求出每组的组号作为字地址。<br>而此时如何存放一个字？字长为4B，可以根据大端和小端方式来存放字。    <img src="/2022/06079185/4.jpg" class>   
 <h2 id="半导体存储器RAM"><a href="#半导体存储器RAM" class="headerlink" title="半导体存储器RAM"></a>半导体存储器RAM</h2><img src="/2022/06079185/8.jpg" class>   </li>
 <li>半导体存储器芯片的基本结构：  <img src="/2022/06079185/9.jpg" class>   </li>
 <li>SRAM和DRAM比较：  <img src="/2022/06079185/7.jpg" class>   </li>
-<li>DRAM的刷新：<br>①刷新周期2ms。<br>②每次刷新一行存储单元，并且根据行列等长地址定位（减少选通线的数量）。<br>③根据硬件，读出一行之后重新写入，占用一个读/写周期。<br>④整个刷新周期每行刷新一次即可。  <h2 id="半导体存储器ROM"><a href="#半导体存储器ROM" class="headerlink" title="半导体存储器ROM"></a>半导体存储器ROM</h2><img src="/2022/06079185/11.jpg" class>   
+<li>DRAM的刷新：<br>①刷新周期2ms。<br>②每次刷新一行存储单元，并且根据行列等长地址定位（减少选通线的数量）。<br>③根据硬件，读出一行之后重新写入，占用一个读&#x2F;写周期。<br>④整个刷新周期每行刷新一次即可。  <h2 id="半导体存储器ROM"><a href="#半导体存储器ROM" class="headerlink" title="半导体存储器ROM"></a>半导体存储器ROM</h2><img src="/2022/06079185/11.jpg" class>   
 RAM是易失性存储器，断电丢失数据，所以不能作为主存，所以出现了ROM（存储开机之后需要初始的固定信息）。  <img src="/2022/06079185/10.jpg" class>   
 <h2 id="存储系统基本概念"><a href="#存储系统基本概念" class="headerlink" title="存储系统基本概念"></a>存储系统基本概念</h2><img src="/2022/06079185/16.jpg" class>   </li>
 <li>分类：<br>使用不同材料：①磁表面存储器：磁盘（直接存取）磁带（顺序存储）。②磁芯存储器。③半导体存储器（随机存储ROM，RAM）。④光存储器。  <img src="/2022/06079185/13.jpg" class>   </li>
@@ -386,11 +386,12 @@ RAM是易失性存储器，断电丢失数据，所以不能作为主存，所�
 字位同时扩展：  <img src="/2022/06079185/20.jpg" class>   
 <h2 id="双端口RAM和多模块存储器"><a href="#双端口RAM和多模块存储器" class="headerlink" title="双端口RAM和多模块存储器"></a>双端口RAM和多模块存储器</h2>两者都是为了提高存储器的工作速度。<br>存取周期：存取时间+恢复时间（利用恢复时间存取其他数据）  <img src="/2022/06079185/36.jpg" class>   </li>
 <li>双端口RAM：  <img src="/2022/06079185/37.jpg" class>   </li>
-<li>多模块存储器：  <img src="/2022/06079185/38.jpg" class>   
-</li>
+<li>多模块存储器：  <img src="/2022/06079185/38.jpg" class></li>
 </ul>
 <h2 id="高速缓冲存储器局部性原理"><a href="#高速缓冲存储器局部性原理" class="headerlink" title="高速缓冲存储器局部性原理"></a>高速缓冲存储器局部性原理</h2><img src="/2022/06079185/24.jpg" class>   
-<p>把主存数据调入Cache之后，使CPU和Cache交互处理数据。<br><img src="/2022/06079185/22.jpg" class><br><img src="/2022/06079185/23.jpg" class>   </p>
+<p>把主存数据调入Cache之后，使CPU和Cache交互处理数据。  </p>
+<img src="/2022/06079185/22.jpg" class>   
+<img src="/2022/06079185/23.jpg" class>   
 <h2 id="Cache和主存之间的地址映射"><a href="#Cache和主存之间的地址映射" class="headerlink" title="Cache和主存之间的地址映射"></a>Cache和主存之间的地址映射</h2><img src="/2022/06079185/25.jpg" class>  
 <img src="/2022/06079185/27.jpg" class>    
 <img src="/2022/06079185/26.jpg" class>   
@@ -403,7 +404,7 @@ RAM是易失性存储器，断电丢失数据，所以不能作为主存，所�
 <li>页式虚拟存储器：  <img src="/2022/06079185/32.jpg" class>   </li>
 <li>段式虚拟存储器：  <img src="/2022/06079185/33.jpg" class>   </li>
 <li>段页式虚拟存储器：  <img src="/2022/06079185/34.jpg" class>   
-快表TLB：<br>页表，段表放在主存中，收到虚拟地址之后要先访问主存，查询页表和段表进行转换，放在内存中的表称为慢表。为了提高变换速度，用高速缓冲存储器存放常用的页表项，形成了快表TLB。  <img src="/2022/06079185/35.jpg" class>   </li>
+快表TLB：<br>页表，段表放在主存中，收到虚拟地址之后要先访问主存，查询页表和段表进行转换，放在内存中的表称为慢表。为了提高变换速度，用高速缓冲存储器存放常用的页表项，形成了快表TLB。  <img src="/2022/06079185/35.jpg" class></li>
 </ul>
 
                 
@@ -842,7 +843,7 @@ RAM是易失性存储器，断电丢失数据，所以不能作为主存，所�
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">195.1k</span>
+                        class="white-color">199.8k</span>
             
             
             
