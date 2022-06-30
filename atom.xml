@@ -6,7 +6,7 @@
   <link href="http://ffffrance.github.io/atom.xml" rel="self"/>
   
   <link href="http://ffffrance.github.io/"/>
-  <updated>2022-06-29T13:55:41.320Z</updated>
+  <updated>2022-06-30T03:47:15.459Z</updated>
   <id>http://ffffrance.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>常用代码</title>
+    <link href="http://ffffrance.github.io/2022/063057443.html"/>
+    <id>http://ffffrance.github.io/2022/063057443.html</id>
+    <published>2022-06-30T03:45:51.000Z</published>
+    <updated>2022-06-30T03:47:15.459Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;排序&quot;&gt;&lt;a href=&quot;#排序&quot; class=&quot;headerlink&quot; title=&quot;排序&quot;&gt;&lt;/a&gt;排序&lt;/h1&gt;&lt;h2 id=&quot;直接插入排序&quot;&gt;&lt;a href=&quot;#直接插入排序&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="代码" scheme="http://ffffrance.github.io/categories/%E4%BB%A3%E7%A0%81/"/>
+    
+    
+    <category term="代码" scheme="http://ffffrance.github.io/tags/%E4%BB%A3%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
     <title>设计模式</title>
     <link href="http://ffffrance.github.io/2022/062941682.html"/>
     <id>http://ffffrance.github.io/2022/062941682.html</id>
     <published>2022-06-29T03:26:14.000Z</published>
-    <updated>2022-06-29T13:55:41.320Z</updated>
+    <updated>2022-06-30T03:42:56.653Z</updated>
     
     
       
@@ -479,31 +504,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;计算机组成原理存储系统&quot;&gt;&lt;a href=&quot;#计算机组成原理存储系统&quot; class=&quot;headerlink&quot; title=&quot;计算机组成原理存储系统&quot;&gt;&lt;/a&gt;计算机组成原理存储系统&lt;/h1&gt;&lt;img src=&quot;/2022/06079185/6.jpg&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="计算机组成原理" scheme="http://ffffrance.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-    
-    <category term="计算机组成原理" scheme="http://ffffrance.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机组成原理数据的表示和运算</title>
-    <link href="http://ffffrance.github.io/2022/060652765.html"/>
-    <id>http://ffffrance.github.io/2022/060652765.html</id>
-    <published>2022-06-06T02:20:45.000Z</published>
-    <updated>2022-06-07T07:54:50.609Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;计算机组成原理数据的表示和运算&quot;&gt;&lt;a href=&quot;#计算机组成原理数据的表示和运算&quot; class=&quot;headerlink&quot; title=&quot;计算机组成原理数据的表示和运算&quot;&gt;&lt;/a&gt;计算机组成原理数据的表示和运算&lt;/h1&gt;&lt;h2 id=&quot;进位计数制&quot;&gt;&lt;a</summary>
         
       
     
