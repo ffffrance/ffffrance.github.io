@@ -376,11 +376,12 @@
 <li>const命令声明一个常量，一旦声明，值不能被改变</li>
 <li>必须在声明的同时赋予初始值</li>
 </ol>
-<h3 id="函数的扩展—rest参数（剩余参数）"><a href="#函数的扩展—rest参数（剩余参数）" class="headerlink" title="函数的扩展—rest参数（剩余参数）"></a>函数的扩展—rest参数（剩余参数）</h3><ol>
+<h3 id="函数的扩展–rest参数（剩余参数）"><a href="#函数的扩展–rest参数（剩余参数）" class="headerlink" title="函数的扩展–rest参数（剩余参数）"></a>函数的扩展–rest参数（剩余参数）</h3><ol>
 <li><p>语法格式：</p>
 <pre><code>function 函数名(命名参数,...剩余参数名)&#123;
 &#125;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>剩余参数：不与任何命名参数相比配的其他参数</p>
 </li>
 <li><p>案例：</p>
@@ -393,7 +394,8 @@
 &#125;
 let sum = 10;
 add(sum,1,2,3,4);
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><p>使用解构赋值可以轻松地使用模板从对象或数组中提取数据</p>
 <p>好处：一次可以定义多个变量，并赋值初始值</p>
@@ -405,15 +407,17 @@ let &#123;name,age&#125; = stu;
 console.log(name,age);
 
 //不同名
-let stu = &#123;name:&quot;tom&quot;,age:20&#125;;            
+let stu = &#123;name:&quot;tom&quot;,age:20&#125;;			
 let &#123;name:stuName,age:stuAge&#125; = stu;
 console.log(stuName,stuAge);
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h3 id="数组解构"><a href="#数组解构" class="headerlink" title="数组解构"></a>数组解构</h3><pre><code>var arr = [&quot;tom&quot;,&quot;marry&quot;,&quot;scott&quot;];
 var [a,b,c] = arr;
 console.log(a,b,c);
-</code></pre><h2 id="增强版的对象字面量"><a href="#增强版的对象字面量" class="headerlink" title="增强版的对象字面量"></a>增强版的对象字面量</h2><pre><code>var name =&quot;marry&quot;;
+</code></pre>
+<h2 id="增强版的对象字面量"><a href="#增强版的对象字面量" class="headerlink" title="增强版的对象字面量"></a>增强版的对象字面量</h2><pre><code>var name =&quot;marry&quot;;
 var stu = &#123;
     name,//属性的简写形式，将同名变量的值赋予给属性
     age:20,
@@ -425,10 +429,11 @@ var stu = &#123;
 
 console.log(stu.name);
 stu.hi();
-</code></pre><h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><ol>
+</code></pre>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><ol>
 <li><p>箭头函数：是ES6中函数表达式定义的一种简化写法</p>
 </li>
-<li><p>ES6中允许使用“箭头” (=&gt;)定义函数</p>
+<li><p>ES6中允许使用“箭头” (&#x3D;&gt;)定义函数</p>
 <pre><code>/* var fun1 = function(a)&#123;
     return a + 1;
 &#125; */
@@ -437,7 +442,8 @@ var fun1 = a =&gt; a + 1
 
 var result = fun1(1);
 console.log(result);
-</code></pre><p>注意：</p>
+</code></pre>
+<p>注意：</p>
 <ul>
 <li><p>当方法的形参个数为1的时候，形参外的括号可以省略</p>
 </li>
@@ -449,43 +455,46 @@ console.log(result);
 <pre><code>function test()&#123;
                 console.log(this);//&#123;&quot;name&quot;:&quot;tom&quot;&#125;
                 let t;
-
+                
                 /* t = function ()&#123;
                     console.log(this);//window
                 &#125; */
-
+                
                 t = ()=&gt;&#123;
                     console.log(this);//&#123;&quot;name&quot;:&quot;tom&quot;&#125;
                 &#125;
                 t();
             &#125;
-
+            
             var stu = &#123;&quot;name&quot;:&quot;tom&quot;&#125;;
-
+            
             stu.test = test;
-
+            
             stu.test();
-</code></pre></li>
+</code></pre>
+</li>
 </ul>
 </li>
 </ol>
 <h2 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h2><p>对象扩展运算符（…）：用于取出参数对象中的所有可遍历的属性，拷贝到当前对象中</p>
 <pre><code>var stu = &#123;&quot;name&quot;:&quot;tom&quot;,&quot;age&quot;:20&#125;;
-
+            
 var stu2 = &#123;...stu&#125;;
 
 stu2.name = &quot;marry&quot;;
 
 console.log(stu.name);
 console.log(stu2.name);
-</code></pre><p>数组扩展运算符:</p>
+</code></pre>
+<p>数组扩展运算符:</p>
 <pre><code>var arr = [1,2,3,4,5];
 var arr2 = [...arr];
 
 arr[0] = 10;
 
 console.log(arr2);
-</code></pre><h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><ol>
+</code></pre>
+<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><ol>
 <li><p>ES6模块的主要思想是必须显示地使用标识符导出模块数据，才能从外部访问模块</p>
 </li>
 <li><p>导入导出方式一：要求导入时使用导出时候的名称</p>
@@ -509,7 +518,8 @@ export &#123;test1&#125;
     import &#123;test1&#125; from &quot;./js/1.js&quot;;
     test1()
 &lt;/script&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>默认导出导入</p>
 <pre><code>//1.js
 export default &#123;
@@ -521,7 +531,8 @@ import Stu from &#39;./js/1.js&#39;
 
 console.log(Stu.name)
 &lt;/script&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>全部导入</p>
 <pre><code>//1.js
 export var name = &quot;tom&quot;;
@@ -543,7 +554,8 @@ console.log(app.name)
 console.log(app.default.name)
 app.test1()
 &lt;/script&gt;
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 
                 
@@ -982,7 +994,7 @@ app.test1()
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">204.9k</span>
+                        class="white-color">218.5k</span>
             
             
             

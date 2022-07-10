@@ -334,21 +334,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-07-09
+                    2022-07-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    3.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    18 分
                 </div>
                 
 
@@ -371,7 +371,11 @@
 <li>举例推导DP数组。   <h2 id="动态规划常用题型"><a href="#动态规划常用题型" class="headerlink" title="动态规划常用题型"></a>动态规划常用题型</h2></li>
 <li>背包问题（n个数组成k）</li>
 <li>数组中若干数和为k的方法数</li>
-<li>背包问题中的组合与排列（内外循环顺序）<h3 id="leetcode：509"><a href="#leetcode：509" class="headerlink" title="leetcode：509"></a>leetcode：509</h3><img src="/2022/0709undefined/1.jpg" class>    
+<li>背包问题中的组合与排列（内外循环顺序）</li>
+<li>最长连续子序列（子序列连续，子序列不连续）</li>
+<li>最长递增序列，最大和</li>
+<li>字符串子串判定，转换步数</li>
+<li>回文字符串<h3 id="leetcode：509"><a href="#leetcode：509" class="headerlink" title="leetcode：509"></a>leetcode：509</h3><img src="/2022/070955046/1.jpg" class>    
 <pre><code>class Solution &#123;
 public:
 int fib(int n) &#123;
@@ -383,7 +387,8 @@ int fib(int n) &#123;
   return dp[n];
 &#125;
 &#125;;
-</code></pre><h3 id="leetcode：70"><a href="#leetcode：70" class="headerlink" title="leetcode：70"></a>leetcode：70</h3><img src="/2022/0709undefined/2.jpg" class>    
+</code></pre>
+<h3 id="leetcode：70"><a href="#leetcode：70" class="headerlink" title="leetcode：70"></a>leetcode：70</h3><img src="/2022/070955046/2.jpg" class>    
 <pre><code>class Solution &#123;
 public:
 int climbStairs(int n) &#123;
@@ -397,7 +402,8 @@ int climbStairs(int n) &#123;
   return dp[n];
 &#125;
 &#125;;
-</code></pre><h3 id="leetcode：746"><a href="#leetcode：746" class="headerlink" title="leetcode：746"></a>leetcode：746</h3><img src="/2022/0709undefined/3.jpg" class>    
+</code></pre>
+<h3 id="leetcode：746"><a href="#leetcode：746" class="headerlink" title="leetcode：746"></a>leetcode：746</h3><img src="/2022/070955046/3.jpg" class>    
 <pre><code>class Solution &#123;
 public:
 int minCostClimbingStairs(vector&lt;int&gt;&amp; cost) &#123;
@@ -411,7 +417,8 @@ int minCostClimbingStairs(vector&lt;int&gt;&amp; cost) &#123;
   return dp[n];
 &#125;
 &#125;;
-</code></pre><h3 id="leetcode：62"><a href="#leetcode：62" class="headerlink" title="leetcode：62"></a>leetcode：62</h3><img src="/2022/0709undefined/4.jpg" class>    
+</code></pre>
+<h3 id="leetcode：62"><a href="#leetcode：62" class="headerlink" title="leetcode：62"></a>leetcode：62</h3><img src="/2022/070955046/4.jpg" class>    
 <pre><code>class Solution &#123;
 public:
 int uniquePaths(int m, int n) &#123;
@@ -430,7 +437,8 @@ int uniquePaths(int m, int n) &#123;
   return dp[m-1][n-1];
 &#125;
 &#125;;
-</code></pre><h3 id="leetcode：63"><a href="#leetcode：63" class="headerlink" title="leetcode：63"></a>leetcode：63</h3><img src="/2022/0709undefined/5.jpg" class>    
+</code></pre>
+<h3 id="leetcode：63"><a href="#leetcode：63" class="headerlink" title="leetcode：63"></a>leetcode：63</h3><img src="/2022/070955046/5.jpg" class>    
 <pre><code>class Solution &#123;
 public:
 int uniquePathsWithObstacles(vector&lt;vector&lt;int&gt;&gt;&amp; obstacleGrid) &#123;
@@ -455,7 +463,8 @@ int uniquePathsWithObstacles(vector&lt;vector&lt;int&gt;&gt;&amp; obstacleGrid) 
   return dp[m-1][n-1];
 &#125;
 &#125;;
-</code></pre><h3 id="leetcode：343"><a href="#leetcode：343" class="headerlink" title="leetcode：343"></a>leetcode：343</h3><img src="/2022/0709undefined/6.jpg" class>    
+</code></pre>
+<h3 id="leetcode：343"><a href="#leetcode：343" class="headerlink" title="leetcode：343"></a>leetcode：343</h3><img src="/2022/070955046/6.jpg" class>    
 <pre><code>class Solution &#123;
 public:
 int integerBreak(int n) &#123;
@@ -470,7 +479,8 @@ int integerBreak(int n) &#123;
   return dp[n];
 &#125;
 &#125;;
-</code></pre><h3 id="leetcode：96"><a href="#leetcode：96" class="headerlink" title="leetcode：96"></a>leetcode：96</h3><img src="/2022/0709undefined/7.jpg" class>    
+</code></pre>
+<h3 id="leetcode：96"><a href="#leetcode：96" class="headerlink" title="leetcode：96"></a>leetcode：96</h3><img src="/2022/070955046/7.jpg" class>    
 <pre><code>class Solution &#123;
 public:
 int numTrees(int n) &#123;
@@ -484,7 +494,8 @@ int numTrees(int n) &#123;
   return dp[n];
 &#125;
 &#125;;
-</code></pre><h3 id="leetcode：416"><a href="#leetcode：416" class="headerlink" title="leetcode：416"></a>leetcode：416</h3><img src="/2022/0709undefined/8.jpg" class>    
+</code></pre>
+<h3 id="leetcode：416"><a href="#leetcode：416" class="headerlink" title="leetcode：416"></a>leetcode：416</h3><img src="/2022/070955046/8.jpg" class>    
 <pre><code>class Solution &#123;
 public:
 bool canPartition(vector&lt;int&gt;&amp; nums) &#123;
@@ -504,7 +515,8 @@ bool canPartition(vector&lt;int&gt;&amp; nums) &#123;
   else return false;
 &#125;
 &#125;;
-</code></pre><h3 id="leetcode：494"><a href="#leetcode：494" class="headerlink" title="leetcode：494"></a>leetcode：494</h3><img src="/2022/0709undefined/9.jpg" class>    
+</code></pre>
+<h3 id="leetcode：494"><a href="#leetcode：494" class="headerlink" title="leetcode：494"></a>leetcode：494</h3><img src="/2022/070955046/9.jpg" class>    
 <pre><code>class Solution &#123;
 public:
 int findTargetSumWays(vector&lt;int&gt;&amp; nums, int target) &#123;
@@ -524,7 +536,8 @@ int findTargetSumWays(vector&lt;int&gt;&amp; nums, int target) &#123;
   return dp[res];
 &#125;
 &#125;;
-</code></pre><h3 id="leetcode：474"><a href="#leetcode：474" class="headerlink" title="leetcode：474"></a>leetcode：474</h3><img src="/2022/0709undefined/10.jpg" class>    
+</code></pre>
+<h3 id="leetcode：474"><a href="#leetcode：474" class="headerlink" title="leetcode：474"></a>leetcode：474</h3><img src="/2022/070955046/10.jpg" class>    
 <pre><code>class Solution &#123;
 public:
 int findMaxForm(vector&lt;string&gt;&amp; strs, int m, int n) &#123;
@@ -547,7 +560,8 @@ int findMaxForm(vector&lt;string&gt;&amp; strs, int m, int n) &#123;
   return dp[m][n];
 &#125;
 &#125;;
-</code></pre><h3 id="leetcode：518"><a href="#leetcode：518" class="headerlink" title="leetcode：518"></a>leetcode：518</h3><img src="/2022/0709undefined/11.jpg" class>    
+</code></pre>
+<h3 id="leetcode：518"><a href="#leetcode：518" class="headerlink" title="leetcode：518"></a>leetcode：518</h3><img src="/2022/070955046/11.jpg" class>    
 <pre><code>class Solution &#123;
 public:
 int change(int amount, vector&lt;int&gt;&amp; coins) &#123;
@@ -562,7 +576,8 @@ int change(int amount, vector&lt;int&gt;&amp; coins) &#123;
   return dp[amount];
 &#125;
 &#125;;
-</code></pre><h3 id="leetcode：377"><a href="#leetcode：377" class="headerlink" title="leetcode：377"></a>leetcode：377</h3><img src="/2022/0709undefined/12.jpg" class>    
+</code></pre>
+<h3 id="leetcode：377"><a href="#leetcode：377" class="headerlink" title="leetcode：377"></a>leetcode：377</h3><img src="/2022/070955046/12.jpg" class>    
 <pre><code>class Solution &#123;
 public:
 int combinationSum4(vector&lt;int&gt;&amp; nums, int target) &#123;
@@ -579,7 +594,8 @@ int combinationSum4(vector&lt;int&gt;&amp; nums, int target) &#123;
   return dp[target];
 &#125;
 &#125;;
-</code></pre><h3 id="leetcode：322"><a href="#leetcode：322" class="headerlink" title="leetcode：322"></a>leetcode：322</h3><img src="/2022/0709undefined/13.jpg" class>    
+</code></pre>
+<h3 id="leetcode：322"><a href="#leetcode：322" class="headerlink" title="leetcode：322"></a>leetcode：322</h3><img src="/2022/070955046/13.jpg" class>    
 <pre><code>class Solution &#123;
 public:
 int coinChange(vector&lt;int&gt;&amp; coins, int amount) &#123;
@@ -599,7 +615,8 @@ int coinChange(vector&lt;int&gt;&amp; coins, int amount) &#123;
   else return dp[amount];
 &#125;
 &#125;;
-</code></pre><h3 id="leetcode：279"><a href="#leetcode：279" class="headerlink" title="leetcode：279"></a>leetcode：279</h3><img src="/2022/0709undefined/14.jpg" class>    
+</code></pre>
+<h3 id="leetcode：279"><a href="#leetcode：279" class="headerlink" title="leetcode：279"></a>leetcode：279</h3><img src="/2022/070955046/14.jpg" class>    
 <pre><code>class Solution &#123;
 public:
 int numSquares(int n) &#123;
@@ -618,7 +635,8 @@ int numSquares(int n) &#123;
   return dp[n];
 &#125;
 &#125;;
-</code></pre><h3 id="leetcode：139"><a href="#leetcode：139" class="headerlink" title="leetcode：139"></a>leetcode：139</h3>    
+</code></pre>
+<h3 id="leetcode：139"><a href="#leetcode：139" class="headerlink" title="leetcode：139"></a>leetcode：139</h3>    
 <pre><code>class Solution &#123;
 public:
   bool wordBreak(string s, vector&lt;string&gt;&amp; wordDict) &#123;
@@ -639,7 +657,355 @@ public:
       return dp[s.size()];
   &#125;
 &#125;;
-</code></pre></li>
+</code></pre>
+<h3 id="leetcode：121"><a href="#leetcode：121" class="headerlink" title="leetcode：121"></a>leetcode：121</h3><img src="/2022/070955046/16.jpg" class>    
+<pre><code>class Solution &#123;
+public:
+int maxProfit(vector&lt;int&gt;&amp; prices) &#123;
+  int n = prices.size();
+  int dp[n][2];
+  for(int i=0;i&lt;n;i++) fill(dp[i],dp[i]+2,0);
+  dp[0][0]=-prices[0];
+  dp[0][1]=0;
+  for(int i=1;i&lt;n;i++)&#123;
+      dp[i][0]=max(dp[i-1][0],-prices[i]);
+      dp[i][1]=max(dp[i-1][1],dp[i-1][0]+prices[i]);
+  &#125;
+  return dp[n-1][1];
+&#125;
+&#125;;
+</code></pre>
+<h3 id="leetcode：122"><a href="#leetcode：122" class="headerlink" title="leetcode：122"></a>leetcode：122</h3><img src="/2022/070955046/17.jpg" class>    
+<pre><code>class Solution &#123;
+public:
+int maxProfit(vector&lt;int&gt;&amp; prices) &#123;
+  int n = prices.size();
+  int dp[n][2];
+  for(int i=0;i&lt;n;i++) fill(dp[i],dp[i]+2,0);
+  dp[0][0]=-prices[0];
+  dp[0][1]=0;
+  for(int i=1;i&lt;n;i++)&#123;
+      dp[i][0]=max(dp[i-1][0],dp[i-1][1]-prices[i]);
+      dp[i][1]=max(dp[i-1][1],dp[i-1][0]+prices[i]);
+  &#125;
+  return dp[n-1][1];
+&#125;
+&#125;;
+</code></pre>
+<h3 id="leetcode：123"><a href="#leetcode：123" class="headerlink" title="leetcode：123"></a>leetcode：123</h3><img src="/2022/070955046/18.jpg" class>    
+<pre><code>class Solution &#123;
+public:
+int maxProfit(vector&lt;int&gt;&amp; prices) &#123;
+  int n = prices.size();
+  int dp[n][4];
+  for(int i=0;i&lt;n;i++) fill(dp[i],dp[i]+4,0);
+  dp[0][0]=-prices[0];
+  dp[0][1]=0;
+  dp[0][2]=-prices[0];
+  dp[0][3]=0;
+  for(int i=1;i&lt;n;i++)&#123;
+      dp[i][0]=max(dp[i-1][0],-prices[i]);
+      dp[i][1]=max(dp[i-1][1],dp[i-1][0]+prices[i]);
+      dp[i][2]=max(dp[i-1][2],dp[i-1][1]-prices[i]);
+      dp[i][3]=max(dp[i-1][3],dp[i-1][2]+prices[i]);
+  &#125;
+  return dp[n-1][3];
+&#125;
+&#125;;
+</code></pre>
+<h3 id="leetcode：188"><a href="#leetcode：188" class="headerlink" title="leetcode：188"></a>leetcode：188</h3><img src="/2022/070955046/19.jpg" class>    
+<pre><code>class Solution &#123;
+public:
+int maxProfit(int k, vector&lt;int&gt;&amp; prices) &#123;
+  int n = prices.size();
+  if(n==0||k==0) return 0;
+  int dp[n][2*k];
+  for(int i=0;i&lt;n;i++) fill(dp[i],dp[i]+2*k,0);
+  for(int i=0;i&lt;2*k;i+=2) dp[0][i]=-prices[0];
+  for(int i=1;i&lt;n;i++)&#123;
+      for(int j=0;j&lt;=2*k-1;j++)&#123;
+          if(j==0)&#123;
+              dp[i][j]=max(dp[i-1][j],-prices[i]);
+              continue;
+          &#125;
+          if(j%2==1) dp[i][j]=max(dp[i-1][j],dp[i-1][j-1]+prices[i]);
+          else dp[i][j]=max(dp[i-1][j],dp[i-1][j-1]-prices[i]);
+      &#125;
+  &#125;
+  return dp[n-1][2*k-1];
+&#125;
+&#125;;
+</code></pre>
+<h3 id="leetcode：300"><a href="#leetcode：300" class="headerlink" title="leetcode：300"></a>leetcode：300</h3><img src="/2022/070955046/20.jpg" class>    
+<pre><code>class Solution &#123;
+public:
+int lengthOfLIS(vector&lt;int&gt;&amp; nums) &#123;
+  int n=nums.size();
+  int dp[n];
+  fill(dp,dp+n,1);
+  for(int i=1;i&lt;n;i++)&#123;
+      for(int j=0;j&lt;i;j++)&#123;
+          if(nums[j]&lt;nums[i]) dp[i]=max(dp[i],dp[j]+1);
+      &#125;
+  &#125;
+  int result=0;
+  for(int i=0;i&lt;n;i++)&#123;
+      result=max(result,dp[i]);
+  &#125;
+  return result;
+&#125;
+&#125;;
+</code></pre>
+<h3 id="leetcode：674"><a href="#leetcode：674" class="headerlink" title="leetcode：674"></a>leetcode：674</h3><img src="/2022/070955046/21.jpg" class>    
+<pre><code>class Solution &#123;
+public:
+int findLengthOfLCIS(vector&lt;int&gt;&amp; nums) &#123;
+  int n=nums.size();
+  if(n==0) return 0;
+  if(n==1) return 1;
+  int dp[n];
+  fill(dp,dp+n,1);
+  for(int i=1;i&lt;n;i++)&#123;
+      if(nums[i]&gt;nums[i-1])&#123;
+          dp[i]=max(dp[i],dp[i-1]+1);
+      &#125;
+  &#125;
+  int ans=0;
+  for(int i=1;i&lt;n;i++)&#123;
+      ans=max(ans,dp[i]);
+  &#125;
+  return ans;
+&#125;
+&#125;;
+</code></pre>
+<h3 id="leetcode：718"><a href="#leetcode：718" class="headerlink" title="leetcode：718"></a>leetcode：718</h3><img src="/2022/070955046/22.jpg" class>    
+<pre><code>class Solution &#123;
+public:
+int findLength(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) &#123;
+  int x=nums1.size();
+  int y=nums2.size();
+  int dp[x+1][y+1];
+  for(int i=0;i&lt;=x;i++) fill(dp[i],dp[i]+y+1,0);
+  int res=0;
+  for(int i=1;i&lt;=x;i++)&#123;
+      for(int j=1;j&lt;=y;j++)&#123;
+          if(nums1[i-1]==nums2[j-1])&#123;
+              dp[i][j]=dp[i-1][j-1]+1;
+          &#125;
+          if(dp[i][j]&gt;res) res=dp[i][j];
+      &#125;
+  &#125;
+  return res;
+&#125;
+&#125;;
+</code></pre>
+<h3 id="leetcode：1143"><a href="#leetcode：1143" class="headerlink" title="leetcode：1143"></a>leetcode：1143</h3><img src="/2022/070955046/23.jpg" class>    
+<pre><code>class Solution &#123;
+public:
+int longestCommonSubsequence(string text1, string text2) &#123;
+  int n=text1.size();
+  int m=text2.size();
+  int dp[n+1][m+1];
+  for(int i=0;i&lt;n+1;i++) fill(dp[i],dp[i]+m+1,0);
+  int res=0;
+  for(int i=1;i&lt;=n;i++)&#123;
+      for(int j=1;j&lt;=m;j++)&#123;
+          if(text1[i-1]==text2[j-1])&#123;
+              dp[i][j]=dp[i-1][j-1]+1;
+          &#125;else &#123;
+              dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
+          &#125;
+          res=max(res,dp[i][j]);
+      &#125;
+  &#125;
+  return res;
+&#125;
+&#125;;
+</code></pre>
+<h3 id="leetcode：1135"><a href="#leetcode：1135" class="headerlink" title="leetcode：1135"></a>leetcode：1135</h3><img src="/2022/070955046/24.jpg" class>    
+<pre><code>class Solution &#123;
+public:
+int maxUncrossedLines(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) &#123;
+  int n=nums1.size();
+  int m=nums2.size();
+  int dp[n+1][m+1];
+  for(int i=0;i&lt;=n;i++) fill(dp[i],dp[i]+m+1,0);
+  int res=0;
+  for(int i=1;i&lt;=n;i++)&#123;
+      for(int j=1;j&lt;=m;j++)&#123;
+          if(nums1[i-1]==nums2[j-1])&#123;
+              dp[i][j]=dp[i-1][j-1]+1;
+          &#125;else dp[i][j]=max(dp[i][j-1],dp[i-1][j]);
+          res=max(res,dp[i][j]);
+      &#125;
+  &#125;
+  return res;
+&#125;
+&#125;;
+</code></pre>
+<h3 id="leetcode：53"><a href="#leetcode：53" class="headerlink" title="leetcode：53"></a>leetcode：53</h3><img src="/2022/070955046/25.jpg" class>    
+<pre><code>class Solution &#123;
+public:
+int maxSubArray(vector&lt;int&gt;&amp; nums) &#123;
+  int n=nums.size();
+  int dp[n];
+  dp[0]=nums[0];
+  int res=nums[0];
+  for(int i=1;i&lt;n;i++)&#123;
+      dp[i]=max(nums[i],dp[i-1]+nums[i]);
+      res=max(res,dp[i]);
+  &#125;
+  return res;
+&#125;
+&#125;;
+</code></pre>
+<h3 id="leetcode：392"><a href="#leetcode：392" class="headerlink" title="leetcode：392"></a>leetcode：392</h3><img src="/2022/070955046/26.jpg" class>    
+<pre><code>class Solution &#123;
+public:
+bool isSubsequence(string s, string t) &#123;
+  int n=s.size();
+  int m=t.size();
+  int dp[n+1][m+1];
+  for(int i=0;i&lt;=n;i++) fill(dp[i],dp[i]+m+1,0);
+  for(int i=1;i&lt;=n;i++)
+  &#123;
+      for(int j=1;j&lt;=m;j++)
+      &#123;
+          if(s[i-1]==t[j-1])&#123;
+              dp[i][j]=dp[i-1][j-1]+1;
+          &#125;else dp[i][j]=dp[i][j-1];
+      &#125;
+  &#125;
+  if(dp[n][m]==s.size()) return true;
+  else return false;
+&#125;
+&#125;;
+</code></pre>
+<h3 id="leetcode：115"><a href="#leetcode：115" class="headerlink" title="leetcode：115"></a>leetcode：115</h3><img src="/2022/070955046/27.jpg" class>    
+<pre><code>class Solution &#123;
+public:
+int numDistinct(string s, string t) &#123;
+  int n=s.size();
+  int m=t.size();
+  unsigned long long dp[n+1][m+1];
+  for(int i=0;i&lt;n+1;i++) dp[i][0]=1;
+  for(int i=1;i&lt;m+1;i++) dp[0][i]=0;
+  for(int i=1;i&lt;=n;i++)
+  &#123;
+      for(int j=1;j&lt;=m;j++)
+      &#123;
+          if(s[i-1]==t[j-1])&#123;
+              dp[i][j]=dp[i-1][j-1]+dp[i-1][j];
+          &#125;else dp[i][j]=dp[i-1][j];
+      &#125;
+  &#125;
+  return dp[n][m];
+&#125;
+&#125;;
+</code></pre>
+<h3 id="leetcode：583"><a href="#leetcode：583" class="headerlink" title="leetcode：583"></a>leetcode：583</h3><img src="/2022/070955046/28.jpg" class>    
+<pre><code>class Solution &#123;
+public:
+int minDistance(string word1, string word2) &#123;
+  int n=word1.size();
+  int m=word2.size();
+  int dp[n+1][m+1];
+  for(int i=0;i&lt;=n;i++) dp[i][0]=i;
+  for(int i=0;i&lt;=m;i++) dp[0][i]=i;
+  for(int i=1;i&lt;=n;i++)
+  &#123;
+      for(int j=1;j&lt;=m;j++)
+      &#123;
+          if(word1[i-1]==word2[j-1])
+          &#123;
+              dp[i][j]=dp[i-1][j-1];
+          &#125;else
+          &#123;
+              dp[i][j]=min(&#123;dp[i-1][j-1]+2,dp[i-1][j]+1,dp[i][j-1]+1&#125;);
+          &#125;
+      &#125;
+  &#125;
+  return dp[n][m];
+&#125;
+&#125;;
+</code></pre>
+<h3 id="leetcode：72"><a href="#leetcode：72" class="headerlink" title="leetcode：72"></a>leetcode：72</h3><img src="/2022/070955046/29.jpg" class>    
+<pre><code>class Solution &#123;
+public:
+int minDistance(string word1, string word2) &#123;
+  int n=word1.size();
+  int m=word2.size();
+  int dp[n+1][m+1];
+  for(int i=0;i&lt;=n;i++) dp[i][0]=i;
+  for(int i=0;i&lt;=m;i++) dp[0][i]=i;
+  for(int i=1;i&lt;=n;i++)
+  &#123;
+      for(int j=1;j&lt;=m;j++)
+      &#123;
+          if(word1[i-1]==word2[j-1])
+          &#123;
+              dp[i][j]=dp[i-1][j-1];
+          &#125;else &#123;
+              dp[i][j]=min(&#123;dp[i-1][j],dp[i][j-1],dp[i-1][j-1]&#125;)+1;
+          &#125;
+      &#125;
+  &#125;
+  return dp[n][m];
+&#125;
+&#125;;
+</code></pre>
+<h3 id="leetcode：647"><a href="#leetcode：647" class="headerlink" title="leetcode：647"></a>leetcode：647</h3><img src="/2022/070955046/30.jpg" class>    
+<pre><code>class Solution &#123;
+public:
+int countSubstrings(string s) &#123;
+  int n=s.size();
+  bool dp[n][n];
+  int res=0;
+  for(int i=0;i&lt;n;i++) fill(dp[i],dp[i]+n,false);
+  for(int i=n-1;i&gt;=0;i--)
+  &#123;
+      for(int j=i;j&lt;n;j++)
+      &#123;
+          if(s[i]==s[j])
+          &#123;
+              if(j-i&lt;=1)&#123;
+                  res++;
+                  dp[i][j]=true;
+              &#125;else if(dp[i+1][j-1])&#123;
+                  res++;
+                  dp[i][j]=true;
+              &#125;
+          &#125;
+      &#125;
+  &#125;
+  return res;
+&#125;
+&#125;;
+</code></pre>
+<h3 id="leetcode：516"><a href="#leetcode：516" class="headerlink" title="leetcode：516"></a>leetcode：516</h3><img src="/2022/070955046/31.jpg" class>    
+<pre><code>class Solution &#123;
+public:
+int longestPalindromeSubseq(string s) &#123;
+  int n=s.size();
+  int dp[n][n];
+  for(int i=0;i&lt;n;i++) fill(dp[i],dp[i]+n,0);
+  for(int i=0;i&lt;n;i++) dp[i][i]=1;
+  for(int i=n-1;i&gt;=0;i--)
+  &#123;
+      for(int j=i+1;j&lt;n;j++)
+      &#123;
+          if(s[i]==s[j])&#123;
+              dp[i][j]=dp[i+1][j-1]+2;
+          &#125;else &#123;
+              dp[i][j]=max(dp[i+1][j],dp[i][j-1]);
+          &#125;
+      &#125;
+  &#125;
+  return dp[0][n-1];
+&#125;
+&#125;;
+</code></pre>
+</li>
 </ul>
 
                 
@@ -1080,7 +1446,7 @@ public:
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">204.9k</span>
+                        class="white-color">218.5k</span>
             
             
             

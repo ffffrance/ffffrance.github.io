@@ -394,20 +394,22 @@
     &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
     &lt;version&gt;4.3.8.RELEASE&lt;/version&gt;
 &lt;/dependency&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>添加spring容器的配置类，并添加组件</p>
 <pre><code>@Configuration
 public class AppConfig &#123;
-
+    
     @Bean(name = &#123;&quot;empDao1&quot;,&quot;empDao2&quot;&#125;)
     public EmpDao empDao() &#123;
         return new EmpDaoImpl();
     &#125;
 &#125;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>测试</p>
 <pre><code>public class EmpDaoTest &#123;
-
+    
     @Test
     public void testInsert() &#123;
         //启动容器
@@ -424,7 +426,8 @@ public class AppConfig &#123;
     &#125;
 
 &#125;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>组件装配</p>
 <pre><code>@Getter
 @Setter
@@ -433,37 +436,39 @@ public class EmpServiceImpl implements EmpService &#123;
     private EmpDao empDao ;
     @Override
     public int insert() &#123;
-
+        
         return empDao.insert();
     &#125;
 
 &#125;
-</code></pre><p>属性注入：</p>
+</code></pre>
+<p>属性注入：</p>
 <pre><code>@Configuration
 public class AppConfig &#123;
-
+    
     @Bean(name = &#123;&quot;empDao1&quot;,&quot;empDao2&quot;&#125;)
     public EmpDao empDao() &#123;
         return new EmpDaoImpl();
     &#125;
-
+    
     @Bean
     public EmpService empService() &#123;
         EmpServiceImpl service = new EmpServiceImpl();
         //依赖注入
         service.setEmpDao(empDao());
-
+        
         return service;
     &#125;
 &#125;
-</code></pre><p>构造注入：</p>
+</code></pre>
+<p>构造注入：</p>
 <pre><code>@Getter
 @Setter
 public class EmpServiceImpl implements EmpService &#123;
     public EmpServiceImpl() &#123;
-
+        
     &#125;
-
+    
     public EmpServiceImpl(EmpDao empDao) &#123;
         this.empDao = empDao;
     &#125;
@@ -471,18 +476,20 @@ public class EmpServiceImpl implements EmpService &#123;
     private EmpDao empDao ;
     @Override
     public int insert() &#123;
-
+        
         return empDao.insert();
     &#125;
 
 &#125;
-</code></pre><pre><code>@Bean
+</code></pre>
+<pre><code>@Bean
     public EmpService empService() &#123;
         EmpServiceImpl service = new EmpServiceImpl(empDao());
-
+                
         return service;
     &#125;
-</code></pre><p>依赖注入三种方式：</p>
+</code></pre>
+<p>依赖注入三种方式：</p>
 <ul>
 <li>属性注入</li>
 <li>构造注入</li>
@@ -499,46 +506,53 @@ public EmpService empService() &#123;
 
     return service;
 &#125;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>@Lazy：懒加载（延迟加载，在getBean()的时候再加载），默认值@Lazy（false）</p>
 <p>注意：在@Scope(“prototype”)的时候，一定是懒加载的</p>
 <pre><code>    @Bean
-//    @Scope(&quot;prototype&quot;)
+//	@Scope(&quot;prototype&quot;)
     @Lazy(true)
     public EmpService empService() &#123;
         EmpServiceImpl service = new EmpServiceImpl(empDao());
-
+        
         return service;
     &#125;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>组件扫描</p>
 <ul>
 <li><p>在配置类上添加组件扫描注解</p>
 <pre><code>@Configuration
 @ComponentScan(basePackages = &#123;&quot;com.neu.dao&quot;,&quot;com.neu.service&quot;&#125;)
 public class AppConfig &#123;&#125;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>在需要成为组件的类上添加@Component注解（组件默认名字为：类名首字母小写）</p>
 <pre><code>//组件
 @Component
 public class EmpDaoImpl implements EmpDao &#123;&#125;
-</code></pre></li>
+</code></pre>
+</li>
 </ul>
 </li>
 <li><p>自动装配</p>
 <pre><code>//默认按照类型装配
 @Autowired
 private EmpDao empDao ;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>解决自动装配冲突（使用组件名装配）</p>
 <pre><code>@Autowired
 @Qualifier(&quot;empOracleDaoImpl&quot;)//注解参数就是组件名，默认为类名首字母小写
 private EmpDao empDao ;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>修改组件的默认名</p>
 <pre><code>@Component(value = &quot;oracleemp&quot;)
 public class EmpOracleDaoImpl implements EmpDao &#123;&#125;
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="使用Spring的测试模块"><a href="#使用Spring的测试模块" class="headerlink" title="使用Spring的测试模块"></a>使用Spring的测试模块</h2><ol>
 <li><p>导入依赖</p>
@@ -547,7 +561,8 @@ public class EmpOracleDaoImpl implements EmpDao &#123;&#125;
     &lt;artifactId&gt;spring-test&lt;/artifactId&gt;
     &lt;version&gt;4.3.8.RELEASE&lt;/version&gt;
 &lt;/dependency&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>测试</p>
 <pre><code>//设置配置文件
 @ContextConfiguration(classes = &#123;AppConfig.class&#125;)
@@ -556,14 +571,15 @@ public class EmpOracleDaoImpl implements EmpDao &#123;&#125;
 public class EmpTest &#123;
     @Autowired
     private EmpService empService;
-
+    
     @Test
     public void testInsert() &#123;
         empService.insert();
     &#125;
 
 &#125;
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="Spring对持久层的支持"><a href="#Spring对持久层的支持" class="headerlink" title="Spring对持久层的支持"></a>Spring对持久层的支持</h2><h3 id="在Spring中使用数据库连接池"><a href="#在Spring中使用数据库连接池" class="headerlink" title="在Spring中使用数据库连接池"></a>在Spring中使用数据库连接池</h3><ol>
 <li><p>导入连接池及数据库驱动</p>
@@ -577,7 +593,8 @@ public class EmpTest &#123;
     &lt;artifactId&gt;commons-dbcp&lt;/artifactId&gt;
     &lt;version&gt;1.4&lt;/version&gt;
 &lt;/dependency&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>定义一个属性文件（db.properties）,在其中配置数据库连接池需要的参数</p>
 <pre><code>jdbc.username=root
 jdbc.password=root
@@ -587,7 +604,8 @@ jdbc.driverClassName=com.mysql.cj.jdbc.Driver
 jdbc.maxActive=20
 jdbc.maxWait=2000
 jdbc.maxIdle=5
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>定义一个配置类，读取数据库连接属性文件</p>
 <pre><code>package com.neu;
 
@@ -606,25 +624,25 @@ public class DBConfig &#123;
 
     @Value(&quot;$&#123;jdbc.username&#125;&quot;)
     private String username;
-
+    
     @Value(&quot;$&#123;jdbc.password&#125;&quot;)
     private String password;
-
+    
     @Value(&quot;$&#123;jdbc.url&#125;&quot;)
     private String url;
-
+    
     @Value(&quot;$&#123;jdbc.driverClassName&#125;&quot;)
     private String driverClassName;
-
+    
     @Value(&quot;$&#123;jdbc.maxActive&#125;&quot;)
     private int maxActive;
-
+    
     @Value(&quot;$&#123;jdbc.maxWait&#125;&quot;)
     private int maxWait;
-
+    
     @Value(&quot;$&#123;jdbc.maxIdle&#125;&quot;)
     private int maxIdle;
-
+    
     @Bean
     public DataSource dataSource() &#123;
         BasicDataSource ds = new BasicDataSource();
@@ -632,15 +650,16 @@ public class DBConfig &#123;
         ds.setPassword(password);
         ds.setUrl(url);
         ds.setDriverClassName(driverClassName);
-
+        
         ds.setMaxActive(maxActive);
         ds.setMaxIdle(maxIdle);
         ds.setMaxWait(maxWait);
-
+        
         return ds;
     &#125;
 &#125;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>测试</p>
 <pre><code>@ContextConfiguration(classes = &#123;AppConfig.class,DBConfig.class&#125;)
 //相当于测试框架与Spring的一个接口
@@ -648,24 +667,25 @@ public class DBConfig &#123;
 public class EmpTest &#123;
     @Autowired
     private EmpService empService;
-
+    
     @Autowired
     private DataSource dataSource;
-
+    
     @Test
     public void testDataSource() throws SQLException &#123;
         Connection connection = dataSource.getConnection();
         System.out.println(&quot;连接成功！&quot;);
         connection.close();
     &#125;
-
+    
     @Test
     public void testInsert() &#123;
         empService.insert();
     &#125;
 
 &#125;
-</code></pre><h2 id="Spring与Mybatis集成"><a href="#Spring与Mybatis集成" class="headerlink" title="Spring与Mybatis集成"></a>Spring与Mybatis集成</h2><ol>
+</code></pre>
+<h2 id="Spring与Mybatis集成"><a href="#Spring与Mybatis集成" class="headerlink" title="Spring与Mybatis集成"></a>Spring与Mybatis集成</h2><ol>
 <li><p>导入依赖</p>
 <pre><code>&lt;dependency&gt;
     &lt;groupId&gt;org.springframework&lt;/groupId&gt;
@@ -682,23 +702,25 @@ public class EmpTest &#123;
     &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
     &lt;version&gt;3.5.6&lt;/version&gt;
 &lt;/dependency&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>配置SqlSessionFactory</p>
 <pre><code>@Configuration
 @ComponentScan(basePackages = &#123;&quot;com.neu.service&quot;,&quot;com.neu.mapper&quot;&#125;)
 public class MybatisConfig &#123;
     @Autowired
     private DataSource dataSource;
-
+    
     @Bean
     public SqlSessionFactory sqlSessionFactory() throws Exception &#123;
         SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
         factory.setDataSource(dataSource);
-
+        
         return factory.getObject();
     &#125;
 &#125;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>配置 mapper 扫描</p>
 <pre><code>@Configuration
 public class MybatisMapperScannerConfig &#123;
@@ -707,13 +729,14 @@ public class MybatisMapperScannerConfig &#123;
     public MapperScannerConfigurer mapperScannerConfigurer() &#123;
         MapperScannerConfigurer c = new MapperScannerConfigurer();
         c.setSqlSessionFactoryBeanName(&quot;sqlSessionFactory&quot;);
-
+        
         c.setBasePackage(&quot;com.neu.mapper&quot;);
-
+        
         return c;
     &#125;
 &#125;
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 </li>
 </ol>
@@ -735,7 +758,8 @@ public class MybatisMapperScannerConfig &#123;
     &lt;artifactId&gt;spring-web&lt;/artifactId&gt;
     &lt;version&gt;4.3.8.RELEASE&lt;/version&gt;
 &lt;/dependency&gt;
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><ol>
 <li><p>定义：面向切面编程，模块化横切关注点（把相同的代码加到关注的方法上）</p>
@@ -752,7 +776,8 @@ public class MybatisMapperScannerConfig &#123;
     &lt;artifactId&gt;aspectjrt&lt;/artifactId&gt;
     &lt;version&gt;1.7.3&lt;/version&gt;
 &lt;/dependency&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>定义一个类，实现切面的功能（类定义在com.neu.utils包下，要把该包添加到组件的扫描路径中）</p>
 <pre><code>@Configuration
 @EnableAspectJAutoProxy//开启切面自动代理
@@ -763,25 +788,26 @@ public class AOPUtil &#123;
     //切点(切入点):加入相同代码的一组关注点(连接点)
     @Pointcut(&quot;execution (* com.neu.mapper.*.*(..))&quot;)
     public void pointcut() &#123;
-
+        
     &#125;
-
+    
     //通知
     @Around(&quot;pointcut()&quot;)
     public Object around(ProceedingJoinPoint p) throws Throwable &#123;
         long startTime = System.nanoTime();
         //调用代理的方法
         Object object = p.proceed();
-
+        
         long m = System.nanoTime() - startTime;
-
+        
         System.out.println(m);
-
+        
         return object;
     &#125;
-
+    
 &#125;
-</code></pre><ul>
+</code></pre>
+<ul>
 <li>连接点（joinPoint)：程序执行过程中的特定点</li>
 <li>通知（Advice）：在特定连接点加入的代码</li>
 <li>切入点（pointcut）：加入相同通知的一组连接点</li>
@@ -793,55 +819,60 @@ public class AOPUtil &#123;
     public void before() &#123;
         SimpleDateFormat f = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
         String format = f.format(new Date());
-
+        
         System.out.println(&quot;开始执行方法：&quot;+format);
-
+        
     &#125;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>返回后通知：执行了return语句后执行的代码</p>
 <pre><code>@AfterReturning(&quot;pointcut()&quot;)
     public void afterReturning() &#123;
         SimpleDateFormat f = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
         String format = f.format(new Date());
-
+        
         System.out.println(&quot;方法正常结束：&quot;+format);
-
+        
     &#125;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>异常通知：</p>
 <pre><code>@AfterThrowing(&quot;pointcut()&quot;)
     public void afterThrowing() &#123;
         SimpleDateFormat f = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
         String format = f.format(new Date());
-
+        
         System.out.println(&quot;抛出异常：&quot;+format);
-
+        
     &#125;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>最终通知</p>
 <pre><code>@After(&quot;pointcut()&quot;)
     public void after() &#123;
         SimpleDateFormat f = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
         String format = f.format(new Date());
-
+        
         System.out.println(&quot;方法最终结束时间：&quot;+format);
-
+        
     &#125;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>环绕通知</p>
 <pre><code>@Around(&quot;pointcut()&quot;)
     public Object around(ProceedingJoinPoint p) throws Throwable &#123;
         long startTime = System.nanoTime();
         //调用代理的方法
         Object object = p.proceed();
-
+        
         long m = System.nanoTime() - startTime;
-
+        
         System.out.println(m);
-
+        
         return object;
     &#125;
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="Spring对事务的支持"><a href="#Spring对事务的支持" class="headerlink" title="Spring对事务的支持"></a>Spring对事务的支持</h2><ol>
 <li><p>添加事务管理器</p>
@@ -849,14 +880,16 @@ public class AOPUtil &#123;
 public PlatformTransactionManager transactionManager() &#123;
     return new DataSourceTransactionManager(dataSource());
 &#125;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>启用事务管理器</p>
 <pre><code>@Configuration
 //配置属性源文件
 @PropertySource(&quot;classpath:db.properties&quot;)
 @EnableTransactionManagement//启用事务管理器
 public class DBConfig &#123;&#125;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>在业务逻辑类上或方法上添加@Transactional</p>
 <p>当添加了事务注解的方法中，抛出异常，则回滚事务，否则，提交事务</p>
 <pre><code>@Transactional
@@ -864,11 +897,12 @@ public class DBConfig &#123;&#125;
         deptMapper.insert(dept);
         return deptMapper.insert(dept);
     &#125;
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="使用静态资源"><a href="#使用静态资源" class="headerlink" title="使用静态资源"></a>使用静态资源</h2><ol>
 <li><p>在 webapp 目录下，新建一个文件夹：staitc，在其中放入静态资源（css、js）</p>
-<p>例如：/webapp/static/css/style1.css</p>
+<p>例如：&#x2F;webapp&#x2F;static&#x2F;css&#x2F;style1.css</p>
 </li>
 <li><p>配置资源注册</p>
 <pre><code>@Configuration
@@ -880,10 +914,12 @@ public class SpringMVCConfig implements WebMvcConfigurer &#123;
         registry.addResourceHandler(&quot;/static/**&quot;).addResourceLocations(&quot;/static/&quot;);//访问的静态资源
     &#125;
 &#125;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>在 jsp 中引入css</p>
 <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;$&#123; pageContext.request.contextPath &#125;/static/css/style1.css&quot;&gt;
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 
                 
@@ -1322,7 +1358,7 @@ public class SpringMVCConfig implements WebMvcConfigurer &#123;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">204.9k</span>
+                        class="white-color">218.5k</span>
             
             
             

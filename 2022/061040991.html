@@ -341,14 +341,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    29.3k
+                    32.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    117 分
+                    131 分
                 </div>
                 
 
@@ -363,18 +363,21 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p>Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/镜像/1574">镜像</a>中，然后发布到任何流行的 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Linux">Linux</a>或<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Windows/165458">Windows</a>操作系统的机器上，也可以实现<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/虚拟化/547949">虚拟化</a>。容器是完全使用<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/沙箱/393318">沙箱</a>机制，相互之间不会有任何接口。</p>
+                <h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p>Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%95%9C%E5%83%8F/1574">镜像</a>中，然后发布到任何流行的 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Linux">Linux</a>或<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Windows/165458">Windows</a>操作系统的机器上，也可以实现<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%99%9A%E6%8B%9F%E5%8C%96/547949">虚拟化</a>。容器是完全使用<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%B2%99%E7%AE%B1/393318">沙箱</a>机制，相互之间不会有任何接口。</p>
 <p><strong>Docker为什么出现？</strong></p>
 <p>一款产品：开发-上线 两套环境，各不相同,维护麻烦！</p>
-<p>开发—运维 开发在自己的电脑上运行良好，然后把项目打成jar包或是war包，丢给运维，运维需要配置各种环境，各种集群，压力超大，而且还很有可能失败！</p>
+<p>开发–运维 开发在自己的电脑上运行良好，然后把项目打成jar包或是war包，丢给运维，运维需要配置各种环境，各种集群，压力超大，而且还很有可能失败！</p>
 <p>版本更新，导致服务不可用！</p>
 <p>Docker可以把项目和它所依赖的环境整合打包，非常方便！</p>
 <p>Docker的思想就来自于集装箱，应用之间相互隔离，隔离的思想</p>
 <p>Docker通过隔离机制，将服务器利用到极致</p>
 <img src="/2022/061040991/960a304e251f95caa3e7fe4a6c703737660952a8.jpeg" class title="img">
+
 <p><strong>docker架构</strong></p>
 <img src="/2022/061040991/a6efce1b9d16fdfa01ae7674e7f0855d96ee7bf6.png" class title="img">
+
 <img src="/2022/061040991/image-20210320160948248.png" class title="image-20210320160948248">
+
 <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ol>
 <li><p>安装docker引擎</p>
 <ul>
@@ -389,41 +392,43 @@
  sudo yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
-</code></pre><p>Another app is currently holding the yum lock解决方法</p>
+</code></pre>
+<p>Another app is currently holding the yum lock解决方法</p>
 <pre><code>rm -f /var/run/yum.pid
-</code></pre><ul>
+</code></pre>
+<ul>
 <li><strong>安装 Docker 引擎</strong></li>
 </ul>
 <ol>
 <li><p>安装<em>最新版本</em>的 Docker Engine 和 containerd</p>
 <pre><code>yum install docker-ce docker-ce-cli containerd.io
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>启动 Docker</p>
 <pre><code>systemctl start docker
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>通过运行<code>hello-world</code> 映像验证 Docker Engine 是否已正确安装。</p>
 <pre><code>docker run hello-world
-</code></pre><p>此命令下载测试映像并在容器中运行它。当容器运行时，它会打印一条消息并退出。</p>
+</code></pre>
+<p>此命令下载测试映像并在容器中运行它。当容器运行时，它会打印一条消息并退出。</p>
 </li>
 </ol>
 </li>
-</ol>
-<ol>
 <li><p>启动docker服务</p>
 <pre><code>systemctl start docker
-</code></pre></li>
-</ol>
-<ol>
+</code></pre>
+</li>
 <li><p>查找镜像</p>
 <pre><code>docker search mysql
-</code></pre><p>docker search的输出是按评星数量排序的</p>
+</code></pre>
+<p>docker search的输出是按评星数量排序的</p>
 </li>
 <li><p>下载镜像</p>
 <p>一旦选择了一个镜像，就可以通过对其名称执行docker pull命令来下载它：</p>
 <pre><code>docker pull mysql
-</code></pre></li>
-</ol>
-<ol>
+</code></pre>
+</li>
 <li><p>启动容器</p>
 <p>接着，可以使用-t和-i标志以交互方式运行它。-t标志指明创建一个TTY设备（一个终端），而-i标志指明该Docker会话是交互式的：</p>
 <pre><code>docker run -e MYSQL_ROOT_PASSWORD=root --name mysql -it -d -p 5001:3306  mysql:5.7
@@ -431,12 +436,12 @@
 -p 5001:3306  //宿主机使用5001端口，容器使用3306端口
 -d 守护进程，后台运行
 --name mysql：给容器命名为：mysql
-</code></pre></li>
-</ol>
-<ol>
+</code></pre>
+</li>
 <li><p>在启动的容器中执行命令</p>
 <pre><code>docker exec  -it mysql /bin/bash
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="数据卷"><a href="#数据卷" class="headerlink" title="数据卷"></a>数据卷</h2><p>前言：</p>
 <p> 在生产环境中使用Docker，往往需要对数据进行持久化，或者需要再多个容器之间进行数据共享，而这个必然涉及到容器的数据管理操作</p>
@@ -471,14 +476,15 @@
 <h3 id="创建数据卷"><a href="#创建数据卷" class="headerlink" title="创建数据卷"></a>创建数据卷</h3><p>创建容器并且挂载到数据卷</p>
 <pre><code>docker run -it -p 8808:80 --name nginx_1 -v /opt/test:/opt nginx:1.12 /bin/bash
 #创建一个nginx容器，映射端口是8808，名字为nginx_1，将容器中opt目录以挂载的形式到宿主机目录中的opt下的test目录
-</code></pre><p>挂载完成之后，进行测试</p>
+</code></pre>
+<p>挂载完成之后，进行测试</p>
 <pre><code>容器
     #先到容器中到达共享的目录中，上面我们测试的就是opt目录
      cd /opt/
      #到opt下先查看当前目录下有什么文件
      ls
      #当前还没有进行创建文件或者目录，所以是空的
-
+ 
 宿主机
     #到宿主机中，同样是到指定好的目录中
      pwd
@@ -486,26 +492,30 @@
     #到达之后先随便创建一个文件
     touch 1.txt
     #创建之后，再去容器中查看一下，就可以看到已经有了一个相同的文件
-
+    
 容器
     ls
     1.txt
     #并且，在宿主机找那个对这个文件进行管理的话，会实时同步到容器中
-</code></pre><p>上面，将一个容器添加到数据卷中已经完成了，上面也说了，可以在一个数据卷中可以添加多个容器</p>
+</code></pre>
+<p>上面，将一个容器添加到数据卷中已经完成了，上面也说了，可以在一个数据卷中可以添加多个容器</p>
 <pre><code>docker run -it -p 8809:80 --name nginx_2 -v /opt/test:/opt nginx:1.12 /bin/bash
-</code></pre><p>创建第二个容器之后，不用再进行在数据卷中常见新的文件，因为现在已经存在有文件。直接到容器中的共享目录中查看即可</p>
+</code></pre>
+<p>创建第二个容器之后，不用再进行在数据卷中常见新的文件，因为现在已经存在有文件。直接到容器中的共享目录中查看即可</p>
 <pre><code>容器中
     cd /opt/
     ls
     1.txt
 #就可以看到上面我们创建的文件
-</code></pre><p><strong>最后再试试，将两个容器都关闭之后，数据卷是否还存在</strong></p>
+</code></pre>
+<p><strong>最后再试试，将两个容器都关闭之后，数据卷是否还存在</strong></p>
 <pre><code>docker rm -f `docker ps -qa`
 #批量删除容器，因为我这就是测试使用的，所以只运行了更改创建的两个，可以直接无脑全清
 cd /opt/test/ &amp;&amp; ls
 1.txt
 #查看之后，刚刚创建的文件还是正常存在，当创建新的容器的时候，指定该目录，可以直接将其目录下文件给共享过去
-</code></pre><p><strong>注：容器在共享目录到主机中的时候，数据是双向的也就是，容器中创建文件的时候，主机中也会多一个文件，删除的时候，主机中也会少一个文件。</strong></p>
+</code></pre>
+<p><strong>注：容器在共享目录到主机中的时候，数据是双向的也就是，容器中创建文件的时候，主机中也会多一个文件，删除的时候，主机中也会少一个文件。</strong></p>
 <p>如果只想要容器中拥有只读权限，可以在-v指定路径的最后，添加上:ro即可，例如：</p>
 <pre><code>docker run -it --name nginx_1 -v /opt/test:/opt:ro nginx:1.12 /bin/bash
 #在容器中的目录后添加ro，设置为只读则不能对文件进行更改动作
@@ -516,7 +526,8 @@ rm: cannot remove &#39;1.txt&#39;: Read-only file system
 vi 1.txt
 #对内容进行修改之后保存的结果如下
 E45: &#39;readonly&#39; option is set (add ! to override)
-</code></pre><h2 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h2><ol>
+</code></pre>
+<h2 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h2><ol>
 <li><p>运行mysql</p>
 <pre><code>docker run \
 -p 5001:3306 \
@@ -526,19 +537,22 @@ E45: &#39;readonly&#39; option is set (add ! to override)
 -v /docker/mysql/data:/var/lib/mysql \
 -e MYSQL_ROOT_PASSWORD=root \
 -d mysql:5.7
-</code></pre></li>
-</ol>
-<ol>
-<li>使用navicat连接mysql</li>
+</code></pre>
+</li>
+<li><p>使用navicat连接mysql</p>
+</li>
 </ol>
 <img src="/2022/061040991/image-20220611053744048.png" class title="image-20220611053744048">
-<ol>
+
+<ol start="2">
 <li><p>进入docker mysql</p>
 <pre><code>docker exec -it mysql /bin/bash
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>在mysql容器中执行命令</p>
 <pre><code>mysql -uroot -proot
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>对挂载数据卷解释</p>
 <p>在宿主机上面简历挂在的数据卷，防止数据丢失</p>
 <p>1.1创建本地数据库目录、配置文件以及日志目录（方便进行容器数据卷挂载）<br>注：因为mysql容器一旦销毁，数据库也就随之销毁，为了解决这个问题，docker官方提出了容器数据卷技术，就是在宿主机上新建一些目录与容器内的目录映射，当容器销毁时，宿主机上的目录文件不会消失，依然存在.<br>新建目录命令：</p>
@@ -548,11 +562,13 @@ mkdir /root/mysql/datadir
 mkdir /root/mysql/conf
 # 建立宿主机数据库日志目录
 mkdir /root/mysql/log
-</code></pre><p>1.2启动容器并挂载数据卷</p>
+</code></pre>
+<p>1.2启动容器并挂载数据卷</p>
 <pre><code>docker run --name mysql -p 3306:3306 -v /root/mysql/datadir:/var/lib/mysql -v /root/mysql/conf:/etc/mysql/conf.d -v /root/mysql/logs:/var/log/mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7
-</code></pre><p>对应的参数解释如下：</p>
+</code></pre>
+<p>对应的参数解释如下：</p>
 <p>-p 3306:3306<br>端口映射，将宿主机3306端口与容器3306端口做映射，这样就可以通过宿主机IP+端口访问容器的3306端口了<br>格式：-p 宿主机端口:容器端口<br>–name mysql:<br>指定容器名字为mysql，也可以不指定，不指定会给容器默认制定一个名字</p>
-<p>-v /root/mysql/datadir:/var/lib/mysql -v /root/mysql/conf:/etc/mysql/conf.d -v /root/mysql/logs:/var/log/mysql<br>数据容器卷挂载:<br>-v /root/mysql/datadir:/var/lib/mysql：对宿主机数据库目录与容器数据库目录进行映射挂载<br>-v /root/mysql/conf:/etc/mysql/conf.d：对宿主机数据库配置文件与容器数据库配置文件进行映射挂载<br>-v /root/mysql/logs:/var/log/mysql：对宿主机数据库日志与容器数据库日志进行映射挂载<br>-e MYSQL_ROOT_PASSWORD=123456<br>配置mysql的root账号的密码为123456（可以根据需要自行修改密码）<br>-d:后台执行<br>mysql:5.7.32 ：镜像id，容器第一次启动要根据镜像来启动，所以镜像id必不可少。可以通过明林docker iamges查看镜像id</p>
+<p>-v &#x2F;root&#x2F;mysql&#x2F;datadir:&#x2F;var&#x2F;lib&#x2F;mysql -v &#x2F;root&#x2F;mysql&#x2F;conf:&#x2F;etc&#x2F;mysql&#x2F;conf.d -v &#x2F;root&#x2F;mysql&#x2F;logs:&#x2F;var&#x2F;log&#x2F;mysql<br>数据容器卷挂载:<br>-v &#x2F;root&#x2F;mysql&#x2F;datadir:&#x2F;var&#x2F;lib&#x2F;mysql：对宿主机数据库目录与容器数据库目录进行映射挂载<br>-v &#x2F;root&#x2F;mysql&#x2F;conf:&#x2F;etc&#x2F;mysql&#x2F;conf.d：对宿主机数据库配置文件与容器数据库配置文件进行映射挂载<br>-v &#x2F;root&#x2F;mysql&#x2F;logs:&#x2F;var&#x2F;log&#x2F;mysql：对宿主机数据库日志与容器数据库日志进行映射挂载<br>-e MYSQL_ROOT_PASSWORD&#x3D;123456<br>配置mysql的root账号的密码为123456（可以根据需要自行修改密码）<br>-d:后台执行<br>mysql:5.7.32 ：镜像id，容器第一次启动要根据镜像来启动，所以镜像id必不可少。可以通过明林docker iamges查看镜像id</p>
 <p>最后，使用Navicat连接mysql测试，测试成功！</p>
 </li>
 </ol>
@@ -563,21 +579,30 @@ mkdir /root/mysql/log
 <p>Docker官方镜像 </p>
 <p>1、寻找Nginx镜像 </p>
 <img src="/2022/061040991/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAVG91Y2gm,size_20,color_FFFFFF,t_70,g_se,x_16.png" class title="img">
-<p> 2、下载Nginx镜像<br>命令    描述</p>
-<pre><code>docker pull nginx    下载最新版Nginx镜像 (其实此命令就等同于 : docker pull nginx:latest )
-docker pull nginx:xxx    下载指定版本的Nginx镜像 (xxx指具体版本号)
-</code></pre><img src="/2022/061040991/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAVG91Y2gm,size_20,color_FFFFFF,t_70,g_se,x_16-16548994344123.png" class title="img">
+
+<p> 2、下载Nginx镜像<br>命令	描述</p>
+<pre><code>docker pull nginx	下载最新版Nginx镜像 (其实此命令就等同于 : docker pull nginx:latest )
+docker pull nginx:xxx	下载指定版本的Nginx镜像 (xxx指具体版本号)
+</code></pre>
+<img src="/2022/061040991/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAVG91Y2gm,size_20,color_FFFFFF,t_70,g_se,x_16-16548994344123.png" class title="img">
+
+
 <p> 检查当前所有Docker下载的镜像</p>
 <pre><code>docker images
-</code></pre><p> 3、创建Nginx配置文件<br>启动前需要先创建Nginx外部挂载的配置文件（ /home/nginx/conf/nginx.conf）<br>之所以要先创建 , 是因为Nginx本身容器只存在/etc/nginx 目录 , 本身就不创建 nginx.conf 文件<br>当服务器和容器都不存在 nginx.conf 文件时, 执行启动命令的时候 docker会将nginx.conf 作为目录创建 , 这并不是我们想要的结果 。</p>
+</code></pre>
+<p> 3、创建Nginx配置文件<br>启动前需要先创建Nginx外部挂载的配置文件（ &#x2F;home&#x2F;nginx&#x2F;conf&#x2F;nginx.conf）<br>之所以要先创建 , 是因为Nginx本身容器只存在&#x2F;etc&#x2F;nginx 目录 , 本身就不创建 nginx.conf 文件<br>当服务器和容器都不存在 nginx.conf 文件时, 执行启动命令的时候 docker会将nginx.conf 作为目录创建 , 这并不是我们想要的结果 。</p>
 <p>首先启动一个Nginx容器</p>
 <pre><code>docker run --name my-nginx -p 80:80 -d nginx
-</code></pre><p>测试：</p>
+</code></pre>
+<p>测试：</p>
 <pre><code>http://192.168.136.129
-</code></pre><img src="/2022/061040991/image-20220612053039896.png" class title="image-20220612053039896">
+</code></pre>
+<img src="/2022/061040991/image-20220612053039896.png" class title="image-20220612053039896">
+
 <p>进入容器</p>
 <pre><code>docker exec -it my-nginx bash
-</code></pre><pre><code>查看Nginx的html、配置和日志目录
+</code></pre>
+<pre><code>查看Nginx的html、配置和日志目录
 /etc/nginx：配置文件的目录
 /usr/share/nginx/html：html目录
 /var/log/nginx：日志目录
@@ -597,24 +622,30 @@ find: &#39;/proc/38/map_files&#39;: Operation not permitted
 /usr/share/nginx
 /var/cache/nginx
 /var/log/nginx
-</code></pre><p>exit退出容器，在/opt下创建nginx目录用来存放html、配置和日志目录</p>
+</code></pre>
+<p>exit退出容器，在&#x2F;opt下创建nginx目录用来存放html、配置和日志目录</p>
 <pre><code>mkdir /opt/nginx
-</code></pre><p>拷贝容器中nginx的配置目录到/opt/nginx，并改名为conf</p>
+</code></pre>
+<p>拷贝容器中nginx的配置目录到&#x2F;opt&#x2F;nginx，并改名为conf</p>
 <pre><code>docker cp my-nginx:/etc/nginx/conf.d /opt/nginx/conf.d
 docker cp my-nginx:/usr/share/nginx/html /opt/nginx
 docker cp my-nginx:/var/log/nginx /opt/nginx/log
-</code></pre><p>删除容器</p>
+</code></pre>
+<p>删除容器</p>
 <pre><code>docker rm -f my-nginx
-</code></pre><p>启动nginx容器并挂载目录</p>
+</code></pre>
+<p>启动nginx容器并挂载目录</p>
 <pre><code>docker run -p 80:80 --name nginx \
     -v /opt/nginx/conf.d:/etc/nginx.d \
     -v /opt/nginx/html:/usr/share/nginx/html \
     -v /opt/nginx/log:/var/log/nginx \
     -d nginx
-</code></pre><hr>
+</code></pre>
+<hr>
 <p> 5、结果检测</p>
 <p> 6、修改内容进行展示</p>
 <img src="/2022/061040991/image-20220612061210504.png" class title="image-20220612061210504">
+
 <p>6.删除容器，重新挂载，测试修改后的内容是否还在</p>
 <pre><code>docker rm -f nginx
 
@@ -623,41 +654,56 @@ docker run -p 80:80 --name nginx \
     -v /opt/nginx/html:/usr/share/nginx/html \
     -v /opt/nginx/log:/var/log/nginx \
     -d nginx
-</code></pre><img src="/2022/061040991/image-20220612061252131.png" class title="image-20220612061252131">
+</code></pre>
+<img src="/2022/061040991/image-20220612061252131.png" class title="image-20220612061252131">
+
 <h2 id="Docker安装Redis"><a href="#Docker安装Redis" class="headerlink" title="Docker安装Redis"></a>Docker安装Redis</h2><p>一、Docker搜索redis镜像<br>命令：docker search &lt;镜像名称&gt;</p>
 <pre><code>docker search redis
-</code></pre><p>可以看到有很多redis的镜像，此处因没有指定版本，所以下载的就是默认的最新版本 。redis latest.</p>
+</code></pre>
+<p>可以看到有很多redis的镜像，此处因没有指定版本，所以下载的就是默认的最新版本 。redis latest.</p>
 <p>二、Docker拉取镜像<br>命令：：docker pull &lt;镜像名称&gt;:&lt;版本号&gt;</p>
 <pre><code>docker pull redis
-</code></pre><p>三、Docker挂载配置文件<br>接下来就是要将redis 的配置文件进行挂载，以配置文件方式启动redis 容器。（挂载：即将宿主的文件和容器内部目录相关联，相互绑定，在宿主机内修改文件的话也随之修改容器内部文件）</p>
+</code></pre>
+<p>三、Docker挂载配置文件<br>接下来就是要将redis 的配置文件进行挂载，以配置文件方式启动redis 容器。（挂载：即将宿主的文件和容器内部目录相关联，相互绑定，在宿主机内修改文件的话也随之修改容器内部文件）</p>
 <p>1）、挂载redis的配置文件</p>
 <p>2）、挂载redis 的持久化文件（为了数据的持久化）。</p>
 <p>本人的配置文件是放在</p>
-<p>liunx 下redis.conf文件位置： /home/redis/myredis/redis.conf</p>
-<p>liunx 下redis的data文件位置 ： /home/redis/myredis/data</p>
+<p>liunx 下redis.conf文件位置： &#x2F;home&#x2F;redis&#x2F;myredis&#x2F;redis.conf</p>
+<p>liunx 下redis的data文件位置 ： &#x2F;home&#x2F;redis&#x2F;myredis&#x2F;data</p>
 <p>位置可以自己随便选择哈</p>
 <pre><code>mkdir -p /home/redis/myredis 命令 是不存在就直接创建/home/redis/myredis 文件夹
-</code></pre><p>myredis.conf 是我手动上传的。 （文件在文末，redis.conf的标准文件在redis官网也可以找到）</p>
+</code></pre>
+<p>myredis.conf 是我手动上传的。 （文件在文末，redis.conf的标准文件在redis官网也可以找到）</p>
 <p>四、启动redis 容器</p>
 <pre><code>docker run --restart=always --log-opt max-size=100m --log-opt max-file=2 -p 6379:6379 --name myredis -v /home/redis/myredis/myredis.conf:/etc/redis/redis.conf -v /home/redis/myredis/data:/data -d redis redis-server /etc/redis/redis.conf  --appendonly yes  --requirepass 000415
-</code></pre><p>–restart=always 总是开机启动<br>–log是日志方面的<br>-p 6379:6379 将6379端口挂载出去<br>–name 给这个容器取一个名字<br>-v 数据卷挂载<br>/home/redis/myredis/myredis.conf:/etc/redis/redis.conf 这里是将 liunx 路径下的myredis.conf 和redis下的redis.conf 挂载在一起。<br>/home/redis/myredis/data:/data 这个同上<br>-d redis 表示后台启动redis<br>redis-server /etc/redis/redis.conf 以配置文件启动redis，加载容器内的conf文件，最终找到的是挂载的目录 /etc/redis/redis.conf 也就是liunx下的/home/redis/myredis/myredis.conf<br>–appendonly yes 开启redis 持久化<br>–requirepass 000415 设置密码 （如果你是通过docker 容器内部连接的话，就随意，可设可不设。但是如果想向外开放的话，一定要设置，我被搞过，可以看这篇文章“阿里云服务器中毒‘Kirito666’经历”）<br>成功界面</p>
+</code></pre>
+<p>–restart&#x3D;always 总是开机启动<br>–log是日志方面的<br>-p 6379:6379 将6379端口挂载出去<br>–name 给这个容器取一个名字<br>-v 数据卷挂载<br>&#x2F;home&#x2F;redis&#x2F;myredis&#x2F;myredis.conf:&#x2F;etc&#x2F;redis&#x2F;redis.conf 这里是将 liunx 路径下的myredis.conf 和redis下的redis.conf 挂载在一起。<br>&#x2F;home&#x2F;redis&#x2F;myredis&#x2F;data:&#x2F;data 这个同上<br>-d redis 表示后台启动redis<br>redis-server &#x2F;etc&#x2F;redis&#x2F;redis.conf 以配置文件启动redis，加载容器内的conf文件，最终找到的是挂载的目录 &#x2F;etc&#x2F;redis&#x2F;redis.conf 也就是liunx下的&#x2F;home&#x2F;redis&#x2F;myredis&#x2F;myredis.conf<br>–appendonly yes 开启redis 持久化<br>–requirepass 000415 设置密码 （如果你是通过docker 容器内部连接的话，就随意，可设可不设。但是如果想向外开放的话，一定要设置，我被搞过，可以看这篇文章“阿里云服务器中毒‘Kirito666’经历”）<br>成功界面</p>
 <p>五、测试<br>1、通过docker ps指令查看启动状态</p>
 <pre><code>docker ps -a |grep myredis # 通过docker ps指令查看启动状态，是否成功.
-</code></pre><p>2、查看容器运行日志<br>命令：docker logs —since 30m &lt;容器名&gt;</p>
-<p>此处 —since 30m 是查看此容器30分钟之内的日志情况。</p>
+</code></pre>
+<p>2、查看容器运行日志<br>命令：docker logs –since 30m &lt;容器名&gt;</p>
+<p>此处 –since 30m 是查看此容器30分钟之内的日志情况。</p>
 <pre><code>docker logs --since 30m myredis
-</code></pre><p>3、容器内部连接进行测试<br>进入容器</p>
-<p>命令：docker exec -it &lt;容器名&gt; /bin/bash</p>
+</code></pre>
+<p>3、容器内部连接进行测试<br>进入容器</p>
+<p>命令：docker exec -it &lt;容器名&gt; &#x2F;bin&#x2F;bash</p>
 <p>此处跟着的redis-cli是直接将命令输在上面了。</p>
 <pre><code>docker exec -it myredis redis-cli
-</code></pre><p>进入之后，我直接输入查看命令：</p>
+</code></pre>
+<p>进入之后，我直接输入查看命令：</p>
 <p>error是没有权限验证。（因为设置了密码的。）</p>
 <p>验证密码：</p>
 <pre><code>auth 密码
-</code></pre><img src="/2022/061040991/bb3eff84e9e54af1af36ac779dc429dc.png" class title="在这里插入图片描述">
+</code></pre>
+<img src="/2022/061040991/bb3eff84e9e54af1af36ac779dc429dc.png" class title="在这里插入图片描述">
+
+
 <p>查看当前redis有没有设置密码：（得验证通过了才能输入的）</p>
 <pre><code>config get requirepass
-</code></pre><img src="/2022/061040991/d0eecb450247469383cb3b60105ba568.png" class title="在这里插入图片描述">
+</code></pre>
+<img src="/2022/061040991/d0eecb450247469383cb3b60105ba568.png" class title="在这里插入图片描述">
+
+
 <p>六、配置文件<br>myredis.conf</p>
 <pre><code># bind 192.168.1.100 10.0.0.1
 # bind 127.0.0.1 ::1
@@ -763,21 +809,28 @@ dynamic-hz yes
 aof-rewrite-incremental-fsync yes
 
 rdb-save-incremental-fsync yes
-</code></pre><p>七、Docker删除Redis<br>教了大家怎么装，咱们也得学会怎么卸载哈，不然没法成为熟练工人（手动狗头）</p>
+
+</code></pre>
+<p>七、Docker删除Redis<br>教了大家怎么装，咱们也得学会怎么卸载哈，不然没法成为熟练工人（手动狗头）</p>
 <p>6.1、删除Redis 容器<br>查看所有在运行的容器：<br>命令：</p>
 <pre><code>docker ps -a
-</code></pre><p>停止运行的Redis</p>
+</code></pre>
+<p>停止运行的Redis</p>
 <p>停止命令：docker stop &lt;容器名&gt;</p>
 <pre><code>docker stop myredis # myredis 是我启动redis 命名的别
-</code></pre><p>删除redis 容器：</p>
+</code></pre>
+<p>删除redis 容器：</p>
 <p>删除容器命令： docker rm &lt;容器名&gt;</p>
 <pre><code>docker rm myredis
-</code></pre><p>6.2、删除Redis镜像<br>删除容器后，我们开始删除redis镜像。</p>
+</code></pre>
+<p>6.2、删除Redis镜像<br>删除容器后，我们开始删除redis镜像。</p>
 <p>查看全部镜像 命令：</p>
 <pre><code>docker images
-</code></pre><p>删除镜像 命令 docker rmi &lt;容器 id&gt;</p>
+</code></pre>
+<p>删除镜像 命令 docker rmi &lt;容器 id&gt;</p>
 <pre><code>docker rmi 739b59b96069 # 这是我镜像redis id
-</code></pre><p>可以看到Redis 的镜像已经被删除啦。</p>
+</code></pre>
+<p>可以看到Redis 的镜像已经被删除啦。</p>
 <p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45821811/article/details/116211724">https://blog.csdn.net/weixin_45821811/article/details/116211724</a></p>
 <h2 id="docker安装tomcat"><a href="#docker安装tomcat" class="headerlink" title="docker安装tomcat"></a>docker安装tomcat</h2><p>1、安装tomcat镜像<br>访问docker hub仓库找出你想安装的版本：docker hub<br>网址：<a target="_blank" rel="noopener" href="https://registry.hub.docker.com/">https://registry.hub.docker.com/</a></p>
 <p>直接在搜索框里搜tomcat就可以，如果想把自己镜像放到上边就自己注册一个账号</p>
@@ -785,56 +838,74 @@ rdb-save-incremental-fsync yes
 <p>这里先看下啥镜像都没有，容器也没有。</p>
 <pre><code>[root@wangazure ~]# docker images   #查看所有镜像
 REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
-[root@wangazure ~]# docker ps         #查看所有容器
+[root@wangazure ~]# docker ps 		#查看所有容器
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
-[root@wangazure ~]#
-</code></pre><p>把复制官网上的命令贴在这等着就好了</p>
-<pre><code>docker pull tomcat:8.0         #拉取tomcat镜像
-</code></pre><p>再看一下docker里的镜像，这里就有了tomcat镜像</p>
+[root@wangazure ~]# 
+</code></pre>
+<p>把复制官网上的命令贴在这等着就好了</p>
+<pre><code>docker pull tomcat:8.0 		#拉取tomcat镜像
+</code></pre>
+<p>再看一下docker里的镜像，这里就有了tomcat镜像</p>
 <pre><code>[root@wangazure ~]# docker images
 REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
 tomcat       8.0       ef6a7c98d192   3 years ago   356MB
-[root@wangazure ~]#
-</code></pre><p>2、运行tomcat镜像</p>
+[root@wangazure ~]# 
+</code></pre>
+<p>2、运行tomcat镜像</p>
 <pre><code> docker run -p 8080:8080 -d --name tomcat01 tomcat:8.0
-</code></pre><p><strong>注意：最新版tomcat10中，webapps目录中没有内容，需要从webapps.dist中拷贝所有内容到webapps中</strong></p>
+</code></pre>
+<p><strong>注意：最新版tomcat10中，webapps目录中没有内容，需要从webapps.dist中拷贝所有内容到webapps中</strong></p>
 <pre><code>docker exec -it tomcat bash
 
 root@2779cb76c827:/usr/local/tomcat/webapps.dist# cp * ../webapps -r
-</code></pre><p>这里的 -p 8080:8080 的意思就是把容器的端口号8080映射到linux系统里的8080端口这里的两个端口8080前边的是linux里的端口号，后边的是运行的tomcat里的端口，外边也就是linux里的端口号可以随便换的，而容器里的是不能换的。<br>这里的 -d 的意思是后台运行<br>这里 —name 是给容器起一个别名</p>
+</code></pre>
+<p>这里的 -p 8080:8080 的意思就是把容器的端口号8080映射到linux系统里的8080端口这里的两个端口8080前边的是linux里的端口号，后边的是运行的tomcat里的端口，外边也就是linux里的端口号可以随便换的，而容器里的是不能换的。<br>这里的 -d 的意思是后台运行<br>这里 –name 是给容器起一个别名</p>
 <img src="/2022/061040991/image-20220612081134878.png" class title="image-20220612081134878">
+
 <p>再次查看docker里的容器</p>
 <pre><code>docker ps
-</code></pre><p>这里去访问浏览器8080端口就可以看见tom猫了，版本也是8.0的（如果用的阿里云的服务器注意要开放8080端口再访问）</p>
+</code></pre>
+<p>这里去访问浏览器8080端口就可以看见tom猫了，版本也是8.0的（如果用的阿里云的服务器注意要开放8080端口再访问）</p>
 <p>3、开多个端口给tomcat<br>这里我又开放了一个8082的作为tomcat，名字为tomcat02，注意：这里的名字（tomcat02）和Linux端口不能和上边的名字（tomcat01）一样！</p>
 <pre><code>docker run -p 8082:8080 -d --name tomcat02 tomcat:8.0
-</code></pre><p>上浏览器访问8082，又见tomcat猫了</p>
+</code></pre>
+<p>上浏览器访问8082，又见tomcat猫了</p>
 <p>4、tomcat容器的操作<br>关闭容器</p>
-<pre><code>docker stop 1adf1a9b21a1
-</code></pre><p>再次查看容器，就只剩一个8080端口的了</p>
+<pre><code>docker stop 1adf1a9b21a1 
+</code></pre>
+<p>再次查看容器，就只剩一个8080端口的了</p>
 <p>启动关闭的容器</p>
 <pre><code>docker start tomcat02
-</code></pre><p>暂停容器</p>
+</code></pre>
+<p>暂停容器</p>
 <pre><code>docker pause tomcat02
-</code></pre><p>暂停之后这里的STATUS会显示Up About a minute (Paused)表示已暂停，你访问8082也访问不到。</p>
+</code></pre>
+<p>暂停之后这里的STATUS会显示Up About a minute (Paused)表示已暂停，你访问8082也访问不到。</p>
 <p>恢复容器</p>
 <pre><code>docker unpause tomcat02
-</code></pre><p>恢复之后Up About a minute (Paused)就消失了，8082也能访问了。</p>
+</code></pre>
+<p>恢复之后Up About a minute (Paused)就消失了，8082也能访问了。</p>
 <p>杀死容器</p>
 <pre><code> docker kill tomcat02
-</code></pre><p>删除容器</p>
+</code></pre>
+<p>删除容器</p>
 <pre><code>docker rm tomcat02
-</code></pre><p>rm如果不行就加-f</p>
+</code></pre>
+<p>rm如果不行就加-f</p>
 <p>删除所有的容器</p>
 <pre><code>docker rm -f $(docker ps -aq)
-</code></pre><p>查看容器运行的日志</p>
+</code></pre>
+<p>查看容器运行的日志</p>
 <pre><code>docker logs tomcat02
-</code></pre><p>也可以用docker logs -f id/name(容器的id或名字)，用这个命令之后就进去了，想出来就按CTRL+C</p>
+</code></pre>
+<p>也可以用docker logs -f id&#x2F;name(容器的id或名字)，用这个命令之后就进去了，想出来就按CTRL+C</p>
 <p>进入容器内部<br>之后就可以到容器里了，镜像是不能动的，容器是可以进去的</p>
 <pre><code>docker exec -it tomcat01 bash #-it进入交互模式最后记得加bash
-</code></pre><p>退出容器</p>
+</code></pre>
+<p>退出容器</p>
 <pre><code> exit
-</code></pre><p>容器与宿主机文件相互复制拷贝<br>用vi命令建一个test.html</p>
+</code></pre>
+<p>容器与宿主机文件相互复制拷贝<br>用vi命令建一个test.html</p>
 <pre><code>[root@wangazure ~]# vi test.html #建一个test.html
 [root@wangazure ~]# cat test.html #查看test.html
 &lt;html&gt;
@@ -842,12 +913,13 @@ root@2779cb76c827:/usr/local/tomcat/webapps.dist# cp * ../webapps -r
 hello,docker!!!
 &lt;/body&gt;
 &lt;/html&gt;
-[root@wangazure ~]#
-</code></pre><p>CP命令</p>
+[root@wangazure ~]# 
+</code></pre>
+<p>CP命令</p>
 <pre><code>[root@wangazure ~]# docker cp test.html tomcat01:/usr/local/tomcat/webapps #复制到webapps里
 [root@wangazure ~]# docker exec -it tomcat01 bash #进入到容器里
 root@91ff3bca3aee:/usr/local/tomcat# ls
-LICENSE  NOTICE  RELEASE-NOTES    RUNNING.txt  bin  conf    include  lib  logs  native-jni-lib  temp  webapps  work
+LICENSE  NOTICE  RELEASE-NOTES	RUNNING.txt  bin  conf	include  lib  logs  native-jni-lib  temp  webapps  work
 root@91ff3bca3aee:/usr/local/tomcat# cd webapps/
 root@91ff3bca3aee:/usr/local/tomcat/webapps# ls
 ROOT  docs  examples  host-manager  manager  test.html
@@ -856,8 +928,9 @@ root@91ff3bca3aee:/usr/local/tomcat/webapps# cp test.html test #把test.html复�
 root@91ff3bca3aee:/usr/local/tomcat/webapps# cd test
 root@91ff3bca3aee:/usr/local/tomcat/webapps/test# ls
 test.html
-root@91ff3bca3aee:/usr/local/tomcat/webapps/test#
-</code></pre><p>如果想把容器里的东西复制出来，那就把两个地址一换就好了</p>
+root@91ff3bca3aee:/usr/local/tomcat/webapps/test# 
+</code></pre>
+<p>如果想把容器里的东西复制出来，那就把两个地址一换就好了</p>
 <pre><code>[root@wangazure ~]# ls
 install.sh
 [root@wangazure ~]# docker cp tomcat01:/usr/local/tomcat/webapps/examples /root
@@ -866,8 +939,9 @@ examples  install.sh
 [root@wangazure ~]# cd examples/
 [root@wangazure examples]# ls
 index.html  jsp  servlets  WEB-INF  websocket
-[root@wangazure examples]#
-</code></pre><p>5、查看所有容器</p>
+[root@wangazure examples]# 
+</code></pre>
+<p>5、查看所有容器</p>
 <pre><code>[root@wangazure ~]# docker  ps
 CONTAINER ID   IMAGE        COMMAND             CREATED          STATUS          PORTS                                       NAMES
 1adf1a9b21a1   tomcat:8.0   &quot;catalina.sh run&quot;   17 minutes ago   Up 5 minutes    0.0.0.0:8082-&gt;8080/tcp, :::8082-&gt;8080/tcp   tomcat02
@@ -882,8 +956,9 @@ CONTAINER ID   IMAGE        COMMAND             CREATED          STATUS         
 CONTAINER ID   IMAGE        COMMAND             CREATED          STATUS          PORTS                                       NAMES
 1adf1a9b21a1   tomcat:8.0   &quot;catalina.sh run&quot;   16 minutes ago   Up 4 minutes    0.0.0.0:8082-&gt;8080/tcp, :::8082-&gt;8080/tcp   tomcat02
 643b0adcfd17   tomcat:8.0   &quot;catalina.sh run&quot;   22 minutes ago   Up 22 minutes   0.0.0.0:8080-&gt;8080/tcp, :::8080-&gt;8080/tcp   tomcat01
-[root@wangazure ~]#
-</code></pre><p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44953395/article/details/122639514">https://blog.csdn.net/weixin_44953395/article/details/122639514</a></p>
+[root@wangazure ~]# 
+</code></pre>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44953395/article/details/122639514">https://blog.csdn.net/weixin_44953395/article/details/122639514</a></p>
 <h2 id="创建Docker镜像"><a href="#创建Docker镜像" class="headerlink" title="创建Docker镜像"></a>创建Docker镜像</h2><ol>
 <li><p>创建文件：dockerfile</p>
 <pre><code>FROM node
@@ -893,31 +968,26 @@ WORKDIR todo
 RUN npm install &gt; /dev/null
 EXPOSE 8000
 CMD [&quot;npm&quot;,&quot;start&quot;]
-</code></pre></li>
-</ol>
-<ol>
+</code></pre>
+</li>
 <li><p>构建镜像（在dockerfile文件所在目录下执行）</p>
 <pre><code>docker build .
-</code></pre></li>
-</ol>
-<ol>
+</code></pre>
+</li>
 <li><p>查看镜像</p>
 <pre><code>docker images
-</code></pre></li>
-</ol>
-<ol>
+</code></pre>
+</li>
 <li><p>打包镜像</p>
 <pre><code>docker tag 2654988fe97b todoapp
-</code></pre></li>
-</ol>
-<ol>
+</code></pre>
+</li>
 <li><p>运行容器</p>
 <pre><code>docker run -i -t -p 8000:8000 --name example1 todoapp
 //后台运行
 docker run -i -t -d -p 8000:8000 --name example1 todoapp
-</code></pre></li>
-</ol>
-<ol>
+</code></pre>
+</li>
 <li><p>测试</p>
 <ul>
 <li><p>开放端口：8000</p>
@@ -929,16 +999,15 @@ firewall-cmd --reload  # 配置立即生效
 
 //关闭防火墙
 systemctl stop firewalld.service
-</code></pre></li>
+</code></pre>
+</li>
+<li><p>测试</p>
+<pre><code>http://192.168.136.129:8000
+</code></pre>
+<img src="/2022/061040991/image-20220612065452739.png" class title="image-20220612065452739"></li>
 </ul>
 </li>
 </ol>
-<ul>
-<li><p>测试</p>
-<pre><code>http://192.168.136.129:8000
-</code></pre><img src="/2022/061040991/image-20220612065452739.png" class title="image-20220612065452739">
-</li>
-</ul>
 <h2 id="在Docker-Hub上分享镜像"><a href="#在Docker-Hub上分享镜像" class="headerlink" title="在Docker Hub上分享镜像"></a>在Docker Hub上分享镜像</h2><ol>
 <li><p>在 Docker Hub创建账号(如：pcbhyy)</p>
 </li>
@@ -951,25 +1020,29 @@ systemctl stop firewalld.service
 
 如：
 docker tag tomcat:9.0 pcbhyy/mytest:9
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>登录docker hub</p>
 <pre><code>docker login
 
 --输入用户名和密码
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>推送镜像到docker hub</p>
 <pre><code>docker push dockerhub用户名/仓库名：版本号
 
 如：
 docker push pcbhyy/mytest:9
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>拉取自己的镜像</p>
 <pre><code>docker pull pcbhyy/mytest:9
-</code></pre><img src="/2022/061040991/image-20220612071430023.png" class title="image-20220612071430023">
-</li>
+</code></pre>
+<img src="/2022/061040991/image-20220612071430023.png" class title="image-20220612071430023"></li>
 </ol>
 <p>中文手册：<a target="_blank" rel="noopener" href="http://www.dockerinfo.net/document">http://www.dockerinfo.net/document</a></p>
 <img src="/2022/061040991/image-20210320061746159.png" class title="image-20210320061746159">
+
 <p>简而言之，容器运行着由镜像定义的系统。这些镜像由一个或多个层（或差异集）加上一些Docker的元数据组成。</p>
 <p>Docker的中心功能是构建、分发及在任何具有Docker的地方运行软件。对终端用户而言，Docker是他们运行的一个命令行程序。就像Git（或任何源代码控制工具）一样，这个程序具有用于执行不同操作的子命令。表1-1中列出了将在宿主机上使用的主要的Docker子命令。</p>
 <p><code>docker build</code> 构建一个Docker镜像</p>
@@ -977,10 +1050,10 @@ docker push pcbhyy/mytest:9
 <p><code>docker commit</code> 将一个Docker容器作为一个镜像提交</p>
 <p><code>docker tag</code> 给一个Docker镜像打标签</p>
 <img src="/2022/061040991/image-20210320062815434.png" class title="image-20210320062815434">
+
 <p>看待镜像和容器的一种方式是将它们类比成程序与进程。一个进程可以视为一个“被执行的应用程序”，同样，一个Docker容器可以视为一个运行中的Docker镜像。</p>
 <p>如果读者熟悉面向对象原理，看待镜像和容器的另一种方法是将镜像看作类而将容器看作对象。对象是类的具体实例，同样，容器是镜像的实例。用户可以从单个镜像创建多个容器，就像对象一样，它们之间全都是相互隔离的。不论用户在对象内修改了什么，都不会影响类的定义——它们从根本上就是不同的东西。</p>
-<h2 id="创建Docker镜像的方式"><a href="#创建Docker镜像的方式" class="headerlink" title="创建Docker镜像的方式"></a>创建Docker镜像的方式</h2><div class="table-container">
-<table>
+<h2 id="创建Docker镜像的方式"><a href="#创建Docker镜像的方式" class="headerlink" title="创建Docker镜像的方式"></a>创建Docker镜像的方式</h2><table>
 <thead>
 <tr>
 <th>方法</th>
@@ -988,9 +1061,8 @@ docker push pcbhyy/mytest:9
 <th>技巧</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td>Docker命令/“手工”</td>
+<tbody><tr>
+<td>Docker命令&#x2F;“手工”</td>
 <td>使用docker run 启动一个容器，并在命令行输入命令来创建镜像。使用docker commit来创建一个新镜像</td>
 <td>详见技巧15</td>
 </tr>
@@ -1009,9 +1081,7 @@ docker push pcbhyy/mytest:9
 <td>从一个空白镜像开始，导入一个含有所需文件的TAR文件</td>
 <td>详见技巧11</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <h2 id="编写一个Dockerfile"><a href="#编写一个Dockerfile" class="headerlink" title="编写一个Dockerfile"></a>编写一个Dockerfile</h2><p>Dockerfile是一个包含一系列命令的文本文件。本示例中我们将使用的Dockerfile如代码清单1-1所示。创建一个新目录，移动到这个目录里，然后使用这些内容创建一个名为“Dockerfile”的文件。</p>
 <p>代码清单1-1　todoapp Dockerfile</p>
 <pre><code>FROM node　　⇽---　定义基础镜像
@@ -1021,19 +1091,22 @@ WORKDIR todo　　⇽---　移动到新的克隆目录
 RUN npm install &gt; /dev/null　　⇽---　执行node包管理器的安装命令（npm）
 EXPOSE 8000　　⇽---　指定从所构建的镜像启动的容器需要监听这个端口
 CMD [&quot;npm&quot;,&quot;start&quot;]　　⇽---　指定在启动时需要执行的命令
-</code></pre><pre><code>FROM node
+</code></pre>
+<pre><code>FROM node
 LABEL maintainer ian.miell@gmail.com
 RUN git clone -q https://gitee.com/null_476_2723/todo.git
 WORKDIR todo
 RUN npm install &gt; /dev/null
 EXPOSE 8000
 CMD [&quot;npm&quot;,&quot;start&quot;]
-</code></pre><p>Dockerfile的开始部分是使用FROM命令定义基础镜像。本示例使用了一个Node.js镜像以便访问Node.js程序。官方的Node.js镜像名为node。</p>
+</code></pre>
+<p>Dockerfile的开始部分是使用FROM命令定义基础镜像。本示例使用了一个Node.js镜像以便访问Node.js程序。官方的Node.js镜像名为node。</p>
 <p>接下来，使用LABEL命令声明维护人员。在这里，我们使用的是其中一个人的电子邮件地址，读者也可以替换成自己的，因为现在它是你的Dockerfile了。这一行不是创建可工作的Docker镜像所必需的，不过将其包含进来是一个很好的做法。到这个时候，构建已经继承了node容器的状态，读者可以在它上面做操作了。<br>接下来，使用RUN命令克隆todoapp代码。这里使用指定的命令获取应用程序的代码：在容器内运行git。在这个示例中，Git是安装在基础node镜像里的，不过读者不能对这类事情做假定。</p>
-<p>现在使用WORKDIR命令移动到新克隆的目录中。这不仅会改变构建环境中的目录，最后一条WORKDIR命令还决定了从所构建镜像启动容器时用户所处的默认目录。<br>接下来，执行node包管理器的安装命令（npm）。这将为应用程序设置依赖。我们对输出的信息不感兴趣，所以将其重定向到/dev/null上。<br>由于应用程序使用了8000端口，使用EXPOSE命令告诉Docker从所构建镜像启动的容器应该监听这个端口。</p>
+<p>现在使用WORKDIR命令移动到新克隆的目录中。这不仅会改变构建环境中的目录，最后一条WORKDIR命令还决定了从所构建镜像启动容器时用户所处的默认目录。<br>接下来，执行node包管理器的安装命令（npm）。这将为应用程序设置依赖。我们对输出的信息不感兴趣，所以将其重定向到&#x2F;dev&#x2F;null上。<br>由于应用程序使用了8000端口，使用EXPOSE命令告诉Docker从所构建镜像启动的容器应该监听这个端口。</p>
 <p>最后，使用CMD命令告诉Docker在容器启动时将执行哪条命令。</p>
 <p>这个简单的示例演示了Docker及Dockerfile的几个核心功能。Dockerfile是一组严格按顺序执行的有限的命令集的简单序列。它影响了最终镜像的文件和元数据。这里的RUN命令通过签出并安装应用程序影响了文件系统，而EXPOSE、CMD和WORKDIR命令影响了镜像的元数据。</p>
 <img src="/2022/061040991/image-20210320065823742.png" class title="image-20210320065823742">
+
 <p>输出看起来和下面类似。</p>
 <pre><code>Sending build context to Docker daemon 2.048kB　　⇽---　 Docker会上传docker build指定目录下的文件和目录
 Step 1/7 : FROM node　　⇽---　每个构建步骤从 1 开始按顺序编号，并与命令一起输出
@@ -1065,8 +1138,10 @@ Step 7/7 : CMD npm start
  ---&gt; 66c76cea05bb
 Removing intermediate container ccc076ee38fe
 Successfully built 66c76cea05bb　　⇽---　此次构建的最终镜像ID，可用于打标签
-</code></pre><p>现在，拥有了一个具有镜像ID（前面示例中的“66c76cea05bb”，不过读者的ID会不一样）的Docker镜像。总是引用这个ID会很麻烦，可以为其打标签以方便引用，如图1-8所示。</p>
+</code></pre>
+<p>现在，拥有了一个具有镜像ID（前面示例中的“66c76cea05bb”，不过读者的ID会不一样）的Docker镜像。总是引用这个ID会很麻烦，可以为其打标签以方便引用，如图1-8所示。</p>
 <img src="/2022/061040991/image-20210320065947023.png" class title="image-20210320065947023">
+
 <p>输入图1-8所示的命令，将66c76cea05bb替换成读者生成的镜像ID。<br>现在就能从一个Dockerfile构建自己的Docker镜像副本，并重现别人定义的环境了！</p>
 <h2 id="运行一个Docker容器"><a href="#运行一个Docker容器" class="headerlink" title="运行一个Docker容器"></a>运行一个Docker容器</h2><p>运行一个Docker容器</p>
 <pre><code>$ docker run -i -t -p 8000:8000 --name example1 todoapp　　⇽---　 docker run子命令启动容器，-p将容器的 8000 端口映射到宿主机的8000端口上，--name给容器赋予一个唯一的名字，最后一个参数是镜像
@@ -1154,10 +1229,12 @@ A /todo/dist/LocalTodoApp.app.js
 A /todo/dist/TodoApp.app.js
 A /todo/dist/react.min.js
 C /todo/node_modules
-</code></pre><p>docker run子命令启动容器。-p标志将容器的8000端口映射到宿主机的8000端口上，读者现在应该可以使用浏览器访问<a href="http://localhost:8000来查看这个应用程序了。--name标志赋予了容器一个唯一的名称，以便后面引用。最后的参数是镜像名称。">http://localhost:8000来查看这个应用程序了。--name标志赋予了容器一个唯一的名称，以便后面引用。最后的参数是镜像名称。</a></p>
+</code></pre>
+<p>docker run子命令启动容器。-p标志将容器的8000端口映射到宿主机的8000端口上，读者现在应该可以使用浏览器访问<a href="http://localhost:8000来查看这个应用程序了。--name标志赋予了容器一个唯一的名称，以便后面引用。最后的参数是镜像名称。">http://localhost:8000来查看这个应用程序了。--name标志赋予了容器一个唯一的名称，以便后面引用。最后的参数是镜像名称。</a></p>
 <p>一旦容器启动，我们就可以按组合键Ctrl+C终止进程和容器。读者可以执行ps命令查看被启动且未被移除的容器。注意，每个容器都具有自己的容器 ID 和状态，与进程类似。它的状态是Exited（已退出），不过读者可以重新启动它。这么做之后，注意状态已经改变为Up（运行中），且容器到宿主机的端口映射现在也显示出来了。</p>
 <p>docker diff子命令显示了自镜像被实例化成一个容器以来哪些文件受到了影响。在这个示例中，todo目录被修改了（C），而其他列出的文件是新增的（A）。没有文件被删除（D），这是另一种可能性。</p>
 <h2 id="Docker的架构"><a href="#Docker的架构" class="headerlink" title="Docker的架构"></a>Docker的架构</h2><img src="/2022/061040991/image-20210320160948248.png" class title="image-20210320160948248">
+
 <h3 id="Docker守护进程"><a href="#Docker守护进程" class="headerlink" title="Docker守护进程"></a>Docker守护进程</h3><p>Docker守护进程（见图2-2）是用户与Docker交互的枢纽，因而它是理解所有相关部分的最佳切入点。它控制着用户机器上的Docker访问权限，管理着容器与镜像的状态，同时代理着与外界的交互。</p>
 <p>守护进程是运行在后台的一个进程，不在用户的直接控制之下。服务器是负责接受客户端请求，并执行用于满足该请求所需的操作的一个进程。守护进程通常也是服务器，接收来自客户端的请求，为其执行操作。docker命令是一个客户端，而Docker守护进程则作为服务器对Docker容器和镜像进行操作。</p>
 <h3 id="Docker客户端"><a href="#Docker客户端" class="headerlink" title="Docker客户端"></a>Docker客户端</h3><p>Docker客户端（见图2-4）是Docker架构中最简单的部件。在主机上输入docker run或docker pull这类命令时运行的便是它。它的任务是通过HTTP请求与Docker守护进程通信。</p>
@@ -1167,40 +1244,45 @@ C /todo/node_modules
  sudo yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
-</code></pre><p>Another app is currently holding the yum lock解决方法</p>
+</code></pre>
+<p>Another app is currently holding the yum lock解决方法</p>
 <pre><code>rm -f /var/run/yum.pid
-</code></pre><h4 id="安装-Docker-引擎"><a href="#安装-Docker-引擎" class="headerlink" title="安装 Docker 引擎"></a>安装 Docker 引擎</h4><ol>
+</code></pre>
+<h4 id="安装-Docker-引擎"><a href="#安装-Docker-引擎" class="headerlink" title="安装 Docker 引擎"></a>安装 Docker 引擎</h4><ol>
 <li><p>安装<em>最新版本</em>的 Docker Engine 和 containerd</p>
 <pre><code>yum install docker-ce docker-ce-cli containerd.io
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>启动 Docker</p>
 <pre><code>systemctl start docker
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>通过运行<code>hello-world</code> 映像验证 Docker Engine 是否已正确安装。</p>
 <pre><code>docker run hello-world
-</code></pre><p>此命令下载测试映像并在容器中运行它。当容器运行时，它会打印一条消息并退出。</p>
+</code></pre>
+<p>此命令下载测试映像并在容器中运行它。当容器运行时，它会打印一条消息并退出。</p>
 </li>
 </ol>
 <h2 id="卸载-Docker-引擎"><a href="#卸载-Docker-引擎" class="headerlink" title="卸载 Docker 引擎"></a>卸载 Docker 引擎</h2><ol>
 <li><p>卸载 Docker Engine、CLI 和 Containerd 包：</p>
 <pre><code>$ sudo yum remove docker-ce docker-ce-cli containerd.io
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>主机上的映像、容器、卷或自定义配置文件不会自动删除。删除所有镜像、容器和卷：</p>
 <pre><code>$ sudo rm -rf /var/lib/docker
 $ sudo rm -rf /var/lib/containerd
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <p>您必须手动删除任何已编辑的配置文件。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><div class="table-container">
-<table>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><table>
 <thead>
 <tr>
 <th>docker images</th>
 <th>查看所有镜像</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>docker history 镜像ID</td>
 <td>查看镜像历史</td>
 </tr>
@@ -1209,7 +1291,7 @@ $ sudo rm -rf /var/lib/containerd
 <td>查看状态</td>
 </tr>
 <tr>
-<td>docker run centos /bin/bash</td>
+<td>docker run centos &#x2F;bin&#x2F;bash</td>
 <td>运行镜像</td>
 </tr>
 <tr>
@@ -1217,7 +1299,7 @@ $ sudo rm -rf /var/lib/containerd
 <td>使用 dockerfile 创建镜像</td>
 </tr>
 <tr>
-<td>docker build <strong>—tag, -t:</strong> 镜像的名字及标签，通常 name:tag 或者 name 格式；可以在一次构建中为一个镜像设置多个标签</td>
+<td>docker build <strong>–tag, -t:</strong> 镜像的名字及标签，通常 name:tag 或者 name 格式；可以在一次构建中为一个镜像设置多个标签</td>
 <td></td>
 </tr>
 <tr>
@@ -1245,7 +1327,7 @@ $ sudo rm -rf /var/lib/containerd
 <td>进入已经启动的容器</td>
 </tr>
 <tr>
-<td>docker exec  -it centos /bin/bash</td>
+<td>docker exec  -it centos &#x2F;bin&#x2F;bash</td>
 <td>在启动的容器中执行命令</td>
 </tr>
 <tr>
@@ -1269,25 +1351,26 @@ $ sudo rm -rf /var/lib/containerd
 <td>删除未被任何容器使用的本地卷</td>
 </tr>
 <tr>
-<td>docker cp /root/my.cnf 16ff8a4cd5d9:/etc/mysql/my.cnf</td>
+<td>docker cp &#x2F;root&#x2F;my.cnf 16ff8a4cd5d9:&#x2F;etc&#x2F;mysql&#x2F;my.cnf</td>
 <td>拷贝文件到容器中</td>
 </tr>
 <tr>
 <td>docker logs nginx</td>
 <td>查看容器日志</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <h2 id="使用socat监控Docker-API流量"><a href="#使用socat监控Docker-API流量" class="headerlink" title="使用socat监控Docker API流量"></a>使用socat监控Docker API流量</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>yum install -y socat</p>
 <h3 id="要创建这个代理，会用到socat"><a href="#要创建这个代理，会用到socat" class="headerlink" title="要创建这个代理，会用到socat"></a>要创建这个代理，会用到socat</h3><pre><code>$ socat -v UNIX-LISTEN:/tmp/dockerapi.sock,fork \
 　UNIX-CONNECT:/var/run/docker.sock &amp;
-</code></pre><p>socat是一个强大的命令，能让用户在两个几乎任意类型的数据通道之间中继数据。如果熟悉netcat，可以将其看作是加强版的netcat。你可使用系统的标准包管理器来安装它。</p>
+</code></pre>
+<p>socat是一个强大的命令，能让用户在两个几乎任意类型的数据通道之间中继数据。如果熟悉netcat，可以将其看作是加强版的netcat。你可使用系统的标准包管理器来安装它。</p>
 <p>在这条命令中，-v用于提高输出的可读性，带有数据流的指示。UNIX-LISTEN部分是让socat在一个Unix套接字上进行监听，fork确保socat不会在首次请求后退出，而UNIX-CONNECT是让socat连接到Docker的Unix套接字。&amp;符号指定在后台执行该命令。如果你通常使用sudo来运行Docker客户端，这里也需要这么做。<br>发往守护进程的请求所经过的新路由如图2-6所示。所有双向流量都会被socat看到，并与Docker客户端所提供的任何输出一起记录到终端日志中。</p>
 <img src="/2022/061040991/image-20210321141714179.png" class title="image-20210321141714179">
+
 <p>现在一个简单的docker命令的输出看起来将类似下面这样：</p>
 <pre><code>docker -H unix:///tmp/dockerapi.sock ps -a　　⇽---　用于查看请求与响应所发送的命令
-</code></pre><p>使用socat不仅对Docker来说是一种强大的调试方式，对工作过程中可能碰到的任何其他网络服务也是如此。</p>
+</code></pre>
+<p>使用socat不仅对Docker来说是一种强大的调试方式，对工作过程中可能碰到的任何其他网络服务也是如此。</p>
 <ul>
 <li>Socat就像一把瑞士军刀，可以处理很多不同的协议。上述示例演示的是在Unix套接字上进行监听，不过你也可以使用TCP-LISTEN:2375,fork取代UNIX-LISTEN:…参数，让它监听外部端口。这相当于技巧1的一个更简单的版本。使用这个方法无须重启Docker守护进程（这会杀掉所有运行中的容器），可根据需要启动或停止socat监听器。</li>
 <li>由于前一条设置起来如此简单，并且是临时的，你可以将其与技巧47结合起来，以便远程加入同事的运行容器中，协助他们调试问题。你也可以使用很少用到的docker attach命令加入他们以docker run启动的同一个终端中，以便直接协作。</li>
@@ -1299,78 +1382,99 @@ $ sudo rm -rf /var/lib/containerd
 <h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>使用Docker的-p标志将容器的端口映射到宿主机上。</p>
 <p>在这个示例中，我们将使用tutum-wordpress镜像。这里假定我们想在宿主机上运行两个实例来服务不同的博客。<br>由于此前有很多人想这么做，已经有人准备了任何人都可以获取并启动的镜像。要从外部地址获取镜像，可以使用docker pull命令。在默认情况下，镜像将从Docker Hub下载：</p>
 <pre><code>docker pull tutum/wordpress
-</code></pre><p>如果镜像在你的机器上还不存在，当你试图运行它们时，也会自动获取。</p>
+</code></pre>
+<p>如果镜像在你的机器上还不存在，当你试图运行它们时，也会自动获取。</p>
 <p>要运行第一个博客，可使用如下命令：</p>
 <pre><code>docker run -d -p 10001:80 --name blog1 tutum/wordpress
-</code></pre><p>这里的docker run命令以守护进程方式（-d）及发布标志（-p）运行容器。它指定将宿主机端口（10001）映射到容器端口（80）上，并赋予该容器一个名称用于识别它（—name blog1 tutum/wordpress）。</p>
+</code></pre>
+<p>这里的docker run命令以守护进程方式（-d）及发布标志（-p）运行容器。它指定将宿主机端口（10001）映射到容器端口（80）上，并赋予该容器一个名称用于识别它（–name blog1 tutum&#x2F;wordpress）。</p>
 <p>可以对第二个博客做相同操作：</p>
 <pre><code>docker run -d -p 10002:80 --name blog2 tutum/wordpress
-</code></pre><p>如果现在执行这个命令：</p>
+</code></pre>
+<p>如果现在执行这个命令：</p>
 <pre><code>docker ps | grep blog
-</code></pre><p>将看到列出的两个博客容器及其端口映射，看起来像下面这样：</p>
+</code></pre>
+<p>将看到列出的两个博客容器及其端口映射，看起来像下面这样：</p>
 <pre><code>$ docker ps | grep blog
 9afb95ad3617　tutum/wordpress:latest &quot;/run.sh&quot; 9 seconds ago
 ➥ Up 9 seconds　 3306/tcp, 0.0.0.0:10001-&gt;80/tcp blog1
 31ddc8a7a2fd　tutum/wordpress:latest　&quot;/run.sh&quot; 17 seconds ago
 ➥ Up 16 seconds　3306/tcp, 0.0.0.0:10002-&gt;80/tcp　blog2
-</code></pre><p>现在可以通过浏览<a href="http://localhost:10001和http://localhost:10002来访问自己的容器。">http://localhost:10001和http://localhost:10002来访问自己的容器。</a><br>要在完成后删除这些容器（假设不想保留它们——我们将在技巧7中利用它们），可执行下面这个命令：</p>
+</code></pre>
+<p>现在可以通过浏览<a href="http://localhost:10001和http://localhost:10002来访问自己的容器。">http://localhost:10001和http://localhost:10002来访问自己的容器。</a><br>要在完成后删除这些容器（假设不想保留它们——我们将在技巧7中利用它们），可执行下面这个命令：</p>
 <pre><code>docker rm -f blog1 blog2
-</code></pre><p>如果需要，现在就可以通过管理端口分配在宿主机上运行多个相同的镜像和服务了</p>
+</code></pre>
+<p>如果需要，现在就可以通过管理端口分配在宿主机上运行多个相同的镜像和服务了</p>
 <h2 id="Docker注册中心"><a href="#Docker注册中心" class="headerlink" title="Docker注册中心"></a>Docker注册中心</h2><p>Docker注册中心允许多个用户使用REST风格API将镜像推送到一个中央存储中，也可以从中拉取镜像。<br>与Docker自身一样，注册中心代码也是开源的。很多公司（如我们公司）建立了私有注册中心在内部存储和共享专有的镜像。这是在我们进一步说明Docker公司的注册中心之前，我们将要讨论的东西。</p>
 <img src="/2022/061040991/image-20210322130851350.png" class title="image-20210322130851350">
+
 <h3 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h3><p>想要一个在本地托管镜像的方法。</p>
 <h3 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h3><p>在本地网络上建立一个注册中心服务器。<br>简单地在一台具有大量磁盘空间的机器上发起以下命令：</p>
 <pre><code>docker run -d -p 5000:5000 -v $HOME/registry:/var/lib/registry registry:2
-</code></pre><p>这条命令让注册中心运行于Docker宿主机的5000端口上（-p 5000:5000）。使用-v标志，它可以使宿主机（/var/lib/registry）上的registry在容器中用作$HOME/registry。因此，该registry的文件将存储在/var/lib/registry目录下。<br>在所有想访问这个注册中心的机器上，将下列内容添加到守护进程选项中（HOSTNAME是新的注册中心服务器的主机名或IP地址）：—insecure-registry HOSTNAME（有关如何执行此操作的详细信息，参见附录B）。现在可以发出docker push HOSTNAME:5000/image:tag命令。</p>
+</code></pre>
+<p>这条命令让注册中心运行于Docker宿主机的5000端口上（-p 5000:5000）。使用-v标志，它可以使宿主机（&#x2F;var&#x2F;lib&#x2F;registry）上的registry在容器中用作$HOME&#x2F;registry。因此，该registry的文件将存储在&#x2F;var&#x2F;lib&#x2F;registry目录下。<br>在所有想访问这个注册中心的机器上，将下列内容添加到守护进程选项中（HOSTNAME是新的注册中心服务器的主机名或IP地址）：–insecure-registry HOSTNAME（有关如何执行此操作的详细信息，参见附录B）。现在可以发出docker push HOSTNAME:5000&#x2F;image:tag命令。</p>
 <h2 id="Docker-Hub"><a href="#Docker-Hub" class="headerlink" title="Docker Hub"></a>Docker Hub</h2><p>Docker Hub（见图2-10）是由Docker公司维护的一个注册中心。它拥有成千上万个镜像可供下载和运行。任何Docker用户都可以在上面创建免费账号，并存储公共Docker镜像。除了用户提供的镜像，上面还维护着一些作为参考的官方镜像。</p>
 <p>镜像受用户认证的保护，同时具有一个与GitHub类似的支持率打星系统。这些官方镜像的表现形式可能是Linux发行版（如Ubuntu或Cent OS）、预装软件包（如Node.js）或完整的软件栈（如WordPress）。</p>
 <h2 id="查找并运行一个Docker镜像"><a href="#查找并运行一个Docker镜像" class="headerlink" title="查找并运行一个Docker镜像"></a>查找并运行一个Docker镜像</h2><h3 id="问题-2"><a href="#问题-2" class="headerlink" title="问题"></a>问题</h3><p>想要查找一个Docker镜像形式的应用程序或工具，并进行尝试。</p>
 <h3 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h3><p>使用docker search命令来查找要拉取的镜像，然后运行它。</p>
 <pre><code>docker search mysql
-</code></pre><p>docker search的输出是按评星数量排序的</p>
+</code></pre>
+<p>docker search的输出是按评星数量排序的</p>
 <p>一旦选择了一个镜像，就可以通过对其名称执行docker pull命令来下载它：</p>
 <pre><code>docker pull mysql
-</code></pre><p>接着，可以使用-t和-i标志以交互方式运行它。-t标志指明创建一个TTY设备（一个终端），而-i标志指明该Docker会话是交互式的：</p>
+</code></pre>
+<p>接着，可以使用-t和-i标志以交互方式运行它。-t标志指明创建一个TTY设备（一个终端），而-i标志指明该Docker会话是交互式的：</p>
 <pre><code>docker run -e MYSQL_ROOT_PASSWORD=root --name mysql -it -d -p 5001:3306  mysql
 
 -p 5001:3306  //宿主机使用5001端口，容器使用3306端口
 -d 守护进程，后台运行
 --name mysql：给容器命名为：mysql
-</code></pre><h3 id="使用-tomcat-镜像"><a href="#使用-tomcat-镜像" class="headerlink" title="使用 tomcat 镜像"></a>使用 tomcat 镜像</h3><ol>
+</code></pre>
+<h3 id="使用-tomcat-镜像"><a href="#使用-tomcat-镜像" class="headerlink" title="使用 tomcat 镜像"></a>使用 tomcat 镜像</h3><ol>
 <li><p>拉取</p>
 <pre><code>docker pull tomcat:9.0
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>运行</p>
 <pre><code>docker run -it -d -p 8889:8080 --name tomcat9 tomcat:9.0
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>进入容器</p>
-<pre><code>docker exec -it  tomcat9 bash
-</code></pre></li>
+<pre><code>docker exec -it  tomcat9 bash 
+</code></pre>
+</li>
 <li><p>拷贝文件</p>
 <pre><code>cp webapps.dist/. webapps -r
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>退出容器</p>
 <pre><code>exit
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>重启容器</p>
 <pre><code>docker restart tomcat9
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>测试</p>
 <pre><code>http://ip:8889
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h3 id="使用-redis-镜像"><a href="#使用-redis-镜像" class="headerlink" title="使用 redis 镜像"></a>使用 redis 镜像</h3><ol>
 <li><p>拉取</p>
 <pre><code>docker pull redis
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>运行容器</p>
 <pre><code>docker run -d --name redis -p 6379:6379 redis redis-server --appendonly yes --requirepass &quot;123456&quot;
-</code></pre><p>—appendonly yes ：使用 aof 模式持久化数据</p>
+</code></pre>
+<p>–appendonly yes ：使用 aof 模式持久化数据</p>
 <p>requirepass “123456” ：服务器连接密码</p>
 </li>
 <li><p>在windows 中安装了 redis，使用 redis-cli 连接 docker reids</p>
 <pre><code>redis-cli -h 111.229.80.53 -p 6379 -a 123456
-</code></pre><p>-a 123456：使用密码 123456 连接服务器</p>
+</code></pre>
+<p>-a 123456：使用密码 123456 连接服务器</p>
 </li>
 <li><p>可以进入到docker容器中的redis测试</p>
 <pre><code>进入容器：
@@ -1385,7 +1489,8 @@ cd /usr/local/bin
 测试：
 set name tom
 get name
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="将一个系统拆成微服务容器"><a href="#将一个系统拆成微服务容器" class="headerlink" title="将一个系统拆成微服务容器"></a>将一个系统拆成微服务容器</h2><p>在Docker的世界里，公认的最佳实践是尽可能多地把系统拆分开，直到在每个容器上都只运行一个“服务”，并且所有容器都通过网络互相连通。</p>
 <p>使用一个容器一个服务的主要原因在于可以更容易通过单一职责原则（single responsibility principle）实现关注点分离（separation of concerns）。如果用户的容器执行的是单一任务，那么可以很方便地把该容器应用到从开发、测试到生产的整个软件开发生命周期里，而无须太担心它与其他组件的交互问题。这就使软件项目可以更敏捷地交付并且具备更好的扩展性。但是，它的确带来了一些管理上的负担，因此，最好思量一下在自己的用例场景下这样做是否真的值得。<br>暂且不论哪种方案更适合，最佳实践方法至少拥有一个明显的优势——正如所见，在使用Dockerfile时实验和重新构建都比前一套方案快上不少。</p>
@@ -1403,18 +1508,21 @@ get name
 
 如：
 docker tag tomcat:9.0 pcbhyy/mytest:9
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>登录docker hub</p>
 <pre><code>docker login
 
 --输入用户名和密码
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>推送镜像到docker hub</p>
 <pre><code>docker push dockerhub用户名/仓库名：版本号
 
 如：
 docker push pcbhyy/mytest:9
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h2><h3 id="使用ADD指令将文件注入镜像里"><a href="#使用ADD指令将文件注入镜像里" class="headerlink" title="使用ADD指令将文件注入镜像里"></a>使用ADD指令将文件注入镜像里</h3><h4 id="问题-4"><a href="#问题-4" class="headerlink" title="问题"></a>问题</h4><p>想要以一种简洁的方式下载并解压一个压缩包到镜像里。</p>
 <h4 id="解决方案-4"><a href="#解决方案-4" class="headerlink" title="解决方案"></a>解决方案</h4><p>打包并压缩目标文件，然后在Dockerfile里使用ADD指令。<br>通过mkdir add_example &amp;&amp; cd add_example来为这次Docker构建创造一个全新的环境。随后检索一个压缩包，并给它指定一个名字作为后续引用的标识</p>
@@ -1423,25 +1531,29 @@ docker push pcbhyy/mytest:9
 <pre><code>$ curl \
 https://www.flamingspork.com/projects/libeatmydata/
 ➥ libeatmydata-105.tar.gz &gt; my.tar.g
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>添加一个TAR文件到镜像里</p>
 <pre><code>FROM debian
 RUN mkdir -p /opt/libeatmydata
 ADD my.tar.gz /opt/libeatmydata/
 RUN ls -lRt /opt/libeatmydata
-</code></pre><p>通过docker build —no-cache .来构建这个Dockerfile</p>
+</code></pre>
+<p>通过docker build –no-cache .来构建这个Dockerfile</p>
 </li>
 <li><p>带有TAR文件的镜像构建</p>
 <pre><code>$ docker build --no-cache .
-</code></pre><p>从输出中可以看到，压缩包被Docker守护进程解压到了目标目录（所有文件的扩展输出已被省略）。Docker支持解压绝大多数标准类型的压缩文件（.gz、.bz2、.xz、.tar）。</p>
+</code></pre>
+<p>从输出中可以看到，压缩包被Docker守护进程解压到了目标目录（所有文件的扩展输出已被省略）。Docker支持解压绝大多数标准类型的压缩文件（.gz、.bz2、.xz、.tar）。</p>
 <p>值得留意的是，尽管用户可以从指定的URL下载压缩包，但是只有当它们被存储在本地文件系统时才会被自动解压。这一点可能会导致混淆。</p>
 <p>文件名里带有空格如果指定的文件名里带有空格，用户将需要在ADD（或COPY）时带上引号的形式</p>
 <pre><code>ADD &quot;space file.txt&quot; &quot;/tmp/space file.txt&quot;
-</code></pre><p>人们常问的一个问题是如何添加一个压缩文件，但不对其进行解压。为此，用户应该使用的是COPY命令，该命令看上去和ADD命令完全相同，但是它不会解压任何文件，也不支持通过互联网下载文件。docker —</p>
+</code></pre>
+<p>人们常问的一个问题是如何添加一个压缩文件，但不对其进行解压。为此，用户应该使用的是COPY命令，该命令看上去和ADD命令完全相同，但是它不会解压任何文件，也不支持通过互联网下载文件。docker –</p>
 </li>
 </ol>
-<h2 id="privileged-true-参数作用"><a href="#privileged-true-参数作用" class="headerlink" title="privileged=true 参数作用"></a>privileged=true 参数作用</h2><p>大约在0.6版，privileged被引入docker。<br>使用该参数，container内的root拥有真正的root权限。<br>否则，container内的root只是外部的一个普通用户权限。<br>privileged启动的容器，可以看到很多host上的设备，并且可以执行mount。<br>甚至允许你在docker容器中启动docker容器</p>
-<h2 id="IPv4-forwarding-is-disabled"><a href="#IPv4-forwarding-is-disabled" class="headerlink" title="IPv4 forwarding is disabled"></a>IPv4 forwarding is disabled</h2><p>装完了Docker，然后启动镜像，发现没有网络，而且不能ifconfig，因网桥配置完后，需要开启转发，不然容器启动后，就会没有网络，配置/etc/sysctl.conf,添加net.ipv4.ip_forward=1即可，操作如下：</p>
+<h2 id="privileged-x3D-true-参数作用"><a href="#privileged-x3D-true-参数作用" class="headerlink" title="privileged&#x3D;true 参数作用"></a>privileged&#x3D;true 参数作用</h2><p>大约在0.6版，privileged被引入docker。<br>使用该参数，container内的root拥有真正的root权限。<br>否则，container内的root只是外部的一个普通用户权限。<br>privileged启动的容器，可以看到很多host上的设备，并且可以执行mount。<br>甚至允许你在docker容器中启动docker容器</p>
+<h2 id="IPv4-forwarding-is-disabled"><a href="#IPv4-forwarding-is-disabled" class="headerlink" title="IPv4 forwarding is disabled"></a>IPv4 forwarding is disabled</h2><p>装完了Docker，然后启动镜像，发现没有网络，而且不能ifconfig，因网桥配置完后，需要开启转发，不然容器启动后，就会没有网络，配置&#x2F;etc&#x2F;sysctl.conf,添加net.ipv4.ip_forward&#x3D;1即可，操作如下：</p>
 <pre><code>配置转发
 vim /etc/sysctl.conf
 
@@ -1499,22 +1611,23 @@ docker attach gitlab2
 
 #获取百度信息
 curl baidu.com
-完美
-</code></pre><h2 id="Shell教程"><a href="#Shell教程" class="headerlink" title="Shell教程"></a>Shell教程</h2><h3 id="为什么学Shell"><a href="#为什么学Shell" class="headerlink" title="为什么学Shell"></a>为什么学Shell</h3><p>链接：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/309875771/answer/579235911">https://www.zhihu.com/question/309875771/answer/579235911</a></p>
+完美 
+</code></pre>
+<h2 id="Shell教程"><a href="#Shell教程" class="headerlink" title="Shell教程"></a>Shell教程</h2><h3 id="为什么学Shell"><a href="#为什么学Shell" class="headerlink" title="为什么学Shell"></a>为什么学Shell</h3><p>链接：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/309875771/answer/579235911">https://www.zhihu.com/question/309875771/answer/579235911</a></p>
 <p>你看，每一种语言，它都封装了一些东西——除了汇编。</p>
-<p>这些封装，使得它的使用者可以更简洁的完成日常功能的同时，也不可避免的要付出一些底层控制能力/灵活性方面的代价——毕竟你只能通过它提供的、“封装”的代理，才能完成任务。</p>
-<p>其中，汇编可以控制一切；但用它时，就连if你都得自己拆开，用cmp/jnz/jz等指令的组合实现类if控制结构——在程序流程控制可以无限精确、无限复杂的同时……你不觉得每次都得根据实际情况，把if这俩字母拆成三五条甚至十几条语句，太过繁琐了吗？</p>
-<p>而C/C++呢，你近似可以控制一切，汇编能做到的，你99.99%都能做到。这就大大提高了开发效率。</p>
-<p>等到了java，你失去了对内存的大部分控制权；但当你要写一个商业/工业程序时，却前所未有的简单。</p>
+<p>这些封装，使得它的使用者可以更简洁的完成日常功能的同时，也不可避免的要付出一些底层控制能力&#x2F;灵活性方面的代价——毕竟你只能通过它提供的、“封装”的代理，才能完成任务。</p>
+<p>其中，汇编可以控制一切；但用它时，就连if你都得自己拆开，用cmp&#x2F;jnz&#x2F;jz等指令的组合实现类if控制结构——在程序流程控制可以无限精确、无限复杂的同时……你不觉得每次都得根据实际情况，把if这俩字母拆成三五条甚至十几条语句，太过繁琐了吗？</p>
+<p>而C&#x2F;C++呢，你近似可以控制一切，汇编能做到的，你99.99%都能做到。这就大大提高了开发效率。</p>
+<p>等到了java，你失去了对内存的大部分控制权；但当你要写一个商业&#x2F;工业程序时，却前所未有的简单。</p>
 <p>脚本语言，如python、php等，也都类似——它们比java更简单，但也更慢。</p>
-<p>再往上，就是<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=shell脚本&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A579235911}">shell脚本</a>了。</p>
+<p>再往上，就是<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=shell%E8%84%9A%E6%9C%AC&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:579235911%7D">shell脚本</a>了。</p>
 <p>shell脚本是一种比python更“糙”、因此性能等方面更为受限的语言；但它有个极大的优点，那就是可以把其他人写的程序本身，像其他语言的库函数那样使用。</p>
-<p>为了做到这个，它要求每个程序都把命令行参数当作“函数输入”、向stdout/stderr的输出当作函数输出，同时以<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=程序返回值&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A579235911}">程序返回值</a>说明执行成功与否。</p>
+<p>为了做到这个，它要求每个程序都把命令行参数当作“函数输入”、向stdout&#x2F;stderr的输出当作函数输出，同时以<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%A8%8B%E5%BA%8F%E8%BF%94%E5%9B%9E%E5%80%BC&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:579235911%7D">程序返回值</a>说明执行成功与否。</p>
 <p>这个约定是强制性的，在操作系统设计时就确定了的——这也是C语言的main函数需要返回一个int的原因。</p>
-<p>但是，这个“<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=命令行参数&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A579235911}">命令行参数</a>”的约定也束缚了shell，使得它比起其他语言更在乎空格/回车等符号——因为它的每一行，都必须是“命令 参数1 参数2”的格式。</p>
-<p>这个约定就使得它语法怪异，也很难像其他编程语言那样，支持<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=语法结构&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A579235911}">语法结构</a>的任意嵌套——不管有多像，它毕竟是“用命令行模拟出来的语法结构”。</p>
+<p>但是，这个“<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:579235911%7D">命令行参数</a>”的约定也束缚了shell，使得它比起其他语言更在乎空格&#x2F;回车等符号——因为它的每一行，都必须是“命令 参数1 参数2”的格式。</p>
+<p>这个约定就使得它语法怪异，也很难像其他编程语言那样，支持<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E8%AF%AD%E6%B3%95%E7%BB%93%E6%9E%84&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:579235911%7D">语法结构</a>的任意嵌套——不管有多像，它毕竟是“用命令行模拟出来的语法结构”。</p>
 <p>那么，这就是shell脚本的定位：它是一种只能支持较为简单逻辑的、可以直接把任意现有程序当作函数无缝集成的“超高级语言”；但因为“命令行模拟”这个本质，它的语法较为笨拙，很难像正规的脚本语言那样得到很多很多的语法糖或者其它便利。</p>
-<p>但，同样的，其它<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=脚本语言&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A579235911}">脚本语言</a>语法结构是灵活了；但它们也就不可能很方便的和系统安装的现有程序交互了——注意是不方便，不是不能。你完全可以通过popen/shellexec等方法调用外部程序。</p>
+<p>但，同样的，其它<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:579235911%7D">脚本语言</a>语法结构是灵活了；但它们也就不可能很方便的和系统安装的现有程序交互了——注意是不方便，不是不能。你完全可以通过popen&#x2F;shellexec等方法调用外部程序。</p>
 <p>程序员都是一群特别特别“懒”的人。他们会根据目标的不同，选择能够最轻易达到目标的方法——这种选择同样包括编程语言。这反过来也导致了诸多不同定位的语言的出现。</p>
 <h3 id="什么是Shell"><a href="#什么是Shell" class="headerlink" title="什么是Shell"></a>什么是Shell</h3><p>Shell 是一个用 C 语言编写的程序，它是用户使用 Linux 的桥梁。Shell 既是一种命令语言，又是一种程序设计语言。</p>
 <p>Shell 是指一种应用程序，这个应用程序提供了一个界面，用户通过这个界面访问操作系统内核的服务。</p>
@@ -1524,40 +1637,48 @@ curl baidu.com
 <p>由于习惯的原因，简洁起见，本文出现的 “shell编程” 都是指 shell 脚本编程，不是指开发 shell 自身。</p>
 <h3 id="shell中文乱码"><a href="#shell中文乱码" class="headerlink" title="shell中文乱码"></a>shell中文乱码</h3><p>修改文件类型为：utf-8</p>
 <img src="/2022/061040991/image-20211224103305667.png" class title="image-20211224103305667">
+
 <img src="/2022/061040991/image-20211224103350347.png" class title="image-20211224103350347">
+
+
+
 <h3 id="Shell-环境"><a href="#Shell-环境" class="headerlink" title="Shell 环境"></a>Shell 环境</h3><p>Shell 编程跟 JavaScript、php 编程一样，只要有一个能编写代码的文本编辑器和一个能解释执行的脚本解释器就可以了。</p>
 <p>Linux 的 Shell 种类众多，常见的有：</p>
 <ul>
-<li>Bourne Shell（/usr/bin/sh或/bin/sh）</li>
-<li>Bourne Again Shell（/bin/bash）</li>
-<li>C Shell（/usr/bin/csh）</li>
-<li>K Shell（/usr/bin/ksh）</li>
-<li>Shell for Root（/sbin/sh）</li>
+<li>Bourne Shell（&#x2F;usr&#x2F;bin&#x2F;sh或&#x2F;bin&#x2F;sh）</li>
+<li>Bourne Again Shell（&#x2F;bin&#x2F;bash）</li>
+<li>C Shell（&#x2F;usr&#x2F;bin&#x2F;csh）</li>
+<li>K Shell（&#x2F;usr&#x2F;bin&#x2F;ksh）</li>
+<li>Shell for Root（&#x2F;sbin&#x2F;sh）</li>
 <li>……</li>
 </ul>
 <p>本教程关注的是 Bash，也就是 Bourne Again Shell，由于易用和免费，Bash 在日常工作中被广泛使用。同时，Bash 也是大多数Linux 系统默认的 Shell。</p>
-<p>在一般情况下，人们并不区分 Bourne Shell 和 Bourne Again Shell，所以，像 <strong>#!/bin/sh</strong>，它同样也可以改为 <strong>#!/bin/bash</strong>。</p>
+<p>在一般情况下，人们并不区分 Bourne Shell 和 Bourne Again Shell，所以，像 <strong>#!&#x2F;bin&#x2F;sh</strong>，它同样也可以改为 <strong>#!&#x2F;bin&#x2F;bash</strong>。</p>
 <p><strong>#!</strong> 告诉系统其后路径所指定的程序即是解释此脚本文件的 Shell 程序。</p>
-<h3 id="第一个shell脚本"><a href="#第一个shell脚本" class="headerlink" title="第一个shell脚本"></a>第一个shell脚本</h3><p>打开文本编辑器(可以使用 vi/vim 命令来创建文件)，新建一个文件 test.sh，扩展名为 sh（sh代表shell），扩展名并不影响脚本执行，见名知意就好，如果你用 php 写 shell 脚本，扩展名就用 php 好了。</p>
+<h3 id="第一个shell脚本"><a href="#第一个shell脚本" class="headerlink" title="第一个shell脚本"></a>第一个shell脚本</h3><p>打开文本编辑器(可以使用 vi&#x2F;vim 命令来创建文件)，新建一个文件 test.sh，扩展名为 sh（sh代表shell），扩展名并不影响脚本执行，见名知意就好，如果你用 php 写 shell 脚本，扩展名就用 php 好了。</p>
 <p>输入一些代码，第一行一般是这样：</p>
 <h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><pre><code>#!/bin/bash
 echo &quot;Hello World !&quot;
-</code></pre><p><strong>#!</strong> 是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell。</p>
+</code></pre>
+<p><strong>#!</strong> 是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell。</p>
 <p>echo 命令用于向窗口输出文本。</p>
-<p>注意：#！和 /bin/bash中间不能有空格</p>
+<p>注意：#！和 &#x2F;bin&#x2F;bash中间不能有空格</p>
 <h3 id="运行-Shell-脚本有两种方法："><a href="#运行-Shell-脚本有两种方法：" class="headerlink" title="运行 Shell 脚本有两种方法："></a>运行 Shell 脚本有两种方法：</h3><p><strong>1、作为可执行程序</strong></p>
 <p>将上面的代码保存为 test.sh，并 cd 到相应目录：</p>
 <pre><code>chmod +x ./test.sh  #使脚本具有执行权限
 ./test.sh  #执行脚本
-</code></pre><p>注意，一定要写成 <strong>./test.sh</strong>，而不是 <strong>test.sh</strong>，运行其它二进制的程序也一样，直接写 test.sh，linux 系统会去 PATH 里寻找有没有叫 test.sh 的，而只有 /bin, /sbin, /usr/bin，/usr/sbin 等在 PATH 里，你的当前目录通常不在 PATH 里，所以写成 test.sh 是会找不到命令的，要用 ./test.sh 告诉系统说，就在当前目录找。</p>
+</code></pre>
+<p>注意，一定要写成 <strong>.&#x2F;test.sh</strong>，而不是 <strong>test.sh</strong>，运行其它二进制的程序也一样，直接写 test.sh，linux 系统会去 PATH 里寻找有没有叫 test.sh 的，而只有 &#x2F;bin, &#x2F;sbin, &#x2F;usr&#x2F;bin，&#x2F;usr&#x2F;sbin 等在 PATH 里，你的当前目录通常不在 PATH 里，所以写成 test.sh 是会找不到命令的，要用 .&#x2F;test.sh 告诉系统说，就在当前目录找。</p>
 <p><strong>2、作为解释器参数</strong></p>
 <p>这种运行方式是，直接运行解释器，其参数就是 shell 脚本的文件名，如：</p>
 <pre><code>/bin/sh test.sh
 /bin/php test.php
-</code></pre><p>这种方式运行的脚本，不需要在第一行指定解释器信息，写了也没用。</p>
+</code></pre>
+<p>这种方式运行的脚本，不需要在第一行指定解释器信息，写了也没用。</p>
 <h3 id="Shell-变量"><a href="#Shell-变量" class="headerlink" title="Shell 变量"></a>Shell 变量</h3><p>定义变量时，变量名不加美元符号（$，PHP语言中变量需要），如：</p>
 <pre><code>your_name=&quot;runoob.com&quot;
-</code></pre><p>注意，变量名和等号之间不能有空格，这可能和你熟悉的所有编程语言都不一样。同时，变量名的命名须遵循如下规则：</p>
+</code></pre>
+<p>注意，变量名和等号之间不能有空格，这可能和你熟悉的所有编程语言都不一样。同时，变量名的命名须遵循如下规则：</p>
 <ul>
 <li>命名只能使用英文字母，数字和下划线，首个字符不能以数字开头。</li>
 <li>中间不能有空格，可以使用下划线（_）。</li>
@@ -1569,47 +1690,57 @@ echo &quot;Hello World !&quot;
 LD_LIBRARY_PATH
 _var
 var2
-</code></pre><p>无效的变量命名：</p>
+</code></pre>
+<p>无效的变量命名：</p>
 <pre><code>?var=123
 user*name=runoob
-</code></pre><p>除了显式地直接赋值，还可以用语句给变量赋值，如：</p>
+</code></pre>
+<p>除了显式地直接赋值，还可以用语句给变量赋值，如：</p>
 <pre><code>for file in `ls /etc`
 或
 for file in $(ls /etc)
-</code></pre><p>以上语句将 /etc 下目录的文件名循环出来。</p>
+</code></pre>
+<p>以上语句将 &#x2F;etc 下目录的文件名循环出来。</p>
 <h3 id="使用变量"><a href="#使用变量" class="headerlink" title="使用变量"></a>使用变量</h3><p>使用一个定义过的变量，只要在变量名前面加美元符号即可，如：</p>
 <pre><code>your_name=&quot;qinjx&quot;
 echo $your_name
 echo $&#123;your_name&#125;
-</code></pre><p>变量名外面的花括号是可选的，加不加都行，加花括号是为了帮助解释器识别变量的边界，比如下面这种情况：</p>
+</code></pre>
+<p>变量名外面的花括号是可选的，加不加都行，加花括号是为了帮助解释器识别变量的边界，比如下面这种情况：</p>
 <pre><code>for skill in Ada Coffe Action Java; do
     echo &quot;I am good at $&#123;skill&#125;Script&quot;
 done
-</code></pre><p>如果不给skill变量加花括号，写成echo “I am good at $skillScript”，解释器就会把$skillScript当成一个变量（其值为空），代码执行结果就不是我们期望的样子了。</p>
+</code></pre>
+<p>如果不给skill变量加花括号，写成echo “I am good at $skillScript”，解释器就会把$skillScript当成一个变量（其值为空），代码执行结果就不是我们期望的样子了。</p>
 <p>推荐给所有变量加上花括号，这是个好的编程习惯。</p>
 <p>已定义的变量，可以被重新定义，如：</p>
 <pre><code>your_name=&quot;tom&quot;
 echo $your_name
 your_name=&quot;alibaba&quot;
 echo $your_name
-</code></pre><p>这样写是合法的，但注意，第二次赋值的时候不能写$your_name=”alibaba”，使用变量的时候才加美元符（$）。</p>
+</code></pre>
+<p>这样写是合法的，但注意，第二次赋值的时候不能写$your_name&#x3D;”alibaba”，使用变量的时候才加美元符（$）。</p>
 <h3 id="只读变量"><a href="#只读变量" class="headerlink" title="只读变量"></a>只读变量</h3><p>使用 readonly 命令可以将变量定义为只读变量，只读变量的值不能被改变。</p>
 <p>下面的例子尝试更改只读变量，结果报错：</p>
 <pre><code>#!/bin/bash
 myUrl=&quot;https://www.google.com&quot;
 readonly myUrl
 myUrl=&quot;https://www.runoob.com&quot;
-</code></pre><p>运行脚本，结果如下：</p>
+</code></pre>
+<p>运行脚本，结果如下：</p>
 <pre><code>/bin/sh: NAME: This variable is read only.
-</code></pre><h3 id="删除变量"><a href="#删除变量" class="headerlink" title="删除变量"></a>删除变量</h3><p>使用 unset 命令可以删除变量。语法：</p>
+</code></pre>
+<h3 id="删除变量"><a href="#删除变量" class="headerlink" title="删除变量"></a>删除变量</h3><p>使用 unset 命令可以删除变量。语法：</p>
 <pre><code>unset variable_name
-</code></pre><p>变量被删除后不能再次使用。unset 命令不能删除只读变量。</p>
+</code></pre>
+<p>变量被删除后不能再次使用。unset 命令不能删除只读变量。</p>
 <p><strong>实例</strong></p>
 <pre><code>#!/bin/sh
 myUrl=&quot;https://www.runoob.com&quot;
 unset myUrl
 echo $myUrl
-</code></pre><p>以上实例执行将没有任何输出。</p>
+</code></pre>
+<p>以上实例执行将没有任何输出。</p>
 <h3 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h3><p>运行shell时，会同时存在三种变量：</p>
 <ul>
 <li><strong>1) 局部变量</strong> 局部变量在脚本或命令中定义，仅在当前shell实例中有效，其他shell启动的程序不能访问局部变量。</li>
@@ -1618,7 +1749,8 @@ echo $myUrl
 </ul>
 <h3 id="Shell-字符串"><a href="#Shell-字符串" class="headerlink" title="Shell 字符串"></a>Shell 字符串</h3><p>字符串是shell编程中最常用最有用的数据类型（除了数字和字符串，也没啥其它类型好用了），字符串可以用单引号，也可以用双引号，也可以不用引号。</p>
 <h4 id="单引号"><a href="#单引号" class="headerlink" title="单引号"></a>单引号</h4><pre><code>str=&#39;this is a string&#39;
-</code></pre><p>单引号字符串的限制：</p>
+</code></pre>
+<p>单引号字符串的限制：</p>
 <ul>
 <li>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；</li>
 <li>单引号字串中不能出现单独一个的单引号（对单引号使用转义符后也不行），但可成对出现，作为字符串拼接使用。</li>
@@ -1626,9 +1758,11 @@ echo $myUrl
 <h4 id="双引号"><a href="#双引号" class="headerlink" title="双引号"></a>双引号</h4><pre><code>your_name=&#39;runoob&#39;
 str=&quot;Hello, I know you are \&quot;$your_name\&quot;! \n&quot;
 echo -e $str
-</code></pre><p>输出结果为：</p>
-<pre><code>Hello, I know you are &quot;runoob&quot;!
-</code></pre><p>双引号的优点：</p>
+</code></pre>
+<p>输出结果为：</p>
+<pre><code>Hello, I know you are &quot;runoob&quot;! 
+</code></pre>
+<p>双引号的优点：</p>
 <ul>
 <li>双引号里可以有变量</li>
 <li>双引号里可以出现转义字符</li>
@@ -1642,10 +1776,12 @@ echo $greeting  $greeting_1
 greeting_2=&#39;hello, &#39;$your_name&#39; !&#39;
 greeting_3=&#39;hello, $&#123;your_name&#125; !&#39;
 echo $greeting_2  $greeting_3
-</code></pre><p>输出结果为：</p>
+</code></pre>
+<p>输出结果为：</p>
 <pre><code>hello, runoob ! hello, runoob !
 hello, runoob ! hello, $&#123;your_name&#125; !
-</code></pre><h4 id="获取字符串长度"><a href="#获取字符串长度" class="headerlink" title="获取字符串长度"></a>获取字符串长度</h4><pre><code>string=&quot;abcd&quot;
+</code></pre>
+<h4 id="获取字符串长度"><a href="#获取字符串长度" class="headerlink" title="获取字符串长度"></a>获取字符串长度</h4><pre><code>string=&quot;abcd&quot;
 echo $&#123;#string&#125; #输出 4
 ```
 
@@ -5414,99 +5550,104 @@ root@ubuntu:~/docker# docker inspect --format '&#123;&#123;json .State.Health&#1
         &#125;
     ]
 &#125;
-</次数></时长></间隔></命令></容器端口></宿主></路径2></路径1></路径></命令></命令></目标路径></源路径></value></varname></default></name></src></dest></src></dest></src></src></scr></src></src></dest></dest></src></dest></src></value></key></value></key></name></value></key></value></key></value></key></digest></tag></digest></image></tag></image></image></Connector></Connector></Connector></Connector></Server></Server></Server></Connector></Connector></Connector></Connector></Connector></Connector></Server></Server></=></)。></&></CTRL-D></CTRL-D></**A></%b></**A\nB**></%s></EOF></code></pre><p>和<code>CMD</code>、<code>NETRYPOINT</code>一样，<code>HEALTHCHECK</code>指令只可以出现一次，如果有多个<code>HEALTHCHECK</code>指令，那么只有最后一个才会生效！！！</p>
+</次数></时长></间隔></命令></容器端口></宿主></路径2></路径1></路径></命令></命令></目标路径></源路径></value></varname></default></name></src></dest></src></dest></src></src></scr></src></src></dest></dest></src></dest></src></value></key></value></key></name></value></key></value></key></value></key></digest></tag></digest></image></tag></image></image></Connector></Connector></Connector></Connector></Server></Server></Server></Connector></Connector></Connector></Connector></Connector></Connector></Server></Server></=></)。></&></CTRL-D></CTRL-D></**A></%b></**A\nB**></%s></EOF></code></pre>
+<p>和<code>CMD</code>、<code>NETRYPOINT</code>一样，<code>HEALTHCHECK</code>指令只可以出现一次，如果有多个<code>HEALTHCHECK</code>指令，那么只有最后一个才会生效！！！</p>
 <h2 id="ONBUILD"><a href="#ONBUILD" class="headerlink" title="ONBUILD"></a>ONBUILD</h2><pre><code>格式ONBUILD [INSTRUCTION]该配置指定当所创建的镜像作为其他新建镜像的基础镜像时所执行的指令。例如下面的Dockerfile创建了镜像A：ONBUILD ADD . /appONBUILD RUN python app.py
-</code></pre><p>``</p>
+</code></pre>
+<p>&#96;&#96;</p>
 <pre><code>ONBUILD`是一个特殊的指令，它后面跟着的是其他指令，比如`COPY`、`RUN`等，而这些命令在当前镜像被构建时，并不会被执行。只有以当前镜像为基础镜像去构建下一级镜像时，才会被执行。格式为：`ONBUILD &lt;其他指令&gt;
-</code></pre><p><code>Dockerfile</code>中的其他指令都是为了构建当前镜像准备的，只有<code>ONBUILD</code>指令是为了帮助别人定制而准备的。例如：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">from ubuntu:16.04
+</code></pre>
+<p><code>Dockerfile</code>中的其他指令都是为了构建当前镜像准备的，只有<code>ONBUILD</code>指令是为了帮助别人定制而准备的。例如：</p>
+<pre class=" language-bash"><code class="language-bash">from ubuntu:16.04
 WORKDIR /data
-ONBUILD RUN mkdir test
+ONBUILD RUN <span class="token function">mkdir</span> <span class="token function">test</span>
 </code></pre>
 <p>此时，我们以此<code>Dockerfile</code>进行构建镜像<code>ubuntu:test</code>，并以此镜像为基础创建并启动一个容器，进入容器后，容器会自动切换到<code>WORKDIR</code>指令下的目录，此时我们使用<code>ls</code>命令会发现在工作目录下，并未创建<code>test</code>文件夹，如下：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">root@ubuntu:~/docker# docker run -it ubuntu:test
-root@3a8f912fd23b:/data# ls
-root@3a8f912fd23b:/data#
+<pre class=" language-bash"><code class="language-bash">root@ubuntu:~/docker<span class="token comment" spellcheck="true"># docker run -it ubuntu:test</span>
+root@3a8f912fd23b:/data<span class="token comment" spellcheck="true"># ls</span>
+root@3a8f912fd23b:/data<span class="token comment" spellcheck="true">#</span>
 </code></pre>
 <p>此时，我们再创建一个<code>Dockerfile</code>，只需一个<code>FROM</code>指令即可，使其继承刚刚我们构建的<code>ubuntu:test</code>镜像，如下：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">FROM ubuntu:test
+<pre class=" language-bash"><code class="language-bash">FROM ubuntu:test
 </code></pre>
 <p>我们再以此<code>Dockerfile</code>构建镜像<code>ubuntu:test_onbuild</code>，并以此镜像为基础创建并启动一个容器，进入容器后，容器会自动切换到<code>WORKDIR</code>指令下的目录，此时我们使用<code>ls</code>命令会发现在工作目录下，已经创建好了一个名为<code>test</code>的文件夹，如下：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">root@ubuntu:~/docker# docker run -it ubuntu:test_onbuild
-root@5394e605b6ea:/data# ls
-test
+<pre class=" language-bash"><code class="language-bash">root@ubuntu:~/docker<span class="token comment" spellcheck="true"># docker run -it ubuntu:test_onbuild</span>
+root@5394e605b6ea:/data<span class="token comment" spellcheck="true"># ls</span>
+<span class="token function">test</span>
 </code></pre>
 <h2 id="LABEL"><a href="#LABEL" class="headerlink" title="LABEL"></a>LABEL</h2><pre><code>LABEL`指令可以为镜像指定标签，其格式为：`LABEL &lt;key1&gt;=&lt;value1&gt; &lt;key2&gt;=&lt;value2&gt; ...
-</code></pre><p><code>LABEL</code>后面是键值对，多个键值对以空格进行隔开，如果value中包含空格，请使用<code>&quot;&quot;</code>将value进行圈起来，如下：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">FROM ubuntu:16.04
-LABEL name=test
-LABEL description="a container is used to test"
+</code></pre>
+<p><code>LABEL</code>后面是键值对，多个键值对以空格进行隔开，如果value中包含空格，请使用<code>&quot;&quot;</code>将value进行圈起来，如下：</p>
+<pre class=" language-bash"><code class="language-bash">FROM ubuntu:16.04
+LABEL name<span class="token operator">=</span>test
+LABEL description<span class="token operator">=</span><span class="token string">"a container is used to test"</span>
 </code></pre>
 <p>我们知道，DockerFile的每一个指令都会新构建一层，所以，上面的<code>LABEL</code>我们可以写成一条指令，用空格进行隔开，如下：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">FROM ubuntu:16.04
-LABEL name=test description="a container is used to test"
+<pre class=" language-bash"><code class="language-bash">FROM ubuntu:16.04
+LABEL name<span class="token operator">=</span>test description<span class="token operator">=</span><span class="token string">"a container is used to test"</span>
 </code></pre>
 <p>为了美观，我们还可以使用<code>\</code>符号进行换行操作。</p>
 <p>要查看镜像的标签，我们可以使用<code>docker inspect</code>命令，如下：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">root@ubuntu:~# docker inspect --format '&#123;&#123;json .Config.Labels&#125;&#125;' test | python3 -m json.tool 
-&#123;
-    "description": "a container is used to test",
-    "name": "test"
-&#125;
+<pre class=" language-bash"><code class="language-bash">root@ubuntu:~<span class="token comment" spellcheck="true"># docker inspect --format '&amp;#123;&amp;#123;json .Config.Labels&amp;#125;&amp;#125;' test | python3 -m json.tool </span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    <span class="token string">"description"</span><span class="token keyword">:</span> <span class="token string">"a container is used to test"</span>,
+    <span class="token string">"name"</span><span class="token keyword">:</span> <span class="token string">"test"</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
 </code></pre>
 <p>其中“test”为容器名称！</p>
 <p>值得注意的是，这里的标签并非是我们一开始将镜像名称中的<code>&lt;仓库&gt;:&lt;标签&gt;</code>，这两者是不一样的！这里标签，类似于签条，注解之类的意思</p>
 <h2 id="MAINTAINER"><a href="#MAINTAINER" class="headerlink" title="MAINTAINER"></a>MAINTAINER</h2><pre><code>MAINTAINER`指令用于指定生成镜像的作者名称，其格式为：`MAINTAINER &lt;name&gt;
-</code></pre><p><code>MAINTAINER</code>指令已经被弃用，可以使用<code>LABEL</code>指令进行替代，如下：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">LABEL maintainer='Stephen Chow'
+</code></pre>
+<p><code>MAINTAINER</code>指令已经被弃用，可以使用<code>LABEL</code>指令进行替代，如下：</p>
+<pre class=" language-bash"><code class="language-bash">LABEL maintainer<span class="token operator">=</span><span class="token string">'Stephen Chow'</span>
 </code></pre>
 <p><code>MAINTAINER</code>指令在一些老的Dockerfile中仍然可以看到，所以还是需要了解一下的！</p>
 <p><strong>docker build</strong><br>创建好Dockerfile之后，通过docker build命令来创建镜像，该命令首先会上传Dockerfile文件给Docker服务器端，服务器端将逐行执行Dockerfile中定义的指令。<br>通常建议放置Dockerfile的目录为空目录。另外可以在目录下创建.dockerignore文件，让Docker忽略路径下的文件和目录，这一点与Git中的配置很相似。</p>
-<p>通过 -t 指定镜像的标签信息，例如：docker build -t regenzm/first_image . ##”.”指定的是Dockerfile所在的路径</p>
+<p>通过 -t 指定镜像的标签信息，例如：docker build -t regenzm&#x2F;first_image . ##”.”指定的是Dockerfile所在的路径</p>
 <h2 id="Docker-history-查看docker镜像构建过程-还原dockerfile"><a href="#Docker-history-查看docker镜像构建过程-还原dockerfile" class="headerlink" title="Docker history 查看docker镜像构建过程 还原dockerfile"></a>Docker history 查看docker镜像构建过程 还原dockerfile</h2><p>介绍：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">docker history --help
-Usage:  docker history [OPTIONS] IMAGE
-Show the history of an image
+<pre class=" language-bash"><code class="language-bash">docker <span class="token function">history</span> --help
+Usage:  docker <span class="token function">history</span> <span class="token punctuation">[</span>OPTIONS<span class="token punctuation">]</span> IMAGE
+Show the <span class="token function">history</span> of an image
 Options:
       --format string   Pretty-print images using a Go template
       --help            Print usage
-  -H, --human           Print sizes and dates in human readable format (default true)
+  -H, --human           Print sizes and dates <span class="token keyword">in</span> human readable <span class="token function">format</span> <span class="token punctuation">(</span>default true<span class="token punctuation">)</span>
       --no-trunc        Don't truncate output
   -q, --quiet           Only show numeric IDs
 </code></pre>
 <p>示例：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">docker history kubeguide/tomcat-app:v1
+<pre class=" language-bash"><code class="language-bash">docker <span class="token function">history</span> kubeguide/tomcat-app:v1
 IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
-a29e200a18e9        2 years ago         /bin/sh -c #(nop) ADD dir:c5c3bddef49cbc9f...   992kB               
-<missing>           2 years ago         /bin/sh -c #(nop) MAINTAINER bestme <bestm...   0B                  
-<missing>           2 years ago         /bin/sh -c #(nop) CMD ["catalina.sh" "run"]     0B                  
-<missing>           2 years ago         /bin/sh -c #(nop) EXPOSE 8080/tcp               0B                  
-<missing>           2 years ago         /bin/sh -c set -e  && nativeLines="$(catal...   0B                  
-<missing>           2 years ago         /bin/sh -c set -x   && curl -fSL "$TOMCAT_...   16.6MB              
-<missing>           2 years ago         /bin/sh -c #(nop) ENV TOMCAT_TGZ_URL=https...   0B                  
-<missing>           2 years ago         /bin/sh -c #(nop) ENV TOMCAT_VERSION=8.0.35     0B                  
-<missing>           2 years ago         /bin/sh -c #(nop) ENV TOMCAT_MAJOR=8            0B                  
-<missing>           2 years ago         /bin/sh -c set -ex  && for key in   05AB33...   114kB               
-<missing>           2 years ago         /bin/sh -c apt-get update && apt-get insta...   7.18MB              
-<missing>           2 years ago         /bin/sh -c &#123;   echo 'deb http://httpredir....   172B                
-<missing>           2 years ago         /bin/sh -c #(nop) ENV OPENSSL_VERSION=1.0....   0B                  
-<missing>           2 years ago         /bin/sh -c #(nop) WORKDIR /usr/local/tomcat     0B                  
-<missing>           2 years ago         /bin/sh -c mkdir -p "$CATALINA_HOME"            0B                  
-<missing>           2 years ago         /bin/sh -c #(nop) ENV PATH=/usr/local/tomc...   0B                  
-<missing>           2 years ago         /bin/sh -c #(nop) ENV CATALINA_HOME=/usr/l...   0B                  
-<missing>           2 years ago         /bin/sh -c set -x  && apt-get update  && a...   163MB               
-<missing>           2 years ago         /bin/sh -c #(nop) ENV JAVA_DEBIAN_VERSION=...   0B                  
-<missing>           2 years ago         /bin/sh -c #(nop) ENV JAVA_VERSION=7u101        0B                  
-<missing>           2 years ago         /bin/sh -c #(nop) ENV JAVA_HOME=/usr/lib/j...   0B                  
-<missing>           2 years ago         /bin/sh -c &#123;   echo '#!/bin/sh';   echo 's...   87B                 
-<missing>           2 years ago         /bin/sh -c #(nop) ENV LANG=C.UTF-8              0B                  
-<missing>           2 years ago         /bin/sh -c apt-get update && apt-get insta...   1.17MB              
-<missing>           2 years ago         /bin/sh -c apt-get update && apt-get insta...   44.3MB              
-<missing>           2 years ago         /bin/sh -c #(nop) CMD ["/bin/bash"]             0B                  
-<missing>           2 years ago         /bin/sh -c #(nop) ADD file:5d8521419ad6cfb...   125MB
+a29e200a18e9        2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ADD dir:c5c3bddef49cbc9f...   992kB               </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) MAINTAINER bestme &lt;bestm...   0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) CMD ["catalina.sh" "run"]     0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) EXPOSE 8080/tcp               0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token keyword">set</span> -e  <span class="token operator">&amp;&amp;</span> nativeLines<span class="token operator">=</span><span class="token string">"$(catal...   0B                  
+&lt;missing>           2 years ago         /bin/sh -c set -x   &amp;&amp; curl -fSL "</span><span class="token variable">$TOMCAT_</span><span class="token punctuation">..</span>.   16.6MB              
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ENV TOMCAT_TGZ_URL=https...   0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ENV TOMCAT_VERSION=8.0.35     0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ENV TOMCAT_MAJOR=8            0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token keyword">set</span> -ex  <span class="token operator">&amp;&amp;</span> <span class="token keyword">for</span> key <span class="token keyword">in</span>   05AB33<span class="token punctuation">..</span>.   114kB               
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token function">apt-get</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> insta<span class="token punctuation">..</span>.   7.18MB              
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;   echo 'deb http://httpredir....   172B                </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ENV OPENSSL_VERSION=1.0....   0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) WORKDIR /usr/local/tomcat     0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token function">mkdir</span> -p <span class="token string">"<span class="token variable">$CATALINA_HOME</span>"</span>            0B                  
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ENV PATH=/usr/local/tomc...   0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ENV CATALINA_HOME=/usr/l...   0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token keyword">set</span> -x  <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> update  <span class="token operator">&amp;&amp;</span> a<span class="token punctuation">..</span>.   163MB               
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ENV JAVA_DEBIAN_VERSION=...   0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ENV JAVA_VERSION=7u101        0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ENV JAVA_HOME=/usr/lib/j...   0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;   echo '#!/bin/sh';   echo 's...   87B                 </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ENV LANG=C.UTF-8              0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token function">apt-get</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> insta<span class="token punctuation">..</span>.   1.17MB              
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token function">apt-get</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> insta<span class="token punctuation">..</span>.   44.3MB              
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) CMD ["/bin/bash"]             0B                  </span>
+<span class="token operator">&lt;</span>missing<span class="token operator">></span>           2 years ago         /bin/sh -c <span class="token comment" spellcheck="true">#(nop) ADD file:5d8521419ad6cfb...   125MB</span>
 </code></pre>
-<p>如果要让CREATED BY 列完整显示，可以加上 —no-trunc 参数。直接在shell中看会比较乱，可以输出到文件查看，就比较直观了</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">docker history --no-trunc 镜像:tag
+<p>如果要让CREATED BY 列完整显示，可以加上 –no-trunc 参数。直接在shell中看会比较乱，可以输出到文件查看，就比较直观了</p>
+<pre class=" language-bash"><code class="language-bash">docker <span class="token function">history</span> --no-trunc 镜像:tag
 </code></pre>
 <h1 id="docker学习路线指引"><a href="#docker学习路线指引" class="headerlink" title="docker学习路线指引"></a>docker学习路线指引</h1><p>在上一节课 <a target="_blank" rel="noopener" href="http://baijiahao.baidu.com/s?id=1701153261049761046">docker学习00-容器技术产生的背景</a> 中，我们讨论了容器技术产生的背景，和容器所解决的痛点问题，可见，容器技术的产生，可以显著地提高生产力，方便开发和运维工作，甚至推动了整个IT架构的演进。也让DEVOPS成为了可能！</p>
 <p>那么在容器技术领域，有着许多的技术实现，比如LXC容器、OpenVZ，CoreOS rkt（备注: coreos已经被redhat收购），Containerd 、docker等等，这些都可以作为容器运行。</p>
@@ -5515,6 +5656,9 @@ a29e200a18e9        2 years ago         /bin/sh -c #(nop) ADD dir:c5c3bddef49cbc
 <p>好了，上面是一些背景知识，现在，接下来就可以开始docker的学习了。学习docker之前，我们要先了解要学习哪些内容，这样，才不至于，只见树木不见森林！</p>
 <p>docker学习中，将学习哪些内容呢？下面是学习路线：</p>
 <img src="/2022/061040991/241f95cad1c8a7864903d91c99435f3570cf504e.jpeg" class title="img">
+
+
+
 <h3 id="docker初探"><a href="#docker初探" class="headerlink" title="docker初探"></a>docker初探</h3><p>带你初步认识docker，体验docker的魅力 </p>
 <ul>
 <li>docker安装：这一章节，将会介绍，docker的安装方式</li>
@@ -5552,15 +5696,21 @@ a29e200a18e9        2 years ago         /bin/sh -c #(nop) ADD dir:c5c3bddef49cbc
 <li><p>基于 tomcat9镜像，使用Dockerfile创建项目镜像</p>
 <ul>
 <li><p>搭建静态网站</p>
-<p>```<br>//Dockerfile<br>FROM tomcat:9.0-jdk8-corretto<br>RUN mkdir $CATALINA_HOME/webapps/ROOT<br>ADD index.html $CATALINA_HOME/webapps/ROOT/index.html<br>CMD [“catalina.sh”,”run”]</p>
-<p>//运行镜像<br>docker run —name tomcat -d -p 80:8080 镜像id</p>
-<p>//测试<br><a target="_blank" rel="noopener" href="http://主机id">http://主机id</a></p>
+<pre><code>//Dockerfile
+FROM tomcat:9.0-jdk8-corretto
+RUN mkdir $CATALINA_HOME/webapps/ROOT
+ADD index.html $CATALINA_HOME/webapps/ROOT/index.html
+CMD [&quot;catalina.sh&quot;,&quot;run&quot;]
+
+//运行镜像
+docker run --name tomcat -d -p 80:8080 镜像id
+
+//测试
+http://主机id
+
+
+</code></pre>
 </li>
-</ul>
-</li>
-</ol>
-<pre><code> ```
-</code></pre><ul>
 <li><p>搭建动态网站</p>
 <pre><code>//压缩文件
 tar -zcvf app.tar.gz *
@@ -5576,9 +5726,10 @@ docker run --name tomcat -d -p 80:8080 镜像id
 
 //测试
 http://主机id
-</code></pre></li>
+</code></pre>
+</li>
 </ul>
-<ol>
+</li>
 <li><p>基于mysql5.7镜像，使用Dockerfile创建项目的数据库镜像</p>
 <ul>
 <li><p>启动mysql服务器</p>
@@ -5596,7 +5747,8 @@ ADD init.sql .
 //--name=&quot;nginx-lb&quot;: 为容器指定一个名称；
 //-p: 指定端口映射，格式为：主机(宿主)端口:容器端口
 docker run -e MYSQL_ROOT_PASSWORD=root --name mysql -it -d -p 5001:3306  镜像Id
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>init.sql文件(注意文件类型编码为：utf8，回车换行符为：linux)</p>
 <pre><code>CREATE DATABASE `mydb` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
@@ -5614,11 +5766,10 @@ INSERT INTO `dept` VALUES (20, &#39;RESEARCH&#39;, &#39;DALLAS&#39;);
 INSERT INTO `dept` VALUES (30, &#39;SALES&#39;, &#39;CHICAGO&#39;);
 INSERT INTO `dept` VALUES (40, &#39;OPERATIONS&#39;, &#39;BOSTON&#39;);
 INSERT INTO `dept` VALUES (50, &#39;hr2&#39;, &#39;sy3&#39;);
-</code></pre></li>
-</ul>
+</code></pre>
 </li>
-</ol>
-<ol>
+</ul>
+<ol start="3">
 <li><p>把mysql容器连接到tomcat容器</p>
 <pre><code># 先删除mysql容器
 docker rm -f mysql容器id
@@ -5626,33 +5777,39 @@ docker rm -f mysql容器id
 #重新创建mysql容器，并连接到tomcat
 # --net=container:tomcat 把新容器连接到tomcat容器的同一网络（共享网络空间）
  docker run -e MYSQL_ROOT_PASSWORD=root --name mysql -it -d --net=container:tomcat mysql镜像Id
-
+ 
  #测试
  http://主机id/dept/getAll.action
-</code></pre></li>
+</code></pre>
+</li>
+</ol>
+</li>
 </ol>
 <h1 id="查看镜像详细信息"><a href="#查看镜像详细信息" class="headerlink" title="查看镜像详细信息"></a>查看镜像详细信息</h1><p>通过 <code>docker inspect</code> 命令，我们可以获取镜像的详细信息，其中，包括创建者，各层的数字摘要等</p>
 <pre><code>docker inspect 镜像Id
-</code></pre><h1 id="查看镜像历史"><a href="#查看镜像历史" class="headerlink" title="查看镜像历史"></a>查看镜像历史</h1><p>通过 <code>docker history</code> 命令，可以列出各个层（layer）的创建信息</p>
+</code></pre>
+<h1 id="查看镜像历史"><a href="#查看镜像历史" class="headerlink" title="查看镜像历史"></a>查看镜像历史</h1><p>通过 <code>docker history</code> 命令，可以列出各个层（layer）的创建信息</p>
 <pre><code>docker history
-</code></pre><h1 id="容器运行后休眠"><a href="#容器运行后休眠" class="headerlink" title="容器运行后休眠"></a>容器运行后休眠</h1><pre><code># 容器运行后一直休眠 infinity（永远）
+</code></pre>
+<h1 id="容器运行后休眠"><a href="#容器运行后休眠" class="headerlink" title="容器运行后休眠"></a>容器运行后休眠</h1><pre><code># 容器运行后一直休眠 infinity（永远）
 docker run -d 镜像Id sleep infinity
 
 #在容器中直接执行命令
 docker exec 容器id cat /etc/hosts
-</code></pre><h1 id="图形化管理Docker"><a href="#图形化管理Docker" class="headerlink" title="图形化管理Docker"></a>图形化管理Docker</h1><p>Portainer，这是一款由Docker核心贡献者之一开发的工具。Portainer的前身是DockerUI</p>
+</code></pre>
+<h1 id="图形化管理Docker"><a href="#图形化管理Docker" class="headerlink" title="图形化管理Docker"></a>图形化管理Docker</h1><p>Portainer，这是一款由Docker核心贡献者之一开发的工具。Portainer的前身是DockerUI</p>
 <pre><code>docker run -d -p 9000:9000 \
  -v /var/run/docker.sock:/var/run/docker.sock \
  portainer/portainer -H unix:///var/run/docker.sock
-
+ 
  或
-
+ 
   docker run -d --restart=always -p 9000:9000 \
  -v /var/run/docker.sock:/var/run/docker.sock \
  -v portainer_data:/data \
  -v /public:/public \
  --name=portainer portainer/portainer
-
+ 
  运行参数信息：
 -d：容器在后台运行；
 -p 80:9000 ：宿主机80端口映射容器中的9000端口，前一个80是宿主机端口，后一个9000是docker内部应用端口
@@ -5661,24 +5818,28 @@ docker exec 容器id cat /etc/hosts
 –name=portainer:指定运行portainer容器的名称为portainer，以后再次运行时只需通过docker run portainer来运行了
 --restart=always: 实现容器在宿主机开机时自启动
 --privileged：映射文件最高权限，可以进行读写操作
-</code></pre><p>执行上述命令将会在后台启动一个portainer容器。如果现在访问 <a target="_blank" rel="noopener" href="http://localhost:9000">http://localhost:9000</a> ，可以在看板上看到机器上运行的Docker的简要信息。</p>
+</code></pre>
+<p>执行上述命令将会在后台启动一个portainer容器。如果现在访问 <a target="_blank" rel="noopener" href="http://localhost:9000/">http://localhost:9000</a> ，可以在看板上看到机器上运行的Docker的简要信息。</p>
 <p>解决错误：<strong>WARNING: IPv4 forwarding is disabled. Networking will not work.</strong></p>
 <p>解决方法:</p>
-<p>第一步：找到文件 ：vim /usr/lib/sysctl.d/00-system.conf</p>
-<p> 添加代码：net.ipv4.ip_forward=1</p>
+<p>第一步：找到文件 ：vim &#x2F;usr&#x2F;lib&#x2F;sysctl.d&#x2F;00-system.conf</p>
+<p> 添加代码：net.ipv4.ip_forward&#x3D;1</p>
 <p>第二步：重启network服务和docker服务：</p>
 <p> systemctl restart network &amp;&amp; systemctl restart docker</p>
 <p>第三步：重启建容器</p>
 <h2 id="汉化"><a href="#汉化" class="headerlink" title="汉化"></a>汉化</h2><p>可以下载汉化包之后解压，并将解压后的public文件夹上传到centos系统的根目录下</p>
 <img src="/2022/061040991/image-20220101110247704.png" class title="image-20220101110247704">
+
 <p>然后执行以下命令：（如果已部署，需要将之前的容器删除）</p>
 <pre><code>docker run -d --restart=always -p 9000:9000 \
 &gt;  -v /var/run/docker.sock:/var/run/docker.sock \
 &gt;  -v portainer_data:/data \
 &gt;  -v /public:/public \
 &gt;  --name=portainer portainer/portainer
-</code></pre><p>汉化后效果图：</p>
+</code></pre>
+<p>汉化后效果图：</p>
 <img src="/2022/061040991/image-20220101110436310.png" class title="image-20220101110436310">
+
 <h1 id="镜像导出与导入"><a href="#镜像导出与导入" class="headerlink" title="镜像导出与导入"></a>镜像导出与导入</h1><pre><code>#导出
 docker save -o debian.tar 镜像Id
 
@@ -5687,24 +5848,29 @@ docker load &lt; debian.tar
 
 #导入后没有tag，打标签
 docker tag 镜像id  debian:latest
-</code></pre><h1 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker Compose"></a>Docker Compose</h1><h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><ol>
+</code></pre>
+<h1 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker Compose"></a>Docker Compose</h1><h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><ol>
 <li><p>安装 pip</p>
 <pre><code> yum install python-pip
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>4343</p>
 <pre><code>yum install python3-pip
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>44</p>
 <pre><code>pip3 install docker-compose
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>测试</p>
 <pre><code>docker-compose -v
 结果
 docker-compose version 1.29.2, build unknown
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>配置 wordpress</p>
 <pre><code>version: &quot;3.9&quot;
-
+    
 services:
   db:
     image: mysql:5.7
@@ -5716,7 +5882,7 @@ services:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
-
+    
   wordpress:
     depends_on:
       - db
@@ -5734,13 +5900,16 @@ services:
 volumes:
   db_data: &#123;&#125;
   wordpress_data: &#123;&#125;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>安装 wordpress</p>
 <pre><code>docker-compose up -d
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>测试：</p>
 <pre><code>http://ip:8000
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 
                 
@@ -6179,7 +6348,7 @@ volumes:
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">204.9k</span>
+                        class="white-color">218.5k</span>
             
             
             

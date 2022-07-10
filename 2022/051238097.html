@@ -341,14 +341,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4k
+                    4.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    19 分
+                    22 分
                 </div>
                 
 
@@ -366,23 +366,27 @@
                 <h1 id="Swagger"><a href="#Swagger" class="headerlink" title="Swagger"></a>Swagger</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013735734/article/details/103249989">https://blog.csdn.net/u013735734/article/details/103249989</a></p>
 <p>前言<br>目前来说，在 Java 领域使用 Springboot 构建微服务是比较流行的，在构建微服务时，我们大多数会选择暴漏一个 REST API 以供调用。又或者公司采用前后端分离的开发模式，让前端和后端的工作由完全不同的工程师进行开发完成。不管是微服务还是这种前后端分离开发，维持一份完整的及时更新的 REST API 文档，会极大的提高我们的工作效率。而传统的文档更新方式（如手动编写），很难保证文档的及时性，经常会年久失修，失去应有的意义。因此选择一种新的 API 文档维护方式很有必要，这也是这篇文章要介绍的内容。</p>
 <h2 id="OpenAPI-规范介绍"><a href="#OpenAPI-规范介绍" class="headerlink" title="OpenAPI 规范介绍"></a>OpenAPI 规范介绍</h2><img src="/2022/051238097/2019112609090982.png" class title="img">
+
+
 <p>OpenAPI Specification 简称 OAS，中文也称 OpenAPI 描述规范，使用 OpenAPI 文件可以描述整个 API，它制定了一套的适合通用的与语言无关的 REST API 描述规范，如 API 路径规范、请求方法规范、请求参数规范、返回格式规范等各种相关信息，使人类和计算机都可以不需要访问源代码就可以理解和使用服务的功能。</p>
 <p>下面是 OpenAPI 规范中建议的 API 设计规范，基本路径设计规范。</p>
 <img src="/2022/051238097/image-20220613214902679.png" class title="image-20220613214902679">
+
 <p>对于传参的设计也有规范，可以像下面这样：</p>
-<p>路径参数, 例如 /users/{id}<br>查询参数, 例如 /users?role=未读代码<br>header 参数, 例如 X-MyHeader: Value<br>cookie 参数, 例如 Cookie: debug=0; csrftoken=BUSe35dohU3O1MZvDCU<br>OpenAPI 规范的东西远远不止这些，目前 OpenAPI 规范最新版本是 3.0.2，如果你想了解更多的 OpenAPI 规范，可以访问下面的链接。<br>OpenAPI Specification (<a target="_blank" rel="noopener" href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md">https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md</a>)</p>
+<p>路径参数, 例如 &#x2F;users&#x2F;{id}<br>查询参数, 例如 &#x2F;users?role&#x3D;未读代码<br>header 参数, 例如 X-MyHeader: Value<br>cookie 参数, 例如 Cookie: debug&#x3D;0; csrftoken&#x3D;BUSe35dohU3O1MZvDCU<br>OpenAPI 规范的东西远远不止这些，目前 OpenAPI 规范最新版本是 3.0.2，如果你想了解更多的 OpenAPI 规范，可以访问下面的链接。<br>OpenAPI Specification (<a target="_blank" rel="noopener" href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md">https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md</a>)</p>
 <h2 id="Swagger-介绍"><a href="#Swagger-介绍" class="headerlink" title="Swagger 介绍"></a>Swagger 介绍</h2><img src="/2022/051238097/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3MzU3MzQ=,size_16,color_FFFFFF,t_70.png" class title="img">
+
 <p>很多人都以为 Swagger 只是一个接口文档生成框架，其实并不是。 Swagger 是一个围绕着 OpenAPI Specification（OAS，中文也称 OpenAPI规范）构建的一组开源工具。可以帮助你从 API 的设计到 API 文档的输出再到 API 的测试，直至最后的 API 部署等整个 API 的开发周期提供相应的解决方案，是一个庞大的项目。 Swagger 不仅免费，而且开源，不管你是企业用户还是个人玩家，都可以使用 Swagger 提供的方案构建令人惊艳的 REST API。</p>
 <p>Swagger 有几个主要的产品。</p>
-<p>Swagger Editor – 一个基于浏览器的 Open API 规范编辑器。<br>Swagger UI – 一个将 OpenAPI 规范呈现为可交互在线文档的工具。<br>Swagger Codegen – 一个根据 OpenAPI 生成调用代码的工具。<br>如果你想了解更多信息，可以访问 Swagger 官方网站 <a target="_blank" rel="noopener" href="https://swagger.io。">https://swagger.io。</a></p>
-<ol>
+<p>Swagger Editor – 一个基于浏览器的 Open API 规范编辑器。<br>Swagger UI – 一个将 OpenAPI 规范呈现为可交互在线文档的工具。<br>Swagger Codegen – 一个根据 OpenAPI 生成调用代码的工具。<br>如果你想了解更多信息，可以访问 Swagger 官方网站 <a target="_blank" rel="noopener" href="https://swagger.io./">https://swagger.io。</a></p>
+<ol start="3">
 <li>Springfox 介绍<br>源于 Java 中 Spring 框架的流行，让一个叫做 Marrty Pitt 的老外有了为 SpringMVC 添加接口描述的想法，因此他创建了一个遵守 OpenAPI 规范（OAS）的项目，取名为 swagger-springmvc，这个项目可以让 Spring 项目自动生成 JSON 格式的 OpenAPI 文档。这个框架也仿照了 Spring 项目的开发习惯，使用注解来进行信息配置。</li>
 </ol>
 <p>后来这个项目发展成为 Springfox，再后来扩展出 springfox-swagger2 ，为了让 JSON 格式的 API 文档更好的呈现，又出现了 springfox-swagger-ui 用来展示和测试生成的 OpenAPI 。这里的 springfox-swagger-ui 其实就是上面介绍的 Swagger-ui，只是它被通过 webjar 的方式打包到 jar 包内，并通过 maven 的方式引入进来。</p>
 <p>上面提到了 Springfox-swagger2 也是通过注解进行信息配置的，那么是怎么使用的呢？下面列举常用的一些注解，这些注解在下面的 Springboot 整合 Swagger 中会用到。</p>
 <img src="/2022/051238097/image-20220613215215709.png" class title="image-20220613215215709">
 <p>更多的 Springfox 介绍，可以访问 Springfox 官方网站。</p>
-<p>Springfox Reference Documentation (<a target="_blank" rel="noopener" href="http://springfox.github.io">http://springfox.github.io</a>)</p>
+<p>Springfox Reference Documentation (<a target="_blank" rel="noopener" href="http://springfox.github.io/">http://springfox.github.io</a>)</p>
 <h2 id="Springboot-整合-Swagger"><a href="#Springboot-整合-Swagger" class="headerlink" title="Springboot 整合 Swagger"></a>Springboot 整合 Swagger</h2><p>就目前来说 ，Springboot 框架是非常流行的微服务框架，在微服务框架下，很多时候我们都是直接提供 REST API 的。REST API 如果没有文档的话，使用者就很头疼了。不过不用担心，上面说了有一位叫 Marrty Pitt 的老外已经创建了一个发展成为 Springfox 的项目，可以方便的提供 JSON 格式的 OpenAPI 规范和文档支持。且扩展出了 springfox-swagger-ui 用于页面的展示。</p>
 <p>需要注意的是，这里使用的所谓的 Swagger 其实和真正的 Swagger 并不是一个东西，这里使用的是 Springfox 提供的 Swagger 实现。它们都是基于 OpenAPI 规范进行 API 构建。所以也都可以 Swagger-ui 进行 API 的页面呈现。</p>
 <h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><h3 id="导入依赖"><a href="#导入依赖" class="headerlink" title="导入依赖"></a>导入依赖</h3><pre><code>&lt;dependency&gt;
@@ -390,7 +394,8 @@
     &lt;artifactId&gt;springfox-boot-starter&lt;/artifactId&gt;
     &lt;version&gt;3.0.0&lt;/version&gt;
 &lt;/dependency&gt;
-</code></pre><h3 id="添加配置类"><a href="#添加配置类" class="headerlink" title="添加配置类"></a>添加配置类</h3><pre><code>import io.swagger.annotations.ApiOperation;
+</code></pre>
+<h3 id="添加配置类"><a href="#添加配置类" class="headerlink" title="添加配置类"></a>添加配置类</h3><pre><code>import io.swagger.annotations.ApiOperation;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.Bean;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -432,7 +437,8 @@ public class Swagger3Config &#123;
                 .build();
     &#125;
 &#125;
-</code></pre><h3 id="注解类和方法"><a href="#注解类和方法" class="headerlink" title="注解类和方法"></a>注解类和方法</h3><pre><code>package com.neu.springbootdemo1.controller;
+</code></pre>
+<h3 id="注解类和方法"><a href="#注解类和方法" class="headerlink" title="注解类和方法"></a>注解类和方法</h3><pre><code>package com.neu.springbootdemo1.controller;
 
 import com.neu.springbootdemo1.entity.Dept;
 import com.neu.springbootdemo1.entity.Result;
@@ -487,10 +493,13 @@ public class DeptController &#123;
     public Result delete(@PathVariable(&quot;deptno&quot;) long deptno)&#123;
         return new Result(deptService.deleteByPrimaryKey(deptno));
     &#125;
-
+    
 &#125;
-</code></pre><h3 id="运行测试"><a href="#运行测试" class="headerlink" title="运行测试"></a>运行测试</h3><pre><code>http://localhost:8086/swagger-ui/index.html
-</code></pre><img src="/2022/051238097/image-20220613220028731.png" class title="image-20220613220028731">
+</code></pre>
+<h3 id="运行测试"><a href="#运行测试" class="headerlink" title="运行测试"></a>运行测试</h3><pre><code>http://localhost:8086/swagger-ui/index.html
+</code></pre>
+<img src="/2022/051238097/image-20220613220028731.png" class title="image-20220613220028731">
+
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ol>
 <li><p>新建一个maven项目</p>
 </li>
@@ -573,288 +582,318 @@ public class DeptController &#123;
         &lt;/dependency&gt;
     &lt;/dependencies&gt;
 &lt;/project&gt;
-</code></pre></li>
-<li><p>配置 resources 目录下的 spring-mvc.xml文件</p>
-<p>```<br>&lt;?xml version=”1.0” encoding=”UTF-8”?&gt;</p>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context" xsi:schemalocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
-    <!-- 启用mvc注解驱动 -->
-    <mvc:annotation-driven></mvc:annotation-driven>
-    <!-- 组件扫描 -->
-    <context:component-scan base-package="com.neu.controller"></context:component-scan>
-    <!-- 配置视图解析器,把逻辑视图名转换为物理视图名 -->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/jsp/"></property>
-        <property name="suffix" value=".jsp"></property>
-    </bean>
-
-    <bean class="com.neu.SwaggerConfig">
-
-    <mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/">
-    <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/">
-</mvc:resources></mvc:resources></bean></beans>
-
-
+</code></pre>
 </li>
+<li><p>配置 resources 目录下的 spring-mvc.xml文件</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd&quot;&gt;
+    &lt;!-- 启用mvc注解驱动 --&gt;
+    &lt;mvc:annotation-driven&gt;&lt;/mvc:annotation-driven&gt;
+    &lt;!-- 组件扫描 --&gt;
+    &lt;context:component-scan base-package=&quot;com.neu.controller&quot;&gt;&lt;/context:component-scan&gt;
+    &lt;!-- 配置视图解析器,把逻辑视图名转换为物理视图名 --&gt;
+    &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+
+    &lt;bean class=&quot;com.neu.SwaggerConfig&quot; /&gt;
+
+    &lt;mvc:resources mapping=&quot;swagger-ui.html&quot; location=&quot;classpath:/META-INF/resources/&quot; /&gt;
+    &lt;mvc:resources mapping=&quot;/webjars/**&quot; location=&quot;classpath:/META-INF/resources/webjars/&quot; /&gt;
+&lt;/beans&gt;
+
+</code></pre>
+</li>
+<li><p>配置 web.xml 文件</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;web-app xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot; xmlns:web=&quot;http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot;
+    xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd&quot;
+    version=&quot;3.0&quot;&gt;
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;DispatcherServlet&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+        &lt;init-param&gt;
+            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+            &lt;param-value&gt;classpath:spring-mvc.xml&lt;/param-value&gt;
+        &lt;/init-param&gt;
+        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+    &lt;/servlet&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;DispatcherServlet&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;*.do&lt;/url-pattern&gt;
+        &lt;url-pattern&gt;/swagger/*&lt;/url-pattern&gt;
+        &lt;url-pattern&gt;/api-docs&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;DispatcherServlet&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;*.action&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;
+</code></pre>
+</li>
+<li><p>添加 配置类 SwaggerConfig</p>
+<pre><code>package com.neu;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+@Configuration
+@EnableWebMvc
+@EnableSwagger2
+public class SwaggerConfig&#123;
+    @Bean
+    public Docket api() &#123;
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()            .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
+                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                .build()
+                .apiInfo(apiInfo());
+    &#125;
+    private ApiInfo apiInfo() &#123;
+        return new ApiInfoBuilder()
+                .title(&quot;监管平台-国际版API&quot;)
+                .description(&quot;http不对外开放接口&quot;)
+                .version(&quot;1.0.0&quot;)
+                .termsOfServiceUrl(&quot;http://xxx.xxx.com&quot;)
+                .license(&quot;假装这里有license&quot;)
+                .licenseUrl(&quot;http://xxx.xxx.com&quot;)
+                .build();
+    &#125;
+
+&#125;
+</code></pre>
+</li>
+<li><p>编写控制器（没有与接口内容对应匹配）</p>
+<pre><code>package com.neu.controller;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+@Api(value = &quot;User控制器&quot;)
+@RestController
+public class HelloController &#123;
+    @ApiOperation(value=&quot;创建用户&quot;, notes=&quot;根据User对象创建用户&quot;)
+    @ApiImplicitParam(name = &quot;user&quot;, value = &quot;用户详细实体user&quot;, required = true, dataType = &quot;User&quot;)
+    @RequestMapping(value=&quot;hi&quot;,method = &#123;RequestMethod.GET&#125;)
+    public String hi()&#123;
+        return &quot;hi&quot;;
+    &#125;
+&#125;
+</code></pre>
+</li>
+<li><p>测试：</p>
+<pre><code>http://localhost:8089/swagger/swagger-ui.html
+
+或
+http://localhost:8089/doc.html
+</code></pre>
+<img src="/2022/051238097/image-20210820092725302.png" class title="image-20210820092725302"></li>
 </ol>
-<pre><code>
-4. 配置 web.xml 文件
-</code></pre><p>   &lt;?xml version=”1.0” encoding=”UTF-8”?&gt;<br>   <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemalocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0"><br>       <servlet><br>           <servlet-name>DispatcherServlet&lt;/servlet-name&gt;<br>           <servlet-class>org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;<br>           <init-param><br>               <param-name>contextConfigLocation&lt;/param-name&gt;<br>               <param-value>classpath:spring-mvc.xml&lt;/param-value&gt;<br>           &lt;/init-param&gt;<br>           <load-on-startup>1&lt;/load-on-startup&gt;
-       </load-on-startup></param-value></param-name></init-param></servlet-class></servlet-name></servlet><br>       <servlet-mapping><br>           <servlet-name>DispatcherServlet&lt;/servlet-name&gt;<br>           <url-pattern><em>.do&lt;/url-pattern&gt;<br>           <url-pattern>/swagger/</url-pattern></em>&lt;/url-pattern&gt;<br>           <url-pattern>/api-docs&lt;/url-pattern&gt;<br>       &lt;/servlet-mapping&gt;<br>       <servlet-mapping><br>           <servlet-name>DispatcherServlet&lt;/servlet-name&gt;<br>           <url-pattern>*.action&lt;/url-pattern&gt;<br>       &lt;/servlet-mapping&gt;<br>   &lt;/web-app&gt;</url-pattern></servlet-name></servlet-mapping></url-pattern></url-pattern></servlet-name></servlet-mapping></web-app></p>
-<pre><code>
-5. 添加 配置类 SwaggerConfig
-</code></pre><p>   package com.neu;</p>
-<p>   import io.swagger.annotations.Api;<br>   import io.swagger.annotations.ApiOperation;<br>   import org.springframework.context.annotation.Bean;<br>   import org.springframework.context.annotation.Configuration;<br>   import org.springframework.web.servlet.config.annotation.EnableWebMvc;<br>   import springfox.documentation.builders.ApiInfoBuilder;<br>   import springfox.documentation.builders.RequestHandlerSelectors;<br>   import springfox.documentation.service.ApiInfo;<br>   import springfox.documentation.spi.DocumentationType;<br>   import springfox.documentation.spring.web.plugins.Docket;<br>   import springfox.documentation.swagger2.annotations.EnableSwagger2;</p>
-<p>   @Configuration<br>   @EnableWebMvc<br>   @EnableSwagger2<br>   public class SwaggerConfig{<br>       @Bean<br>       public Docket api() {<br>           return new Docket(DocumentationType.SWAGGER_2)<br>                   .select()            .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))<br>                   .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))<br>                   .build()<br>                   .apiInfo(apiInfo());<br>       }<br>       private ApiInfo apiInfo() {<br>           return new ApiInfoBuilder()<br>                   .title(“监管平台-国际版API”)<br>                   .description(“http不对外开放接口”)<br>                   .version(“1.0.0”)<br>                   .termsOfServiceUrl(“<a target="_blank" rel="noopener" href="http://xxx.xxx.com">http://xxx.xxx.com</a>“)<br>                   .license(“假装这里有license”)<br>                   .licenseUrl(“<a target="_blank" rel="noopener" href="http://xxx.xxx.com">http://xxx.xxx.com</a>“)<br>                   .build();<br>       }</p>
-<p>   }</p>
-<pre><code>
-6. 编写控制器（没有与接口内容对应匹配）
-</code></pre><p>   package com.neu.controller;</p>
-<p>   import io.swagger.annotations.Api;<br>   import io.swagger.annotations.ApiImplicitParam;<br>   import io.swagger.annotations.ApiOperation;<br>   import org.springframework.web.bind.annotation.RequestMapping;<br>   import org.springframework.web.bind.annotation.RequestMethod;<br>   import org.springframework.web.bind.annotation.RestController;</p>
-<p>   @Api(value = “User控制器”)<br>   @RestController<br>   public class HelloController {<br>       @ApiOperation(value=”创建用户”, notes=”根据User对象创建用户”)<br>       @ApiImplicitParam(name = “user”, value = “用户详细实体user”, required = true, dataType = “User”)<br>       @RequestMapping(value=”hi”,method = {RequestMethod.GET})<br>       public String hi(){<br>           return “hi”;<br>       }<br>   }</p>
-<pre><code>
-7. 测试：
-</code></pre><p>   <a target="_blank" rel="noopener" href="http://localhost:8089/swagger/swagger-ui.html">http://localhost:8089/swagger/swagger-ui.html</a></p>
-<p>   或<br>   <a target="_blank" rel="noopener" href="http://localhost:8089/doc.html">http://localhost:8089/doc.html</a></p>
-<pre><code>
-   &#123;% asset_img image-20210820092725302.png image-20210820092725302 %&#125;
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>注解	属性	备注</p>
+<h3 id="Api"><a href="#Api" class="headerlink" title="@Api"></a>@Api</h3><p>用于类上，说明该类的作用。可以标记一个Controller类做为swagger 文档资源</p>
+<p>示例：</p>
+<p>@Api(value &#x3D; “xxx”, description &#x3D; “xxx”)</p>
+<pre><code> value	url的路径值
+ tags	如果设置这个值、value的值会被覆盖
+ description	对api资源的描述
+ basePath	基本路径可以不配置
+ position	如果配置多个Api 想改变显示的顺序位置
+ produces	For example, &quot;application/json, application/xml&quot;
+ consumes	For example, &quot;application/json, application/xml&quot;
+ protocols	Possible values: http, https, ws, wss.
+ authorizations	高级特性认证时配置
+ hidden	配置为true 将在文档中隐藏
+</code></pre>
+<h3 id="ApiOperation"><a href="#ApiOperation" class="headerlink" title="@ApiOperation"></a>@ApiOperation</h3><p>用于方法上，说明方法的作用，每一个url资源的定义</p>
+<p>示例：</p>
+<p>@ApiOperation(value &#x3D; “xxx”,httpMethod&#x3D;”POST”, notes&#x3D; “xxx”,response&#x3D;String.class)</p>
+<pre><code> value	url的路径值
+ tags	如果设置这个值、value的值会被覆盖
+ notes	对api资源的描述
+ position	如果配置多个Api 想改变显示的顺序位置
+ produces	For example, &quot;application/json, application/xml&quot;
+ consumes	For example, &quot;application/json, application/xml&quot;
+ protocols	Possible values: http, https, ws, wss.
+ authorizations	高级特性认证时配置
+ hidden	配置为true 将在文档中隐藏
+ response	返回的对象
+ responseContainer	这些对象是有效的 &quot;List&quot;, &quot;Set&quot; or &quot;Map&quot;.，其他无效
+ httpMethod	&quot;GET&quot;, &quot;HEAD&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;DELETE&quot;, &quot;OPTIONS&quot; and &quot;PATCH&quot;
+ code	http的状态码 默认 200
+ extensions	扩展属性
+</code></pre>
+<h3 id="ApiParam"><a href="#ApiParam" class="headerlink" title="@ApiParam"></a>@ApiParam</h3><p>用于方法、参数、字段上，请求属性</p>
+<p>示例：<br>public ResponseEntity<User> createUser(@RequestBody @ApiParam(value &#x3D; “Created user object”, required &#x3D; true)  User user)</User></p>
+<pre><code> name	属性名称
+ value	属性值
+ defaultValue	默认属性值
+ allowableValues	可以不配置
+ required	是否属性必填
+ access	 
+ allowMultiple	默认为false
+ hidden	隐藏该属性
+ example	示例
+</code></pre>
+<h3 id="ApiResponse"><a href="#ApiResponse" class="headerlink" title="@ApiResponse"></a>@ApiResponse</h3><p>用于方法上，响应配置</p>
+<p>示例：</p>
+<p>@ApiResponse(code &#x3D; 400, message &#x3D; “Invalid user supplied”)</p>
+<pre><code> code	http的状态码
+ message	描述
+ response	默认响应类 Void
+ reference	参考ApiOperation中配置
+ responseHeaders	参考 ResponseHeader 属性配置说明
+ responseContainer	参考ApiOperation中配置
+</code></pre>
+<h3 id="ApiResponses"><a href="#ApiResponses" class="headerlink" title="@ApiResponses"></a>@ApiResponses</h3><p>用于方法上，响应集配置</p>
+<p>示例：</p>
+<p> @ApiResponses({ @ApiResponse(code &#x3D; 400, message &#x3D; “Invalid Order”) })</p>
+<pre><code> value	多个ApiResponse配置
+</code></pre>
+<h3 id="ResponseHeader"><a href="#ResponseHeader" class="headerlink" title="@ResponseHeader"></a>@ResponseHeader</h3><p>用于方法上，响应头设置</p>
+<p>示例：</p>
+<p>@ResponseHeader(name&#x3D;”head1”,description&#x3D;”response head conf”)</p>
+<pre><code> name	响应头名称
+ description	头描述
+ response	默认响应类 Void
+ responseContainer	参考ApiOperation中配置
+</code></pre>
+<h3 id="ApiImplicitParams"><a href="#ApiImplicitParams" class="headerlink" title="@ApiImplicitParams"></a>@ApiImplicitParams</h3><p>用于方法上，包含一组参数说明</p>
+<h3 id="ApiImplicitParam"><a href="#ApiImplicitParam" class="headerlink" title="@ApiImplicitParam"></a>@ApiImplicitParam</h3><p>用于方法上，用在@ApiImplicitParams注解中，指定一个请求参数的各个方面<br>     paramType	参数放在哪个地方<br>            · header 参数在request headers 里边提交（@RequestHeader）<br>            · query 直接跟参数完成自动映射赋值（@RequestParam）<br>            · path 用于restful接口，以地址的形式提交数据（@PathVariable）<br>            · body 以流的形式提交 仅支持POST（@RequestBody）<br>            · form 以form表单的形式提交 仅支持POST<br>     name	参数名<br>     value	参数的汉字说明、解释<br>     dataType	参数类型，默认String，其它值dataType&#x3D;”Integer”   ，无用<br>     required 	是否必要<br>     defaultValue	参数的默认值</p>
+<h3 id="ApiModel"><a href="#ApiModel" class="headerlink" title="@ApiModel"></a>@ApiModel</h3><p>用于类上，描述一个Model的信息（这种一般用在post创建的时候，使用@RequestBody这样的场景，请求参数无法使用@ApiImplicitParam注解进行描述的时候</p>
+<h3 id="ApiModelProperty"><a href="#ApiModelProperty" class="headerlink" title="@ApiModelProperty"></a>@ApiModelProperty</h3><p>用于方法、字段上，描述一个model的属性</p>
+<h3 id="ApiIgnore"><a href="#ApiIgnore" class="headerlink" title="@ApiIgnore"></a>@ApiIgnore</h3><p>用于类，属性，方法上，忽略某项api,使用@ApiIgnore</p>
+<h2 id="WMS配置Swagger"><a href="#WMS配置Swagger" class="headerlink" title="WMS配置Swagger"></a>WMS配置Swagger</h2><ol>
+<li><p>找到pom.xml中找到，并修改版本号，<code>&lt;classmate.version&gt;1.3.1&lt;/classmate.version&gt;</code></p>
+</li>
+<li><p>修改web.xml,添加如下内容：</p>
+<pre><code>&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;springMvc&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/swagger/*&lt;/url-pattern&gt;
+    &lt;url-pattern&gt;/api-docs&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+</code></pre>
+</li>
+<li><p>修改 spring-mvc.xml ，添加内容如下：</p>
+<pre><code>&lt;bean class=&quot;com.zzjee.swagger.SwaggerConfig&quot; /&gt;
+&lt;mvc:resources mapping=&quot;swagger-ui.html&quot; location=&quot;classpath:/META-INF/resources/&quot; /&gt;
+&lt;mvc:resources mapping=&quot;webjars/**&quot; location=&quot;classpath:/META-INF/resources/webjars/&quot; /&gt;
+</code></pre>
+</li>
+<li><p>修改 spring-mvc.xml ，添加内容如下：</p>
+<img src="/2022/051238097/image-20210821084537817.png" class title="image-20210821084537817">
+</li>
+<li><p>修改登录页代码</p>
+<img src="/2022/051238097/image-20210821084741334.png" class title="image-20210821084741334">
+</li>
+<li><p>测试</p>
+<pre><code>http://localhost:8081/jeewms/swagger/swagger-ui.html
+</code></pre>
+<p>内部执行了如下操作：</p>
+<img src="/2022/051238097/image-20210821085041544.png" class title="image-20210821085041544">
 
-## API
-
-注解    属性    备注
-
-### @Api    
-
-用于类上，说明该类的作用。可以标记一个Controller类做为swagger 文档资源
-
-示例：
-
-@Api(value = &quot;xxx&quot;, description = &quot;xxx&quot;)
-
-     value    url的路径值
-     tags    如果设置这个值、value的值会被覆盖
-     description    对api资源的描述
-     basePath    基本路径可以不配置
-     position    如果配置多个Api 想改变显示的顺序位置
-     produces    For example, &quot;application/json, application/xml&quot;
-     consumes    For example, &quot;application/json, application/xml&quot;
-     protocols    Possible values: http, https, ws, wss.
-     authorizations    高级特性认证时配置
-     hidden    配置为true 将在文档中隐藏
-### @ApiOperation    
-
-用于方法上，说明方法的作用，每一个url资源的定义
-
-示例：
-
-@ApiOperation(value = &quot;xxx&quot;,httpMethod=&quot;POST&quot;, notes= &quot;xxx&quot;,response=String.class)
-
-     value    url的路径值
-     tags    如果设置这个值、value的值会被覆盖
-     notes    对api资源的描述
-     position    如果配置多个Api 想改变显示的顺序位置
-     produces    For example, &quot;application/json, application/xml&quot;
-     consumes    For example, &quot;application/json, application/xml&quot;
-     protocols    Possible values: http, https, ws, wss.
-     authorizations    高级特性认证时配置
-     hidden    配置为true 将在文档中隐藏
-     response    返回的对象
-     responseContainer    这些对象是有效的 &quot;List&quot;, &quot;Set&quot; or &quot;Map&quot;.，其他无效
-     httpMethod    &quot;GET&quot;, &quot;HEAD&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;DELETE&quot;, &quot;OPTIONS&quot; and &quot;PATCH&quot;
-     code    http的状态码 默认 200
-     extensions    扩展属性
-### @ApiParam    
-
-用于方法、参数、字段上，请求属性
-
-示例：
-public ResponseEntity&lt;User&gt; createUser(@RequestBody @ApiParam(value = &quot;Created user object&quot;, required = true)  User user)
-
-     name    属性名称
-     value    属性值
-     defaultValue    默认属性值
-     allowableValues    可以不配置
-     required    是否属性必填
-     access     
-     allowMultiple    默认为false
-     hidden    隐藏该属性
-     example    示例
-### @ApiResponse    
-
-用于方法上，响应配置
-
-示例：
-
-@ApiResponse(code = 400, message = &quot;Invalid user supplied&quot;)
-
-     code    http的状态码
-     message    描述
-     response    默认响应类 Void
-     reference    参考ApiOperation中配置
-     responseHeaders    参考 ResponseHeader 属性配置说明
-     responseContainer    参考ApiOperation中配置
-### @ApiResponses    
-
-用于方法上，响应集配置
-
-示例：
-
- @ApiResponses(&#123; @ApiResponse(code = 400, message = &quot;Invalid Order&quot;) &#125;)
-
-     value    多个ApiResponse配置
-### @ResponseHeader    
-
-用于方法上，响应头设置
-
-示例：
-
-@ResponseHeader(name=&quot;head1&quot;,description=&quot;response head conf&quot;)
-
-     name    响应头名称
-     description    头描述
-     response    默认响应类 Void
-     responseContainer    参考ApiOperation中配置
-### @ApiImplicitParams
-
-用于方法上，包含一组参数说明
-
-### @ApiImplicitParam
-
-用于方法上，用在@ApiImplicitParams注解中，指定一个请求参数的各个方面
-     paramType    参数放在哪个地方 
-            · header 参数在request headers 里边提交（@RequestHeader）
-            · query 直接跟参数完成自动映射赋值（@RequestParam）
-            · path 用于restful接口，以地址的形式提交数据（@PathVariable）
-            · body 以流的形式提交 仅支持POST（@RequestBody）
-            · form 以form表单的形式提交 仅支持POST
-     name    参数名
-     value    参数的汉字说明、解释
-     dataType    参数类型，默认String，其它值dataType=&quot;Integer&quot;   ，无用
-     required     是否必要
-     defaultValue    参数的默认值
-
-### @ApiModel
-
-用于类上，描述一个Model的信息（这种一般用在post创建的时候，使用@RequestBody这样的场景，请求参数无法使用@ApiImplicitParam注解进行描述的时候
-
-### @ApiModelProperty
-
-用于方法、字段上，描述一个model的属性
-
-### @ApiIgnore
-
-用于类，属性，方法上，忽略某项api,使用@ApiIgnore
-
-
-
-## WMS配置Swagger
-
-1. 找到pom.xml中找到，并修改版本号，`&lt;classmate.version&gt;1.3.1&lt;/classmate.version&gt;`
-
-2. 修改web.xml,添加如下内容：
-</code></pre><p>   <servlet-mapping><br>       <servlet-name>springMvc&lt;/servlet-name&gt;<br>       <url-pattern>/swagger/*&lt;/url-pattern&gt;<br>       <url-pattern>/api-docs&lt;/url-pattern&gt;<br>   &lt;/servlet-mapping&gt;</url-pattern></url-pattern></servlet-name></servlet-mapping></p>
-<pre><code>
-3. 修改 spring-mvc.xml ，添加内容如下：
-</code></pre><p>   <bean class="com.zzjee.swagger.SwaggerConfig"><br>   <mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/"><br>   <mvc:resources mapping="webjars/**" location="classpath:/META-INF/resources/webjars/"></mvc:resources></mvc:resources></bean></p>
-<pre><code>
-4. 修改 spring-mvc.xml ，添加内容如下：
-
-   &#123;% asset_img image-20210821084537817.png image-20210821084537817 %&#125;
-
-5. 修改登录页代码
-
-   &#123;% asset_img image-20210821084741334.png image-20210821084741334 %&#125;
-
-6. 测试
-</code></pre><p>   <a target="_blank" rel="noopener" href="http://localhost:8081/jeewms/swagger/swagger-ui.html">http://localhost:8081/jeewms/swagger/swagger-ui.html</a></p>
-<pre><code>
-   内部执行了如下操作：
-
-   &#123;% asset_img image-20210821085041544.png image-20210821085041544 %&#125;
-
-   结果如图：
-
-   &#123;% asset_img image-20210821085124481.png image-20210821085124481 %&#125;
-</code></pre><!-- 此插件生成markdown、ASCIIDOC、wiki格式-->
-<pre><code>        &lt;!--  执行命令 mvn swagger2markup:convertSwagger2markup--&gt;
-        &lt;plugin&gt;
-            &lt;groupId&gt;io.github.swagger2markup&lt;/groupId&gt;
-            &lt;artifactId&gt;swagger2markup-maven-plugin&lt;/artifactId&gt;
-            &lt;version&gt;1.3.7&lt;/version&gt;
-            &lt;configuration&gt;
-                &lt;!-- api-docs访问url --&gt;
-                &lt;swaggerInput&gt;http://localhost:8081/jeewms/swagger/v2/api-docs&lt;/swaggerInput&gt;
-                &lt;!-- 生成为单个文档，输出路径--&gt;
-                &lt;outputFile&gt;src/docs/api&lt;/outputFile&gt;
-                &lt;!-- 生成为多个文档，输出路径 --&gt;
-                &lt;!--&lt;outputDir&gt;src/docs/&lt;/outputDir&gt;--&gt;
-                &lt;config&gt;
-                    &lt;!-- wiki格式文档 --&gt;
-                    &lt;!--&lt;swagger2markup.markupLanguage&gt;CONFLUENCE_MARKUP&lt;/swagger2markup.markupLanguage&gt;--&gt;
-                    &lt;!-- ascii格式文档 --&gt;
-                    &lt;swagger2markup.markupLanguage&gt;ASCIIDOC&lt;/swagger2markup.markupLanguage&gt;
-                    &lt;!-- markdown格式文档 --&gt;
-                    &lt;!--&lt;swagger2markup.markupLanguage&gt;MARKDOWN&lt;/swagger2markup.markupLanguage&gt;--&gt;
-                    &lt;swagger2markup.pathsGroupedBy&gt;TAGS&lt;/swagger2markup.pathsGroupedBy&gt;
-                &lt;/config&gt;
-            &lt;/configuration&gt;
-        &lt;/plugin&gt;
-        &lt;!--此插件生成HTML和PDF--&gt;
-        &lt;!-- 执行命令 mvn generate-resources --&gt;
-        &lt;plugin&gt;
-            &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
-            &lt;artifactId&gt;asciidoctor-maven-plugin&lt;/artifactId&gt;
-            &lt;version&gt;2.1.0&lt;/version&gt;
-            &lt;!-- Include Asciidoctor PDF for pdf generation --&gt;
-            &lt;dependencies&gt;
-                &lt;dependency&gt;
-                    &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
-                    &lt;artifactId&gt;asciidoctorj-pdf&lt;/artifactId&gt;
-                    &lt;version&gt;1.5.4&lt;/version&gt;
-                &lt;/dependency&gt;
-                &lt;dependency&gt;
-                    &lt;groupId&gt;org.jruby&lt;/groupId&gt;
-                    &lt;artifactId&gt;jruby-complete&lt;/artifactId&gt;
-                    &lt;version&gt;9.2.17.0&lt;/version&gt;
-                &lt;/dependency&gt;
-            &lt;/dependencies&gt;
-            &lt;!-- Configure generic document generation settings --&gt;
-            &lt;configuration&gt;
-                &lt;sourceDirectory&gt;src/docs&lt;/sourceDirectory&gt;
-                &lt;!-- &lt;sourceHighlighter&gt;coderay&lt;/sourceHighlighter&gt;--&gt;
-                &lt;attributes&gt;
-                    &lt;toc&gt;left&lt;/toc&gt;
-                &lt;/attributes&gt;
-            &lt;/configuration&gt;
-            &lt;!-- Since each execution can only handle one backend, run
-                 separate executions for each desired output type --&gt;
-            &lt;executions&gt;
-                &lt;execution&gt;
-                    &lt;id&gt;output-pdf&lt;/id&gt;
-                    &lt;phase&gt;generate-resources&lt;/phase&gt;
-                    &lt;goals&gt;
-                        &lt;goal&gt;process-asciidoc&lt;/goal&gt;
-                    &lt;/goals&gt;
-                    &lt;configuration&gt;
-                        &lt;backend&gt;pdf&lt;/backend&gt;
-                        &lt;outputDirectory&gt;src/docs/pdf/&lt;/outputDirectory&gt;
-                    &lt;/configuration&gt;
-                &lt;/execution&gt;
-                &lt;execution&gt;
-                    &lt;id&gt;output-html&lt;/id&gt;
-                    &lt;phase&gt;generate-resources&lt;/phase&gt;
-                    &lt;goals&gt;
-                        &lt;goal&gt;process-asciidoc&lt;/goal&gt;
-                    &lt;/goals&gt;
-                    &lt;configuration&gt;
-                        &lt;backend&gt;html5&lt;/backend&gt;
-                        &lt;outputDirectory&gt;src/docs/html/&lt;/outputDirectory&gt;
-                    &lt;/configuration&gt;
-                &lt;/execution&gt;
-            &lt;/executions&gt;
-        &lt;/plugin&gt;
-</code></pre><p>```</p>
+<p>结果如图：</p>
+<img src="/2022/051238097/image-20210821085124481.png" class title="image-20210821085124481"></li>
+</ol>
+<pre><code>&lt;!-- 此插件生成markdown、ASCIIDOC、wiki格式--&gt;
+            &lt;!--  执行命令 mvn swagger2markup:convertSwagger2markup--&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;io.github.swagger2markup&lt;/groupId&gt;
+                &lt;artifactId&gt;swagger2markup-maven-plugin&lt;/artifactId&gt;
+                &lt;version&gt;1.3.7&lt;/version&gt;
+                &lt;configuration&gt;
+                    &lt;!-- api-docs访问url --&gt;
+                    &lt;swaggerInput&gt;http://localhost:8081/jeewms/swagger/v2/api-docs&lt;/swaggerInput&gt;
+                    &lt;!-- 生成为单个文档，输出路径--&gt;
+                    &lt;outputFile&gt;src/docs/api&lt;/outputFile&gt;
+                    &lt;!-- 生成为多个文档，输出路径 --&gt;
+                    &lt;!--&lt;outputDir&gt;src/docs/&lt;/outputDir&gt;--&gt;
+                    &lt;config&gt;
+                        &lt;!-- wiki格式文档 --&gt;
+                        &lt;!--&lt;swagger2markup.markupLanguage&gt;CONFLUENCE_MARKUP&lt;/swagger2markup.markupLanguage&gt;--&gt;
+                        &lt;!-- ascii格式文档 --&gt;
+                        &lt;swagger2markup.markupLanguage&gt;ASCIIDOC&lt;/swagger2markup.markupLanguage&gt;
+                        &lt;!-- markdown格式文档 --&gt;
+                        &lt;!--&lt;swagger2markup.markupLanguage&gt;MARKDOWN&lt;/swagger2markup.markupLanguage&gt;--&gt;
+                        &lt;swagger2markup.pathsGroupedBy&gt;TAGS&lt;/swagger2markup.pathsGroupedBy&gt;
+                    &lt;/config&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+            &lt;!--此插件生成HTML和PDF--&gt;
+            &lt;!-- 执行命令 mvn generate-resources --&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
+                &lt;artifactId&gt;asciidoctor-maven-plugin&lt;/artifactId&gt;
+                &lt;version&gt;2.1.0&lt;/version&gt;
+                &lt;!-- Include Asciidoctor PDF for pdf generation --&gt;
+                &lt;dependencies&gt;
+                    &lt;dependency&gt;
+                        &lt;groupId&gt;org.asciidoctor&lt;/groupId&gt;
+                        &lt;artifactId&gt;asciidoctorj-pdf&lt;/artifactId&gt;
+                        &lt;version&gt;1.5.4&lt;/version&gt;
+                    &lt;/dependency&gt;
+                    &lt;dependency&gt;
+                        &lt;groupId&gt;org.jruby&lt;/groupId&gt;
+                        &lt;artifactId&gt;jruby-complete&lt;/artifactId&gt;
+                        &lt;version&gt;9.2.17.0&lt;/version&gt;
+                    &lt;/dependency&gt;
+                &lt;/dependencies&gt;
+                &lt;!-- Configure generic document generation settings --&gt;
+                &lt;configuration&gt;
+                    &lt;sourceDirectory&gt;src/docs&lt;/sourceDirectory&gt;
+                    &lt;!-- &lt;sourceHighlighter&gt;coderay&lt;/sourceHighlighter&gt;--&gt;
+                    &lt;attributes&gt;
+                        &lt;toc&gt;left&lt;/toc&gt;
+                    &lt;/attributes&gt;
+                &lt;/configuration&gt;
+                &lt;!-- Since each execution can only handle one backend, run
+                     separate executions for each desired output type --&gt;
+                &lt;executions&gt;
+                    &lt;execution&gt;
+                        &lt;id&gt;output-pdf&lt;/id&gt;
+                        &lt;phase&gt;generate-resources&lt;/phase&gt;
+                        &lt;goals&gt;
+                            &lt;goal&gt;process-asciidoc&lt;/goal&gt;
+                        &lt;/goals&gt;
+                        &lt;configuration&gt;
+                            &lt;backend&gt;pdf&lt;/backend&gt;
+                            &lt;outputDirectory&gt;src/docs/pdf/&lt;/outputDirectory&gt;
+                        &lt;/configuration&gt;
+                    &lt;/execution&gt;
+                    &lt;execution&gt;
+                        &lt;id&gt;output-html&lt;/id&gt;
+                        &lt;phase&gt;generate-resources&lt;/phase&gt;
+                        &lt;goals&gt;
+                            &lt;goal&gt;process-asciidoc&lt;/goal&gt;
+                        &lt;/goals&gt;
+                        &lt;configuration&gt;
+                            &lt;backend&gt;html5&lt;/backend&gt;
+                            &lt;outputDirectory&gt;src/docs/html/&lt;/outputDirectory&gt;
+                        &lt;/configuration&gt;
+                    &lt;/execution&gt;
+                &lt;/executions&gt;
+            &lt;/plugin&gt;
+</code></pre>
 
                 
             </div>
@@ -1292,7 +1331,7 @@ public ResponseEntity&lt;User&gt; createUser(@RequestBody @ApiParam(value = &quo
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">204.9k</span>
+                        class="white-color">218.5k</span>
             
             
             

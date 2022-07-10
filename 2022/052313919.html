@@ -341,14 +341,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    9.1k
+                    9.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    49 分
+                    51 分
                 </div>
                 
 
@@ -434,7 +434,7 @@
             &lt;artifactId&gt;junit&lt;/artifactId&gt;
             &lt;version&gt;4.12&lt;/version&gt;
         &lt;/dependency&gt;
-
+        
         &lt;dependency&gt;
             &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
             &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
@@ -457,7 +457,8 @@
 
     &lt;/dependencies&gt;
 &lt;/project&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>在resources目录下，添加SqlMapConfig.xml</p>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE configuration
@@ -483,7 +484,8 @@
         &lt;package name=&quot;com.neu.mapper&quot;&gt;&lt;/package&gt;
     &lt;/mappers&gt;
 &lt;/configuration&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>Mapper映射文件</p>
 <ul>
 <li><p>编写实体类</p>
@@ -502,11 +504,12 @@
 </li>
 <li><p>注册 mapper（SqlMapConfig.xml）</p>
 <pre><code>&lt;mappers&gt;
-        &lt;!-- &lt;mapper resource=&quot;com/neu/mapper/DeptMapper.xml&quot; /&gt;     --&gt;
+        &lt;!-- &lt;mapper resource=&quot;com/neu/mapper/DeptMapper.xml&quot; /&gt;	 --&gt;
         &lt;!-- &lt;mapper class=&quot;com.neu.mapper.DeptMapper&quot;/&gt; --&gt;
         &lt;package name=&quot;com.neu.mapper&quot;&gt;&lt;/package&gt;
 &lt;/mappers&gt;
-</code></pre></li>
+</code></pre>
+</li>
 </ul>
 </li>
 <li><p>改进后的测试代码</p>
@@ -530,7 +533,7 @@ import com.neu.po.Dept;
 public class DeptMapperTest &#123;
     private DeptMapper deptMapper;
     private SqlSession sqlSession;
-
+    
     @Before
     public void setup() throws IOException &#123;
         //读取SqlMapConfig.xml文件
@@ -542,55 +545,56 @@ public class DeptMapperTest &#123;
         //得到DeptMapper接口的实现类
         deptMapper = sqlSession.getMapper(DeptMapper.class);
     &#125;
-
+    
     @After
     public void after() &#123;
         //关闭sqlSession，把连接放回到连接池
         sqlSession.close();
     &#125;
-
+    
     @Test
-    public void testInsert() throws IOException &#123;        
+    public void testInsert() throws IOException &#123;		
         int n = deptMapper.insert(new Dept(66,&quot;hr&quot;,&quot;sy&quot;));
-
+        
         System.out.println(n);
         //提交事务
-        sqlSession.commit();        
+        sqlSession.commit();		
     &#125;
-
+    
     @Test
-    public void testUpdate() throws IOException &#123;    
+    public void testUpdate() throws IOException &#123;	
         int n = deptMapper.update(new Dept(66,&quot;hr&quot;,&quot;nj&quot;));
-
+        
         System.out.println(n);
         //提交事务
-        sqlSession.commit();        
+        sqlSession.commit();		
     &#125;
-
+    
     @Test
-    public void testDelete() throws IOException &#123;    
+    public void testDelete() throws IOException &#123;	
         int n = deptMapper.delete(66);
-
+        
         System.out.println(n);
         //提交事务
-        sqlSession.commit();        
+        sqlSession.commit();		
     &#125;
-
+    
     @Test
-    public void testGetById() throws IOException &#123;    
+    public void testGetById() throws IOException &#123;	
         Dept dept = deptMapper.getById(10);
-
-        System.out.println(dept);            
+        
+        System.out.println(dept);			
     &#125;
-
+    
     @Test
-    public void testGetAll() throws IOException &#123;    
+    public void testGetAll() throws IOException &#123;	
         List&lt;Dept&gt; list = deptMapper.getAll();
-
-        System.out.println(list);            
+        
+        System.out.println(list);			
     &#125;
 &#125;
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><p>实现 Emp 的增删改查方法</p>
 <h2 id="使用log4j生成日志"><a href="#使用log4j生成日志" class="headerlink" title="使用log4j生成日志"></a>使用log4j生成日志</h2><h3 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h3><pre><code>&lt;dependency&gt;
@@ -598,7 +602,8 @@ public class DeptMapperTest &#123;
             &lt;artifactId&gt;log4j&lt;/artifactId&gt;
             &lt;version&gt;1.2.17&lt;/version&gt;
 &lt;/dependency&gt;
-</code></pre><p>拷贝log4j.properties配置文件到resources下</p>
+</code></pre>
+<p>拷贝log4j.properties配置文件到resources下</p>
 <pre><code># Global logging configuration
 #\u751F\u4EA7\u73AF\u5883\u914D\u7F6Einfo   ERROR
 log4j.rootLogger=DEBUG,stdout
@@ -608,23 +613,27 @@ log4j.logger.org.mybatis.example.BlogMapper=TRACE
 log4j.appender.stdout=org.apache.log4j.ConsoleAppender
 log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
 log4j.appender.stdout.layout.ConversionPattern=%5p [%t] - %m%n
-</code></pre><h2 id="多参数的处理"><a href="#多参数的处理" class="headerlink" title="多参数的处理"></a>多参数的处理</h2><ol>
+</code></pre>
+<h2 id="多参数的处理"><a href="#多参数的处理" class="headerlink" title="多参数的处理"></a>多参数的处理</h2><ol>
 <li><p>使用参数名：arg0、arg1…</p>
 <pre><code>&lt;select id=&quot;search&quot; resultType=&quot;com.neu.po.Dept&quot;&gt;
         select * from dept where dname = #&#123;arg0&#125; and loc = #&#123;arg1&#125;
 &lt;/select&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>使用参数名：param1、param2</p>
 <pre><code>&lt;select id=&quot;search&quot; resultType=&quot;com.neu.po.Dept&quot;&gt;
         select * from dept where dname = #&#123;param1&#125; and loc = #&#123;param2&#125;
 &lt;/select&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>使用@Param注解（推荐）</p>
 <pre><code>接口：
 List&lt;Dept&gt; search(@Param(&quot;dname&quot;) String dname,@Param(&quot;loc&quot;) String loc);
 mapper:
 select * from dept where dname = #&#123;dname&#125; and loc = #&#123;loc&#125;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>使用实体类封装多个参数</p>
 <pre><code>接口：
 List&lt;Dept&gt; search2(Dept dept);
@@ -634,7 +643,8 @@ select * from dept where dname = #&#123;dname&#125; and loc = #&#123;loc&#125;
 
 测试代码：
 List&lt;Dept&gt; list = deptMapper.search2(new Dept(null,&quot;hr&quot;,&quot;sy&quot;));
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>使用map集合，封装多个参数（很灵活）</p>
 <pre><code>接口：
 List&lt;Dept&gt; search3(Map&lt;String, String&gt; map);
@@ -646,12 +656,14 @@ select * from dept where dname = #&#123;dname&#125; and loc = #&#123;loc&#125;
 Map map = new HashMap&lt;&gt;();
 map.put(&quot;dname&quot;, &quot;hr&quot;);
 map.put(&quot;loc&quot;, &quot;sy&quot;);
-
+        
 List&lt;Dept&gt; list = deptMapper.search3(map);
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="和"><a href="#和" class="headerlink" title="#{}和${}"></a>#{}和${}</h2><ol>
-<li><h1 id="使用占位符的方式生成sql语句，sql语句中列名为变量的时候，不能使用"><a href="#使用占位符的方式生成sql语句，sql语句中列名为变量的时候，不能使用" class="headerlink" title="{}:使用占位符的方式生成sql语句，sql语句中列名为变量的时候，不能使用"></a>{}:使用占位符的方式生成sql语句，sql语句中列名为变量的时候，不能使用</h1></li>
+<li><p>#{}:使用占位符的方式生成sql语句，sql语句中列名为变量的时候，不能使用</p>
+</li>
 <li><p>${}:使用拼接字符串的方式生成sql语句，参数为列名的时候，可以使用</p>
 <pre><code>接口：
 //根据参数列名来排序
@@ -659,7 +671,8 @@ List&lt;Dept&gt; order(String columnName);
 
 mapper:
 select * from dept order by $&#123;columnName&#125;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>模糊查询</p>
 <ul>
 <li><p>使用#{}</p>
@@ -671,7 +684,8 @@ select * from dept where dname like #&#123;dname&#125;
 
 测试代码：
 List&lt;Dept&gt; list = deptMapper.search4(&quot;%h%&quot;);
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>使用${}</p>
 <pre><code>接口：
 List&lt;Dept&gt; search4(String dname);
@@ -681,7 +695,8 @@ select * from dept where dname like &#39;%$&#123;dname&#125;%&#39;
 
 测试代码：
 List&lt;Dept&gt; list = deptMapper.search4(&quot;h&quot;);
-</code></pre></li>
+</code></pre>
+</li>
 </ul>
 </li>
 </ol>
@@ -704,7 +719,8 @@ mapper:
             and loc = #&#123;loc&#125;
         &lt;/if&gt;
 &lt;/select&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p><code>&lt;trim prefix=&quot;前缀&quot; prefixOverrides=&quot;被覆盖的前缀&quot; suffixOverrides=&quot;被覆盖的后缀&quot;&gt;&lt;/trim&gt;</code></p>
 <p>prefix:如果trim标签中内容不为空串，则添加该前缀，如果内容为空串，则不添加</p>
 <p>prefixOverrides：如果trim标签内容最前面的部分是该属性的内容，则覆盖掉</p>
@@ -736,7 +752,8 @@ mapper:
         &lt;/trim&gt;
         where deptno = #&#123;deptno&#125;
     &lt;/update&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p><code>&lt;where&gt;&lt;/where&gt;</code>，相当于：<code>&lt;trim prefix=&quot;where&quot; prefixOverrides=&quot;and&quot;&gt;</code></p>
 <pre><code>&lt;select id=&quot;find&quot; resultType=&quot;com.neu.po.Dept&quot;&gt;
         select * from dept 
@@ -752,7 +769,8 @@ mapper:
             &lt;/if&gt;
         &lt;/where&gt;
 &lt;/select&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p><code>&lt;set&gt;&lt;/set&gt;</code>相当于：<code>&lt;trim prefix=&quot;set&quot; suffixOverrides=&quot;,&quot;&gt;</code></p>
 <pre><code>&lt;update id=&quot;update2&quot;&gt;
         update dept 
@@ -766,7 +784,8 @@ mapper:
         &lt;/set&gt;
         where deptno = #&#123;deptno&#125;
 &lt;/update&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p><code>&lt;foreach&gt;&lt;/foreach&gt;</code>:用来处理集合和数组</p>
 <p>collection：list|conllection|array</p>
 <p>item：引用集合或数组中的当前遍历元素</p>
@@ -781,7 +800,8 @@ mapper:
             (#&#123;dept.deptno&#125;,#&#123;dept.dname&#125;,#&#123;dept.loc&#125;)
         &lt;/foreach&gt;
 &lt;/insert&gt;
-</code></pre><p>open:要添加的开始字符串</p>
+</code></pre>
+<p>open:要添加的开始字符串</p>
 <p>close：要添加的结束字符串</p>
 <pre><code>接口：
 int batchDelete（int[] ids）;
@@ -793,7 +813,8 @@ mapper:
             #&#123;deptno&#125;
         &lt;/foreach&gt;
 &lt;/delete&gt;
-</code></pre><p>练习：编写Emp的动态sql</p>
+</code></pre>
+<p>练习：编写Emp的动态sql</p>
 </li>
 </ol>
 <h2 id="SQL片段"><a href="#SQL片段" class="headerlink" title="SQL片段"></a>SQL片段</h2><ol>
@@ -805,10 +826,12 @@ mapper:
 <pre><code>&lt;sql id=&quot;selectAll&quot;&gt;
     select * from dept
 &lt;/sql&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>引用sql片段</p>
 <pre><code>&lt;include refid=&quot;selectAll&quot;&gt;&lt;/include&gt;
-</code></pre></li>
+</code></pre>
+</li>
 </ul>
 </li>
 </ol>
@@ -822,7 +845,8 @@ mapper:
 </li>
 <li><p>keyProperty：键属性名，查询得到的主键值放到形参的哪个属性中</p>
 </li>
-<li>resultType：查询的主键值的类型</li>
+<li><p>resultType：查询的主键值的类型</p>
+</li>
 </ul>
 <p>使用：</p>
 <pre><code>&lt;insert id=&quot;insert&quot;&gt;
@@ -831,7 +855,8 @@ mapper:
         &lt;/selectKey&gt;
         insert into dept values(null,#&#123;dname&#125;,#&#123;loc&#125;)
 &lt;/insert&gt;
-</code></pre><h2 id="查询返回简单数据类型"><a href="#查询返回简单数据类型" class="headerlink" title="查询返回简单数据类型"></a>查询返回简单数据类型</h2><p>简单数据类型：基本数据类型（8种）、对应的包装类、String</p>
+</code></pre>
+<h2 id="查询返回简单数据类型"><a href="#查询返回简单数据类型" class="headerlink" title="查询返回简单数据类型"></a>查询返回简单数据类型</h2><p>简单数据类型：基本数据类型（8种）、对应的包装类、String</p>
 <pre><code>接口：
 //根据部门编号得到部门名称
 String getDname(int deptno);
@@ -840,34 +865,39 @@ mapper:
 &lt;select id=&quot;getDname&quot; resultType=&quot;string&quot;&gt;
         select dname from dept where deptno = #&#123;deptno&#125;
 &lt;/select&gt;
-</code></pre><pre><code>//得到部门总数
+</code></pre>
+<pre><code>//得到部门总数
 int count();
 
 &lt;select id=&quot;count&quot; resultType=&quot;int&quot;&gt;
     select count(*) from dept
 &lt;/select&gt;
-</code></pre><p>返回boolean类型：如果查询的记录数&gt;0,返回：true，等于0，返回：false</p>
+</code></pre>
+<p>返回boolean类型：如果查询的记录数&gt;0,返回：true，等于0，返回：false</p>
 <pre><code>//判断名称为参数执行的部门是否存在
 boolean exist(String dname);
 
 &lt;select id=&quot;exist&quot; resultType=&quot;boolean&quot;&gt;
     select count(*) from dept where dname = #&#123;dname&#125;
 &lt;/select&gt;
-</code></pre><h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><pre><code>//pageNum:第几页，pageSize：每页最多有多少行
+</code></pre>
+<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><pre><code>//pageNum:第几页，pageSize：每页最多有多少行
 List&lt;Dept&gt; getPaged(@Param(&quot;pageNum&quot;) int pageNum,@Param(&quot;pageSize&quot;) int pageSize);
 
 &lt;select id=&quot;getPaged&quot; resultType=&quot;com.neu.po.Dept&quot;&gt;
     select * from dept 
     limit $&#123;(pageNum - 1) * pageSize&#125;,#&#123;pageSize&#125;
 &lt;/select&gt;
-</code></pre><h2 id="列名与属性名不一致"><a href="#列名与属性名不一致" class="headerlink" title="列名与属性名不一致"></a>列名与属性名不一致</h2><ol>
+</code></pre>
+<h2 id="列名与属性名不一致"><a href="#列名与属性名不一致" class="headerlink" title="列名与属性名不一致"></a>列名与属性名不一致</h2><ol>
 <li><p>在sql语句中，为列起别名，别名与属性名一致</p>
 <pre><code>select deptno,dname dname2,loc from dept
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>使用<code>&lt;resultMap&gt;</code>来进行映射</p>
 <pre><code>&lt;resultMap type=&quot;com.neu.po.Dept&quot; id=&quot;basicMap&quot;&gt;
         &lt;!-- &lt;id column=&quot;deptno&quot; property=&quot;deptno&quot;/&gt; --&gt;
-
+        
         &lt;result column=&quot;dname&quot; property=&quot;dname2&quot;/&gt;
         &lt;!-- &lt;result column=&quot;loc&quot; property=&quot;loc&quot;/&gt; --&gt;
 &lt;/resultMap&gt;
@@ -875,17 +905,19 @@ List&lt;Dept&gt; getPaged(@Param(&quot;pageNum&quot;) int pageNum,@Param(&quot;p
 &lt;select id=&quot;getById&quot; resultMap=&quot;basicMap&quot;&gt;
         &lt;include refid=&quot;selectAll&quot;&gt;&lt;/include&gt; where deptno = #&#123;no&#125;
 &lt;/select&gt;
-</code></pre><p><code>&lt;id&gt;</code>:用来映射标识列（数据库中的主键）</p>
+</code></pre>
+<p><code>&lt;id&gt;</code>:用来映射标识列（数据库中的主键）</p>
 <p><code>&lt;result&gt;</code>：用来映射普通的结果（非主键）</p>
 <p>column：列名</p>
 <p>property：属性名</p>
 </li>
 </ol>
-<h2 id="实体关联"><a href="#实体关联" class="headerlink" title="实体关联"></a>实体关联</h2><p><code>&lt;association&gt;</code>:关联（实体），表示一对一的关系（emp=》dept）</p>
+<h2 id="实体关联"><a href="#实体关联" class="headerlink" title="实体关联"></a>实体关联</h2><p><code>&lt;association&gt;</code>:关联（实体），表示一对一的关系（emp&#x3D;》dept）</p>
 <pre><code>//Emp实体类
 ...
 Dept dept;
-</code></pre><pre><code>mapper:
+</code></pre>
+<pre><code>mapper:
 
 &lt;mapper namespace=&quot;com.neu.mapper.EmpMapper&quot;&gt;
     &lt;resultMap type=&quot;com.neu.po.Emp&quot; id=&quot;basicMap&quot;&gt;
@@ -896,7 +928,7 @@ Dept dept;
         &lt;result column=&quot;sal&quot; property=&quot;sal&quot;/&gt;
         &lt;result column=&quot;mgr&quot; property=&quot;mgr&quot;/&gt;
         &lt;result column=&quot;comm&quot; property=&quot;comm&quot;/&gt;
-
+        
         &lt;association property=&quot;dept&quot; javaType=&quot;com.neu.po.Dept&quot;&gt;
             &lt;id column=&quot;deptno&quot; property=&quot;deptno&quot;/&gt;
             &lt;result column=&quot;dname&quot; property=&quot;dname2&quot;/&gt;
@@ -911,11 +943,12 @@ Dept dept;
         where empno = #&#123;empno&#125;
     &lt;/select&gt;
 &lt;/mapper&gt;
-</code></pre><pre><code>&lt;resultMap type=&quot;com.neu.po.Dept&quot; id=&quot;basicMap&quot;&gt;
+</code></pre>
+<pre><code>&lt;resultMap type=&quot;com.neu.po.Dept&quot; id=&quot;basicMap&quot;&gt;
         &lt;id column=&quot;deptno&quot; property=&quot;deptno&quot; /&gt;
         &lt;result column=&quot;dname&quot; property=&quot;dname1&quot;/&gt;
         &lt;result column=&quot;loc&quot; property=&quot;loc&quot;/&gt;
-
+        
         &lt;collection property=&quot;emps&quot; ofType=&quot;com.neu.po.Emp&quot;&gt;
             &lt;id column=&quot;empno&quot; property=&quot;empno&quot;/&gt;
             &lt;id column=&quot;ename&quot; property=&quot;ename&quot;/&gt;
@@ -933,11 +966,12 @@ Dept dept;
         on d.deptno = e.deptno 
          WHERE e.deptno = #&#123;deptno&#125;
     &lt;/select&gt;
-</code></pre><p>实体关联的第二种实现方法：再执行一次查询，根据已有的列查询出需要的对象</p>
+</code></pre>
+<p>实体关联的第二种实现方法：再执行一次查询，根据已有的列查询出需要的对象</p>
 <pre><code>&lt;mapper namespace=&quot;com.neu.mapper.EmpMapper&quot;&gt;
-    &lt;resultMap type=&quot;com.neu.po.Emp&quot; id=&quot;basicMap&quot;&gt;        
+    &lt;resultMap type=&quot;com.neu.po.Emp&quot; id=&quot;basicMap&quot;&gt;		
         &lt;!-- column的值为emp表中的列名 --&gt;
-        &lt;association property=&quot;dept&quot; column=&quot;deptno&quot; select=&quot;com.neu.mapper.DeptMapper.getById&quot;&gt;            
+        &lt;association property=&quot;dept&quot; column=&quot;deptno&quot; select=&quot;com.neu.mapper.DeptMapper.getById&quot;&gt;			
         &lt;/association&gt;
     &lt;/resultMap&gt;
 
@@ -945,16 +979,18 @@ Dept dept;
         SELECT * FROM emp where empno = #&#123;empno&#125;
     &lt;/select&gt;
 &lt;/mapper&gt;
-</code></pre><h2 id="关联集合"><a href="#关联集合" class="headerlink" title="关联集合"></a>关联集合</h2><p><code>&lt;collection&gt;</code>:关联集合，表示一对多的关系（dept=》List<emp>）</emp></p>
+</code></pre>
+<h2 id="关联集合"><a href="#关联集合" class="headerlink" title="关联集合"></a>关联集合</h2><p><code>&lt;collection&gt;</code>:关联集合，表示一对多的关系（dept&#x3D;》List<emp>）</emp></p>
 <pre><code>&lt;resultMap type=&quot;com.neu.po.Dept&quot; id=&quot;basicMap&quot;&gt;
         &lt;id column=&quot;deptno&quot; property=&quot;deptno&quot;/&gt;
-
+        
         &lt;result column=&quot;dname&quot; property=&quot;dname2&quot;/&gt;
         &lt;!-- &lt;result column=&quot;loc&quot; property=&quot;loc&quot;/&gt; --&gt;
         &lt;!-- column列的值为：Dept表中的deptno --&gt;
         &lt;collection property=&quot;emps&quot; column=&quot;deptno&quot; select=&quot;com.neu.mapper.EmpMapper.getByDeptno&quot;&gt;&lt;/collection&gt;
 &lt;/resultMap&gt;
-</code></pre><h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><pre><code>CREATE TABLE role(
+</code></pre>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><pre><code>CREATE TABLE role(
     id INT PRIMARY KEY AUTO_INCREMENT,
     NAME VARCHAR(30) NOT NULL
 ) CHARSET=utf8;
@@ -971,7 +1007,8 @@ CREATE TABLE myuser(
 INSERT INTO myuser VALUES(1,&#39;tom&#39;,1);
 INSERT INTO myuser VALUES(2,&#39;scott&#39;,2);
 INSERT INTO myuser VALUES(3,&#39;marry&#39;,2);
-</code></pre><p>功能：</p>
+</code></pre>
+<p>功能：</p>
 <ol>
 <li>查询所有用户的信息（包括用户的角色信息）</li>
 <li>根据角色名称查询该角色的信息及该角色下的所有用户信息</li>
@@ -980,7 +1017,8 @@ INSERT INTO myuser VALUES(3,&#39;marry&#39;,2);
 <li><p>使用注解</p>
 <pre><code>@Update(&quot;update dept set dname = #&#123;dname2&#125; ,loc = #&#123;loc&#125; where deptno = #&#123;deptno&#125;&quot;)
 int update(Dept dept);
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>长sql语句的写法</p>
 <pre><code>@Update(&quot;update dept set dname = #&#123;dname2&#125; ,loc = #&#123;loc&#125; &quot;+
         &quot;where deptno = #&#123;deptno&#125;&quot;)
@@ -989,7 +1027,8 @@ int update(Dept dept);
 @Update(&#123;&quot;update dept set dname = #&#123;dname2&#125; ,loc = #&#123;loc&#125; &quot;,
           &quot;where deptno = #&#123;deptno&#125;&quot;&#125;)
 int update(Dept dept);
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>ResultMap（mybatis 3.5.4）</p>
 <pre><code>@Select(&quot;select * from dept where deptno = #&#123;deptno&#125;&quot;)
 @Results(id = &quot;basicMap&quot;,value= &#123;
@@ -997,10 +1036,11 @@ int update(Dept dept);
             @Result(column = &quot;dname&quot;,property = &quot;dname2&quot;,id = false),
             @Result(column = &quot;loc&quot;,property = &quot;loc&quot;,id = false),
             @Result(column = &quot;deptno&quot;,property = &quot;emps&quot;,many=@Many(select = &quot;com.neu.mapper.EmpMapper.getByDeptno&quot;))
-
+            
     &#125;)
 Dept getById(int deptno);
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="延迟加载"><a href="#延迟加载" class="headerlink" title="延迟加载"></a>延迟加载</h2><ol>
 <li><p>定义：在数据与对象进行mapping操作时，只有在真正使用该对象的时候，才进行mapping操作，以减少数据库开销，从而提高系统性能</p>
@@ -1012,27 +1052,31 @@ Dept getById(int deptno);
         &lt;!-- 取消积极加载 --&gt;
         &lt;setting name=&quot;aggressiveLazyLoading&quot; value=&quot;false&quot;/&gt;
 &lt;/settings&gt;
-</code></pre></li>
+</code></pre>
+</li>
 </ol>
 <h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><ol>
 <li><p>定义：是一种“以空间换时间”的设计理念，利用内存或硬盘空间来提高数据检索速度的有效手段之一。</p>
 </li>
 <li><p>一级缓存：默认开启，把数据缓存到当前会话中（SqlSession）</p>
 <pre><code>@Test
-public void testGetById() throws IOException &#123;    
+public void testGetById() throws IOException &#123;	
     Dept dept = deptMapper.getById(10);
     System.out.println(dept.getDname2());
 
     dept = deptMapper.getById(10);
     System.out.println(dept.getDname2());
 &#125;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>二级缓存：默认没有开启，需要手工开启，修改SqlMapConfig.xml文件，把数据缓存到SqlSessionFactory中</p>
 <pre><code>&lt;!-- 开启二级缓存 --&gt;
 &lt;setting name=&quot;cacheEnabled&quot; value=&quot;true&quot;/&gt;
-</code></pre><p>在需要缓存的mapper文件中：</p>
+</code></pre>
+<p>在需要缓存的mapper文件中：</p>
 <pre><code>&lt;cache&gt;&lt;/cache&gt;
-</code></pre><p>注意：缓存对象要实现可序列化接口（Serializable）</p>
+</code></pre>
+<p>注意：缓存对象要实现可序列化接口（Serializable）</p>
 </li>
 </ol>
 <h2 id="MBG"><a href="#MBG" class="headerlink" title="MBG"></a>MBG</h2><ol>
@@ -1049,19 +1093,21 @@ public void testGetById() throws IOException &#123;
     &lt;javaModelGenerator targetPackage=&quot;com.neu.po&quot; targetProject=&quot;mybatisdemo2&quot; /&gt;
     &lt;sqlMapGenerator targetPackage=&quot;com.neu.mapper&quot; targetProject=&quot;mybatisdemo2&quot;&gt;&lt;/sqlMapGenerator&gt;
     &lt;javaClientGenerator targetPackage=&quot;com.neu.mapper&quot; targetProject=&quot;mybatisdemo2&quot; type=&quot;XMLMAPPER&quot; /&gt;   
-
+    
     &lt;table schema=&quot;root&quot; tableName=&quot;dept&quot;&gt;
       &lt;!-- &lt;columnOverride column=&quot;???&quot; property=&quot;???&quot; /&gt; --&gt;
     &lt;/table&gt;
   &lt;/context&gt;
 &lt;/generatorConfiguration&gt;
-</code></pre></li>
+</code></pre>
+</li>
 </ul>
 </li>
 </ol>
 <p>排序：</p>
 <pre><code>example.setOrderByClause(&quot;ename desc&quot;);
-</code></pre><h2 id="Example练习"><a href="#Example练习" class="headerlink" title="Example练习"></a>Example练习</h2><ol>
+</code></pre>
+<h2 id="Example练习"><a href="#Example练习" class="headerlink" title="Example练习"></a>Example练习</h2><ol>
 <li>查询员工姓名等于“smith”并且sal大于等于3000的员工信息</li>
 <li>查询员工编号为：7783和7876的员工信息</li>
 <li>查询奖金（comm）不是null的所有员工信息</li>
@@ -1072,21 +1118,22 @@ public void testGetById() throws IOException &#123;
 <h2 id="Idea-中使用-Free-mybatis-plugin"><a href="#Idea-中使用-Free-mybatis-plugin" class="headerlink" title="Idea 中使用 Free mybatis plugin"></a>Idea 中使用 Free mybatis plugin</h2><h3 id="配置数据源"><a href="#配置数据源" class="headerlink" title="配置数据源"></a>配置数据源</h3><ol>
 <li><p>在idea中连接数据库</p>
 <ul>
-<li><p>添加数据源，选mysql</p>
-<img src="/2022/052313919/1.jpg" class>
-</li>
+<li>添加数据源，选mysql</li>
+</ul>
+ <img src="/2022/052313919/1.jpg" class>
+
+<ul>
 <li><p>配置数据库连接参数</p>
 <img src="/2022/052313919/2.jpg" class>
 </li>
-<li><p>在Advanced 中 配置 serverTimezone：Asia/Shanghai</p>
+<li><p>在Advanced 中 配置 serverTimezone：Asia&#x2F;Shanghai</p>
 <img src="/2022/052313919/3.jpg" class>
 </li>
 <li><p>测试连接</p>
 <img src="/2022/052313919/4.jpg" class>
 </li>
 <li><p>查看数据表</p>
-<img src="/2022/052313919/5.jpg" class>
-</li>
+<img src="/2022/052313919/5.jpg" class></li>
 </ul>
 </li>
 </ol>
@@ -1095,8 +1142,7 @@ public void testGetById() throws IOException &#123;
 <img src="/2022/052313919/6.jpg" class>
 </li>
 <li><p>输入参数</p>
-<img src="/2022/052313919/7.jpg" class>
-</li>
+<img src="/2022/052313919/7.jpg" class></li>
 </ol>
 <h2 id="Idea环境中pom-xml"><a href="#Idea环境中pom-xml" class="headerlink" title="Idea环境中pom.xml"></a>Idea环境中pom.xml</h2><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
@@ -1179,7 +1225,8 @@ public void testGetById() throws IOException &#123;
         &lt;/dependency&gt;
     &lt;/dependencies&gt;
 &lt;/project&gt;
-</code></pre><h2 id="Idea中代码生成"><a href="#Idea中代码生成" class="headerlink" title="Idea中代码生成"></a>Idea中代码生成</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><ol>
+</code></pre>
+<h2 id="Idea中代码生成"><a href="#Idea中代码生成" class="headerlink" title="Idea中代码生成"></a>Idea中代码生成</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><ol>
 <li><p>创建 maven 项目，导入依赖和插件</p>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
@@ -1233,492 +1280,564 @@ public void testGetById() throws IOException &#123;
     &lt;/build&gt;
 
 &lt;/project&gt;
-</code></pre></li>
-<li><p>在 src/main/resources/ 创建文件：generatorConfig.xml</p>
-<p>```<br>&lt;?xml version=”1.0” encoding=”UTF-8”?&gt;<br>&lt;!DOCTYPE generatorConfiguration PUBLIC “-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN” “<a target="_blank" rel="noopener" href="http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;">http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;</a><br><generatorConfiguration><br>  <classPathEntry location="D:\mavenrepository\mysql\mysql-connector-java\8.0.22\mysql-connector-java-8.0.22.jar"><br>  <context id="context1" targetruntime="Mybatis3"></context></classPathEntry></generatorConfiguration></p>
-<pre><code>&lt;jdbcConnection 
-    connectionURL=&quot;jdbc:mysql://localhost:3306/his_java15?useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;serverTimezone=Asia/Shanghai&quot; 
-    driverClass=&quot;com.mysql.cj.jdbc.Driver&quot; 
-    password=&quot;root&quot; 
-    userId=&quot;root&quot; &gt;
-    &lt;property name=&quot;nullCatalogMeansCurrent&quot; value=&quot;true&quot;/&gt;
-&lt;/jdbcConnection&gt;
-&lt;!-- 实体类 --&gt;
-&lt;javaModelGenerator targetPackage=&quot;com.neu.po&quot; targetProject=&quot;src/main/java&quot; /&gt;
-&lt;!-- 生成Mapper.xml --&gt;
-&lt;sqlMapGenerator targetPackage=&quot;com.neu.mapper&quot; targetProject=&quot;src/main/resources&quot;&gt;&lt;/sqlMapGenerator&gt;
-&lt;!-- java的Mapper接口 --&gt;
-&lt;javaClientGenerator targetPackage=&quot;com.neu.mapper&quot; targetProject=&quot;src/main/java&quot; type=&quot;XMLMAPPER&quot; /&gt;
-</code></pre></li>
+</code></pre>
+</li>
+<li><p>在 src&#x2F;main&#x2F;resources&#x2F; 创建文件：generatorConfig.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE generatorConfiguration PUBLIC &quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;
+&lt;generatorConfiguration&gt;
+  &lt;classPathEntry location=&quot;D:\mavenrepository\mysql\mysql-connector-java\8.0.22\mysql-connector-java-8.0.22.jar&quot;/&gt;
+  &lt;context id=&quot;context1&quot; targetRuntime=&quot;Mybatis3&quot;&gt;
+    &lt;jdbcConnection 
+        connectionURL=&quot;jdbc:mysql://localhost:3306/his_java15?useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;serverTimezone=Asia/Shanghai&quot; 
+        driverClass=&quot;com.mysql.cj.jdbc.Driver&quot; 
+        password=&quot;root&quot; 
+        userId=&quot;root&quot; &gt;
+        &lt;property name=&quot;nullCatalogMeansCurrent&quot; value=&quot;true&quot;/&gt;
+    &lt;/jdbcConnection&gt;
+    &lt;!-- 实体类 --&gt;
+    &lt;javaModelGenerator targetPackage=&quot;com.neu.po&quot; targetProject=&quot;src/main/java&quot; /&gt;
+    &lt;!-- 生成Mapper.xml --&gt;
+    &lt;sqlMapGenerator targetPackage=&quot;com.neu.mapper&quot; targetProject=&quot;src/main/resources&quot;&gt;&lt;/sqlMapGenerator&gt;
+    &lt;!-- java的Mapper接口 --&gt;
+    &lt;javaClientGenerator targetPackage=&quot;com.neu.mapper&quot; targetProject=&quot;src/main/java&quot; type=&quot;XMLMAPPER&quot; /&gt;
+    
+    
+    &lt;table schema=&quot;root&quot; tableName=&quot;role&quot;&gt;
+        &lt;generatedKey column=&quot;id&quot; sqlStatement=&quot;mysql&quot; identity=&quot;true&quot;/&gt;      
+    &lt;/table&gt;
+      &lt;!--
+      &lt;table schema=&quot;root&quot; tableName=&quot;user&quot;&gt;
+          &lt;generatedKey column=&quot;id&quot; sqlStatement=&quot;mysql&quot; identity=&quot;true&quot;/&gt;
+
+          &lt;columnOverride column=&quot;useType&quot; property=&quot;role&quot; javaType=&quot;Role&quot; /&gt;
+      &lt;/table&gt;
+      --&gt;
+    
+    &lt;!--&lt;table schema=&quot;root&quot; tableName=&quot;Department&quot; domainObjectName=&quot;Department&quot;&gt;
+        &lt;generatedKey column=&quot;id&quot; sqlStatement=&quot;mysql&quot; identity=&quot;true&quot;/&gt;  
+        
+        &lt;columnOverride column=&quot;DeptCode&quot; property=&quot;deptCode&quot;&gt;&lt;/columnOverride&gt;
+        &lt;columnOverride column=&quot;DeptName&quot; property=&quot;deptName&quot;&gt;&lt;/columnOverride&gt;
+        &lt;columnOverride column=&quot;DeptCategoryID&quot; property=&quot;deptCategory&quot; javaType=&quot;ConstantItem&quot;&gt;&lt;/columnOverride&gt;
+        &lt;columnOverride column=&quot;DeptType&quot; property=&quot;deptType&quot; javaType=&quot;ConstantItem&quot;&gt;&lt;/columnOverride&gt;
+        &lt;columnOverride column=&quot;DelMark&quot; property=&quot;delMark&quot;&gt;&lt;/columnOverride&gt;
+    &lt;/table&gt;--&gt;
+  &lt;/context&gt;
+&lt;/generatorConfiguration&gt;
+</code></pre>
+</li>
+<li><p>生成代码</p>
+<img src="/2022/052313919/8.jpg" class></li>
 </ol>
-<pre><code>   &lt;table schema=&quot;root&quot; tableName=&quot;role&quot;&gt;
-       &lt;generatedKey column=&quot;id&quot; sqlStatement=&quot;mysql&quot; identity=&quot;true&quot;/&gt;      
-   &lt;/table&gt;
-     &lt;!--
-     &lt;table schema=&quot;root&quot; tableName=&quot;user&quot;&gt;
-         &lt;generatedKey column=&quot;id&quot; sqlStatement=&quot;mysql&quot; identity=&quot;true&quot;/&gt;
-
-         &lt;columnOverride column=&quot;useType&quot; property=&quot;role&quot; javaType=&quot;Role&quot; /&gt;
-     &lt;/table&gt;
-     --&gt;
-
-   &lt;!--&lt;table schema=&quot;root&quot; tableName=&quot;Department&quot; domainObjectName=&quot;Department&quot;&gt;
-       &lt;generatedKey column=&quot;id&quot; sqlStatement=&quot;mysql&quot; identity=&quot;true&quot;/&gt;  
-
-       &lt;columnOverride column=&quot;DeptCode&quot; property=&quot;deptCode&quot;&gt;&lt;/columnOverride&gt;
-       &lt;columnOverride column=&quot;DeptName&quot; property=&quot;deptName&quot;&gt;&lt;/columnOverride&gt;
-       &lt;columnOverride column=&quot;DeptCategoryID&quot; property=&quot;deptCategory&quot; javaType=&quot;ConstantItem&quot;&gt;&lt;/columnOverride&gt;
-       &lt;columnOverride column=&quot;DeptType&quot; property=&quot;deptType&quot; javaType=&quot;ConstantItem&quot;&gt;&lt;/columnOverride&gt;
-       &lt;columnOverride column=&quot;DelMark&quot; property=&quot;delMark&quot;&gt;&lt;/columnOverride&gt;
-   &lt;/table&gt;--&gt;
- &lt;/context&gt;
-</code></pre><p>   &lt;/generatorConfiguration&gt;</p>
-<pre><code>
-3. 生成代码
-
-   &#123;% asset_img 8.jpg  %&#125;
-
-### 方法二
-
-1. 使用 `MyBatisCodeHelpPro` 插件，生成 xml配置文件
-
-   &#123;% asset_img 9.jpg  %&#125;
-
-2. 修改 xml 配置文件，内容同方法一一样
-</code></pre><p>   &lt;?xml version=”1.0” encoding=”UTF-8”?&gt;<br>   &lt;!DOCTYPE generatorConfiguration<br>       PUBLIC “-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN”<br>       “<a target="_blank" rel="noopener" href="http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;">http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;</a></p>
-<p>   <generatorConfiguration><br>       <classPathEntry location="D:\mavenrepository\mysql\mysql-connector-java\8.0.22\mysql-connector-java-8.0.22.jar"></classPathEntry></generatorConfiguration></p>
-<pre><code>   &lt;context id=&quot;Mybatis3Context&quot; targetRuntime=&quot;MyBatis3&quot;&gt;
-       &lt;property name=&quot;javaFileEncoding&quot; value=&quot;UTF-8&quot;/&gt;
-       &lt;jdbcConnection
-               connectionURL=&quot;jdbc:mysql://localhost:3306/his_java15?useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;serverTimezone=Asia/Shanghai&quot;
-               driverClass=&quot;com.mysql.cj.jdbc.Driver&quot;
-               password=&quot;root&quot;
-               userId=&quot;root&quot; &gt;
-           &lt;property name=&quot;nullCatalogMeansCurrent&quot; value=&quot;true&quot;/&gt;
-       &lt;/jdbcConnection&gt;
-
-       &lt;javaTypeResolver&gt;
-           &lt;property name=&quot;forceBigDecimals&quot; value=&quot;false&quot;/&gt;
-       &lt;/javaTypeResolver&gt;
-
-       &lt;javaModelGenerator targetPackage=&quot;com.neu.po&quot; targetProject=&quot;src/main/java&quot;&gt;
-           &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot;/&gt;
-           &lt;property name=&quot;trimStrings&quot; value=&quot;true&quot;/&gt;
-       &lt;/javaModelGenerator&gt;
-
-       &lt;sqlMapGenerator targetPackage=&quot;com.neu.mapper&quot; targetProject=&quot;src/main/resources&quot;&gt;
-           &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot;/&gt;
-       &lt;/sqlMapGenerator&gt;
-
-       &lt;javaClientGenerator type=&quot;XMLMAPPER&quot; targetPackage=&quot;com.neu.mapper&quot; targetProject=&quot;src/main/java&quot;&gt;
-           &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot;/&gt;
-       &lt;/javaClientGenerator&gt;
-
-       &lt;table schema=&quot;root&quot; tableName=&quot;role&quot;&gt;
-           &lt;generatedKey column=&quot;id&quot; sqlStatement=&quot;mysql&quot; identity=&quot;true&quot;/&gt;
-       &lt;/table&gt;
-
-   &lt;/context&gt;
-</code></pre><p>   &lt;/generatorConfiguration&gt;</p>
-<pre><code>
-3. 修改 pom.xml文件，添加 maven 插件
-</code></pre><p>   &lt;?xml version=”1.0” encoding=”UTF-8”?&gt;<br>   <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"><br>       <modelVersion>4.0.0</modelVersion></project></p>
-<pre><code>   &lt;groupId&gt;com.neu&lt;/groupId&gt;
-   &lt;artifactId&gt;mgb2&lt;/artifactId&gt;
-   &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
-
-   &lt;build&gt;
-       &lt;plugins&gt;
-           &lt;!--mybatis-generator插件--&gt;
-           &lt;plugin&gt;
-               &lt;!--Mybatis-generator插件,用于自动生成Mapper和POJO--&gt;
-               &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;
-               &lt;artifactId&gt;mybatis-generator-maven-plugin&lt;/artifactId&gt;
-               &lt;version&gt;1.3.2&lt;/version&gt;
-               &lt;configuration&gt;
-                   &lt;!--配置文件的位置  一定要改成配置文件的位置--&gt;
-                   &lt;configurationFile&gt;src/main/resources/MybatisGenerator.xml&lt;/configurationFile&gt;
-                   &lt;verbose&gt;true&lt;/verbose&gt;
-                   &lt;overwrite&gt;true&lt;/overwrite&gt;
-               &lt;/configuration&gt;
-               &lt;executions&gt;
-                   &lt;execution&gt;
-                       &lt;id&gt;Generate MyBatis Artifacts&lt;/id&gt;
-                       &lt;goals&gt;
-                           &lt;goal&gt;generate&lt;/goal&gt;
-                       &lt;/goals&gt;
-                   &lt;/execution&gt;
-               &lt;/executions&gt;
-               &lt;dependencies&gt;
-                   &lt;dependency&gt;
-                       &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;
-                       &lt;artifactId&gt;mybatis-generator-core&lt;/artifactId&gt;
-                       &lt;version&gt;1.3.2&lt;/version&gt;
-                   &lt;/dependency&gt;
-               &lt;/dependencies&gt;
-           &lt;/plugin&gt;
-       &lt;/plugins&gt;
-   &lt;/build&gt;
-</code></pre><p>   &lt;/project&gt;</p>
-<pre><code>
-4. 生成代码（同方法一）
-
-# Idea中生成Mapper
-
-1. 在 mapper 接口上 alt + enter
-
-   &#123;% asset_img 10.jpg  %&#125;
-
-2. 选择：Generate mapper of xml
-
-3. 选择mapper 位置
-
-   &#123;% asset_img 11.jpg  %&#125;
-
-# MyBatis中TypeHandler
-
-在Mybatis中可以定义一个TypeHandler类型，通过它可以实现Java类型跟数据库类型的相互转换。
-
-需求：把java实体类中的String[],转换为数据库中的varchar类型（例如保存用户的多个爱好）　
-
-1. 数据库
-</code></pre><p>   CREATE TABLE myuser(<br>       id INT PRIMARY KEY AUTO_INCREMENT,<br>       username VARCHAR(30) NOT NULL,<br>       PASSWORD VARCHAR(30) NOT NULL,<br>       interests VARCHAR(100)<br>   )</p>
-<pre><code>
-2. 实体类
-</code></pre><p>   @Data<br>   @AllArgsConstructor<br>   @NoArgsConstructor<br>   public class MyUser {<br>       private int id;<br>       private String username;<br>       private String password;<br>       private String[] interests;<br>   }</p>
-<pre><code>
-3. 类型转换器
-</code></pre><p>   package com.neu.util;</p>
-<p>   import java.sql.CallableStatement;<br>   import java.sql.PreparedStatement;<br>   import java.sql.ResultSet;<br>   import java.sql.SQLException;<br>   import java.util.Date;</p>
-<p>   import org.apache.ibatis.type.BaseTypeHandler;<br>   import org.apache.ibatis.type.JdbcType;<br>   import org.apache.ibatis.type.MappedJdbcTypes;<br>   import org.apache.ibatis.type.MappedTypes;</p>
-<p>   @MappedJdbcTypes(JdbcType.VARCHAR)<br>   @MappedTypes(String[].class)<br>   public class StringArrayTypeHandler extends BaseTypeHandler<String[]> {</String[]></p>
-<pre><code>   private String[] getStringArray(String columnValue) &#123;
-      if (columnValue == null)
-          return null;
-      return columnValue.split(&quot;,&quot;);
-   &#125;
-
-   @Override
-   public String[] getNullableResult(ResultSet rs, String columnName)
-          throws SQLException &#123;
-      return getStringArray(rs.getString(columnName));
-   &#125;
-
-   @Override
-   public String[] getNullableResult(ResultSet rs, int columnIndex)
-          throws SQLException &#123;
-      return this.getStringArray(rs.getString(columnIndex));
-   &#125;
-
-   @Override
-   public String[] getNullableResult(CallableStatement cs, int columnIndex)
-          throws SQLException &#123;
-      return this.getStringArray(cs.getString(columnIndex));
-   &#125;
-
-   @Override
-   public void setNonNullParameter(PreparedStatement ps, int i,
-          String[] parameter, JdbcType jdbcType) throws SQLException &#123;
-      //由于BaseTypeHandler中已经把parameter为null的情况做了处理，所以这里我们就不用再判断parameter是否为空了，直接用就可以了
-      StringBuffer result = new StringBuffer();
-      for (String value : parameter)
-          result.append(value).append(&quot;,&quot;);
-      result.deleteCharAt(result.length()-1);
-      ps.setString(i, result.toString());
-   &#125;
-</code></pre><p>   }</p>
-<pre><code>
-   1.@MappedJdbcTypes定义是JdbcType类型，必须要是枚举类org.apache.ibatis.type.JdbcType所枚举的数据类型
-   2.@MappedTypes定义的是JavaType的数据类型，描述哪些Java类型可被拦截。 
-   3.在我们启用了自定义的这个TypeHandler之后，数据的读写都会被这个类所过滤 
-   4.在setNonNullParameter方法中，重新定义要写往数据库的数据。 
-   5.在另外三个方法中我们将从数据库读出的数据类型进行转换。
-
-4. 注册 TypeHandler（SqlMapConfig.xml）
-</code></pre><p>   <typeHandlers><br>      <package name="com.neu.util">
-   </package></typeHandlers><br>   或<br>   <typeHandlers><br>      <typeHandler handler="com.neu.util.StringArrayTypeHandler">
-   </typeHandler></typeHandlers></p>
-<pre><code>
-5. 接口
-</code></pre><p>   public interface MyUserMapper {<br>       MyUser getById(int id);</p>
-<pre><code>   int insert(MyUser user);
-
-   int update(MyUser user);
-</code></pre><p>   }</p>
-<pre><code>
-5. mapper（可以不配置 typeHandler 属性，由mybatis自动选择）
-</code></pre><p>   &lt;?xml version=”1.0” encoding=”UTF-8”?&gt;<br>   &lt;!DOCTYPE mapper PUBLIC “-//mybatis.org//DTD Mapper 3.0//EN” “<a target="_blank" rel="noopener" href="http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;">http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</a><br>   <mapper namespace="com.neu.mapper.MyUserMapper"><br>       <resultMap type="com.neu.po.MyUser" id="basicMap"><br>           <result column="interests" property="interests" typehandler="com.neu.util.StringArrayTypeHandler">
-       </result></resultMap><br>       <!-- 可以使用 resultMap 进行手工映射 --><br>       <select id="getById" resulttype="com.neu.po.MyUser"><br>           select * from myuser where id = #{id}
-       </select></mapper></p>
-<pre><code>   &lt;insert id=&quot;insert&quot;&gt;
-       insert into myuser values(
-           #&#123;id&#125;,
-           #&#123;username,javaType=String,jdbcType=VARCHAR,typeHandler=org.apache.ibatis.type.StringTypeHandler&#125;,
-           #&#123;password&#125;,#&#123;interests,typeHandler=com.neu.util.StringArrayTypeHandler&#125;
-       )
-   &lt;/insert&gt;
-
-   &lt;update id=&quot;update&quot;&gt;
-       update myuser set username = #&#123;username&#125;,password= #&#123;password&#125;,interests=#&#123;interests&#125;
-       where id = #&#123;id&#125;
-   &lt;/update&gt;
-</code></pre><p>   &lt;/mapper&gt;</p>
-<pre><code>
-6. 测试代码
-</code></pre><p>   public class MyUserMapperTest {<br>       private SqlSession session;<br>       private MyUserMapper myuserMapper;</p>
-<pre><code>   @Before
-   public void setup() throws IOException &#123;
-       //ctrl+2 L
-       //读取配置文件
-       InputStream inputStream = Resources.getResourceAsStream(&quot;SqlMapConfig.xml&quot;);
-       //创建SqlSessionFactory
-       SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-       //创建连接，相当于Connection
-       session = sessionFactory.openSession();
-       //返回DeptMapper接口的实现类
-       myuserMapper = session.getMapper(MyUserMapper.class);
-   &#125;
-
-   @After
-   public void after() &#123;
-       //关闭会话
-       session.close();
-   &#125;
-
-   @Test
-   public void testInsert() &#123;
-       int n = myuserMapper.insert(new MyUser(33,&quot;tom&quot;,&quot;111&quot;,new String[]&#123;&quot;游泳&quot;,&quot;爬山&quot;&#125;));        
-
-       System.out.println(n);
-
-       session.commit();
-   &#125;
-
-   @Test
-   public void testGetById() &#123;
-       MyUser user = myuserMapper.getById(10);
-       System.out.println(user);
-   &#125;
-
-   @Test
-   public void testUpdate() &#123;
-       int n = myuserMapper.update(new MyUser(33,&quot;marry&quot;,&quot;222&quot;,new String[]&#123;&quot;游泳&quot;,&quot;爬山&quot;,&quot;钓鱼&quot;&#125;));        
-
-       System.out.println(n);
-
-       session.commit();
-   &#125;
-</code></pre><p>   }</p>
-<pre><code>
-mybatis中 在  `TypeHandlerRegistry` 注册内置拦截器
-</code></pre><p>public TypeHandlerRegistry(Configuration configuration) {<br>    this.unknownTypeHandler = new UnknownTypeHandler(configuration);</p>
-<pre><code>register(Boolean.class, new BooleanTypeHandler());
-register(boolean.class, new BooleanTypeHandler());
-register(JdbcType.BOOLEAN, new BooleanTypeHandler());
-register(JdbcType.BIT, new BooleanTypeHandler());
-
-register(Byte.class, new ByteTypeHandler());
-register(byte.class, new ByteTypeHandler());
-register(JdbcType.TINYINT, new ByteTypeHandler());
-
-register(Short.class, new ShortTypeHandler());
-register(short.class, new ShortTypeHandler());
-register(JdbcType.SMALLINT, new ShortTypeHandler());
-
-register(Integer.class, new IntegerTypeHandler());
-register(int.class, new IntegerTypeHandler());
-register(JdbcType.INTEGER, new IntegerTypeHandler());
-
-register(Long.class, new LongTypeHandler());
-register(long.class, new LongTypeHandler());
-
-register(Float.class, new FloatTypeHandler());
-register(float.class, new FloatTypeHandler());
-register(JdbcType.FLOAT, new FloatTypeHandler());
-
-register(Double.class, new DoubleTypeHandler());
-register(double.class, new DoubleTypeHandler());
-register(JdbcType.DOUBLE, new DoubleTypeHandler());
-
-register(Reader.class, new ClobReaderTypeHandler());
-register(String.class, new StringTypeHandler());
-register(String.class, JdbcType.CHAR, new StringTypeHandler());
-register(String.class, JdbcType.CLOB, new ClobTypeHandler());
-register(String.class, JdbcType.VARCHAR, new StringTypeHandler());
-register(String.class, JdbcType.LONGVARCHAR, new StringTypeHandler());
-register(String.class, JdbcType.NVARCHAR, new NStringTypeHandler());
-register(String.class, JdbcType.NCHAR, new NStringTypeHandler());
-register(String.class, JdbcType.NCLOB, new NClobTypeHandler());
-register(JdbcType.CHAR, new StringTypeHandler());
-register(JdbcType.VARCHAR, new StringTypeHandler());
-register(JdbcType.CLOB, new ClobTypeHandler());
-register(JdbcType.LONGVARCHAR, new StringTypeHandler());
-register(JdbcType.NVARCHAR, new NStringTypeHandler());
-register(JdbcType.NCHAR, new NStringTypeHandler());
-register(JdbcType.NCLOB, new NClobTypeHandler());
-
-register(Object.class, JdbcType.ARRAY, new ArrayTypeHandler());
-register(JdbcType.ARRAY, new ArrayTypeHandler());
-
-register(BigInteger.class, new BigIntegerTypeHandler());
-register(JdbcType.BIGINT, new LongTypeHandler());
-
-register(BigDecimal.class, new BigDecimalTypeHandler());
-register(JdbcType.REAL, new BigDecimalTypeHandler());
-register(JdbcType.DECIMAL, new BigDecimalTypeHandler());
-register(JdbcType.NUMERIC, new BigDecimalTypeHandler());
-
-register(InputStream.class, new BlobInputStreamTypeHandler());
-register(Byte[].class, new ByteObjectArrayTypeHandler());
-register(Byte[].class, JdbcType.BLOB, new BlobByteObjectArrayTypeHandler());
-register(Byte[].class, JdbcType.LONGVARBINARY, new BlobByteObjectArrayTypeHandler());
-register(byte[].class, new ByteArrayTypeHandler());
-register(byte[].class, JdbcType.BLOB, new BlobTypeHandler());
-register(byte[].class, JdbcType.LONGVARBINARY, new BlobTypeHandler());
-register(JdbcType.LONGVARBINARY, new BlobTypeHandler());
-register(JdbcType.BLOB, new BlobTypeHandler());
-
-register(Object.class, unknownTypeHandler);
-register(Object.class, JdbcType.OTHER, unknownTypeHandler);
-register(JdbcType.OTHER, unknownTypeHandler);
-
-register(Date.class, new DateTypeHandler());
-register(Date.class, JdbcType.DATE, new DateOnlyTypeHandler());
-register(Date.class, JdbcType.TIME, new TimeOnlyTypeHandler());
-register(JdbcType.TIMESTAMP, new DateTypeHandler());
-register(JdbcType.DATE, new DateOnlyTypeHandler());
-register(JdbcType.TIME, new TimeOnlyTypeHandler());
-
-register(java.sql.Date.class, new SqlDateTypeHandler());
-register(java.sql.Time.class, new SqlTimeTypeHandler());
-register(java.sql.Timestamp.class, new SqlTimestampTypeHandler());
-
-register(String.class, JdbcType.SQLXML, new SqlxmlTypeHandler());
-
-register(Instant.class, new InstantTypeHandler());
-register(LocalDateTime.class, new LocalDateTimeTypeHandler());
-register(LocalDate.class, new LocalDateTypeHandler());
-register(LocalTime.class, new LocalTimeTypeHandler());
-register(OffsetDateTime.class, new OffsetDateTimeTypeHandler());
-register(OffsetTime.class, new OffsetTimeTypeHandler());
-register(ZonedDateTime.class, new ZonedDateTimeTypeHandler());
-register(Month.class, new MonthTypeHandler());
-register(Year.class, new YearTypeHandler());
-register(YearMonth.class, new YearMonthTypeHandler());
-register(JapaneseDate.class, new JapaneseDateTypeHandler());
-
-// issue #273
-register(Character.class, new CharacterTypeHandler());
-register(char.class, new CharacterTypeHandler());
-</code></pre><p>  }</p>
-<pre><code>
-mybatis 类型别名 注册：TypeAliasRegistry
-</code></pre><p>说明：<a target="_blank" rel="noopener" href="https://blog.csdn.net/lgl782519197/article/details/109066243">https://blog.csdn.net/lgl782519197/article/details/109066243</a></p>
-<pre><code>
-
-</code></pre><p>public TypeAliasRegistry() {<br>    registerAlias(“string”, String.class);</p>
-<pre><code>registerAlias(&quot;byte&quot;, Byte.class);
-registerAlias(&quot;long&quot;, Long.class);
-registerAlias(&quot;short&quot;, Short.class);
-registerAlias(&quot;int&quot;, Integer.class);
-registerAlias(&quot;integer&quot;, Integer.class);
-registerAlias(&quot;double&quot;, Double.class);
-registerAlias(&quot;float&quot;, Float.class);
-registerAlias(&quot;boolean&quot;, Boolean.class);
-
-registerAlias(&quot;byte[]&quot;, Byte[].class);
-registerAlias(&quot;long[]&quot;, Long[].class);
-registerAlias(&quot;short[]&quot;, Short[].class);
-registerAlias(&quot;int[]&quot;, Integer[].class);
-registerAlias(&quot;integer[]&quot;, Integer[].class);
-registerAlias(&quot;double[]&quot;, Double[].class);
-registerAlias(&quot;float[]&quot;, Float[].class);
-registerAlias(&quot;boolean[]&quot;, Boolean[].class);
-
-registerAlias(&quot;_byte&quot;, byte.class);
-registerAlias(&quot;_long&quot;, long.class);
-registerAlias(&quot;_short&quot;, short.class);
-registerAlias(&quot;_int&quot;, int.class);
-registerAlias(&quot;_integer&quot;, int.class);
-registerAlias(&quot;_double&quot;, double.class);
-registerAlias(&quot;_float&quot;, float.class);
-registerAlias(&quot;_boolean&quot;, boolean.class);
-
-registerAlias(&quot;_byte[]&quot;, byte[].class);
-registerAlias(&quot;_long[]&quot;, long[].class);
-registerAlias(&quot;_short[]&quot;, short[].class);
-registerAlias(&quot;_int[]&quot;, int[].class);
-registerAlias(&quot;_integer[]&quot;, int[].class);
-registerAlias(&quot;_double[]&quot;, double[].class);
-registerAlias(&quot;_float[]&quot;, float[].class);
-registerAlias(&quot;_boolean[]&quot;, boolean[].class);
-
-registerAlias(&quot;date&quot;, Date.class);
-registerAlias(&quot;decimal&quot;, BigDecimal.class);
-registerAlias(&quot;bigdecimal&quot;, BigDecimal.class);
-registerAlias(&quot;biginteger&quot;, BigInteger.class);
-registerAlias(&quot;object&quot;, Object.class);
-
-registerAlias(&quot;date[]&quot;, Date[].class);
-registerAlias(&quot;decimal[]&quot;, BigDecimal[].class);
-registerAlias(&quot;bigdecimal[]&quot;, BigDecimal[].class);
-registerAlias(&quot;biginteger[]&quot;, BigInteger[].class);
-registerAlias(&quot;object[]&quot;, Object[].class);
-
-registerAlias(&quot;map&quot;, Map.class);
-registerAlias(&quot;hashmap&quot;, HashMap.class);
-registerAlias(&quot;list&quot;, List.class);
-registerAlias(&quot;arraylist&quot;, ArrayList.class);
-registerAlias(&quot;collection&quot;, Collection.class);
-registerAlias(&quot;iterator&quot;, Iterator.class);
-
-registerAlias(&quot;ResultSet&quot;, ResultSet.class);
-</code></pre><p>  }</p>
-<pre><code>
-# 使用注解替代mapper文件
-
-1. 使用注解
-</code></pre><p>   @Select(“select * from dept”)<br>   List<Dept> getAll();</Dept></p>
-<p>   @Insert(“insert into dept values(#{deptno},#{dname},#{loc})”)<br>   int insert(Dept dept);</p>
-<pre><code>
-2. 长 SQL 语句的写法
-</code></pre><p>   @Select(“select * from dept “+<br>           “where deptno = #{deptno}”)<br>   Dept getById(int deptno);</p>
-<p>   @Select({“select * from dept “,<br>            “where deptno = #{deptno}”})<br>   Dept getById(int deptno);</p>
-<pre><code>
-3. ResultMap
-
-   - 直接在接口方法上添加@Results注解
-</code></pre><pre><code> //mybatis的版本号：3.5.4，支持@Results中的id属性
- @Select(&#123;&quot;select * from dept &quot;,
-             &quot;where deptno = #&#123;deptno&#125;&quot;&#125;)
-     @Results(id=&quot;basicMap&quot;, value= &#123;
-             @Result(column = &quot;deptno&quot;,property = &quot;deptno&quot;,id = true),
-             @Result(column = &quot;dname&quot;,property = &quot;dname&quot;),
-             @Result(column = &quot;loc&quot;,property = &quot;loc&quot;),
-             @Result(property = &quot;emps&quot;,column = &quot;deptno&quot;,many = @Many(select = &quot;com.neu.mapper.EmpMapper.getByDeptno&quot;))
-     &#125;)
-     Dept getById(int deptno);
-
-
- @Select(&quot;select * from emp where empno = #&#123;empno&#125;&quot;)
-     @Results(value= &#123;
-             @Result(
-                     property = &quot;dept&quot;,
-                     column = &quot;deptno&quot;,
-                     one = @One(select = &quot;com.neu.mapper.DeptMapper.getById&quot;
-             ))
-     &#125;)
-     Emp getById(int empno);
- ```
-</code></pre><ul>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><ol>
+<li><p>使用 <code>MyBatisCodeHelpPro</code> 插件，生成 xml配置文件</p>
+<img src="/2022/052313919/9.jpg" class>
+</li>
+<li><p>修改 xml 配置文件，内容同方法一一样</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE generatorConfiguration
+    PUBLIC &quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot;
+    &quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;
+
+&lt;generatorConfiguration&gt;
+    &lt;classPathEntry location=&quot;D:\mavenrepository\mysql\mysql-connector-java\8.0.22\mysql-connector-java-8.0.22.jar&quot;/&gt;
+
+    &lt;context id=&quot;Mybatis3Context&quot; targetRuntime=&quot;MyBatis3&quot;&gt;
+        &lt;property name=&quot;javaFileEncoding&quot; value=&quot;UTF-8&quot;/&gt;
+        &lt;jdbcConnection
+                connectionURL=&quot;jdbc:mysql://localhost:3306/his_java15?useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;serverTimezone=Asia/Shanghai&quot;
+                driverClass=&quot;com.mysql.cj.jdbc.Driver&quot;
+                password=&quot;root&quot;
+                userId=&quot;root&quot; &gt;
+            &lt;property name=&quot;nullCatalogMeansCurrent&quot; value=&quot;true&quot;/&gt;
+        &lt;/jdbcConnection&gt;
+
+        &lt;javaTypeResolver&gt;
+            &lt;property name=&quot;forceBigDecimals&quot; value=&quot;false&quot;/&gt;
+        &lt;/javaTypeResolver&gt;
+
+        &lt;javaModelGenerator targetPackage=&quot;com.neu.po&quot; targetProject=&quot;src/main/java&quot;&gt;
+            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot;/&gt;
+            &lt;property name=&quot;trimStrings&quot; value=&quot;true&quot;/&gt;
+        &lt;/javaModelGenerator&gt;
+
+        &lt;sqlMapGenerator targetPackage=&quot;com.neu.mapper&quot; targetProject=&quot;src/main/resources&quot;&gt;
+            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot;/&gt;
+        &lt;/sqlMapGenerator&gt;
+
+        &lt;javaClientGenerator type=&quot;XMLMAPPER&quot; targetPackage=&quot;com.neu.mapper&quot; targetProject=&quot;src/main/java&quot;&gt;
+            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot;/&gt;
+        &lt;/javaClientGenerator&gt;
+
+        &lt;table schema=&quot;root&quot; tableName=&quot;role&quot;&gt;
+            &lt;generatedKey column=&quot;id&quot; sqlStatement=&quot;mysql&quot; identity=&quot;true&quot;/&gt;
+        &lt;/table&gt;
+
+    &lt;/context&gt;
+&lt;/generatorConfiguration&gt;
+</code></pre>
+</li>
+<li><p>修改 pom.xml文件，添加 maven 插件</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;com.neu&lt;/groupId&gt;
+    &lt;artifactId&gt;mgb2&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;!--mybatis-generator插件--&gt;
+            &lt;plugin&gt;
+                &lt;!--Mybatis-generator插件,用于自动生成Mapper和POJO--&gt;
+                &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;
+                &lt;artifactId&gt;mybatis-generator-maven-plugin&lt;/artifactId&gt;
+                &lt;version&gt;1.3.2&lt;/version&gt;
+                &lt;configuration&gt;
+                    &lt;!--配置文件的位置  一定要改成配置文件的位置--&gt;
+                    &lt;configurationFile&gt;src/main/resources/MybatisGenerator.xml&lt;/configurationFile&gt;
+                    &lt;verbose&gt;true&lt;/verbose&gt;
+                    &lt;overwrite&gt;true&lt;/overwrite&gt;
+                &lt;/configuration&gt;
+                &lt;executions&gt;
+                    &lt;execution&gt;
+                        &lt;id&gt;Generate MyBatis Artifacts&lt;/id&gt;
+                        &lt;goals&gt;
+                            &lt;goal&gt;generate&lt;/goal&gt;
+                        &lt;/goals&gt;
+                    &lt;/execution&gt;
+                &lt;/executions&gt;
+                &lt;dependencies&gt;
+                    &lt;dependency&gt;
+                        &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;
+                        &lt;artifactId&gt;mybatis-generator-core&lt;/artifactId&gt;
+                        &lt;version&gt;1.3.2&lt;/version&gt;
+                    &lt;/dependency&gt;
+                &lt;/dependencies&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+&lt;/project&gt;
+</code></pre>
+</li>
+<li><p>生成代码（同方法一）</p>
+</li>
+</ol>
+<h1 id="Idea中生成Mapper"><a href="#Idea中生成Mapper" class="headerlink" title="Idea中生成Mapper"></a>Idea中生成Mapper</h1><ol>
+<li><p>在 mapper 接口上 alt + enter</p>
+<img src="/2022/052313919/10.jpg" class>
+</li>
+<li><p>选择：Generate mapper of xml</p>
+</li>
+<li><p>选择mapper 位置</p>
+<img src="/2022/052313919/11.jpg" class></li>
+</ol>
+<h1 id="MyBatis中TypeHandler"><a href="#MyBatis中TypeHandler" class="headerlink" title="MyBatis中TypeHandler"></a>MyBatis中TypeHandler</h1><p>在Mybatis中可以定义一个TypeHandler类型，通过它可以实现Java类型跟数据库类型的相互转换。</p>
+<p>需求：把java实体类中的String[],转换为数据库中的varchar类型（例如保存用户的多个爱好）　</p>
+<ol>
+<li><p>数据库</p>
+<pre><code>CREATE TABLE myuser(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(30) NOT NULL,
+    PASSWORD VARCHAR(30) NOT NULL,
+    interests VARCHAR(100) 
+)
+</code></pre>
+</li>
+<li><p>实体类</p>
+<pre><code>@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class MyUser &#123;
+    private int id;  
+    private String username;  
+    private String password;  
+    private String[] interests;
+&#125;
+</code></pre>
+</li>
+<li><p>类型转换器</p>
+<pre><code>package com.neu.util;
+
+import java.sql.CallableStatement;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Date;
+
+import org.apache.ibatis.type.BaseTypeHandler;
+import org.apache.ibatis.type.JdbcType;
+import org.apache.ibatis.type.MappedJdbcTypes;
+import org.apache.ibatis.type.MappedTypes;
+
+@MappedJdbcTypes(JdbcType.VARCHAR)
+@MappedTypes(String[].class)
+public class StringArrayTypeHandler extends BaseTypeHandler&lt;String[]&gt; &#123;
+
+    private String[] getStringArray(String columnValue) &#123;
+       if (columnValue == null)
+           return null;
+       return columnValue.split(&quot;,&quot;);
+    &#125;
+     
+    @Override
+    public String[] getNullableResult(ResultSet rs, String columnName)
+           throws SQLException &#123;
+       return getStringArray(rs.getString(columnName));
+    &#125;
+ 
+    @Override
+    public String[] getNullableResult(ResultSet rs, int columnIndex)
+           throws SQLException &#123;
+       return this.getStringArray(rs.getString(columnIndex));
+    &#125;
+ 
+    @Override
+    public String[] getNullableResult(CallableStatement cs, int columnIndex)
+           throws SQLException &#123;
+       return this.getStringArray(cs.getString(columnIndex));
+    &#125;
+ 
+    @Override
+    public void setNonNullParameter(PreparedStatement ps, int i,
+           String[] parameter, JdbcType jdbcType) throws SQLException &#123;
+       //由于BaseTypeHandler中已经把parameter为null的情况做了处理，所以这里我们就不用再判断parameter是否为空了，直接用就可以了
+       StringBuffer result = new StringBuffer();
+       for (String value : parameter)
+           result.append(value).append(&quot;,&quot;);
+       result.deleteCharAt(result.length()-1);
+       ps.setString(i, result.toString());
+    &#125;
+   
+    
+&#125;
+</code></pre>
+<p>1.@MappedJdbcTypes定义是JdbcType类型，必须要是枚举类org.apache.ibatis.type.JdbcType所枚举的数据类型<br>2.@MappedTypes定义的是JavaType的数据类型，描述哪些Java类型可被拦截。<br>3.在我们启用了自定义的这个TypeHandler之后，数据的读写都会被这个类所过滤<br>4.在setNonNullParameter方法中，重新定义要写往数据库的数据。<br>5.在另外三个方法中我们将从数据库读出的数据类型进行转换。</p>
+</li>
+<li><p>注册 TypeHandler（SqlMapConfig.xml）</p>
+<pre><code>&lt;typeHandlers&gt;
+   &lt;package name=&quot;com.neu.util&quot;/&gt;
+&lt;/typeHandlers&gt;
+或
+&lt;typeHandlers&gt;
+   &lt;typeHandler handler=&quot;com.neu.util.StringArrayTypeHandler&quot;/&gt;
+&lt;/typeHandlers&gt;
+</code></pre>
+</li>
+<li><p>接口</p>
+<pre><code>public interface MyUserMapper &#123;
+    MyUser getById(int id);
+    
+    int insert(MyUser user);
+    
+    int update(MyUser user);
+&#125;
+</code></pre>
+</li>
+<li><p>mapper（可以不配置 typeHandler 属性，由mybatis自动选择）</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.neu.mapper.MyUserMapper&quot;&gt;
+    &lt;resultMap type=&quot;com.neu.po.MyUser&quot; id=&quot;basicMap&quot;&gt;
+        &lt;result column=&quot;interests&quot; property=&quot;interests&quot; typeHandler=&quot;com.neu.util.StringArrayTypeHandler&quot; /&gt;
+    &lt;/resultMap&gt;
+    &lt;!-- 可以使用 resultMap 进行手工映射 --&gt;
+    &lt;select id=&quot;getById&quot; resultType=&quot;com.neu.po.MyUser&quot;&gt;
+        select * from myuser where id = #&#123;id&#125;
+    &lt;/select&gt;
+    
+    &lt;insert id=&quot;insert&quot;&gt;
+        insert into myuser values(
+            #&#123;id&#125;,
+            #&#123;username,javaType=String,jdbcType=VARCHAR,typeHandler=org.apache.ibatis.type.StringTypeHandler&#125;,
+            #&#123;password&#125;,#&#123;interests,typeHandler=com.neu.util.StringArrayTypeHandler&#125;
+        )
+    &lt;/insert&gt;
+    
+    &lt;update id=&quot;update&quot;&gt;
+        update myuser set username = #&#123;username&#125;,password= #&#123;password&#125;,interests=#&#123;interests&#125;
+        where id = #&#123;id&#125;
+    &lt;/update&gt;
+&lt;/mapper&gt;
+</code></pre>
+</li>
+<li><p>测试代码</p>
+<pre><code>public class MyUserMapperTest &#123;
+    private SqlSession session;
+    private MyUserMapper myuserMapper;
+    
+    @Before
+    public void setup() throws IOException &#123;
+        //ctrl+2 L
+        //读取配置文件
+        InputStream inputStream = Resources.getResourceAsStream(&quot;SqlMapConfig.xml&quot;);
+        //创建SqlSessionFactory
+        SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        //创建连接，相当于Connection
+        session = sessionFactory.openSession();
+        //返回DeptMapper接口的实现类
+        myuserMapper = session.getMapper(MyUserMapper.class);
+    &#125;
+    
+    @After
+    public void after() &#123;
+        //关闭会话
+        session.close();
+    &#125;
+
+    @Test
+    public void testInsert() &#123;
+        int n = myuserMapper.insert(new MyUser(33,&quot;tom&quot;,&quot;111&quot;,new String[]&#123;&quot;游泳&quot;,&quot;爬山&quot;&#125;));		
+        
+        System.out.println(n);
+        
+        session.commit();
+    &#125;
+    
+    @Test
+    public void testGetById() &#123;
+        MyUser user = myuserMapper.getById(10);
+        System.out.println(user);
+    &#125;
+    
+    @Test
+    public void testUpdate() &#123;
+        int n = myuserMapper.update(new MyUser(33,&quot;marry&quot;,&quot;222&quot;,new String[]&#123;&quot;游泳&quot;,&quot;爬山&quot;,&quot;钓鱼&quot;&#125;));		
+        
+        System.out.println(n);
+        
+        session.commit();
+    &#125;
+&#125;
+</code></pre>
+</li>
+</ol>
+<p>mybatis中 在  <code>TypeHandlerRegistry</code> 注册内置拦截器</p>
+<pre><code>public TypeHandlerRegistry(Configuration configuration) &#123;
+    this.unknownTypeHandler = new UnknownTypeHandler(configuration);
+
+    register(Boolean.class, new BooleanTypeHandler());
+    register(boolean.class, new BooleanTypeHandler());
+    register(JdbcType.BOOLEAN, new BooleanTypeHandler());
+    register(JdbcType.BIT, new BooleanTypeHandler());
+
+    register(Byte.class, new ByteTypeHandler());
+    register(byte.class, new ByteTypeHandler());
+    register(JdbcType.TINYINT, new ByteTypeHandler());
+
+    register(Short.class, new ShortTypeHandler());
+    register(short.class, new ShortTypeHandler());
+    register(JdbcType.SMALLINT, new ShortTypeHandler());
+
+    register(Integer.class, new IntegerTypeHandler());
+    register(int.class, new IntegerTypeHandler());
+    register(JdbcType.INTEGER, new IntegerTypeHandler());
+
+    register(Long.class, new LongTypeHandler());
+    register(long.class, new LongTypeHandler());
+
+    register(Float.class, new FloatTypeHandler());
+    register(float.class, new FloatTypeHandler());
+    register(JdbcType.FLOAT, new FloatTypeHandler());
+
+    register(Double.class, new DoubleTypeHandler());
+    register(double.class, new DoubleTypeHandler());
+    register(JdbcType.DOUBLE, new DoubleTypeHandler());
+
+    register(Reader.class, new ClobReaderTypeHandler());
+    register(String.class, new StringTypeHandler());
+    register(String.class, JdbcType.CHAR, new StringTypeHandler());
+    register(String.class, JdbcType.CLOB, new ClobTypeHandler());
+    register(String.class, JdbcType.VARCHAR, new StringTypeHandler());
+    register(String.class, JdbcType.LONGVARCHAR, new StringTypeHandler());
+    register(String.class, JdbcType.NVARCHAR, new NStringTypeHandler());
+    register(String.class, JdbcType.NCHAR, new NStringTypeHandler());
+    register(String.class, JdbcType.NCLOB, new NClobTypeHandler());
+    register(JdbcType.CHAR, new StringTypeHandler());
+    register(JdbcType.VARCHAR, new StringTypeHandler());
+    register(JdbcType.CLOB, new ClobTypeHandler());
+    register(JdbcType.LONGVARCHAR, new StringTypeHandler());
+    register(JdbcType.NVARCHAR, new NStringTypeHandler());
+    register(JdbcType.NCHAR, new NStringTypeHandler());
+    register(JdbcType.NCLOB, new NClobTypeHandler());
+
+    register(Object.class, JdbcType.ARRAY, new ArrayTypeHandler());
+    register(JdbcType.ARRAY, new ArrayTypeHandler());
+
+    register(BigInteger.class, new BigIntegerTypeHandler());
+    register(JdbcType.BIGINT, new LongTypeHandler());
+
+    register(BigDecimal.class, new BigDecimalTypeHandler());
+    register(JdbcType.REAL, new BigDecimalTypeHandler());
+    register(JdbcType.DECIMAL, new BigDecimalTypeHandler());
+    register(JdbcType.NUMERIC, new BigDecimalTypeHandler());
+
+    register(InputStream.class, new BlobInputStreamTypeHandler());
+    register(Byte[].class, new ByteObjectArrayTypeHandler());
+    register(Byte[].class, JdbcType.BLOB, new BlobByteObjectArrayTypeHandler());
+    register(Byte[].class, JdbcType.LONGVARBINARY, new BlobByteObjectArrayTypeHandler());
+    register(byte[].class, new ByteArrayTypeHandler());
+    register(byte[].class, JdbcType.BLOB, new BlobTypeHandler());
+    register(byte[].class, JdbcType.LONGVARBINARY, new BlobTypeHandler());
+    register(JdbcType.LONGVARBINARY, new BlobTypeHandler());
+    register(JdbcType.BLOB, new BlobTypeHandler());
+
+    register(Object.class, unknownTypeHandler);
+    register(Object.class, JdbcType.OTHER, unknownTypeHandler);
+    register(JdbcType.OTHER, unknownTypeHandler);
+
+    register(Date.class, new DateTypeHandler());
+    register(Date.class, JdbcType.DATE, new DateOnlyTypeHandler());
+    register(Date.class, JdbcType.TIME, new TimeOnlyTypeHandler());
+    register(JdbcType.TIMESTAMP, new DateTypeHandler());
+    register(JdbcType.DATE, new DateOnlyTypeHandler());
+    register(JdbcType.TIME, new TimeOnlyTypeHandler());
+
+    register(java.sql.Date.class, new SqlDateTypeHandler());
+    register(java.sql.Time.class, new SqlTimeTypeHandler());
+    register(java.sql.Timestamp.class, new SqlTimestampTypeHandler());
+
+    register(String.class, JdbcType.SQLXML, new SqlxmlTypeHandler());
+
+    register(Instant.class, new InstantTypeHandler());
+    register(LocalDateTime.class, new LocalDateTimeTypeHandler());
+    register(LocalDate.class, new LocalDateTypeHandler());
+    register(LocalTime.class, new LocalTimeTypeHandler());
+    register(OffsetDateTime.class, new OffsetDateTimeTypeHandler());
+    register(OffsetTime.class, new OffsetTimeTypeHandler());
+    register(ZonedDateTime.class, new ZonedDateTimeTypeHandler());
+    register(Month.class, new MonthTypeHandler());
+    register(Year.class, new YearTypeHandler());
+    register(YearMonth.class, new YearMonthTypeHandler());
+    register(JapaneseDate.class, new JapaneseDateTypeHandler());
+
+    // issue #273
+    register(Character.class, new CharacterTypeHandler());
+    register(char.class, new CharacterTypeHandler());
+  &#125;
+</code></pre>
+<p>mybatis 类型别名 注册：TypeAliasRegistry</p>
+<pre><code>说明：https://blog.csdn.net/lgl782519197/article/details/109066243
+</code></pre>
+<pre><code>public TypeAliasRegistry() &#123;
+    registerAlias(&quot;string&quot;, String.class);
+
+    registerAlias(&quot;byte&quot;, Byte.class);
+    registerAlias(&quot;long&quot;, Long.class);
+    registerAlias(&quot;short&quot;, Short.class);
+    registerAlias(&quot;int&quot;, Integer.class);
+    registerAlias(&quot;integer&quot;, Integer.class);
+    registerAlias(&quot;double&quot;, Double.class);
+    registerAlias(&quot;float&quot;, Float.class);
+    registerAlias(&quot;boolean&quot;, Boolean.class);
+
+    registerAlias(&quot;byte[]&quot;, Byte[].class);
+    registerAlias(&quot;long[]&quot;, Long[].class);
+    registerAlias(&quot;short[]&quot;, Short[].class);
+    registerAlias(&quot;int[]&quot;, Integer[].class);
+    registerAlias(&quot;integer[]&quot;, Integer[].class);
+    registerAlias(&quot;double[]&quot;, Double[].class);
+    registerAlias(&quot;float[]&quot;, Float[].class);
+    registerAlias(&quot;boolean[]&quot;, Boolean[].class);
+
+    registerAlias(&quot;_byte&quot;, byte.class);
+    registerAlias(&quot;_long&quot;, long.class);
+    registerAlias(&quot;_short&quot;, short.class);
+    registerAlias(&quot;_int&quot;, int.class);
+    registerAlias(&quot;_integer&quot;, int.class);
+    registerAlias(&quot;_double&quot;, double.class);
+    registerAlias(&quot;_float&quot;, float.class);
+    registerAlias(&quot;_boolean&quot;, boolean.class);
+
+    registerAlias(&quot;_byte[]&quot;, byte[].class);
+    registerAlias(&quot;_long[]&quot;, long[].class);
+    registerAlias(&quot;_short[]&quot;, short[].class);
+    registerAlias(&quot;_int[]&quot;, int[].class);
+    registerAlias(&quot;_integer[]&quot;, int[].class);
+    registerAlias(&quot;_double[]&quot;, double[].class);
+    registerAlias(&quot;_float[]&quot;, float[].class);
+    registerAlias(&quot;_boolean[]&quot;, boolean[].class);
+
+    registerAlias(&quot;date&quot;, Date.class);
+    registerAlias(&quot;decimal&quot;, BigDecimal.class);
+    registerAlias(&quot;bigdecimal&quot;, BigDecimal.class);
+    registerAlias(&quot;biginteger&quot;, BigInteger.class);
+    registerAlias(&quot;object&quot;, Object.class);
+
+    registerAlias(&quot;date[]&quot;, Date[].class);
+    registerAlias(&quot;decimal[]&quot;, BigDecimal[].class);
+    registerAlias(&quot;bigdecimal[]&quot;, BigDecimal[].class);
+    registerAlias(&quot;biginteger[]&quot;, BigInteger[].class);
+    registerAlias(&quot;object[]&quot;, Object[].class);
+
+    registerAlias(&quot;map&quot;, Map.class);
+    registerAlias(&quot;hashmap&quot;, HashMap.class);
+    registerAlias(&quot;list&quot;, List.class);
+    registerAlias(&quot;arraylist&quot;, ArrayList.class);
+    registerAlias(&quot;collection&quot;, Collection.class);
+    registerAlias(&quot;iterator&quot;, Iterator.class);
+
+    registerAlias(&quot;ResultSet&quot;, ResultSet.class);
+  &#125;
+</code></pre>
+<h1 id="使用注解替代mapper文件"><a href="#使用注解替代mapper文件" class="headerlink" title="使用注解替代mapper文件"></a>使用注解替代mapper文件</h1><ol>
+<li><p>使用注解</p>
+<pre><code>@Select(&quot;select * from dept&quot;)
+List&lt;Dept&gt; getAll();
+
+@Insert(&quot;insert into dept values(#&#123;deptno&#125;,#&#123;dname&#125;,#&#123;loc&#125;)&quot;)
+int insert(Dept dept);
+</code></pre>
+</li>
+<li><p>长 SQL 语句的写法</p>
+<pre><code>@Select(&quot;select * from dept &quot;+
+        &quot;where deptno = #&#123;deptno&#125;&quot;)
+Dept getById(int deptno);
+
+@Select(&#123;&quot;select * from dept &quot;,
+         &quot;where deptno = #&#123;deptno&#125;&quot;&#125;)
+Dept getById(int deptno);
+</code></pre>
+</li>
+<li><p>ResultMap</p>
+<ul>
+<li><p>直接在接口方法上添加@Results注解</p>
+<pre><code>//mybatis的版本号：3.5.4，支持@Results中的id属性
+@Select(&#123;&quot;select * from dept &quot;,
+            &quot;where deptno = #&#123;deptno&#125;&quot;&#125;)
+    @Results(id=&quot;basicMap&quot;, value= &#123;
+            @Result(column = &quot;deptno&quot;,property = &quot;deptno&quot;,id = true),
+            @Result(column = &quot;dname&quot;,property = &quot;dname&quot;),
+            @Result(column = &quot;loc&quot;,property = &quot;loc&quot;),
+            @Result(property = &quot;emps&quot;,column = &quot;deptno&quot;,many = @Many(select = &quot;com.neu.mapper.EmpMapper.getByDeptno&quot;))
+    &#125;)
+    Dept getById(int deptno);
+    
+    
+@Select(&quot;select * from emp where empno = #&#123;empno&#125;&quot;)
+    @Results(value= &#123;
+            @Result(
+                    property = &quot;dept&quot;,
+                    column = &quot;deptno&quot;,
+                    one = @One(select = &quot;com.neu.mapper.DeptMapper.getById&quot;
+            ))
+    &#125;)
+    Emp getById(int empno);
+</code></pre>
+</li>
 <li><p>使用@ResultMap注解，引用@Results</p>
 <pre><code>//basicMap可以是@Results的id或对应mapper.xml文件中&lt;resultMap&gt;的id属性
 @Select(&quot;select * from dept&quot;)
 @ResultMap(&quot;basicMap&quot;)
 List&lt;Dept&gt; getAll();
-</code></pre></li>
+</code></pre>
+</li>
 </ul>
-<ol>
+<ol start="4">
 <li><p>得到自增主键值</p>
 <pre><code>@Insert(&quot;insert into dept values(null,#&#123;dname&#125;,#&#123;loc&#125;)&quot;)
     @SelectKey(
@@ -1728,7 +1847,10 @@ List&lt;Dept&gt; getAll();
         before = false
     )
     int insert(Dept dept);
-</code></pre></li>
+</code></pre>
+</li>
+</ol>
+</li>
 </ol>
 <h1 id="查询补充"><a href="#查询补充" class="headerlink" title="查询补充"></a>查询补充</h1><pre><code>//接口
 List&lt;Map&lt;String,Object&gt;&gt; report();
@@ -1739,7 +1861,8 @@ List&lt;Map&lt;String,Object&gt;&gt; report();
         from emp e join dept d
         on e.deptno = d.deptno
 &lt;/select&gt;
-</code></pre><h1 id="MBG-Mybatis-Generator"><a href="#MBG-Mybatis-Generator" class="headerlink" title="MBG(Mybatis Generator)"></a>MBG(Mybatis Generator)</h1><ol>
+</code></pre>
+<h1 id="MBG-Mybatis-Generator"><a href="#MBG-Mybatis-Generator" class="headerlink" title="MBG(Mybatis Generator)"></a>MBG(Mybatis Generator)</h1><ol>
 <li><p>定义：是一个Mybatis的代码生成器，是根据已经创建的数据库表生成实体类、mapper接口、sql映射文件</p>
 </li>
 <li><p>操作过程</p>
@@ -1750,10 +1873,12 @@ List&lt;Map&lt;String,Object&gt;&gt; report();
 <ul>
 <li><p>改为使用“简单模板”</p>
 <pre><code>&lt;context id=&quot;context1&quot; targetRuntime=&quot;Mybatis3Simple&quot;&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>使用默认模板</p>
 <pre><code>&lt;context id=&quot;context1&quot; &gt;
-</code></pre></li>
+</code></pre>
+</li>
 </ul>
 </li>
 <li><p>修改配置</p>
@@ -1765,7 +1890,7 @@ List&lt;Map&lt;String,Object&gt;&gt; report();
     &lt;javaModelGenerator targetPackage=&quot;com.neu.po&quot; targetProject=&quot;mybatismbg&quot; /&gt;
     &lt;sqlMapGenerator targetPackage=&quot;com.neu.mapper&quot; targetProject=&quot;mybatismbg&quot;&gt;&lt;/sqlMapGenerator&gt;
     &lt;javaClientGenerator targetPackage=&quot;com.neu.mapper&quot; targetProject=&quot;mybatismbg&quot; type=&quot;XMLMAPPER&quot; /&gt;
-
+    
     &lt;table schema=&quot;root&quot; tableName=&quot;dept&quot;&gt;
       &lt;!-- &lt;columnOverride column=&quot;???&quot; property=&quot;???&quot; /&gt; --&gt;
     &lt;/table&gt;
@@ -1774,7 +1899,8 @@ List&lt;Map&lt;String,Object&gt;&gt; report();
     &lt;/table&gt;
   &lt;/context&gt;
 &lt;/generatorConfiguration&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>生成代码（配置文件右键）</p>
 </li>
 <li><p>如果有实体关联，修改xml配置文件</p>
@@ -1784,17 +1910,19 @@ List&lt;Map&lt;String,Object&gt;&gt; report();
 &lt;table schema=&quot;root&quot; tableName=&quot;emp&quot;&gt;
     &lt;columnOverride column=&quot;deptno&quot; property=&quot;dept&quot; javaType=&quot;com.neu.po.Dept&quot; /&gt;
 &lt;/table&gt;
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>修改生成的mapper文件</p>
 <pre><code>&lt;!-- &lt;result column=&quot;deptno&quot; jdbcType=&quot;INTEGER&quot; property=&quot;dept&quot; /&gt; --&gt;
-
+    
 &lt;association property=&quot;dept&quot; column=&quot;deptno&quot; select=&quot;com.neu.mapper.DeptMapper.selectByPrimaryKey&quot;&gt;&lt;/association&gt;
-</code></pre><p>修改 dept =》 dept.deptno(注意：别修改列名)</p>
+</code></pre>
+<p>修改 dept &#x3D;》 dept.deptno(注意：别修改列名)</p>
 </li>
 </ul>
 </li>
 </ul>
-<ol>
+<ol start="3">
 <li><p>使用Mybatis3模板</p>
 <ul>
 <li><p>生成的接口中有11个方法</p>
@@ -1808,30 +1936,31 @@ List&lt;Map&lt;String,Object&gt;&gt; report();
 <pre><code>@Test
     public void testGetByExample() throws IOException &#123;
         EmpExample example = new EmpExample();
-//        example.or().andEnameEqualTo(&quot;SMITH&quot;).andSalGreaterThan(new BigDecimal(700));
-//        example.or().andEnameLike(&quot;%S%&quot;);
-//        example.or().andSalBetween(new BigDecimal(1500), new BigDecimal(2000));
-//        List&lt;Integer&gt; list = new ArrayList&lt;&gt;();
-//        list.add(7369);
-//        list.add(7499);
-//        
-//        example.or().andEmpnoIn(list);
-
+//		example.or().andEnameEqualTo(&quot;SMITH&quot;).andSalGreaterThan(new BigDecimal(700));
+//		example.or().andEnameLike(&quot;%S%&quot;);
+//		example.or().andSalBetween(new BigDecimal(1500), new BigDecimal(2000));
+//		List&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+//		list.add(7369);
+//		list.add(7499);
+//		
+//		example.or().andEmpnoIn(list);
+        
         Dept dept = new Dept();
         dept.setDeptno(10);
-
+        
         example.or().andDeptEqualTo(dept);
-
+        
         List&lt;Emp&gt; list2 = empMapper.selectByExample(example);
         System.out.println(list2);
     &#125;
-
+    
 //修改EmpExample
 public Criteria andDeptEqualTo(Dept value) &#123;
    addCriterion(&quot;deptno =&quot;, value.getDeptno(), &quot;dept&quot;);
    return (Criteria) this;
 &#125;
-</code></pre></li>
+</code></pre>
+</li>
 </ul>
 <p>练习：</p>
 <ol>
@@ -2279,7 +2408,7 @@ public Criteria andDeptEqualTo(Dept value) &#123;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">204.9k</span>
+                        class="white-color">218.5k</span>
             
             
             
