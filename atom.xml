@@ -6,7 +6,7 @@
   <link href="http://ffffrance.github.io/atom.xml" rel="self"/>
   
   <link href="http://ffffrance.github.io/"/>
-  <updated>2022-07-10T09:34:41.071Z</updated>
+  <updated>2023-06-14T02:28:18.879Z</updated>
   <id>http://ffffrance.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>文献阅读：AIOS</title>
+    <link href="http://ffffrance.github.io/2022/103112139.html"/>
+    <id>http://ffffrance.github.io/2022/103112139.html</id>
+    <published>2022-10-31T09:06:45.217Z</published>
+    <updated>2023-06-14T02:28:18.879Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;文献阅读：&quot;&gt;&lt;a href=&quot;#文献阅读：&quot; class=&quot;headerlink&quot; title=&quot;文献阅读：&quot;&gt;&lt;/a&gt;文献阅读：&lt;/h1&gt;&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="文献阅读" scheme="http://ffffrance.github.io/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="文献阅读" scheme="http://ffffrance.github.io/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>动态规划</title>
@@ -121,7 +146,7 @@
     <link href="http://ffffrance.github.io/2022/063057443.html"/>
     <id>http://ffffrance.github.io/2022/063057443.html</id>
     <published>2022-06-30T03:45:51.000Z</published>
-    <updated>2022-07-10T12:46:33.454Z</updated>
+    <updated>2022-09-12T03:00:29.477Z</updated>
     
     
       
@@ -488,31 +513,6 @@
     
     
     <category term="计算机组成原理" scheme="http://ffffrance.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker</title>
-    <link href="http://ffffrance.github.io/2022/061040991.html"/>
-    <id>http://ffffrance.github.io/2022/061040991.html</id>
-    <published>2022-06-10T13:20:56.000Z</published>
-    <updated>2022-06-17T04:35:29.257Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Docker&quot;&gt;&lt;a href=&quot;#Docker&quot; class=&quot;headerlink&quot; title=&quot;Docker&quot;&gt;&lt;/a&gt;Docker&lt;/h1&gt;&lt;p&gt;Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Docker" scheme="http://ffffrance.github.io/categories/Docker/"/>
-    
-    
-    <category term="Docker" scheme="http://ffffrance.github.io/tags/Docker/"/>
     
   </entry>
   
