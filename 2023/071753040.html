@@ -1,0 +1,1089 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="文献阅读：KVSSD, Springboot,java,HTML,Vue,linux等">
+    <meta name="description" content="文献阅读：KVSSD">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+    <style>
+        body{
+            background-image: url(/medias/bg.png);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+    <title>文献阅读：KVSSD | FFFfrance&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/guixinchn/image/blog/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/guixinchn/image/blog/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">FFFfrance&#39;s Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/guixinchn/image/blog/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">FFFfrance&#39;s Blog</div>
+        <div class="logo-desc">
+            
+            个人分享博客，总结开发经验，记录生活点滴
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">文献阅读：KVSSD</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/">
+                                <span class="chip bg-color">文献阅读</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" class="post-category">
+                                文献阅读
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-07-17
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-07-17
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    15 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="KVSSD"><a href="#KVSSD" class="headerlink" title="KVSSD"></a>KVSSD</h1><h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><h3 id="LSM树"><a href="#LSM树" class="headerlink" title="LSM树"></a>LSM树</h3><ul>
+<li>目前HBase,LevelDB,RocksDB这些NoSQL存储都是采用的LSM树。LSM树的核心特点是利用顺序写来提高写性能，但因为分层(此处分层是指的分为内存和文件两部分)的设计会稍微降低读性能，但是通过牺牲小部分读性能换来高性能写，使得LSM树成为非常流行的存储结构。</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/181498475">https://zhuanlan.zhihu.com/p/181498475</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e89cd503c9ae?utm_campaign=hugo">https://www.jianshu.com/p/e89cd503c9ae?utm_campaign=hugo</a><h3 id="RocksDB介绍"><a href="#RocksDB介绍" class="headerlink" title="RocksDB介绍"></a>RocksDB介绍</h3></li>
+<li>Rocksdb 是基于Google LevelDB研发的高性能kv持久化存储引擎，以库组件形式嵌入程序中，为大规模分布式应用在ssd上运行提供优化。RocksDB不提供高层级的操作，例如备份、负载均衡、快照等，而是选择提供工具支持将实现交给上层应用。正是这种高度可定制化能力，允许RocksDB对广泛的需求和工作负载场景进行定制。</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/615110916">https://zhuanlan.zhihu.com/p/615110916</a><h3 id="非关系型数据库"><a href="#非关系型数据库" class="headerlink" title="非关系型数据库"></a>非关系型数据库</h3></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/112340622">https://zhuanlan.zhihu.com/p/112340622</a><h3 id="RAID"><a href="#RAID" class="headerlink" title="RAID"></a>RAID</h3></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/51170719">https://zhuanlan.zhihu.com/p/51170719</a><h2 id="KV-SSD论文阅读：Towards-Building-a-High-Performance-Scale-In-Key-Value-Storage-System"><a href="#KV-SSD论文阅读：Towards-Building-a-High-Performance-Scale-In-Key-Value-Storage-System" class="headerlink" title="KV-SSD论文阅读：Towards Building a High-Performance, Scale-In Key-Value Storage System"></a>KV-SSD论文阅读：Towards Building a High-Performance, Scale-In Key-Value Storage System</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3></li>
+<li>键值存储存在问题：<br>SSD高带宽没法充分利用，IO中数据管理开销大（压缩操作），维护键值对一致性开销大，结点可伸缩性差（CPU需要产生巨大IO才能使得SSD带宽利用）  </li>
+<li>所以设计内部管理可变长度键值对的KV-SSD，通过将键值管理层卸载到SSD，可以显著减少对主机系统资源的需求，并且可以在设备内隔离维护键值对的开销。  <h3 id="背景与动机"><a href="#背景与动机" class="headerlink" title="背景与动机"></a>背景与动机</h3></li>
+<li>NVMe SSD资源需求：<br>基于块的NVMe SSD的资源使用情况进行测量，了解SSD达到饱和状态所需的最小资源(计算量)，测试得出有文件系统吞吐量偏低，需要更多CPU饱和SSD。<br>（得到结果：一个CPU需要专门用于饱和一个NVMe设备，随着IO层次复杂需要更多CPU）  </li>
+<li>传统键值存储应用访问SSD三条路径存在问题：  </li>
+<li><img src="/2023/0717undefined/1.jpg" class>     
+①路径1:将用户数据存储在文件上，并使用内核文件系统、块缓存、块I&#x2F;O层和内核驱动程序;<br>比如RocksDB的压缩操作会影响性能。<br>②路径2:绕过内核文件系统和缓存层，但使用块层和内核驱动程序;<br>比如Aerospike，它利用本地、多线程、多核读写I&#x2F;O模式。写被缓冲在内存中，一旦写满，写缓冲区就刷新到持久存储。与任何日志结构的写方案一样，随着时间的推移，磁盘块上的记录会因更新和删除而失效。碎片整理进程跟踪活动记录，并通过将活动记录复制到不同的块来回收空间。相关的读写放大会影响性能。<br>③路径3:使用用户空间库和驱动程序。<br>比如RocksDB-SPDK是支持SPDK的RocksDB，它使RocksDB能够使用用户空间SPDK驱动程序和相关的SPDK Blobstore文件系统(BlobFS)来存储其文件。BlobFS基于SPDK Blobstore，它拥有并将整个设备划分为1mb的区域，称为集群。Blobstore管理对blob的并行读写，blob由集群组成。Blobstore完全避免了页面缓存，其行为类似于DIRECT I&#x2F;O。Blobstore还提供零复制、无锁、真正异步的读写存储设备。默认情况下，RocksDB-SPDK中WAL是被禁用的。由于WAL是RocksDB设计中不可或缺的一部分，如果没有日志，评估RocksDB- spdk将是不正确的。  </li>
+<li>挑战和瓶颈：<br>①多层干扰:在数据访问的漫长过程中，用户读写请求在提交给设备之前通常要经过多个I&#x2F;O层，与请求处理相关的延迟也会增加。<br>②资源争用:键值存储需要在多个前台和后台进程之间进行平衡。为了利用设备带宽，随着前台进程数量的增加，后台进程的工作负载也会增加，从而导致系统变慢或停滞。这限制了节点的可伸缩性，因为更多的cpu专用于支持更少数量的高性能存储设备。<br>③数据一致性:预写日志WAL通常用于数据一致性。但是WAL将用户吞吐量减少了一半，此外WAL在前台生成同步写操作也使得降低设备利用率。<br>④读写放大:键值存储引入了垃圾收集、压缩和&#x2F;或碎片整理等过程，这极大地增加了读写放大。  <h3 id="KV-SSD设计"><a href="#KV-SSD设计" class="headerlink" title="KV-SSD设计"></a>KV-SSD设计</h3></li>
+<li><img src="/2023/0717undefined/2.jpg" class>     </li>
+<li>设计点如下：<br>①轻量级请求转换:<br>由于支持可变大小的键值对，因此不再需要键值到块的转换。应用程序可以直接创建请求并向KV-SSD发送请求，而无需通过任何遗留存储堆栈，从而减少了请求处理和内存开销。<br>②没有日志记录的一致性:<br>不需要在主机端维护键值对的元数据，从而消除了将元数据和数据存储在一起的日志记录或事务的需要。键值对的一致性现在在KV-SSD内部管理，使用其电池支持的内存请求缓冲区。保证每个键值请求在设备中要么具有全部一致性，要么没有一致性。因此，对于独立的键值对，主机端不需要预写日志(WAL)机制。<br>③读写放大减小:<br>KV-SSD的主机端读写放大系数保持为最优值1，因为它不需要为键值对存储额外的信息。在KV-SSD内部，因为可变大小的键在写入索引结构之前是散列的，所以它们仍然可以被认为是固定大小的键。因此，KV-SSD内部读写放大系数与块ssd中的随机块读写放大系数相同。<br>④内存占用小:<br>无论设备中有多少个键值对，KV-SSD占用的主机内存都是恒定的。它的内存消耗可以通过将I&#x2F;O队列深度乘以键值对的大小和值缓冲区的大小来计算。且KV-SSD允许键值存储应用程序轻松采用无共享架构，因为设备之间不需要共享主数据结构，可以避免同步效应带来的可伸缩性限制。它可以避免共享数据结构上的锁争用，还可以消除查找与给定请求关联的元数据的按需读取。  <h4 id="键值存储管理"><a href="#键值存储管理" class="headerlink" title="键值存储管理"></a>键值存储管理</h4></li>
+<li>在现有的基于块的SSD固件中添加了对可变大小键和值的支持。<br>①命令处理：<br>设计了5个本机命令:put、get、delete、exist和iterate。put和get命令类似于块设备的write和read命令，附加了对可变大小的键和值的支持。delete命令用来删除键值对。exist命令用于使用单个I&#x2F;O命令查询多个键的存在性。最后，iterate命令枚举与给定搜索前缀匹配的键，该前缀在KV-SSD中由4b位掩码表示。<br>例如，要处理一个put请求，首先从设备I&#x2F;O队列中获取命令头并传递给请求处理程序。然后，启动设备驱动程序和设备之间的通信，以从主机系统传输键值对。一旦数据在设备DRAM中准备就绪，请求处理程序将请求传递给索引管理器。如图4所示，Index Manager首先将可变大小的键散列到设备内的固定长度键，并将其存储在本地哈希表中，然后将其合并到全局哈希表中进行物理偏移转换，最后Index Manager将键值对发送到flash通道。索引管理器还将键的前4b存放到称为迭代器桶的容器中，该容器用于对具有相同4b前缀的所有键进行分组。<br>除此之外，还支持可变大小键值（消除了为名称解析维护额外日志和索引的需求，从而简化了I&#x2F;O堆栈）。<br>并且迭代器支持，键值应用程序通常需要组操作来维护对象。这包括再平衡、列表、恢复等。为了支持这些操作，KV-SSD提供了对迭代器的支持，迭代器可以列出、创建或删除一个组。在内部，所有匹配msb4b键的键都被容器化到迭代桶中，如图4所示。无论何时处理放置或删除操作，这些桶都以日志结构的方式更新，并定期由GC清理，如后面所述。</li>
+<li><img src="/2023/0717undefined/4.jpg" class>      
+②FTL和索引：<br>扩展了基于块的FTL，支持可变大小的键值对。使用LBA作为键的传统基于页或基于块的映射技术不能作为KV-SSD的主要索引结构，因为键的范围是不固定的。使用多级哈希表作为KV-SSD的全局索引结构，用于快速点查询。全局哈希表被设计为包含设备中的所有键值对，并由所有索引管理器共享。每个索引管理器都有一个本地哈希表来临时存储更新，以减少主表上的锁争用。这个局部哈希表与bloom过滤器相关联，以减少读取时对索引结构的内存访问次数，以便快速检查成员关系。<br>③垃圾回收：<br>将SSD中的垃圾收集器更改为识别存储在flash页面中的键值对和迭代器桶中更新的键。在清理期间，GC扫描flash页面中的键，通过在全局索引结构中查找它们来检查它们的有效性，并丢弃已经删除的键-值对。    <h4 id="KV库和驱动"><a href="#KV库和驱动" class="headerlink" title="KV库和驱动"></a>KV库和驱动</h4></li>
+<li>KV-SSD库为用户应用程序提供编程接口。它包括一个原始键-值命令集的包装器和额外的特性，比如内存管理、键-值LRU缓存、同步和异步I&#x2F;O、排序，以及一个模仿内存中KV-SSD行为的KV-SSD模拟器。默认情况下，KV库在内部使用非阻塞、异步I&#x2F;O来提高性能。同步I&#x2F;O是在异步I&#x2F;O的基础上模拟的。通常，对异步I&#x2F;O的支持是在内核的块I&#x2F;O层中提供的，但是由于KV- ssd应用程序绕过内核I&#x2F;O堆栈，我们将功能移到了KV驱动程序中。每当I&#x2F;O完成时，KV驱动程序将I&#x2F;O结果存储在内核内存中，并向事件文件描述符发送信号。然后，使用select()或epoll()等待I&#x2F;O完成的用户将得到通知。  <h4 id="测试评估"><a href="#测试评估" class="headerlink" title="测试评估"></a>测试评估</h4></li>
+<li>测出键值存储需要的资源：确认为使用一个RocksDB- spdk实例，每个设备使用2个不带WAL的flush线程，每个设备使用8个带WAL的RocksDB实例。为了了解每个键值存储利用设备性能的潜力，我们测量了吞吐量、CPU和I&#x2F;O利用率。  </li>
+<li><img src="/2023/0717undefined/5.jpg" class>     </li>
+<li>①最小化后台开销工作负载：<br>首先使用顺序工作负载来衡量每个键值存储的前台处理的可伸缩性，其中唯一的键是顺序生成和发送的，最大限度地减少了后处理的需要。结果显示在图5(a)的顺序工作负载列中。<br>当使用6个或更多设备时，RocksDB和Aerospike的性能受到CPU瓶颈的限制。6个设备中有48个RocksDB实例，每个实例包含一个活动I&#x2F;O线程，即48个I&#x2F;O线程在48个具有超线程的cpu上运行。之后其性能开始下降。Aerospike配置为每个设备有3个客户端和一个服务器，这显示了最佳的可扩展性能。它也会在CPU利用率达到80%后饱和。<br>由于RocksDB- spdk的异步特性和禁用了WAL，它比RocksDB和Aerospike显示出更好的设备和CPU利用率，但由于CPU瓶颈，它在12个设备后无法扩展。对于12个设备，由于每个RocksDBSPDK实例使用2个刷新线程，它占用了所有24个物理cpu，总共有24个异步刷新线程。<br>另一方面，KV-SSD随着设备数量的增加而线性扩展，所有18个设备只需要大约6个cpu。这种线性可伸缩性是通过将键值处理开销转移给设备来实现的，从而节省了主机系统中的CPU和内存资源。<br>图5(b)显示了运行基准测试时每个键值存储的主机端写放大。顺序工作负载列显示，总的I&#x2F;O数量与用户对Aerospike、RocksDB-SPDK和KV-SSD所需的键值对数量相同。由于使用了WAL, RocksDB产生了更多的I&#x2F;O。KV-SSD提供了与RocksDB相同的一致性级别，但没有日志记录，因为该基准中的键值对是独立的。图5(b)中另一个有趣的观察结果是，在所有工作负载中，KV-SSD的写放大明显更低，并且保持恒定。</li>
+<li>②给后台添加工作负载：<br>在键-值存储的设计中假设键总是排序是不切实际的，因为键可以被散列、覆盖或删除。即使每个用户都有一个独立的键空间并提供排序的键，键值存储的性能仍然会受到影响，因为并行性降低了;每个请求都需要按顺序处理。因此，利用存储设备的内部并行性变得困难。为了探索这种重叠工作负载的影响，我们使用统一分布和Zipfian分布生成的键来测量性能，这两种分布可能分别包含10-20%和80%的重复键。<br>在统一工作负载的情况下，如图5(a)所示，我们发现RocksDB和RocksDB- spdk都受到压缩开销的影响，这需要大量的后台I&#x2F; o和内存，使前台进程停滞或变慢。由于这样的处理开销，RocksDB-SPDK的好处被抵消了。另一方面，Aerospike和KV-SSD保留了它们的性能特征。这是因为Aerospike不区分顺序键和均匀分布键，而KV-SSD在内部用自己的资源处理开销。我们还注意到，RocksDB- spdk的写放大比RocksDB低，因为默认情况下它比RocksDB更晚调用压缩。<br>在Zipfian分布中，背景开销的数量比均匀情况下要低。这是因为许多覆盖可以缓存在写缓冲区中，从而减少了写的数量，并且由于重复的键减少了压缩的数量。Aerospike的碎片整理过程也会随着这个工作负载启动，从而增加其写放大。  </li>
+<li>③YCSB工作负载：  </li>
+<li><img src="/2023/0717undefined/6.jpg" class>     
+使用YCSB测量了每个键值存储的读和混合工作负载性能。YCSB-A和YCSB-B的读&#x2F;写比例分别为50%和95%。YCSB-C包含100%的读操作，YCSB-D包含5%的插入操作和95%的读操作。除了YCSB-D之外，Zipfian分布用于键，YCSB-D使用最新分布，其中最近插入的记录位于分布的头部。<br>图6显示，没有缓存的KV-SSD可以线性扩展，同时提供与具有大型缓存的传统键值存储相当的性能，因为与其他系统不同，KV-SSD使用其内部资源。它的读处理不需要额外的I&#x2F;O来查找元数据，因为设备内部有电池支持的DRAM。当有大量更新(YCSB-A)时，传统键值存储的整体性能受到其后台处理开销的影响。其他具有小覆盖的工作负载表现出与YCSB-C类似的性能特征，它只有读操作。由于工作负载分布不是zipfian就是最新的，所以大多数操作都是由内存观察到的。Aerospike使用自己的缓存，其性能在6个类似于其写性能的设备后仍然有限。</li>
+<li>④带缓存的KV-SSD：</li>
+<li><img src="/2023/0717undefined/7.jpg" class>     
+为每个KV-SSD实例添加10gb的LRU缓存并运行YCSB-C，每个KV-SSD实例的总体读性能提高了4到6倍，如图7所示，并且在内存利用率的一小部分上明显优于所有其他键值存储。为了在隔离其他性能影响因素(如其他插入或更新)的同时查看缓存效果，我们展示了来自YCSB-C(只读工作负载)的结果。在其他工作负载中也可以预期类似的改进。它的性能比RocksDB和其他系统至少高出4倍，并且消耗的内存也更少，最大内存消耗大约为180GB(18台设备，一半的RocksDB内存消耗)。<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4>通过对生产中使用18块NVMe ssd的三个键值存储的性能分析，我们发现，高前台和后台处理的键值存储阻碍了快速存储设备的性能和可扩展性。因此，传统的键值存储要么表现出次优性能，要么限制了可伸缩性。为了减轻这种权衡，我们开发了KV-SSD，并探索了将其用作传统主机端键值存储的替代方案。我们表明，通过将数据管理移动到数据附近，可以简化庞大且冗余的遗留存储堆栈，并且可以显着减少主机资源消耗，同时在不影响数据一致性的情况下饱和设备带宽。通过实验评估，我们表明kv - ssd在显著降低内存和CPU消耗的情况下线性扩展，优于传统的主机端键值存储。</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">FFFfrance</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://ffffrance.github.io/2023/071753040.html">http://ffffrance.github.io/2023/071753040.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">FFFfrance</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/">
+                                    <span class="chip bg-color">文献阅读</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/071814891.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="文献阅读：FEMU">
+                        
+                        <span class="card-title">文献阅读：FEMU</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            文献阅读：FEMU
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-18
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" class="post-category">
+                                    文献阅读
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/">
+                        <span class="chip bg-color">文献阅读</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/07179723.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="深入浅出SSD">
+                        
+                        <span class="card-title">深入浅出SSD</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            设计模式
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%98%E5%82%A8/" class="post-category">
+                                    存储
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%AD%98%E5%82%A8/">
+                        <span class="chip bg-color">存储</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="7402561500"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.5'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <a href="/about" target="_blank">FFFfrance</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">251k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/ffffrance" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:605026336@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=605026336" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 605026336" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    <script src="/js/FunnyTitle.js"></script>
+    
+    
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body>
+
+</html>

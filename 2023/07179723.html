@@ -1,0 +1,1127 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="深入浅出SSD, Springboot,java,HTML,Vue,linux等">
+    <meta name="description" content="设计模式">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+    <style>
+        body{
+            background-image: url(/medias/bg.png);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+    <title>深入浅出SSD | FFFfrance&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/guixinchn/image/blog/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/guixinchn/image/blog/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">FFFfrance&#39;s Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/guixinchn/image/blog/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">FFFfrance&#39;s Blog</div>
+        <div class="logo-desc">
+            
+            个人分享博客，总结开发经验，记录生活点滴
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">深入浅出SSD</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%AD%98%E5%82%A8/">
+                                <span class="chip bg-color">存储</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%AD%98%E5%82%A8/" class="post-category">
+                                存储
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-07-17
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-07-17
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    8.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    29 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="深入浅出SSD"><a href="#深入浅出SSD" class="headerlink" title="深入浅出SSD"></a>深入浅出SSD</h1><h2 id="认识SSD"><a href="#认识SSD" class="headerlink" title="认识SSD"></a>认识SSD</h2><ul>
+<li>什么是SSD：<br>SSD是一种以半导体为主要存储介质、外形和数据传输接口与传统的HDD相同的存储产品。目前主流SSD使用一种叫闪存的存储介质，未来随着存储半导体芯片技术的发展，它也可以使用更快、更可靠、更省电的新介质，例如3D XPoint、MRAM等。SSD是用固态电子存储芯片阵列制成的硬盘，主要部件为控制器和存储芯片，内部构造十分简单。详细来看，SSD硬件包括几大组成部分：主控、闪存、缓存芯片DRAM（可选，有些SSD上可能只有SRAM，并没有配置DRAM）、PCB（电源芯片、电阻、电容等）、接口（SATA、SAS、PCIe等）。软件角度，SSD内部运行固件（Firmware, FW）负责调度数据从接口端到介质端的读写，还包括嵌入核心的闪存介质寿命和可靠性管理调度算法，以及其他一些SSD内部算法。   </li>
+<li><img src="/2023/0717undefined/1.jpg" class>     </li>
+<li>SSD VS HDD：<br>传统的HDD是“马达+磁头+磁盘”的机械结构，SSD则变成了“闪存介质+主控”的半导体存储芯片结构，两者有完全不同的数据存储介质和读写方式。表现则为性能高，功耗低，抗震防摔，无噪音，体积小。  </li>
+<li><img src="/2023/0717undefined/4.jpg" class>      </li>
+<li>SSD发展：<br>①昂贵的RAM SSD时代<br>②机械硬盘（HDD）称霸世界<br>③闪存出现<br>④闪存SSD异军突起<br>⑤SSD革命性进步（速度与容量，市场开始繁荣）<br>⑥PCIe SSD进入消费者市场  </li>
+<li>SSD基本工作原理：<br>从主机PC端开始，用户从操作系统应用层面对SSD发出请求，文件系统将读写请求经驱动转化为相应的符合协议的读写和其他命令，SSD收到命令执行相应操作，然后输出结果，每个命令的输入和输出经协议标准组织标准化。三大模块如下：  </li>
+<li><img src="/2023/0717undefined/2.jpg" class>     
+❏ 前端接口和相关的协议模块；<br>❏ 中间的FTL层（Flash Translation Layer）模块；<br>❏ 后端和闪存通信模块。  </li>
+<li>SSD是读写过程：<br>以写为例。主机通过接口发送写命令给SSD, SSD接收到该命令后执行，并接收主机要写入的数据。数据一般会先缓存在SSD内部的RAM中，FTL会为每个逻辑数据块分配一个闪存地址，当数据凑到一定数量后，FTL便会发送写闪存请求给后端，然后后端根据写请求，把缓存中的数据写到对应的闪存空间。由于闪存不能覆盖写，闪存块需擦除才能写入。主机发来的某个数据块，它不是写在闪存固定位置，SSD可以为其分配任何可能的闪存空间写入。因此，SSD内部需要FTL这样一个东西，完成逻辑数据块到闪存物理空间的转换或者映射。举个例子，假设SSD容量为128GB，逻辑数据块大小为4KB，所以该SSD一共有128GB&#x2F;4KB&#x3D;32M个逻辑数据块。每个逻辑块都有一个映射，即每个逻辑块在闪存空间都有一个存储位置。闪存地址大小如果用4字节表示，那么存储32M个逻辑数据块在闪存中的地址则需要32M×4B&#x3D;128MB大小的映射表。正因为SSD内部维护了一张逻辑地址到物理地址转换的映射表，当主机发来读命令时，SSD能根据需要读取的逻辑数据块查找该映射表，获取这些逻辑数据在闪存空间所在的位置，后端便能从闪存上把对应数据读到SSD内部缓存空间，然后前端负责把这些数据返回给主机。由于前端接口协议都是标准化的，后端和闪存的接口及操作也是标准化的（闪存遵循ONFI或者Toggle协议），因此，一个SSD在前端协议及闪存确定下来后，差异化就体现在FTL算法上了。FTL算法决定了性能、可靠性、功耗等SSD的核心参数。还需要实现坏块管理、读干扰处理、数据保持处理、错误处理等很多其他事情。  </li>
+<li>SSD基本参数：<br>基本信息，性能指标，数据可靠性和寿命，功耗，兼容性。<br>容量：<br>以二进制为单位的容量行业内称为裸容量，以十进制为单位的容量称为用户容量。对于闪存本身，它是裸容量。那么，裸容量多出的7%容量在SSD内部做什么用呢？SSD可以利用这多出来的7%空间管理和存储内部数据，比如把这部分额外的空间用作FTL映射表存储空间、垃圾回收所需的预留交换空间、闪存坏块的替代空间等。这里的7%多余空间也可以转换为OP概念（Over Provisioning）。<br>介质：  </li>
+<li><img src="/2023/0717undefined/3.jpg" class>     
+IOPS：<br>单位IOPS，即设备每秒完成IO请求数，一般是小块数据读写命令的响应次数，比如4KB数据块尺寸。IOPS数字越大越好。<br>吞吐量：<br>单位MB&#x2F;s，即每秒读写命令完成的数据传输量，也叫带宽（Bandwidth），一般是大块数据读写命令，比如512KB数据块尺寸。吞吐量越大越好。<br>响应时间：<br>也叫时延（Latency），即每个命令从发出到收到状态回复所需要的响应时间，时延指标有平均时延（Average Latency）和最大时延两项（Max Latency）。响应时间越小越好。<br>性能测试：<br>性能测试设计上要考虑访问模式（Access Pattern），包括以下三部分：❏ Random&#x2F;Sequential：随机（Random）和连续（Sequential）数据命令请求。何为随机和连续？指的是前后两条命令LBA地址是不是连续的，连续的地址称为Sequential，不连续的地址称为Random。❏ Block Size：块大小，即单条命令传输的数据大小，性能测试从4KB～512KB不等。随机测试一般用小数据块，比如4KB；顺序测试一般用大块数据，比如512KB。❏ Read&#x2F;Write Ratio：读写命令数混合的比例。  <h2 id="SSD主控"><a href="#SSD主控" class="headerlink" title="SSD主控"></a>SSD主控</h2></li>
+<li><img src="/2023/0717undefined/5.jpg" class>      </li>
+<li>主控结构：<br>这款主控采用ARM CPU，主要分为前端和后端两大部分。前端（Host Interface Controller，主机接口控制器）跟主机打交道，接口可以是SATA、PCIe、SAS等。后端（Flash Controller，闪存控制器）跟闪存打交道并完成数据编解码和ECC。除此之外还有缓冲（Buffer）、DRAM。模块之间通过AXI高速和APB低速总线互联互通，完成信息和数据的通信。在此基础之上，由SSD固件开发者构筑固件（Firmware）统一完成SSD产品所需要的功能，调度各个硬件模块，完成数据从主机端到闪存端的写入和读取。</li>
+<li>前端：<br>前端是负责主机和SSD设备通信的接口，命令和数据传输通过前端总线流向或流出SSD设备。主机接口则是与主机进行通信（数据交互）的标准协议接口，当前主要代表为SATA、SAS和PCIe等</li>
+<li>主控CPU：<br>SSD控制器SoC模块和其他嵌入式系统SoC模块并没有什么本质的不同，一般由一颗或多颗CPU核组成，同时片上有I-RAM、D-RAM、PLL、IO、UART、高低速总线等外围电路模块。CPU负责运算、系统调度，IO完成必要的输入输出，总线连接前后端模块。通常我们所说的固件就运行在CPU核上，分别有代码存储区I-RAM和数据存储区D-RAM。如果是多核CPU，需要注意的是软件可以是对称多处理（SMP）和非对称多处理（AMP）。对称多处理多核共享OS和同一份执行代码，非对称多处理是多核分别执行不同代码。前者多核共享一份I-RAM和D-RAM，资源共享；后者每核对应一份I-RAM和D-RAM，每核独立运行，没有内存抢占导致代码速度执行变慢的问题。当SSD的CPU要求计算能力更高时，除增加核数和单核CPU频率外，AMP的设计方式更加适应计算和任务独立的要求，消除了代码和数据资源抢占导致执行速度过慢的问题。固件根据CPU的核数进行设计，充分发挥多核CPU的计算能力是固件设计考虑的一方面。另外，固件会考虑任务划分，会将任务分别加载到不同CPU上执行，在达到并行处理的同时让所有CPU有着合理且均衡的负载，不至于有的CPU忙死有的CPU闲死，这是固件架构设计要考虑的重要内容，目标是让SSD输出最大的读写性能。</li>
+<li>后端：<br>后端两大模块分别为ECC模块和闪存控制器。<br>ECC模块是数据编解码单元，由于闪存存储天生存在误码率，为了数据的正确性，在数据写入操作时应给原数据加入ECC校验保护，这是一个编码过程。<br>闪存控制器使用符合闪存ONFI 、Toggle标准的闪存命令，负责管理数据从缓存到闪存的读取和写入。从单个闪存角度看，一个Die&#x2F;LUN是一个闪存命令执行的基本单元，为了性能需求需要并发多个闪存Die&#x2F;LUN，通常配置有多个通道（channel）。一个通道挂多少个闪存Die&#x2F;LUN，取决于SSD容量和性能需求，Die&#x2F;LUN个数越多，并发的个数越多，性能越好。<h2 id="SSD存储介质：闪存"><a href="#SSD存储介质：闪存" class="headerlink" title="SSD存储介质：闪存"></a>SSD存储介质：闪存</h2></li>
+<li>闪存：<br>闪存是一种非易失性存储器，也就是说，掉电了数据也不会丢失。闪存基本存储单元（Cell）是一种类NMOS的双层浮栅（Floating Gate）MOS管。</li>
+<li>闪存芯片架构：<br>闪存芯片就是由成千上万这样的存储单元按照一定的组织结构组成的（STL，MLC,TLC）。</li>
+<li><img src="/2023/0717undefined/6.jpg" class>    
+一个LUN又分为若干个Plane，市面上常见的是1个或者2个Plane，现在也有4个Plane的闪存了。每个Plane都有自己独立的Cache Register和Page Register，其大小等于一个Page的大小。固态硬盘主控在写某个Page的时候，先把数据从主控传输到该Page所对应Plane的Cache Register当中，然后再把整个Cache Register当中的数据写到闪存阵列；读的时候则相反，先把这个Page的数据从闪存介质读取到Cache Register，然后再按需传给主控。这里按需是什么意思？就是我们读取数据的时候，没有必要把整个Page的数据都传给主控，而是按需选择数据传输。但要记住，无论是从闪存介质读数据到Cache Register，还是把Cache Register的数据写入闪存介质，都以Page为单位。通过两个register，multi-Plane等操作来优化闪存访问速度。  </li>
+<li>闪存寻址问题：  </li>
+<li><img src="/2023/0717undefined/7.jpg" class>    </li>
+<li>闪存问题：<br>①坏块：<br>闪存块（Block）具有一定的寿命，不是长生不老的。前面提到，当一个闪存块接近或者超出其最大擦写次数时，可能导致存储单元永久性损伤，不能再使用。随着闪存工艺不断向前发展，晶体管的尺寸越来越小，擦写次数也变得越来越少。闪存中的存储单元先天就有一些是坏的，或者说是不稳定的。并且随着闪存的不断使用，坏的存储单元越来越多。所以，用户写入闪存的数据，必须要有ECC纠错码保护，这样即使其中的一些比特发生反转，读取的时候也能通过ECC纠正过来。但若出错的比特数超过纠错能力范围，数据就会丢失，对这样的闪存块，我们应该弃之不再使用。<br>②读干扰：<br>从闪存读取原理来看，当你读取一个闪存页（Page）的时候，闪存块当中未被选取的闪存页的控制极都会加一个正电压，以保证未被选中的MOS管是导通的。这样问题就来了，频繁地在一个MOS管控制极加正电压，就可能导致电子被吸进浮栅极，形成轻微写，从而最终导致比特翻转。但是，这不是永久性损伤，重新擦除闪存块还能正常使用。要注意的是，读干扰影响的是同一个闪存块中的其他闪存页，而非读取的闪存页本身。<br>③写干扰：<br>同上述读干扰<br>④存储单元耦合：<br>浮栅极闪存存储电荷的是导体，因此存储单元之间存在耦合电容，这会使存储单元内的电荷发生意外变化，最终导致数据读取错误。<br>⑤电荷泄漏：<br>存储在闪存存储单元的电荷，如果长期不使用，会发生电荷泄漏。这同样会导致非永久性损伤，擦除后闪存块还能使用。</li>
+<li>闪存寿命：<br>❏ Wear Leveling：通过磨损平衡算法，让所有的闪存块均衡擦写，避免少数闪存块先挂掉，导致固态硬盘容量下降。❏ 降低写放大：写放大越低，固态硬盘的磨损速度越慢。<br>❏ 用更好的纠错算法：纠错能力越强，容许的出错率越高，故采用更好的纠错算法可以延长硬盘使用寿命。</li>
+<li>闪存数据完整性：<br>闪存的一个特性就是随着闪存的使用以及数据存储时间的变长，存储在闪存里面的数据容易发生比特翻转，出现随机性错误。这个问题随着闪存制程的变小越发严重。因此，使用闪存作为存储介质的固态硬盘，需要采用一些数据完整性的技术来确保用户数据可靠不丢失。常见的技术有：❏ ECC纠错。❏ RAID数据恢复。❏ 重读（Read Retry）。❏ 扫描重写技术（Read Scrub）。❏ 数据随机化。<h2 id="SSD核心技术：FTL"><a href="#SSD核心技术：FTL" class="headerlink" title="SSD核心技术：FTL"></a>SSD核心技术：FTL</h2></li>
+<li>FTL概念：<br>FTL算法的优劣与否，直接决定了SSD在性能（Performance）、可靠性（Reliability）、耐用性（Endurance）等方面的好坏，FTL可以说是SSD固件的核心组成。那么什么是FTL？FTL是Flash Translation Layer（闪存转换层）的缩写，完成主机（或者用户，Host）逻辑地址空间到闪存（Flash）物理地址空间的翻译（Translation），或者说映射（Mapping）。SSD每把一笔用户逻辑数据写入闪存地址空间，便记录下该逻辑地址到物理地址的映射关系。当主机想读取该数据时，SSD便会根据这个映射，从闪存读取这笔数据然后返回给用户。还需要做垃圾回收，磨损平衡，处理读干扰，数据保持，坏块管理，处理MLC或TLC的Lower Page corruption问题，改善SSD性能和可靠性。</li>
+<li>FTL映射管理：<br>存在基于页的映射，也有混合映射。</li>
+<li><img src="/2023/0717undefined/8.jpg" class>    </li>
+<li><img src="/2023/0717undefined/9.jpg" class>    </li>
+<li><img src="/2023/0717undefined/10.jpg" class>     
+映射原理：<br>用户通过LBA（Logical Block Address，逻辑块地址）访问SSD，每个LBA代表着一个逻辑块（大小一般为512B&#x2F;4KB&#x2F;8KB……），我们把用户访问SSD的基本单元称为逻辑页（Logical Page）。而在SSD内部，SSD主控是以闪存页为基本单元读写闪存的，我们称闪存页为物理页（Physical Page）。用户每写入一个数据页，SSD主控就会找一个物理页把用户数据写入，SSD内部同时记录了这样一条映射（Map）。有了这样一个映射关系后，下次用户需要读某个逻辑页时，SSD就知道从闪存的哪个位置把数据读取上来。<br>SSD内部维护了一张逻辑页到物理页地址转换的映射表（Map Table）。用户每写入一个逻辑页，就会产生一个新的映射关系，这个映射关系会加入（第一次写）或者更改（覆盖写）映射表。当读取某个逻辑页时，SSD首先查找映射表中该逻辑页对应的物理页，然后再访问闪存读取相应的用户数据。<br>对于绝大多数SSD，我们可以看到上面都有板载DRAM，其主要作用就是存储这张映射表，如图4-7所示。在SSD工作时，全部或绝大部分的映射表都可以放在DRAM上，映射关系可以快速访问。<br>SSD工作时，对带DRAM的SSD来说，只需要查找DRAM当中的映射表，获取到物理地址后访问闪存便会得到用户数据，这期间只需要访问一次闪存。而对不带DRAM的SSD来说，它首先会查看该逻辑页对应的映射关系是否在SRAM内：如果在，直接根据映射关系读取闪存；如果不在，那么它首先需要把映射关系从闪存中读取出来，然后再根据这个映射关系读取用户数据，这就意味着相比于有DRAM的SSD，它需要读取两次闪存才能把用户数据读取出来，底层有效带宽减小。<br>映射表除了可以放在板载DRAM、SRAM和闪存中，它还可以放到主机的内存中。NVME1.2（及后续版本）有个重要的功能就是HMB（Host Memory Buffer，主机高速缓冲存储器）：主机在内存中专门划出一部分空间给SSD用，SSD可以把它当成自己的DRAM使用。因此，映射表完全可以放到主机端的内存中去。<br>映射表刷新：<br>映射表在SSD掉电前，是需要把它写入到闪存中去的。下次上电初始化时，需要把它从闪存中部分或全部加载到SSD的缓存（DRAM或者SRAM）中。随着SSD的写入，缓存中的映射表不断增加新的映射关系，为防止异常掉电导致这些新的映射关系丢失，SSD的固件不仅仅只在正常掉电前把这些映射关系刷新到闪存中去，而是在SSD运行过程中，按照一定策略把映射表写进闪存。这样，即使发生异常掉电，丢失的也只是一小部分映射关系，上电时可以较快地重建这些映射关系。那么，什么时候会触发映射表的写入呢？一般有以下几种情况：❏ 新产生的映射关系累积到一定的阈值❏ 用户写入的数据量达到一定的阈值❏ 闪存写完闪存块的数量达到一定的阈值❏ 其他写入策略一般有：❏ 全部更新❏ 增量更新全部更新表示的是缓存中映射表（干净的和不干净的）全部写入到闪存，增量更新的意思是只把新产生的（不干净的）映射关系刷入到闪存中去。显然，相比后者，前者需要写入更多的数据量，一方面影响用户写入性能和时延（latency），另一方面增加写放大，但其好处是固件实现简单，不需要去知道哪些映射关系是干净的，哪些是不干净的。  </li>
+<li>垃圾回收：<br>原理：  </li>
+<li><img src="/2023/0717undefined/11.jpg" class>      </li>
+<li><img src="/2023/0717undefined/12.jpg" class>     </li>
+<li><img src="/2023/0717undefined/13.jpg" class>     
+写满之后，继续写入时SSD会把新写入的逻辑页写入到所谓的OP空间。对SSD来说，不存在什么用户空间和OP空间，它只会看到闪存空间。主机端来数据，SSD就往闪存空间写。图4-17中出现了深色方块，怎么回事？因为逻辑页1～4的数据已更新，写到新的地方，那么之前那个位置上的逻辑页1～4数据就失效了，过期了，变垃圾了。用户更新数据，由于闪存不能在原位置覆盖写，固件只能另找闪存空间写入新的数据，因此导致原闪存空间数据过期，形成垃圾。  </li>
+<li><img src="/2023/0717undefined/14.jpg" class>      </li>
+<li><img src="/2023/0717undefined/15.jpg" class>      
+等所有Die上的Block 5写满后，所有Die上的Block 0也全部变色了（这些数据都是垃圾）。现在不仅整个用户空间都写满，整个闪存空间也都满了。如果用户想继续写入后续的逻辑页（36之后的），就需要垃圾回收了。    </li>
+<li><img src="/2023/0717undefined/16.jpg" class>         </li>
+<li><img src="/2023/0717undefined/17.jpg" class>        
+用户如果继续往SSD上写入数据，那么SSD怎么处理？当然需要做垃圾回收。不过，SSD内部状况比之前看到的复杂多了，垃圾数据分散在每个闪存块上，而不是集中在某几个闪存块上。这个时候，如何挑选需要回收的闪存块呢？答案显而易见，挑垃圾比较多的闪存块来回收，因为有效数据少，要搬移的数据少，这样腾出空闪存块的速度快。对上面每个闪存块的垃圾数（深色方块）做个统计.  </li>
+<li><img src="/2023/0717undefined/18.jpg" class>       
+有了空闲的空间（白色方块），用户就可以继续写入数据了。  </li>
+<li>写放大：  </li>
+<li><img src="/2023/0717undefined/19.jpg" class>     
+写放大越大，意味着额外写入闪存的数据越多，一方面磨损闪存，减少SSD寿命，另一方面，写入这些额外数据会占用底层闪存带宽，影响SSD性能。因此，SSD设计的一个目标是让WA尽量小。减小写放大，可以使用前面提到的压缩办法（主控决定），顺序写也可以减小写放大（垃圾集中，但顺序写可遇不可求，取决于用户Workload），还有就是增大OP（这个可控）。<br>影响写放大的因素主要有：❏ OP:OP越大，WA越小。❏ 用户写入的数据Pattern：如前文所见，如果数据都是顺序写入，GC做的量就少（最好的情况是整个闪存块都是无效数据，只需擦除，无需数据搬移），写放大小。❏ GC策略：在挑选源闪存块的时候，如果不挑选有效数据最少（垃圾数据最多）的块作为源闪存块，就会增加写放大；另外，控制后台GC产生空闲闪存块的数量，也能减小写放大。❏ 磨损平衡：为平衡每个闪存块的擦除次数，需要数据的搬移。❏ 读干扰（Read disturb）和数据保存处理（Data Retention handling）：数据搬移增加写放大。❏ 主控：带压缩和不带压缩的控制器肯定会影响写放大。❏ Trim：有没有Trim，对写放大影响很大。  </li>
+<li>垃圾回收实现：<br>垃圾回收可以简单地分为三步：1）挑选源闪存块。2）从源闪存块中找有效数据。3）把有效数据写入到目标闪存块。①挑选源闪存块，一个常见的算法就是挑选有效数据最小的块，这样需要重写的有效数据就越少，写放大自然最小，回收一个块付出的代价也最小。那么，Die中那么多闪存块，怎么就能一下子找到有效数据最小的那个块呢？这需要固件在写用户数据时做一些额外的工作，即记录和维护每个用户闪存块的有效数据量。用户每往一个新的块上写入一笔用户数据，该闪存块上的有效数据数就加1。同时还需要找到这笔数据之前所在的块（如果之前该笔数据曾写入过），由于该笔数据写入到新的块，那么在原闪存块上的数据就变无效了，因此原闪存块上的有效数据量应该减1。<br>由于固件维护了每个闪存块的有效数据量，因此在GC的时候能快速找到有效数据最少的那个块。挑选有效数据最少的那个块作为源闪存块，这种BPA算法叫作Greedy算法，是绝大多数SSD采用的一种策略。除此之外，还有其他的BPA算法。比如，除了基于闪存块有效数据量，有些SSD在挑选源闪存块时，还把闪存块的擦写次数考虑进去了，这其实暗藏着磨损平衡算法（后面会详细介绍）。挑选闪存块时，一方面，我们希望挑有效数据最少的（快速得到一个新的闪存块）；另一方面，我们期望挑选擦写次数最小的（分摊擦写次数到每个闪存块）。如果两者都具备，那最好不过了。但现实是，擦写次数最小的闪存块，有效数据未必最少；有效数据最少的闪存块，擦写次数未必最小。因此，需要给有效数据和擦写次数设定一个权重因子，进而得到一个最优的选择。这种方法的好处是可以把磨损平衡算法做到GC中来，可以不需要额外的磨损平衡算法；缺点是相对单纯只看有效数据策略的GC，由于挑选的闪存块可能有效数据很多，因此写放大变大，GC性能变差。<br>②第二步就是把数据从源闪存块读出来。这里也是有讲究的，怎么读才是最有效率的？全部读出来还是只读有效数据？有人说，当然只读有效数据更有效率了，毕竟我们只需重写有效数据。我赞同这个观点，但问题来了，一个闪存块有那么多逻辑页数据，如何知道哪些数据是有效，哪些又是无效的呢？如果固件不仅仅只更新和维护闪存块的有效数据量，还给闪存块一个Bitmap表，标识哪个物理页（例子中我们假设逻辑页和闪存页大小一样）是否有效，那么在做GC的时候，固件只需根据Bitmap表的信息，把有效数据读出，然后重写即可。具体做法跟前面介绍的类似，即固件把一笔逻辑页写入到某个闪存块时，该闪存块上对应位置的Bit就置成1。一个闪存块上新增一笔有效数据，就意味着该笔数据所在的前一个闪存块上数据变成无效，因此需要把前一个闪存块对应的位置的Bit清0。  </li>
+<li>垃圾回收时机：<br>SSD什么时候做GC？当用户写入数据时，如果可用的闪存块小于一定阈值，这时就需要做GC，以腾出空间给用户写。这时做的GC，叫作Foreground GC（前台垃圾回收）。这是被动方式，它是由于SSD没有多少可用的闪存块时，才去做的GC。与之相对应的，就是Background GC（后台垃圾回收），它是在SSD空闲（Idle）的时候，SSD主动去做的GC，这样在用户写入的时候就有充裕的可用闪存块，不需要临时抱佛脚（做Foreground GC），从而改善用户写入性能。但是，出于功耗考虑，有些SSD可能就不做后台垃圾回收了，当SSD空闲后，直接进入省电模式，或者做少量的GC，然后进入省电模式。  </li>
+<li>Trim：<br>Trim是一个新增的ATA命令（Data Set Management），专为SSD而生。当用户删除一个文件时，操作系统（对Windows来说，它自Windows 7开始支持Trim）会发Trim命令给SSD，告诉SSD该文件对应的数据无效了。一旦SSD知道哪些数据无效之后，在做垃圾回收的时候就可以把这些删除掉的数据抛弃掉，不做无谓的数据搬移。这样不仅增强了SSD的性能，还延长了SSD寿命。  </li>
+<li><img src="/2023/0717undefined/20.jpg" class>      </li>
+<li><img src="/2023/0717undefined/21.jpg" class>      </li>
+<li><img src="/2023/0717undefined/22.jpg" class>     </li>
+<li>磨损平衡：<br>就是让SSD中的每个闪存块的磨损（擦除）都保持均衡。为什么要做磨损平衡？原因是闪存都是有寿命的，即闪存块有擦写次数限制。一个闪存块，如果其擦写次数超过一定的值，那么该块就变得不那么可靠了，甚至变成坏块不能用了。如果不做磨损平衡，则有可能出现有些闪存块频繁拿来做擦写，这些闪存块很容易就会寿终正寝。随着不断的写入，越来越多的坏块出现，最后导致SSD在保质期前就挂掉。相反，如果让所有闪存块一起来承担，则能经受更多的用户数据写入。<br>首先明确四个概念：冷数据（Cold Data）和热数据（Hot Data），年老的（Old）块和年轻的（Young）块。所谓冷数据，就是用户不经常更新的数据，比如用户写入SSD的操作系统数据、只读文件数据、小电影等；相反，热数据就是用户更新频繁的数据。数据的频繁更新，会在SSD内部产生很多垃圾数据（新的数据写入导致老数据失效）。所谓年老的块，就是擦写次数比较多的闪存块；擦写次数比较少的闪存块，年纪相对小，我们叫它年轻的块。SSD很容易区分年老的块和年轻的块，看它们的EC（Erase Count，擦除次数）就可以了，大的就是老的，小的就是年轻的。<br>SSD一般有动态磨损平衡（Dynamic WL）和静态磨损平衡（Static WL）两种算法。动态磨损平衡算法的基本思想是把热数据写到年轻的块上，即在拿一个新的闪存块用来写的时候，挑选擦写次数小的；静态磨损平衡算法基本思想是把冷数据写到年老的块上，即把冷数据搬到擦写次数比较多的闪存块上。  </li>
+<li>掉电恢复：<br>先说正常掉电。在掉电前，主机会通过命令通知SSD，比如SATA中的Idle Immediately, SSD收到该命令后，主要会做以下事情：❏ 把buffer中缓存的用户数据刷入闪存。❏ 把映射表刷入闪存。❏ 把闪存的块信息写入闪存（比如当前写的是哪个闪存块，以及写到该闪存块的哪个位置，哪些闪存块已经写过，哪些闪存块又是无效的等）。❏ 把SSD其他信息写入闪存。<br>异常掉电会导致用户数据缓存丢失，以及RAM中映射表丢失。  </li>
+<li><img src="/2023/0717undefined/23.jpg" class>    
+以图4-44为例，如果我们读取物理地址Pa x，就能读取到元数据x和用户数据x，而元数据是有逻辑地址La x的，因此，我们就能获得映射：La x→Pa x。映射表的恢复原理其实很简单，只要全盘扫描整个闪存空间，就能获得所有的映射关系，最终完成整个映射表的重构。全盘扫描有一个问题，就是映射表恢复很慢，所耗的时间与SSD容量成正比。现在SSD容量已达到TB级别，全盘扫描映射方式，重构映射表需要花费几分钟甚至几十分钟，这在实际使用中，用户是不能接受的。那SSD内部是如何快速恢复映射表的呢？一种办法就是SSD定期把SSD中RAM的数据（包括映射表和缓存的用户数据）和SSD相关的状态信息（诸如闪存块擦写次数、闪存块读次数、闪存块其他信息等）写入到闪存中去，与正常掉电前SSD要做的事情类似，这个操作我们称之为做Checkpoint（检查点，此处译成“快照”更合适）  </li>
+<li>坏块管理：<br>坏块来源主要包括：❏ 出厂坏块（Factory Bad Block）：闪存从工厂出来，就或多或少的有一些坏块。❏ 增长坏块（Grown Bad Block）：随着闪存的使用，一些初期好块也会变成坏块。变坏的原因，主要是擦写磨损。  </li>
+<li><img src="/2023/0717undefined/24.jpg" class>     
+坏块管理策略：<br>①略过策略：  </li>
+<li><img src="/2023/0717undefined/25.jpg" class>     
+②替换策略：<br>与略过策略不同，当某个Die上发现坏块时，它会被该Die上的某个好块替换。用户在写数据的时候，不是跨过这个Die，而是写到替换块上面去。采用此策略，除正常用户使用的闪存块，还需额外保留一部分好的闪存块，用于替换用户空间的坏块。整个Die上闪存块就划分为两个区域：用户空间和预留空间。还是以上面的情况为例：用户写入数据时，当碰到坏块B，它不会略过Die 1不写，而是写入到Block B的替换者Block B′上面去。采用替换策略，SSD内部需维护一张重映射表（Remap Table）：坏块到替换块的映射，比如图4-51的B→B′。当SSD需要访问Block B时，它需要查找重映射表，实际访问的物理Block应该是B′。  </li>
+<li><img src="/2023/0717undefined/26.jpg" class>     </li>
+<li>SLC cache：<br>使用SLC Cache的出发点，主要有以下几点：1）性能考虑：SLC性能好，用户数据写到SLC比直接写到MLC或者TLC上快很多。2）防止Lower Page数据被带坏：用户数据写到SLC，不存在写Upper Page或者Extra Page带坏Lower Page数据的可能。3）解决闪存的缺陷：比如有些MLC或者TLC的闪存块，如果没有写满，然后去读的话，可能会读到ECC错误，而对SLC模式下的闪存块，就没有这个问题。4）更多的数据写入量：SLC更耐写。  </li>
+<li>Host Based FTL和Device Based FTL架构比较：  </li>
+<li><img src="/2023/0717undefined/27.jpg" class>      
+<h2 id="PCIe"><a href="#PCIe" class="headerlink" title="PCIe"></a>PCIe</h2><h2 id="NVMe介绍"><a href="#NVMe介绍" class="headerlink" title="NVMe介绍"></a>NVMe介绍</h2><h2 id="SSD测试"><a href="#SSD测试" class="headerlink" title="SSD测试"></a>SSD测试</h2><h2 id="SSD电源管理"><a href="#SSD电源管理" class="headerlink" title="SSD电源管理"></a>SSD电源管理</h2><h2 id="ECC原理"><a href="#ECC原理" class="headerlink" title="ECC原理"></a>ECC原理</h2></li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">FFFfrance</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://ffffrance.github.io/2023/07179723.html">http://ffffrance.github.io/2023/07179723.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">FFFfrance</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%AD%98%E5%82%A8/">
+                                    <span class="chip bg-color">存储</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/071753040.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="文献阅读：KVSSD">
+                        
+                        <span class="card-title">文献阅读：KVSSD</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            文献阅读：KVSSD
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" class="post-category">
+                                    文献阅读
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/">
+                        <span class="chip bg-color">文献阅读</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/06173183.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="C语言">
+                        
+                        <span class="card-title">C语言</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            C语言全面总结。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/C%E8%AF%AD%E8%A8%80/" class="post-category">
+                                    C语言
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">C语言</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="7402561500"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.5'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <a href="/about" target="_blank">FFFfrance</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">251k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/ffffrance" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:605026336@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=605026336" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 605026336" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    <script src="/js/FunnyTitle.js"></script>
+    
+    
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body>
+
+</html>

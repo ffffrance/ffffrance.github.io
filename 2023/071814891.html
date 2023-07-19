@@ -1,0 +1,1083 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="文献阅读：FEMU, Springboot,java,HTML,Vue,linux等">
+    <meta name="description" content="文献阅读：FEMU">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+    <style>
+        body{
+            background-image: url(/medias/bg.png);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
+
+    <title>文献阅读：FEMU | FFFfrance&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/guixinchn/image/blog/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="FFFfrance's Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/guixinchn/image/blog/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">FFFfrance&#39;s Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/guixinchn/image/blog/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">FFFfrance&#39;s Blog</div>
+        <div class="logo-desc">
+            
+            个人分享博客，总结开发经验，记录生活点滴
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">文献阅读：FEMU</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/">
+                                <span class="chip bg-color">文献阅读</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" class="post-category">
+                                文献阅读
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-07-18
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-07-18
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    11 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="FEMU"><a href="#FEMU" class="headerlink" title="FEMU"></a>FEMU</h1><h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><h3 id="QEMU"><a href="#QEMU" class="headerlink" title="QEMU"></a>QEMU</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/fontthrone/article/details/104157859">https://blog.csdn.net/fontthrone/article/details/104157859</a><h3 id="AIO"><a href="#AIO" class="headerlink" title="AIO"></a>AIO</h3></li>
+<li>AIO （ Asynchronous I&#x2F;O）：异步非阻塞I&#x2F;O模型。异步非阻塞与同步非阻塞的区别在哪里？异步非阻塞无需一个线程去轮询所有IO操作的状态改变，在相应的状态改变后，系统会通知对应的线程来处理。对应到烧开水中就是，为每个水壶上面装了一个开关，水烧开之后，水壶会自动通知水烧开了。<h3 id="MMIO"><a href="#MMIO" class="headerlink" title="MMIO"></a>MMIO</h3></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/37715216">https://zhuanlan.zhihu.com/p/37715216</a><h3 id="Open-Channel-SSD"><a href="#Open-Channel-SSD" class="headerlink" title="Open Channel SSD"></a>Open Channel SSD</h3></li>
+<li><a target="_blank" rel="noopener" href="https://blog.xiocs.com/archives/4/">https://blog.xiocs.com/archives/4/</a><h2 id="FEMU论文阅读：The-CASE-of-FEMU-Cheap-Accurate-Scalable-and-Extensible-Flash-Emulator"><a href="#FEMU论文阅读：The-CASE-of-FEMU-Cheap-Accurate-Scalable-and-Extensible-Flash-Emulator" class="headerlink" title="FEMU论文阅读：The CASE of FEMU: Cheap, Accurate, Scalable and Extensible Flash Emulator"></a>FEMU论文阅读：The CASE of FEMU: Cheap, Accurate, Scalable and Extensible Flash Emulator</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3></li>
+<li>FEMU，一个基于qemu的flash模拟器。  </li>
+<li>具有以下四个优势：免费开源，模拟SSD准确，可拓展，支持内部修改。  <h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3></li>
+<li>①回顾近十年存储会议论文，统计如下数据：研究规模，使用平台，修改层级。<br>发现最多的类别是：针对单SSD，使用模拟器，修改底层SSD控制器逻辑。  </li>
+<li>②缺乏大规模SSD研究：少数大规模SSD研究也是大公司花费巨大进行的，严重损害多节点仿真研究。  </li>
+<li>③软件定义闪存的兴起：之前多在FPGA平台上完成的，价格不菲。   </li>
+<li>④拆分级架构的兴起:大多数现有的研究修改单层(应用程序&#x2F;内核&#x2F;SSD)，但最近的一些工作显示了“拆分级”架构的好处，其中一些功能向上移动到操作系统内核，而另一些向下移动到SSD固件。  </li>
+<li>⑤现有模拟器的状态：三种流行的基于软件的模拟器:flash, LightNVM的QEMU和VSSIM。各有缺点。  </li>
+<li>所以是时候建立一个新的模拟器来跟上技术的发展趋势了。  <h3 id="设计与实现"><a href="#设计与实现" class="headerlink" title="设计与实现"></a>设计与实现</h3></li>
+<li>SSD研究的典型软硬件组合为{应用程序+主机操作系统+SSD设备}。对于FEMU，栈是{Application+Guest OS+FEMU}。  </li>
+<li>①可拓展性：QEMU在线程增大过程中延迟太高，因为QEMU使用传统发发模拟IO，并且使用AIO开销较大。<br>修改：<br>把中断变为轮询，并禁用Guest OS中的门铃写入，创建了一个专用线程来连续轮询设备队列状态。然后跳过AIO组件，在QEMU中创建自己的RAM支持的存储。  </li>
+<li>②准确性：<br>Ⅰ：首先讲延迟机制：<br>当一个IO到达时，FEMU将发出DMA读&#x2F;写命令，然后用模拟完成时间(Tendio)标记该IO，并将该IO添加到“endio队列”中，根据IO完成时间排序。FEMU专用了一个“end-io线程”（取带原来QEMU的中断机制），一旦IO的模拟完成时间超过当前时间(Tendio&gt;Tnow)，它就会持续从队列头部接收IO，并向Guest OS发送一个end-io中断。（一旦超过模拟时间就继续处理剩下的IO）<br>Ⅱ：基础延迟模型：<br>用模型准确计算每个IO的end-io time (Tendio)，计算每个channel和plane的下一个空闲时间Tfree，例如，如果页面写入到达当前空闲的通道#1和平面#2，那么我们将提前通道的下一个空闲时间(TfreeOfChannel1&#x3D;Tnow+Ttransfer，其中Ttransfer是通道上可配置的页面传输时间)和平面的下一个空闲时间(TfreeOfPlane2+&#x3D;Twrite，其中Twrite是NAND页面的可配置写入&#x2F;编程时间)。因此，该写操作的io结束时间为Tendio&#x3D;TfreeOfPlane2。如果在进行写操作时，对同一plane的页面读操作到达。在这里，我们将通过Tread来推进Tf reeofchannel2，其中Tread是一个可配置的NAND页读取时间，并通过transfer来推进TfreeOfChannel1。这个读的IO结束时间将是Tendio&#x3D;TfreeOfChannel1(因为这是读操作而不是写)。<br>总之，这个基本队列模型表示一个单寄存器和统一页面延迟模型。每个plane只有一个页面寄存器，因此不能并行服务多个IO(即一个平面的Tfree表示该平面的IO序列化)，NAND页面的读、写和传输时间(Tread、Twrite和ttransfer)都是单个值。且GC逻辑可以很容易地添加到这个基本模型中;GC本质上是一系列的读&#x2F;写(和擦除，Terase)，也将推进平面和通道的Tf free。<br>Ⅲ：高级延迟OC模型：<br>我们将展示如何扩展我们的模型并实现更准确的OpenChannel SSD(简称“OC”)延迟仿真。<br>但OC的NAND硬件有以下复杂之处。首先，OC使用双寄存器平面;每个平面都有两个寄存器(数据+缓存寄存器)，因此一个平面上的NAND页读&#x2F;写可以与通过通道到该平面的数据传输重叠(即，更多的并行性)。  </li>
+<li><img src="/2023/0718undefined/1.jpg" class>   
+图1对比了单寄存器和双寄存器模型，在双寄存器模型中，第二个IO到页面P2的完成时间更快。(a)在单寄存器模型中，一个平面只有一个数据寄存器(DReg)。直到P1使用寄存器完成(即，传输到控制器的RAM完成)，才能开始读取页面P2。(b)在双寄存器模型中，P1被读入数据寄存器后，它被快速复制到缓存寄存器(D-Reg到C-Reg)。由于数据寄存器是空闲的，可以开始读取P2(与P1向RAM的传输并行)，因此完成得更快。<br>其次，OC使用非统一的页面延迟模型;也就是说，映射到MLC单元的上位(“上”页)的页面比映射到下位(“下”页)的页面产生更高的延迟。<br>Ⅳ：测试：<br>通过结合这个详细的模型，FEMU可以作为OC的精确替代，我们用以下结果证明了这一点。<br>结果1:  </li>
+<li><img src="/2023/0718undefined/2.jpg" class>    
+图2比较了OC和FEMU上的IO延迟。工作负载是16个IO线程执行随机读取，均匀分布在整个存储空间中。我们将存储空间映射为不同的配置。例如，x&#x3D;1和y&#x3D;1意味着OC和FEMU只配置了1个通道和1个平面&#x2F;通道，因此，由于所有16个并发读取都在争夺同一平面和通道，因此平均延迟很高(z&gt;1550µs)。x&#x3D;16和y&#x3D;1的结果意味着我们使用16个通道，一个平面&#x2F;通道(总共16个平面)。在这种情况下，并发读取被所有平面和通道并行吸收，因此平均读取延迟更快(z&lt;130µs)。<br>总的来说，图4a和图4b展示了一个非常相似的模式，显示了我们的队列延迟模拟的成功。<br>结果2：  </li>
+<li><img src="/2023/0718undefined/3.jpg" class>     
+y轴表示OC与FEMU上基准测试结果的延迟差(error) (error &#x3D;(Latfemu−Latoc)&#x2F;Latoc)。D-Reg和S-Reg分别代表高级模型和基本模型。图(a)和图(b)中两条粗体边条是相同的实验和配置(16个平面上16个线程的varmail)。<br>图3a显示了运行几个具有六个文件工作台特性的宏基准测试的结果，这些宏基准测试在4个通道的16个平面上具有16个IO线程的并发读&#x2F;写。该图仅显示了延迟差异(误差)，它对比了我们的基本和高级延迟模型的准确性。使用基本模型，得到的延迟非常不准确(1257%)，但是使用高级模型，误差下降到只有0.5-38%，在六个基准测试中精度提高了1.5-40倍。<br>进一步研究了残差，如图3b所示。这里我们使用varmail个性，但我们改变了#IO线程和#plane。例如16thread16plane配置(图5b中x&#x3D; “ 16T16P “，与图5a实验中使用的配置相同)，误差为38%。然而在不太复杂的配置中，误差会减小(例如，1T1P上的误差为0.7%)。因此更大的错误来自更复杂的配置(例如，更多的IO线程和更多的plane)。<br>结果3：<br>我们发现使用高级模型需要更多的CPU计算，并且这种计算开销会随着线程数的增加而积压。为了证明这一点，图1b比较了我们的原始实现和高级模型中简单的+50µs延迟仿真。在这里，这两种情况都只是添加+50µs，但是高级模型必须遍历许多if-else语句(以检查寄存器、平面和通道下一次空闲时间)，因此计算开销很大。   </li>
+<li>③可用性和可拓展性：<br>从以下几个方面阐述FEMU可用性以及未来扩展：<br>• FTL和GC方案:<br>默认采用FTL动态映射和通道阻塞GC。我们的项目使用FEMU来比较不同的GC方案:控制器、通道和平面阻塞。在控制器阻塞GC中，GC操作“锁定”控制器，阻止任何前台IOs被服务(如OpenSSD)。在通道阻塞GC中，只有涉及GC页面移动的通道被阻塞(如SSDSim)。在最有效的平面阻塞GC中，页面移动仅在平面内流动，而不使用任何通道(即“回拷”)。样例结果如图4a所示。除了我们的工作之外，最近的工作还显示了SSD分区对性能隔离的好处，这些工作是在模拟器或硬件平台上完成的，还可以使用FEMU探索更多的分区方案。</li>
+<li><img src="/2023/0718undefined/4.jpg" class>   
+• 白盒vs黑盒模式:<br>FEMU可以用作白盒设备，如OpenChannel SSD，设备公开物理页面地址，FTL由操作系统管理，如Linux LightNVM;也可以用作黑盒设备，如商用SSD, FTL驻留在FEMU中，只有逻辑地址暴露给操作系统。<br>• 对闪存阵列研究的多设备支持:<br>FEMU是可配置的，可以作为多个设备出现在Guest OS中。例如，如果FEMU暴露了4个ssd，那么在FEMU内部将有4个独立的NVMe实例和FTL结构(没有重叠的通道)在单个QEMU实例中进行管理。以前的模拟器(VSSIM和LightNVM的QEMU)不支持此功能。<br>• 可扩展的OS-SSD NVMe命令:<br>由于FEMU支持NVMe，可以添加新的OS-to-SSD命令(例如，用于主机感知的SSD管理或分层架构)。例如当前在LightNVM中，GC操作从OC读取有效页面到主机DRAM，然后将它们写回OC。<br>这会浪费主机ssd PCIe带宽;LightNVM前台吞吐量在GC下下降了50%。但可以从操作系统向FEMU&#x2F;OC添加新的“pageMove fromAddr toAddr”NVMe命令，这样数据移动就不会跨越PCIe接口。如前所述，分层架构是趋势，我们的nvme驱动的FEMU可以扩展到支持更多的命令，如事务、重复数据删除和多流。<br>•  页面级延迟可变性:<br>如前所述，FEMU支持页面级延迟可变性。高质量的芯片和低质量的芯片混在一起，而坏的芯片会导致更高的错误率，需要更长的时间，在不同的电压下重复读取。FEMU也可以扩展以模拟这种延迟。<br>•  分布式SSD:<br>FEMU的多个实例可以很容易地部署在多台机器上(就像运行Linux管理程序kvm一样简单)，这促进了更大规模的SSD研究。例如，我们还能够在运行FEMU的机器集群上评估Hadoop的单词计数工作负载的性能，但使用不同的GC方案，如图4b所示。由于HDFS使用大型IOs，最终会在许多通道&#x2F;平面上分割，因此通道和平面阻塞之间的性能差距较小.我们希望FEMU可以激发更多的工作，修改SSD层来加速分布式计算框架(例如，分布式图形处理框架)。<br>•  页面级故障注入:<br>除了与性能相关的研究之外，闪存可靠性研究也可以利用FEMU(例如，通过注入页面级损坏和故障并观察高级软件堆栈如何反应)。<br>•  限制:<br>FEMU支持dram，因此不能模拟大容量ssd。此外，对于崩溃一致性研究，FEMU用户必须手动模拟“软”崩溃，因为硬重启将擦除DRAM中的数据。<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3>随着现代SSD内部变得越来越复杂，应该研究它们对整个存储堆栈的影响。FEMU是一个合适的研究平台，希望廉价可扩展的FEMU可以加速未来SSD的研究。</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">FFFfrance</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://ffffrance.github.io/2023/071814891.html">http://ffffrance.github.io/2023/071814891.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">FFFfrance</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/">
+                                    <span class="chip bg-color">文献阅读</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/07185450.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="文献阅读：ZNS">
+                        
+                        <span class="card-title">文献阅读：ZNS</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            文献阅读：ZNS
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-18
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" class="post-category">
+                                    文献阅读
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/">
+                        <span class="chip bg-color">文献阅读</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/071753040.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="文献阅读：KVSSD">
+                        
+                        <span class="card-title">文献阅读：KVSSD</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            文献阅读：KVSSD
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/" class="post-category">
+                                    文献阅读
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/">
+                        <span class="chip bg-color">文献阅读</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="7402561500"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.5'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <a href="/about" target="_blank">FFFfrance</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">251k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/ffffrance" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:605026336@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=605026336" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 605026336" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    <script src="/js/FunnyTitle.js"></script>
+    
+    
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"log":false});</script></body>
+
+</html>

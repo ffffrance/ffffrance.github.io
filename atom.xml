@@ -6,7 +6,7 @@
   <link href="http://ffffrance.github.io/atom.xml" rel="self"/>
   
   <link href="http://ffffrance.github.io/"/>
-  <updated>2023-06-17T09:02:06.391Z</updated>
+  <updated>2023-07-19T06:35:33.136Z</updated>
   <id>http://ffffrance.github.io/</id>
   
   <author>
@@ -17,12 +17,120 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>文献阅读：ZNS</title>
+    <link href="http://ffffrance.github.io/2023/07185450.html"/>
+    <id>http://ffffrance.github.io/2023/07185450.html</id>
+    <published>2023-07-18T09:26:45.000Z</published>
+    <updated>2023-07-19T06:35:33.136Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;ZNS-SSD&quot;&gt;&lt;a href=&quot;#ZNS-SSD&quot; class=&quot;headerlink&quot; title=&quot;ZNS-SSD&quot;&gt;&lt;/a&gt;ZNS-SSD&lt;/h1&gt;&lt;h2 id=&quot;预备知识&quot;&gt;&lt;a href=&quot;#预备知识&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="文献阅读" scheme="http://ffffrance.github.io/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="文献阅读" scheme="http://ffffrance.github.io/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>文献阅读：FEMU</title>
+    <link href="http://ffffrance.github.io/2023/071814891.html"/>
+    <id>http://ffffrance.github.io/2023/071814891.html</id>
+    <published>2023-07-18T09:23:00.000Z</published>
+    <updated>2023-07-18T09:24:27.138Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;FEMU&quot;&gt;&lt;a href=&quot;#FEMU&quot; class=&quot;headerlink&quot; title=&quot;FEMU&quot;&gt;&lt;/a&gt;FEMU&lt;/h1&gt;&lt;h2 id=&quot;预备知识&quot;&gt;&lt;a href=&quot;#预备知识&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="文献阅读" scheme="http://ffffrance.github.io/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="文献阅读" scheme="http://ffffrance.github.io/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>文献阅读：KVSSD</title>
+    <link href="http://ffffrance.github.io/2023/071753040.html"/>
+    <id>http://ffffrance.github.io/2023/071753040.html</id>
+    <published>2023-07-17T01:35:13.000Z</published>
+    <updated>2023-07-17T07:49:56.221Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;KVSSD&quot;&gt;&lt;a href=&quot;#KVSSD&quot; class=&quot;headerlink&quot; title=&quot;KVSSD&quot;&gt;&lt;/a&gt;KVSSD&lt;/h1&gt;&lt;h2 id=&quot;预备知识&quot;&gt;&lt;a href=&quot;#预备知识&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="文献阅读" scheme="http://ffffrance.github.io/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="文献阅读" scheme="http://ffffrance.github.io/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入浅出SSD</title>
+    <link href="http://ffffrance.github.io/2023/07179723.html"/>
+    <id>http://ffffrance.github.io/2023/07179723.html</id>
+    <published>2023-07-17T01:29:54.000Z</published>
+    <updated>2023-07-17T01:34:09.339Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;深入浅出SSD&quot;&gt;&lt;a href=&quot;#深入浅出SSD&quot; class=&quot;headerlink&quot; title=&quot;深入浅出SSD&quot;&gt;&lt;/a&gt;深入浅出SSD&lt;/h1&gt;&lt;h2 id=&quot;认识SSD&quot;&gt;&lt;a href=&quot;#认识SSD&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="存储" scheme="http://ffffrance.github.io/categories/%E5%AD%98%E5%82%A8/"/>
+    
+    
+    <category term="存储" scheme="http://ffffrance.github.io/tags/%E5%AD%98%E5%82%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C语言</title>
     <link href="http://ffffrance.github.io/2023/06173183.html"/>
     <id>http://ffffrance.github.io/2023/06173183.html</id>
     <published>2023-06-17T08:57:29.000Z</published>
-    <updated>2023-06-17T09:02:06.391Z</updated>
+    <updated>2023-06-23T03:11:09.198Z</updated>
     
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;C语言&quot;&gt;&lt;a href=&quot;#C语言&quot; class=&quot;headerlink&quot; title=&quot;C语言&quot;&gt;&lt;/a&gt;C语言&lt;/h1&gt;&lt;h2 id=&quot;初识C语言&quot;&gt;&lt;a href=&quot;#初识C语言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
     
     
     
@@ -38,7 +146,7 @@
     <link href="http://ffffrance.github.io/2023/061664160.html"/>
     <id>http://ffffrance.github.io/2023/061664160.html</id>
     <published>2023-06-16T02:05:01.000Z</published>
-    <updated>2023-06-17T09:01:57.020Z</updated>
+    <updated>2023-06-22T08:45:24.294Z</updated>
     
     
       
@@ -46,7 +154,8 @@
         
         
     <summary type="html">&lt;h1 id=&quot;第一章：绪论&quot;&gt;&lt;a href=&quot;#第一章：绪论&quot; class=&quot;headerlink&quot; title=&quot;第一章：绪论&quot;&gt;&lt;/a&gt;第一章：绪论&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;img src=&quot;/2023/0616undefined/1.jpg&quot; class&gt;  </summary>
+&lt;li&gt;&lt;img src=&quot;/2023/061664160/1.jpg&quot; class&gt;   
+&lt;h2</summary>
         
       
     
@@ -406,106 +515,6 @@
     
     
     <category term="数据结构" scheme="http://ffffrance.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构绪论</title>
-    <link href="http://ffffrance.github.io/2022/061733107.html"/>
-    <id>http://ffffrance.github.io/2022/061733107.html</id>
-    <published>2022-06-17T09:06:46.000Z</published>
-    <updated>2022-06-24T08:39:10.683Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;数据结构绪论&quot;&gt;&lt;a href=&quot;#数据结构绪论&quot; class=&quot;headerlink&quot; title=&quot;数据结构绪论&quot;&gt;&lt;/a&gt;数据结构绪论&lt;/h1&gt;&lt;h2 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="数据结构" scheme="http://ffffrance.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-    <category term="数据结构" scheme="http://ffffrance.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Redis</title>
-    <link href="http://ffffrance.github.io/2022/061627273.html"/>
-    <id>http://ffffrance.github.io/2022/061627273.html</id>
-    <published>2022-06-16T14:56:40.000Z</published>
-    <updated>2022-06-16T15:26:30.546Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Redis&quot;&gt;&lt;a href=&quot;#Redis&quot; class=&quot;headerlink&quot; title=&quot;Redis&quot;&gt;&lt;/a&gt;Redis&lt;/h1&gt;&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Redis" scheme="http://ffffrance.github.io/categories/Redis/"/>
-    
-    
-    <category term="Redis" scheme="http://ffffrance.github.io/tags/Redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux</title>
-    <link href="http://ffffrance.github.io/2022/061415691.html"/>
-    <id>http://ffffrance.github.io/2022/061415691.html</id>
-    <published>2022-06-14T10:28:48.000Z</published>
-    <updated>2022-06-17T04:35:57.159Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Linux&quot;&gt;&lt;a href=&quot;#Linux&quot; class=&quot;headerlink&quot; title=&quot;Linux&quot;&gt;&lt;/a&gt;Linux&lt;/h1&gt;&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="http://ffffrance.github.io/categories/Linux/"/>
-    
-    
-    <category term="Linux" scheme="http://ffffrance.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git</title>
-    <link href="http://ffffrance.github.io/2022/061325246.html"/>
-    <id>http://ffffrance.github.io/2022/061325246.html</id>
-    <published>2022-06-13T15:14:11.000Z</published>
-    <updated>2022-06-17T04:35:48.313Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;git&quot;&gt;&lt;a href=&quot;#git&quot; class=&quot;headerlink&quot; title=&quot;git&quot;&gt;&lt;/a&gt;git&lt;/h1&gt;&lt;h2 id=&quot;源代码管理工具&quot;&gt;&lt;a href=&quot;#源代码管理工具&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Git" scheme="http://ffffrance.github.io/categories/Git/"/>
-    
-    
-    <category term="Git" scheme="http://ffffrance.github.io/tags/Git/"/>
     
   </entry>
   

@@ -334,21 +334,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-17
+                    2023-06-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    666
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -363,7 +363,76 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h1><h2 id="初识C语言"><a href="#初识C语言" class="headerlink" title="初识C语言"></a>初识C语言</h2><h3 id="计算机语言"><a href="#计算机语言" class="headerlink" title="计算机语言"></a>计算机语言</h3><ul>
+<li>语言发展：二进制指令-&gt;汇编指令-&gt;B语言-&gt;高级语言</li>
+<li>国际标准：ANSI C，C89，C90等</li>
+<li>编译器主要有：Clang，GCC，WIN-TC，MSVC，Turbo C等<h3 id="第一个程序"><a href="#第一个程序" class="headerlink" title="第一个程序"></a>第一个程序</h3></li>
+<li>c后缀为源文件，h后缀为头文件</li>
+<li>主函数返回类型不用void（古老版本），而是int，该函数为程序入口<br>&#96;&#96;&#96;<br>#include &lt;stdio.h&gt;</li>
+</ul>
+<p>int main()<br>{<br>    printf(“Hello world!\n”);<br>    return 0;<br>}</p>
+<pre><code>### 数据类型
+- 各个数据类型大小：
+&#123;% asset_img 1.jpg  %&#125;   
+### 变量和常量
+- 不变的值使用常量描述，否则为变量（局部和全局）
+- 局部和全局变量重复时，局部优先
+&#123;% asset_img 2.jpg  %&#125;   
+### 字符串+转义字符+注释
+- 字符串结束标志是&#39;\0&#39;，用strlen计算不包括‘\0’这个字符
+</code></pre>
+<p>#include &lt;stdio.h&gt;</p>
+<p>int main()<br>{<br>    char str[]&#x3D;”ada”;<br>    char str1[]&#x3D;{‘a’,’d’,’a’,’\0’};<br>    printf(“%s\n”, str);<br>    printf(“%s\n”, str1);<br>    return 0;<br>}</p>
+<pre><code>- 转义字符：
+&#123;% asset_img 3.jpg  %&#125;   
+- C语言注释风格/*xxxxxx*/，缺点是不能嵌套注释，而C++注释风格为//xxxxx。
+### 选择语句
+- if-else
+### 循环语句
+- while，for，dowhile
+### 函数
+- 封装一个功能成为函数
+### 数组
+- 一组相同类型值的集合
+### 操作符
+- &#123;% asset_img 4.jpg  %&#125;   
+- &#123;% asset_img 5.jpg  %&#125;   
+- &#123;% asset_img 6.jpg  %&#125;   
+- 条件操作符：exp1?exp2:exp3
+- 最后就是函数调用操作符：ADD（num1,num2）
+### 常见关键字
+- &#123;% asset_img 7.jpg  %&#125;   
+- typedef：
+- &#123;% asset_img 8.jpg  %&#125;   
+- static：
+- &#123;% asset_img 9.jpg  %&#125;   
+①static修饰局部变量时，局部变量出作用域不销毁（改变了变量的存储位置）。
+②static修饰全局变量时，其外部链接属性变成内部链接属性，其他源文件不能使用该全局变量。
+③static修饰函数时，函数也无法被外部链接。
+- define：
+- &#123;% asset_img 10.jpg  %&#125;   
+### 指针
+- 指针变量大小取决于运行机器位数32/64
+- int* p = &amp;a，p为变量名，其存储的是a的地址，数据类型为int*。
+- *p=20，修改的是a的值。
+### 结构体
+- 为了描述复杂类型而设计的结构体。
+## C语言初阶段
+- &#123;% asset_img 11.jpg  %&#125;   
+### 判断，循环，选择语句—省略。
+### 函数-省略 
+- .h文件通常放函数声明，.c文件通常放函数定义。
+- 递归和迭代：斐波那契，汉诺塔等。
+### 数组
+- 一组相同类型元素集合，数据地址连续且从小到大，数组名代表第一个元素的地址。
+- 初始化：
+- &#123;% asset_img 12.jpg  %&#125;   
+- 二维数组：
+- &#123;% asset_img 13.jpg  %&#125;   
+### 操作符
+- 移位操作符：移动的是二进制位（7为111，左移一位为1110=14）
+</code></pre>
+
                 
             </div>
             <hr/>
@@ -602,48 +671,46 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/06173183.html">
+                <a href="/2023/07179723.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="C语言">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="深入浅出SSD">
                         
-                        <span class="card-title">C语言</span>
+                        <span class="card-title">深入浅出SSD</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            C语言全面总结。
+                            设计模式
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-17
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-17
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    C语言
+                            <a href="/categories/%E5%AD%98%E5%82%A8/" class="post-category">
+                                    存储
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                        <span class="chip bg-color">C语言</span>
+                    <a href="/tags/%E5%AD%98%E5%82%A8/">
+                        <span class="chip bg-color">存储</span>
                     </a>
                     
                 </div>
@@ -802,7 +869,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">232.1k</span>
+                        class="white-color">251k</span>
             
             
             
